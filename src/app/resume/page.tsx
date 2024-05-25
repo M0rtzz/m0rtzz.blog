@@ -34,7 +34,7 @@ export default function Page() {
             <Dot className='cursor-not-allowed bg-green-500' />
           </span>
           <span className='text-center text-gray-400'>
-            zhangyu@MacBook-Air:~
+            m0rtzz@zzu:~
           </span>
           <span className='text-end text-gray-500'>⌥⌘1</span>
         </header>
@@ -202,7 +202,7 @@ export default function Page() {
               <div className='my-4 flex items-center'>
                 <p className='basis-1/4 text-center font-semibold'>Social</p>
                 <div className='grid flex-1 grid-cols-2 justify-items-start gap-2'>
-                  <a href='https://github.com/zhangyu1818'>Github</a>
+                  <a href='https://github.com/M0rtzz'>Github</a>
                   <a href='https://twitter.com/zhangyu1818'>Twitter</a>
                   <a href='https://juejin.cn/user/4089838986339927'>掘金</a>
                   <a href='https://dev.to/zhangyu1818'>Dev.to</a>
@@ -211,7 +211,7 @@ export default function Page() {
               </div>
               <div className='flex items-center'>
                 <p className='basis-1/4 text-center font-semibold'>Email</p>
-                <a href='mailto:hey@zhangyu.dev'>hey@zhangyu.dev</a>
+                <a href='mailto:m0rtzz@outlook.com'>m0rtzz@outlook.com</a>
               </div>
             </TypedContent>
           </Typed>

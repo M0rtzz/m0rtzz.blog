@@ -39,8 +39,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'zhangyu.dev',
-    template: '%s | zhangyu.dev',
+    absolute: 'm0rtzz.dev',
+    template: '%s | m0rtzz.dev',
   },
   description:
     'Dive into front-end development with a focus on React, cutting-edge frameworks, JavaScript, TypeScript, Swift, Animation and more',
@@ -53,13 +53,13 @@ export const metadata: Metadata = {
     'Animation',
     'Swift',
   ],
-  applicationName: 'zhangyu.dev',
+  applicationName: 'm0rtzz.dev',
   authors: {
-    name: 'zhangyu1818',
-    url: 'https://github.com/zhangyu1818',
+    name: 'M0rtzz',
+    url: 'https://github.com/M0rtzz',
   },
-  creator: 'zhangyu1818',
-  publisher: 'zhangyu1818',
+  creator: 'M0rtzz',
+  publisher: 'M0rtzz',
   generator: 'Next.js',
   verification: {
     google: 'ULSANpODFw1TULe1QTOUFT8z8QXPVIA1MRTMQL7PAbw',
