@@ -32,7 +32,7 @@ export const queryProfileREADME = cache(async () => {
         }
       `,
       {
-        owner: repoOwner.toString(),
+        owner: repoOwner,
         file: 'master:README.md',
       },
     ),
