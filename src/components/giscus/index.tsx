@@ -16,7 +16,7 @@ export function GiscusScript(props: GiscusScriptProps) {
     <div className='mt-32'>
       <Giscus
         repo={repo}
-        repoId='MDEwOlJlcG9zaXRvcnkzMjk0OTk1NjU='
+        repoId='R_kgDOMAUA8g'
         mapping='number'
         term={`${number}`}
         reactionsEnabled='1'
