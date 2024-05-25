@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     'Animation',
     'Swift',
   ],
-  applicationName: 'm0rtzz.dev',
+  applicationName: 'm0rtzz.cn',
   authors: {
     name: 'M0rtzz',
     url: 'https://github.com/M0rtzz',
