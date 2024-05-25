@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: theme('colors.orange.600');
+  --text-1: theme('colors.slate.800');
+  --text-2: theme('colors.slate.700');
+  --text-3: theme('colors.slate.600');
+  --text-4: theme('colors.slate.500');
+  --surface: theme('colors.white');
+  --surface-1: theme('colors.slate.50');
+  --surface-2: theme('colors.slate.100');
+  --surface-3: theme('colors.slate.200');
+  --surface-4: theme('colors.slate.300');
+
+  --border: #e5e7eb;
+
+  --font-remote: var(--font-remote-sans);
+}
+
+:root.dark {
+  --brand: theme('colors.slate.200');
+  --text-1: theme('colors.slate.50');
+  --text-2: theme('colors.slate.100');
+  --text-3: theme('colors.slate.200');
+  --text-4: theme('colors.slate.300');
+  --surface: #000212;
+  --surface-1: theme('colors.slate.800');
+  --surface-2: theme('colors.slate.700');
+  --surface-3: theme('colors.slate.600');
+  --surface-4: theme('colors.slate.500');
+
+  --border: theme('colors.slate.700');
+
+  .shiki,
+  .shiki span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+  }
+}
+
+@layer utilities {
+  @keyframes hello {
+    50% {
+      transform: translateY(-25%) rotateZ(15deg);
+    }
+  }
+
+  @keyframes breath {
+    to {
+      scale: 0.8;
+    }
+  }
+
+  @keyframes fade-in {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-out {
+    to {
+      opacity: 0;
+    }
+  }
+
+  .animation-hello {
+    animation: hello 3s infinite ease;
+  }
+
+  .animation-fade-in {
+    animation: fade-in 0.5s ease forwards;
+  }
+
+  .animation-fade-out {
+    animation: fade-out 0.5s ease forwards;
+  }
+
+  .animation-breath {
+    animation: breath ease 2s alternate infinite;
+  }
+}
+
+.shiki {
+  .line {
+    display: block;
+  }
+}
