@@ -46,42 +46,41 @@ export default function Page() {
             <TypedText>whoami</TypedText>
             <TypedContent>
               <p>
-                Hi, I&apos;m <strong>ZHANG YU</strong>, in Chinese my name is{' '}
-                <strong>张宇</strong>.
+                Hi, I&apos;m <strong>M0rtzz</strong>, in Chinese my name is{' '}
+                <strong>徐梓航</strong>.
               </p>
               <p>
-                I am a senior front-end engineer who have been involving in
-                front-end development since <strong>2018</strong>, focusing on
-                building aesthetically pleasing and highly interactive user
-                interfaces by <code>React</code>.
+                I am a student majoring in computer science at Zhengzhou University,
+                and I have been studying computer knowledge <strong>2021</strong>, focusing on
+                writing software to contribute to the open source world and
+                <code>share knowledge and innovation</code>.
               </p>
               <p>
                 I have amassed substantial practical experience in the{' '}
-                <code>React</code> technology stack.
+                <code>ROS</code> technology stack.
               </p>
             </TypedContent>
             <TypedText afterDelay={1000}>ls</TypedText>
             <TypedContent>
               <div className='grid grid-cols-2 gap-2 px-4 font-semibold text-sky-500'>
-                <span>opensource</span>
+                <span>competition</span>
                 <span>projects</span>
-                <span>blog-info</span>
                 <span>experience</span>
                 <span>skills</span>
+                <span>blog-info</span>
                 <span>contact</span>
               </div>
             </TypedContent>
-            <TypedText afterDelay={700}>opensource</TypedText>
+            <TypedText afterDelay={700}>competition</TypedText>
             <TypedContent>
               <p>
-                I am passionate about contributing to the open-source community,
-                having made multiple contributions to well-known projects such
-                as <code>Ant Design</code>.
+                I won three national first prizes in the field of robotics in 2023, with two championships and one bronze medal.
               </p>
               <p>
-                Additionally, I have developed and maintained lots of
-                open-source projects, which have been successfully published on
-                npm and collectively garnered nearly <i>20,000</i> downloads.
+                In the 2023 RoboCup China tournament（2023RoboCup机器人世界杯中国赛）, I led a team to develop an intelligent home service robot that can inquire about customer information, independently search for items that customers need, and submit them to customers. Comprehensive application of SeetaFace6 facial recognition technology YOLO object detection algorithm LiDAR-SLAM mapping method and A * path planning algorithm are used to integrate various functions through ROS communication framework, enabling robots to complete corresponding operations. The main challenge is to focus on implementing human-machine tracking systems through depth and CV, in order to solve the problem of short maximum distance and low accuracy in LiDAR tracking.<br></br>Finally, in the competition, <code><i>I led the team to surpass teams from Tsinghua University, Southeast University, Shanghai University, and others to win the championship with an absolute advantage</i></code>.
+              </p>
+              <p>
+                In the 2023 China Robot Competition Special Competition General Purpose Service Robot Project（2023中国机器人大赛专项赛通用服务机器人赛项）, the General Purpose Service Robot Project focuses on examining the comprehensive human-machine interaction ability of robots. I focused my main challenge on building the GGCNN model, predicting grasping coordinates and angles in a multi object plane scene, and obtaining them through a RealSense camera Depth information to achieve the planar grasping effect of the robotic arm.<br></br>Finally, in the competition, <code><i>I led the team to surpass teams from Xi'an Jiaotong University, Northwestern Polytechnical University, and others to win the championship with an absolute advantage</i></code>.
               </p>
             </TypedContent>
             <TypedText afterDelay={1000}>projects</TypedText>
@@ -89,112 +88,91 @@ export default function Page() {
               <ul>
                 <li>
                   <strong>
-                    <a href='https://github.com/zhangyu1818/react-markdown-toc'>
-                      react-markdown-toc
+                    <a href='https://gitcode.com/M0rtzz/VisionVoyage'>
+                      VisionVoyage
                     </a>
                   </strong>
                 </li>
-                <li>Generating a Table of Contents (TOC) from Markdown.</li>
+                <li>An autonomous driving simulation system based on fish eye camera and other perception technologies has been implemented using UE4.</li>
               </ul>
               <ul>
                 <li>
                   <strong>
-                    <a href='https://github.com/zhangyu1818/from-to'>
-                      from-to.js
+                    <a href='https://gitcode.com/M0rtzz/zzu-cs-os-design'>
+                      os-design
                     </a>
                   </strong>
                 </li>
-                <li>Transitioning from one value to another.</li>
+                <li>Modify the Linux-0.12 kernel source code by adding two system calls. The first system call copies the user state string content to the kernel state and saves it, while the second system call copies the saved string back from the kernel state to the user state. I have written an automated configuration script that automatically installs compilation toolchains such as gcc-3.4 and downloads the source code of bochs-2.2.5. Use the sed command modification configure script to add gcc compilation parameters to prevent compilation errors. Then, debug the modified Linux-0.12 kernel using the compiled bochs-x86 emulator. The Git submission style of this repo fully follows the Angular + gitmoji specificationn.</li>
               </ul>
               <ul>
                 <li>
                   <strong>
-                    <a href='https://github.com/zhangyu1818/react-server-only-context'>
-                      react-server-only-context
+                    <a href='https://github.com/M0rtzz/zzu-resume-template'>
+                      latex-resume-template
                     </a>
                   </strong>
                 </li>
                 <li>
-                  A straightforward alternative for using context within React
-                  Server Components.
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <strong>
-                    <a href='https://github.com/zhangyu1818/tw-styled'>
-                      tw-styled
-                    </a>
-                  </strong>
-                </li>
-                <li>
-                  Create Tailwind CSS-styled React components with ease using
-                  tw-styled.
+                  Using LaTeX, a resume template was designed by writing the font of fontame-4.7.0 as a. sty style file and introducing it.
                 </li>
               </ul>
               <ul>
                 <li>
                   <strong>
-                    <a href='https://github.com/zhangyu1818/use-flip'>
-                      use-flip
+                    <a href='https://github.com/dependon/fantascene-dynamic-wallpaper'>
+                      linux-dynamic-wallpaper
                     </a>
                   </strong>
                 </li>
                 <li>
-                  Effortless FLIP animations with a React Hook for smoother
-                  transitions.
+                  Through research, I have discovered a method of unpacking scene.pkg and generating .mp4 files.
                 </li>
               </ul>
-            </TypedContent>
-            <TypedText>blog-info</TypedText>
-            <TypedContent>
-              <p>
-                I am keen on sharing knowledge as well as writing articles and
-                tutorials regularly, covering <code>JavaScript</code>,
-                <code>TypeScript</code>, <code>React</code> source-code,{' '}
-                <code>CSS</code>, and animation.
-              </p>
-              <p>
-                My articles have been read over <i>150,000</i> times.
-                Previously, I primarily wrote in Chinese, but currently, my goal
-                is to write articles in English.
-              </p>
+              <ul>
+                <li>
+                  <strong>
+                    <a href='https://github.com/M0rtzz/m0rtzz.blog'>
+                      blog-template
+                    </a>
+                  </strong>
+                </li>
+                <li>
+                  My website's front-end source code.
+                </li>
+              </ul>
             </TypedContent>
             <TypedText>experience</TypedText>
             <TypedContent>
-              <p>Until now, I have worked for two companies only.</p>
+              <p>Deformable Convolution based Fisheye Semantic Segmentation for Autonomous Driving CVIU – Under Review</p>
               <p>
-                The first company focused on developing high-performance and
-                versatile dialing systems and management platforms for internal
-                enterprise use, along with various mini-programs and Apps.
-              </p>
-              <p>
-                The second company specialized in creating visually appealing
-                and high-performance e-commerce platforms and Apps for
-                cross-border trade.
+                In response to the lack of research data on fisheye vision, a Cubemap algorithm was designed to construct a large-scale semantic segmentation dataset for M0rtzzWoodscape using CARLA. To address the impact of geometric distortions in panoramic fisheye images on semantic segmentation models, a multi branch stacking module based on DCN is designed to extract distorted features.
               </p>
             </TypedContent>
             <TypedText>skills</TypedText>
             <TypedContent>
               <p>
-                I excel in <code>JavaScript</code> and <code>TypeScript</code>,
-                proficiently utilizing <code>CSS</code> to create visually
-                appealing and responsive web pages.
+                I excel in <code>Linux</code>, proficiently utilizing <code>Shell</code> to perform human-computer interaction.
               </p>
               <p>
-                I have a deep understanding of <code>React</code> and have
-                explored other popular frameworks as well. Currently, my work
-                primarily involves using <code>Next.js</code>, and I have
-                extensive experience with <code>App Router</code>.
+                I am familiar with <code>C/C++, Python, Pytorch, Docker, Git, etc</code>.
               </p>
               <p>
-                In addition to front-end development, I am also familiar with
-                backend development using tools such as <code>Prisma</code>,{' '}
-                <code>NestJS</code>, and <code>GraphQL</code>.
+                In addition to my daily backend development tasks, I can also handle basic website construction and deployment.
               </p>
               <p>
-                Furthermore, I have experience in mobile App development using
-                <code>React Native</code> and <code>SwiftUI</code>.
+                Furthermore, I have experience developing service robots using C/C++, Python and ROS.
+              </p>
+            </TypedContent>
+            <TypedText>blog-info</TypedText>
+            <TypedContent>
+              <p>
+                I am keen on sharing knowledge as well as writing articles and
+                tutorials regularly.
+              </p>
+              <p>
+                Previously, I primarily wrote in Chinese, but currently, my goal
+                is to write articles in English.
               </p>
             </TypedContent>
             <TypedText>Contact</TypedText>
@@ -203,15 +181,14 @@ export default function Page() {
                 <p className='basis-1/4 text-center font-semibold'>Social</p>
                 <div className='grid flex-1 grid-cols-2 justify-items-start gap-2'>
                   <a href='https://github.com/M0rtzz'>Github</a>
-                  <a href='https://twitter.com/zhangyu1818'>Twitter</a>
-                  <a href='https://juejin.cn/user/4089838986339927'>掘金</a>
-                  <a href='https://dev.to/zhangyu1818'>Dev.to</a>
-                  <a href='https://medium.com/@zhangyu1818'>Medium</a>
+                  <a href='https://gitcode.com/M0rtzz'>Gitcode</a>
+                  <a href='https://blog.csdn.net/M0rtzz'>CSDN</a>
+                  <a href='https://www.youtube.com/@M0rtzzGod'>YouTube</a>
                 </div>
               </div>
               <div className='flex items-center'>
                 <p className='basis-1/4 text-center font-semibold'>Email</p>
-                <a href='mailto:m0rtzz@outlook.com'>m0rtzz@outlook.com</a>
+                <a href='mailto:m0rtzz@stu.zzu.edu.cn'>m0rtzz@stu.zzu.edu.cn</a>
               </div>
             </TypedContent>
           </Typed>
