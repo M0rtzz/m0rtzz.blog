@@ -1,22 +1,35 @@
 import dynamic from 'next/dynamic'
 import { type StaticImageData } from 'next/image'
 
-import cssSvg from '@/images/logo/css.svg'
-import gatsbySvg from '@/images/logo/gatsby.svg'
-import graphqlSvg from '@/images/logo/graphql.svg'
-import htmlSvg from '@/images/logo/html.svg'
-import javascriptSvg from '@/images/logo/javascript.svg'
-import nestjsSvg from '@/images/logo/nestjs.svg'
-import nextjsSvg from '@/images/logo/nextjs.svg'
+import anacondaSvg from '@/images/logo/anaconda.svg'
+import arduinoSvg from '@/images/logo/arduino.svg'
+import bashSvg from '@/images/logo/bash.svg'
+import centosSvg from '@/images/logo/centos.svg'
+import cmakeSvg from '@/images/logo/cmake.svg'
+import cppSvg from '@/images/logo/cpp.svg'
+import cSvg from '@/images/logo/c.svg'
+import dockerSvg from '@/images/logo/docker.svg'
+import gitSvg from '@/images/logo/git.svg'
+import githubSvg from '@/images/logo/github.svg'
+import hppSvg from '@/images/logo/hpp.svg'
+import ideaSvg from '@/images/logo/idea.svg'
+import javaSvg from '@/images/logo/java.svg'
+import jsonSvg from '@/images/logo/json.svg'
+import linuxSvg from '@/images/logo/linux.svg'
+import nginxSvg from '@/images/logo/nginx.svg'
 import nodejsSvg from '@/images/logo/nodejs.svg'
-import prismaSvg from '@/images/logo/prisma.svg'
-import reactNativeSvg from '@/images/logo/react-native.svg'
-import reactSvg from '@/images/logo/react.svg'
-import swiftSvg from '@/images/logo/swift.svg'
-import tailwindCSSSvg from '@/images/logo/tailwind-css.svg'
-import typeScriptSvg from '@/images/logo/typescript.svg'
-import vueSvg from '@/images/logo/vue.svg'
-import webpackSvg from '@/images/logo/webpack.svg'
+import neovimSvg from '@/images/logo/neovim.svg'
+import nvmSvg from '@/images/logo/nvm.svg'
+import pycharmSvg from '@/images/logo/pycharm.svg'
+import pythonSvg from '@/images/logo/python.svg'
+import rosSvg from '@/images/logo/ros.svg'
+import shellSvg from '@/images/logo/shell.svg'
+import ubuntuSvg from '@/images/logo/ubuntu.svg'
+import vimSvg from '@/images/logo/vim.svg'
+import vscodeSvg from '@/images/logo/vscode.svg'
+import xmlSvg from '@/images/logo/xml.svg'
+import yamlSvg from '@/images/logo/yaml.svg'
+import zshSvg from '@/images/logo/zsh.svg'
 
 import { Block } from '@/components/blocks/block'
 
@@ -25,22 +38,35 @@ const Galton = dynamic(() => import('./galton').then(module => module.Galton), {
 })
 
 const images: StaticImageData[] = [
-  htmlSvg,
-  cssSvg,
-  javascriptSvg,
-  typeScriptSvg,
-  reactSvg,
-  tailwindCSSSvg,
-  nextjsSvg,
-  gatsbySvg,
-  vueSvg,
+  anacondaSvg,
+  arduinoSvg,
+  bashSvg,
+  centosSvg,
+  cmakeSvg,
+  cppSvg,
+  cSvg,
+  dockerSvg,
+  gitSvg,
+  githubSvg,
+  hppSvg,
+  ideaSvg,
+  javaSvg,
+  jsonSvg,
+  linuxSvg,
+  nginxSvg,
   nodejsSvg,
-  reactNativeSvg,
-  webpackSvg,
-  swiftSvg,
-  nestjsSvg,
-  prismaSvg,
-  graphqlSvg,
+  neovimSvg,
+  nvmSvg,
+  pycharmSvg,
+  pythonSvg,
+  rosSvg,
+  shellSvg,
+  ubuntuSvg,
+  vimSvg,
+  vscodeSvg,
+  xmlSvg,
+  yamlSvg,
+  zshSvg,
 ]
 export const Skills = () => {
   return (

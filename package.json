@@ -25,7 +25,7 @@
     "react": "^18",
     "react-aria-components": "^1.1.1",
     "react-dom": "^18",
-    "react-markdown-toc": "^1.1.0",
+    "react-markdown-toc": "^1.2.0",
     "tailwind-merge": "^2.3.0",
     "typed.js": "^2.1.0",
     "use-flip": "^1.0.0"
