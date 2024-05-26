@@ -12,7 +12,9 @@ import dockerSvg from '@/images/logo/docker.svg'
 import excelSvg from '@/images/logo/excel.svg'
 import gitSvg from '@/images/logo/git.svg'
 import githubSvg from '@/images/logo/github.svg'
+import gnomeSvg from '@/images/logo/gnome.svg'
 import hppSvg from '@/images/logo/hpp.svg'
+import huskySvg from '@/images/logo/husky.svg'
 import ideaSvg from '@/images/logo/idea.svg'
 import javaSvg from '@/images/logo/java.svg'
 import jsonSvg from '@/images/logo/json.svg'
@@ -23,8 +25,10 @@ import markdownSvg from '@/images/logo/markdown.svg'
 import neovimSvg from '@/images/logo/neovim.svg'
 import nginxSvg from '@/images/logo/nginx.svg'
 import nodejsSvg from '@/images/logo/nodejs.svg'
+import npmSvg from '@/images/logo/npm.svg'
 import nvmSvg from '@/images/logo/nvm.svg'
 import pdfSvg from '@/images/logo/pdf.svg'
+import powershellSvg from '@/images/logo/powershell.svg'
 import pptSvg from '@/images/logo/ppt.svg'
 import prSvg from '@/images/logo/pr.svg'
 import psSvg from '@/images/logo/ps.svg'
@@ -35,6 +39,7 @@ import rosSvg from '@/images/logo/ros.svg'
 import shellSvg from '@/images/logo/shell.svg'
 import ubuntuSvg from '@/images/logo/ubuntu.svg'
 import vimSvg from '@/images/logo/vim.svg'
+import vsSvg from '@/images/logo/vs.svg'
 import vscodeSvg from '@/images/logo/vscode.svg'
 import wordSvg from '@/images/logo/word.svg'
 import xmlSvg from '@/images/logo/xml.svg'
@@ -59,7 +64,9 @@ const images: StaticImageData[] = [
   excelSvg,
   gitSvg,
   githubSvg,
+  gnomeSvg,
   hppSvg,
+  huskySvg,
   ideaSvg,
   javaSvg,
   jsonSvg,
@@ -69,9 +76,11 @@ const images: StaticImageData[] = [
   markdownSvg,
   nginxSvg,
   nodejsSvg,
+  npmSvg,
   neovimSvg,
   nvmSvg,
   pdfSvg,
+  powershellSvg,
   pptSvg,
   prSvg,
   psSvg,
@@ -82,6 +91,7 @@ const images: StaticImageData[] = [
   shellSvg,
   ubuntuSvg,
   vimSvg,
+  vsSvg,
   vscodeSvg,
   wordSvg,
   xmlSvg,
