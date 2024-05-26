@@ -2,7 +2,6 @@ import { Avatar } from '@/components/blocks/avatar'
 import { Bio } from '@/components/blocks/bio'
 import { Font } from '@/components/blocks/font'
 import { Github } from '@/components/blocks/github'
-import { Juejin } from '@/components/blocks/juejin'
 import { Pinned } from '@/components/blocks/pinned'
 import { Posts } from '@/components/blocks/posts'
 import { Resume } from '@/components/blocks/resume'
@@ -27,7 +26,6 @@ export default function Layout() {
         <Tags />
         <Posts />
         <Github />
-        <Juejin />
       </Grid>
     </>
   )
