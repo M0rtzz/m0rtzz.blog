@@ -138,7 +138,7 @@ export default function Page() {
                   </strong>
                 </li>
                 <li>
-                  My website's front-end source code.
+                  My website&apos;s front-end source code.
                 </li>
               </ul>
             </TypedContent>
