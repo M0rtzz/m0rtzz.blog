@@ -114,7 +114,7 @@ export default function Page() {
                   </strong>
                 </li>
                 <li>
-                  Using LaTeX, a resume template was designed by writing the font of fontame-4.7.0 as a. sty style file and introducing it.
+                  Using LaTeX, a resume template was designed by writing the font of fontame-4.7.0 as a .sty style file and introducing it.
                 </li>
               </ul>
               <ul>
