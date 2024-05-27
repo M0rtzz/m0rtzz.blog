@@ -1,24 +1,3 @@
-# Changelog
-
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
-
-## 2.0.0 (2024-05-27)
-
-
-### ⚠ BREAKING CHANGES
-
-*     resolution: {integrity:
-sha512-hgCjLpg3Wgh8VbTF5p8ZLcIHI74wvDk1VIFv12+eKhenNVUDjgwNg2B1aq/3puyHOad47u/ZSyqiMtohjy/OOA==}
-
-ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
-
- ^20.3.0
-
- \>=21.0.0, npm: '\>=9.6.5', pnpm:
-'\>=7.1.0', yarn: '\>=3.2.0'}
-
-* ✨ feat: add lockfileVersion: '9.0' ([8798e43](https://github.com/M0rtzz/m0rtzz.blog/commit/8798e43b7feaadca1c5f3454b8b69539dffccade))
-
 ## 1.0.0 (2024-05-27)
 
 * ♻️ refactor: eslint ([8865569](https://github.com/M0rtzz/m0rtzz.blog/commit/8865569))
@@ -54,11 +33,13 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 * 🐛 fix: fix bug ([9755169](https://github.com/M0rtzz/m0rtzz.blog/commit/9755169))
 * 🐛 fix: fix bug ([653ea9d](https://github.com/M0rtzz/m0rtzz.blog/commit/653ea9d))
 * 🐛 fix: increase the area of profile blocks ([3ba0151](https://github.com/M0rtzz/m0rtzz.blog/commit/3ba0151))
+* 📝 docs(CHANGELOG.md): automatic update ([57da5ca](https://github.com/M0rtzz/m0rtzz.blog/commit/57da5ca))
 * 📝 docs(CHANGELOG.md): automatic update ([2b38645](https://github.com/M0rtzz/m0rtzz.blog/commit/2b38645))
 * 📝 docs(CHANGELOG.md): automatic update ([c59d26e](https://github.com/M0rtzz/m0rtzz.blog/commit/c59d26e))
 * 📝 docs(CHANGELOG.md): automatic update ([a2314e4](https://github.com/M0rtzz/m0rtzz.blog/commit/a2314e4))
 * 📝 docs(CHANGELOG.md): automatic update ([6d337cc](https://github.com/M0rtzz/m0rtzz.blog/commit/6d337cc))
 * 📝 docs(CHANGELOG.md): automatic update ([88caac0](https://github.com/M0rtzz/m0rtzz.blog/commit/88caac0))
+* 🔖 tag(package.json): v1.0.0 ([a984954](https://github.com/M0rtzz/m0rtzz.blog/commit/a984954))
 * 🔖 tag(package.json): v1.0.0 ([a371f6d](https://github.com/M0rtzz/m0rtzz.blog/commit/a371f6d))
 * 🔖 tag(package.json): v1.0.0 ([19d02a8](https://github.com/M0rtzz/m0rtzz.blog/commit/19d02a8))
 * 🔖 tag(package.json): v1.0.0 ([bc936e9](https://github.com/M0rtzz/m0rtzz.blog/commit/bc936e9))
@@ -83,3 +64,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
