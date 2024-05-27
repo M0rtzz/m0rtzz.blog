@@ -1,8 +1,8 @@
-# Changelog
+## <small>1.0.1 (2024-05-27)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 🔖 tag(package.json): v1.0.1 ([6b7d3ef](https://github.com/M0rtzz/m0rtzz.blog/commit/6b7d3ef))
 
-## [1.0.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v1.0.0...v1.0.1) (2024-05-27)
+
 
 ## 1.0.0 (2024-05-27)
 
@@ -39,6 +39,7 @@ All notable changes to this project will be documented in this file. See [commit
 * 🐛 fix: fix bug ([9755169](https://github.com/M0rtzz/m0rtzz.blog/commit/9755169))
 * 🐛 fix: fix bug ([653ea9d](https://github.com/M0rtzz/m0rtzz.blog/commit/653ea9d))
 * 🐛 fix: increase the area of profile blocks ([3ba0151](https://github.com/M0rtzz/m0rtzz.blog/commit/3ba0151))
+* 📝 docs(CHANGELOG.md): automatic update ([6d337cc](https://github.com/M0rtzz/m0rtzz.blog/commit/6d337cc))
 * 📝 docs(CHANGELOG.md): automatic update ([88caac0](https://github.com/M0rtzz/m0rtzz.blog/commit/88caac0))
 * 🔖 tag(package.json): v1.0.0 ([5f6c7a3](https://github.com/M0rtzz/m0rtzz.blog/commit/5f6c7a3))
 * 🔖 tag(package.json): v1.0.0 ([d5b5a33](https://github.com/M0rtzz/m0rtzz.blog/commit/d5b5a33))
@@ -60,3 +61,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
