@@ -51,7 +51,7 @@ export default function Page() {
               </p>
               <p>
                 I am a student majoring in computer science at Zhengzhou University,
-                and I have been studying computer knowledge <strong>2021</strong>, focusing on
+                and I have been studying computer knowledge since <strong>2021</strong>, focusing on
                 writing software to contribute to the open source world and
                 <code>share knowledge and innovation</code>.
               </p>
@@ -63,15 +63,15 @@ export default function Page() {
             <TypedText afterDelay={1000}>ls</TypedText>
             <TypedContent>
               <div className='grid grid-cols-2 gap-2 px-4 font-semibold text-sky-500'>
-                <span>competition</span>
+                <span>competitions</span>
                 <span>projects</span>
-                <span>experience</span>
+                <span>research</span>
                 <span>skills</span>
                 <span>blog-info</span>
                 <span>contact</span>
               </div>
             </TypedContent>
-            <TypedText afterDelay={700}>competition</TypedText>
+            <TypedText afterDelay={700}>competitions</TypedText>
             <TypedContent>
               <p>
                 I won three national first prizes in the field of robotics in 2023, with two championships and one bronze medal.
@@ -142,9 +142,9 @@ export default function Page() {
                 </li>
               </ul>
             </TypedContent>
-            <TypedText>experience</TypedText>
+            <TypedText>research</TypedText>
             <TypedContent>
-              <p>Deformable Convolution based Fisheye Semantic Segmentation for Autonomous Driving CVIU – Under Review</p>
+              <p>FisheyeSegNet: Restricted Deformable Convolution based Semantic Segmentation Using Surround-View Fisheye Camera for Autonomous Driving</p>
               <p>
                 In response to the lack of research data on fisheye vision, a Cubemap algorithm was designed to construct a large-scale semantic segmentation dataset for M0rtzzWoodscape using CARLA. To address the impact of geometric distortions in panoramic fisheye images on semantic segmentation models, a multi branch stacking module based on DCN is designed to extract distorted features.
               </p>
