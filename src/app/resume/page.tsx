@@ -34,7 +34,7 @@ export default function Page() {
             <Dot className='cursor-not-allowed bg-green-500' />
           </span>
           <span className='text-center text-gray-400'>
-            m0rtzz@zzu:~
+            M0rtzz@Resume:~
           </span>
           <span className='text-end text-gray-500'>⌥⌘1</span>
         </header>

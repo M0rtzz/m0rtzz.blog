@@ -8,11 +8,15 @@ import cSvg from '@/images/logo/c.svg'
 import centosSvg from '@/images/logo/centos.svg'
 import cmakeSvg from '@/images/logo/cmake.svg'
 import cppSvg from '@/images/logo/cpp.svg'
+import debianSvg from '@/images/logo/debian.svg'
 import dockerSvg from '@/images/logo/docker.svg'
 import excelSvg from '@/images/logo/excel.svg'
+import gccSvg from '@/images/logo/gcc.svg'
 import gitSvg from '@/images/logo/git.svg'
 import githubSvg from '@/images/logo/github.svg'
 import gnomeSvg from '@/images/logo/gnome.svg'
+import gnuSvg from '@/images/logo/gnu.svg'
+import googleDriveSvg from '@/images/logo/googleDrive.svg'
 import hppSvg from '@/images/logo/hpp.svg'
 import huskySvg from '@/images/logo/husky.svg'
 import ideaSvg from '@/images/logo/idea.svg'
@@ -20,6 +24,7 @@ import javaSvg from '@/images/logo/java.svg'
 import jsonSvg from '@/images/logo/json.svg'
 import latexSvg from '@/images/logo/latex.svg'
 import linuxSvg from '@/images/logo/linux.svg'
+import llvmSvg from '@/images/logo/llvm.svg'
 import makefileSvg from '@/images/logo/makefile.svg'
 import markdownSvg from '@/images/logo/markdown.svg'
 import neovimSvg from '@/images/logo/neovim.svg'
@@ -27,6 +32,8 @@ import nginxSvg from '@/images/logo/nginx.svg'
 import nodejsSvg from '@/images/logo/nodejs.svg'
 import npmSvg from '@/images/logo/npm.svg'
 import nvmSvg from '@/images/logo/nvm.svg'
+import onedriveSvg from '@/images/logo/onedrive.svg'
+import outlookSvg from '@/images/logo/outlook.svg'
 import pdfSvg from '@/images/logo/pdf.svg'
 import powershellSvg from '@/images/logo/powershell.svg'
 import pptSvg from '@/images/logo/ppt.svg'
@@ -39,8 +46,11 @@ import rosSvg from '@/images/logo/ros.svg'
 import shellSvg from '@/images/logo/shell.svg'
 import ubuntuSvg from '@/images/logo/ubuntu.svg'
 import vimSvg from '@/images/logo/vim.svg'
+import visioSvg from '@/images/logo/visio.svg'
+import vmwareSvg from '@/images/logo/vmware.svg'
 import vsSvg from '@/images/logo/vs.svg'
 import vscodeSvg from '@/images/logo/vscode.svg'
+import windowsSvg from '@/images/logo/windows.svg'
 import wordSvg from '@/images/logo/word.svg'
 import xmlSvg from '@/images/logo/xml.svg'
 import yamlSvg from '@/images/logo/yaml.svg'
@@ -59,12 +69,16 @@ const images: StaticImageData[] = [
   centosSvg,
   cmakeSvg,
   cppSvg,
+  debianSvg,
   cSvg,
   dockerSvg,
   excelSvg,
+  gccSvg,
   gitSvg,
   githubSvg,
   gnomeSvg,
+  gnuSvg,
+  googleDriveSvg,
   hppSvg,
   huskySvg,
   ideaSvg,
@@ -72,6 +86,7 @@ const images: StaticImageData[] = [
   jsonSvg,
   latexSvg,
   linuxSvg,
+  llvmSvg,
   makefileSvg,
   markdownSvg,
   nginxSvg,
@@ -79,6 +94,8 @@ const images: StaticImageData[] = [
   npmSvg,
   neovimSvg,
   nvmSvg,
+  onedriveSvg,
+  outlookSvg,
   pdfSvg,
   powershellSvg,
   pptSvg,
@@ -91,8 +108,11 @@ const images: StaticImageData[] = [
   shellSvg,
   ubuntuSvg,
   vimSvg,
+  visioSvg,
+  vmwareSvg,
   vsSvg,
   vscodeSvg,
+  windowsSvg,
   wordSvg,
   xmlSvg,
   yamlSvg,
