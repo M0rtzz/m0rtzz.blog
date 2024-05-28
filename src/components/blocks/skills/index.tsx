@@ -25,7 +25,7 @@ import jsonSvg from '@/images/logo/json.svg'
 import latexSvg from '@/images/logo/latex.svg'
 import linuxSvg from '@/images/logo/linux.svg'
 import llvmSvg from '@/images/logo/llvm.svg'
-import makefileSvg from '@/images/logo/makefile.svg'
+// import makefileSvg from '@/images/logo/makefile.svg'
 import markdownSvg from '@/images/logo/markdown.svg'
 import neovimSvg from '@/images/logo/neovim.svg'
 import nginxSvg from '@/images/logo/nginx.svg'
@@ -33,7 +33,7 @@ import nodejsSvg from '@/images/logo/nodejs.svg'
 import npmSvg from '@/images/logo/npm.svg'
 import nvmSvg from '@/images/logo/nvm.svg'
 import onedriveSvg from '@/images/logo/onedrive.svg'
-import outlookSvg from '@/images/logo/outlook.svg'
+// import outlookSvg from '@/images/logo/outlook.svg'
 import pdfSvg from '@/images/logo/pdf.svg'
 import powershellSvg from '@/images/logo/powershell.svg'
 import pptSvg from '@/images/logo/ppt.svg'
@@ -87,7 +87,7 @@ const images: StaticImageData[] = [
   latexSvg,
   linuxSvg,
   llvmSvg,
-  makefileSvg,
+  // makefileSvg,
   markdownSvg,
   nginxSvg,
   nodejsSvg,
@@ -95,7 +95,7 @@ const images: StaticImageData[] = [
   neovimSvg,
   nvmSvg,
   onedriveSvg,
-  outlookSvg,
+  // outlookSvg,
   pdfSvg,
   powershellSvg,
   pptSvg,
