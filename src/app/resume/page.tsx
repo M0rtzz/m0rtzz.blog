@@ -175,7 +175,7 @@ export default function Page() {
                 is to write articles in English.
               </p>
             </TypedContent>
-            <TypedText>Contact</TypedText>
+            <TypedText>contact</TypedText>
             <TypedContent>
               <div className='my-4 flex items-center'>
                 <p className='basis-1/4 text-center font-semibold'>Social</p>
