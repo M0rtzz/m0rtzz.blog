@@ -18,6 +18,7 @@
     "clsx": "^2.1.0",
     "dark-toggle": "2.0.0-test.0",
     "dayjs": "^1.11.10",
+    "eslint-plugin-react-hooks": "^4.6.2",
     "lodash.upperfirst": "^4.3.1",
     "motion-wave": "^0.0.5",
     "next": "14.2.3",

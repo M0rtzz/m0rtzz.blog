@@ -7,7 +7,7 @@ type PreProps = React.DetailedHTMLProps<
   HTMLPreElement
 >
 
-export const Pre = (props: PreProps) => {
+export const pre = (props: PreProps) => {
   const [isCopied, setIsCopied] = useState(false)
   const preRef = useRef<HTMLPreElement>(null)
 

@@ -16,7 +16,7 @@ import remarkDirective from 'remark-directive'
 import remarkGfm from 'remark-gfm'
 import { MDX } from 'rsc-mdx'
 
-import { CodeGroup, Alert, Details, Hello, Pre } from './components'
+import { CodeGroup, Alert, Details, Hello, pre } from './components'
 import { remarkDirectiveContainer, rehypeGithubAlert } from './plugins'
 
 interface MarkdownProps {
@@ -33,7 +33,7 @@ export async function Markdown(props: MarkdownProps) {
         Alert,
         Details,
         Hello,
-        Pre,
+        pre,
       })}
       remarkPlugins={[remarkDirective, remarkDirectiveContainer, remarkGfm]}
       rehypePlugins={[
