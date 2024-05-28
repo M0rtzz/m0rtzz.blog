@@ -1,71 +1,8 @@
-## <small>1.0.9 (2024-05-28)</small>
+# Changelog
 
-* ✨ feat: update resume ([0f30b76](https://github.com/M0rtzz/m0rtzz.blog/commit/0f30b76))
-* 🔖 tag(package.json): v1.0.9 ([53e7c21](https://github.com/M0rtzz/m0rtzz.blog/commit/53e7c21))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>1.0.8 (2024-05-28)</small>
-
-* ✨ feat: update resume ([4487ca5](https://github.com/M0rtzz/m0rtzz.blog/commit/4487ca5))
-* 📝 docs(CHANGELOG.md): automatic update ([477ecc8](https://github.com/M0rtzz/m0rtzz.blog/commit/477ecc8))
-* 🔖 tag(package.json): v1.0.8 ([ca4ce2e](https://github.com/M0rtzz/m0rtzz.blog/commit/ca4ce2e))
-
-
-
-## <small>1.0.7 (2024-05-28)</small>
-
-* ✨ feat: update google verification and resume ([969b3dc](https://github.com/M0rtzz/m0rtzz.blog/commit/969b3dc))
-* 📝 docs(CHANGELOG.md): automatic update ([69c9b7c](https://github.com/M0rtzz/m0rtzz.blog/commit/69c9b7c))
-* 🔖 tag(package.json): v1.0.7 ([e4d0672](https://github.com/M0rtzz/m0rtzz.blog/commit/e4d0672))
-
-
-
-## <small>1.0.6 (2024-05-28)</small>
-
-* 💡 comment: comment some skills ([e0fe6f8](https://github.com/M0rtzz/m0rtzz.blog/commit/e0fe6f8))
-* 📝 docs(CHANGELOG.md): automatic update ([67d230d](https://github.com/M0rtzz/m0rtzz.blog/commit/67d230d))
-* 🔖 tag(package.json): v1.0.6 ([dd45242](https://github.com/M0rtzz/m0rtzz.blog/commit/dd45242))
-
-
-
-## <small>1.0.5 (2024-05-28)</small>
-
-* ✨ feat: add svg and update resume ([b45c3c1](https://github.com/M0rtzz/m0rtzz.blog/commit/b45c3c1))
-* 📝 docs(CHANGELOG.md): automatic update ([76d770e](https://github.com/M0rtzz/m0rtzz.blog/commit/76d770e))
-* 🔖 tag(package.json): v1.0.5 ([4dc7547](https://github.com/M0rtzz/m0rtzz.blog/commit/4dc7547))
-
-
-
-## <small>1.0.4 (2024-05-27)</small>
-
-* ✨ feat: update theme ([214c8af](https://github.com/M0rtzz/m0rtzz.blog/commit/214c8af))
-* 📝 docs(CHANGELOG.md): automatic update ([76d1580](https://github.com/M0rtzz/m0rtzz.blog/commit/76d1580))
-* 🔖 tag(package.json): v1.0.4 ([8c5fada](https://github.com/M0rtzz/m0rtzz.blog/commit/8c5fada))
-
-
-
-## <small>1.0.3 (2024-05-27)</small>
-
-* 📝 docs(CHANGELOG.md): automatic update ([6656265](https://github.com/M0rtzz/m0rtzz.blog/commit/6656265))
-* 📝 docs(README.md): update README.md ([05cc351](https://github.com/M0rtzz/m0rtzz.blog/commit/05cc351))
-* 🔖 tag(package.json): v1.0.3 ([4f23a1c](https://github.com/M0rtzz/m0rtzz.blog/commit/4f23a1c))
-
-
-
-## <small>1.0.2 (2024-05-27)</small>
-
-* 📝 docs(CHANGELOG.md): automatic update ([c1e0b07](https://github.com/M0rtzz/m0rtzz.blog/commit/c1e0b07))
-* 🔖 tag(package.json): v1.0.2 ([dc35516](https://github.com/M0rtzz/m0rtzz.blog/commit/dc35516))
-
-
-
-## <small>1.0.1 (2024-05-27)</small>
-
-* 📝 docs(CHANGELOG.md): automatic update ([f5dce21](https://github.com/M0rtzz/m0rtzz.blog/commit/f5dce21))
-* 🔖 tag(package.json): v1.0.1 ([22a235e](https://github.com/M0rtzz/m0rtzz.blog/commit/22a235e))
-
-
+## [1.0.10](https://github.com/M0rtzz/m0rtzz.blog/compare/v1.0.9...v1.0.10) (2024-05-28)
 
 ## 1.0.0 (2024-05-27)
 
@@ -134,5 +71,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
