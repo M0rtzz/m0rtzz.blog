@@ -1,17 +1,8 @@
-## <small>1.1.2 (2024-05-28)</small>
+# Changelog
 
-* 🐛 fix: eslint ([7b1dec9](https://github.com/M0rtzz/m0rtzz.blog/commit/7b1dec9))
-* 🔖 tag(package.json): v1.1.2 ([90bc08c](https://github.com/M0rtzz/m0rtzz.blog/commit/90bc08c))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>1.1.1 (2024-05-28)</small>
-
-* ✨ feat: add bilibili block ([2b42624](https://github.com/M0rtzz/m0rtzz.blog/commit/2b42624))
-* 📝 docs(CHANGELOG.md): automatic update ([9ccc1d3](https://github.com/M0rtzz/m0rtzz.blog/commit/9ccc1d3))
-* 🔖 tag(package.json): v1.1.1 ([3911bab](https://github.com/M0rtzz/m0rtzz.blog/commit/3911bab))
-
-
+## [1.1.3](https://github.com/M0rtzz/m0rtzz.blog/compare/v1.1.2...v1.1.3) (2024-05-28)
 
 ## 1.1.0 (2024-05-28)
 
@@ -158,5 +149,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
