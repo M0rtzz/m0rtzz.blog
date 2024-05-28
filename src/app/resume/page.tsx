@@ -108,6 +108,18 @@ export default function Page() {
               <ul>
                 <li>
                   <strong>
+                    <a href='https://github.com/M0rtzz/m0rtzz.blog'>
+                      m0rtzz.blog
+                    </a>
+                  </strong>
+                </li>
+                <li>
+                  My website&apos;s front-end source code.
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <strong>
                     <a href='https://github.com/M0rtzz/zzu-resume-template'>
                       latex-resume-template
                     </a>
@@ -127,18 +139,6 @@ export default function Page() {
                 </li>
                 <li>
                   Through research, I have discovered a method of unpacking scene.pkg and generating .mp4 files.
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <strong>
-                    <a href='https://github.com/M0rtzz/m0rtzz.blog'>
-                      blog-template
-                    </a>
-                  </strong>
-                </li>
-                <li>
-                  My website&apos;s front-end source code.
                 </li>
               </ul>
             </TypedContent>
