@@ -47,7 +47,8 @@
         "alphabetize": { "order": "asc", "caseInsensitive": true }
       }
     ],
-    // "prettier/prettier": "error",
-    "prettier/prettier": "warn"
+    // "prettier/prettier": "error"
+    // "prettier/prettier": "warn"
+    "prettier/prettier": "off"
   }
 }
