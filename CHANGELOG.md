@@ -1,8 +1,33 @@
-# Changelog
+## <small>1.1.4 (2024-05-28)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 🐛 fix: eslint ([ce09490](https://github.com/M0rtzz/m0rtzz.blog/commit/ce09490))
+* 🔖 tag(package.json): v1.1.4 ([917b969](https://github.com/M0rtzz/m0rtzz.blog/commit/917b969))
 
-## [1.1.4](https://github.com/M0rtzz/m0rtzz.blog/compare/v1.1.3...v1.1.4) (2024-05-28)
+
+
+## <small>1.1.3 (2024-05-28)</small>
+
+* ✨ feat: add btn to copy code ([53211e6](https://github.com/M0rtzz/m0rtzz.blog/commit/53211e6))
+* 📝 docs(CHANGELOG.md): automatic update ([47d8ed2](https://github.com/M0rtzz/m0rtzz.blog/commit/47d8ed2))
+* 🔖 tag(package.json): v1.1.3 ([4ae111d](https://github.com/M0rtzz/m0rtzz.blog/commit/4ae111d))
+
+
+
+## <small>1.1.2 (2024-05-28)</small>
+
+* 🐛 fix: eslint ([7b1dec9](https://github.com/M0rtzz/m0rtzz.blog/commit/7b1dec9))
+* 📝 docs(CHANGELOG.md): automatic update ([cf30e86](https://github.com/M0rtzz/m0rtzz.blog/commit/cf30e86))
+* 🔖 tag(package.json): v1.1.2 ([90bc08c](https://github.com/M0rtzz/m0rtzz.blog/commit/90bc08c))
+
+
+
+## <small>1.1.1 (2024-05-28)</small>
+
+* ✨ feat: add bilibili block ([2b42624](https://github.com/M0rtzz/m0rtzz.blog/commit/2b42624))
+* 📝 docs(CHANGELOG.md): automatic update ([9ccc1d3](https://github.com/M0rtzz/m0rtzz.blog/commit/9ccc1d3))
+* 🔖 tag(package.json): v1.1.1 ([3911bab](https://github.com/M0rtzz/m0rtzz.blog/commit/3911bab))
+
+
 
 ## 1.1.0 (2024-05-28)
 
@@ -149,3 +174,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
