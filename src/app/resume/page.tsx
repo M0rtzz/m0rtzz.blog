@@ -144,7 +144,7 @@ export default function Page() {
             </TypedContent>
             <TypedText>research</TypedText>
             <TypedContent>
-              <p><i>FisheyeSegNet: Restricted Deformable Convolution based Semantic Segmentation Using Surround-View Fisheye Camera for Autonomous Driving</i></p>
+              <p><strong><i>FisheyeSegNet: Restricted Deformable Convolution based Semantic Segmentation Using Surround-View Fisheye Camera for Autonomous Driving</i></strong></p>
               <p>
                 In response to the lack of research data on fisheye vision, a Cubemap algorithm was designed to construct a large-scale semantic segmentation dataset for M0rtzzWoodscape using CARLA. To address the impact of geometric distortions in panoramic fisheye images on semantic segmentation models, a multi branch stacking module based on DCN is designed to extract distorted features.
               </p>
