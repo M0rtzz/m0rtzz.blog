@@ -1,5 +1,6 @@
 import { Avatar } from '@/components/blocks/avatar'
 import { Bio } from '@/components/blocks/bio'
+import { BiliBili } from '@/components/blocks/bilibili'
 import { Font } from '@/components/blocks/font'
 import { Github } from '@/components/blocks/github'
 import { Pinned } from '@/components/blocks/pinned'
@@ -26,6 +27,7 @@ export default function Layout() {
         <Tags />
         <Posts />
         <Github />
+        <BiliBili />
       </Grid>
     </>
   )
