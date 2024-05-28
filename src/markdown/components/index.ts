@@ -1,6 +1,6 @@
 import { lazy } from 'react'
 
-export { pre } from './pre'
+export { Pre } from './pre'
 export { Alert } from './alert'
 export { Details } from './details'
 export { default as Hello } from './hello'
