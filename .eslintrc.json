@@ -2,12 +2,14 @@
   "extends": [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:eslint-plugin-react-hooks/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "plugins": ["import", "@typescript-eslint", "prettier"],
   "rules": {
     "@typescript-eslint/consistent-type-imports": "error",
+    "react-hooks/rules-of-hooks": "off",
     "import/order": [
       "error",
       {
