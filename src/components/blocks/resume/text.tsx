@@ -11,9 +11,9 @@ export const ResumeText = () => {
       return
     }
     const typed = new Typed(ref.current, {
-      strings: ['ls^100 resume^500', 'nvim^100 resume^500', 'cat^100 resume^500', 'more^100 resume^1000'],
-      typeSpeed: 150,
-      backSpeed: 100,
+      strings: ['ls^100 resume^100', 'nvim^100 resume^100', 'cat^100 resume^100', 'more^100 resume^100'],
+      typeSpeed: 120,
+      backSpeed: 120,
       backDelay: 200,
       loop: true,
       cursorChar: '_',
@@ -23,5 +23,5 @@ export const ResumeText = () => {
     }
   }, [])
 
-  return <span ref={ref}>resume</span>
+  return <span ref={ref}>Resume</span>
 }
