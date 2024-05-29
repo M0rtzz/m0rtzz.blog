@@ -51,7 +51,7 @@ export async function Markdown(props: MarkdownProps) {
           {
             themes: {
               light: 'catppuccin-latte',
-              dark: 'catppuccin-mocha',
+              dark: 'material-theme-ocean',
             },
             transformers: [
               transformerNotationDiff(),
