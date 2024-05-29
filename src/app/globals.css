@@ -102,14 +102,28 @@ code {
 }
 
 code .line:not(:last-child)::before {
-  content: counter(step);
+  content: counter(step) ' ';
   counter-increment: step;
-  width: 1rem;
-  margin-right: 1.5rem;
+  width: 2rem;
+  margin-right: 1rem;
   display: inline-block;
   text-align: right;
   color: rgba(100, 120, 130, 0.6);
-  word-wrap: break-word;
+  position: relative;
+  left: -4px;
+}
+
+code .line:not(:last-child) {
+  position: relative;
+}
+
+code .line:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 2rem;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid rgba(100, 120, 130, 0.6);
 }
 
 .hide-btn {
@@ -120,4 +134,10 @@ code .line:not(:last-child)::before {
 
 .relative:hover .hide-btn {
   display: block;
+}
+
+.sticky {
+  max-height: 80vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
