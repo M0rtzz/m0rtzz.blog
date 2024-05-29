@@ -9,7 +9,7 @@ import { Block } from '@/components/blocks/block'
 const ResumeText = dynamic(
   () => import('./text').then(module => module.ResumeText),
   {
-    loading: () => <span>Resume</span>,
+    loading: () => <span></span>,
   },
 )
 
