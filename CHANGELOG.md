@@ -1,3 +1,9 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [1.3.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v1.3.0...v1.3.1) (2024-05-29)
+
 ## 1.3.0 (2024-05-29)
 
 * ⬆️ up_dep(package.json): upgrade pnpm ([bb86bf6](https://github.com/M0rtzz/m0rtzz.blog/commit/bb86bf6))
@@ -307,5 +313,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
