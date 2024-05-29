@@ -1,13 +1,15 @@
-# Changelog
+## <small>1.2.1 (2024-05-29)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* ✅ test(text.tsx): test time ([267f771](https://github.com/M0rtzz/m0rtzz.blog/commit/267f771))
+* 🔖 tag(package.json): v1.2.1 ([deb7890](https://github.com/M0rtzz/m0rtzz.blog/commit/deb7890))
 
-## [1.2.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v1.2.0...v1.2.1) (2024-05-29)
+
 
 ## 1.2.0 (2024-05-29)
 
 * ✨ feat: update resume block ([9542b32](https://github.com/M0rtzz/m0rtzz.blog/commit/9542b32))
 * ✨ feat(github.tsx): github to GitHub ([9e2a6cb](https://github.com/M0rtzz/m0rtzz.blog/commit/9e2a6cb))
+* 📝 docs(CHANGELOG.md): automatic update ([00b5604](https://github.com/M0rtzz/m0rtzz.blog/commit/00b5604))
 * 🔖 tag(package.json): v1.2.0 ([ee91ffd](https://github.com/M0rtzz/m0rtzz.blog/commit/ee91ffd))
 
 
@@ -231,3 +233,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
