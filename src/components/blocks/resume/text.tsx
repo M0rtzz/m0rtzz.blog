@@ -23,5 +23,5 @@ export const ResumeText = () => {
     }
   }, [])
 
-  return <span ref={ref}>Resume</span>
+  return <span ref={ref}>resume</span>
 }
