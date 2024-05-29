@@ -1,9 +1,8 @@
-## <small>1.2.1 (2024-05-29)</small>
+# Changelog
 
-* ✅ test(text.tsx): test time ([267f771](https://github.com/M0rtzz/m0rtzz.blog/commit/267f771))
-* 🔖 tag(package.json): v1.2.1 ([deb7890](https://github.com/M0rtzz/m0rtzz.blog/commit/deb7890))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
+## [1.2.2](https://github.com/M0rtzz/m0rtzz.blog/compare/v1.2.1...v1.2.2) (2024-05-29)
 
 ## 1.2.0 (2024-05-29)
 
@@ -233,5 +232,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
