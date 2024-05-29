@@ -1,8 +1,33 @@
-# Changelog
+## <small>1.2.4 (2024-05-29)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 🐛 fix: fix resume block bug ([5f0ba29](https://github.com/M0rtzz/m0rtzz.blog/commit/5f0ba29))
+* 🔖 tag(package.json): v1.2.4 ([bc7f5d8](https://github.com/M0rtzz/m0rtzz.blog/commit/bc7f5d8))
 
-## [1.2.4](https://github.com/M0rtzz/m0rtzz.blog/compare/v1.2.3...v1.2.4) (2024-05-29)
+
+
+## <small>1.2.3 (2024-05-29)</small>
+
+* ✅ test: resume block ([c48866f](https://github.com/M0rtzz/m0rtzz.blog/commit/c48866f))
+* 📝 docs(CHANGELOG.md): automatic update ([a7f69e2](https://github.com/M0rtzz/m0rtzz.blog/commit/a7f69e2))
+* 🔖 tag(package.json): v1.2.3 ([d5961ec](https://github.com/M0rtzz/m0rtzz.blog/commit/d5961ec))
+
+
+
+## <small>1.2.2 (2024-05-29)</small>
+
+* ✅ test：test resume block ([f9b78a1](https://github.com/M0rtzz/m0rtzz.blog/commit/f9b78a1))
+* 📝 docs(CHANGELOG.md): automatic update ([4419592](https://github.com/M0rtzz/m0rtzz.blog/commit/4419592))
+* 🔖 tag(package.json): v1.2.2 ([d5aa336](https://github.com/M0rtzz/m0rtzz.blog/commit/d5aa336))
+
+
+
+## <small>1.2.1 (2024-05-29)</small>
+
+* ✅ test(text.tsx): test time ([267f771](https://github.com/M0rtzz/m0rtzz.blog/commit/267f771))
+* 📝 docs(CHANGELOG.md): automatic update ([7cc64d2](https://github.com/M0rtzz/m0rtzz.blog/commit/7cc64d2))
+* 🔖 tag(package.json): v1.2.1 ([deb7890](https://github.com/M0rtzz/m0rtzz.blog/commit/deb7890))
+
+
 
 ## 1.2.0 (2024-05-29)
 
@@ -232,3 +257,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
