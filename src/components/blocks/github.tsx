@@ -23,7 +23,7 @@ export const Github = () => (
     </svg>
     <ExternalLink
       className='dark:bg-surface-3'
-      title='Github'
+      title='GitHub'
       href={`https://github.com/${repoOwner}`}
     />
   </Block>
