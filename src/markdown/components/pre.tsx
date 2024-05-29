@@ -61,7 +61,7 @@ export const pre = (props: PreProps) => {
       <pre ref={preRef} {...props} />
       <button
         onClick={handleCopy}
-        className="absolute top-2 right-1 bg-gray-800 from-surface-1 justify-center bg-gradient-to-b to-white dark:to-white/5 py-1 px-2 rounded"
+        className="hide-btn absolute top-1.5 right-1 bg-gray-800 from-surface-1 justify-center bg-gradient-to-b to-white dark:to-white/5 py-1 px-2 rounded"
       >
         {isCopied ? 'Copied!' : 'Copy'}
       </button>
