@@ -17,6 +17,7 @@
   --border: #e5e7eb;
 
   --font-remote: var(--font-remote-sans);
+
   .shiki,
   .shiki span {
     font-style: normal !important;
@@ -93,6 +94,22 @@
   .line {
     display: block;
   }
+}
+
+code {
+  counter-reset: step;
+  counter-increment: step 0;
+}
+
+code .line:not(:last-child)::before {
+  content: counter(step);
+  counter-increment: step;
+  width: 1rem;
+  margin-right: 1.5rem;
+  display: inline-block;
+  text-align: right;
+  color: rgba(100, 120, 130, 0.6);
+  word-wrap: break-word;
 }
 
 .hide-btn {
