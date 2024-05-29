@@ -105,7 +105,7 @@ code .line:not(:last-child)::before {
   content: counter(step) ' ';
   counter-increment: step;
   width: 2rem;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
   display: inline-block;
   text-align: right;
   color: rgba(100, 120, 130, 0.6);
