@@ -7,8 +7,8 @@ export const BiliBili = () => (
     className='group flex items-center justify-center bg-gradient-to-b from-blue-200 to-white text-black dark:from-blue-300/80 dark:to-white/70'
   >
     <svg
-      width='14.6em'
-      height='14.6em'
+      width='14.4em'
+      height='14.4em'
       viewBox='0 0 8000 8000'
       preserveAspectRatio='xMidYMid meet'
     >
