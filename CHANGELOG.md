@@ -1,26 +1,8 @@
-## <small>1.3.3 (2024-05-31)</small>
+# Changelog
 
-* 💄 ui: hide time ([385bc31](https://github.com/M0rtzz/m0rtzz.blog/commit/385bc31))
-* 🔖 tag(package.json): v1.3.3 ([ed87f9d](https://github.com/M0rtzz/m0rtzz.blog/commit/ed87f9d))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>1.3.2 (2024-05-31)</small>
-
-* 💄 ui(bilibili.tsx): reduce the bilibili icon ([7ef2b7e](https://github.com/M0rtzz/m0rtzz.blog/commit/7ef2b7e))
-* 📝 docs(CHANGELOG.md): automatic update ([7f53b1c](https://github.com/M0rtzz/m0rtzz.blog/commit/7f53b1c))
-* 🔖 tag(package.json): v1.3.2 ([d36a92c](https://github.com/M0rtzz/m0rtzz.blog/commit/d36a92c))
-
-
-
-## <small>1.3.1 (2024-05-29)</small>
-
-* ✨ feat: add a directory scroll bar and fix its position ([2304a01](https://github.com/M0rtzz/m0rtzz.blog/commit/2304a01))
-* 💄 ui: change the margin-right value ([dc06aca](https://github.com/M0rtzz/m0rtzz.blog/commit/dc06aca))
-* 📝 docs(CHANGELOG.md): automatic update ([21531fc](https://github.com/M0rtzz/m0rtzz.blog/commit/21531fc))
-* 🔖 tag(package.json): v1.3.1 ([870c6cc](https://github.com/M0rtzz/m0rtzz.blog/commit/870c6cc))
-
-
+## [1.3.4](https://github.com/M0rtzz/m0rtzz.blog/compare/v1.3.3...v1.3.4) (2024-05-31)
 
 ## 1.3.0 (2024-05-29)
 
@@ -332,5 +314,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
