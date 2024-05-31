@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 import { IconX } from '@tabler/icons-react'
-import dayjs from 'dayjs'
+// import dayjs from 'dayjs'
 import { type Metadata, type Viewport } from 'next'
 
 import { Dot } from '@/components/blocks/resume'
@@ -39,9 +39,9 @@ export default function Page() {
           <span className='text-end text-gray-500'>⌥⌘1</span>
         </header>
         <div className='min-h-60 flex-1 overflow-y-auto p-2 text-sm text-gray-200 duration-300 animate-in fade-in'>
-          <p className='mb-2'>
+          {/* <p className='mb-2'>
             Last login: {dayjs().format('ddd MMM DD HH:mm:ss')} on ttys003
-          </p>
+          </p> */}
           <Typed>
             <TypedText>whoami</TypedText>
             <TypedContent>
@@ -187,7 +187,7 @@ export default function Page() {
                 </div>
               </div>
               <div className='flex items-center'>
-                <p className='basis-1/4 text-center font-semibold'>Email</p>
+                <p className='basis-1/4 text-center font-semibold'>E-mail</p>
                 <a href='mailto:m0rtzz@stu.zzu.edu.cn'>m0rtzz@stu.zzu.edu.cn</a>
               </div>
             </TypedContent>
