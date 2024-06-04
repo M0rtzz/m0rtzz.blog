@@ -121,7 +121,7 @@ export default function RootLayout({ children }) {
                 alt='Police Logo'
                 width={15}
                 height={15}
-                style={{ marginTop: '0px', marginRight: '5px' }}
+                style={{ marginTop: '-1.5px', marginRight: '5px' }}
               />
               <a
                 href='https://beian.mps.gov.cn/#/query/webSearch'
@@ -138,7 +138,7 @@ export default function RootLayout({ children }) {
                 alt='ICP Logo'
                 width={19}
                 height={19}
-                style={{ marginTop: '0px', marginRight: '5px' }}
+                style={{ marginTop: '-1.5px', marginRight: '5px' }}
               />
               <a
                 href='https://beian.miit.gov.cn'
