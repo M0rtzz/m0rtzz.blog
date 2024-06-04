@@ -136,9 +136,9 @@ export default function RootLayout({ children }) {
               <Image
                 src='/icon/icp.png'
                 alt='ICP Logo'
-                width={18.5}
-                height={18.5}
-                style={{ marginTop: '-1px', marginRight: '5px' }}
+                width={18}
+                height={18}
+                style={{ marginTop: '-1.2px', marginRight: '5px' }}
               />
               <a
                 href='https://beian.miit.gov.cn'
