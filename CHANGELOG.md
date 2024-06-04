@@ -1,8 +1,69 @@
-# Changelog
+## <small>1.3.8 (2024-06-04)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* ✨ feat(layout.tsx): update google search console verification ([5450409](https://github.com/M0rtzz/m0rtzz.blog/commit/5450409))
+* 🔖 tag(package.json): v1.3.8 ([23bd6de](https://github.com/M0rtzz/m0rtzz.blog/commit/23bd6de))
 
-## [1.3.8](https://github.com/M0rtzz/m0rtzz.blog/compare/v1.3.7...v1.3.8) (2024-06-04)
+
+
+## <small>1.3.7 (2024-06-03)</small>
+
+* 👷 ci(.husky): add dir .husky ([d72e343](https://github.com/M0rtzz/m0rtzz.blog/commit/d72e343))
+* 📝 docs(CHANGELOG.md): automatic update ([63fb561](https://github.com/M0rtzz/m0rtzz.blog/commit/63fb561))
+* 📝 docs(CHANGELOG.md): automatic update ([a4067be](https://github.com/M0rtzz/m0rtzz.blog/commit/a4067be))
+* 🔖 tag(package.json): v1.3.7 ([32b01b6](https://github.com/M0rtzz/m0rtzz.blog/commit/32b01b6))
+* 🔖 tag(package.json): v1.3.7 ([26d51ec](https://github.com/M0rtzz/m0rtzz.blog/commit/26d51ec))
+* 🙈 ignore(.gitignore): update .gitignore ([ad4d339](https://github.com/M0rtzz/m0rtzz.blog/commit/ad4d339))
+
+
+
+## <small>1.3.6 (2024-05-31)</small>
+
+* 💄 ui(bilibili.tsx): reduce icon ([3093fb7](https://github.com/M0rtzz/m0rtzz.blog/commit/3093fb7))
+* 📝 docs(CHANGELOG.md): automatic update ([786de14](https://github.com/M0rtzz/m0rtzz.blog/commit/786de14))
+* 🔖 tag(package.json): v1.3.6 ([ad6c3f8](https://github.com/M0rtzz/m0rtzz.blog/commit/ad6c3f8))
+
+
+
+## <small>1.3.5 (2024-05-31)</small>
+
+* 💄 ui: reduce bilibili icon ([2a80c42](https://github.com/M0rtzz/m0rtzz.blog/commit/2a80c42))
+* 📝 docs(CHANGELOG.md): automatic update ([52c2989](https://github.com/M0rtzz/m0rtzz.blog/commit/52c2989))
+* 🔖 tag(package.json): v1.3.5 ([bf823c0](https://github.com/M0rtzz/m0rtzz.blog/commit/bf823c0))
+
+
+
+## <small>1.3.4 (2024-05-31)</small>
+
+* 💄 ui: enlarge bilibili ([acc263b](https://github.com/M0rtzz/m0rtzz.blog/commit/acc263b))
+* 📝 docs(CHANGELOG.md): automatic update ([6adf1d5](https://github.com/M0rtzz/m0rtzz.blog/commit/6adf1d5))
+* 🔖 tag(package.json): v1.3.4 ([297694c](https://github.com/M0rtzz/m0rtzz.blog/commit/297694c))
+
+
+
+## <small>1.3.3 (2024-05-31)</small>
+
+* 💄 ui: hide time ([385bc31](https://github.com/M0rtzz/m0rtzz.blog/commit/385bc31))
+* 📝 docs(CHANGELOG.md): automatic update ([2649955](https://github.com/M0rtzz/m0rtzz.blog/commit/2649955))
+* 🔖 tag(package.json): v1.3.3 ([ed87f9d](https://github.com/M0rtzz/m0rtzz.blog/commit/ed87f9d))
+
+
+
+## <small>1.3.2 (2024-05-31)</small>
+
+* 💄 ui(bilibili.tsx): reduce the bilibili icon ([7ef2b7e](https://github.com/M0rtzz/m0rtzz.blog/commit/7ef2b7e))
+* 📝 docs(CHANGELOG.md): automatic update ([7f53b1c](https://github.com/M0rtzz/m0rtzz.blog/commit/7f53b1c))
+* 🔖 tag(package.json): v1.3.2 ([d36a92c](https://github.com/M0rtzz/m0rtzz.blog/commit/d36a92c))
+
+
+
+## <small>1.3.1 (2024-05-29)</small>
+
+* ✨ feat: add a directory scroll bar and fix its position ([2304a01](https://github.com/M0rtzz/m0rtzz.blog/commit/2304a01))
+* 💄 ui: change the margin-right value ([dc06aca](https://github.com/M0rtzz/m0rtzz.blog/commit/dc06aca))
+* 📝 docs(CHANGELOG.md): automatic update ([21531fc](https://github.com/M0rtzz/m0rtzz.blog/commit/21531fc))
+* 🔖 tag(package.json): v1.3.1 ([870c6cc](https://github.com/M0rtzz/m0rtzz.blog/commit/870c6cc))
+
+
 
 ## 1.3.0 (2024-05-29)
 
@@ -314,3 +375,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
