@@ -1,8 +1,40 @@
-# Changelog
+## <small>1.4.5 (2024-06-04)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 🔖 tag(package.json): v1.4.5 ([b4a4d63](https://github.com/M0rtzz/m0rtzz.blog/commit/b4a4d63))
+* 🚧 wip: try ([200d4be](https://github.com/M0rtzz/m0rtzz.blog/commit/200d4be))
 
-## [1.4.5](https://github.com/M0rtzz/m0rtzz.blog/compare/v1.4.4...v1.4.5) (2024-06-04)
+
+
+## <small>1.4.4 (2024-06-04)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([9a410cc](https://github.com/M0rtzz/m0rtzz.blog/commit/9a410cc))
+* 🔖 tag(package.json): v1.4.4 ([33675d8](https://github.com/M0rtzz/m0rtzz.blog/commit/33675d8))
+* 🚧 wip(layout.tsx): reduce the size of the logo ([075209f](https://github.com/M0rtzz/m0rtzz.blog/commit/075209f))
+
+
+
+## <small>1.4.3 (2024-06-04)</small>
+
+* ✨ feat(layout.tsx): change hyperlink ([a9c32dc](https://github.com/M0rtzz/m0rtzz.blog/commit/a9c32dc))
+* 📝 docs(CHANGELOG.md): automatic update ([0838a79](https://github.com/M0rtzz/m0rtzz.blog/commit/0838a79))
+* 🔖 tag(package.json): v1.4.3 ([419dfad](https://github.com/M0rtzz/m0rtzz.blog/commit/419dfad))
+
+
+
+## <small>1.4.2 (2024-06-04)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([39142cb](https://github.com/M0rtzz/m0rtzz.blog/commit/39142cb))
+* 🔖 tag(package.json): v1.4.2 ([b1d6912](https://github.com/M0rtzz/m0rtzz.blog/commit/b1d6912))
+
+
+
+## <small>1.4.1 (2024-06-04)</small>
+
+* ♻️ refactor(layout.tsx): from \<img\> to \<Image\> ([19290b1](https://github.com/M0rtzz/m0rtzz.blog/commit/19290b1))
+* 📝 docs(CHANGELOG.md): automatic update ([6f41b34](https://github.com/M0rtzz/m0rtzz.blog/commit/6f41b34))
+* 🔖 tag(package.json): v1.4.1 ([e9c3d01](https://github.com/M0rtzz/m0rtzz.blog/commit/e9c3d01))
+
+
 
 ## 1.4.0 (2024-06-04)
 
@@ -399,3 +431,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
