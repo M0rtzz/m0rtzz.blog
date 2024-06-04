@@ -111,6 +111,16 @@ export default function RootLayout({ children }) {
         <Provider>
           <DarkToggleProvider>{children}</DarkToggleProvider>
         </Provider>
+        <footer className='footer'>
+          <div className='container mx-auto py-8'>
+            <p className='text-center text-xs text-gray-500 dark:text-gray-400'>
+              <a href='https://beian.miit.gov.cn/' target='_blank'>
+                {' '}
+                ICP备案号：豫ICP备2024072448号-1
+              </a>
+            </p>
+          </div>
+        </footer>
       </body>
     </html>
   )
