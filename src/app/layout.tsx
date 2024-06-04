@@ -112,13 +112,49 @@ export default function RootLayout({ children }) {
           <DarkToggleProvider>{children}</DarkToggleProvider>
         </Provider>
         <footer className='footer'>
-          <div className='container mx-auto py-8'>
-            <p className='text-center text-xs text-gray-500 dark:text-gray-400'>
-              <a href='https://beian.miit.gov.cn/' target='_blank'>
-                {' '}
-                ICP备案号：豫ICP备2024072448号-1
+          <div
+            className='container mx-auto flex items-center py-8 text-center text-xs'
+            style={{ alignItems: 'center', justifyContent: 'center' }}
+          >
+            <div style={{ alignItems: 'center', display: 'flex' }}>
+              <img
+                src='/icon/police.png'
+                alt='Police Logo'
+                style={{
+                  marginTop: '-3px',
+                  width: '15px',
+                  height: '15px',
+                  marginRight: '5px',
+                }}
+              />
+              <a
+                href='https://beian.miit.gov.cn/'
+                target='_blank'
+                style={{ color: '#1E90FF', textDecoration: 'none' }}
+              >
+                公安备案号待审核
               </a>
-            </p>
+            </div>
+            <div style={{ margin: '0 10px' }}></div>
+            <div style={{ alignItems: 'center', display: 'flex' }}>
+              <img
+                src='/icon/icp.png'
+                alt='ICP Logo'
+                style={{
+                  marginTop: '-3px',
+                  width: '15px',
+                  height: '15px',
+                  marginRight: '5px',
+                }}
+              />
+              <a
+                href='https://beian.miit.gov.cn/'
+                target='_blank'
+                style={{ color: '#1E90FF', textDecoration: 'none' }}
+              >
+                豫ICP备2024072448号
+              </a>
+            </div>
           </div>
         </footer>
       </body>
