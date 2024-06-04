@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   publisher: 'M0rtzz',
   generator: 'Next.js',
   verification: {
-    google: '6Ld4HOopAAAAACOIW2Pi9kIwDmLCsGhipbv-7t3O',
+    google: 'saBLo0mZh0Y72IhjxjOC1sExDHA-8WH6vp4NSAavmUQ',
   },
 }
 
