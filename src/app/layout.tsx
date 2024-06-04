@@ -125,7 +125,7 @@ export default function RootLayout({ children }) {
                 style={{ marginTop: '-3px', marginRight: '5px' }}
               />
               <a
-                href='https://beian.miit.gov.cn/'
+                href='https://beian.mps.gov.cn/#/query/webSearch'
                 target='_blank'
                 style={{ color: '#1E90FF', textDecoration: 'none' }}
               >
@@ -143,7 +143,7 @@ export default function RootLayout({ children }) {
                 style={{ marginTop: '-3px', marginRight: '5px' }}
               />
               <a
-                href='https://beian.miit.gov.cn/'
+                href='https://beian.miit.gov.cn'
                 target='_blank'
                 style={{ color: '#1E90FF', textDecoration: 'none' }}
               >
