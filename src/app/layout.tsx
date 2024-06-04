@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 import { clsx } from 'clsx'
 import { DarkToggleProvider, DarkToggleScript } from 'dark-toggle/react'
 import { Nunito, Handlee, Sorts_Mill_Goudy } from 'next/font/google'
@@ -112,20 +114,15 @@ export default function RootLayout({ children }) {
           <DarkToggleProvider>{children}</DarkToggleProvider>
         </Provider>
         <footer className='footer'>
-          <div
-            className='container mx-auto flex items-center py-8 text-center text-xs'
-            style={{ alignItems: 'center', justifyContent: 'center' }}
-          >
-            <div style={{ alignItems: 'center', display: 'flex' }}>
-              <img
+          <div className='container mx-auto flex items-center justify-center py-8 text-center text-xs'>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <Image
                 src='/icon/police.png'
                 alt='Police Logo'
-                style={{
-                  marginTop: '-3px',
-                  width: '15px',
-                  height: '15px',
-                  marginRight: '5px',
-                }}
+                width={15}
+                height={15}
+                layout='r' // 'r' -- "responsive"，响应式布局
+                style={{ marginTop: '-3px', marginRight: '5px' }}
               />
               <a
                 href='https://beian.miit.gov.cn/'
@@ -136,16 +133,14 @@ export default function RootLayout({ children }) {
               </a>
             </div>
             <div style={{ margin: '0 10px' }}></div>
-            <div style={{ alignItems: 'center', display: 'flex' }}>
-              <img
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <Image
                 src='/icon/icp.png'
                 alt='ICP Logo'
-                style={{
-                  marginTop: '-3px',
-                  width: '15px',
-                  height: '15px',
-                  marginRight: '5px',
-                }}
+                width={15}
+                height={15}
+                layout='r'
+                style={{ marginTop: '-3px', marginRight: '5px' }}
               />
               <a
                 href='https://beian.miit.gov.cn/'
