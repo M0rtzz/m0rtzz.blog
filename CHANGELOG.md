@@ -1,12 +1,14 @@
-# Changelog
+## <small>1.5.1 (2024-06-05)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 🔖 tag(package.json): v1.5.1 ([3e74e8c](https://github.com/M0rtzz/m0rtzz.blog/commit/3e74e8c))
+* 🔨 script(transfer.sh): run `pnpm build` and use ssh to transfer dir `out/` to remote automatically ([266ed92](https://github.com/M0rtzz/m0rtzz.blog/commit/266ed92))
 
-## [1.5.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v1.5.0...v1.5.1) (2024-06-05)
+
 
 ## 1.5.0 (2024-06-05)
 
 * ✨ feat(page.tsx): update repo url ([f63742d](https://github.com/M0rtzz/m0rtzz.blog/commit/f63742d))
+* 📝 docs(CHANGELOG.md): automatic update ([57fb98b](https://github.com/M0rtzz/m0rtzz.blog/commit/57fb98b))
 * 🔖 tag(package.json): v1.5.0 ([cc42265](https://github.com/M0rtzz/m0rtzz.blog/commit/cc42265))
 
 
@@ -477,3 +479,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
