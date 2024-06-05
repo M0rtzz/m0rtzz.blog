@@ -21,7 +21,7 @@ const Footer = () => {
             alt='Police Logo'
             width={15}
             height={15}
-            style={{ marginTop: '-2px', marginRight: '5px' }}
+            style={{ marginTop: '-2.6px', marginRight: '5px' }}
           />
           <a
             href='https://beian.mps.gov.cn/#/query/webSearch'
