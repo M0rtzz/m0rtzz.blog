@@ -1,8 +1,25 @@
-# Changelog
+## <small>1.5.3 (2024-06-05)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 💄 ui(page.tsx): update href display ([85eae5c](https://github.com/M0rtzz/m0rtzz.blog/commit/85eae5c))
+* 🔖 tag(package.json): v1.5.3 ([cfe470d](https://github.com/M0rtzz/m0rtzz.blog/commit/cfe470d))
 
-## [1.5.3](https://github.com/M0rtzz/m0rtzz.blog/compare/v1.5.2...v1.5.3) (2024-06-05)
+
+
+## <small>1.5.2 (2024-06-05)</small>
+
+* ✨ feat: add logic for footer display ([b08478d](https://github.com/M0rtzz/m0rtzz.blog/commit/b08478d))
+* 📝 docs(CHANGELOG.md): automatic update ([1a1ee6b](https://github.com/M0rtzz/m0rtzz.blog/commit/1a1ee6b))
+* 🔖 tag(package.json): v1.5.2 ([901e954](https://github.com/M0rtzz/m0rtzz.blog/commit/901e954))
+
+
+
+## <small>1.5.1 (2024-06-05)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([d7f374d](https://github.com/M0rtzz/m0rtzz.blog/commit/d7f374d))
+* 🔖 tag(package.json): v1.5.1 ([3e74e8c](https://github.com/M0rtzz/m0rtzz.blog/commit/3e74e8c))
+* 🔨 script(transfer.sh): run `pnpm build` and use ssh to transfer dir `out/` to remote automatically ([266ed92](https://github.com/M0rtzz/m0rtzz.blog/commit/266ed92))
+
+
 
 ## 1.5.0 (2024-06-05)
 
@@ -478,3 +495,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
