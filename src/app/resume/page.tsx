@@ -88,7 +88,7 @@ export default function Page() {
               <ul>
                 <li>
                   <strong>
-                    <a href='https://gitcode.com/M0rtzz/VisionVoyage'>
+                    <a href='https://github.com/M0rtzz/VisionVoyage'>
                       VisionVoyage
                     </a>
                   </strong>
