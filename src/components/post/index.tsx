@@ -76,7 +76,7 @@ export const Post = async (props: PostProps) => {
             aria-label={`Read more about ${node.title}`}
             href={`/posts/${number}`}
           >
-            Read more <span className='sr-only'>about {node.title}</span>
+            Read More <span className='sr-only'>about {node.title}</span>
           </Link>
         </p>
       </div>
