@@ -20,7 +20,7 @@
 
   .shiki,
   .shiki span {
-    font-style: normal !important;
+    font-style: normal !important; /* 代码块渲染禁止斜体 */
   }
 }
 
@@ -42,7 +42,7 @@
   .shiki span {
     color: var(--shiki-dark) !important;
     background-color: var(--shiki-dark-bg) !important;
-    font-style: normal !important;
+    font-style: normal !important; /* 代码块渲染禁止斜体 */
     font-weight: var(--shiki-dark-font-weight) !important;
     text-decoration: var(--shiki-dark-text-decoration) !important;
   }
@@ -96,6 +96,7 @@
   }
 }
 
+/* 代码块增加行号和竖线 */
 code {
   counter-reset: step;
   counter-increment: step 0;
@@ -126,6 +127,7 @@ code .line:not(:last-child)::after {
   border-left: 1px solid rgba(100, 120, 130, 0.6);
 }
 
+/* 鼠标不在代码块时隐藏复制按钮 */
 .hide-btn {
   display: none;
   position: absolute;
@@ -136,8 +138,24 @@ code .line:not(:last-child)::after {
   display: block;
 }
 
+/* 固定文章的目录且可滚动 */
 .sticky {
   max-height: 80vh;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+}
+
+/* 隐藏引用块的引号 */
+.prose
+  :where(blockquote p:first-of-type):not(
+    :where([class~='not-prose'], [class~='not-prose'] *)
+  )::before {
+  content: no-open-quote;
+}
+
+.prose
+  :where(blockquote p:last-of-type):not(
+    :where([class~='not-prose'], [class~='not-prose'] *)
+  )::after {
+  content: no-close-quote;
 }
