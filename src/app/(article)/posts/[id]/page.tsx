@@ -74,7 +74,7 @@ export default async function Page({ params }: PageProps) {
             </span>
           </div>
         </header>
-        <article className='prose prose-slate max-w-none dark:prose-invert prose-code:break-words prose-pre:-ml-4 prose-pre:-mr-4 prose-img:-ml-4 prose-img:-mr-4 prose-img:rounded dark:prose-img:brightness-75 max-xl:col-start-2 md:prose-pre:-ml-8 md:prose-pre:-mr-8'>
+        <article className='prose prose-slate max-w-none dark:prose-invert prose-code:break-words prose-pre:-ml-4 prose-pre:-mr-4 prose-img:-ml-4 prose-img:-mr-4 prose-img:rounded max-xl:col-start-2 md:prose-pre:-ml-8 md:prose-pre:-mr-8'>
           <Markdown source={body!} />
           <GiscusScript number={number} repo={`${repoOwner}/${repoName}`} />
         </article>
