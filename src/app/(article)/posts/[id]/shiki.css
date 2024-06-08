@@ -198,3 +198,30 @@ code {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
+
+.small-line-numbers code .line:not(:last-child)::before {
+  font-size: smaller;
+  content: counter(step) ' ';
+  counter-increment: step;
+  width: 2.15rem;
+  margin-right: 0.3rem;
+  display: inline-block;
+  text-align: right;
+  color: rgba(100, 120, 130, 0.6);
+  position: relative;
+  left: -1px;
+}
+
+.small-line-numbers code .line:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 2rem;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid rgba(100, 120, 130, 0.6);
+}
+
+.small-line-numbers code {
+  font-size: smaller;
+}
+
