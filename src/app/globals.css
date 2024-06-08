@@ -89,10 +89,3 @@
     animation: breath ease 2s alternate infinite;
   }
 }
-
-/* 固定文章的目录且可滚动 */
-.sticky {
-  max-height: 80vh;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-}
