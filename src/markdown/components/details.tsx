@@ -1,13 +1,12 @@
 interface DetailsProps {
-  title?: string
+  summary?: string
   children: React.ReactNode
 }
 export const Details = (props: DetailsProps) => {
-  const { title, children } = props
+  const { summary } = props
   return (
-    <details>
-      <summary>{title}</summary>
-      {children}
+    <details className='mdx-components rounded-lg bg-surface-1 p-4'>
+      <summary>{summary}</summary>
     </details>
   )
 }

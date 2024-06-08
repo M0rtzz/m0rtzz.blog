@@ -1,8 +1,8 @@
 'use client'
 
-import React, { useState } from 'react'
+import { useState, Children, isValidElement } from 'react'
 
-import { useAutoAnimate } from '@formkit/auto-animate/react'
+import clsx from 'clsx'
 
 interface CodeGroupProps {
   'data-children-meta': string
@@ -10,34 +10,44 @@ interface CodeGroupProps {
 }
 const CodeGroup = (props: CodeGroupProps) => {
   const { children } = props
-  const childrenArray = React.Children.toArray(children)
-  const metas = JSON.parse(props['data-children-meta']) as string[]
-  const tabs = metas.map(meta => {
-    const matches = meta.match(/\[(.+)]/)
-    if (!matches) {
-      throw new Error('[markdown:CodeGroup] Meta format error')
-    }
-    return matches[1]
-  })
-  if (tabs.length !== childrenArray.length) {
-    throw new Error('[markdown:CodeGroup] Meta and children length mismatch')
-  }
-
   const [index, setIndex] = useState(0)
-  const [ref] = useAutoAnimate(/* optional config */)
+
+  const childrenArray = Children.toArray(children)
+  const fileNames = childrenArray.map(child => {
+    if (isValidElement(child)) {
+      const childrenArr = Children.toArray(
+        child.props.children,
+      ) as React.ReactElement[]
+
+      return childrenArr[0].props['data-file']
+    }
+  })
+
+  if (fileNames.length !== childrenArray.length) {
+    return children
+  }
 
   const current = childrenArray[index]
 
   return (
-    <div>
-      <div>
-        {tabs.map((tab, index) => (
-          <span key={tab} role='button' onClick={() => setIndex(index)}>
-            {tab}
-          </span>
+    <div className='mdx-components -mx-4 border bg-surface-1 md:-mx-8 md:rounded'>
+      <header className='flex border-b px-4'>
+        {fileNames.map((fileName, i) => (
+          <button
+            className={clsx(
+              'flex items-center justify-center border-b-2 px-4 py-2',
+              i === index
+                ? 'border-brand text-brand'
+                : 'border-transparent text-color-3',
+            )}
+            key={i}
+            onClick={() => setIndex(i)}
+          >
+            {fileName}
+          </button>
         ))}
-      </div>
-      <div ref={ref}>{current}</div>
+      </header>
+      {current}
     </div>
   )
 }
