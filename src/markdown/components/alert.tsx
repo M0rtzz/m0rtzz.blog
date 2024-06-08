@@ -24,7 +24,6 @@ export const Alert = (props: AlertProps) => {
   const { type, children } = props
 
   const Icon = icons[type]
-
   const textClses = {
     note: 'text-blue-500',
     tip: 'text-green-600',
@@ -32,7 +31,6 @@ export const Alert = (props: AlertProps) => {
     warning: 'text-yellow-600',
     caution: 'text-red-500',
   }
-
   const borderClses = {
     note: 'border-blue-500',
     tip: 'border-green-600',
@@ -50,7 +48,7 @@ export const Alert = (props: AlertProps) => {
         <Icon className='size-5' />
         <span className='block first-letter:uppercase'>{type}</span>
       </p>
-      {children}
+      <div className='small-line-numbers'>{children}</div>
     </div>
   )
 }
