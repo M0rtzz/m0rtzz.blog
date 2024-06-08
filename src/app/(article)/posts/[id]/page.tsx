@@ -126,7 +126,7 @@ export default async function Page({ params }: PageProps) {
           />
           <GiscusScript number={number} repo={`${repoOwner}/${repoName}`} />
         </article>
-        <aside className='sticky top-32 ml-auto h-fit w-[22ch] max-xl:hidden'>
+        <aside className='sticky-table sticky top-20 ml-auto h-fit w-[22ch] max-xl:hidden'>
           <h2 className='mb-4 whitespace-nowrap text-lg font-semibold tracking-wider has-[+ul:empty]:hidden'>
             TABLE OF CONTENTS
           </h2>
