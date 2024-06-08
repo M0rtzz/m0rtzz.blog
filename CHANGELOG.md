@@ -1,8 +1,54 @@
-# Changelog
+## <small>1.6.6 (2024-06-08)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 🐛 fix: fix the bug of no spacing between code blocks ([279273a](https://github.com/M0rtzz/m0rtzz.blog/commit/279273a))
+* 🔖 tag(package.json): v1.6.6 ([0d1f000](https://github.com/M0rtzz/m0rtzz.blog/commit/0d1f000))
 
-## [1.6.6](https://github.com/M0rtzz/m0rtzz.blog/compare/v1.6.5...v1.6.6) (2024-06-08)
+
+
+## <small>1.6.5 (2024-06-08)</small>
+
+* ➖ rm_dep(package.json): rm unused package ([0db0471](https://github.com/M0rtzz/m0rtzz.blog/commit/0db0471))
+* 📝 docs(CHANGELOG.md): automatic update ([acb5562](https://github.com/M0rtzz/m0rtzz.blog/commit/acb5562))
+* 🔖 tag(package.json): v1.6.5 ([2c78235](https://github.com/M0rtzz/m0rtzz.blog/commit/2c78235))
+
+
+
+## <small>1.6.4 (2024-06-08)</small>
+
+* 💄 ui(copy-button.tsx): change font color ([b58e429](https://github.com/M0rtzz/m0rtzz.blog/commit/b58e429))
+* 📝 docs(CHANGELOG.md): automatic update ([0d3eba8](https://github.com/M0rtzz/m0rtzz.blog/commit/0d3eba8))
+* 🔖 tag(package.json): v1.6.4 ([f90e975](https://github.com/M0rtzz/m0rtzz.blog/commit/f90e975))
+
+
+
+## <small>1.6.3 (2024-06-08)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([f2fbb03](https://github.com/M0rtzz/m0rtzz.blog/commit/f2fbb03))
+* 🔖 tag(package.json): v1.6.3 ([63b0bf2](https://github.com/M0rtzz/m0rtzz.blog/commit/63b0bf2))
+* 🚧 wip: wip ([067cd5c](https://github.com/M0rtzz/m0rtzz.blog/commit/067cd5c))
+
+
+
+## <small>1.6.2 (2024-06-08)</small>
+
+* ✨ feat: update copy btn ([ce67c9e](https://github.com/M0rtzz/m0rtzz.blog/commit/ce67c9e))
+* 📝 docs(CHANGELOG.md): automatic update ([d7fc255](https://github.com/M0rtzz/m0rtzz.blog/commit/d7fc255))
+* 🔖 tag(package.json): v1.6.2 ([b32e14c](https://github.com/M0rtzz/m0rtzz.blog/commit/b32e14c))
+
+
+
+## <small>1.6.1 (2024-06-08)</small>
+
+* ✨ feat: add github-alerts rendering ([cac218f](https://github.com/M0rtzz/m0rtzz.blog/commit/cac218f))
+* ➕ add_dep(package.json): add and upgrade package ([16a57bf](https://github.com/M0rtzz/m0rtzz.blog/commit/16a57bf))
+* 💄 ui: change markdown rendering ([2c51f23](https://github.com/M0rtzz/m0rtzz.blog/commit/2c51f23))
+* 💄 ui: update page display ([e560a5c](https://github.com/M0rtzz/m0rtzz.blog/commit/e560a5c))
+* 📝 docs(CHANGELOG.md): automatic update ([86302a5](https://github.com/M0rtzz/m0rtzz.blog/commit/86302a5))
+* 🔖 tag(package.json): v1.6.1 ([5f4a75a](https://github.com/M0rtzz/m0rtzz.blog/commit/5f4a75a))
+* 🔧 config: update tailwind config ([18df518](https://github.com/M0rtzz/m0rtzz.blog/commit/18df518))
+* 🚧 wip: work in progress ([65420b2](https://github.com/M0rtzz/m0rtzz.blog/commit/65420b2))
+
+
 
 ## 1.6.0 (2024-06-07)
 
@@ -558,3 +604,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
