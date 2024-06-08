@@ -1,3 +1,5 @@
+import path from 'node:path'
+
 import rehypeShiki, { type RehypeShikiOptions } from '@shikijs/rehype'
 import {
   transformerNotationDiff,
@@ -6,36 +8,30 @@ import {
   transformerNotationErrorLevel,
   transformerMetaHighlight,
   transformerMetaWordHighlight,
-  transformerRemoveLineBreak,
+  transformerNotationWordHighlight,
 } from '@shikijs/transformers'
 import { transformerTwoslash } from '@shikijs/twoslash'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import { rehypeDefaultCodeLang } from 'rehype-default-code-lang'
 import rehypeSlug from 'rehype-slug'
-import remarkDirective from 'remark-directive'
 import remarkGfm from 'remark-gfm'
-import { MDX } from 'rsc-mdx'
+import { MDX, type MDXProps } from 'rsc-mdx'
 
-import { CodeGroup, Alert, Details, Hello, pre } from './components'
-import { remarkDirectiveContainer, rehypeGithubAlert } from './plugins'
+import { rehypeGithubAlert, findCodeText } from './plugins'
+import { rendererMdx } from './twoslash/renderMdx'
 
 interface MarkdownProps {
   source: string
+  useMDXComponents?: MDXProps['useMDXComponents']
 }
 
 export async function Markdown(props: MarkdownProps) {
-  const { source } = props
+  const { source, useMDXComponents } = props
   return (
     <MDX
       source={source}
-      useMDXComponents={() => ({
-        CodeGroup,
-        Alert,
-        Details,
-        Hello,
-        pre,
-      })}
-      remarkPlugins={[remarkDirective, remarkDirectiveContainer, remarkGfm]}
+      useMDXComponents={useMDXComponents}
+      remarkPlugins={[remarkGfm]}
       rehypePlugins={[
         rehypeGithubAlert,
         rehypeSlug,
@@ -49,6 +45,16 @@ export async function Markdown(props: MarkdownProps) {
         [
           rehypeShiki,
           {
+            parseMetaString: (meta, node) => {
+              const metaData = meta.split(' ')
+              const fileName = metaData.find(item => path.extname(item) !== '')
+              const codeText = findCodeText(node)
+
+              return {
+                'data-file': fileName,
+                content: codeText?.value,
+              }
+            },
             themes: {
               light: 'catppuccin-latte',
               dark: 'material-theme-ocean',
@@ -56,12 +62,14 @@ export async function Markdown(props: MarkdownProps) {
             transformers: [
               transformerNotationDiff(),
               transformerNotationHighlight(),
+              transformerNotationWordHighlight(),
               transformerNotationFocus(),
               transformerNotationErrorLevel(),
               transformerMetaHighlight(),
               transformerMetaWordHighlight(),
-              transformerRemoveLineBreak(),
+              // transformerRemoveLineBreak(),
               transformerTwoslash({
+                renderer: rendererMdx(),
                 explicitTrigger: true,
               }),
             ],
