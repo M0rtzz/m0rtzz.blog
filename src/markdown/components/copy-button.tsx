@@ -25,13 +25,15 @@ export const CopyButton = (props: CopyButtonProps) => {
   return (
     <button
       className={clsx(
-        'absolute right-3 top-2 hidden rounded p-2 hover:bg-color-1/10 group-hover:block',
-        copied ? '!block bg-color-1/10 text-green-500' : 'text-gray-500',
+        'absolute right-3 top-2 hidden rounded bg-gradient-to-b to-white p-2 group-hover:block dark:to-white/5 hover:dark:to-white/5',
+        copied
+          ? '!block bg-gray-800 bg-gradient-to-b from-surface-1 to-white text-green-500 '
+          : 'text-gray-500',
       )}
       onClick={handleClick}
     >
       {copied && (
-        <span className='absolute -left-2 top-1/2 -translate-x-full -translate-y-1/2 rounded bg-black/90 p-2 text-xs text-surface dark:bg-inherit dark:text-color-1'>
+        <span className='absolute -left-2 top-1/2 -translate-x-full -translate-y-1/2 rounded bg-gray-800 bg-gradient-to-b from-surface-1 to-white px-2 py-1 dark:to-white/5 '>
           Copied!
         </span>
       )}
