@@ -191,3 +191,10 @@ code {
 .code-block-spacing {
   margin-bottom: 20px;
 }
+
+/* 固定文章的目录且可滚动 */
+.sticky-table {
+  max-height: 80vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
