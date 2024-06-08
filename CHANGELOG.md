@@ -1,14 +1,8 @@
-## <small>1.6.1 (2024-06-08)</small>
+# Changelog
 
-* ✨ feat: add github-alerts rendering ([cac218f](https://github.com/M0rtzz/m0rtzz.blog/commit/cac218f))
-* ➕ add_dep(package.json): add and upgrade package ([16a57bf](https://github.com/M0rtzz/m0rtzz.blog/commit/16a57bf))
-* 💄 ui: change markdown rendering ([2c51f23](https://github.com/M0rtzz/m0rtzz.blog/commit/2c51f23))
-* 💄 ui: update page display ([e560a5c](https://github.com/M0rtzz/m0rtzz.blog/commit/e560a5c))
-* 🔖 tag(package.json): v1.6.1 ([5f4a75a](https://github.com/M0rtzz/m0rtzz.blog/commit/5f4a75a))
-* 🔧 config: update tailwind config ([18df518](https://github.com/M0rtzz/m0rtzz.blog/commit/18df518))
-* 🚧 wip: work in progress ([65420b2](https://github.com/M0rtzz/m0rtzz.blog/commit/65420b2))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
+## [1.6.2](https://github.com/M0rtzz/m0rtzz.blog/compare/v1.6.1...v1.6.2) (2024-06-08)
 
 ## 1.6.0 (2024-06-07)
 
@@ -564,5 +558,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
