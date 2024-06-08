@@ -113,10 +113,8 @@ export const queryPinnedItems = cache(() =>
 
 export const queryAllLabels = cache(() => client.queryLabels())
 
-export const queryAllPosts = cache(() => client.search({ bodyText: true }))
+export const queryAllPosts = cache(() =>
+  client.search({ bodyText: true, body: true }),
+)
 
 export const queryByLabel = cache((label: string) => client.search({ label }))
-
-export const queryByNumber = cache((number: number) =>
-  client.queryByNumber({ number, body: true, bodyText: true }),
-)
