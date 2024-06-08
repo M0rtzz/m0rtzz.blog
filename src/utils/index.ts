@@ -16,3 +16,8 @@ export const sleep = (ms: number) =>
   new Promise(resolve => setTimeout(resolve, ms))
 
 export const cn = (...classes: unknown[]) => twMerge(clsx(classes))
+
+export const formatDateTime = (
+  options: Intl.DateTimeFormatOptions,
+  date: Date,
+) => new Intl.DateTimeFormat('en-US', options).format(date)
