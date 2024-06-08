@@ -3,17 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --brand: theme('colors.orange.600');
-  --text-1: theme('colors.slate.800');
-  --text-2: theme('colors.slate.700');
-  --text-3: theme('colors.slate.600');
-  --text-4: theme('colors.slate.500');
-  --surface: theme('colors.white');
-  --surface-1: theme('colors.slate.50');
-  --surface-2: theme('colors.slate.100');
-  --surface-3: theme('colors.slate.200');
-  --surface-4: theme('colors.slate.300');
-
+  --brand: 249 115 22; /* theme('colors.orange.600') */
+  --text-1: 30 41 59; /* theme('colors.slate.800') */
+  --text-2: 51 65 86; /* theme('colors.slate.700') */
+  --text-3: 71 85 105; /* theme('colors.slate.600') */
+  --text-4: 100 116 139; /* theme('colors.slate.500') */
+  --surface: 255 255 255; /* theme('colors.white') */
+  --surface-1: 248 250 252; /* theme('colors.slate.50') */
+  --surface-2: 241 245 249; /* theme('colors.slate.100') */
+  --surface-3: 226 232 240; /* theme('colors.slate.200') */
+  --surface-4: 203 213 225; /* theme('colors.slate.300') */
   --border: #e5e7eb;
 
   --font-remote: var(--font-remote-sans);
@@ -25,29 +24,30 @@
 }
 
 :root.dark {
-  --brand: theme('colors.slate.200');
-  --text-1: theme('colors.slate.50');
-  --text-2: theme('colors.slate.100');
-  --text-3: theme('colors.slate.200');
-  --text-4: theme('colors.slate.300');
-  --surface: #000212;
-  --surface-1: theme('colors.slate.800');
-  --surface-2: theme('colors.slate.700');
-  --surface-3: theme('colors.slate.600');
-  --surface-4: theme('colors.slate.500');
+  --brand: 226 232 240; /* theme('colors.slate.200') */
+  --text-1: 248 250 252; /* theme('colors.slate.50') */
+  --text-2: 241 245 249; /* theme('colors.slate.100') */
+  --text-3: 226 232 240; /* theme('colors.slate.200') */
+  --text-4: 203 213 225; /* theme('colors.slate.300') */
+  --surface: 0 2 18; /* #000212 */
+  --surface-1: 30 41 59; /* theme('colors.slate.800') */
+  --surface-2: 51 65 85; /* theme('colors.slate.700') */
+  --surface-3: 71 85 105; /* theme('colors.slate.600') */
+  --surface-4: 100 116 139; /* theme('colors.slate.500') */
 
-  --border: theme('colors.slate.700');
+  --border: 51 65 85; /* theme('colors.slate.700') */
+}
 
-  .shiki,
-  .shiki span {
-    color: var(--shiki-dark) !important;
-    background-color: var(--shiki-dark-bg) !important;
-    font-style: normal !important; /* 代码块渲染禁止斜体 */
-    font-weight: var(--shiki-dark-font-weight) !important;
-    text-decoration: var(--shiki-dark-text-decoration) !important;
+/* Markdown */
+
+.prose {
+  > div > pre,
+  > p:has(img) {
+    @apply -mx-4 md:-mx-8;
   }
 }
 
+/* Tailwind utilities */
 @layer utilities {
   @keyframes hello {
     50% {
@@ -90,54 +90,6 @@
   }
 }
 
-.shiki {
-  .line {
-    display: block;
-  }
-}
-
-/* 代码块增加行号和竖线 */
-code {
-  counter-reset: step;
-  counter-increment: step 0;
-}
-
-code .line:not(:last-child)::before {
-  content: counter(step) ' ';
-  counter-increment: step;
-  width: 2rem;
-  margin-right: 0.5rem;
-  display: inline-block;
-  text-align: right;
-  color: rgba(100, 120, 130, 0.6);
-  position: relative;
-  left: -4px;
-}
-
-code .line:not(:last-child) {
-  position: relative;
-}
-
-code .line:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  left: 2rem;
-  top: 0;
-  bottom: 0;
-  border-left: 1px solid rgba(100, 120, 130, 0.6);
-}
-
-/* 鼠标不在代码块时隐藏复制按钮 */
-.hide-btn {
-  display: none;
-  position: absolute;
-  z-index: 10;
-}
-
-.relative:hover .hide-btn {
-  display: block;
-}
-
 /* 固定文章的目录且可滚动 */
 .sticky {
   max-height: 80vh;
@@ -145,17 +97,3 @@ code .line:not(:last-child)::after {
   -webkit-overflow-scrolling: touch;
 }
 
-/* 隐藏引用块的引号 */
-.prose
-  :where(blockquote p:first-of-type):not(
-    :where([class~='not-prose'], [class~='not-prose'] *)
-  )::before {
-  content: no-open-quote;
-}
-
-.prose
-  :where(blockquote p:last-of-type):not(
-    :where([class~='not-prose'], [class~='not-prose'] *)
-  )::after {
-  content: no-close-quote;
-}
