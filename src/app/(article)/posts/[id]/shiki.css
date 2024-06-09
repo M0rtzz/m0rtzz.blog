@@ -160,7 +160,7 @@ code .line {
   display: inline-block;
 }
 
-code .line:last-child:empty {
+code .line:last-child {
   display: none;
 }
 
