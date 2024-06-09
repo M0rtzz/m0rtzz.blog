@@ -152,8 +152,16 @@
   content: no-close-quote;
 }
 
-code .line {
+.small-line-numbers code .line {
   display: table-header-group;
+}
+
+code .line {
+  display: inline-block;
+}
+
+.shiki .line:last-child:empty {
+  display: none;
 }
 
 /* 代码块增加行号和竖线 */
