@@ -33,7 +33,7 @@ export const CopyButton = (props: CopyButtonProps) => {
       onClick={handleClick}
     >
       {copied && (
-        <span className='absolute -left-2 top-1/2 -translate-x-full -translate-y-1/2 rounded bg-gray-800 bg-gradient-to-b from-surface-1 to-white px-2 py-1 text-gray-500 dark:to-white/5 '>
+        <span className='absolute-small absolute -left-2 top-1/2 -translate-x-full -translate-y-1/2 rounded bg-gray-800 bg-gradient-to-b from-surface-1 to-white px-2 py-1 text-gray-500 dark:to-white/5 '>
           Copied!
         </span>
       )}
