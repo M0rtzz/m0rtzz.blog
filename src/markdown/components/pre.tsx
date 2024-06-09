@@ -15,7 +15,7 @@ export const Pre = (props: PreProps) => {
 
   return (
     <div className='relative'>
-      <pre {...rest} className={clsx('group relative', className)}>
+      <pre {...rest} className={clsx('group', className)}>
         {children}
         {content && <CopyButton content={content} />}
       </pre>
