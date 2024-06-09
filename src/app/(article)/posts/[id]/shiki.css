@@ -152,6 +152,10 @@
   content: no-close-quote;
 }
 
+code .line {
+  display: table-row;
+}
+
 /* 代码块增加行号和竖线 */
 code {
   counter-reset: step;
@@ -181,10 +185,6 @@ code .line:not(:last-child)::after {
   top: 0;
   bottom: 0;
   border-left: 1px solid rgba(100, 120, 130, 0.6);
-}
-
-code {
-  white-space: pre-wrap; /* 开启软换行 */
 }
 
 /* 定义代码块之间的间距 */
@@ -225,3 +225,7 @@ code {
   font-size: smaller;
 }
 
+/* mdx component */
+.mdx-components .copy-button {
+  @apply -right-5;
+}
