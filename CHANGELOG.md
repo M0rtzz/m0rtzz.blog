@@ -1,9 +1,8 @@
-## <small>1.7.1 (2024-06-09)</small>
+# Changelog
 
-* ⬆️ up_dep(package.json): upgrade shiki ([531fe1a](https://github.com/M0rtzz/m0rtzz.blog/commit/531fe1a))
-* 🔖 tag(package.json): v1.7.1 ([c219c44](https://github.com/M0rtzz/m0rtzz.blog/commit/c219c44))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
+## [1.7.2](https://github.com/M0rtzz/m0rtzz.blog/compare/v1.7.1...v1.7.2) (2024-06-09)
 
 ## 1.7.0 (2024-06-09)
 
@@ -644,5 +643,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
