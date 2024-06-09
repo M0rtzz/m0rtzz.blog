@@ -56,7 +56,7 @@ export default function Page() {
                 <code>ROS</code> technology stack.
               </p>
             </TypedContent>
-            <TypedText afterDelay={1000}>ls</TypedText>
+            <TypedText>ls</TypedText>
             <TypedContent>
               <div className='grid grid-cols-2 gap-2 px-4 font-semibold text-sky-500'>
                 <span>competitions</span>
@@ -67,7 +67,7 @@ export default function Page() {
                 <span>contact</span>
               </div>
             </TypedContent>
-            <TypedText afterDelay={700}>competitions</TypedText>
+            <TypedText>competitions</TypedText>
             <TypedContent>
               <p>
                 I won three national first prizes in the field of robotics in 2023, with two championships and one bronze medal.
@@ -79,7 +79,7 @@ export default function Page() {
                 In the 2023 China Robot Competition Special Competition General Purpose Service Robot Project（2023中国机器人大赛专项赛通用服务机器人赛项）, the General Purpose Service Robot Project focuses on examining the comprehensive human-machine interaction ability of robots. I focused my main challenge on building the GGCNN model, predicting grasping coordinates and angles in a multi object plane scene, and obtaining them through a RealSense camera Depth information to achieve the planar grasping effect of the robotic arm.<br></br>Finally, in the competition, <code><i>I led the team to surpass teams from Xi&apos;an Jiaotong University, Northwestern Polytechnical University, and others to win the championship with an absolute advantage</i></code>.
               </p>
             </TypedContent>
-            <TypedText afterDelay={1000}>projects</TypedText>
+            <TypedText>projects</TypedText>
             <TypedContent>
               <ul>
                 <li>
