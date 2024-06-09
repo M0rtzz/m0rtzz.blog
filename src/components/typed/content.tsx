@@ -15,7 +15,6 @@ export const TypedContent = (props: TypedChildProps) => {
     return () => {
       window.clearTimeout(id)
     }
-    // eslint-disable-next-line
   }, [])
 
   return (
