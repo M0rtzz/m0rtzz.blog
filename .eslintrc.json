@@ -10,6 +10,7 @@
   "rules": {
     "@typescript-eslint/consistent-type-imports": "error",
     "react-hooks/rules-of-hooks": "off",
+    "react-hooks/exhaustive-deps": "off",
     "import/order": [
       "error",
       {
