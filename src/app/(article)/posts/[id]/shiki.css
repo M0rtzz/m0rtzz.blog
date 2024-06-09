@@ -160,7 +160,7 @@ code .line {
   display: inline-block;
 }
 
-code .line:last-child {
+code .line:last-child:empty {
   display: none;
 }
 
@@ -233,7 +233,16 @@ code .line:not(:last-child)::after {
   font-size: smaller;
 }
 
-/* mdx component */
-.mdx-components .copy-button {
-  @apply -right-5;
+.absolute-small {
+  width: 4.2rem;
+  height: 2rem;
+}
+
+.small-line-numbers .copy-button {
+  @apply right-3;
+  font-size: smaller;
+  .absolute-small {
+    width: 4.05rem;
+    height: 2rem;
+  }
 }
