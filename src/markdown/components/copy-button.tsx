@@ -25,7 +25,7 @@ export const CopyButton = (props: CopyButtonProps) => {
   return (
     <button
       className={clsx(
-        'absolute right-3 top-2 hidden rounded bg-gradient-to-b to-white p-2 hover:bg-color-1/10 group-hover:block dark:to-white/5',
+        'copy-button absolute -right-5 top-2 hidden rounded bg-gradient-to-b to-white p-2 hover:bg-color-1/10 group-hover:block dark:to-white/5',
         copied
           ? '!block bg-gray-800 bg-gradient-to-b from-surface-1 to-white text-green-500 '
           : 'text-gray-500',
