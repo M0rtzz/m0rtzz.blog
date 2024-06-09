@@ -153,7 +153,7 @@
 }
 
 code .line {
-  display: inline-block;
+  display: table-header-group;
 }
 
 /* 代码块增加行号和竖线 */
