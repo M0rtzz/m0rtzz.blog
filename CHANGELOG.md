@@ -1,17 +1,8 @@
-## <small>1.8.2 (2024-06-10)</small>
+# Changelog
 
-* 🔖 tag(package.json): v1.8.2 ([2b59244](https://github.com/M0rtzz/m0rtzz.blog/commit/2b59244))
-* 🚧 wip: wip ([6e759b8](https://github.com/M0rtzz/m0rtzz.blog/commit/6e759b8))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>1.8.1 (2024-06-10)</small>
-
-* 📝 docs(CHANGELOG.md): automatic update ([27e410a](https://github.com/M0rtzz/m0rtzz.blog/commit/27e410a))
-* 🔖 tag(package.json): v1.8.1 ([555fbb9](https://github.com/M0rtzz/m0rtzz.blog/commit/555fbb9))
-* 🚧 wip: wip ([3f99439](https://github.com/M0rtzz/m0rtzz.blog/commit/3f99439))
-
-
+## [1.8.3](https://github.com/M0rtzz/m0rtzz.blog/compare/v1.8.2...v1.8.3) (2024-06-10)
 
 ## 1.8.0 (2024-06-10)
 
@@ -728,5 +719,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
