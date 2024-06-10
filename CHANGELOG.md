@@ -1,8 +1,25 @@
-# Changelog
+## <small>1.9.3 (2024-06-10)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* ✅ test: test ([0693d12](https://github.com/M0rtzz/m0rtzz.blog/commit/0693d12))
+* 🔖 tag(package.json): v1.9.3 ([335f280](https://github.com/M0rtzz/m0rtzz.blog/commit/335f280))
 
-## [1.9.3](https://github.com/M0rtzz/m0rtzz.blog/compare/v1.9.2...v1.9.3) (2024-06-10)
+
+
+## <small>1.9.2 (2024-06-10)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([d787ac1](https://github.com/M0rtzz/m0rtzz.blog/commit/d787ac1))
+* 🔖 tag(package.json): v1.9.2 ([df4a054](https://github.com/M0rtzz/m0rtzz.blog/commit/df4a054))
+* 🚧 wip: wip ([7698b5b](https://github.com/M0rtzz/m0rtzz.blog/commit/7698b5b))
+
+
+
+## <small>1.9.1 (2024-06-10)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([3fa959a](https://github.com/M0rtzz/m0rtzz.blog/commit/3fa959a))
+* 🔖 tag(package.json): v1.9.1 ([126adb6](https://github.com/M0rtzz/m0rtzz.blog/commit/126adb6))
+* 🚧 wip: wip ([ae9e197](https://github.com/M0rtzz/m0rtzz.blog/commit/ae9e197))
+
+
 
 ## 1.9.0 (2024-06-10)
 
@@ -799,3 +816,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
