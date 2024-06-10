@@ -253,5 +253,6 @@ code .line:not(:last-child)::after {
 }
 
 .small-line-numbers code .line {
-  display: table-row;
+  display: table-row-group;
+  position: absolute;
 }
