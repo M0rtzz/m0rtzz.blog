@@ -253,5 +253,5 @@ code .line:not(:last-child)::after {
 }
 
 .small-line-numbers code .line {
-  display: table-row-group;
+  display: table-row;
 }
