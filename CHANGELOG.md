@@ -1,3 +1,9 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [1.8.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v1.8.0...v1.8.1) (2024-06-10)
+
 ## 1.8.0 (2024-06-10)
 
 * 🐛 fix(shiki.css): delete the last blank line in the code block ([a38c112](https://github.com/M0rtzz/m0rtzz.blog/commit/a38c112))
@@ -712,5 +718,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
