@@ -246,3 +246,8 @@ code .line:not(:last-child)::after {
     height: 2rem;
   }
 }
+
+.shiki, code {
+    
+  overflow: scroll; /* 隐藏超出部分 */
+}
