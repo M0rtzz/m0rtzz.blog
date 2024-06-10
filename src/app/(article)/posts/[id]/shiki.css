@@ -222,7 +222,7 @@ code .line:not(:last-child)::after {
 
 .small-line-numbers code .line:not(:last-child)::after {
   content: '';
-  position: absolute;
+  position: -webkit-sticky;
   left: 2rem;
   top: 0;
   bottom: 0;
@@ -253,6 +253,6 @@ code .line:not(:last-child)::after {
 }
 
 .small-line-numbers code .line {
-  display: table-row-group;
+  display: table-header-group;
   position: absolute;
 }
