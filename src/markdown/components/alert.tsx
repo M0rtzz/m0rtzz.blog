@@ -48,7 +48,7 @@ export const Alert = (props: AlertProps) => {
         <Icon className='size-5' />
         <span className='block first-letter:uppercase'>{type}</span>
       </p>
-      <div className='small-line-numbers'>{children}</div>
+      <div className='small-line-numbers relative'>{children}</div>
     </div>
   )
 }
