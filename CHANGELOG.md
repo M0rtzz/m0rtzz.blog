@@ -1,8 +1,77 @@
-# Changelog
+## 1.8.0 (2024-06-10)
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 🐛 fix(shiki.css): delete the last blank line in the code block ([a38c112](https://github.com/M0rtzz/m0rtzz.blog/commit/a38c112))
+* 🔖 tag(package.json): v1.8.0 ([5965bc9](https://github.com/M0rtzz/m0rtzz.blog/commit/5965bc9))
 
-## [1.7.10](https://github.com/M0rtzz/m0rtzz.blog/compare/v1.7.9...v1.7.10) (2024-06-10)
+
+
+## <small>1.7.9 (2024-06-09)</small>
+
+* 🐛 fix(shiki.css): delete the last blank line in the code block ([3f30ba2](https://github.com/M0rtzz/m0rtzz.blog/commit/3f30ba2))
+* 💄 ui: change style of copy button and `Copied\!` prompt box ([8bbdefd](https://github.com/M0rtzz/m0rtzz.blog/commit/8bbdefd))
+* 📝 docs(CHANGELOG.md): automatic update ([33f313c](https://github.com/M0rtzz/m0rtzz.blog/commit/33f313c))
+* 📝 docs(CHANGELOG.md): automatic update ([b97b956](https://github.com/M0rtzz/m0rtzz.blog/commit/b97b956))
+* 🔖 tag(package.json): v1.7.8 ([657722f](https://github.com/M0rtzz/m0rtzz.blog/commit/657722f))
+* 🔖 tag(package.json): v1.7.9 ([ff0180f](https://github.com/M0rtzz/m0rtzz.blog/commit/ff0180f))
+
+
+
+## <small>1.7.7 (2024-06-09)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([24cb0f6](https://github.com/M0rtzz/m0rtzz.blog/commit/24cb0f6))
+* 🔖 tag(package.json): v1.7.7 ([d4d921c](https://github.com/M0rtzz/m0rtzz.blog/commit/d4d921c))
+* 🙈 ignore(.eslintrc.json): ignore warning of react-hooks/exhaustive-deps ([d0df514](https://github.com/M0rtzz/m0rtzz.blog/commit/d0df514))
+
+
+
+## <small>1.7.6 (2024-06-09)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([fa052e7](https://github.com/M0rtzz/m0rtzz.blog/commit/fa052e7))
+* 🔖 tag(package.json): v1.7.6 ([955307f](https://github.com/M0rtzz/m0rtzz.blog/commit/955307f))
+* 🔥 remove(content.tsx): rm unused comment ([5c42fbf](https://github.com/M0rtzz/m0rtzz.blog/commit/5c42fbf))
+* 🔥 remove(page.tsx): rm delay code ([0342183](https://github.com/M0rtzz/m0rtzz.blog/commit/0342183))
+
+
+
+## <small>1.7.5 (2024-06-09)</small>
+
+* 🎨 style(shiki.css): update class ([643b8ca](https://github.com/M0rtzz/m0rtzz.blog/commit/643b8ca))
+* 📝 docs(CHANGELOG.md): automatic update ([28e6575](https://github.com/M0rtzz/m0rtzz.blog/commit/28e6575))
+* 🔖 tag(package.json): v1.7.5 ([518ba25](https://github.com/M0rtzz/m0rtzz.blog/commit/518ba25))
+
+
+
+## <small>1.7.4 (2024-06-09)</small>
+
+* 🐛 fix: fix code block render bug ([36bd73d](https://github.com/M0rtzz/m0rtzz.blog/commit/36bd73d))
+* 📝 docs(CHANGELOG.md): automatic update ([9015568](https://github.com/M0rtzz/m0rtzz.blog/commit/9015568))
+* 🔖 tag(package.json): v1.7.4 ([13ab224](https://github.com/M0rtzz/m0rtzz.blog/commit/13ab224))
+
+
+
+## <small>1.7.3 (2024-06-09)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([11e8499](https://github.com/M0rtzz/m0rtzz.blog/commit/11e8499))
+* 🔖 tag(package.json): v1.7.3 ([53d1112](https://github.com/M0rtzz/m0rtzz.blog/commit/53d1112))
+* 🚧 wip: wip ([98cc5ab](https://github.com/M0rtzz/m0rtzz.blog/commit/98cc5ab))
+
+
+
+## <small>1.7.2 (2024-06-09)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([d467f5c](https://github.com/M0rtzz/m0rtzz.blog/commit/d467f5c))
+* 🔖 tag(package.json): v1.7.2 ([49431f3](https://github.com/M0rtzz/m0rtzz.blog/commit/49431f3))
+* 🚧 wip: wip ([b522424](https://github.com/M0rtzz/m0rtzz.blog/commit/b522424))
+
+
+
+## <small>1.7.1 (2024-06-09)</small>
+
+* ⬆️ up_dep(package.json): upgrade shiki ([531fe1a](https://github.com/M0rtzz/m0rtzz.blog/commit/531fe1a))
+* 📝 docs(CHANGELOG.md): automatic update ([c3fad84](https://github.com/M0rtzz/m0rtzz.blog/commit/c3fad84))
+* 🔖 tag(package.json): v1.7.1 ([c219c44](https://github.com/M0rtzz/m0rtzz.blog/commit/c219c44))
+
+
 
 ## 1.7.0 (2024-06-09)
 
@@ -643,3 +712,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
