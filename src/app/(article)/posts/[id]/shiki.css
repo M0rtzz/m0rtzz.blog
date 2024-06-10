@@ -254,4 +254,5 @@ code .line:not(:last-child)::after {
 /* 解决代码越界bug */
 .shiki {
   overflow: scroll;
+  position: relative;
 }
