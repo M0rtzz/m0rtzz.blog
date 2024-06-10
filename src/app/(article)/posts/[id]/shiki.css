@@ -247,7 +247,8 @@ code .line:not(:last-child)::after {
   }
 }
 
-.shiki, code {
-    
-  overflow: scroll; /* 隐藏超出部分 */
+/* 解决代码越界bug */
+.shiki,
+code {
+  overflow: scroll;
 }
