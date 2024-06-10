@@ -156,6 +156,10 @@
   display: table-header-group;
 }
 
+.small-line-numbers code .line:not(:last-child) {
+  position: relative;
+}
+
 code .line {
   display: inline-block;
 }
