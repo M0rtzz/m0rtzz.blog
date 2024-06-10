@@ -1,8 +1,65 @@
-# Changelog
+## <small>1.8.8 (2024-06-10)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 🔖 tag(package.json): v1.8.8 ([6156f4c](https://github.com/M0rtzz/m0rtzz.blog/commit/6156f4c))
+* 🚧 wip: wip ([f18a206](https://github.com/M0rtzz/m0rtzz.blog/commit/f18a206))
 
-## [1.8.8](https://github.com/M0rtzz/m0rtzz.blog/compare/v1.8.7...v1.8.8) (2024-06-10)
+
+
+## <small>1.8.7 (2024-06-10)</small>
+
+* ♻️ refactor(shiki.css): update css class ([87e10c2](https://github.com/M0rtzz/m0rtzz.blog/commit/87e10c2))
+* 📝 docs(CHANGELOG.md): automatic update ([1071f60](https://github.com/M0rtzz/m0rtzz.blog/commit/1071f60))
+* 🔖 tag(package.json): v1.8.7 ([2757d01](https://github.com/M0rtzz/m0rtzz.blog/commit/2757d01))
+
+
+
+## <small>1.8.6 (2024-06-10)</small>
+
+* 🎨 style(shiki.css): format ([13a8485](https://github.com/M0rtzz/m0rtzz.blog/commit/13a8485))
+* 📝 docs(CHANGELOG.md): automatic update ([13d0a10](https://github.com/M0rtzz/m0rtzz.blog/commit/13d0a10))
+* 🔖 tag(package.json): v1.8.6 ([e5808f4](https://github.com/M0rtzz/m0rtzz.blog/commit/e5808f4))
+
+
+
+## <small>1.8.5 (2024-06-10)</small>
+
+* 🐛 fix(shiki.css): fix scroll bug ([3a43efd](https://github.com/M0rtzz/m0rtzz.blog/commit/3a43efd))
+* 📝 docs(CHANGELOG.md): automatic update ([1d7c627](https://github.com/M0rtzz/m0rtzz.blog/commit/1d7c627))
+* 🔖 tag(package.json): v1.8.5 ([ba2cee0](https://github.com/M0rtzz/m0rtzz.blog/commit/ba2cee0))
+
+
+
+## <small>1.8.4 (2024-06-10)</small>
+
+* 🎨 style(copy-button.tsx): eslint ([7c5abe8](https://github.com/M0rtzz/m0rtzz.blog/commit/7c5abe8))
+* 📝 docs(CHANGELOG.md): automatic update ([abc2723](https://github.com/M0rtzz/m0rtzz.blog/commit/abc2723))
+* 🔖 tag(package.json): v1.8.4 ([764bf43](https://github.com/M0rtzz/m0rtzz.blog/commit/764bf43))
+
+
+
+## <small>1.8.3 (2024-06-10)</small>
+
+* ♻️ refactor(copy-button.tsx): change logic of copying code ([52ffeaf](https://github.com/M0rtzz/m0rtzz.blog/commit/52ffeaf))
+* 📝 docs(CHANGELOG.md): automatic update ([d1fd5f9](https://github.com/M0rtzz/m0rtzz.blog/commit/d1fd5f9))
+* 🔖 tag(package.json): v1.8.3 ([960943f](https://github.com/M0rtzz/m0rtzz.blog/commit/960943f))
+
+
+
+## <small>1.8.2 (2024-06-10)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([ef41eeb](https://github.com/M0rtzz/m0rtzz.blog/commit/ef41eeb))
+* 🔖 tag(package.json): v1.8.2 ([2b59244](https://github.com/M0rtzz/m0rtzz.blog/commit/2b59244))
+* 🚧 wip: wip ([6e759b8](https://github.com/M0rtzz/m0rtzz.blog/commit/6e759b8))
+
+
+
+## <small>1.8.1 (2024-06-10)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([27e410a](https://github.com/M0rtzz/m0rtzz.blog/commit/27e410a))
+* 🔖 tag(package.json): v1.8.1 ([555fbb9](https://github.com/M0rtzz/m0rtzz.blog/commit/555fbb9))
+* 🚧 wip: wip ([3f99439](https://github.com/M0rtzz/m0rtzz.blog/commit/3f99439))
+
+
 
 ## 1.8.0 (2024-06-10)
 
@@ -719,3 +776,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
