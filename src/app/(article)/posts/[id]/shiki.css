@@ -152,10 +152,6 @@
   content: no-close-quote;
 }
 
-.small-line-numbers code .line {
-  display: table-header-group;
-}
-
 .small-line-numbers code .line:not(:last-child) {
   position: relative;
 }
@@ -254,4 +250,8 @@ code .line:not(:last-child)::after {
 /* 解决代码越界bug */
 .shiki {
   overflow: scroll;
+}
+
+.small-line-numbers code .line {
+  display: table-row-group;
 }
