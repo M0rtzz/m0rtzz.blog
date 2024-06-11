@@ -226,6 +226,7 @@ code .line:not(:last-child)::after {
   left: 2rem;
   top: 0;
   bottom: 0;
+  height: 120%; /* 解决Chromium内核浏览器竖线不连接的问题 */
   border-left: 1px solid rgba(100, 120, 130, 0.6);
 }
 
@@ -250,9 +251,4 @@ code .line:not(:last-child)::after {
 /* 解决代码越界bug */
 .shiki {
   overflow: scroll;
-}
-
-.small-line-numbers code .line {
-  display: table-header-group;
-  position: absolute;
 }
