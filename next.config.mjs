@@ -1,13 +1,8 @@
 import optimizeLocales from '@react-aria/optimize-locales-plugin'
 import withBundleAnalyzer from '@next/bundle-analyzer'
 
-/** @type {import('next').NextConfig} */
+// eslint-disable-next-line import/no-mutable-exports
 let nextConfig = {
-  output: 'export',
-  images: {
-    unoptimized: true,
-  },
-  reactStrictMode: true,
   experimental: {
     serverComponentsExternalPackages: [
       'rsc-mdx',
@@ -15,6 +10,11 @@ let nextConfig = {
       '@shikijs/rehype',
     ],
   },
+    images: {
+    unoptimized: true,
+  },
+  output: 'export',
+  reactStrictMode: true,
   webpack(config) {
     config.plugins.push(
       optimizeLocales.webpack({

@@ -67,7 +67,7 @@ export const CopyButton = (props: CopyButtonProps) => {
           ? '!block bg-gray-800 bg-gradient-to-b from-surface-1 to-white text-green-500 '
           : 'text-gray-500',
       )}
-      onClick={handleCopy}
+      onClick={() => void handleCopy()}
     >
       {isCopied && (
         <span className='absolute-small absolute -left-2 top-1/2 -translate-x-full -translate-y-1/2 rounded bg-gray-800 bg-gradient-to-b from-surface-1 to-white px-2 py-1 text-gray-500 dark:to-white/5 '>

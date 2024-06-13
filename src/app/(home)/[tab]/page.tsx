@@ -2,7 +2,7 @@ import upperFirst from 'lodash.upperfirst'
 
 import { staticPage } from '@/app/static-page'
 
-type PageProps = {
+interface PageProps {
   params: { tab: string }
 }
 

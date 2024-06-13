@@ -1,8 +1,8 @@
-import { type Metadata } from 'next'
-
 import { Grid } from '@/components/grid'
 import { Post } from '@/components/post'
 import { queryAllPosts } from '@/service'
+
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'All Posts',
