@@ -40,6 +40,8 @@ scp out.zip "${remote_user}"@"${remote_host}":"${remote_folder}"
 
 ssh "${remote_user}"@"${remote_host}" "unzip -o ${remote_folder}out.zip -d ${remote_folder} && rm ${remote_folder}out.zip && echo $'\e[1;32munzip success\e[0m' || echo $'\e[1;31munzip fail\e[0m'"
 
-ssh "${remote_user}"@"${remote_host}" "nginx -s reload && echo $'\e[1;32mnginx -s reload success\e[0m' || echo $'\e[1;31mnginx -s reload fail\e[0m'"
+ssh "${remote_user}"@"${remote_host}" "nginx && nginx -s reload && echo $'\e[1;32mnginx -s reload success\e[0m' || echo $'\e[1;31mnginx -s reload fail\e[0m'"
+
+rm -f out.zip
 
 echo $'\e[1;32m部署完成\e[0m'
