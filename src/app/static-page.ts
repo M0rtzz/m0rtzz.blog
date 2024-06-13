@@ -1,5 +1,5 @@
-export type StaticPageParams = {
-  tab?: string
+export interface StaticPageParams extends Record<string, string | string[]> {
+  tab: string
 }
 export const staticPage = [
   'All',
