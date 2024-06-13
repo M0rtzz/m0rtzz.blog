@@ -21,7 +21,7 @@ export const viewport: Viewport = {
 export default function Page() {
   return (
     <div className='flex min-h-svh items-center justify-center bg-[#282935] p-4'>
-      <main className='flex max-h-[90svh] max-w-[65ch] flex-1 flex-col overflow-hidden rounded-2xl border border-gray-600 shadow-2xl shadow-black'>
+      <main className='flex max-h-[90svh] max-w-prose flex-1 flex-col overflow-hidden rounded-2xl border border-gray-600 shadow-2xl shadow-black'>
         <header className='grid h-11 flex-none grid-cols-[1fr_2fr_1fr] items-center border-b border-gray-800 bg-zinc-700 px-4 text-xs font-semibold'>
           <span className='flex gap-2'>
             <Link aria-label='Back to home page' href='/'>
@@ -32,9 +32,7 @@ export default function Page() {
             <Dot className='cursor-not-allowed bg-yellow-400' />
             <Dot className='cursor-not-allowed bg-green-500' />
           </span>
-          <span className='text-center text-gray-400'>
-            M0rtzz@Resume:~
-          </span>
+          <span className='text-center text-gray-400'>M0rtzz@Resume:~</span>
           <span className='text-end text-gray-500'>⌥⌘1</span>
         </header>
         <div className='min-h-60 flex-1 overflow-y-auto p-2 text-sm text-gray-200 duration-300 animate-in fade-in'>
@@ -46,9 +44,10 @@ export default function Page() {
                 <strong>徐梓航</strong>.
               </p>
               <p>
-                I am a student majoring in computer science at Zhengzhou University,
-                and I have been studying computer knowledge since <strong>2021</strong>, focusing on
-                writing software to contribute to the open source world and
+                I am a student majoring in computer science at Zhengzhou
+                University, and I have been studying computer knowledge since{' '}
+                <strong>2021</strong>, focusing on writing software to
+                contribute to the open source world and
                 <code>share knowledge and innovation</code>.
               </p>
               <p>
@@ -70,13 +69,52 @@ export default function Page() {
             <TypedText>competitions</TypedText>
             <TypedContent>
               <p>
-                I won three national first prizes in the field of robotics in 2023, with two championships and one bronze medal.
+                I won three national first prizes in the field of robotics in
+                2023, with two championships and one bronze medal.
               </p>
               <p>
-                In the 2023 RoboCup China tournament（2023RoboCup机器人世界杯中国赛）, I led a team to develop an intelligent home service robot that can inquire about customer information, independently search for items that customers need, and submit them to customers. Comprehensive application of SeetaFace6 facial recognition technology YOLO object detection algorithm LiDAR-SLAM mapping method and A * path planning algorithm are used to integrate various functions through ROS communication framework, enabling robots to complete corresponding operations. The main challenge is to focus on implementing human-machine tracking systems through depth and CV, in order to solve the problem of short maximum distance and low accuracy in LiDAR tracking.<br></br>Finally, in the competition, <code><i>I led the team to surpass teams from Tsinghua University, Southeast University, Shanghai University, and others to win the championship with an absolute advantage</i></code>.
+                In the 2023 RoboCup China
+                tournament（2023RoboCup机器人世界杯中国赛）, I led a team to
+                develop an intelligent home service robot that can inquire about
+                customer information, independently search for items that
+                customers need, and submit them to customers. Comprehensive
+                application of SeetaFace6 facial recognition technology YOLO
+                object detection algorithm LiDAR-SLAM mapping method and A *
+                path planning algorithm are used to integrate various functions
+                through ROS communication framework, enabling robots to complete
+                corresponding operations. The main challenge is to focus on
+                implementing human-machine tracking systems through depth and
+                CV, in order to solve the problem of short maximum distance and
+                low accuracy in LiDAR tracking.<br></br>Finally, in the
+                competition,{' '}
+                <code>
+                  <i>
+                    I led the team to surpass teams from Tsinghua University,
+                    Southeast University, Shanghai University, and others to win
+                    the championship with an absolute advantage
+                  </i>
+                </code>
+                .
               </p>
               <p>
-                In the 2023 China Robot Competition Special Competition General Purpose Service Robot Project（2023中国机器人大赛专项赛通用服务机器人赛项）, the General Purpose Service Robot Project focuses on examining the comprehensive human-machine interaction ability of robots. I focused my main challenge on building the GGCNN model, predicting grasping coordinates and angles in a multi object plane scene, and obtaining them through a RealSense camera Depth information to achieve the planar grasping effect of the robotic arm.<br></br>Finally, in the competition, <code><i>I led the team to surpass teams from Xi&apos;an Jiaotong University, Northwestern Polytechnical University, and others to win the championship with an absolute advantage</i></code>.
+                In the 2023 China Robot Competition Special Competition General
+                Purpose Service Robot
+                Project（2023中国机器人大赛专项赛通用服务机器人赛项）, the
+                General Purpose Service Robot Project focuses on examining the
+                comprehensive human-machine interaction ability of robots. I
+                focused my main challenge on building the GGCNN model,
+                predicting grasping coordinates and angles in a multi object
+                plane scene, and obtaining them through a RealSense camera Depth
+                information to achieve the planar grasping effect of the robotic
+                arm.<br></br>Finally, in the competition,{' '}
+                <code>
+                  <i>
+                    I led the team to surpass teams from Xi&apos;an Jiaotong
+                    University, Northwestern Polytechnical University, and
+                    others to win the championship with an absolute advantage
+                  </i>
+                </code>
+                .
               </p>
             </TypedContent>
             <TypedText>projects</TypedText>
@@ -89,7 +127,11 @@ export default function Page() {
                     </a>
                   </strong>
                 </li>
-                <li>An autonomous driving simulation system based on fish eye camera and other perception technologies has been implemented using UE4.</li>
+                <li>
+                  An autonomous driving simulation system based on fish eye
+                  camera and other perception technologies has been implemented
+                  using UE4.
+                </li>
               </ul>
               <ul>
                 <li>
@@ -99,7 +141,20 @@ export default function Page() {
                     </a>
                   </strong>
                 </li>
-                <li>Modify the Linux-0.12 kernel source code by adding two system calls. The first system call copies the user state string content to the kernel state and saves it, while the second system call copies the saved string back from the kernel state to the user state. I have written an automated configuration script that automatically installs compilation toolchains such as gcc-3.4 and downloads the source code of bochs-2.2.5. Use the sed command modification configure script to add gcc compilation parameters to prevent compilation errors. Then, debug the modified Linux-0.12 kernel using the compiled bochs-x86 emulator. The Git submission style of this repo fully follows the Angular + gitmoji specificationn.</li>
+                <li>
+                  Modify the Linux-0.12 kernel source code by adding two system
+                  calls. The first system call copies the user state string
+                  content to the kernel state and saves it, while the second
+                  system call copies the saved string back from the kernel state
+                  to the user state. I have written an automated configuration
+                  script that automatically installs compilation toolchains such
+                  as gcc-3.4 and downloads the source code of bochs-2.2.5. Use
+                  the sed command modification configure script to add gcc
+                  compilation parameters to prevent compilation errors. Then,
+                  debug the modified Linux-0.12 kernel using the compiled
+                  bochs-x86 emulator. The Git submission style of this repo
+                  fully follows the Angular + gitmoji specificationn.
+                </li>
               </ul>
               <ul>
                 <li>
@@ -109,9 +164,7 @@ export default function Page() {
                     </a>
                   </strong>
                 </li>
-                <li>
-                  My website&apos;s front-end source code.
-                </li>
+                <li>My website&apos;s front-end source code.</li>
               </ul>
               <ul>
                 <li>
@@ -122,7 +175,8 @@ export default function Page() {
                   </strong>
                 </li>
                 <li>
-                  Using LaTeX, a resume template was designed by writing the font of fontame-4.7.0 as a .sty style file and introducing it.
+                  Using LaTeX, a resume template was designed by writing the
+                  font of fontame-4.7.0 as a .sty style file and introducing it.
                 </li>
               </ul>
               <ul>
@@ -134,30 +188,49 @@ export default function Page() {
                   </strong>
                 </li>
                 <li>
-                  Through research, I have discovered a method of unpacking scene.pkg and generating .mp4 files.
+                  Through research, I have discovered a method of unpacking
+                  scene.pkg and generating .mp4 files.
                 </li>
               </ul>
             </TypedContent>
             <TypedText>research</TypedText>
             <TypedContent>
-              <p><strong><i>FisheyeSegNet: Restricted Deformable Convolution based Semantic Segmentation Using Surround-View Fisheye Camera for Autonomous Driving</i></strong></p>
               <p>
-                In response to the lack of research data on fisheye vision, a Cubemap algorithm was designed to construct a large-scale semantic segmentation dataset for M0rtzzWoodscape using CARLA. To address the impact of geometric distortions in panoramic fisheye images on semantic segmentation models, a multi branch stacking module based on DCN is designed to extract distorted features.
+                <strong>
+                  <i>
+                    FisheyeSegNet: Restricted Deformable Convolution based
+                    Semantic Segmentation Using Surround-View Fisheye Camera for
+                    Autonomous Driving
+                  </i>
+                </strong>
+              </p>
+              <p>
+                In response to the lack of research data on fisheye vision, a
+                Cubemap algorithm was designed to construct a large-scale
+                semantic segmentation dataset for M0rtzzWoodscape using CARLA.
+                To address the impact of geometric distortions in panoramic
+                fisheye images on semantic segmentation models, a multi branch
+                stacking module based on DCN is designed to extract distorted
+                features.
               </p>
             </TypedContent>
             <TypedText>skills</TypedText>
             <TypedContent>
               <p>
-                I excel in <code>Linux</code>, proficiently utilizing <code>Shell</code> to perform human-computer interaction.
+                I excel in <code>Linux</code>, proficiently utilizing{' '}
+                <code>Shell</code> to perform human-computer interaction.
               </p>
               <p>
-                I am familiar with <code>C/C++, Python, Pytorch, Docker, Git, etc</code>.
+                I am familiar with{' '}
+                <code>C/C++, Python, Pytorch, Docker, Git, etc</code>.
               </p>
               <p>
-                In addition to my daily backend development tasks, I can also handle basic website construction and deployment.
+                In addition to my daily backend development tasks, I can also
+                handle basic website construction and deployment.
               </p>
               <p>
-                Furthermore, I have experience developing service robots using C/C++, Python and ROS.
+                Furthermore, I have experience developing service robots using
+                C/C++, Python and ROS.
               </p>
             </TypedContent>
             <TypedText>blog-info</TypedText>

@@ -53,7 +53,7 @@ export const Pinned = async () => {
                 {language && (
                   <div className='flex items-center'>
                     <i
-                      className='box-content inline-block h-2.5 w-2.5 rounded-full border border-[rgb(255,255,255,0.2)]'
+                      className='box-content inline-block size-2.5 rounded-full border border-[rgb(255,255,255,0.2)]'
                       style={{
                         background: language.color,
                         color: language.color,
