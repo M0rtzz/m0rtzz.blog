@@ -1,57 +1,8 @@
-## <small>1.9.7 (2024-06-13)</small>
+# Changelog
 
-* 👷 ci(deploy.yml): add deploy.yml ([f335740](https://github.com/M0rtzz/m0rtzz.blog/commit/f335740))
-* 🔖 tag(package.json): v1.9.7 ([4510049](https://github.com/M0rtzz/m0rtzz.blog/commit/4510049))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>1.9.6 (2024-06-11)</small>
-
-* 🐛 fix(shiki.css): fix the bug of always displaying scrollbars ([eae441f](https://github.com/M0rtzz/m0rtzz.blog/commit/eae441f))
-* 📝 docs(CHANGELOG.md): automatic update ([dc54323](https://github.com/M0rtzz/m0rtzz.blog/commit/dc54323))
-* 🔖 tag(package.json): v1.9.6 ([d55298e](https://github.com/M0rtzz/m0rtzz.blog/commit/d55298e))
-
-
-
-## <small>1.9.5 (2024-06-11)</small>
-
-* 🐛 fix(shiki.css): fix the bug of vertical lines not being connected in the chromium kernel browser ([8c80c34](https://github.com/M0rtzz/m0rtzz.blog/commit/8c80c34))
-* 📝 docs(CHANGELOG.md): automatic update ([5c81f4c](https://github.com/M0rtzz/m0rtzz.blog/commit/5c81f4c))
-* 🔖 tag(package.json): v1.9.5 ([f01df37](https://github.com/M0rtzz/m0rtzz.blog/commit/f01df37))
-
-
-
-## <small>1.9.4 (2024-06-10)</small>
-
-* ✅ test: test ([7a5c741](https://github.com/M0rtzz/m0rtzz.blog/commit/7a5c741))
-* 📝 docs(CHANGELOG.md): automatic update ([c9857c8](https://github.com/M0rtzz/m0rtzz.blog/commit/c9857c8))
-* 🔖 tag(package.json): v1.9.4 ([5fc849f](https://github.com/M0rtzz/m0rtzz.blog/commit/5fc849f))
-
-
-
-## <small>1.9.3 (2024-06-10)</small>
-
-* ✅ test: test ([0693d12](https://github.com/M0rtzz/m0rtzz.blog/commit/0693d12))
-* 📝 docs(CHANGELOG.md): automatic update ([fd2985f](https://github.com/M0rtzz/m0rtzz.blog/commit/fd2985f))
-* 🔖 tag(package.json): v1.9.3 ([335f280](https://github.com/M0rtzz/m0rtzz.blog/commit/335f280))
-
-
-
-## <small>1.9.2 (2024-06-10)</small>
-
-* 📝 docs(CHANGELOG.md): automatic update ([d787ac1](https://github.com/M0rtzz/m0rtzz.blog/commit/d787ac1))
-* 🔖 tag(package.json): v1.9.2 ([df4a054](https://github.com/M0rtzz/m0rtzz.blog/commit/df4a054))
-* 🚧 wip: wip ([7698b5b](https://github.com/M0rtzz/m0rtzz.blog/commit/7698b5b))
-
-
-
-## <small>1.9.1 (2024-06-10)</small>
-
-* 📝 docs(CHANGELOG.md): automatic update ([3fa959a](https://github.com/M0rtzz/m0rtzz.blog/commit/3fa959a))
-* 🔖 tag(package.json): v1.9.1 ([126adb6](https://github.com/M0rtzz/m0rtzz.blog/commit/126adb6))
-* 🚧 wip: wip ([ae9e197](https://github.com/M0rtzz/m0rtzz.blog/commit/ae9e197))
-
-
+## [1.9.8](https://github.com/M0rtzz/m0rtzz.blog/compare/v1.9.7...v1.9.8) (2024-06-13)
 
 ## 1.9.0 (2024-06-10)
 
@@ -848,5 +799,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
