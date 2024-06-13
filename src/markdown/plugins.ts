@@ -39,7 +39,7 @@ export const rehypeGithubAlert: Plugin = () => tree =>
         if (!value) {
           return
         }
-        const matches = value.match(/\[!(.+)]/)
+        const matches = value.match(/\[!(.+)\]/)
         if (matches) {
           const type = matches[1].toLowerCase()
           text.value = value.replace(matches[0], '').trim()

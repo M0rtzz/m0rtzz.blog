@@ -15,7 +15,7 @@ function sleep(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 
-const Pin = tw.div`absolute h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border bg-surface-2 shadow-sm`
+const Pin = tw.div`absolute size-4 -translate-x-1/2 -translate-y-1/2 rounded-full border bg-surface-2 shadow-sm`
 
 export const Galton = memo<GaltonProps>(props => {
   const { images } = props
@@ -215,7 +215,6 @@ export const Galton = memo<GaltonProps>(props => {
     if (!ref.current) return
 
     return resetAndStart()
-    // eslint-disable-next-line
   }, [])
 
   return (
