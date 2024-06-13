@@ -12,7 +12,7 @@ import { usePrevious } from '@/hooks/usePrevious'
 const staticNav = staticPage.slice(0, -1)
 
 export const Nav = () => {
-  const { tab: currentTab } = useParams<Partial<StaticPageParams>>()
+  const { tab: currentTab } = useParams() as Partial<StaticPageParams>
   const [pos, setPos] = useState<Record<string, [number, number]>>({})
   const ulRef = useRef<HTMLUListElement | null>(null)
 
