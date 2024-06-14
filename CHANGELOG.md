@@ -1,30 +1,8 @@
-## <small>2.0.2 (2024-06-14)</small>
+# Changelog
 
-* 🔖 tag(package.json): v2.0.2 ([f97832e](https://github.com/M0rtzz/m0rtzz.blog/commit/f97832e))
-* 🔨 script(transfer.sh): update logic ([87fa3d3](https://github.com/M0rtzz/m0rtzz.blog/commit/87fa3d3))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>2.0.1 (2024-06-14)</small>
-
-* 💄 ui(page.tsx): prohibit reducing image brightness ([19e5b85](https://github.com/M0rtzz/m0rtzz.blog/commit/19e5b85))
-* 📝 docs(CHANGELOG.md): automatic update ([34acbfa](https://github.com/M0rtzz/m0rtzz.blog/commit/34acbfa))
-* 📝 docs(CHANGELOG.md): automatic update ([7b505ff](https://github.com/M0rtzz/m0rtzz.blog/commit/7b505ff))
-* 📝 docs(CHANGELOG.md): automatic update ([9113d1e](https://github.com/M0rtzz/m0rtzz.blog/commit/9113d1e))
-* 🔖 tag(package.json): v2.0.0 ([b2dd4d4](https://github.com/M0rtzz/m0rtzz.blog/commit/b2dd4d4))
-* 🔖 tag(package.json): v2.0.1 ([b9f4a53](https://github.com/M0rtzz/m0rtzz.blog/commit/b9f4a53))
-* 🔖 tag(package.json): v2.0.1 ([7ac5f77](https://github.com/M0rtzz/m0rtzz.blog/commit/7ac5f77))
-* 🔥 remove: rm github workflow ([2fc88b9](https://github.com/M0rtzz/m0rtzz.blog/commit/2fc88b9))
-* 🙈 ignore(.gitignore): ignore .github/ ([897d74a](https://github.com/M0rtzz/m0rtzz.blog/commit/897d74a))
-
-
-
-## <small>1.9.9 (2024-06-13)</small>
-
-* 📝 docs(CHANGELOG.md): automatic update ([ed51683](https://github.com/M0rtzz/m0rtzz.blog/commit/ed51683))
-* 🔖 tag(package.json): v1.9.9 ([25544ef](https://github.com/M0rtzz/m0rtzz.blog/commit/25544ef))
-
-
+## [2.0.3](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.0.2...v2.0.3) (2024-06-14)
 
 ## 2.0.0 (2024-06-13)
 
@@ -904,5 +882,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
