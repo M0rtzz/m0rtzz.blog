@@ -41,3 +41,4 @@ dist
 .cz-config.js
 .vscode/
 # .husky/
+.github/
