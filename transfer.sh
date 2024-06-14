@@ -23,7 +23,7 @@ echo $'\e[1;32m静态资源构建完成\e[0m'
 zip -r out.zip out/
 
 remote_user="root"
-remote_host="117.72.76.61"
+remote_host="${JDCLOUD}"
 remote_folder="/root/Web/m0rtzz.blog/"
 
 ssh "${remote_user}"@"${remote_host}" "nginx -s stop && echo $'\e[1;32mnginx -s stop success\e[0m' || echo $'\e[1;31mnginx -s stop fail\e[0m'"
