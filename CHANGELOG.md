@@ -11,8 +11,9 @@
 ## <small>1.9.9 (2024-06-13)</small>
 
 * 🐛 fix(nav.tsx): fix type error ([16788dd](https://github.com/M0rtzz/m0rtzz.blog/commit/16788dd))
-* 📝 docs(CHANGELOG.md): automatic update ([ed51683](https://github.com/M0rtzz/m0rtzz.blog/commit/ed51683))
-* 🔖 tag(package.json): v1.9.9 ([25544ef](https://github.com/M0rtzz/m0rtzz.blog/commit/25544ef))
+* 📝 docs(CHANGELOG.md): automatic update ([205187f](https://github.com/M0rtzz/m0rtzz.blog/commit/205187f))
+* 🔖 tag(package.json): v1.9.9 ([46462a5](https://github.com/M0rtzz/m0rtzz.blog/commit/46462a5))
+* 🔨 script(transfer.sh): add logic of zip ([e49a484](https://github.com/M0rtzz/m0rtzz.blog/commit/e49a484))
 
 
 
