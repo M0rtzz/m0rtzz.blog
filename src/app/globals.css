@@ -145,3 +145,8 @@ strong {
   color: rgb(201, 77, 255) !important;
   font-family: "Segoe UI", "Apple Color Emoji", "Noto Color Emoji", "Segoe UI Emoji", sans-serif !important;
 }
+
+/* resume中加粗字体颜色默认 */
+div.prose-sm:nth-child(n)>p:nth-child(n)>strong:nth-child(n) {
+  color: unset !important;
+}
