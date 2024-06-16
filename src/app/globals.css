@@ -102,11 +102,6 @@ table td {
   vertical-align: middle; /* 垂直居中 */
 }
 
-/* 加粗字体的颜色 */
-strong {
-  color: rgb(59, 141, 254) !important;
-}
-
 /* 表格第一行加粗字体颜色恢复默认 */
 .prose :where(thead th strong):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
   color: unset !important;
@@ -132,4 +127,21 @@ img {
   /* display: block; */ /* 使图片成为块级元素 */
   margin-left: auto; /* 左外边距设为自动 */
   margin-right: auto; /* 右外边距设为自动 */
+}
+
+/* 加粗字体的颜色 */
+strong {
+  color: rgb(59, 141, 254) !important;
+}
+
+/* 加粗斜体字体的颜色 */
+.prose>p:nth-child(n)>em:nth-child(1) strong {
+  color: rgb(201, 77, 255) !important;
+  font-family: Segoe UI !important;
+}
+
+/* 斜体字体的颜色 */
+.prose>p:nth-child(n)>em:nth-child(1) {
+  color: rgb(201, 77, 255) !important;
+  font-family: Segoe UI !important;
 }
