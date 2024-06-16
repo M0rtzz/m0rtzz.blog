@@ -111,3 +111,9 @@ strong {
 .prose :where(thead th strong):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
   color: unset !important;
 }
+
+/* 表格边框 */
+th,
+td {
+  border: 1px solid gray;
+}
