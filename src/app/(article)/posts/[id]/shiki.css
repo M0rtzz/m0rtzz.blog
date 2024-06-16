@@ -197,7 +197,7 @@ code .line:not(:last-child)::after {
 
 /* 定义代码块之间的间距 */
 .code-block-spacing {
-  margin-bottom: 20px;
+  margin-bottom: 1em;
 }
 
 /* 固定文章的目录且可滚动 */
