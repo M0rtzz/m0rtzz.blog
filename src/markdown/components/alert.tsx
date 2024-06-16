@@ -44,6 +44,7 @@ export const Alert = (props: AlertProps) => {
 
   return (
     <div className={clsx('not-prose mb-4 border-l-4 pl-4', borderCls)}>
+      <div className='code-block-spacing' /> {''}
       <p className={clsx('flex items-center gap-2 py-2 font-bold', textCls)}>
         <Icon className='size-5' />
         <span className='block first-letter:uppercase'>{type}</span>
