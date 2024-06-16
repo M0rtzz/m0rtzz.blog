@@ -117,3 +117,13 @@ th,
 td {
   border: 1px solid gray;
 }
+
+/* 引用框上下距离 */
+.prose :where(p):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+strong.text-2xl {
+  color: unset !important;
+}
