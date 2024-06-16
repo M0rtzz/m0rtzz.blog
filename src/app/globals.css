@@ -127,3 +127,9 @@ td {
 strong.text-2xl {
   color: unset !important;
 }
+
+img {
+  /* display: block; */ /* 使图片成为块级元素 */
+  margin-left: auto; /* 左外边距设为自动 */
+  margin-right: auto; /* 右外边距设为自动 */
+}
