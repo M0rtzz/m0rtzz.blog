@@ -50,7 +50,7 @@ const config: Config = {
           'Segoe UI Symbol',
           'Noto Color Emoji',
         ],
-        primary: ['var(--font-remote)', 'sans-serif'],
+        primary: ['var(--font-remote)', 'sans-serif', 'Segoe UI'],
         handwriting: [
           'var(--font-remote-handwriting)',
           'var(--font-remote-sans)',
