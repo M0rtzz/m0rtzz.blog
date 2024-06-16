@@ -45,6 +45,7 @@ const config: Config = {
           'system-ui',
           'sans-serif',
           'Apple Color Emoji',
+          'Segoe UI',
           'Segoe UI Emoji',
           'Segoe UI Symbol',
           'Noto Color Emoji',
