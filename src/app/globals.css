@@ -137,11 +137,11 @@ strong {
 /* 加粗斜体字体的颜色 */
 .prose>p:nth-child(n)>em:nth-child(1) strong {
   color: rgb(201, 77, 255) !important;
-  font-family: Segoe UI !important;
+  font-family: "Segoe UI", "Apple Color Emoji", "Noto Color Emoji", "Segoe UI Emoji", sans-serif !important;
 }
 
 /* 斜体字体的颜色 */
 .prose>p:nth-child(n)>em:nth-child(1) {
   color: rgb(201, 77, 255) !important;
-  font-family: Segoe UI !important;
+  font-family: "Segoe UI", "Apple Color Emoji", "Noto Color Emoji", "Segoe UI Emoji", sans-serif !important;
 }
