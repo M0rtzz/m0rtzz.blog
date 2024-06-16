@@ -89,3 +89,25 @@
     animation: breath ease 2s alternate infinite;
   }
 }
+
+/* 表格行 */
+table tr {
+  text-align: center; /* 水平居中 */
+  vertical-align: middle; /* 垂直居中 */
+}
+
+/* 表格单元格 */
+table td {
+  text-align: center; /* 水平居中 */
+  vertical-align: middle; /* 垂直居中 */
+}
+
+/* 加粗字体的颜色 */
+strong {
+  color: rgb(59, 141, 254) !important;
+}
+
+/* 表格第一行加粗字体颜色恢复默认 */
+.prose :where(thead th strong):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  color: unset !important;
+}
