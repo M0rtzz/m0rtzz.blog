@@ -21,7 +21,7 @@ import { queryAllPosts } from '@/service'
 import { getSummary } from '@/service/summary'
 import { formatDateTime, readingTime } from '@/utils'
 
-import CustomTOC from './toc';
+import { TOCClient }  from './toc'
 
 // shiki style
 import './shiki.css'
@@ -68,7 +68,7 @@ export default async function Page({ params }: PageProps) {
   const { body, bodyText, createdAt, labels, number, title, updatedAt } =
     discussion
 
-  const tocData = fromMarkdown(body!)
+  const toc = fromMarkdown(body!)
 
   const formatOptions = {
     day: 'numeric',
@@ -133,7 +133,7 @@ export default async function Page({ params }: PageProps) {
         <h2 className='mb-4 whitespace-nowrap text-lg font-semibold tracking-wider has-[+ul:empty]:hidden'>
           TABLE OF CONTENTS
         </h2>
-        <CustomTOC tocData={tocData} />
+        <TOCClient toc={toc} />
       </aside>
     </main>
   )

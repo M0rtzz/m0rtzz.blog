@@ -1,40 +1,36 @@
 'use client'
 
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation'
 
-import { type Result } from 'mdast-util-toc'
-import { TOC } from 'react-markdown-toc/client'
+import { TOC, type TOCProps } from 'react-markdown-toc/client'
 
-import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible'
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible'
 
-interface CustomTOCProps {
-  tocData: [Result, Map<string, string>]
+interface TOCClientProps {
+  toc: TOCProps['toc']
 }
 
-function CustomTOC({ tocData }: CustomTOCProps) {
-  const router = useRouter();
-
+export function TOCClient(props: TOCClientProps) {
+  const { toc } = props
+  const router = useRouter()
   return (
     <TOC
-      toc={tocData}
-      scrollAlign="center"
-      renderList={(children) => (
+      scrollAlign='center'
+      throttleTime={100}
+      toc={toc}
+      renderList={children => (
         <CollapsibleContent className='pl-4 overflow-hidden data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up'>
           {children}
         </CollapsibleContent>
       )}
-      renderListItem={(children, open) => (
-        <Collapsible open={open}>
-          {children}
-        </Collapsible>
-      )}
+      renderListItem={(children, open) => <Collapsible open={open}>{children}</Collapsible>}
       renderLink={(children, href, active) => (
         <CollapsibleTrigger>
           <span
             data-active={active}
-            role="button"
+            role='button'
             onClick={() => {
-              router.push(href, { scroll: false });
+              router.push(href, { scroll: false })
               const target = document.querySelector(href)
               target?.scrollIntoView({ behavior: 'smooth' })
             }}
@@ -44,7 +40,5 @@ function CustomTOC({ tocData }: CustomTOCProps) {
         </CollapsibleTrigger>
       )}
     />
-  );
+  )
 }
-
-export default CustomTOC
