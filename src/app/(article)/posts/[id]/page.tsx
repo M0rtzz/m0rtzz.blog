@@ -68,7 +68,7 @@ export default async function Page({ params }: PageProps) {
   const { body, bodyText, createdAt, labels, number, title, updatedAt } =
     discussion
 
-  const tocData = fromMarkdown(body!);
+  const tocData = fromMarkdown(body!)
 
   const formatOptions = {
     day: 'numeric',
