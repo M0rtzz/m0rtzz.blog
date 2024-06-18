@@ -8,10 +8,7 @@ import {
   IconHourglassHigh,
   IconInfoSquareRounded,
 } from '@tabler/icons-react'
-
 import { fromMarkdown } from 'react-markdown-toc';
-
-import CustomTOC from './toc';
 
 import { repoName, repoOwner } from '~/blog-config'
 
@@ -23,6 +20,8 @@ import { TwoslashTrigger } from '@/markdown/twoslash/triger'
 import { queryAllPosts } from '@/service'
 import { getSummary } from '@/service/summary'
 import { formatDateTime, readingTime } from '@/utils'
+
+import CustomTOC from './toc';
 
 // shiki style
 import './shiki.css'
