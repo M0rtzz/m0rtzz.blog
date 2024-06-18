@@ -8,7 +8,10 @@ import {
   IconHourglassHigh,
   IconInfoSquareRounded,
 } from '@tabler/icons-react'
-import { TOC } from 'react-markdown-toc/server'
+
+import { fromMarkdown } from 'react-markdown-toc';
+
+import CustomTOC from './toc';
 
 import { repoName, repoOwner } from '~/blog-config'
 
@@ -65,6 +68,8 @@ export default async function Page({ params }: PageProps) {
   const discussion = nodes.find(node => node.number === +id)!
   const { body, bodyText, createdAt, labels, number, title, updatedAt } =
     discussion
+
+  const tocData = await fromMarkdown(body!);
 
   const formatOptions = {
     day: 'numeric',
@@ -125,17 +130,11 @@ export default async function Page({ params }: PageProps) {
         />
         <GiscusScript number={number} repo={`${repoOwner}/${repoName}`} />
       </article>
-      <aside className='sticky-table sticky top-20 ml-auto h-fit w-[24ch] max-xl:hidden'>
+      <aside className='sticky top-10 ml-auto h-fit w-[24ch] max-xl:hidden'>
         <h2 className='mb-4 whitespace-nowrap text-lg font-semibold tracking-wider has-[+ul:empty]:hidden'>
           TABLE OF CONTENTS
         </h2>
-        <TOC
-          markdown={body!}
-          throttleTime={100}
-          className='space-y-3 dark:text-color-4'
-          ul='pl-6 space-y-2'
-          a='data-[active=true]:text-brand dark:data-[active=true]:text-white block text-sm mb-2'
-        />
+        <CustomTOC tocData={tocData} />
       </aside>
     </main>
   )
