@@ -1,11 +1,14 @@
 'use client'
 
-import { TOC } from 'react-markdown-toc/client'
-import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible'
 import { useRouter } from 'next/navigation';
 
+import { type Result } from 'mdast-util-toc'
+import { TOC } from 'react-markdown-toc/client'
+
+import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible'
+
 interface CustomTOCProps {
-  tocData: [any, Map<string, string>];
+  tocData: [Result, Map<string, string>]
 }
 
 function CustomTOC({ tocData }: CustomTOCProps) {
