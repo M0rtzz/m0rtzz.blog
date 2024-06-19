@@ -21,7 +21,7 @@ import { queryAllPosts } from '@/service'
 import { getSummary } from '@/service/summary'
 import { formatDateTime, readingTime } from '@/utils'
 
-import { TOCClient }  from './toc'
+import { TOCClient } from './toc'
 
 // shiki style
 import './shiki.css'
