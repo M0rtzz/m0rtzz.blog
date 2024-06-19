@@ -10,7 +10,7 @@ interface TOCClientProps {
   toc: TOCProps['toc']
 }
 
-export function TOCClient(props: TOCClientProps) {
+export const TOCClient = (props: TOCClientProps) => {
   const { toc } = props
   const router = useRouter()
   return (
@@ -31,7 +31,8 @@ export function TOCClient(props: TOCClientProps) {
             role='button'
             onClick={() => {
               router.push(href, { scroll: false })
-              const target = document.querySelector(href)
+              const id = href!.slice(1)
+              const target = document.getElementById(id)
               target?.scrollIntoView({ behavior: 'smooth' })
             }}
           >
