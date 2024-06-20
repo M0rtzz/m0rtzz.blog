@@ -150,3 +150,7 @@ strong {
 div.prose-sm:nth-child(n)>p:nth-child(n)>strong:nth-child(n) {
   color: unset !important;
 }
+
+[data-active='true'] {
+  @apply text-blue-500;
+}
