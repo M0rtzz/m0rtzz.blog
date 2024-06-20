@@ -10,7 +10,7 @@ interface TOCClientProps {
   toc: TOCProps['toc']
 }
 
-export const TOCClient = (props: TOCClientProps) => {
+export function TOCClient (props: TOCClientProps) {
   const { toc } = props
   const router = useRouter()
   return (
