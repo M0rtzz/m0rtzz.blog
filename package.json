@@ -13,7 +13,6 @@
     "@discublog/api": "latest",
     "@giscus/react": "^3.0.0",
     "@radix-ui/react-collapsible": "latest",
-    "@radix-ui/react-icons": "latest",
     "@tabler/icons-react": "^3.5.0",
     "clsx": "^2.1.1",
     "dark-toggle": "2.0.0-test.0",
