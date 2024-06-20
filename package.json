@@ -12,7 +12,8 @@
   "dependencies": {
     "@discublog/api": "latest",
     "@giscus/react": "^3.0.0",
-    "@radix-ui/react-collapsible": "^1.0.3",
+    "@radix-ui/react-collapsible": "latest",
+    "@radix-ui/react-icons": "latest",
     "@tabler/icons-react": "^3.5.0",
     "clsx": "^2.1.1",
     "dark-toggle": "2.0.0-test.0",
@@ -20,7 +21,7 @@
     "lodash.upperfirst": "^4.3.1",
     "mdast-util-toc": "^7.1.0",
     "motion-wave": "^0.0.5",
-    "next": "14.2.3",
+    "next": "14.2.4",
     "p2-es": "^1.2.3",
     "react": "^18.3.1",
     "react-aria-components": "^1.2.1",
