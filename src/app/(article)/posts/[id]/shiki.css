@@ -202,7 +202,7 @@ code .line:not(:last-child)::after {
 
 /* 固定文章的目录且可滚动 */
 .sticky-table {
-  max-height: 80vh;
+  max-height: 88.9vh;
   overflow-y: auto;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
