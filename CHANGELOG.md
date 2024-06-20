@@ -267,13 +267,26 @@
 * 📝 docs(CHANGELOG.md): automatic update ([34acbfa](https://github.com/M0rtzz/m0rtzz.blog/commit/34acbfa))
 * 📝 docs(CHANGELOG.md): automatic update ([7b505ff](https://github.com/M0rtzz/m0rtzz.blog/commit/7b505ff))
 * 📝 docs(CHANGELOG.md): automatic update ([9113d1e](https://github.com/M0rtzz/m0rtzz.blog/commit/9113d1e))
+<<<<<<< HEAD
 * 📝 docs(CHANGELOG.md): automatic update ([ed51683](https://github.com/M0rtzz/m0rtzz.blog/commit/ed51683))
 * 🔖 tag(package.json): v1.9.9 ([25544ef](https://github.com/M0rtzz/m0rtzz.blog/commit/25544ef))
+=======
+>>>>>>> 📝 docs(CHANGELOG.md): automatic update
 * 🔖 tag(package.json): v2.0.0 ([b2dd4d4](https://github.com/M0rtzz/m0rtzz.blog/commit/b2dd4d4))
 * 🔖 tag(package.json): v2.0.1 ([b9f4a53](https://github.com/M0rtzz/m0rtzz.blog/commit/b9f4a53))
 * 🔖 tag(package.json): v2.0.1 ([7ac5f77](https://github.com/M0rtzz/m0rtzz.blog/commit/7ac5f77))
 * 🔥 remove: rm github workflow ([2fc88b9](https://github.com/M0rtzz/m0rtzz.blog/commit/2fc88b9))
 * 🙈 ignore(.gitignore): ignore .github/ ([897d74a](https://github.com/M0rtzz/m0rtzz.blog/commit/897d74a))
+<<<<<<< HEAD
+=======
+
+
+
+## <small>1.9.9 (2024-06-13)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([ed51683](https://github.com/M0rtzz/m0rtzz.blog/commit/ed51683))
+* 🔖 tag(package.json): v1.9.9 ([25544ef](https://github.com/M0rtzz/m0rtzz.blog/commit/25544ef))
+>>>>>>> 📝 docs(CHANGELOG.md): automatic update
 
 
 
@@ -1153,3 +1166,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
