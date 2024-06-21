@@ -265,9 +265,7 @@ div.prose-sm:nth-child(n) > p:nth-child(n) > strong:nth-child(n) {
 }
 
 /* 有序列表序号 */
-ol,
-ul,
-menu {
+.prose :where(ol):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
   list-style-type: decimal;
 }
 
