@@ -1,8 +1,17 @@
-# Changelog
+## <small>2.1.2 (2024-06-21)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 💄 ui: change the hight of header and the position of toc ([8c1e80e](https://github.com/M0rtzz/m0rtzz.blog/commit/8c1e80e))
+* 🔖 tag(package.json): v2.1.2 ([e44cd7a](https://github.com/M0rtzz/m0rtzz.blog/commit/e44cd7a))
 
-## [2.1.2](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.1.1...v2.1.2) (2024-06-21)
+
+
+## <small>2.1.1 (2024-06-21)</small>
+
+* 💄 ui(layout.tsx): sticky header ([ddc331b](https://github.com/M0rtzz/m0rtzz.blog/commit/ddc331b))
+* 📝 docs(CHANGELOG.md): automatic update ([d8e99fd](https://github.com/M0rtzz/m0rtzz.blog/commit/d8e99fd))
+* 🔖 tag(package.json): v2.1.1 ([6023937](https://github.com/M0rtzz/m0rtzz.blog/commit/6023937))
+
+
 
 ## 2.1.0 (2024-06-21)
 
@@ -991,3 +1000,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
