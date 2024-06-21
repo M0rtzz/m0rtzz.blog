@@ -224,6 +224,7 @@ strong {
     'Segoe UI Emoji', sans-serif !important;
 }
 
+/* 表格中加粗斜体字体的颜色 */
 .prose
   > table:nth-child(n)
   > tbody:nth-child(n)
@@ -236,6 +237,7 @@ strong {
     'Segoe UI Emoji', sans-serif !important;
 }
 
+/* 表格中斜体字体的颜色 */
 .prose
   > table:nth-child(n)
   > tbody:nth-child(n)
