@@ -1,88 +1,8 @@
-## <small>2.0.7 (2024-06-21)</small>
+# Changelog
 
-* 🔖 tag(package.json): v2.0.7 ([bd248f2](https://github.com/M0rtzz/m0rtzz.blog/commit/bd248f2))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>2.0.6 (2024-06-21)</small>
-
-* ➖ rm_dep(package.json): rm unused package ([22e8dcc](https://github.com/M0rtzz/m0rtzz.blog/commit/22e8dcc))
-* 🎨 style(globals.css): format code ([7dda9db](https://github.com/M0rtzz/m0rtzz.blog/commit/7dda9db))
-* 💄 ui(shiki.css): increase the distance between rows in the alert block ([fec183c](https://github.com/M0rtzz/m0rtzz.blog/commit/fec183c))
-* 📝 docs(CHANGELOG.md): automatic update ([da90050](https://github.com/M0rtzz/m0rtzz.blog/commit/da90050))
-* 🔖 tag(package.json): v2.0.6 ([bd5967a](https://github.com/M0rtzz/m0rtzz.blog/commit/bd5967a))
-
-
-
-## <small>2.0.5 (2024-06-20)</small>
-
-* 📝 docs(CHANGELOG.md): automatic update ([2a5a5a1](https://github.com/M0rtzz/m0rtzz.blog/commit/2a5a5a1))
-* 🔖 tag(package.json): v2.0.5 ([4fd3811](https://github.com/M0rtzz/m0rtzz.blog/commit/4fd3811))
-
-
-
-## <small>2.0.4 (2024-06-20)</small>
-
-* ⚡️ perf(transfer.sh): change google-fonts url to mirror ([acfda0d](https://github.com/M0rtzz/m0rtzz.blog/commit/acfda0d))
-* ⚡️ perf(transfer.sh): change google-fonts url to mirror ([4310056](https://github.com/M0rtzz/m0rtzz.blog/commit/4310056))
-* ✨ feat: update ([5d14918](https://github.com/M0rtzz/m0rtzz.blog/commit/5d14918))
-* ✨ feat(index.ts): order by create time ([7828939](https://github.com/M0rtzz/m0rtzz.blog/commit/7828939))
-* ➕ add_dep(package.json): add dep ([c08c2f8](https://github.com/M0rtzz/m0rtzz.blog/commit/c08c2f8))
-* ➕ add_dep(package.json): add dependence ([2da0080](https://github.com/M0rtzz/m0rtzz.blog/commit/2da0080))
-* ⬆️ up_dep(package.json): keep the next version to latest ([5b6e96e](https://github.com/M0rtzz/m0rtzz.blog/commit/5b6e96e))
-* ⬆️ up_dep(package.json): upgrade dep ([920cc99](https://github.com/M0rtzz/m0rtzz.blog/commit/920cc99))
-* ⬆️ up_dep(package.json): upgrade dep ([1a9c352](https://github.com/M0rtzz/m0rtzz.blog/commit/1a9c352))
-* 🎨 style: wip ([4710ac0](https://github.com/M0rtzz/m0rtzz.blog/commit/4710ac0))
-* 🐛 fix: eslint ([4000b01](https://github.com/M0rtzz/m0rtzz.blog/commit/4000b01))
-* 🐛 fix: fix the bug of `TypeError` ([04f6f02](https://github.com/M0rtzz/m0rtzz.blog/commit/04f6f02))
-* 💄 ui: change the value of margin-top and margin-bottom ([a3ccd91](https://github.com/M0rtzz/m0rtzz.blog/commit/a3ccd91))
-* 💄 ui: update toc ([fa10b48](https://github.com/M0rtzz/m0rtzz.blog/commit/fa10b48))
-* 💄 ui(globals.css): add table borders ([7f80509](https://github.com/M0rtzz/m0rtzz.blog/commit/7f80509))
-* 💄 ui(globals.css): center table cells and set bold font color ([dcd1c78](https://github.com/M0rtzz/m0rtzz.blog/commit/dcd1c78))
-* 💄 ui(globals.css): center the img ([d07bb84](https://github.com/M0rtzz/m0rtzz.blog/commit/d07bb84))
-* 💄 ui(globals.css): set bold font color in resume as default ([3dee4eb](https://github.com/M0rtzz/m0rtzz.blog/commit/3dee4eb))
-* 💄 ui(globals.css): update italic font-family ([1492093](https://github.com/M0rtzz/m0rtzz.blog/commit/1492093))
-* 💄 ui(globals.css): update the color of italic fonts ([da56ac2](https://github.com/M0rtzz/m0rtzz.blog/commit/da56ac2))
-* 💄 ui(page.tsx): change ui ([00e52d8](https://github.com/M0rtzz/m0rtzz.blog/commit/00e52d8))
-* 💄 ui(page.tsx): widen table of contents ([01ecb4c](https://github.com/M0rtzz/m0rtzz.blog/commit/01ecb4c))
-* 📝 docs(CHANGELOG.md): automatic update ([f9c8826](https://github.com/M0rtzz/m0rtzz.blog/commit/f9c8826))
-* 📝 docs(CHANGELOG.md): automatic update ([a57fafe](https://github.com/M0rtzz/m0rtzz.blog/commit/a57fafe))
-* 🔖 tag(package.json): v2.0.3 ([1248fc9](https://github.com/M0rtzz/m0rtzz.blog/commit/1248fc9))
-* 🔖 tag(package.json): v2.0.4 ([62fafe4](https://github.com/M0rtzz/m0rtzz.blog/commit/62fafe4))
-* 🔧 config(tailwind.config.ts): add Segoe UI ([8d74634](https://github.com/M0rtzz/m0rtzz.blog/commit/8d74634))
-* 🔧 config(tailwind.config.ts): wip ([f28c513](https://github.com/M0rtzz/m0rtzz.blog/commit/f28c513))
-* 🔧 config(taliwind.config.ts): add primary font ([c71b334](https://github.com/M0rtzz/m0rtzz.blog/commit/c71b334))
-* 🚧 wip: change style of toc but still can not complie ([ce8f601](https://github.com/M0rtzz/m0rtzz.blog/commit/ce8f601))
-* 🚧 wip: wip ([4184f39](https://github.com/M0rtzz/m0rtzz.blog/commit/4184f39))
-* 🚧 wip: wip ([ab913f5](https://github.com/M0rtzz/m0rtzz.blog/commit/ab913f5))
-* 🚧 wip: wip ([2475fef](https://github.com/M0rtzz/m0rtzz.blog/commit/2475fef))
-* 🚧 wip: wip ([6381f89](https://github.com/M0rtzz/m0rtzz.blog/commit/6381f89))
-
-
-
-## <small>2.0.2 (2024-06-14)</small>
-
-* 📝 docs(CHANGELOG.md): automatic update ([ef69f60](https://github.com/M0rtzz/m0rtzz.blog/commit/ef69f60))
-* 🔖 tag(package.json): v2.0.2 ([f97832e](https://github.com/M0rtzz/m0rtzz.blog/commit/f97832e))
-* 🔨 script(transfer.sh): update logic ([87fa3d3](https://github.com/M0rtzz/m0rtzz.blog/commit/87fa3d3))
-
-
-
-## <small>2.0.1 (2024-06-14)</small>
-
-* 💄 ui(page.tsx): prohibit reducing image brightness ([19e5b85](https://github.com/M0rtzz/m0rtzz.blog/commit/19e5b85))
-* 📝 docs(CHANGELOG.md): automatic update ([34acbfa](https://github.com/M0rtzz/m0rtzz.blog/commit/34acbfa))
-* 📝 docs(CHANGELOG.md): automatic update ([7b505ff](https://github.com/M0rtzz/m0rtzz.blog/commit/7b505ff))
-* 📝 docs(CHANGELOG.md): automatic update ([9113d1e](https://github.com/M0rtzz/m0rtzz.blog/commit/9113d1e))
-* 📝 docs(CHANGELOG.md): automatic update ([ed51683](https://github.com/M0rtzz/m0rtzz.blog/commit/ed51683))
-* 🔖 tag(package.json): v1.9.9 ([25544ef](https://github.com/M0rtzz/m0rtzz.blog/commit/25544ef))
-* 🔖 tag(package.json): v2.0.0 ([b2dd4d4](https://github.com/M0rtzz/m0rtzz.blog/commit/b2dd4d4))
-* 🔖 tag(package.json): v2.0.1 ([b9f4a53](https://github.com/M0rtzz/m0rtzz.blog/commit/b9f4a53))
-* 🔖 tag(package.json): v2.0.1 ([7ac5f77](https://github.com/M0rtzz/m0rtzz.blog/commit/7ac5f77))
-* 🔥 remove: rm github workflow ([2fc88b9](https://github.com/M0rtzz/m0rtzz.blog/commit/2fc88b9))
-* 🙈 ignore(.gitignore): ignore .github/ ([897d74a](https://github.com/M0rtzz/m0rtzz.blog/commit/897d74a))
-
-
+## [2.0.8](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.0.7...v2.0.8) (2024-06-21)
 
 ## 2.0.0 (2024-06-13)
 
@@ -960,5 +880,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
