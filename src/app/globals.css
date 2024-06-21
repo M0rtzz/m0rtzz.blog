@@ -103,7 +103,10 @@ table td {
 }
 
 /* 表格第一行加粗字体颜色恢复默认 */
-.prose :where(thead th strong):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+.prose
+  :where(thead th strong):not(
+    :where([class~='not-prose'], [class~='not-prose'] *)
+  ) {
   color: unset !important;
 }
 
@@ -114,7 +117,7 @@ td {
 }
 
 /* 引用框上下距离 */
-.prose :where(p):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+.prose :where(p):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -135,19 +138,21 @@ strong {
 }
 
 /* 加粗斜体字体的颜色 */
-.prose>p:nth-child(n)>em:nth-child(1) strong {
+.prose > p:nth-child(n) > em:nth-child(1) strong {
   color: rgb(201, 77, 255) !important;
-  font-family: "Segoe UI", "Apple Color Emoji", "Noto Color Emoji", "Segoe UI Emoji", sans-serif !important;
+  font-family: 'Segoe UI', 'Apple Color Emoji', 'Noto Color Emoji',
+    'Segoe UI Emoji', sans-serif !important;
 }
 
 /* 斜体字体的颜色 */
-.prose>p:nth-child(n)>em:nth-child(1) {
+.prose > p:nth-child(n) > em:nth-child(1) {
   color: rgb(201, 77, 255) !important;
-  font-family: "Segoe UI", "Apple Color Emoji", "Noto Color Emoji", "Segoe UI Emoji", sans-serif !important;
+  font-family: 'Segoe UI', 'Apple Color Emoji', 'Noto Color Emoji',
+    'Segoe UI Emoji', sans-serif !important;
 }
 
 /* resume中加粗字体颜色默认 */
-div.prose-sm:nth-child(n)>p:nth-child(n)>strong:nth-child(n) {
+div.prose-sm:nth-child(n) > p:nth-child(n) > strong:nth-child(n) {
   color: unset !important;
 }
 
