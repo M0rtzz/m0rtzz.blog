@@ -258,7 +258,50 @@ div.prose-sm:nth-child(n) > p:nth-child(n) > strong:nth-child(n) {
   @apply text-blue-500;
 }
 
+/* header的高度 */
 .py-5 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+/* 有序列表序号 */
+ol,
+ul,
+menu {
+  list-style-type: decimal;
+}
+
+.prose
+  :where(ul ul, ul ol, ol ul, ol ol):not(
+    :where([class~='not-prose'], [class~='not-prose'] *)
+  ) {
+  list-style-type: lower-roman;
+}
+
+.prose
+  :where(
+    ul ul ul,
+    ul ul ol,
+    ul ol ul,
+    ul ol ol,
+    ol ul ul,
+    ol ul ol,
+    ol ol ul,
+    ol ol ol
+  ):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+  list-style-type: lower-alpha;
+}
+
+.prose
+  :where(
+    ul ul ul ol,
+    ul ul ol ol,
+    ul ol ul ol,
+    ul ol ol ol,
+    ol ul ul ol,
+    ol ul ol ol,
+    ol ol ul ol,
+    ol ol ol ol
+  ):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+  list-style-type: lower-greek;
 }
