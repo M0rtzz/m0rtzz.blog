@@ -253,3 +253,17 @@ code .line:not(:last-child)::after {
 .shiki {
   overflow: auto;
 }
+
+/* 警告框行间距离 */
+.small-line-numbers > p:nth-child(n) {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.small-line-numbers > p:nth-child(1) {
+  display: none;
+}
+
+.small-line-numbers > p:nth-child(2) {
+  margin-top: 0;
+}
