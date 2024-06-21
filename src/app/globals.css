@@ -188,6 +188,65 @@ strong {
   font-style: normal;
 }
 
+/* 有序列表中加粗斜体字体的颜色 */
+.prose
+  > ol:nth-child(n)
+  > li:nth-child(n)
+  > em:nth-child(n)
+  > strong:nth-child(n) {
+  color: rgb(201, 77, 255) !important;
+  font-family: 'Segoe UI', 'Apple Color Emoji', 'Noto Color Emoji',
+    'Segoe UI Emoji', sans-serif !important;
+}
+
+/* 有序列表中斜体字体的颜色 */
+.prose > ol:nth-child(n) > li:nth-child(n) > em:nth-child(n) {
+  color: rgb(201, 77, 255) !important;
+  font-family: 'Segoe UI', 'Apple Color Emoji', 'Noto Color Emoji',
+    'Segoe UI Emoji', sans-serif !important;
+}
+
+/* 无序列表中加粗斜体字体的颜色 */
+.prose
+  > ul:nth-child(n)
+  > li:nth-child(n)
+  > em:nth-child(n)
+  > strong:nth-child(n) {
+  color: rgb(201, 77, 255) !important;
+  font-family: 'Segoe UI', 'Apple Color Emoji', 'Noto Color Emoji',
+    'Segoe UI Emoji', sans-serif !important;
+}
+
+/* 无序列表中斜体字体的颜色 */
+.prose > ul:nth-child(n) > li:nth-child(n) > em:nth-child(n) {
+  color: rgb(201, 77, 255) !important;
+  font-family: 'Segoe UI', 'Apple Color Emoji', 'Noto Color Emoji',
+    'Segoe UI Emoji', sans-serif !important;
+}
+
+.prose
+  > table:nth-child(n)
+  > tbody:nth-child(n)
+  > tr:nth-child(n)
+  > td:nth-child(n)
+  > em:nth-child(n)
+  > strong:nth-child(n) {
+  color: rgb(201, 77, 255) !important;
+  font-family: 'Segoe UI', 'Apple Color Emoji', 'Noto Color Emoji',
+    'Segoe UI Emoji', sans-serif !important;
+}
+
+.prose
+  > table:nth-child(n)
+  > tbody:nth-child(n)
+  > tr:nth-child(n)
+  > td:nth-child(n)
+  > em:nth-child(n) {
+  color: rgb(201, 77, 255) !important;
+  font-family: 'Segoe UI', 'Apple Color Emoji', 'Noto Color Emoji',
+    'Segoe UI Emoji', sans-serif !important;
+}
+
 /* resume中加粗字体颜色默认 */
 div.prose-sm:nth-child(n) > p:nth-child(n) > strong:nth-child(n) {
   color: unset !important;
