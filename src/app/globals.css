@@ -303,3 +303,9 @@ div.prose-sm:nth-child(n) > p:nth-child(n) > strong:nth-child(n) {
   ):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
   list-style-type: lower-greek;
 }
+
+/* 目录内容左对齐 */
+.toc-left {
+  text-align: left;
+  display: block;
+}
