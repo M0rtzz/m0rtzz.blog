@@ -15,7 +15,7 @@ export function TOCClient (props: TOCClientProps) {
   const router = useRouter()
   return (
     <TOC
-      scrollAlign='start'
+      scrollAlign='end'
       throttleTime={100}
       toc={toc}
       renderList={children => (
