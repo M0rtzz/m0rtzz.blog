@@ -1,12 +1,14 @@
-# Changelog
+## <small>2.2.1 (2024-06-22)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 📄 license(LICENSE): add license file ([18750f7](https://github.com/M0rtzz/m0rtzz.blog/commit/18750f7))
+* 🔖 tag(package.json): v2.2.1 ([a87bc57](https://github.com/M0rtzz/m0rtzz.blog/commit/a87bc57))
 
-## [2.2.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.2.0...v2.2.1) (2024-06-22)
+
 
 ## 2.2.0 (2024-06-22)
 
 * ⏪ revert(toc.tsx): revert scrollAlign to center ([dea03e1](https://github.com/M0rtzz/m0rtzz.blog/commit/dea03e1))
+* 📝 docs(CHANGELOG.md): automatic update ([dfe7c71](https://github.com/M0rtzz/m0rtzz.blog/commit/dfe7c71))
 * 🔖 tag(package.json): v2.2.0 ([a35e607](https://github.com/M0rtzz/m0rtzz.blog/commit/a35e607))
 
 
@@ -1070,3 +1072,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
