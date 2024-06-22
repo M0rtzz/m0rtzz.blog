@@ -4,6 +4,7 @@ import { clsx } from 'clsx'
 
 import { FontToggle } from './font-toggle'
 import { ThemeToggle } from './theme-toggle'
+import { ReturnTop } from './top'
 
 interface HeaderProps {
   sticky?: boolean
@@ -34,6 +35,7 @@ export const Header = (props: HeaderProps) => {
       <div className='flex items-center justify-end gap-2'>
         <FontToggle />
         <ThemeToggle />
+        <ReturnTop />
       </div>
     </header>
   )
