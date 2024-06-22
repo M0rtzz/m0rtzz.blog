@@ -1,3 +1,9 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [2.2.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.2.0...v2.2.1) (2024-06-22)
+
 ## 2.2.0 (2024-06-22)
 
 * ⏪ revert(toc.tsx): revert scrollAlign to center ([dea03e1](https://github.com/M0rtzz/m0rtzz.blog/commit/dea03e1))
@@ -1064,5 +1070,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
