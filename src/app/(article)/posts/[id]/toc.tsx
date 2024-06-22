@@ -27,6 +27,7 @@ export function TOCClient (props: TOCClientProps) {
       renderLink={(children, href, active) => (
         <CollapsibleTrigger>
           <span
+            className='toc-left'
             data-active={active}
             role='button'
             onClick={() => {
