@@ -14,7 +14,7 @@ import { repoName, repoOwner } from '~/blog-config'
 
 import { GiscusScript } from '@/components/giscus'
 import { Markdown } from '@/markdown'
-import { Alert, CodeGroup, Details, Pre } from '@/markdown/components'
+import { Alert, BlockTex, CodeGroup, Details, InlineTex, Pre } from '@/markdown/components'
 import { TwoslashTooltip } from '@/markdown/twoslash/tooltip'
 import { TwoslashTrigger } from '@/markdown/twoslash/triger'
 import { queryAllPosts } from '@/service'
@@ -22,7 +22,7 @@ import { getSummary } from '@/service/summary'
 import { formatDateTime, readingTime } from '@/utils'
 
 import { TOCClient } from './toc'
-
+import ReactTeX from "./tex"
 // shiki style
 import './shiki.css'
 
@@ -116,15 +116,18 @@ export default async function Page({ params }: PageProps) {
           source={body!}
           useMDXComponents={() => ({
             Alert,
+            BlockTex,
             CodeGroup,
             Details,
             IconAlertTriangle,
             IconBug,
             IconBulb,
             IconInfoSquareRounded,
+            InlineTex,
             TwoslashTooltip,
             TwoslashTrigger,
             pre: Pre,
+            ReactTeX
           })}
         />
         <GiscusScript number={number} repo={`${repoOwner}/${repoName}`} />
