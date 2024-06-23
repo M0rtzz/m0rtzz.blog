@@ -1,8 +1,25 @@
-# Changelog
+## <small>2.2.3 (2024-06-23)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 💄 ui(globals.css): change the color of level 5 and 6 titles ([6b00b0f](https://github.com/M0rtzz/m0rtzz.blog/commit/6b00b0f))
+* 🔖 tag(package.json): v2.2.3 ([b27ee7e](https://github.com/M0rtzz/m0rtzz.blog/commit/b27ee7e))
 
-## [2.2.3](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.2.2...v2.2.3) (2024-06-23)
+
+
+## <small>2.2.2 (2024-06-23)</small>
+
+* 💄 ui(globals.css): change the color and style of list numbering ([fad4236](https://github.com/M0rtzz/m0rtzz.blog/commit/fad4236))
+* 📝 docs(CHANGELOG.md): automatic update ([2b17705](https://github.com/M0rtzz/m0rtzz.blog/commit/2b17705))
+* 🔖 tag(package.json): v2.2.2 ([ba47936](https://github.com/M0rtzz/m0rtzz.blog/commit/ba47936))
+
+
+
+## <small>2.2.1 (2024-06-22)</small>
+
+* 📄 license(LICENSE): add license file ([18750f7](https://github.com/M0rtzz/m0rtzz.blog/commit/18750f7))
+* 📝 docs(CHANGELOG.md): automatic update ([bbd9e32](https://github.com/M0rtzz/m0rtzz.blog/commit/bbd9e32))
+* 🔖 tag(package.json): v2.2.1 ([a87bc57](https://github.com/M0rtzz/m0rtzz.blog/commit/a87bc57))
+
+
 
 ## 2.2.0 (2024-06-22)
 
@@ -1071,3 +1088,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
