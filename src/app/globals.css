@@ -309,3 +309,43 @@ div.prose-sm:nth-child(n) > p:nth-child(n) > strong:nth-child(n) {
   text-align: left;
   display: block;
 }
+
+/* 无序列表序号 */
+.prose :where(ul):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+  list-style-type: disc;
+}
+
+.prose > ul:nth-child(n) > li:nth-child(n) > ul:nth-child(n) > li:nth-child(n) {
+  list-style-type: circle;
+}
+
+.prose
+  > ul:nth-child(n)
+  > li:nth-child(n)
+  > ul:nth-child(n)
+  > li:nth-child(n)
+  > ul:nth-child(n)
+  > li:nth-child(n) {
+  list-style-type: square;
+}
+
+/* 为剩余所有无序列表子列表设置样式 */
+.prose ul li > ul {
+  list-style-type: square;
+}
+
+/* 有序列表序号颜色 */
+.prose
+  :where(ol > li):not(
+    :where([class~='not-prose'], [class~='not-prose'] *)
+  )::marker {
+  color: unset;
+}
+
+/* 无序列表序号颜色 */
+.prose
+  :where(ul > li):not(
+    :where([class~='not-prose'], [class~='not-prose'] *)
+  )::marker {
+  color: unset;
+}
