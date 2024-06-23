@@ -14,7 +14,7 @@ import { repoName, repoOwner } from '~/blog-config'
 
 import { GiscusScript } from '@/components/giscus'
 import { Markdown } from '@/markdown'
-import { Alert, BlockTex, CodeGroup, Details, InlineTex, Pre } from '@/markdown/components'
+import { Alert, CodeGroup, Details, Pre } from '@/markdown/components'
 import { TwoslashTooltip } from '@/markdown/twoslash/tooltip'
 import { TwoslashTrigger } from '@/markdown/twoslash/triger'
 import { queryAllPosts } from '@/service'
@@ -116,14 +116,12 @@ export default async function Page({ params }: PageProps) {
           source={body!}
           useMDXComponents={() => ({
             Alert,
-            BlockTex,
             CodeGroup,
             Details,
             IconAlertTriangle,
             IconBug,
             IconBulb,
             IconInfoSquareRounded,
-            InlineTex,
             TwoslashTooltip,
             TwoslashTrigger,
             pre: Pre,
