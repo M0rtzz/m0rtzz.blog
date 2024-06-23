@@ -349,3 +349,9 @@ div.prose-sm:nth-child(n) > p:nth-child(n) > strong:nth-child(n) {
   )::marker {
   color: unset;
 }
+
+/* 5,6级标题颜色 */
+h5,
+h6 {
+  color: var(--tw-prose-headings);
+}
