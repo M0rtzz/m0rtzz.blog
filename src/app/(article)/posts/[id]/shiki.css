@@ -206,6 +206,18 @@ code .line:not(:last-child)::after {
   overflow-y: auto;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin; /* 火狐滚动条无法自定义宽度，只能通过此属性使滚动条宽度变细 */
+}
+
+/* webkit内核浏览器样式 */
+.sticky-table::-webkit-scrollbar {
+  width: 4px;
+}
+.sticky-table::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+.sticky-table::-webkit-scrollbar-track {
+  border-radius: 0;
 }
 
 .small-line-numbers code .line:not(:last-child)::before {
