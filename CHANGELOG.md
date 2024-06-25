@@ -1,66 +1,8 @@
-## <small>2.2.9 (2024-06-25)</small>
+# Changelog
 
-* ♻️ refactor: refactor css class ([f1e80e7](https://github.com/M0rtzz/m0rtzz.blog/commit/f1e80e7))
-* 🔖 tag(package.json): v2.2.9 ([819df2d](https://github.com/M0rtzz/m0rtzz.blog/commit/819df2d))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>2.2.8 (2024-06-24)</small>
-
-* 💄 ui(shiki.css): update the style of toc scrollbar ([91e3d09](https://github.com/M0rtzz/m0rtzz.blog/commit/91e3d09))
-* 📝 docs(CHANGELOG.md): automatic update ([e9c2b8c](https://github.com/M0rtzz/m0rtzz.blog/commit/e9c2b8c))
-* 🔖 tag(package.json): v2.2.8 ([3801a9d](https://github.com/M0rtzz/m0rtzz.blog/commit/3801a9d))
-
-
-
-## <small>2.2.7 (2024-06-23)</small>
-
-* 📝 docs(CHANGELOG.md): automatic update ([a288a66](https://github.com/M0rtzz/m0rtzz.blog/commit/a288a66))
-* 🔖 tag(package.json): v2.2.7 ([f7209e5](https://github.com/M0rtzz/m0rtzz.blog/commit/f7209e5))
-* 🔥 remove: rm unused code ([a1f3142](https://github.com/M0rtzz/m0rtzz.blog/commit/a1f3142))
-
-
-
-## <small>2.2.6 (2024-06-23)</small>
-
-* 📝 docs(CHANGELOG.md): automatic update ([1325219](https://github.com/M0rtzz/m0rtzz.blog/commit/1325219))
-* 🔖 tag(package.json): v2.2.6 ([43629f9](https://github.com/M0rtzz/m0rtzz.blog/commit/43629f9))
-
-
-
-## <small>2.2.5 (2024-06-23)</small>
-
-* 📝 docs(CHANGELOG.md): automatic update ([955c94a](https://github.com/M0rtzz/m0rtzz.blog/commit/955c94a))
-* 📝 docs(CHANGELOG.md): automatic update ([30a1fb3](https://github.com/M0rtzz/m0rtzz.blog/commit/30a1fb3))
-* 🔖 tag(package.json): v2.2.4 ([e2da4b7](https://github.com/M0rtzz/m0rtzz.blog/commit/e2da4b7))
-* 🔖 tag(package.json): v2.2.5 ([d9a7728](https://github.com/M0rtzz/m0rtzz.blog/commit/d9a7728))
-* 🚧 wip: add LaTeX fomula rendering ([2aa0533](https://github.com/M0rtzz/m0rtzz.blog/commit/2aa0533))
-
-
-
-## <small>2.2.3 (2024-06-23)</small>
-
-* 💄 ui(globals.css): change the color of level 5 and 6 titles ([6b00b0f](https://github.com/M0rtzz/m0rtzz.blog/commit/6b00b0f))
-* 📝 docs(CHANGELOG.md): automatic update ([0b2d2ba](https://github.com/M0rtzz/m0rtzz.blog/commit/0b2d2ba))
-* 🔖 tag(package.json): v2.2.3 ([b27ee7e](https://github.com/M0rtzz/m0rtzz.blog/commit/b27ee7e))
-
-
-
-## <small>2.2.2 (2024-06-23)</small>
-
-* 💄 ui(globals.css): change the color and style of list numbering ([fad4236](https://github.com/M0rtzz/m0rtzz.blog/commit/fad4236))
-* 📝 docs(CHANGELOG.md): automatic update ([2b17705](https://github.com/M0rtzz/m0rtzz.blog/commit/2b17705))
-* 🔖 tag(package.json): v2.2.2 ([ba47936](https://github.com/M0rtzz/m0rtzz.blog/commit/ba47936))
-
-
-
-## <small>2.2.1 (2024-06-22)</small>
-
-* 📄 license(LICENSE): add license file ([18750f7](https://github.com/M0rtzz/m0rtzz.blog/commit/18750f7))
-* 📝 docs(CHANGELOG.md): automatic update ([bbd9e32](https://github.com/M0rtzz/m0rtzz.blog/commit/bbd9e32))
-* 🔖 tag(package.json): v2.2.1 ([a87bc57](https://github.com/M0rtzz/m0rtzz.blog/commit/a87bc57))
-
-
+## [2.2.10](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.2.9...v2.2.10) (2024-06-25)
 
 ## 2.2.0 (2024-06-22)
 
@@ -1129,5 +1071,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
