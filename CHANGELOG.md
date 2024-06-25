@@ -1,12 +1,14 @@
-# Changelog
+## <small>2.3.1 (2024-06-25)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* ♻️ refactor(globals.css): refactor css class ([c062c5f](https://github.com/M0rtzz/m0rtzz.blog/commit/c062c5f))
+* 🔖 tag(package.json): v2.3.1 ([10d7c48](https://github.com/M0rtzz/m0rtzz.blog/commit/10d7c48))
 
-## [2.3.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.3.0...v2.3.1) (2024-06-25)
+
 
 ## 2.3.0 (2024-06-25)
 
 * 🐛 fix(globals.css): fix the bug of toc ([fe47cab](https://github.com/M0rtzz/m0rtzz.blog/commit/fe47cab))
+* 📝 docs(CHANGELOG.md): automatic update ([e47398e](https://github.com/M0rtzz/m0rtzz.blog/commit/e47398e))
 * 🔖 tag(package.json): v2.3.0 ([b091dab](https://github.com/M0rtzz/m0rtzz.blog/commit/b091dab))
 
 
@@ -1143,3 +1145,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
