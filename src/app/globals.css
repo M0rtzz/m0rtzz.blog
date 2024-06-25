@@ -110,19 +110,21 @@
   max-height: 90.5vh;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
   scrollbar-width: thin; /* 火狐滚动条无法自定义宽度，只能通过此属性使滚动条宽度变细 */
 }
 
 /* webkit内核浏览器样式 */
 .sticky-table::-webkit-scrollbar {
   width: 4px;
+  -webkit-overflow-scrolling: touch;
 }
 .sticky-table::-webkit-scrollbar-thumb {
   border-radius: 10px;
+  background: gray;
 }
 .sticky-table::-webkit-scrollbar-track {
   border-radius: 0;
+  background: transparent;
 }
 
 /* 警告框行间距离 */
