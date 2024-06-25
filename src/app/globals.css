@@ -108,7 +108,7 @@
 /* 固定文章的目录且可滚动 */
 .sticky-table {
   max-height: 90.5vh;
-  overflow-y: auto;
+  overflow-y: scroll;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin; /* 火狐滚动条无法自定义宽度，只能通过此属性使滚动条宽度变细 */
