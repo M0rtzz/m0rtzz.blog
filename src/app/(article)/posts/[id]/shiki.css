@@ -137,21 +137,6 @@
   }
 }
 
-/* 隐藏引用块的引号 */
-.prose
-  :where(blockquote p:first-of-type):not(
-    :where([class~='not-prose'], [class~='not-prose'] *)
-  )::before {
-  content: no-open-quote;
-}
-
-.prose
-  :where(blockquote p:last-of-type):not(
-    :where([class~='not-prose'], [class~='not-prose'] *)
-  )::after {
-  content: no-close-quote;
-}
-
 .small-line-numbers code .line:not(:last-child) {
   position: relative;
 }
@@ -200,26 +185,6 @@ code .line:not(:last-child)::after {
   margin-bottom: 1em;
 }
 
-/* 固定文章的目录且可滚动 */
-.sticky-table {
-  max-height: 90.5vh;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin; /* 火狐滚动条无法自定义宽度，只能通过此属性使滚动条宽度变细 */
-}
-
-/* webkit内核浏览器样式 */
-.sticky-table::-webkit-scrollbar {
-  width: 4px;
-}
-.sticky-table::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-}
-.sticky-table::-webkit-scrollbar-track {
-  border-radius: 0;
-}
-
 .small-line-numbers code .line:not(:last-child)::before {
   font-size: smaller;
   content: counter(step) ' ';
@@ -264,18 +229,4 @@ code .line:not(:last-child)::after {
 /* 解决代码越界bug */
 .shiki {
   overflow: auto;
-}
-
-/* 警告框行间距离 */
-.small-line-numbers > p:nth-child(n) {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.small-line-numbers > p:nth-child(1) {
-  display: none;
-}
-
-.small-line-numbers > p:nth-child(2) {
-  margin-top: 0;
 }
