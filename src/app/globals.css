@@ -108,7 +108,7 @@
 /* 固定文章的目录且可滚动 */
 .sticky-table {
   max-height: 90.5vh;
-  overflow-y: scroll;
+  overflow-y: auto;
   scroll-behavior: smooth;
   scrollbar-width: thin; /* 火狐滚动条无法自定义宽度，只能通过此属性使滚动条宽度变细 */
 }
@@ -191,15 +191,13 @@ strong {
 /* 加粗斜体字体的颜色 */
 .prose > p:nth-child(n) > em:nth-child(n) strong {
   color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Noto Color Emoji',
-    'Segoe UI Emoji', sans-serif !important;
+  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
 }
 
 /* 斜体字体的颜色 */
 .prose > p:nth-child(n) > em:nth-child(n) {
   color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Noto Color Emoji',
-    'Segoe UI Emoji', sans-serif !important;
+  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
 }
 
 /* 引用块中加粗斜体字体的颜色 */
@@ -209,29 +207,25 @@ strong {
   > em:nth-child(n)
   > strong:nth-child(n) {
   color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Noto Color Emoji',
-    'Segoe UI Emoji', sans-serif !important;
+  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
 }
 
 /* 引用块中斜体字体的颜色 */
 .prose > blockquote:nth-child(n) > p:nth-child(n) > em:nth-child(n) {
   color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Noto Color Emoji',
-    'Segoe UI Emoji', sans-serif !important;
+  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
 }
 
 /* 警告块中加粗斜体字体的颜色 */
 .small-line-numbers > p:nth-child(n) > em:nth-child(n) > strong:nth-child(n) {
   color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Noto Color Emoji',
-    'Segoe UI Emoji', sans-serif !important;
+  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
 }
 
 /* 警告块中斜体字体的颜色 */
 .small-line-numbers > p:nth-child(n) > em:nth-child(n) {
   color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Noto Color Emoji',
-    'Segoe UI Emoji', sans-serif !important;
+  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
 }
 
 /* 引用块中禁止全局斜体 */
@@ -246,15 +240,13 @@ strong {
   > em:nth-child(n)
   > strong:nth-child(n) {
   color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Noto Color Emoji',
-    'Segoe UI Emoji', sans-serif !important;
+  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
 }
 
 /* 有序列表中斜体字体的颜色 */
 .prose > ol:nth-child(n) > li:nth-child(n) > em:nth-child(n) {
   color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Noto Color Emoji',
-    'Segoe UI Emoji', sans-serif !important;
+  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
 }
 
 /* 无序列表中加粗斜体字体的颜色 */
@@ -264,15 +256,13 @@ strong {
   > em:nth-child(n)
   > strong:nth-child(n) {
   color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Noto Color Emoji',
-    'Segoe UI Emoji', sans-serif !important;
+  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
 }
 
 /* 无序列表中斜体字体的颜色 */
 .prose > ul:nth-child(n) > li:nth-child(n) > em:nth-child(n) {
   color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Noto Color Emoji',
-    'Segoe UI Emoji', sans-serif !important;
+  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
 }
 
 /* 表格中加粗斜体字体的颜色 */
@@ -284,8 +274,7 @@ strong {
   > em:nth-child(n)
   > strong:nth-child(n) {
   color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Noto Color Emoji',
-    'Segoe UI Emoji', sans-serif !important;
+  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
 }
 
 /* 表格中斜体字体的颜色 */
@@ -296,8 +285,7 @@ strong {
   > td:nth-child(n)
   > em:nth-child(n) {
   color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Noto Color Emoji',
-    'Segoe UI Emoji', sans-serif !important;
+  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
 }
 
 /* resume中加粗字体颜色默认 */
