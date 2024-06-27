@@ -1,6 +1,7 @@
 ## <small>2.3.2 (2024-06-25)</small>
 
 * 💄 ui: change style of toc and italic fonts ([009e38a](https://github.com/M0rtzz/m0rtzz.blog/commit/009e38a))
+* 📝 docs(CHANGELOG.md): automatic update ([bbc5783](https://github.com/M0rtzz/m0rtzz.blog/commit/bbc5783))
 * 🔖 tag(package.json): v2.3.2 ([da9daf3](https://github.com/M0rtzz/m0rtzz.blog/commit/da9daf3))
 
 
@@ -192,18 +193,13 @@
 
 ## <small>2.0.7 (2024-06-21)</small>
 
-* 📝 docs(CHANGELOG.md): automatic update ([f41efa1](https://github.com/M0rtzz/m0rtzz.blog/commit/f41efa1))
-* 🔖 tag(package.json): v2.0.7 ([bd248f2](https://github.com/M0rtzz/m0rtzz.blog/commit/bd248f2))
-
-
-
-## <small>2.0.6 (2024-06-21)</small>
-
 * ➖ rm_dep(package.json): rm unused package ([22e8dcc](https://github.com/M0rtzz/m0rtzz.blog/commit/22e8dcc))
 * 🎨 style(globals.css): format code ([7dda9db](https://github.com/M0rtzz/m0rtzz.blog/commit/7dda9db))
 * 💄 ui(shiki.css): increase the distance between rows in the alert block ([fec183c](https://github.com/M0rtzz/m0rtzz.blog/commit/fec183c))
+* 📝 docs(CHANGELOG.md): automatic update ([f41efa1](https://github.com/M0rtzz/m0rtzz.blog/commit/f41efa1))
 * 📝 docs(CHANGELOG.md): automatic update ([da90050](https://github.com/M0rtzz/m0rtzz.blog/commit/da90050))
 * 🔖 tag(package.json): v2.0.6 ([bd5967a](https://github.com/M0rtzz/m0rtzz.blog/commit/bd5967a))
+* 🔖 tag(package.json): v2.0.7 ([bd248f2](https://github.com/M0rtzz/m0rtzz.blog/commit/bd248f2))
 
 
 
@@ -267,18 +263,11 @@
 * 📝 docs(CHANGELOG.md): automatic update ([34acbfa](https://github.com/M0rtzz/m0rtzz.blog/commit/34acbfa))
 * 📝 docs(CHANGELOG.md): automatic update ([7b505ff](https://github.com/M0rtzz/m0rtzz.blog/commit/7b505ff))
 * 📝 docs(CHANGELOG.md): automatic update ([9113d1e](https://github.com/M0rtzz/m0rtzz.blog/commit/9113d1e))
-<<<<<<< HEAD
-* 📝 docs(CHANGELOG.md): automatic update ([ed51683](https://github.com/M0rtzz/m0rtzz.blog/commit/ed51683))
-* 🔖 tag(package.json): v1.9.9 ([25544ef](https://github.com/M0rtzz/m0rtzz.blog/commit/25544ef))
-=======
->>>>>>> 📝 docs(CHANGELOG.md): automatic update
 * 🔖 tag(package.json): v2.0.0 ([b2dd4d4](https://github.com/M0rtzz/m0rtzz.blog/commit/b2dd4d4))
 * 🔖 tag(package.json): v2.0.1 ([b9f4a53](https://github.com/M0rtzz/m0rtzz.blog/commit/b9f4a53))
 * 🔖 tag(package.json): v2.0.1 ([7ac5f77](https://github.com/M0rtzz/m0rtzz.blog/commit/7ac5f77))
 * 🔥 remove: rm github workflow ([2fc88b9](https://github.com/M0rtzz/m0rtzz.blog/commit/2fc88b9))
 * 🙈 ignore(.gitignore): ignore .github/ ([897d74a](https://github.com/M0rtzz/m0rtzz.blog/commit/897d74a))
-<<<<<<< HEAD
-=======
 
 
 
@@ -286,14 +275,16 @@
 
 * 📝 docs(CHANGELOG.md): automatic update ([ed51683](https://github.com/M0rtzz/m0rtzz.blog/commit/ed51683))
 * 🔖 tag(package.json): v1.9.9 ([25544ef](https://github.com/M0rtzz/m0rtzz.blog/commit/25544ef))
->>>>>>> 📝 docs(CHANGELOG.md): automatic update
 
 
 
 ## 2.0.0 (2024-06-13)
 
 * 📝 docs(CHANGELOG.md): automatic update ([c1f4f4a](https://github.com/M0rtzz/m0rtzz.blog/commit/c1f4f4a))
+* 📝 docs(CHANGELOG.md): automatic update ([205187f](https://github.com/M0rtzz/m0rtzz.blog/commit/205187f))
+* 🔖 tag(package.json): v1.9.9 ([46462a5](https://github.com/M0rtzz/m0rtzz.blog/commit/46462a5))
 * 🔖 tag(package.json): v2.0.0 ([766b12f](https://github.com/M0rtzz/m0rtzz.blog/commit/766b12f))
+* 🔨 script(transfer.sh): add logic of zip ([e49a484](https://github.com/M0rtzz/m0rtzz.blog/commit/e49a484))
 * 🔨 script(transfer.sh): add logic to delete zip file ([1e64a5d](https://github.com/M0rtzz/m0rtzz.blog/commit/1e64a5d))
 
 
@@ -301,9 +292,8 @@
 ## <small>1.9.9 (2024-06-13)</small>
 
 * 🐛 fix(nav.tsx): fix type error ([16788dd](https://github.com/M0rtzz/m0rtzz.blog/commit/16788dd))
-* 📝 docs(CHANGELOG.md): automatic update ([205187f](https://github.com/M0rtzz/m0rtzz.blog/commit/205187f))
-* 🔖 tag(package.json): v1.9.9 ([46462a5](https://github.com/M0rtzz/m0rtzz.blog/commit/46462a5))
-* 🔨 script(transfer.sh): add logic of zip ([e49a484](https://github.com/M0rtzz/m0rtzz.blog/commit/e49a484))
+* 📝 docs(CHANGELOG.md): automatic update ([ed51683](https://github.com/M0rtzz/m0rtzz.blog/commit/ed51683))
+* 🔖 tag(package.json): v1.9.9 ([25544ef](https://github.com/M0rtzz/m0rtzz.blog/commit/25544ef))
 
 
 
