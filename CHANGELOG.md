@@ -1,8 +1,36 @@
-# Changelog
+## <small>2.3.4 (2024-06-27)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 🔖 tag(package.json): v2.3.4 ([9e6ac5d](https://github.com/M0rtzz/m0rtzz.blog/commit/9e6ac5d))
 
-## [2.3.4](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.3.3...v2.3.4) (2024-06-27)
+
+
+## <small>2.3.3 (2024-06-27)</small>
+
+* ✨ feat(markdown.tsx): add plugins to render latex math formula ([1f780a5](https://github.com/M0rtzz/m0rtzz.blog/commit/1f780a5))
+* ➕ add_dep(package.json): add package to render latex math formula ([a7b7500](https://github.com/M0rtzz/m0rtzz.blog/commit/a7b7500))
+* 📝 docs(CHANGELOG.md): automatic update ([a0db784](https://github.com/M0rtzz/m0rtzz.blog/commit/a0db784))
+* 📝 docs(CHANGELOG.md): automatic update ([3a2f84d](https://github.com/M0rtzz/m0rtzz.blog/commit/3a2f84d))
+* 📝 docs(CHANGELOG.md): automatic update ([83b8ac2](https://github.com/M0rtzz/m0rtzz.blog/commit/83b8ac2))
+* 🔖 tag(package.json): v2.0.6 ([2ddebb3](https://github.com/M0rtzz/m0rtzz.blog/commit/2ddebb3))
+* 🔖 tag(package.json): v2.3.3 ([0f39e04](https://github.com/M0rtzz/m0rtzz.blog/commit/0f39e04))
+
+
+
+## <small>2.3.2 (2024-06-25)</small>
+
+* 💄 ui: change style of toc and italic fonts ([009e38a](https://github.com/M0rtzz/m0rtzz.blog/commit/009e38a))
+* 📝 docs(CHANGELOG.md): automatic update ([bbc5783](https://github.com/M0rtzz/m0rtzz.blog/commit/bbc5783))
+* 🔖 tag(package.json): v2.3.2 ([da9daf3](https://github.com/M0rtzz/m0rtzz.blog/commit/da9daf3))
+
+
+
+## <small>2.3.1 (2024-06-25)</small>
+
+* ♻️ refactor(globals.css): refactor css class ([c062c5f](https://github.com/M0rtzz/m0rtzz.blog/commit/c062c5f))
+* 📝 docs(CHANGELOG.md): automatic update ([fee1931](https://github.com/M0rtzz/m0rtzz.blog/commit/fee1931))
+* 🔖 tag(package.json): v2.3.1 ([10d7c48](https://github.com/M0rtzz/m0rtzz.blog/commit/10d7c48))
+
+
 
 ## 2.3.0 (2024-06-25)
 
@@ -1146,3 +1174,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
