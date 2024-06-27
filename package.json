@@ -28,6 +28,8 @@
     "react-dom": "^18.3.1",
     "react-jss": "^10.10.0",
     "react-markdown-toc": "latest",
+    "rehype-katex": "latest",
+    "remark-math": "latest",
     "tailwind-merge": "^2.3.0",
     "typed.js": "^2.1.0",
     "use-flip": "^1.0.0"
