@@ -13,8 +13,10 @@ import {
 import { transformerTwoslash } from '@shikijs/twoslash'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import { rehypeDefaultCodeLang } from 'rehype-default-code-lang'
+import rehypeKatex from 'rehype-katex'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
+import remarkMath from 'remark-math'
 import { MDX, type MDXProps } from 'rsc-mdx'
 
 import { rehypeGithubAlert, findCodeText } from './plugins'
@@ -33,9 +35,11 @@ export async function Markdown(props: MarkdownProps) {
       useMDXComponents={useMDXComponents}
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[
-        rehypeGithubAlert,
-        rehypeSlug,
         rehypeAutolinkHeadings,
+        rehypeGithubAlert,
+        rehypeKatex,
+        rehypeSlug,
+        remarkMath,
         [
           rehypeDefaultCodeLang,
           {
