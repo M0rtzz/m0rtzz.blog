@@ -40,7 +40,7 @@ export default function Page() {
             <TypedText>whoami</TypedText>
             <TypedContent>
               <p>
-                Hi, I&apos;m <strong>M0rtzz</strong>, in Chinese my name is{' '}
+                Hi, I&rsquo;m <strong>M0rtzz</strong>, in Chinese my name is{' '}
                 <strong>徐梓航</strong>.
               </p>
               <p>
@@ -74,24 +74,34 @@ export default function Page() {
               </p>
               <p>
                 In the 2023 RoboCup China
-                tournament（2023RoboCup机器人世界杯中国赛）, I led a team to
-                develop an intelligent home service robot that can inquire about
-                customer information, independently search for items that
-                customers need, and submit them to customers. Comprehensive
-                application of SeetaFace6 facial recognition technology YOLO
-                object detection algorithm LiDAR-SLAM mapping method and A *
-                path planning algorithm are used to integrate various functions
-                through ROS communication framework, enabling robots to complete
-                corresponding operations. The main challenge is to focus on
-                implementing human-machine tracking systems through depth and
-                CV, in order to solve the problem of short maximum distance and
-                low accuracy in LiDAR tracking.<br></br>Finally, in the
-                competition,{' '}
+                tournament（2023RoboCup机器人世界杯中国赛）, to realize a
+                general service robot that can respond to natural language
+                commands, the large language model (LLM) is used as the core of
+                the robot. By leveraging the LLM&rsquo;s In-context Learning
+                (ICL) capability, providing the LLM with some instructive
+                examples allows it to autonomously deduce which basic functions
+                are needed to execute complex instructions, and to arrange the
+                execution order and logical hierarchy of these functions.
+                Subsequently, it activates the pre-set functional modules in ROS
+                in an orderly manner, thereby efficiently and accurately
+                completing the natural language tasks given by the user. Our
+                method achieved the highest score in the GPSR project of the
+                2023 RoboCup@Home-Open Platform.<br></br>To address the issue of
+                building a high-quality dataset within a short race course, we
+                first manually annotated a small dataset and trained initial
+                weights. Subsequently, we innovatively used an AI engine-driven
+                X-AnyLabeling for semi-automatic annotation of a large dataset,
+                avoiding the tedious and inefficient manual annotation process.
+                Ultimately, all data will be used for the training of YOLOv5.
+                <br></br>Finally,{' '}
                 <code>
                   <i>
-                    I led the team to surpass teams from Tsinghua University,
-                    Southeast University, Shanghai University, and others to win
-                    the championship with an absolute advantage
+                    The implementation of these strategies made us the first
+                    team in the history of the RoboCup@Home to achieve a full
+                    score in the robot vision project &ldquo;What is
+                    That&rdquo;, leading with an absolute advantage over teams
+                    from Tsinghua University, Southeast University, Shanghai
+                    University, and others, to win the championship.
                   </i>
                 </code>
                 .
@@ -99,17 +109,20 @@ export default function Page() {
               <p>
                 In the 2023 China Robot Competition Special Competition General
                 Purpose Service Robot
-                Project（2023中国机器人大赛专项赛通用服务机器人赛项）, the
-                General Purpose Service Robot Project focuses on examining the
-                comprehensive human-machine interaction ability of robots. I
-                focused my main challenge on building the GGCNN model,
-                predicting grasping coordinates and angles in a multi object
-                plane scene, and obtaining them through a RealSense camera Depth
-                information to achieve the planar grasping effect of the robotic
-                arm.<br></br>Finally, in the competition,{' '}
+                Project（2023中国机器人大赛专项赛通用服务机器人赛项）, To
+                achieve planar grasping of a robotic arm, a GGCNN (Generative
+                Grasping CNN) model is constructed. It takes high-precision
+                depth maps captured by RealSense as input and utilizes the
+                end-to-end learning mechanism of CNN to output a pixel-level
+                grasp pose map. This includes the optimal grasping point,
+                grasping width, and rotation angle around the Z-axis. The model
+                training enhances the authenticity of the dataset through
+                Gaussian noise, thereby improving the grasping accuracy and
+                robustness of the robotic arm in complex environments.
+                <br></br>Finally, in the competition,{' '}
                 <code>
                   <i>
-                    I led the team to surpass teams from Xi&apos;an Jiaotong
+                    I led the team to surpass teams from Xi&rsquo;an Jiaotong
                     University, Northwestern Polytechnical University, and
                     others to win the championship with an absolute advantage
                   </i>
@@ -164,7 +177,7 @@ export default function Page() {
                     </a>
                   </strong>
                 </li>
-                <li>My website&apos;s front-end source code.</li>
+                <li>My website&rsquo;s front-end source code.</li>
               </ul>
               <ul>
                 <li>
@@ -205,13 +218,29 @@ export default function Page() {
                 </strong>
               </p>
               <p>
-                In response to the lack of research data on fisheye vision, a
-                Cubemap algorithm was designed to construct a large-scale
-                semantic segmentation dataset for M0rtzzWoodscape using CARLA.
-                To address the impact of geometric distortions in panoramic
-                fisheye images on semantic segmentation models, a multi branch
-                stacking module based on DCN is designed to extract distorted
-                features.
+                To address the issue of significant geometric distortion of
+                targets in panoramic fisheye images, an end-to-end semantic
+                segmentation network for panoramic fisheye images,
+                FisheyeSegNet, has been constructed. The Multi-Scale Depth
+                Aggregation Network (MSDAN), designed with the integration of
+                constrained deformable convolution, effectively processes and
+                represents multi-scale features, enhancing the network&rsquo;s
+                ability to model distortion. The proposed constrained deformable
+                convolution and Flexible Attention Module (FAM) establish a
+                dynamic receptive field, enhancing the model&rsquo;s ability to
+                adaptively capture distorted target features, increasing the
+                model&rsquo;s representational capacity, and guiding the network
+                to correctly focus on the target objects.<br></br>To tackle the
+                problem of data for fisheye vision research, the Cubemap
+                algorithm was designed, and the M0rtzzWoodscape large-scale
+                semantic segmentation dataset was constructed using CARLA. This
+                dataset includes 8000 simulated images with precise pixel-level
+                semantic annotations across 24 categories, compensating for the
+                lack of large-scale training datasets.<br></br>Extensive
+                experiments on public datasets such as Woodscape have verified
+                the effectiveness and excellent generalization of this method.
+                The experiments have been completed, and the paper is currently
+                being written.
               </p>
             </TypedContent>
             <TypedText>skills</TypedText>
