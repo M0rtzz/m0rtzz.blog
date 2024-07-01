@@ -86,14 +86,19 @@ export default function Page() {
                 in an orderly manner, thereby efficiently and accurately
                 completing the natural language tasks given by the user. Our
                 method achieved the highest score in the GPSR project of the
-                2023 RoboCup@Home-Open Platform.<br></br>To address the issue of
-                building a high-quality dataset within a short race course, we
-                first manually annotated a small dataset and trained initial
-                weights. Subsequently, we innovatively used an AI engine-driven
-                X-AnyLabeling for semi-automatic annotation of a large dataset,
-                avoiding the tedious and inefficient manual annotation process.
-                Ultimately, all data will be used for the training of YOLOv5.
-                <br></br>Finally,{' '}
+                2023 RoboCup@Home-Open Platform.
+              </p>
+              <p>
+                To address the issue of building a high-quality dataset within a
+                short race course, we first manually annotated a small dataset
+                and trained initial weights. Subsequently, we innovatively used
+                an AI engine-driven X-AnyLabeling for semi-automatic annotation
+                of a large dataset, avoiding the tedious and inefficient manual
+                annotation process. Ultimately, all data will be used for the
+                training of YOLOv5.
+              </p>
+              <p>
+                Finally,{' '}
                 <code>
                   <i>
                     The implementation of these strategies made us the first
@@ -119,7 +124,9 @@ export default function Page() {
                 training enhances the authenticity of the dataset through
                 Gaussian noise, thereby improving the grasping accuracy and
                 robustness of the robotic arm in complex environments.
-                <br></br>Finally, in the competition,{' '}
+              </p>
+              <p>
+                Finally, in the competition,{' '}
                 <code>
                   <i>
                     I led the team to surpass teams from Xi&rsquo;an Jiaotong
@@ -230,17 +237,21 @@ export default function Page() {
                 dynamic receptive field, enhancing the model&rsquo;s ability to
                 adaptively capture distorted target features, increasing the
                 model&rsquo;s representational capacity, and guiding the network
-                to correctly focus on the target objects.<br></br>To tackle the
-                problem of data for fisheye vision research, the Cubemap
-                algorithm was designed, and the M0rtzzWoodscape large-scale
-                semantic segmentation dataset was constructed using CARLA. This
-                dataset includes 8000 simulated images with precise pixel-level
-                semantic annotations across 24 categories, compensating for the
-                lack of large-scale training datasets.<br></br>Extensive
-                experiments on public datasets such as Woodscape have verified
-                the effectiveness and excellent generalization of this method.
-                The experiments have been completed, and the paper is currently
-                being written.
+                to correctly focus on the target objects.
+              </p>
+              <p>
+                To tackle the problem of data for fisheye vision research, the
+                Cubemap algorithm was designed, and the M0rtzzWoodscape
+                large-scale semantic segmentation dataset was constructed using
+                CARLA. This dataset includes 8000 simulated images with precise
+                pixel-level semantic annotations across 24 categories,
+                compensating for the lack of large-scale training datasets.
+              </p>
+              <p>
+                Extensive experiments on public datasets such as Woodscape have
+                verified the effectiveness and excellent generalization of this
+                method. The experiments have been completed, and the paper is
+                currently being written.
               </p>
             </TypedContent>
             <TypedText>skills</TypedText>
