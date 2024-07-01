@@ -24,11 +24,11 @@ const Footer = () => {
             style={{ marginTop: '-2.6px', marginRight: '5px' }}
           />
           <a
-            href='https://beian.mps.gov.cn/#/query/webSearch'
+            href='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41020002000132'
             target='_blank'
             style={{ color: '#1E90FF', textDecoration: 'none' }}
           >
-            公安备案号待审核
+            豫公网安备41020002000132号
           </a>
         </div>
         <div style={{ margin: '0 10px' }}></div>
