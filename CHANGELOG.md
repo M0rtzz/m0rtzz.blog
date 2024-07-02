@@ -334,6 +334,7 @@
 
 * 📝 docs(CHANGELOG.md): automatic update ([e2fc80c](https://github.com/M0rtzz/m0rtzz.blog/commit/e2fc80c))
 * 📝 docs(CHANGELOG.md): automatic update ([f9b516f](https://github.com/M0rtzz/m0rtzz.blog/commit/f9b516f))
+<<<<<<< HEAD
 * 📝 docs(CHANGELOG.md): pull ([d33c57c](https://github.com/M0rtzz/m0rtzz.blog/commit/d33c57c))
 * 🔖 tag(package.json): v2.3.8 ([8fd3528](https://github.com/M0rtzz/m0rtzz.blog/commit/8fd3528))
 * 🔖 tag(package.json): v2.3.9 ([e5d2cfb](https://github.com/M0rtzz/m0rtzz.blog/commit/e5d2cfb))
@@ -346,11 +347,21 @@
 * 📝 docs(CHANGELOG.md): automatic update ([8772900](https://github.com/M0rtzz/m0rtzz.blog/commit/8772900))
 * 🔖 tag(package.json): v2.3.7 ([acd2cf3](https://github.com/M0rtzz/m0rtzz.blog/commit/acd2cf3))
 * 🔖 tag(package.json): v2.3.8 ([3ab2d9a](https://github.com/M0rtzz/m0rtzz.blog/commit/3ab2d9a))
+=======
+* 📝 docs(CHANGELOG.md): automatic update ([fc14a9b](https://github.com/M0rtzz/m0rtzz.blog/commit/fc14a9b))
+* 📝 docs(CHANGELOG.md): automatic update ([8772900](https://github.com/M0rtzz/m0rtzz.blog/commit/8772900))
+* 📝 docs(CHANGELOG.md): pull ([d33c57c](https://github.com/M0rtzz/m0rtzz.blog/commit/d33c57c))
+* 🔖 tag(package.json): v2.3.7 ([acd2cf3](https://github.com/M0rtzz/m0rtzz.blog/commit/acd2cf3))
+* 🔖 tag(package.json): v2.3.8 ([8fd3528](https://github.com/M0rtzz/m0rtzz.blog/commit/8fd3528))
+* 🔖 tag(package.json): v2.3.8 ([3ab2d9a](https://github.com/M0rtzz/m0rtzz.blog/commit/3ab2d9a))
+* 🔖 tag(package.json): v2.3.9 ([e5d2cfb](https://github.com/M0rtzz/m0rtzz.blog/commit/e5d2cfb))
+>>>>>>> 📝 docs(CHANGELOG.md): automatic update
 
 
 
 ## <small>2.3.7 (2024-07-02)</small>
 
+<<<<<<< HEAD
 * 📝 docs(CHANGELOG.md): automatic update ([6ea0c77](https://github.com/M0rtzz/m0rtzz.blog/commit/6ea0c77))
 * 📝 docs(CHANGELOG.md): automatic update ([a2a0921](https://github.com/M0rtzz/m0rtzz.blog/commit/a2a0921))
 * 🔖 tag(package.json): v2.3.7 ([0d44b70](https://github.com/M0rtzz/m0rtzz.blog/commit/0d44b70))
@@ -361,10 +372,20 @@
 
 * ✨ feat(footer.tsx): add security filing href ([f870f3a](https://github.com/M0rtzz/m0rtzz.blog/commit/f870f3a))
 * ✨ feat(page.tsx): add line breaks between paragraphs ([45999ff](https://github.com/M0rtzz/m0rtzz.blog/commit/45999ff))
+=======
+* ✨ feat(footer.tsx): add security filing href ([f870f3a](https://github.com/M0rtzz/m0rtzz.blog/commit/f870f3a))
+* ✨ feat(page.tsx): add line breaks between paragraphs ([45999ff](https://github.com/M0rtzz/m0rtzz.blog/commit/45999ff))
+* 📝 docs(CHANGELOG.md): automatic update ([6ea0c77](https://github.com/M0rtzz/m0rtzz.blog/commit/6ea0c77))
+* 📝 docs(CHANGELOG.md): automatic update ([a2a0921](https://github.com/M0rtzz/m0rtzz.blog/commit/a2a0921))
+>>>>>>> 📝 docs(CHANGELOG.md): automatic update
 * 📝 docs(CHANGELOG.md): automatic update ([57332e7](https://github.com/M0rtzz/m0rtzz.blog/commit/57332e7))
 * 📝 docs(CHANGELOG.md): automatic update ([c5b2b15](https://github.com/M0rtzz/m0rtzz.blog/commit/c5b2b15))
 * 🔖 tag(package.json): v2.3.3 ([99ebdf5](https://github.com/M0rtzz/m0rtzz.blog/commit/99ebdf5))
 * 🔖 tag(package.json): v2.3.6 ([a70dc91](https://github.com/M0rtzz/m0rtzz.blog/commit/a70dc91))
+<<<<<<< HEAD
+=======
+* 🔖 tag(package.json): v2.3.7 ([0d44b70](https://github.com/M0rtzz/m0rtzz.blog/commit/0d44b70))
+>>>>>>> 📝 docs(CHANGELOG.md): automatic update
 
 
 
@@ -409,9 +430,7 @@
 * 📝 docs(CHANGELOG.md): automatic update ([fee1931](https://github.com/M0rtzz/m0rtzz.blog/commit/fee1931))
 * 🔖 tag(package.json): v2.3.1 ([10d7c48](https://github.com/M0rtzz/m0rtzz.blog/commit/10d7c48))
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-## [2.3.10](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.3.9...v2.3.10) (2024-07-02)
 
 ## 2.3.0 (2024-06-25)
 
@@ -1553,3 +1572,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
