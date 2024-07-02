@@ -1,5 +1,6 @@
 ## <small>2.3.9 (2024-07-02)</small>
 
+<<<<<<< HEAD
 * 📝 docs(CHANGELOG.md): automatic update ([f9b516f](https://github.com/M0rtzz/m0rtzz.blog/commit/f9b516f))
 * 📝 docs(CHANGELOG.md): automatic update ([fc14a9b](https://github.com/M0rtzz/m0rtzz.blog/commit/fc14a9b))
 * 📝 docs(CHANGELOG.md): automatic update ([8772900](https://github.com/M0rtzz/m0rtzz.blog/commit/8772900))
@@ -17,11 +18,36 @@
 * ✨ feat(page.tsx): add line breaks between paragraphs ([45999ff](https://github.com/M0rtzz/m0rtzz.blog/commit/45999ff))
 * 📝 docs(CHANGELOG.md): automatic update ([6ea0c77](https://github.com/M0rtzz/m0rtzz.blog/commit/6ea0c77))
 * 📝 docs(CHANGELOG.md): automatic update ([a2a0921](https://github.com/M0rtzz/m0rtzz.blog/commit/a2a0921))
+=======
+* 🔖 tag(package.json): v2.3.9 ([a848455](https://github.com/M0rtzz/m0rtzz.blog/commit/a848455))
+
+
+
+## <small>2.3.8 (2024-07-02)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([fc14a9b](https://github.com/M0rtzz/m0rtzz.blog/commit/fc14a9b))
+* 📝 docs(CHANGELOG.md): automatic update ([8772900](https://github.com/M0rtzz/m0rtzz.blog/commit/8772900))
+* 📝 docs(CHANGELOG.md): automatic update ([6ea0c77](https://github.com/M0rtzz/m0rtzz.blog/commit/6ea0c77))
+* 📝 docs(CHANGELOG.md): automatic update ([a2a0921](https://github.com/M0rtzz/m0rtzz.blog/commit/a2a0921))
+* 🔖 tag(package.json): v2.3.7 ([acd2cf3](https://github.com/M0rtzz/m0rtzz.blog/commit/acd2cf3))
+* 🔖 tag(package.json): v2.3.7 ([0d44b70](https://github.com/M0rtzz/m0rtzz.blog/commit/0d44b70))
+* 🔖 tag(package.json): v2.3.8 ([3ab2d9a](https://github.com/M0rtzz/m0rtzz.blog/commit/3ab2d9a))
+
+
+
+## <small>2.3.6 (2024-07-01)</small>
+
+* ✨ feat(footer.tsx): add security filing href ([f870f3a](https://github.com/M0rtzz/m0rtzz.blog/commit/f870f3a))
+* ✨ feat(page.tsx): add line breaks between paragraphs ([45999ff](https://github.com/M0rtzz/m0rtzz.blog/commit/45999ff))
+>>>>>>> 📝 docs(CHANGELOG.md): automatic update
 * 📝 docs(CHANGELOG.md): automatic update ([57332e7](https://github.com/M0rtzz/m0rtzz.blog/commit/57332e7))
 * 📝 docs(CHANGELOG.md): automatic update ([c5b2b15](https://github.com/M0rtzz/m0rtzz.blog/commit/c5b2b15))
 * 🔖 tag(package.json): v2.3.3 ([99ebdf5](https://github.com/M0rtzz/m0rtzz.blog/commit/99ebdf5))
 * 🔖 tag(package.json): v2.3.6 ([a70dc91](https://github.com/M0rtzz/m0rtzz.blog/commit/a70dc91))
+<<<<<<< HEAD
 * 🔖 tag(package.json): v2.3.7 ([0d44b70](https://github.com/M0rtzz/m0rtzz.blog/commit/0d44b70))
+=======
+>>>>>>> 📝 docs(CHANGELOG.md): automatic update
 
 
 
@@ -35,6 +61,7 @@
 
 ## <small>2.3.4 (2024-06-27)</small>
 
+<<<<<<< HEAD
 * 📝 docs(CHANGELOG.md): automatic update ([68946ae](https://github.com/M0rtzz/m0rtzz.blog/commit/68946ae))
 * 🔖 tag(package.json): v2.3.4 ([9e6ac5d](https://github.com/M0rtzz/m0rtzz.blog/commit/9e6ac5d))
 
@@ -44,11 +71,20 @@
 
 * ✨ feat(markdown.tsx): add plugins to render latex math formula ([1f780a5](https://github.com/M0rtzz/m0rtzz.blog/commit/1f780a5))
 * ➕ add_dep(package.json): add package to render latex math formula ([a7b7500](https://github.com/M0rtzz/m0rtzz.blog/commit/a7b7500))
+=======
+* ✨ feat(markdown.tsx): add plugins to render latex math formula ([1f780a5](https://github.com/M0rtzz/m0rtzz.blog/commit/1f780a5))
+* ➕ add_dep(package.json): add package to render latex math formula ([a7b7500](https://github.com/M0rtzz/m0rtzz.blog/commit/a7b7500))
+* 📝 docs(CHANGELOG.md): automatic update ([68946ae](https://github.com/M0rtzz/m0rtzz.blog/commit/68946ae))
+>>>>>>> 📝 docs(CHANGELOG.md): automatic update
 * 📝 docs(CHANGELOG.md): automatic update ([a0db784](https://github.com/M0rtzz/m0rtzz.blog/commit/a0db784))
 * 📝 docs(CHANGELOG.md): automatic update ([3a2f84d](https://github.com/M0rtzz/m0rtzz.blog/commit/3a2f84d))
 * 📝 docs(CHANGELOG.md): automatic update ([83b8ac2](https://github.com/M0rtzz/m0rtzz.blog/commit/83b8ac2))
 * 🔖 tag(package.json): v2.0.6 ([2ddebb3](https://github.com/M0rtzz/m0rtzz.blog/commit/2ddebb3))
 * 🔖 tag(package.json): v2.3.3 ([0f39e04](https://github.com/M0rtzz/m0rtzz.blog/commit/0f39e04))
+<<<<<<< HEAD
+=======
+* 🔖 tag(package.json): v2.3.4 ([9e6ac5d](https://github.com/M0rtzz/m0rtzz.blog/commit/9e6ac5d))
+>>>>>>> 📝 docs(CHANGELOG.md): automatic update
 
 
 
@@ -66,9 +102,7 @@
 * 📝 docs(CHANGELOG.md): automatic update ([fee1931](https://github.com/M0rtzz/m0rtzz.blog/commit/fee1931))
 * 🔖 tag(package.json): v2.3.1 ([10d7c48](https://github.com/M0rtzz/m0rtzz.blog/commit/10d7c48))
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-## [2.3.9](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.3.8...v2.3.9) (2024-07-02)
 
 ## 2.3.0 (2024-06-25)
 
@@ -1212,3 +1246,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
