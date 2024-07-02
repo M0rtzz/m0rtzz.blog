@@ -11,6 +11,96 @@
     }
   }
 
+  /* 深色主题局部代码块样式 */
+  .prose
+    :where(code):not(
+      :where([class~='not-prose'], [class~='not-prose'] *)
+    )::before {
+    content: none;
+  }
+
+  .prose
+    :where(code):not(
+      :where([class~='not-prose'], [class~='not-prose'] *)
+    )::after {
+    content: none;
+  }
+
+  .prose > p:nth-child(n) > code:nth-child(n) {
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    color: #e6edf3;
+    background-color: #6e768166;
+  }
+
+  /* 警告框内局部代码块 */
+  div.not-prose:nth-child(n)
+    > div:nth-child(n)
+    > p:nth-child(n)
+    > code:nth-child(n) {
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    color: #e6edf3;
+    background-color: #6e768166;
+  }
+
+  /* 引用框内局部代码块 */
+  .prose > blockquote:nth-child(n) > p:nth-child(n) > code:nth-child(n) {
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    color: #e6edf3;
+    background-color: #6e768166;
+  }
+
+  /* 表格第一行内局部代码块 */
+  .prose
+    > table:nth-child(n)
+    > thead:nth-child(n)
+    > tr:nth-child(n)
+    > th:nth-child(n)
+    > code:nth-child(n) {
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    color: #e6edf3;
+    background-color: #6e768166;
+  }
+
+  /* 表格剩余行内局部代码块 */
+  .prose
+    > table:nth-child(n)
+    > tbody:nth-child(n)
+    > tr:nth-child(n)
+    > td:nth-child(n)
+    > code:nth-child(n) {
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    color: #e6edf3;
+    background-color: #6e768166;
+  }
+
+  /* 使用后代选择器统一匹配有序列表所有层级的元素 */
+  ol li code {
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    color: #e6edf3;
+    background-color: #6e768166;
+  }
+
+  /* 使用后代选择器统一匹配无序列表所有层级的元素 */
+  ul li code {
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    color: #e6edf3;
+    background-color: #6e768166;
+  }
+
+  .prose > p:nth-child(n) > code:nth-child(n) {
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    color: #e6edf3;
+    background-color: #6e768166;
+  }
+
   .shiki-twoslash {
     code span {
       color: var(--shiki-dark) !important;
