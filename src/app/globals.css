@@ -21,6 +21,95 @@
   .shiki span {
     font-style: normal !important; /* 代码块渲染禁止斜体 */
   }
+
+  /* 警告框内局部代码块样式 */
+  div.not-prose:nth-child(n)
+    > div:nth-child(n)
+    > p:nth-child(n)
+    > code:nth-child(n) {
+    padding: 0.2em 0.4em;
+    color: #1f2328;
+    background-color: #afb8c133;
+    border-radius: 6px;
+    margin: 0;
+    white-space: break-spaces;
+    font-weight: normal;
+  }
+
+  /* 引用框内局部代码块 */
+  .prose > blockquote:nth-child(n) > p:nth-child(n) > code:nth-child(n) {
+    padding: 0.2em 0.4em;
+    color: #1f2328;
+    background-color: #afb8c133;
+    border-radius: 6px;
+    margin: 0;
+    white-space: break-spaces;
+    font-weight: normal;
+  }
+
+  /* 表格第一行内局部代码块 */
+  .prose
+    > table:nth-child(n)
+    > thead:nth-child(n)
+    > tr:nth-child(n)
+    > th:nth-child(n)
+    > code:nth-child(n) {
+    padding: 0.2em 0.4em;
+    color: #1f2328;
+    background-color: #afb8c133;
+    border-radius: 6px;
+    margin: 0;
+    white-space: break-spaces;
+    font-weight: normal;
+  }
+
+  /* 表格剩余行内局部代码块 */
+  .prose
+    > table:nth-child(n)
+    > tbody:nth-child(n)
+    > tr:nth-child(n)
+    > td:nth-child(n)
+    > code:nth-child(n) {
+    padding: 0.2em 0.4em;
+    color: #1f2328;
+    background-color: #afb8c133;
+    border-radius: 6px;
+    margin: 0;
+    white-space: break-spaces;
+    font-weight: normal;
+  }
+
+  /* 使用后代选择器统一匹配有序列表所有层级的元素 */
+  ol li code {
+    padding: 0.2em 0.4em;
+    color: #1f2328;
+    background-color: #afb8c133;
+    border-radius: 6px;
+    margin: 0;
+    white-space: break-spaces;
+    font-weight: normal;
+  }
+
+  /* 使用后代选择器统一匹配无序列表所有层级的元素 */
+  ul li code {
+    padding: 0.2em 0.4em;
+    color: #1f2328;
+    background-color: #afb8c133;
+    border-radius: 6px;
+    margin: 0;
+    white-space: break-spaces;
+    font-weight: normal;
+  }
+
+  .prose > p:nth-child(n) > code:nth-child(n) {
+    padding: 0.2em 0.4em;
+    color: #1f2328;
+    background-color: #afb8c133;
+    border-radius: 6px;
+    margin: 0;
+    white-space: break-spaces;
+    font-weight: normal;
+  }
 }
 
 :root.dark {
@@ -36,10 +125,123 @@
   --surface-4: 100 116 139; /* theme('colors.slate.500') */
 
   --border: 51 65 85; /* theme('colors.slate.700') */
+
+  /* 深色主题局部代码块样式 */
+  .prose
+    :where(code):not(
+      :where([class~='not-prose'], [class~='not-prose'] *)
+    )::before {
+    content: none;
+  }
+
+  .prose
+    :where(code):not(
+      :where([class~='not-prose'], [class~='not-prose'] *)
+    )::after {
+    content: none;
+  }
+
+  .prose > p:nth-child(n) > code:nth-child(n) {
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    color: #e6edf3;
+    background-color: rgba(90, 97, 101, 0.4);
+    margin: 0;
+    white-space: break-spaces;
+    font-weight: normal;
+  }
+
+  /* 警告框内局部代码块 */
+  div.not-prose:nth-child(n)
+    > div:nth-child(n)
+    > p:nth-child(n)
+    > code:nth-child(n) {
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    color: #e6edf3;
+    background-color: rgba(90, 97, 101, 0.4);
+    margin: 0;
+    white-space: break-spaces;
+    font-weight: normal;
+  }
+
+  /* 引用框内局部代码块 */
+  .prose > blockquote:nth-child(n) > p:nth-child(n) > code:nth-child(n) {
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    color: #e6edf3;
+    background-color: rgba(90, 97, 101, 0.4);
+    margin: 0;
+    white-space: break-spaces;
+    font-weight: normal;
+  }
+
+  /* 表格第一行内局部代码块 */
+  .prose
+    > table:nth-child(n)
+    > thead:nth-child(n)
+    > tr:nth-child(n)
+    > th:nth-child(n)
+    > code:nth-child(n) {
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    color: #e6edf3;
+    background-color: rgba(90, 97, 101, 0.4);
+    margin: 0;
+    white-space: break-spaces;
+    font-weight: normal;
+  }
+
+  /* 表格剩余行内局部代码块 */
+  .prose
+    > table:nth-child(n)
+    > tbody:nth-child(n)
+    > tr:nth-child(n)
+    > td:nth-child(n)
+    > code:nth-child(n) {
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    color: #e6edf3;
+    background-color: rgba(90, 97, 101, 0.4);
+    margin: 0;
+    white-space: break-spaces;
+    font-weight: normal;
+  }
+
+  /* 使用后代选择器统一匹配有序列表所有层级的元素 */
+  ol li code {
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    color: #e6edf3;
+    background-color: rgba(90, 97, 101, 0.4);
+    margin: 0;
+    white-space: break-spaces;
+    font-weight: normal;
+  }
+
+  /* 使用后代选择器统一匹配无序列表所有层级的元素 */
+  ul li code {
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    color: #e6edf3;
+    background-color: rgba(90, 97, 101, 0.4);
+    margin: 0;
+    white-space: break-spaces;
+    font-weight: normal;
+  }
+
+  .prose > p:nth-child(n) > code:nth-child(n) {
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    color: #e6edf3;
+    background-color: rgba(90, 97, 101, 0.4);
+    margin: 0;
+    white-space: break-spaces;
+    font-weight: normal;
+  }
 }
 
 /* Markdown */
-
 .prose {
   > div > pre,
   > p:has(img) {
@@ -418,7 +620,7 @@ h6 {
   color: var(--tw-prose-headings);
 }
 
-/* 浅色主题局部代码块样式 */
+/* 局部代码块样式 */
 .prose
   :where(code):not(
     :where([class~='not-prose'], [class~='not-prose'] *)
@@ -431,72 +633,4 @@ h6 {
     :where([class~='not-prose'], [class~='not-prose'] *)
   )::after {
   content: none;
-}
-
-/* 警告框内局部代码块样式 */
-div.not-prose:nth-child(n)
-  > div:nth-child(n)
-  > p:nth-child(n)
-  > code:nth-child(n) {
-  padding: 0.2em 0.4em;
-  color: #1f2328; /* #e6edf3 */
-  background-color: #afb8c133; /* ##e768166 */
-  border-radius: 6px;
-}
-
-/* 引用框内局部代码块 */
-.prose > blockquote:nth-child(n) > p:nth-child(n) > code:nth-child(n) {
-  padding: 0.2em 0.4em;
-  border-radius: 6px;
-  color: #1f2328; /* #e6edf3 */
-  background-color: #afb8c133; /* ##e768166 */
-}
-
-/* 表格第一行内局部代码块 */
-.prose
-  > table:nth-child(n)
-  > thead:nth-child(n)
-  > tr:nth-child(n)
-  > th:nth-child(n)
-  > code:nth-child(n) {
-  padding: 0.2em 0.4em;
-  border-radius: 6px;
-  color: #1f2328; /* #e6edf3 */
-  background-color: #afb8c133; /* ##e768166 */
-}
-
-/* 表格剩余行内局部代码块 */
-.prose
-  > table:nth-child(n)
-  > tbody:nth-child(n)
-  > tr:nth-child(n)
-  > td:nth-child(n)
-  > code:nth-child(n) {
-  padding: 0.2em 0.4em;
-  border-radius: 6px;
-  color: #1f2328; /* #e6edf3 */
-  background-color: #afb8c133; /* ##e768166 */
-}
-
-/* 使用后代选择器统一匹配有序列表所有层级的元素 */
-ol li code {
-  padding: 0.2em 0.4em;
-  border-radius: 6px;
-  color: #1f2328;
-  background-color: #afb8c133;
-}
-
-/* 使用后代选择器统一匹配无序列表所有层级的元素 */
-ul li code {
-  padding: 0.2em 0.4em;
-  border-radius: 6px;
-  color: #1f2328;
-  background-color: #afb8c133;
-}
-
-.prose > p:nth-child(n) > code:nth-child(n) {
-  padding: 0.2em 0.4em;
-  border-radius: 6px;
-  color: #1f2328;
-  background-color: #afb8c133;
 }
