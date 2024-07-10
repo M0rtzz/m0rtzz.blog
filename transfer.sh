@@ -17,9 +17,10 @@ pnpm build || {
     exit 1
 }
 
-find out/ -type f -exec file {} \; | awk -F: '/text/ {print $1}' | while read -r file; do
-    sed -i 's/fonts.googleapis.com/fonts.geekzu.org/g' "${file}"
-done
+# find out/ -type f -exec file {} \; | awk -F: '/text/ {print $1}' | while read -r file; do
+#     sed -i 's/fonts.googleapis.com/fonts.loli.net/g' "${file}"
+#     sed -i 's/fonts.gstatic.com/gstatic.loli.net/g' "${file}"
+# done
 
 echo $'\e[1;32m静态资源构建完成\e[0m'
 
