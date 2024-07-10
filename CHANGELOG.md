@@ -1,13 +1,15 @@
-# Changelog
+## <small>2.4.1 (2024-07-10)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* ✅ test(transfer.sh): it seems that the googlefonts can be accessed ([81ba8c6](https://github.com/M0rtzz/m0rtzz.blog/commit/81ba8c6))
+* 🔖 tag(package.json): v2.4.1 ([e329afd](https://github.com/M0rtzz/m0rtzz.blog/commit/e329afd))
 
-## [2.4.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.4.0...v2.4.1) (2024-07-10)
+
 
 ## 2.4.0 (2024-07-03)
 
 * ♻️ refactor: change the position of the css class ([35f2c06](https://github.com/M0rtzz/m0rtzz.blog/commit/35f2c06))
 * 💄 ui: change inline code style ([ae88e82](https://github.com/M0rtzz/m0rtzz.blog/commit/ae88e82))
+* 📝 docs(CHANGELOG.md): automatic update ([face023](https://github.com/M0rtzz/m0rtzz.blog/commit/face023))
 * 📝 docs(CHANGELOG.md): automatic update ([83169fa](https://github.com/M0rtzz/m0rtzz.blog/commit/83169fa))
 * 📝 docs(CHANGELOG.md): automatic update ([e2fc80c](https://github.com/M0rtzz/m0rtzz.blog/commit/e2fc80c))
 * 📝 docs(CHANGELOG.md): automatic update ([f9b516f](https://github.com/M0rtzz/m0rtzz.blog/commit/f9b516f))
@@ -1221,3 +1223,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
