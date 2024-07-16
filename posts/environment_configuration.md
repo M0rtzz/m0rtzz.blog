@@ -14,7 +14,7 @@ ZZU-SR的同学配置环境前可以给我发邮件：[m0rtzz@outlook.com](mailt
 
 提取码:
 
-zwz4  
+zwz4
 
 --来自百度网盘超级会员v4的分享
 
@@ -73,7 +73,7 @@ function customizePrompt()
     local blue='\[\033[0;34m\]'   # 蓝色，用于当前工作目录
     local git_branch_color='\[\033[1;43;37m\]' # 黄色背景，白色字体，用于git分支
     local command_prompt='$' # 命令提示符
-    
+  
     if [ $UID -eq 0 ]; then
         command_prompt='#'
     fi
@@ -469,7 +469,7 @@ rosrun turtlesim turtlesim_node
 rosrun turtlesim turtle_teleop_key
 ```
 
- 在`rosrun turtlesim turtle_teleop_key`所在终端点击一下任意位置，然后使用↕↔小键盘控制，看小海龟会不会动，如果会动则安装成功
+ 在 `rosrun turtlesim turtle_teleop_key`所在终端点击一下任意位置，然后使用↕↔小键盘控制，看小海龟会不会动，如果会动则安装成功
 
 ![c40128bd8c5245a48d386c21ba465449.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:26:29_c40128bd8c5245a48d386c21ba465449.png)
 
@@ -479,7 +479,7 @@ rosrun turtlesim turtle_teleop_key
 
  ***经尝试多版本Ubuntu和OpenCV，装Ubuntu20.04，ROS noetic和OpenCV4.2.0及其扩展模块才能解决将彩色图像转换为网络所需的输入Blob后前馈时抛出的（raised OpenCV exception，error: (-215:Assertion failed)等等）。下方OpenCV3的安装步骤仅供参考，OpenCV4.2.0的cmake命令及注意事项在本小节最后！***
 
-###  ①OpenCV3的安装步骤
+### ①OpenCV3的安装步骤
 
 ```shell
 git clone -b 3.4.16 https://github.com/opencv/opencv.git opencv-3.4.16
@@ -697,7 +697,7 @@ sudo make -j$(nproc)
 
 安装成功！
 
-***<u>设置cv_bridge的版本（ROS-melodic，经实践发现毫无效果）：</u>***
+***`<u>`设置cv_bridge的版本（ROS-melodic，经实践发现毫无效果）：`</u>`***
 
 ```bash
 sudo gedit /opt/ros/melodic/share/cv_bridge/cmake/cv_bridgeConfig.cmake
@@ -993,7 +993,7 @@ cmake -D CMAKE_BUILD_TYPE=BUILD \
 -j$(nproc) ..
 ```
 
-###  ②OpenCV4.2.0的cmake命令及注意事项（Ubuntu20.04装这个）
+### ②OpenCV4.2.0的cmake命令及注意事项（Ubuntu20.04装这个）
 
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
@@ -1103,12 +1103,8 @@ wget https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support-patch/assets/149 -O o
 ***（如果不执行以下几步，编译darknet_ros会报错:error:‘IplImage’之类的）***
 
 ```bash
-sudo cp /usr/local/lib/pkgconfig/opencv4.pc /usr/lib/pkgconfig
-```
-
-```bash
-cd /usr/lib/pkgconfig
-sudo cp opencv4.pc opencv.pc
+sudo cp /usr/local/lib/pkgconfig/opencv4.pc /usr/lib/pkgconfig/opencv4.pc
+sudo cp /usr/lib/pkgconfig/opencv4.pc /usr/lib/pkgconfig/opencv.pc
 ```
 
 ## 10.安装protobuf2.6.1
@@ -1145,7 +1141,7 @@ sudo make -j$(nproc)
 
 ![140562b609004503a731358eea387731.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:27:28_140562b609004503a731358eea387731.png)
 
- 养成`make check`的好习惯
+ 养成 `make check`的好习惯
 
 ```bash
 sudo make check -j$(nproc)
@@ -1250,7 +1246,7 @@ gedit ~/.bashrc
 source /home/m0rtzz/Workspaces/catkin_ws/devel/setup.bash
 ```
 
-保存后关闭，打开终端，输入：  
+保存后关闭，打开终端，输入：
 
 ```bash
 source ~/.bashrc
@@ -1274,7 +1270,7 @@ gedit ~/.bashrc
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/home/m0rtzz/Workspaces/catkin_ws/lib
 ```
 
-保存后关闭，打开终端，输入：  
+保存后关闭，打开终端，输入：
 
 ```bash
 source ~/.bashrc
@@ -1444,7 +1440,7 @@ sudo gedit /etc/default/grub
 
 ![2a4260711db540b6af9fd30682dc9257.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:04_2a4260711db540b6af9fd30682dc9257.png)
 
-保存后关闭，打开终端，输入：  
+保存后关闭，打开终端，输入：
 
 ```bash
 sudo update-grub
@@ -1644,7 +1640,7 @@ cd .. && catkin_make -j$(nproc)
 cd src/
 ```
 
-###  ①如果是OpenCV3
+### ①如果是OpenCV3
 
 ```shell
 git clone --recursive https://github.com/leggedrobotics/darknet_ros.git darknet_ros
@@ -1656,7 +1652,7 @@ git clone --recursive https://github.com/leggedrobotics/darknet_ros.git darknet_
 git clone --recursive https://gitcode.com/mirrors/leggedrobotics/darknet_ros.git darknet_ros
 ```
 
-###  ①如果是OpenCV4
+### ①如果是OpenCV4
 
 ```bash
 git clone -b opencv4 --recursive https://github.com/kunaltyagi/darknet_ros.git darknet_ros
@@ -1783,7 +1779,7 @@ sudo apt install -y  pkg-config  ninja-build doxygen clang  gcc-multilib  g++-mu
 
 ![f806a0d411ac415497e78b45bf3c20ac.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:06_f806a0d411ac415497e78b45bf3c20ac.png)
 
- 解压 .deb 文件，再解压内部的 `data.tar.gz`和`control.tar.gz`文件,并进入data文件夹，打开终端输入：
+ 解压 .deb 文件，再解压内部的 `data.tar.gz`和 `control.tar.gz`文件,并进入data文件夹，打开终端输入：
 
 ```bash
 cd usr/lib/x86_64-linux-gnu
@@ -1949,7 +1945,7 @@ private:
         struct CloudViewer_impl;
         //std::auto_ptr<CloudViewer_impl> impl_;
         std::shared_ptr<CloudViewer_impl> impl_;
-        
+      
         boost::signals2::connection 
         registerMouseCallback (boost::function<void (const pcl::visualization::MouseEvent&)>);
 ```
