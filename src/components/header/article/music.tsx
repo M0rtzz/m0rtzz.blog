@@ -1,64 +1,30 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import { IconMusic, IconMusicOff } from '@tabler/icons-react'
 
-// 单例音频播放器
-let audioPlayer
-if (typeof window !== 'undefined') {
-  audioPlayer = new Audio('/music/music.mp3')
-}
-
 export const MusicToggle = () => {
+  const audioRef = useRef<HTMLAudioElement | null>(null) // 指定 useRef 类型为 HTMLAudioElement 或 null
   const [isPlaying, setIsPlaying] = useState(false)
-  const [isRotating, setIsRotating] = useState(false)
-  useEffect(() => {
-    const savedState = localStorage.getItem('musicState')
-    if (savedState === 'playing') {
-      setIsPlaying(true)
-      setIsRotating(true)
-      const savedTime = localStorage.getItem('musicCurrentTime')
-      if (savedTime) {
-        audioPlayer.currentTime = parseFloat(savedTime)
-      }
-      audioPlayer.play()
-    }
-  }, []) // 空数组意味着此effect只在组件挂载时运行一次
 
-  useEffect(() => {
-    // 保存状态和时间，仅在状态变化时运行
-    localStorage.setItem('musicState', isPlaying ? 'playing' : 'paused')
-    localStorage.setItem('musicCurrentTime', audioPlayer.currentTime.toString())
-  }, [isPlaying]) // 添加isPlaying为依赖项
   const togglePlay = () => {
-    if (audioPlayer.paused) {
-      audioPlayer.play()
-      setIsPlaying(true)
-      setIsRotating(true)
-    } else {
-      audioPlayer.pause()
-      setIsPlaying(false)
-      setIsRotating(false)
+    if (audioRef.current) {
+      // 添加条件判断确保 audioRef.current 不为 null
+      if (audioRef.current.paused) {
+        audioRef.current.play()
+        setIsPlaying(true)
+      } else {
+        audioRef.current.pause()
+        setIsPlaying(false)
+      }
     }
   }
 
-  useEffect(() => {
-    const updateTime = () => {
-      localStorage.setItem(
-        'musicCurrentTime',
-        audioPlayer.currentTime.toString(),
-      )
-    }
-    audioPlayer.addEventListener('timeupdate', updateTime)
-    return () => {
-      audioPlayer.removeEventListener('timeupdate', updateTime)
-    }
-  }, [])
-
   return (
     <div>
+      <audio ref={audioRef} src='/music/music.mp3' />
       <button
-        className={`rounded p-1.5 outline-none transition-colors hover:bg-surface-1 pressed:bg-surface-1 ${isRotating ? 'rotate-animation' : ''}`}
+        className='rounded p-1.5 outline-none transition-colors hover:bg-surface-1 pressed:bg-surface-1'
         aria-label={isPlaying ? 'Pause Music' : 'Play Music'}
         onClick={togglePlay}
       >
