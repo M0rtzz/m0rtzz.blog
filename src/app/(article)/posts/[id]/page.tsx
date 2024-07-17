@@ -21,8 +21,9 @@ import { queryAllPosts } from '@/service'
 import { getSummary } from '@/service/summary'
 import { formatDateTime, readingTime } from '@/utils'
 
+import LinuxAwareComponent from './is_linux'
 import ReactTeX from "./tex"
-import { TOCClient } from './toc'
+
 // shiki style
 import './shiki.css'
 
@@ -130,12 +131,7 @@ export default async function Page({ params }: PageProps) {
         />
         <GiscusScript number={number} repo={`${repoOwner}/${repoName}`} />
       </article>
-      <aside className='sticky-table sticky top-14 ml-auto h-fit w-[25ch] max-xl:hidden'>
-        <h2 className='mb-4 whitespace-nowrap text-lg font-semibold tracking-wider has-[+ul:empty]:hidden'>
-          TABLE OF CONTENTS
-        </h2>
-        <TOCClient toc={toc} />
-      </aside>
+      <LinuxAwareComponent toc={toc} />
     </main>
   )
 }
