@@ -21,7 +21,7 @@ import { queryAllPosts } from '@/service'
 import { getSummary } from '@/service/summary'
 import { formatDateTime, readingTime } from '@/utils'
 
-import LinuxAwareComponent from './is_linux'
+import LinuxAwareComponent from './is-linux'
 import ReactTeX from "./tex"
 
 // shiki style

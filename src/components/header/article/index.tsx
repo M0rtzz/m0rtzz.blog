@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { clsx } from 'clsx'
 
 import { FontToggle } from './font-toggle'
+import { MusicToggle } from './music'
 import { ThemeToggle } from './theme-toggle'
 import { ReturnTop } from './top'
 
@@ -33,6 +34,7 @@ export const Header = (props: HeaderProps) => {
         </Link>
       </nav>
       <div className='flex items-center justify-end gap-2'>
+        <MusicToggle />
         <FontToggle />
         <ThemeToggle />
         <ReturnTop />
