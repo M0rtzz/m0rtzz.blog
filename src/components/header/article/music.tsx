@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useRef } from 'react'
+
 import { IconMusic, IconMusicOff } from '@tabler/icons-react'
 
 export const MusicToggle = () => {
