@@ -1,8 +1,26 @@
-# Changelog
+## <small>2.4.3 (2024-07-17)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* ✨ feat: special treatment of the scroll bar for the toc displayed in browsers on Linux ([5640451](https://github.com/M0rtzz/m0rtzz.blog/commit/5640451))
+* 🎨 style(toc.tsx): just format code ([2abfc76](https://github.com/M0rtzz/m0rtzz.blog/commit/2abfc76))
+* 🔖 tag(package.json): v2.4.3 ([ed1fa3e](https://github.com/M0rtzz/m0rtzz.blog/commit/ed1fa3e))
 
-## [2.4.3](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.4.2...v2.4.3) (2024-07-17)
+
+
+## <small>2.4.2 (2024-07-16)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([f381f3a](https://github.com/M0rtzz/m0rtzz.blog/commit/f381f3a))
+* 📝 docs(posts/): add posts ([55aa5b9](https://github.com/M0rtzz/m0rtzz.blog/commit/55aa5b9))
+* 🔖 tag(package.json): v2.4.2 ([ab442e5](https://github.com/M0rtzz/m0rtzz.blog/commit/ab442e5))
+
+
+
+## <small>2.4.1 (2024-07-10)</small>
+
+* ✅ test(transfer.sh): it seems that the googlefonts can be accessed ([81ba8c6](https://github.com/M0rtzz/m0rtzz.blog/commit/81ba8c6))
+* 📝 docs(CHANGELOG.md): automatic update ([172f96d](https://github.com/M0rtzz/m0rtzz.blog/commit/172f96d))
+* 🔖 tag(package.json): v2.4.1 ([e329afd](https://github.com/M0rtzz/m0rtzz.blog/commit/e329afd))
+
+
 
 ## 2.4.0 (2024-07-03)
 
@@ -1222,3 +1240,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
