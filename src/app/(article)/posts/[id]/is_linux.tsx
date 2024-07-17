@@ -28,7 +28,7 @@ const LinuxAwareComponent: React.FC<LinuxAwareComponentProps> = ({ toc }) => {
 
   return (
     <aside
-      className={`sticky-table sticky top-14 ml-auto h-fit w-[25ch] max-xl:hidden ${isLinux ? 'linux-special-class' : ''}`}
+      className={`sticky-table sticky top-14 ml-auto h-fit w-[25ch] max-xl:hidden ${isLinux ? 'linux-special-scroll-bar' : ''}`}
     >
       <h2 className='mb-4 whitespace-nowrap text-lg font-semibold tracking-wider has-[+ul:empty]:hidden'>
         TABLE OF CONTENTS
