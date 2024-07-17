@@ -330,8 +330,8 @@
 }
 
 /* 特殊处理Linux下的滚动条 */
-.linux-special-class {
-  scrollbar-width: unset;
+.linux-special-scroll-bar {
+  scrollbar-width: unset !important;
 }
 
 /* 警告框行间距离 */
