@@ -1,8 +1,31 @@
-# Changelog
+## <small>2.4.5 (2024-07-17)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 🔖 tag(package.json): v2.4.5 ([d45cc70](https://github.com/M0rtzz/m0rtzz.blog/commit/d45cc70))
 
-## [2.4.5](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.4.4...v2.4.5) (2024-07-17)
+
+
+## <small>2.4.4 (2024-07-17)</small>
+
+* ✨ feat: special treatment of the scroll bar for the toc displayed in browsers on Linux ([e1dbed8](https://github.com/M0rtzz/m0rtzz.blog/commit/e1dbed8))
+* 🎨 style(toc.tsx): just format code ([7bed942](https://github.com/M0rtzz/m0rtzz.blog/commit/7bed942))
+* 📝 docs(CHANGELOG.md): automatic update ([e2b726f](https://github.com/M0rtzz/m0rtzz.blog/commit/e2b726f))
+* 📝 docs(CHANGELOG.md): automatic update ([8fa79d4](https://github.com/M0rtzz/m0rtzz.blog/commit/8fa79d4))
+* 📝 docs(CHANGELOG.md): automatic update ([d64ab78](https://github.com/M0rtzz/m0rtzz.blog/commit/d64ab78))
+* 📝 docs(environment_configuration.md): update cmd ([8b47b61](https://github.com/M0rtzz/m0rtzz.blog/commit/8b47b61))
+* 📝 docs(posts/): add posts ([55aa5b9](https://github.com/M0rtzz/m0rtzz.blog/commit/55aa5b9))
+* 🔖 tag(package.json): v2.4.2 ([eb057f7](https://github.com/M0rtzz/m0rtzz.blog/commit/eb057f7))
+* 🔖 tag(package.json): v2.4.3 ([a673c66](https://github.com/M0rtzz/m0rtzz.blog/commit/a673c66))
+* 🔖 tag(package.json): v2.4.4 ([d64cea6](https://github.com/M0rtzz/m0rtzz.blog/commit/d64cea6))
+
+
+
+## <small>2.4.1 (2024-07-10)</small>
+
+* ✅ test(transfer.sh): it seems that the googlefonts can be accessed ([81ba8c6](https://github.com/M0rtzz/m0rtzz.blog/commit/81ba8c6))
+* 📝 docs(CHANGELOG.md): automatic update ([172f96d](https://github.com/M0rtzz/m0rtzz.blog/commit/172f96d))
+* 🔖 tag(package.json): v2.4.1 ([e329afd](https://github.com/M0rtzz/m0rtzz.blog/commit/e329afd))
+
+
 
 ## 2.4.0 (2024-07-03)
 
@@ -1222,3 +1245,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
