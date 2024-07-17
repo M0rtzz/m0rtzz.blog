@@ -329,6 +329,11 @@
   background: transparent;
 }
 
+/* 特殊处理Linux下的滚动条 */
+.linux-special-class {
+  scrollbar-width: unset;
+}
+
 /* 警告框行间距离 */
 .small-line-numbers > p:nth-child(n) {
   margin-top: 1rem;
