@@ -7,6 +7,7 @@ import { IconMusic, IconMusicOff } from '@tabler/icons-react'
 export const MusicToggle = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null) // 指定 useRef 类型为 HTMLAudioElement 或 null
   const [isPlaying, setIsPlaying] = useState(false)
+  const [isRotating, setIsRotating] = useState(false)
 
   const togglePlay = () => {
     if (audioRef.current) {
@@ -14,9 +15,11 @@ export const MusicToggle = () => {
       if (audioRef.current.paused) {
         audioRef.current.play()
         setIsPlaying(true)
+        setIsRotating(true)
       } else {
         audioRef.current.pause()
         setIsPlaying(false)
+        setIsRotating(false)
       }
     }
   }
@@ -25,7 +28,7 @@ export const MusicToggle = () => {
     <div>
       <audio ref={audioRef} src='/music/music.mp3' />
       <button
-        className='rounded p-1.5 outline-none transition-colors hover:bg-surface-1 pressed:bg-surface-1'
+        className={`rounded p-1.5 outline-none transition-colors hover:bg-surface-1 pressed:bg-surface-1 ${isRotating ? 'rotate-animation' : ''}`}
         aria-label={isPlaying ? 'Pause Music' : 'Play Music'}
         onClick={togglePlay}
       >
