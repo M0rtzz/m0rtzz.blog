@@ -18,6 +18,7 @@
     "clsx": "^2.1.1",
     "dark-toggle": "2.0.0-test.0",
     "eslint-plugin-react-hooks": "^4.6.2",
+    "katex": "latest",
     "lodash.upperfirst": "^4.3.1",
     "mdast-util-toc": "^7.1.0",
     "motion-wave": "^0.0.5",
