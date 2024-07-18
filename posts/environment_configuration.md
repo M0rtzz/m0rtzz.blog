@@ -4929,9 +4929,9 @@ carla::streaming::low_level::Client<tcp::Client> c;
 
 [Linux原生微信_需要安装星火应用商店](spk://store/chat/store.spark-app.wechat-linux-spark)
 
-![image-20240718162540961](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/16:25:41_image-20240718162540961.png)
+![image-20240718202231084](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/20:22:31_image-20240718202231084.png)
 
- 可以水平和垂直分割的bash终端：
+可以水平和垂直分割的终端：
 
 ```bash
 sudo apt install terminator
@@ -4963,7 +4963,7 @@ sudo apt install neofetch
 
 ![image-20240718163244367](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/16:32:44_image-20240718163244367.png)
 
-或C语言写的更快的`fastfetch`：
+或安装用C语言写的更快的`fastfetch`：
 
 ```shell
 wget -q --show-progress https://github.com/fastfetch-cli/fastfetch/releases/latest/download/fastfetch-linux-amd64.deb -O fastfetch-linux-amd64.deb && sudo apt install -y ./fastfetch-linux-amd64.deb
@@ -4977,7 +4977,7 @@ rar文件解压工具：
 sudo apt install unrar
 ```
 
- 解决不能观看MP4文件：
+解决不能观看MP4文件：
 
 ```bash
 sudo apt update
@@ -4995,7 +4995,7 @@ sudo apt install ubuntu-restricted-extras
 sudo dpkg-reconfigure libdvd-pkg
 ```
 
- 系统优化：
+系统优化：
 
 ```bash
 sudo apt update
@@ -5004,6 +5004,12 @@ sudo apt update
 ```bash
 sudo apt install gnome-tweak-tool
 ```
+
+```shell
+gnome-tweaks
+```
+
+![image-20240718201417588](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/20:14:18_image-20240718201417588.png)
 
 ![image-20240718155818281](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/15:58:18_image-20240718155818281.png)
 
@@ -5026,6 +5032,8 @@ sudo apt update && sudo apt install diodon
 
 另外可使用中科大反向代理`Canonical`的`ppa仓库`：
 
+>   [!TIP]
+>
 >   将`/etc/apt/sources.list.d`下`.list`文件中的`http://ppa.launchpad.net`替换为`https://launchpad.proxy.ustclug.org`即可，建议替换前先`sudo cp /etc/apt/sources.list.d/your-file.list /etc/apt/sources.list.d/your-file.list.save`备份一下（请自行替换文件名）
 
 ![image-20240718163012569](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/16:30:12_image-20240718163012569.png)
@@ -5038,7 +5046,7 @@ Ubuntu 18.10 (Cosmic Cuttlefish) or later：
 sudo apt install flatpak
 ```
 
-older Ubuntu versions：
+Older Ubuntu versions：
 
 ```shell
 sudo add-apt-repository ppa:flatpak/stable
@@ -5070,19 +5078,19 @@ about:config
 full-screen-api.warning.timeout
 ```
 
- 设置为0~
+设置为0~
 
 ```ini
 full-screen-api.transition-duration.enter
 ```
 
- 和
+和
 
 ```ini
 full-screen-api.transition-duration.leave
 ```
 
-  都设置为0 0~
+都设置为0 0~
 
 ```ini
 browser.search.openintab
