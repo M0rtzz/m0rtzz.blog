@@ -23,7 +23,7 @@
     "motion-wave": "^0.0.5",
     "next": "latest",
     "p2-es": "^1.2.3",
-    "react": "^18.3.1",
+    "react": "latest",
     "react-aria-components": "^1.2.1",
     "react-dom": "^18.3.1",
     "react-jss": "^10.10.0",
