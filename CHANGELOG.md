@@ -1,3 +1,9 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [2.5.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.5.0...v2.5.1) (2024-07-18)
+
 ## 2.5.0 (2024-07-18)
 
 * ➕ add_dep(package.json): add package ([17697a9](https://github.com/M0rtzz/m0rtzz.blog/commit/17697a9))
@@ -1300,5 +1306,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
