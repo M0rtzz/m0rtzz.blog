@@ -1,12 +1,12 @@
 # 关于Ubuntu18.04/20.04安装后的一系列环境配置过程的总结
 
-**Updating（更新博客链接：[https://www.m0rtzz.com/posts/3](https://www.m0rtzz.com/posts/3)）...**
+**Updating（最速更新链接：[博客](https://www.m0rtzz.com/posts/3)）...**
 
-ZZU-SR的同学配置环境前可以给我发邮件：[m0rtzz@outlook.com](mailto:m0rtzz@outlook.com)
+ZZU-SR的同学配置环境前可以给我发邮件：[E-mail](mailto:m0rtzz@stu.zzu.edu.cn)
 
 ---
 
-本文所有用到的文件打包供大家下载（不含代码）【**Updating**】：
+本文用到的部分文件打包供无法访问部分网站的童鞋下载【**Updating**】：
 
 链接:
 
