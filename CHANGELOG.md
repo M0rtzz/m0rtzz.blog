@@ -1,11 +1,8 @@
-## <small>2.5.2 (2024-07-18)</small>
+# Changelog
 
-* 📝 docs(CHANGELOG.md): automatic update ([3bc80a3](https://github.com/M0rtzz/m0rtzz.blog/commit/3bc80a3))
-* 📝 docs(environment_configuration.md): update cmd ([11463fb](https://github.com/M0rtzz/m0rtzz.blog/commit/11463fb))
-* 🔖 tag(package.json): v2.5.1 ([542305f](https://github.com/M0rtzz/m0rtzz.blog/commit/542305f))
-* 🔖 tag(package.json): v2.5.2 ([466227f](https://github.com/M0rtzz/m0rtzz.blog/commit/466227f))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
+## [2.5.3](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.5.2...v2.5.3) (2024-07-18)
 
 ## 2.5.0 (2024-07-18)
 
@@ -1310,5 +1307,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
