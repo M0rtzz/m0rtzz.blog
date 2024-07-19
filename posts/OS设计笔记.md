@@ -651,7 +651,7 @@ make all
 
 安装版本为Bochs-2.2.5，原因是：
 
-[*https://github.com/oldlinux-web/oldlinux-files/blob/master/bochs/README_FIRST*](https://github.com/oldlinux-web/oldlinux-files/blob/master/bochs/README_FIRST)
+[https://github.com/oldlinux-web/oldlinux-files/blob/master/bochs/README_FIRST#L7-L10](https://github.com/oldlinux-web/oldlinux-files/blob/master/bochs/README_FIRST#L7-L10)
 
 ![image-20240505001129646](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:05/00:11:29_image-20240505001129646.png)
 
