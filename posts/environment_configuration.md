@@ -184,7 +184,7 @@ envs_dirs:
   - /home/m0rtzz/Program_Files/anaconda3/envs
 ```
 
-## 3.设置/home文件夹下为英文
+## 3.设置$HOME文件夹下为英文
 
 ```bash
 export LANG=en_US
