@@ -1,12 +1,12 @@
 # 关于Ubuntu18.04/20.04安装后的一系列环境配置过程的总结
 
-**Updating（更新博客链接：[https://www.m0rtzz.com/posts/3](https://www.m0rtzz.com/posts/3)）...**
+**Updating（最速更新链接：[博客](https://www.m0rtzz.com/posts/3)）...**
 
-ZZU-SR的同学配置环境前可以给我发邮件：[m0rtzz@outlook.com](mailto:m0rtzz@outlook.com)
+ZZU-SR的同学配置环境前可以给我发邮件：[E-mail](mailto:m0rtzz@stu.zzu.edu.cn)
 
 ---
 
-本文所有用到的文件打包供大家下载（不含代码）【**Updating**】：
+本文用到的部分文件打包供无法访问部分网站的童鞋下载【**Updating**】：
 
 链接:
 
@@ -1097,7 +1097,7 @@ CUDA_ARCH_BIN查看命令：
 .patch文件可用以下命令下载：
 
 ```bash
-wget https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support-patch/assets/149 -O opencv_PR_17685.patch
+wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support-patch/assets/149 -O opencv_PR_17685.patch
 ```
 
 ***（如果不执行以下几步，编译darknet_ros会报错:error:‘IplImage’之类的）***
@@ -1118,7 +1118,7 @@ sudo apt install libtool
 或镜像：
 
 ```bash
-wget https://raw.gitcode.com/M0rtzz/protobuf-2.6.1/assets/199 -O protobuf-2.6.1.tar.gz
+wget -q --show-progress https://raw.gitcode.com/M0rtzz/protobuf-2.6.1/assets/199 -O protobuf-2.6.1.tar.gz
 ```
 
 解压压缩包后进入文件夹，打开终端，输入：
@@ -1533,7 +1533,7 @@ usage: ./darknet <function>
 之后我们下载yolov3权重文件：
 
 ```bash
-mkdir weights && cd ./weights && wget https://pjreddie.com/media/files/yolov3.weights
+mkdir weights && cd ./weights && wget -q --show-progress https://pjreddie.com/media/files/yolov3.weights
 ```
 
 正常wget太慢，我们使用mwget进行安装：
@@ -4901,25 +4901,37 @@ carla::streaming::low_level::Client<tcp::Client> c;
 
 推荐一些linux办公常用的软件（linux版，不包括wine环境下，全部下载deb格式的安装包，系统架构可通过命令uname -a查看）：
 
-[百度网盘 客户端下载](https://pan.baidu.com/download#linux)
+[百度网盘](https://pan.baidu.com/download#linux)
 
-[向日葵远程控制app官方下载 - 贝锐向日葵官网](https://sunlogin.oray.com/download/linux?type=personal)
+[向日葵](https://sunlogin.oray.com/download/linux?type=personal)
 
-[QQ Linux版-新不止步·乐不设限](https://im.qq.com/linuxqq/index.shtml)
+[ToDesk](https://www.todesk.com/linux.html)
 
-[下载中心-腾讯会议](https://meeting.tencent.com/download?mfrom=OfficialIndex_TopBanner1_Download)
+[QQ](https://im.qq.com/linuxqq/index.shtml)
 
-[WPS Office 2019 for Linux-支持多版本下载_WPS官方网站](https://linux.wps.cn/)
+[腾讯会议](https://meeting.tencent.com/download?mfrom=OfficialIndex_TopBanner1_Download)
 
-[搜狗输入法-首页](https://shurufa.sogou.com/)（下载安装包后，官方会跳转至安装教程，严格按照步骤执行）
+[WPS Office](https://linux.wps.cn/)
 
-[Documentation for Visual Studio Code](https://code.visualstudio.com/docs/?dv=linux64_deb)（推荐打开Settings Sync，换电脑时设置可以同步）
+[搜狗输入法](https://shurufa.sogou.com/)（下载安装包后，官方会跳转至安装教程，严格按照步骤执行）
+
+[Visual Studio Code](https://code.visualstudio.com/docs/?dv=linux64_deb)（推荐打开Settings Sync，换电脑时设置可以同步）
 
 ![195197efec704c98ba8f61ecc4c8370a.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:29:43_195197efec704c98ba8f61ecc4c8370a.png)
 
 ![bd3b7b33a2744c5cb67011223648eabf.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:29:50_bd3b7b33a2744c5cb67011223648eabf.png)
 
- 可以水平和垂直分割的bash终端：
+[星火应用商店](https://www.spark-app.store/download)
+
+仅支持Ubuntu20.04，需安装依赖包：
+
+![image-20240718162329579](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/16:23:29_image-20240718162329579.png)
+
+[Linux原生微信_需要安装星火应用商店](spk://store/chat/store.spark-app.wechat-linux-spark)
+
+![image-20240718202231084](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/20:22:31_image-20240718202231084.png)
+
+可以水平和垂直分割的终端：
 
 ```bash
 sudo apt install terminator
@@ -4949,7 +4961,15 @@ sudo apt install tree
 sudo apt install neofetch
 ```
 
-![e86107d0003945a98d5335abf87680b4.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:20_e86107d0003945a98d5335abf87680b4.png)
+![image-20240718163244367](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/16:32:44_image-20240718163244367.png)
+
+或安装用C语言写的更快的`fastfetch`：
+
+```shell
+wget -q --show-progress https://github.com/fastfetch-cli/fastfetch/releases/latest/download/fastfetch-linux-amd64.deb -O fastfetch-linux-amd64.deb && sudo apt install -y ./fastfetch-linux-amd64.deb
+```
+
+![image-20240718171137845](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/17:11:37_image-20240718171137845.png)
 
 rar文件解压工具：
 
@@ -4957,7 +4977,7 @@ rar文件解压工具：
 sudo apt install unrar
 ```
 
- 解决不能观看MP4文件：
+解决不能观看MP4文件：
 
 ```bash
 sudo apt update
@@ -4975,7 +4995,7 @@ sudo apt install ubuntu-restricted-extras
 sudo dpkg-reconfigure libdvd-pkg
 ```
 
- 系统优化：
+系统优化：
 
 ```bash
 sudo apt update
@@ -4985,7 +5005,64 @@ sudo apt update
 sudo apt install gnome-tweak-tool
 ```
 
-![image-20240206162428124](https://static.m0rtzz.com/images/Year:2024/Month:03/Day:10/17:40:27_16_24_28_image-20240206162428124.png)
+```shell
+gnome-tweaks
+```
+
+![image-20240718201417588](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/20:14:18_image-20240718201417588.png)
+
+![image-20240718155818281](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/15:58:18_image-20240718155818281.png)
+
+剪贴板管理工具：
+
+```shell
+sudo add-apt-repository ppa:diodon-team/stable
+sudo apt update && sudo apt install diodon
+```
+
+然后使用刚才安装的优化工具将`diodon`设置为开机自启动：
+
+![2024-07-18](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/16:02:27_2024-07-18.png)
+
+这样就实现了类似于`Windows`下`Win + V`的剪贴板功能：
+
+![image-20240718160648762](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/16:06:48_image-20240718160648762.png)
+
+
+
+另外可使用中科大反向代理`Canonical`的`ppa仓库`：
+
+>   [!TIP]
+>
+>   将`/etc/apt/sources.list.d`下`.list`文件中的`http://ppa.launchpad.net`替换为`https://launchpad.proxy.ustclug.org`即可，建议替换前先`sudo cp /etc/apt/sources.list.d/your-file.list /etc/apt/sources.list.d/your-file.list.save`备份一下（请自行替换文件名）
+
+![image-20240718163012569](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/16:30:12_image-20240718163012569.png)
+
+Flatpak：
+
+Ubuntu 18.10 (Cosmic Cuttlefish) or later：
+
+```shell
+sudo apt install flatpak
+```
+
+Older Ubuntu versions：
+
+```shell
+sudo add-apt-repository ppa:flatpak/stable
+sudo apt update
+sudo apt install flatpak
+```
+
+FlatHub上交镜像源：
+
+[https://mirrors.sjtug.sjtu.edu.cn/docs/flathub](https://mirrors.sjtug.sjtu.edu.cn/docs/flathub)
+
+切换之后更新Flatpak应用将加速：
+
+```shell
+sudo flatpak update
+```
 
 火狐浏览器优化：
 
@@ -5001,19 +5078,19 @@ about:config
 full-screen-api.warning.timeout
 ```
 
- 设置为0~
+设置为0~
 
 ```ini
 full-screen-api.transition-duration.enter
 ```
 
- 和
+和
 
 ```ini
 full-screen-api.transition-duration.leave
 ```
 
-  都设置为0 0~
+都设置为0 0~
 
 ```ini
 browser.search.openintab
