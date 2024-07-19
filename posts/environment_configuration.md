@@ -2,7 +2,7 @@
 
 **Updating（最速更新链接：[博客](https://www.m0rtzz.com/posts/3)）...**
 
-ZZU-SR的同学配置环境前可以给我发邮件：[E-mail](mailto:m0rtzz@stu.zzu.edu.cn)
+ZZU-SR的童鞋配置环境前可以给我发邮件：[E-mail](mailto:m0rtzz@stu.zzu.edu.cn)
 
 ---
 
