@@ -38,7 +38,7 @@ sudo chmod a-x /usr/bin/update-notifier
 sudo gedit /etc/systemd/system.conf
 ```
 
- 将：
+将：
 
 ```ini
 #DefaultTimeoutStopSec=90s
@@ -50,7 +50,7 @@ sudo gedit /etc/systemd/system.conf
 DefaultTimeoutStopSec=5s
 ```
 
- 保存退出，打开终端输入：
+保存退出，打开终端输入：
 
 ```bash
 sudo systemctl daemon-reload
@@ -73,7 +73,7 @@ function customizePrompt()
     local blue='\[\033[0;34m\]'   # 蓝色，用于当前工作目录
     local git_branch_color='\[\033[1;43;37m\]' # 黄色背景，白色字体，用于git分支
     local command_prompt='$' # 命令提示符
-  
+
     if [ $UID -eq 0 ]; then
         command_prompt='#'
     fi
@@ -81,7 +81,7 @@ function customizePrompt()
     # 使用__git_ps1函数来显示当前git分支，使用自定义的颜色
     echo "${user_at_host}:${working_directory}\$(__git_ps1 \" ${git_branch_color}[%s]${none} \")${command_prompt} "
 }
- 
+
 export PS1="$(customizePrompt)"
 
 
@@ -103,7 +103,7 @@ alias clc="copyLastCommand"
 source ~/.bashrc
 ```
 
- 这样就可以更清晰的显示git分支~
+这样就可以更清晰的显示git分支~
 
 ## 2.更换国内源
 
@@ -111,43 +111,43 @@ source ~/.bashrc
 sudo gedit /etc/apt/sources.list
 ```
 
- 将原本的注释掉，在最下方加入:
+将原本的注释掉，在最下方加入:
 
 ```shell
 # 中科大源（Ubuntu 18.04）
-deb https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse  
+deb https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse
 deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse
 
-deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-security main restricted universe multiverse  
+deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
 deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
 
-deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse  
+deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
 deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
 
-deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse  
+deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
 deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
 
-## Not recommended  
-# deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse  
+## Not recommended
+# deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
 # deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
 ```
 
 ```shell
-# 中科大源（Ubuntu 20.04）  
-deb https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse  
+# 中科大源（Ubuntu 20.04）
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse
 deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse
 
-deb https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse  
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse
 deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse
 
-deb https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse  
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
 deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
 
-deb https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse  
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
 deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
 
-## Not recommended  
-# deb https://mirrors.ustc.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse  
+## Not recommended
+# deb https://mirrors.ustc.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
 # deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
 ```
 
@@ -159,7 +159,7 @@ deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted univ
 sudo apt update
 ```
 
- anaconda镜像源（~/.condarc）:
+anaconda镜像源（~/.condarc）:
 
 ```yaml
 channels:
@@ -179,7 +179,7 @@ custom_channels:
   simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   deepmodeling: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   nvidia: https://mirrors.cernet.edu.cn/anaconda-extra/cloud
-  
+
 envs_dirs:
   - /home/m0rtzz/Program_Files/anaconda3/envs
 ```
@@ -198,7 +198,7 @@ xdg-user-dirs-gtk-update
 
 ![11860bd995624609b10076f25fc108fb.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:25:55_11860bd995624609b10076f25fc108fb.png)
 
- 之后执行以下语句：
+之后执行以下语句：
 
 ```bash
 export LANG=zh_CN
@@ -249,7 +249,7 @@ sudo ubuntu-drivers devices
 
 ![image-20240219202632909](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:19/20:26:33_image-20240219202632909.png)
 
- 寻找带有recommended的版本，输入
+寻找带有recommended的版本，输入
 
 ```bash
 sudo apt install nvidia-driver-your_version nvidia-settings nvidia-prime
@@ -269,7 +269,7 @@ sudo apt upgrade
 reboot
 ```
 
- 验证版本
+验证版本
 
 ```bash
 nvidia-smi
@@ -289,7 +289,7 @@ nvidia-smi
 gedit ~/.bashrc
 ```
 
- 在最后输入
+在最后输入
 
 ```bash
 # cuda
@@ -304,7 +304,7 @@ export CUDA_HOME=/usr/local/cuda  #cuda的软连接库,可以设置多版本共�
 source ~/.bashrc
 ```
 
- 接下来验证cuda版本：
+接下来验证cuda版本：
 
 ```bash
 nvcc --version
@@ -312,7 +312,7 @@ nvcc --version
 
 ![image-20240219202216276](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:19/20:22:21_image-20240219202216276.png)
 
- 安装成功！
+安装成功！
 
 ## 7.cudnn安装
 
@@ -324,8 +324,8 @@ nvcc --version
 
 ```bash
 tar -xvf cudnn-linux-x86_64-8.x.x.x_cudaX.Y-archive.tar.xz
-sudo cp cudnn-*-archive/include/cudnn*.h /usr/local/cuda/include 
-sudo cp -P cudnn-*-archive/lib/libcudnn* /usr/local/cuda/lib64 
+sudo cp cudnn-*-archive/include/cudnn*.h /usr/local/cuda/include
+sudo cp -P cudnn-*-archive/lib/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
 ```
 
@@ -378,7 +378,7 @@ sudo apt install python-rosdep python-rosinstall python-rosinstall-generator pyt
 sudo apt install python3-pip
 ```
 
- 使用阿里镜像源加速pip下载：
+使用阿里镜像源加速pip下载：
 
 ```bash
 sudo pip3 install rosdepc -i https://mirrors.aliyun.com/pypi/simple/
@@ -436,7 +436,7 @@ sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator 
 sudo apt install python3-pip
 ```
 
- 使用阿里镜像源加速pip下载：
+使用阿里镜像源加速pip下载：
 
 ```bash
 sudo pip3 install rosdepc -i https://mirrors.aliyun.com/pypi/simple/
@@ -469,7 +469,7 @@ rosrun turtlesim turtlesim_node
 rosrun turtlesim turtle_teleop_key
 ```
 
- 在 `rosrun turtlesim turtle_teleop_key`所在终端点击一下任意位置，然后使用↕↔小键盘控制，看小海龟会不会动，如果会动则安装成功
+在 `rosrun turtlesim turtle_teleop_key`所在终端点击一下任意位置，然后使用↕↔小键盘控制，看小海龟会不会动，如果会动则安装成功
 
 ![c40128bd8c5245a48d386c21ba465449.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:26:29_c40128bd8c5245a48d386c21ba465449.png)
 
@@ -477,7 +477,7 @@ rosrun turtlesim turtle_teleop_key
 
 ~~虽然使用cv_bridge时某些shared object有可能和ROS自带的opencv-3.2.0版本冲突，但实测安装3.2.0对cuda的兼容性太差导致无法使用深度相机，所以安装官网最近更新过的OpenCV3.4.16~~
 
- ***经尝试多版本Ubuntu和OpenCV，装Ubuntu20.04，ROS noetic和OpenCV4.2.0及其扩展模块才能解决将彩色图像转换为网络所需的输入Blob后前馈时抛出的（raised OpenCV exception，error: (-215:Assertion failed)等等）。下方OpenCV3的安装步骤仅供参考，OpenCV4.2.0的cmake命令及注意事项在本小节最后！***
+**_经尝试多版本Ubuntu和OpenCV，装Ubuntu20.04，ROS noetic和OpenCV4.2.0及其扩展模块才能解决将彩色图像转换为网络所需的输入Blob后前馈时抛出的（raised OpenCV exception，error: (-215:Assertion failed)等等）。下方OpenCV3的安装步骤仅供参考，OpenCV4.2.0的cmake命令及注意事项在本小节最后！_**
 
 ### ①OpenCV3的安装步骤
 
@@ -505,7 +505,7 @@ git clone -b 3.4.16 https://github.com/opencv/opencv_contrib.git opencv-3.4.16
 git clone -b 3.4.16 https://gitcode.com/mirrors/opencv/opencv_contrib.git opencv_contrib-3.4.16
 ```
 
-  安装所需依赖库，打开终端，输入：
+安装所需依赖库，打开终端，输入：
 
 ```bash
 sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
@@ -531,7 +531,7 @@ mkdir build
 cd build
 ```
 
- **接下来编译安装，注意此命令的OPENCV_EXTRA_MODULES_PATH=后边的路径是你电脑下的绝对路径，请自行修改**
+**接下来编译安装，注意此命令的OPENCV_EXTRA_MODULES_PATH=后边的路径是你电脑下的绝对路径，请自行修改**
 
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
@@ -552,7 +552,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 
 过程中会出现IPPICV: Download: ippicv_2020_lnx_intel64_20191018_general.tgz
 
- 解决方法：
+解决方法：
 
 ```bash
 cd ../ && mkdir downloads
@@ -656,7 +656,7 @@ sudo make install
 sudo gedit /etc/ld.so.conf.d/opencv.conf
 ```
 
-  加入
+加入
 
 ```ini
 /usr/local/lib
@@ -697,7 +697,7 @@ sudo make -j$(nproc)
 
 安装成功！
 
-***`<u>`设置cv_bridge的版本（ROS-melodic，经实践发现毫无效果）：`</u>`***
+**_`<u>`设置cv_bridge的版本（ROS-melodic，经实践发现毫无效果）：`</u>`_**
 
 ```bash
 sudo gedit /opt/ros/melodic/share/cv_bridge/cmake/cv_bridgeConfig.cmake
@@ -705,7 +705,7 @@ sudo gedit /opt/ros/melodic/share/cv_bridge/cmake/cv_bridgeConfig.cmake
 
 ```cmake
 # generated from catkin/cmake/template/pkgConfig.cmake.in
- 
+
 # append elements to a list and remove existing duplicates from the list
 # copied from catkin/cmake/list_append_deduplicate.cmake to keep pkgConfig
 # self contained
@@ -714,24 +714,24 @@ macro(_list_append_deduplicate listname)
     if(${listname})
       list(REMOVE_ITEM ${listname} ${ARGN})
     endif()
- 
+
     list(APPEND ${listname} ${ARGN})
   endif()
 endmacro()
- 
+
 # append elements to a list if they are not already in the list
 # copied from catkin/cmake/list_append_unique.cmake to keep pkgConfig
 # self contained
 macro(_list_append_unique listname)
   foreach(_item ${ARGN})
     list(FIND ${listname} ${_item} _index)
- 
+
     if(_index EQUAL -1)
       list(APPEND ${listname} ${_item})
     endif()
   endforeach()
 endmacro()
- 
+
 # pack a list of libraries with optional build configuration keywords
 # copied from catkin/cmake/catkin_libraries.cmake to keep pkgConfig
 # self contained
@@ -740,45 +740,45 @@ macro(_pack_libraries_with_build_configuration VAR)
   set(_argn ${ARGN})
   list(LENGTH _argn _count)
   set(_index 0)
- 
+
   while(${_index} LESS ${_count})
     list(GET _argn ${_index} lib)
- 
+
     if("${lib}" MATCHES "^(debug|optimized|general)$")
       math(EXPR _index "${_index} + 1")
- 
+
       if(${_index} EQUAL ${_count})
         message(FATAL_ERROR "_pack_libraries_with_build_configuration() the list of libraries '${ARGN}' ends with '${lib}' which is a build configuration keyword and must be followed by a library")
       endif()
- 
+
       list(GET _argn ${_index} library)
       list(APPEND ${VAR} "${lib}${CATKIN_BUILD_CONFIGURATION_KEYWORD_SEPARATOR}${library}")
     else()
       list(APPEND ${VAR} "${lib}")
     endif()
- 
+
     math(EXPR _index "${_index} + 1")
   endwhile()
 endmacro()
- 
+
 # unpack a list of libraries with optional build configuration keyword prefixes
 # copied from catkin/cmake/catkin_libraries.cmake to keep pkgConfig
 # self contained
 macro(_unpack_libraries_with_build_configuration VAR)
   set(${VAR} "")
- 
+
   foreach(lib ${ARGN})
     string(REGEX REPLACE "^(debug|optimized|general)${CATKIN_BUILD_CONFIGURATION_KEYWORD_SEPARATOR}(.+)$" "\\1;\\2" lib "${lib}")
     list(APPEND ${VAR} "${lib}")
   endforeach()
 endmacro()
- 
+
 if(cv_bridge_CONFIG_INCLUDED)
   return()
 endif()
- 
+
 set(cv_bridge_CONFIG_INCLUDED TRUE)
- 
+
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
   set(cv_bridge_SOURCE_PREFIX /tmp/binarydeb/ros-melodic-cv-bridge-1.13.1)
@@ -791,29 +791,29 @@ else()
   set(cv_bridge_INSTALL_PREFIX /opt/ros/melodic)
   set(cv_bridge_PREFIX ${cv_bridge_INSTALL_PREFIX})
 endif()
- 
+
 # warn when using a deprecated package
 if(NOT "" STREQUAL "")
   set(_msg "WARNING: package 'cv_bridge' is deprecated")
- 
+
   # append custom deprecation text if available
   if(NOT "" STREQUAL "TRUE")
     set(_msg "${_msg} ()")
   endif()
- 
+
   message("${_msg}")
 endif()
- 
+
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(cv_bridge_FOUND_CATKIN_PROJECT TRUE)
- 
+
 # if(NOT "include;/usr/include;/usr/include/opencv " STREQUAL " ")
 # set(cv_bridge_INCLUDE_DIRS "")
 # set(_include_dirs "include;/usr/include;/usr/include/opencv")
 if(NOT "include;/usr/local/include/opencv;/usr/local/include/opencv2 " STREQUAL " ")
   set(cv_bridge_INCLUDE_DIRS "")
   set(_include_dirs "include;/usr/local/include/opencv;/usr/local/include/opencv;/usr/local/include/;/usr/include")
- 
+
   if(NOT "https://github.com/ros-perception/vision_opencv/issues " STREQUAL " ")
     set(_report "Check the issue tracker 'https://github.com/ros-perception/vision_opencv/issues' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://www.ros.org/wiki/cv_bridge " STREQUAL " ")
@@ -821,27 +821,27 @@ if(NOT "include;/usr/local/include/opencv;/usr/local/include/opencv2 " STREQUAL 
   else()
     set(_report "Report the problem to the maintainer 'Vincent Rabaud <vincent.rabaud@gmail.com>' and request to fix the problem.")
   endif()
- 
+
   foreach(idir ${_include_dirs})
     if(IS_ABSOLUTE ${idir} AND IS_DIRECTORY ${idir})
       set(include ${idir})
     elseif("${idir} " STREQUAL "include ")
       get_filename_component(include "${cv_bridge_DIR}/../../../include" ABSOLUTE)
- 
+
       if(NOT IS_DIRECTORY ${include})
         message(FATAL_ERROR "Project 'cv_bridge' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
       message(FATAL_ERROR "Project 'cv_bridge' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '\${prefix}/${idir}'.  ${_report}")
     endif()
- 
+
     _list_append_unique(cv_bridge_INCLUDE_DIRS ${include})
   endforeach()
 endif()
- 
+
 # set(libraries "cv_bridge;/usr/lib/x86_64-linux-gnu/libopencv_core.so.3.2.0;/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.3.2.0;/usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.3.2.0")
 set(libraries "cv_bridge;/usr/local/lib/libopencv_core.so.3.4.16;/usr/local/lib/libopencv_imgproc.so.3.4.16;/usr/local/lib/libopencv_imgcodecs.so.3.4.16")
- 
+
 foreach(library ${libraries})
   # keep build configuration keywords, target names and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
@@ -854,17 +854,17 @@ foreach(library ${libraries})
     if(NOT cv_bridge_NUM_DUMMY_TARGETS)
       set(cv_bridge_NUM_DUMMY_TARGETS 0)
     endif()
- 
+
     # Make sure the target name is unique
     set(interface_target_name "catkin::cv_bridge::wrapped-linker-option${cv_bridge_NUM_DUMMY_TARGETS}")
- 
+
     while(TARGET "${interface_target_name}")
       math(EXPR cv_bridge_NUM_DUMMY_TARGETS "${cv_bridge_NUM_DUMMY_TARGETS}+1")
       set(interface_target_name "catkin::cv_bridge::wrapped-linker-option${cv_bridge_NUM_DUMMY_TARGETS}")
     endwhile()
- 
+
     add_library("${interface_target_name}" INTERFACE IMPORTED)
- 
+
     if("${CMAKE_VERSION}" VERSION_LESS "3.13.0")
       set_property(
         TARGET
@@ -874,7 +874,7 @@ foreach(library ${libraries})
     else()
       target_link_options("${interface_target_name}" INTERFACE "${library}")
     endif()
- 
+
     list(APPEND cv_bridge_LIBRARIES "${interface_target_name}")
   elseif(TARGET ${library})
     list(APPEND cv_bridge_LIBRARIES ${library})
@@ -883,53 +883,53 @@ foreach(library ${libraries})
   else()
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
- 
+
     # since the path where the library is found is returned we have to iterate over the paths manually
     foreach(path /opt/ros/melodic/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
- 
+
       if(lib)
         set(lib_path ${path})
         break()
       endif()
     endforeach()
- 
+
     if(lib)
       _list_append_unique(cv_bridge_LIBRARY_DIRS ${lib_path})
       list(APPEND cv_bridge_LIBRARIES ${lib})
     else()
       # as a fall back for non-catkin libraries try to search globally
       find_library(lib ${library})
- 
+
       if(NOT lib)
         message(FATAL_ERROR "Project '${PROJECT_NAME}' tried to find library '${library}'.  The library is neither a target nor built/installed properly.  Did you compile project 'cv_bridge'?  Did you find_package() it before the subdirectory containing its code is included?")
       endif()
- 
+
       list(APPEND cv_bridge_LIBRARIES ${lib})
     endif()
   endif()
 endforeach()
- 
+
 set(cv_bridge_EXPORTED_TARGETS "")
- 
+
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${cv_bridge_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
     add_custom_target(${t})
   endif()
 endforeach()
- 
+
 set(depends "rosconsole;sensor_msgs")
- 
+
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
- 
+
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls
   list(GET depend_list 0 cv_bridge_dep)
   list(LENGTH depend_list count)
- 
+
   if(${count} EQUAL 1)
     # simple dependencies must only be find_package()-ed once
     if(NOT ${cv_bridge_dep}_FOUND)
@@ -940,28 +940,28 @@ foreach(depend ${depends})
     list(REMOVE_AT depend_list 0)
     find_package(${cv_bridge_dep} REQUIRED NO_MODULE ${depend_list})
   endif()
- 
+
   _list_append_unique(cv_bridge_INCLUDE_DIRS ${${cv_bridge_dep}_INCLUDE_DIRS})
- 
+
   # merge build configuration keywords with library names to correctly deduplicate
   _pack_libraries_with_build_configuration(cv_bridge_LIBRARIES ${cv_bridge_LIBRARIES})
   _pack_libraries_with_build_configuration(_libraries ${${cv_bridge_dep}_LIBRARIES})
   _list_append_deduplicate(cv_bridge_LIBRARIES ${_libraries})
- 
+
   # undo build configuration keyword merging after deduplication
   _unpack_libraries_with_build_configuration(cv_bridge_LIBRARIES ${cv_bridge_LIBRARIES})
- 
+
   _list_append_unique(cv_bridge_LIBRARY_DIRS ${${cv_bridge_dep}_LIBRARY_DIRS})
   list(APPEND cv_bridge_EXPORTED_TARGETS ${${cv_bridge_dep}_EXPORTED_TARGETS})
 endforeach()
- 
+
 set(pkg_cfg_extras "cv_bridge-extras.cmake")
- 
+
 foreach(extra ${pkg_cfg_extras})
   if(NOT IS_ABSOLUTE ${extra})
     set(extra ${cv_bridge_DIR}/${extra})
   endif()
- 
+
   include(${extra})
 endforeach()
 ```
@@ -1049,7 +1049,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -j$(nproc) ..
 ```
 
- 或：
+或：
 
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
@@ -1083,14 +1083,14 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 CUDA_ARCH_BIN查看命令：
 
 ```bash
- sudo apt install mlocate
- sudo updatedb.mlocate
- $(mlocate deviceQuery | grep cuda | head -n 1)
+sudo apt install mlocate
+sudo updatedb.mlocate
+$(mlocate deviceQuery | grep cuda | head -n 1)
 ```
 
 ![image-20240206162114753](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/16:21:14_image-20240206162114753.png)
 
-***（解决CUDNN8编译报错，需手动加入PR代码）***
+**_（解决CUDNN8编译报错，需手动加入PR代码）_**
 
 [https://github.com/opencv/opencv/pull/17685/files](https://github.com/opencv/opencv/pull/17685/files)
 
@@ -1100,7 +1100,7 @@ CUDA_ARCH_BIN查看命令：
 wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support-patch/assets/149 -O opencv_PR_17685.patch
 ```
 
-***（如果不执行以下几步，编译darknet_ros会报错:error:‘IplImage’之类的）***
+**_（如果不执行以下几步，编译darknet_ros会报错:error:‘IplImage’之类的）_**
 
 ```bash
 sudo cp /usr/local/lib/pkgconfig/opencv4.pc /usr/lib/pkgconfig/opencv4.pc
@@ -1141,7 +1141,7 @@ sudo make -j$(nproc)
 
 ![140562b609004503a731358eea387731.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:27:28_140562b609004503a731358eea387731.png)
 
- 养成 `make check`的好习惯
+养成 `make check`的好习惯
 
 ```bash
 sudo make check -j$(nproc)
@@ -1226,7 +1226,7 @@ sudo make PREFIX=/usr/local install
 
 ![af045e49e18643d8a1c0c12deb166d44.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:27:35_af045e49e18643d8a1c0c12deb166d44.png)
 
- 查看版本
+查看版本
 
 ```bash
 grep OPENBLAS_VERSION /usr/local/include/openblas_config.h
@@ -1240,7 +1240,7 @@ grep OPENBLAS_VERSION /usr/local/include/openblas_config.h
 gedit ~/.bashrc
 ```
 
- 在最后加入
+在最后加入
 
 ```bash
 source /home/m0rtzz/Workspaces/catkin_ws/devel/setup.bash
@@ -1278,7 +1278,7 @@ source ~/.bashrc
 
 ![4000fa5374ee48dfbc2fdee5c5ddf2d0.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:27:47_4000fa5374ee48dfbc2fdee5c5ddf2d0.png)
 
- 解决！
+解决！
 
 报错：
 
@@ -1310,7 +1310,7 @@ g++编译
 g++ *.cpp -o * -lcurl -ljsoncpp
 ```
 
- 运行
+运行
 
 ```bash
 ./*
@@ -1372,7 +1372,7 @@ desktop_opens_home_dir (TerminalNautilus *nautilus)
 }
 ```
 
- src下打开终端
+src下打开终端
 
 ```bash
 cd ..
@@ -1436,7 +1436,7 @@ timedatectl set-local-rtc 1 --adjust-system-clock
 sudo gedit /etc/default/grub
 ```
 
- 改一下GRUB_DEFAULT=后边的数字，默认是0，windows是第n个就设置为 n-1
+改一下GRUB_DEFAULT=后边的数字，默认是0，windows是第n个就设置为 n-1
 
 ![2a4260711db540b6af9fd30682dc9257.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:04_2a4260711db540b6af9fd30682dc9257.png)
 
@@ -1452,7 +1452,7 @@ sudo update-grub
 reboot
 ```
 
- 重启后问题解决~
+重启后问题解决~
 
 ## 17.安装darknet版yolov3及darknet-ros工作空间
 
@@ -1474,7 +1474,7 @@ cd darknet
 sudo gedit Makefile
 ```
 
- 修改以下前几行为：
+修改以下前几行为：
 
 ```makefile
 GPU=1
@@ -1488,7 +1488,7 @@ ZED_CAMERA=0
 ZED_CAMERA_v2_8=0
 ```
 
- 然后修改NVCC=后边为nvcc路径：
+然后修改NVCC=后边为nvcc路径：
 
 ```makefile
 NVCC=/usr/local/cuda/bin/nvcc
@@ -1496,19 +1496,19 @@ NVCC=/usr/local/cuda/bin/nvcc
 
 ![image-20240206170152890](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:01:53_image-20240206170152890.png)
 
- 之后保存退出后，打开终端，输入：
+之后保存退出后，打开终端，输入：
 
 ```bash
 sudo gedit /etc/ld.so.conf.d/cuda.conf
 ```
 
- 加入以下内容后保存退出：
+加入以下内容后保存退出：
 
 ```ini
 /usr/local/cuda/lib64
 ```
 
- 打开终端输入：
+打开终端输入：
 
 ```bash
 sudo ldconfig
@@ -1604,7 +1604,7 @@ mwget https://pjreddie.com/media/files/yolov3.weights -n16
 ./darknet detect cfg/yolov3.cfg weights/yolov3.weights data/dog.jpg
 ```
 
- 输出以下就证明配置没有问题：
+输出以下就证明配置没有问题：
 
 ![9967309fc02949e98046bf0b4566371b.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:28:00_9967309fc02949e98046bf0b4566371b.png)
 
@@ -1741,7 +1741,7 @@ catkin_make -j$(nproc) darknet_ros --cmake-args -DCMAKE_CXX_FLAGS=-DCV__ENABLE_C
 
 ![b2175aecc6ec4d489d3b0703e4f9d00d](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:06_b2175aecc6ec4d489d3b0703e4f9d00d.png)
 
- ![da1d083fd06f4aed9dd17b0e1446223f](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:06_da1d083fd06f4aed9dd17b0e1446223f.png)
+![da1d083fd06f4aed9dd17b0e1446223f](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:06_da1d083fd06f4aed9dd17b0e1446223f.png)
 
 ## 18.Azure Kinect SDK-v1.4.0的安装（Ubuntu18.04源码编译安装，也可像本小节末尾Ubuntu20.04一样直接使用.deb包安装）
 
@@ -1779,7 +1779,7 @@ sudo apt install -y  pkg-config  ninja-build doxygen clang  gcc-multilib  g++-mu
 
 ![f806a0d411ac415497e78b45bf3c20ac.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:06_f806a0d411ac415497e78b45bf3c20ac.png)
 
- 解压 .deb 文件，再解压内部的 `data.tar.gz`和 `control.tar.gz`文件,并进入data文件夹，打开终端输入：
+解压 .deb 文件，再解压内部的 `data.tar.gz`和 `control.tar.gz`文件,并进入data文件夹，打开终端输入：
 
 ```bash
 cd usr/lib/x86_64-linux-gnu
@@ -1803,7 +1803,7 @@ cmake -j$(nproc) .. -GNinja
 
 保存后关闭
 
- 之后打开.git文件夹下的config文件，修改libyuv的部分为：
+之后打开.git文件夹下的config文件，修改libyuv的部分为：
 
 ```ini
 [submodule "extern/libyuv/src"]
@@ -1823,17 +1823,17 @@ cmake -j$(nproc) .. -GNinja
 
 ![b07fac22ae4b45ebb3e5a061739a4d87.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:06_b07fac22ae4b45ebb3e5a061739a4d87.png)
 
- 之后输入：
+之后输入：
 
 ```bash
 sudo ninja -j$(nproc)
 ```
 
- 完成后如下：
+完成后如下：
 
 ![c625650ae9744c02aea905984da47566.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:07_c625650ae9744c02aea905984da47566.png)
 
- 最后输入：
+最后输入：
 
 ```bash
 sudo ninja install
@@ -1843,7 +1843,7 @@ sudo ninja install
 
 ![b71183010a584c469b0a6cbfc72b3e39.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:28:09_b71183010a584c469b0a6cbfc72b3e39.png)
 
- 之后安装依赖：
+之后安装依赖：
 
 ```bash
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test
@@ -1857,7 +1857,7 @@ sudo apt update
 sudo gedit /etc/apt/sources.list
 ```
 
- 在最后一行加入：
+在最后一行加入：
 
 ```bash
 ## gcc-4.9
@@ -1945,8 +1945,8 @@ private:
         struct CloudViewer_impl;
         //std::auto_ptr<CloudViewer_impl> impl_;
         std::shared_ptr<CloudViewer_impl> impl_;
-      
-        boost::signals2::connection 
+
+        boost::signals2::connection
         registerMouseCallback (boost::function<void (const pcl::visualization::MouseEvent&)>);
 ```
 
@@ -1965,19 +1965,19 @@ std_msgs
 cv_bridge
 message_generation
 )
- 
+
 generate_messages(
   DEPENDENCIES
   std_msgs
 )
- 
+
 include_directories(
   ~/Workspaces/tts_test_ws/include
   ${catkin_INCLUDE_DIRS}
 )
- 
+
 add_executable(tts_voice_test src/tts_voice_test.cpp)
- 
+
 target_link_libraries(tts_voice_test
   PRIVATE k4a::k4a
   ${catkin_LIBRARIES}
@@ -2009,7 +2009,7 @@ sudo apt install ros-${ROS_DISTRO}-realsense2-camera ros-${ROS_DISTRO}-rgbd-laun
 
 ![808f1ad01090402eafa94dd83545aed3.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:08_808f1ad01090402eafa94dd83545aed3.png)
 
- 安装realsense sdk:
+安装realsense sdk:
 
 ```bash
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE
@@ -2027,7 +2027,7 @@ sudo add-apt-repository "deb https://librealsense.intel.com/Debian/apt-repo $(ls
 sudo apt update
 ```
 
- 安装realsense lib
+安装realsense lib
 
 ```bash
 sudo apt install librealsense2-dkms librealsense2-utils
@@ -2063,7 +2063,7 @@ git clone -b v2.50.0 https://gitcode.com/mirrors/IntelRealSense/librealsense.git
 sudo apt install libudev-dev pkg-config libgtk-3-dev libusb-1.0-0-dev pkg-config libglfw3-dev
 ```
 
- 进入刚才克隆的librealsense文件夹内：
+进入刚才克隆的librealsense文件夹内：
 
 ```bash
 cd librealsense-2.50.0/
@@ -2077,9 +2077,9 @@ cd librealsense-2.50.0/
 ./scripts/patch-realsense-ubuntu-lts.sh
 ```
 
- 注意：上面的命令可能执行过慢，请耐心等待，或者科学的上网~
+注意：上面的命令可能执行过慢，请耐心等待，或者科学的上网~
 
- 完成结果如下：
+完成结果如下：
 
 ![389a2809970d49d8a24d299ece865576.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:28:31_389a2809970d49d8a24d299ece865576.png)
 
@@ -2099,7 +2099,7 @@ LINK_LIBRARIES(-lcurl -lcrypto)
 cmake -j$(nproc) ../ -DCMAKE_BUILD_TYPE=Release -DBUILD_EXAMPLES=true
 ```
 
- 以下编译过慢，使用CPU最大线程进行make，速度会快很多：
+以下编译过慢，使用CPU最大线程进行make，速度会快很多：
 
 ```bash
 sudo make -j$(nproc)
@@ -2129,7 +2129,7 @@ cd examples/capture
 mkdir src && cd src/
 ```
 
- 下载功能包:
+下载功能包:
 
 ```shell
 git clone -b ros1-legacy https://github.com/IntelRealSense/realsense-ros.git realsense-ros
@@ -2165,7 +2165,7 @@ roslaunch realsense2_camera rs_camera.launch
 
 ![d6c0eef6da874de9aff7596e3cc16a86.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:28:45_d6c0eef6da874de9aff7596e3cc16a86.png)
 
- 还没安摄像头~
+还没安摄像头~
 
 ## 21.配置Kinova机械臂工作空间
 
@@ -2277,7 +2277,7 @@ sudo apt install ros-${ROS_DISTRO}-move-base* ros-${ROS_DISTRO}-turtlebot3-* ros
 sudo apt install ros-${ROS_DISTRO}-joy ros-${ROS_DISTRO}-teleop-twist-joy ros-${ROS_DISTRO}-teleop-twist-keyboard ros-${ROS_DISTRO}-laser-proc ros-${ROS_DISTRO}-rgbd-launch ros-${ROS_DISTRO}-depthimage-to-laserscan ros-${ROS_DISTRO}-rosserial-arduino ros-${ROS_DISTRO}-rosserial-python ros-${ROS_DISTRO}-rosserial-server ros-${ROS_DISTRO}-rosserial-client ros-${ROS_DISTRO}-rosserial-msgs ros-${ROS_DISTRO}-amcl ros-${ROS_DISTRO}-map-server ros-${ROS_DISTRO}-move-base ros-${ROS_DISTRO}-urdf ros-${ROS_DISTRO}-xacro ros-${ROS_DISTRO}-compressed-image-transport ros-${ROS_DISTRO}-rqt-image-view ros-${ROS_DISTRO}-gmapping ros-${ROS_DISTRO}-navigation ros-${ROS_DISTRO}-interactive-markers
 ```
 
- 安装 gmapping 包（用于构建地图）：
+安装 gmapping 包（用于构建地图）：
 
 ```bash
 sudo apt install ros-${ROS_DISTRO}-gmapping
@@ -2329,7 +2329,7 @@ cd .. && catkin_make
 
 ![c5a44dee31014fcd9b8f97237e3f58e4.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:30:23_c5a44dee31014fcd9b8f97237e3f58e4.png)
 
- 查看一下文件目录，tree命令在下边的PS小节有讲怎么安装
+查看一下文件目录，tree命令在下边的PS小节有讲怎么安装
 
 ```bash
 tree .
@@ -2346,21 +2346,19 @@ cd robot_start_test/ && mkdir launch && cd launch && touch start_test.launch
 ```
 
 ```xml
-<!--@File Name : start_test.launch 
+<!--@File Name : start_test.launch
     @Brief : 机器人启动文件：
         1.启动底盘
         2.启动激光雷达
         3.启动摄像头
  -->
- 
+
 <launch>
         <include file="$(find ros_arduino_python)/launch/arduino.launch" />
         <include file="$(find usb_cam)/launch/usb_cam-test.launch" />
         <include file="$(find rplidar_ros)/launch/rplidar.launch" />
 </launch>
 ```
-
-FIXME：Updating...
 
 接下来创建机器人模型相关的功能包：
 
@@ -2374,7 +2372,7 @@ catkin_create_pkg robot_description_test urdf xacro
 
 ![0af4f65dceea471f94be94ef66fadbe2.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:29:02_0af4f65dceea471f94be94ef66fadbe2.png)
 
- 在功能包下新建 urdf 目录，编写具体的 urdf 文件（code命令是VSCode，没安装的小伙伴下边PS小节有下载网址~）:
+在功能包下新建 urdf 目录，编写具体的 urdf 文件（code命令是VSCode，没安装的小伙伴下边PS小节有下载网址~）:
 
 ```bash
 cd robot_description_test/ && mkdir urdf
@@ -2388,17 +2386,17 @@ cd urdf/ && touch {robot.urdf.xacro,robot_base.urdf.xacro,robot_camera.urdf.xacr
 
 ```xml
 <!-- File Name : robot.urdf.xacro -->
- 
+
 <robot name="robot_test" xmlns:xacro="http://wiki.ros.org/xacro">
- 
+
     <xacro:include filename="robot_base.urdf.xacro" />
     <xacro:include filename="robot_camera.urdf.xacro" />
     <xacro:include filename="robot_laser.urdf.xacro" />
- 
+
 </robot>
 ```
 
- 保存退出，打开终端输入：
+保存退出，打开终端输入：
 
 ```bash
 code robot_base.urdf.xacro
@@ -2408,9 +2406,9 @@ code robot_base.urdf.xacro
 
 ```xml
 <!-- File Name : robot_base.urdf.xacro -->
- 
+
 <robot name="robot_test" xmlns:xacro="http://wiki.ros.org/xacro">
- 
+
     <xacro:property name="footprint_radius" value="0.001" />
     <link name="base_footprint">
         <visual>
@@ -2419,7 +2417,7 @@ code robot_base.urdf.xacro
             </geometry>
         </visual>
     </link>
- 
+
     <xacro:property name="base_radius" value="0.1" />
     <xacro:property name="base_length" value="0.08" />
     <xacro:property name="lidi" value="0.015" />
@@ -2429,88 +2427,88 @@ code robot_base.urdf.xacro
             <geometry>
                 <cylinder radius="0.1" length="0.08" />
             </geometry>
- 
+
             <origin xyz="0 0 0" rpy="0 0 0" />
- 
+
             <material name="baselink_color">
                 <color rgba="1.0 0.5 0.2 0.5" />
             </material>
         </visual>
- 
+
     </link>
- 
+
     <joint name="link2footprint" type="fixed">
         <parent link="base_footprint"  />
         <child link="base_link" />
         <origin xyz="0 0 0.055" rpy="0 0 0" />
     </joint>
- 
+
     <xacro:property name="wheel_radius" value="0.0325" />
     <xacro:property name="wheel_length" value="0.015" />
     <xacro:property name="PI" value="3.1415927" />
     <xacro:property name="wheel_joint_z" value="${(base_length / 2 + lidi - wheel_radius) * -1}" />
- 
+
     <xacro:macro name="wheel_func" params="wheel_name flag">
- 
+
         <link name="${wheel_name}_wheel">
             <visual>
                 <geometry>
                     <cylinder radius="${wheel_radius}" length="${wheel_length}" />
                 </geometry>
- 
+
                 <origin xyz="0 0 0" rpy="${PI / 2} 0 0" />
- 
+
                 <material name="wheel_color">
                     <color rgba="0 0 0 0.3" />
                 </material>
             </visual>
- 
+
         </link>
- 
+
         <joint name="${wheel_name}2link" type="continuous">
             <parent link="base_link"  />
             <child link="${wheel_name}_wheel" />
- 
+
             <origin xyz="0 ${0.1 * flag} ${wheel_joint_z}" rpy="0 0 0" />
             <axis xyz="0 1 0" />
         </joint>
- 
+
     </xacro:macro>
- 
+
     <xacro:wheel_func wheel_name="left" flag="1" />
     <xacro:wheel_func wheel_name="right" flag="-1" />
- 
+
     <xacro:property name="small_wheel_radius" value="0.0075" />
     <xacro:property name="small_joint_z" value="${(base_length / 2 + lidi - small_wheel_radius) * -1}" />
- 
+
     <xacro:macro name="small_wheel_func" params="small_wheel_name flag">
         <link name="${small_wheel_name}_wheel">
             <visual>
                 <geometry>
                     <sphere radius="${small_wheel_radius}" />
                 </geometry>
- 
+
                 <origin xyz="0 0 0" rpy="0 0 0" />
- 
+
                 <material name="wheel_color">
                     <color rgba="0 0 0 0.3" />
                 </material>
             </visual>
- 
+
         </link>
- 
+
         <joint name="${small_wheel_name}2link" type="continuous">
             <parent link="base_link"  />
             <child link="${small_wheel_name}_wheel" />
- 
+
             <origin xyz="${0.08 * flag} 0 ${small_joint_z}" rpy="0 0 0" />
             <axis xyz="0 1 0" />
         </joint>
- 
+
     </xacro:macro >
     <xacro:small_wheel_func small_wheel_name="front" flag="1"/>
     <xacro:small_wheel_func small_wheel_name="back" flag="-1"/>
- 
+
 </robot>
 ```
 
@@ -2524,16 +2522,16 @@ code robot_camera.urdf.xacro
 
 ```xml
 <!-- File Name : robot_camera.urdf.xacro -->
- 
+
 <robot name="robot_test" xmlns:xacro="http://wiki.ros.org/xacro">
- 
-    <xacro:property name="camera_length" value="0.02" /> 
-    <xacro:property name="camera_width" value="0.05" /> 
-    <xacro:property name="camera_height" value="0.05" /> 
+
+    <xacro:property name="camera_length" value="0.02" />
+    <xacro:property name="camera_width" value="0.05" />
+    <xacro:property name="camera_height" value="0.05" />
     <xacro:property name="joint_camera_x" value="0.08" />
     <xacro:property name="joint_camera_y" value="0" />
     <xacro:property name="joint_camera_z" value="${base_length / 2 + camera_height / 2}" />
- 
+
     <link name="camera">
         <visual>
             <geometry>
@@ -2545,43 +2543,43 @@ code robot_camera.urdf.xacro
             </material>
         </visual>
     </link>
- 
+
     <joint name="camera2base" type="fixed">
         <parent link="base_link" />
         <child link="camera" />
         <origin xyz="${joint_camera_x} ${joint_camera_y} ${joint_camera_z}" rpy="0 0 0" />
     </joint>
- 
+
 </robot>
 ```
 
-   保存退出，打开终端输入：
+保存退出，打开终端输入：
 
 ```bash
 code robot_laser.urdf.xacro
 ```
 
- 将下列代码粘贴进去：
+将下列代码粘贴进去：
 
 ```xml
 <!-- File Name : robot_laser.urdf.xacro -->
- 
+
 <robot name="robot_test" xmlns:xacro="http://wiki.ros.org/xacro">
- 
+
     <xacro:property name="support_radius" value="0.01" />
     <xacro:property name="support_length" value="0.15" />
- 
+
     <xacro:property name="laser_radius" value="0.03" />
     <xacro:property name="laser_length" value="0.05" />
- 
+
     <xacro:property name="joint_support_x" value="0" />
     <xacro:property name="joint_support_y" value="0" />
     <xacro:property name="joint_support_z" value="${base_length / 2 + support_length / 2}" />
- 
+
     <xacro:property name="joint_laser_x" value="0" />
     <xacro:property name="joint_laser_y" value="0" />
     <xacro:property name="joint_laser_z" value="${support_length / 2 + laser_length / 2}" />
- 
+
     <link name="support">
         <visual>
             <geometry>
@@ -2591,9 +2589,9 @@ code robot_laser.urdf.xacro
                 <color rgba="0.8 0.5 0.0 0.5" />
             </material>
         </visual>
- 
+
     </link>
- 
+
     <joint name="support2base" type="fixed">
         <parent link="base_link" />
         <child link="support"/>
@@ -2608,9 +2606,9 @@ code robot_laser.urdf.xacro
                 <color rgba="0 0 0 0.5" />
             </material>
         </visual>
- 
+
     </link>
- 
+
     <joint name="laser2support" type="fixed">
         <parent link="support" />
         <child link="laser"/>
@@ -2633,7 +2631,7 @@ touch robot_test.launch && code robot_test.launch
 
 ```xml
 <!-- File Name : robot_test.launch -->
- 
+
 <launch>
     <param name="robot_description" command="$(find xacro)/xacro $(find robot_description_test)/urdf/robot.urdf.xacro" />
     <node pkg="joint_state_publisher" name="joint_state_publisher" type="joint_state_publisher" />
@@ -2687,7 +2685,7 @@ touch gmapping.launch && code gmapping.launch
 
 ```xml
 <!-- File Name : gmapping.launch -->
- 
+
 <launch>
     <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
       <remap from="scan" to="scan"/>
@@ -2737,7 +2735,7 @@ cd launch && touch map_save.launch && code map_save.launch
 
 ```xml
 <!-- File Name : map_save.launch -->
- 
+
 <launch>
     <arg name="filename" value="$(find entity_test)/map/nav" />
     <node name="map_save" pkg="map_server" type="map_saver" args="-f $(arg filename)" />
@@ -2748,11 +2746,11 @@ cd launch && touch map_save.launch && code map_save.launch
 touch map_server.launch && code map_server.launch
 ```
 
- 将下列代码粘贴进去：
+将下列代码粘贴进去：
 
 ```xml
 <!-- File Name : map_server.launch -->
- 
+
 <launch>
     <!-- 设置地图的配置文件 -->
     <arg name="map" default="nav.yaml" />
@@ -2769,7 +2767,7 @@ touch amcl.launch && code amcl.launch
 
 ```xml
 <!-- File Name : amcl.launch -->
- 
+
 <launch>
   <node pkg="amcl" type="amcl" name="amcl" output="screen">
     <!-- Publish scans from best pose at a max of 10 Hz -->
@@ -2799,11 +2797,11 @@ touch amcl.launch && code amcl.launch
     <param name="laser_likelihood_max_dist" value="2.0"/>
     <param name="update_min_d" value="0.2"/>
     <param name="update_min_a" value="0.5"/>
- 
+
     <param name="odom_frame_id" value="odom"/><!-- 里程计坐标系 -->
     <param name="base_frame_id" value="base_footprint"/><!-- 添加机器人基坐标系 -->
     <param name="global_frame_id" value="map"/><!-- 添加地图坐标系 -->
- 
+
   </node>
 </launch>
 ```
@@ -2816,30 +2814,29 @@ cd .. && mkdir param && cd param/ && touch {costmap_common_params.yaml,local_cos
 
 ```yaml
 # File Name : base_local_planner_params.yaml
- 
+
 TrajectoryPlannerROS:
- 
-# Robot Configuration Parameters
+  # Robot Configuration Parameters
   max_vel_x: 0.5 # X 方向最大速度
   min_vel_x: 0.1 # X 方向最小速速
- 
-  max_vel_theta:  1.0 # 
+
+  max_vel_theta: 1.0 #
   min_vel_theta: -1.0
   min_in_place_vel_theta: 1.0
- 
+
   acc_lim_x: 1.0 # X 加速限制
   acc_lim_y: 0.0 # Y 加速限制
   acc_lim_theta: 0.6 # 角速度加速限制
- 
-# Goal Tolerance Parameters，目标公差
+
+  # Goal Tolerance Parameters，目标公差
   xy_goal_tolerance: 0.10
   yaw_goal_tolerance: 0.05
- 
-# Differential-drive robot configuration
-# 是否是全向移动机器人
+
+  # Differential-drive robot configuration
+  # 是否是全向移动机器人
   holonomic_robot: false
- 
-# Forward Simulation Parameters，前进模拟参数
+
+  # Forward Simulation Parameters，前进模拟参数
   sim_time: 0.8
   vx_samples: 18
   vtheta_samples: 20
@@ -2848,55 +2845,61 @@ TrajectoryPlannerROS:
 
 ```yaml
 # File Name : cost_common_params.yaml
- 
+
 #机器人几何参，如果机器人是圆形，设置 robot_radius,如果是其他形状设置 footprint
 robot_radius: 0.12 #圆形
 # footprint: [[-0.12, -0.12], [-0.12, 0.12], [0.12, 0.12], [0.12, -0.12]] #其他形状
- 
+
 obstacle_range: 3.0 # 用于障碍物探测，比如: 值为 3.0，意味着检测到距离小于 3 米的障碍物时，就会引入代价地图
 raytrace_range: 3.5 # 用于清除障碍物，比如：值为 3.5，意味着清除代价地图中 3.5 米以外的障碍物
- 
- 
+
 #膨胀半径，扩展在碰撞区域以外的代价区域，使得机器人规划路径避开障碍物
 inflation_radius: 0.2
 #代价比例系数，越大则代价值越小
 cost_scaling_factor: 3.0
- 
+
 #地图类型
 map_type: costmap
 #导航包所需要的传感器
 observation_sources: scan
 #对传感器的坐标系和数据进行配置。这个也会用于代价地图添加和清除障碍物。例如，你可以用激光雷达传感器用于在代价地图添加障碍物，再添加kinect用于导航和清除障碍物。
-scan: {sensor_frame: laser, data_type: LaserScan, topic: scan, marking: true, clearing: true}
+scan:
+  {
+    sensor_frame: laser,
+    data_type: LaserScan,
+    topic: scan,
+    marking: true,
+    clearing: true,
+  }
 ```
 
 ```yaml
 # File Name : global_costmap_params.yaml
- 
+
 global_costmap:
   global_frame: map #地图坐标系
   robot_base_frame: base_footprint #机器人坐标系
   # 以此实现坐标变换
- 
+
   update_frequency: 1.0 #代价地图更新频率
   publish_frequency: 1.0 #代价地图的发布频率
   transform_tolerance: 0.5 #等待坐标变换发布信息的超时时间
- 
+
   static_map: true # 是否使用一个地图或者地图服务器来初始化全局代价地图，如果不使用静态地图，这个参数为false.
 ```
 
 ```yaml
 # File Name : local_costmap_params.yaml
- 
+
 local_costmap:
   global_frame: odom #里程计坐标系
   robot_base_frame: base_footprint #机器人坐标系
- 
+
   update_frequency: 10.0 #代价地图更新频率
   publish_frequency: 10.0 #代价地图的发布频率
   transform_tolerance: 0.5 #等待坐标变换发布信息的超时时间
- 
-  static_map: false  #不需要静态地图，可以提升导航效果
+
+  static_map: false #不需要静态地图，可以提升导航效果
   rolling_window: true #是否使用动态窗口，默认为false，在静态的全局地图中，地图不会变化
   width: 3 # 局部地图宽度 单位是 m
   height: 3 # 局部地图高度 单位是 m
@@ -2911,9 +2914,9 @@ cd ../launch && touch move_base.launch && code move_base.launch
 
 ```xml
 <!-- File Name : move_base.launch -->
- 
+
 <launch>
- 
+
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
         <rosparam file="$(find nav)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
         <rosparam file="$(find nav)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
@@ -2921,7 +2924,7 @@ cd ../launch && touch move_base.launch && code move_base.launch
         <rosparam file="$(find nav)/param/global_costmap_params.yaml" command="load" />
         <rosparam file="$(find nav)/param/base_local_planner_params.yaml" command="load" />
     </node>
- 
+
 </launch>
 ```
 
@@ -2933,7 +2936,7 @@ touch auto_slam.launch && code auto_slam.launch
 
 ```xml
 <!-- File Name : auto_slam.launch -->
- 
+
 <launch>
     <!-- 启动SLAM节点 -->
     <include file="$(find entity_test)/launch/gmapping.launch" />
@@ -2975,38 +2978,38 @@ gedit Makefile.config
 ```makefile
 ## Refer to http://caffe.berkeleyvision.org/installation.html
 # Contributions simplifying and improving our build system are welcome!
- 
+
 # cuDNN acceleration switch (uncomment to build with cuDNN).
 USE_CUDNN := 1
- 
+
 # CPU-only switch (uncomment to build without GPU support).
 # CPU_ONLY := 1
- 
+
 # uncomment to disable IO dependencies and corresponding data layers
 # USE_OPENCV := 0
 # USE_LEVELDB := 0
 # USE_LMDB := 0
 # This code is taken from https://github.com/sh1r0/caffe-android-lib
 # USE_HDF5 := 0
- 
+
 # uncomment to allow MDB_NOLOCK when reading LMDB files (only if necessary)
 #	You should not set this flag if you will be reading LMDBs with any
 #	possibility of simultaneous read and write
 # ALLOW_LMDB_NOLOCK := 1
- 
+
 # Uncomment if you're using OpenCV 3
 OPENCV_VERSION := 3
- 
+
 # To customize your choice of compiler, uncomment and set the following.
 # N.B. the default for Linux is g++ and the default for OSX is clang++
 CUSTOM_CXX := g++
- 
+
 # CUDA directory contains bin/ and lib/ directories that we need.
 CUDA_DIR := /usr/local/cuda
 # On Ubuntu 14.04, if cuda tools are installed via
 # "sudo apt-get install nvidia-cuda-toolkit" then use this instead:
 # CUDA_DIR := /usr
- 
+
 # CUDA architecture setting: going with all of them.
 # For CUDA < 6.0, comment the *_50 through *_61 lines for compatibility.
 # For CUDA < 8.0, comment the *_60 and *_61 lines for compatibility.
@@ -3020,7 +3023,7 @@ CUDA_ARCH := #-gencode arch=compute_20,code=sm_20 \
 		-gencode arch=compute_60,code=sm_60 \
 		-gencode arch=compute_61,code=sm_61 \
 		-gencode arch=compute_61,code=compute_61
- 
+
 # BLAS choice:
 # atlas for ATLAS (default)
 # mkl for MKL
@@ -3031,16 +3034,16 @@ BLAS := open
 # (which should work)!
 # BLAS_INCLUDE := /path/to/your/blas
 # BLAS_LIB := /path/to/your/blas
- 
+
 # Homebrew puts openblas in a directory that is not on the standard search path
 # BLAS_INCLUDE := $(shell brew --prefix openblas)/include
 # BLAS_LIB := $(shell brew --prefix openblas)/lib
- 
+
 # This is required only if you will compile the matlab interface.
 # MATLAB directory should contain the mex binary in /bin.
 # MATLAB_DIR := /usr/local
 # MATLAB_DIR := /Applications/MATLAB_R2012b.app
- 
+
 # NOTE: this is required only if you will compile the python interface.
 # We need to be able to find Python.h and numpy/arrayobject.h.
 PYTHON_INCLUDE := /usr/include/python2.7 \
@@ -3051,49 +3054,49 @@ PYTHON_INCLUDE := /usr/include/python2.7 \
 # PYTHON_INCLUDE := $(ANACONDA_HOME)/include \
 		# $(ANACONDA_HOME)/include/python2.7 \
 		# $(ANACONDA_HOME)/lib/python2.7/site-packages/numpy/core/include
- 
+
 # Uncomment to use Python 3 (default is Python 2)
  PYTHON_LIBRARIES := boost_python3 python3.6m
  PYTHON_INCLUDE := /usr/include/python3.6m \
                  /usr/lib/python3.6/dist-packages/numpy/core/include
- 
+
 # We need to be able to find libpythonX.X.so or .dylib.
 PYTHON_LIB := /usr/lib
 # PYTHON_LIB := $(ANACONDA_HOME)/lib
- 
+
 # Homebrew installs numpy in a non standard path (keg only)
 # PYTHON_INCLUDE += $(dir $(shell python -c 'import numpy.core; print(numpy.core.__file__)'))/include
 # PYTHON_LIB += $(shell brew --prefix numpy)/lib
- 
+
 # Uncomment to support layers written in Python (will link against Python libs)
 WITH_PYTHON_LAYER := 1
- 
+
 # Whatever else you find you need goes here.
 INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial/
 LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu/hdf5/serial/
- 
+
 # If Homebrew is installed at a non standard location (for example your home directory) and you use it for general dependencies
 # INCLUDE_DIRS += $(shell brew --prefix)/include
 # LIBRARY_DIRS += $(shell brew --prefix)/lib
- 
+
 # NCCL acceleration switch (uncomment to build with NCCL)
 # https://github.com/NVIDIA/nccl (last tested version: v1.2.3-1+cuda8.0)
 # USE_NCCL := 1
- 
+
 # Uncomment to use `pkg-config` to specify OpenCV library paths.
 # (Usually not necessary -- OpenCV libraries are normally installed in one of the above $LIBRARY_DIRS.)
 # USE_PKG_CONFIG := 1
- 
+
 # N.B. both build and distribute dirs are cleared on `make clean`
 BUILD_DIR := build
 DISTRIBUTE_DIR := distribute
- 
+
 # Uncomment for debugging. Does not work on OSX due to https://github.com/BVLC/caffe/issues/171
 # DEBUG := 1
- 
+
 # The ID of the GPU that 'make runtest' will use to run unit tests.
 TEST_GPUID := 0
- 
+
 # enable pretty build (comment to see full commands)
 Q ?= @
 ```
@@ -3104,14 +3107,14 @@ gedit Makefile
 
 ```makefile
 PROJECT := caffe
- 
+
 CONFIG_FILE := Makefile.config
 # Explicitly check for the config file, otherwise make -k will proceed anyway.
 ifeq ($(wildcard $(CONFIG_FILE)),)
 $(error $(CONFIG_FILE) not found. See $(CONFIG_FILE).example.)
 endif
 include $(CONFIG_FILE)
- 
+
 BUILD_DIR_LINK := $(BUILD_DIR)
 ifeq ($(RELEASE_BUILD_DIR),)
 	RELEASE_BUILD_DIR := .$(BUILD_DIR)_release
@@ -3119,7 +3122,7 @@ endif
 ifeq ($(DEBUG_BUILD_DIR),)
 	DEBUG_BUILD_DIR := .$(BUILD_DIR)_debug
 endif
- 
+
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
 	BUILD_DIR := $(DEBUG_BUILD_DIR)
@@ -3128,11 +3131,11 @@ else
 	BUILD_DIR := $(RELEASE_BUILD_DIR)
 	OTHER_BUILD_DIR := $(DEBUG_BUILD_DIR)
 endif
- 
+
 # All of the directories containing code.
 SRC_DIRS := $(shell find * -type d -exec bash -c "find {} -maxdepth 1 \
 	\( -name '*.cpp' -o -name '*.proto' \) | grep -q ." \; -print)
- 
+
 # The target shared library name
 LIBRARY_NAME := $(PROJECT)
 LIB_BUILD_DIR := $(BUILD_DIR)/lib
@@ -3145,7 +3148,7 @@ DYNAMIC_NAME_SHORT := lib$(LIBRARY_NAME).so
 DYNAMIC_VERSIONED_NAME_SHORT := $(DYNAMIC_NAME_SHORT).$(DYNAMIC_VERSION_MAJOR).$(DYNAMIC_VERSION_MINOR).$(DYNAMIC_VERSION_REVISION)
 DYNAMIC_NAME := $(LIB_BUILD_DIR)/$(DYNAMIC_VERSIONED_NAME_SHORT)
 COMMON_FLAGS += -DCAFFE_VERSION=$(DYNAMIC_VERSION_MAJOR).$(DYNAMIC_VERSION_MINOR).$(DYNAMIC_VERSION_REVISION)
- 
+
 ##############################
 # Get all source files
 ##############################
@@ -3198,7 +3201,7 @@ ifneq ($(MATLAB_DIR),)
 	MAT_SO_EXT := $(shell $(MATLAB_DIR)/bin/mexext)
 endif
 MAT$(PROJECT)_SO := matlab/+$(PROJECT)/private/$(PROJECT)_.$(MAT_SO_EXT)
- 
+
 ##############################
 # Derive generated files
 ##############################
@@ -3246,7 +3249,7 @@ TEST_CXX_BINS := $(addsuffix .testbin,$(addprefix $(TEST_BIN_DIR)/, \
 TEST_BINS := $(TEST_CXX_BINS) $(TEST_CU_BINS)
 # TEST_ALL_BIN is the test binary that links caffe dynamically.
 TEST_ALL_BIN := $(TEST_BIN_DIR)/test_all.testbin
- 
+
 ##############################
 # Derive compiler warning dump locations
 ##############################
@@ -3260,38 +3263,38 @@ TEST_CU_WARNS := $(addprefix $(BUILD_DIR)/cuda/, ${TEST_CU_SRCS:.cu=.o.$(WARNS_E
 ALL_CXX_WARNS := $(CXX_WARNS) $(TOOL_WARNS) $(EXAMPLE_WARNS) $(TEST_WARNS)
 ALL_CU_WARNS := $(CU_WARNS) $(TEST_CU_WARNS)
 ALL_WARNS := $(ALL_CXX_WARNS) $(ALL_CU_WARNS)
- 
+
 EMPTY_WARN_REPORT := $(BUILD_DIR)/.$(WARNS_EXT)
 NONEMPTY_WARN_REPORT := $(BUILD_DIR)/$(WARNS_EXT)
- 
+
 ##############################
 # Derive include and lib directories
 ##############################
 CUDA_INCLUDE_DIR := $(CUDA_DIR)/include
- 
+
 CUDA_LIB_DIR :=
 # add <cuda>/lib64 only if it exists
 ifneq ("$(wildcard $(CUDA_DIR)/lib64)","")
 	CUDA_LIB_DIR += $(CUDA_DIR)/lib64
 endif
 CUDA_LIB_DIR += $(CUDA_DIR)/lib
- 
+
 INCLUDE_DIRS += $(BUILD_INCLUDE_DIR) ./src ./include
 ifneq ($(CPU_ONLY), 1)
 	INCLUDE_DIRS += $(CUDA_INCLUDE_DIR)
 	LIBRARY_DIRS += $(CUDA_LIB_DIR)
 	LIBRARIES := cudart cublas curand
 endif
- 
+
 LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_serial_hl hdf5_serial
- 
+
 # handle IO dependencies
 USE_LEVELDB ?= 1
 USE_LMDB ?= 1
 # This code is taken from https://github.com/sh1r0/caffe-android-lib
 USE_HDF5 ?= 1
 USE_OPENCV ?= 1
- 
+
 ifeq ($(USE_LEVELDB), 1)
 	LIBRARIES += leveldb snappy
 endif
@@ -3304,31 +3307,31 @@ ifeq ($(USE_HDF5), 1)
 endif
 ifeq ($(USE_OPENCV), 1)
 	LIBRARIES += opencv_core opencv_highgui opencv_imgproc
- 
+
 	ifeq ($(OPENCV_VERSION), 3)
 		LIBRARIES += opencv_imgcodecs
 	endif
- 
+
 endif
 PYTHON_LIBRARIES ?= boost_python python2.7
 WARNINGS := -Wall -Wno-sign-compare
- 
+
 ##############################
 # Set build directories
 ##############################
- 
+
 DISTRIBUTE_DIR ?= distribute
 DISTRIBUTE_SUBDIRS := $(DISTRIBUTE_DIR)/bin $(DISTRIBUTE_DIR)/lib
 DIST_ALIASES := dist
 ifneq ($(strip $(DISTRIBUTE_DIR)),distribute)
 		DIST_ALIASES += distribute
 endif
- 
+
 ALL_BUILD_DIRS := $(sort $(BUILD_DIR) $(addprefix $(BUILD_DIR)/, $(SRC_DIRS)) \
 	$(addprefix $(BUILD_DIR)/cuda/, $(SRC_DIRS)) \
 	$(LIB_BUILD_DIR) $(TEST_BIN_DIR) $(PY_PROTO_BUILD_DIR) $(LINT_OUTPUT_DIR) \
 	$(DISTRIBUTE_SUBDIRS) $(PROTO_BUILD_INCLUDE_DIR))
- 
+
 ##############################
 # Set directory for Doxygen-generated documentation
 ##############################
@@ -3347,12 +3350,12 @@ DOXYGEN_SOURCES := $(shell find \
 	-name "*.cpp" -or -name "*.hpp" -or -name "*.cu" -or -name "*.cuh" -or \
         -name "*.py" -or -name "*.m")
 DOXYGEN_SOURCES += $(DOXYGEN_CONFIG_FILE)
- 
- 
+
+
 ##############################
 # Configure build
 ##############################
- 
+
 # Determine platform
 UNAME := $(shell uname -s)
 ifeq ($(UNAME), Linux)
@@ -3362,7 +3365,7 @@ else ifeq ($(UNAME), Darwin)
 	OSX_MAJOR_VERSION := $(shell sw_vers -productVersion | cut -f 1 -d .)
 	OSX_MINOR_VERSION := $(shell sw_vers -productVersion | cut -f 2 -d .)
 endif
- 
+
 # Linux
 ifeq ($(LINUX), 1)
 	CXX ?= /usr/bin/g++
@@ -3376,7 +3379,7 @@ ifeq ($(LINUX), 1)
 	LIBRARIES += boost_thread stdc++
 	VERSIONFLAGS += -Wl,-soname,$(DYNAMIC_VERSIONED_NAME_SHORT) -Wl,-rpath,$(ORIGIN)/../lib
 endif
- 
+
 # OS X:
 # clang++ instead of g++
 # libstdc++ for NVCC compatibility on OS X >= 10.9 with CUDA < 7.0
@@ -3409,12 +3412,12 @@ ifeq ($(OSX), 1)
 else
 	ORIGIN := \$$ORIGIN
 endif
- 
+
 # Custom compiler
 ifdef CUSTOM_CXX
 	CXX := $(CUSTOM_CXX)
 endif
- 
+
 # Static linking
 ifneq (,$(findstring clang++,$(CXX)))
 	STATIC_LINK_COMMAND := -Wl,-force_load $(STATIC_NAME)
@@ -3424,7 +3427,7 @@ else
   # The following line must not be indented with a tab, since we are not inside a target
   $(error Cannot static link with the $(CXX) compiler)
 endif
- 
+
 # Debugging
 ifeq ($(DEBUG), 1)
 	COMMON_FLAGS += -DDEBUG -g -O0
@@ -3432,19 +3435,19 @@ ifeq ($(DEBUG), 1)
 else
 	COMMON_FLAGS += -DNDEBUG -O2
 endif
- 
+
 # cuDNN acceleration configuration.
 ifeq ($(USE_CUDNN), 1)
 	LIBRARIES += cudnn
 	COMMON_FLAGS += -DUSE_CUDNN
 endif
- 
+
 # NCCL acceleration configuration
 ifeq ($(USE_NCCL), 1)
 	LIBRARIES += nccl
 	COMMON_FLAGS += -DUSE_NCCL
 endif
- 
+
 # configure IO libraries
 ifeq ($(USE_OPENCV), 1)
 	COMMON_FLAGS += -DUSE_OPENCV
@@ -3462,7 +3465,7 @@ endif
 ifeq ($(USE_HDF5), 1)
 	COMMON_FLAGS += -DUSE_HDF5
 endif
- 
+
 # CPU-only configuration
 ifeq ($(CPU_ONLY), 1)
 	OBJS := $(PROTO_OBJS) $(CXX_OBJS)
@@ -3472,13 +3475,13 @@ ifeq ($(CPU_ONLY), 1)
 	TEST_FILTER := --gtest_filter="-*GPU*"
 	COMMON_FLAGS += -DCPU_ONLY
 endif
- 
+
 # Python layer support
 ifeq ($(WITH_PYTHON_LAYER), 1)
 	COMMON_FLAGS += -DWITH_PYTHON_LAYER
 	LIBRARIES += $(PYTHON_LIBRARIES)
 endif
- 
+
 # BLAS configuration (default = ATLAS)
 BLAS ?= atlas
 ifeq ($(BLAS), mkl)
@@ -3518,12 +3521,12 @@ else
 endif
 INCLUDE_DIRS += $(BLAS_INCLUDE)
 LIBRARY_DIRS += $(BLAS_LIB)
- 
+
 LIBRARY_DIRS += $(LIB_BUILD_DIR)
- 
+
 # Automatic dependency generation (nvcc is handled separately)
 CXXFLAGS += -MMD -MP
- 
+
 # Complete build flags.
 COMMON_FLAGS += $(foreach includedir,$(INCLUDE_DIRS),-I$(includedir))
 CXXFLAGS += -pthread -fPIC $(COMMON_FLAGS) $(WARNINGS)
@@ -3532,7 +3535,7 @@ NVCCFLAGS += -D_FORCE_INLINES -ccbin=$(CXX) -Xcompiler -fPIC $(COMMON_FLAGS)
 # mex may invoke an older gcc that is too liberal with -Wuninitalized
 MATLAB_CXXFLAGS := $(CXXFLAGS) -Wno-uninitialized
 LINKFLAGS += -pthread -fPIC $(COMMON_FLAGS) $(WARNINGS)
- 
+
 USE_PKG_CONFIG ?= 0
 ifeq ($(USE_PKG_CONFIG), 1)
 	PKG_CONFIG := $(shell pkg-config opencv --libs)
@@ -3542,7 +3545,7 @@ endif
 LDFLAGS += $(foreach librarydir,$(LIBRARY_DIRS),-L$(librarydir)) $(PKG_CONFIG) \
 		$(foreach library,$(LIBRARIES),-l$(library))
 PYTHON_LDFLAGS := $(LDFLAGS) $(foreach library,$(PYTHON_LIBRARIES),-l$(library))
- 
+
 # 'superclean' target recursively* deletes all files ending with an extension
 # in $(SUPERCLEAN_EXTS) below.  This may be useful if you've built older
 # versions of Caffe that do not place all generated files in a location known
@@ -3553,43 +3556,43 @@ PYTHON_LDFLAGS := $(LDFLAGS) $(foreach library,$(PYTHON_LIBRARIES),-l$(library))
 # * Recursive with the exception that symbolic links are never followed, per the
 # default behavior of 'find'.
 SUPERCLEAN_EXTS := .so .a .o .bin .testbin .pb.cc .pb.h _pb2.py .cuo
- 
+
 # Set the sub-targets of the 'everything' target.
 EVERYTHING_TARGETS := all py$(PROJECT) test warn lint
 # Only build matcaffe as part of "everything" if MATLAB_DIR is specified.
 ifneq ($(MATLAB_DIR),)
 	EVERYTHING_TARGETS += mat$(PROJECT)
 endif
- 
+
 ##############################
 # Define build targets
 ##############################
 .PHONY: all lib test clean docs linecount lint lintclean tools examples $(DIST_ALIASES) \
 	py mat py$(PROJECT) mat$(PROJECT) proto runtest \
 	superclean supercleanlist supercleanfiles warn everything
- 
+
 all: lib tools examples
- 
+
 lib: $(STATIC_NAME) $(DYNAMIC_NAME)
- 
+
 everything: $(EVERYTHING_TARGETS)
- 
+
 linecount:
 	cloc --read-lang-def=$(PROJECT).cloc \
 		src/$(PROJECT) include/$(PROJECT) tools examples \
 		python matlab
- 
+
 lint: $(EMPTY_LINT_REPORT)
- 
+
 lintclean:
 	@ $(RM) -r $(LINT_OUTPUT_DIR) $(EMPTY_LINT_REPORT) $(NONEMPTY_LINT_REPORT)
- 
+
 docs: $(DOXYGEN_OUTPUT_DIR)
 	@ cd ./docs ; ln -sfn ../$(DOXYGEN_OUTPUT_DIR)/html doxygen
- 
+
 $(DOXYGEN_OUTPUT_DIR): $(DOXYGEN_CONFIG_FILE) $(DOXYGEN_SOURCES)
 	$(DOXYGEN_COMMAND) $(DOXYGEN_CONFIG_FILE)
- 
+
 $(EMPTY_LINT_REPORT): $(LINT_OUTPUTS) | $(BUILD_DIR)
 	@ cat $(LINT_OUTPUTS) > $@
 	@ if [ -s "$@" ]; then \
@@ -3600,7 +3603,7 @@ $(EMPTY_LINT_REPORT): $(LINT_OUTPUTS) | $(BUILD_DIR)
 	  fi; \
 	  $(RM) $(NONEMPTY_LINT_REPORT); \
 	  echo "No lint errors!";
- 
+
 $(LINT_OUTPUTS): $(LINT_OUTPUT_DIR)/%.lint.txt : % $(LINT_SCRIPT) | $(LINT_OUTPUT_DIR)
 	@ mkdir -p $(dir $@)
 	@ python $(LINT_SCRIPT) $< 2>&1 \
@@ -3608,27 +3611,27 @@ $(LINT_OUTPUTS): $(LINT_OUTPUT_DIR)/%.lint.txt : % $(LINT_SCRIPT) | $(LINT_OUTPU
 		| grep -v "^Total errors found: 0" \
 		> $@ \
 		|| true
- 
+
 test: $(TEST_ALL_BIN) $(TEST_ALL_DYNLINK_BIN) $(TEST_BINS)
- 
+
 tools: $(TOOL_BINS) $(TOOL_BIN_LINKS)
- 
+
 examples: $(EXAMPLE_BINS)
- 
+
 py$(PROJECT): py
- 
+
 py: $(PY$(PROJECT)_SO) $(PROTO_GEN_PY)
- 
+
 $(PY$(PROJECT)_SO): $(PY$(PROJECT)_SRC) $(PY$(PROJECT)_HXX) | $(DYNAMIC_NAME)
 	@ echo CXX/LD -o $@ $<
 	$(Q)$(CXX) -shared -o $@ $(PY$(PROJECT)_SRC) \
 		-o $@ $(LINKFLAGS) -l$(LIBRARY_NAME) $(PYTHON_LDFLAGS) \
 		-Wl,-rpath,$(ORIGIN)/../../build/lib
- 
+
 mat$(PROJECT): mat
- 
+
 mat: $(MAT$(PROJECT)_SO)
- 
+
 $(MAT$(PROJECT)_SO): $(MAT$(PROJECT)_SRC) $(STATIC_NAME)
 	@ if [ -z "$(MATLAB_DIR)" ]; then \
 		echo "MATLAB_DIR must be specified in $(CONFIG_FILE)" \
@@ -3643,19 +3646,19 @@ $(MAT$(PROJECT)_SO): $(MAT$(PROJECT)_SRC) $(STATIC_NAME)
 	@ if [ -f "$(PROJECT)_.d" ]; then \
 		mv -f $(PROJECT)_.d $(BUILD_DIR)/${MAT$(PROJECT)_SO:.$(MAT_SO_EXT)=.d}; \
 	fi
- 
+
 runtest: $(TEST_ALL_BIN)
 	$(TOOL_BUILD_DIR)/caffe
 	$(TEST_ALL_BIN) $(TEST_GPUID) --gtest_shuffle $(TEST_FILTER)
- 
+
 pytest: py
 	cd python; python -m unittest discover -s caffe/test
- 
+
 mattest: mat
 	cd matlab; $(MATLAB_DIR)/bin/matlab -nodisplay -r 'caffe.run_tests(), exit()'
- 
+
 warn: $(EMPTY_WARN_REPORT)
- 
+
 $(EMPTY_WARN_REPORT): $(ALL_WARNS) | $(BUILD_DIR)
 	@ cat $(ALL_WARNS) > $@
 	@ if [ -s "$@" ]; then \
@@ -3666,11 +3669,11 @@ $(EMPTY_WARN_REPORT): $(ALL_WARNS) | $(BUILD_DIR)
 	  fi; \
 	  $(RM) $(NONEMPTY_WARN_REPORT); \
 	  echo "No compiler warnings!";
- 
+
 $(ALL_WARNS): %.o.$(WARNS_EXT) : %.o
- 
+
 $(BUILD_DIR_LINK): $(BUILD_DIR)/.linked
- 
+
 # Create a target ".linked" in this BUILD_DIR to tell Make that the "build" link
 # is currently correct, then delete the one in the OTHER_BUILD_DIR in case it
 # exists and $(DEBUG) is toggled later.
@@ -3680,32 +3683,32 @@ $(BUILD_DIR)/.linked:
 	@ $(RM) -r $(BUILD_DIR_LINK)
 	@ ln -s $(BUILD_DIR) $(BUILD_DIR_LINK)
 	@ touch $@
- 
+
 $(ALL_BUILD_DIRS): | $(BUILD_DIR_LINK)
 	@ mkdir -p $@
- 
+
 $(DYNAMIC_NAME): $(OBJS) | $(LIB_BUILD_DIR)
 	@ echo LD -o $@
 	$(Q)$(CXX) -shared -o $@ $(OBJS) $(VERSIONFLAGS) $(LINKFLAGS) $(LDFLAGS)
 	@ cd $(BUILD_DIR)/lib; rm -f $(DYNAMIC_NAME_SHORT);   ln -s $(DYNAMIC_VERSIONED_NAME_SHORT) $(DYNAMIC_NAME_SHORT)
- 
+
 $(STATIC_NAME): $(OBJS) | $(LIB_BUILD_DIR)
 	@ echo AR -o $@
 	$(Q)ar rcs $@ $(OBJS)
- 
+
 $(BUILD_DIR)/%.o: %.cpp $(PROTO_GEN_HEADER) | $(ALL_BUILD_DIRS)
 	@ echo CXX $<
 	$(Q)$(CXX) $< $(CXXFLAGS) -c -o $@ 2> $@.$(WARNS_EXT) \
 		|| (cat $@.$(WARNS_EXT); exit 1)
 	@ cat $@.$(WARNS_EXT)
- 
+
 $(PROTO_BUILD_DIR)/%.pb.o: $(PROTO_BUILD_DIR)/%.pb.cc $(PROTO_GEN_HEADER) \
 		| $(PROTO_BUILD_DIR)
 	@ echo CXX $<
 	$(Q)$(CXX) $< $(CXXFLAGS) -c -o $@ 2> $@.$(WARNS_EXT) \
 		|| (cat $@.$(WARNS_EXT); exit 1)
 	@ cat $@.$(WARNS_EXT)
- 
+
 $(BUILD_DIR)/cuda/%.o: %.cu | $(ALL_BUILD_DIRS)
 	@ echo NVCC $<
 	$(Q)$(CUDA_DIR)/bin/nvcc $(NVCCFLAGS) $(CUDA_ARCH) -M $< -o ${@:.o=.d} \
@@ -3713,55 +3716,55 @@ $(BUILD_DIR)/cuda/%.o: %.cu | $(ALL_BUILD_DIRS)
 	$(Q)$(CUDA_DIR)/bin/nvcc $(NVCCFLAGS) $(CUDA_ARCH) -c $< -o $@ 2> $@.$(WARNS_EXT) \
 		|| (cat $@.$(WARNS_EXT); exit 1)
 	@ cat $@.$(WARNS_EXT)
- 
+
 $(TEST_ALL_BIN): $(TEST_MAIN_SRC) $(TEST_OBJS) $(GTEST_OBJ) \
 		| $(DYNAMIC_NAME) $(TEST_BIN_DIR)
 	@ echo CXX/LD -o $@ $<
 	$(Q)$(CXX) $(TEST_MAIN_SRC) $(TEST_OBJS) $(GTEST_OBJ) \
 		-o $@ $(LINKFLAGS) $(LDFLAGS) -l$(LIBRARY_NAME) -Wl,-rpath,$(ORIGIN)/../lib
- 
+
 $(TEST_CU_BINS): $(TEST_BIN_DIR)/%.testbin: $(TEST_CU_BUILD_DIR)/%.o \
 	$(GTEST_OBJ) | $(DYNAMIC_NAME) $(TEST_BIN_DIR)
 	@ echo LD $<
 	$(Q)$(CXX) $(TEST_MAIN_SRC) $< $(GTEST_OBJ) \
 		-o $@ $(LINKFLAGS) $(LDFLAGS) -l$(LIBRARY_NAME) -Wl,-rpath,$(ORIGIN)/../lib
- 
+
 $(TEST_CXX_BINS): $(TEST_BIN_DIR)/%.testbin: $(TEST_CXX_BUILD_DIR)/%.o \
 	$(GTEST_OBJ) | $(DYNAMIC_NAME) $(TEST_BIN_DIR)
 	@ echo LD $<
 	$(Q)$(CXX) $(TEST_MAIN_SRC) $< $(GTEST_OBJ) \
 		-o $@ $(LINKFLAGS) $(LDFLAGS) -l$(LIBRARY_NAME) -Wl,-rpath,$(ORIGIN)/../lib
- 
+
 # Target for extension-less symlinks to tool binaries with extension '*.bin'.
 $(TOOL_BUILD_DIR)/%: $(TOOL_BUILD_DIR)/%.bin | $(TOOL_BUILD_DIR)
 	@ $(RM) $@
 	@ ln -s $(notdir $<) $@
- 
+
 $(TOOL_BINS): %.bin : %.o | $(DYNAMIC_NAME)
 	@ echo CXX/LD -o $@
 	$(Q)$(CXX) $< -o $@ $(LINKFLAGS) -l$(LIBRARY_NAME) $(LDFLAGS) \
 		-Wl,-rpath,$(ORIGIN)/../lib
- 
+
 $(EXAMPLE_BINS): %.bin : %.o | $(DYNAMIC_NAME)
 	@ echo CXX/LD -o $@
 	$(Q)$(CXX) $< -o $@ $(LINKFLAGS) -l$(LIBRARY_NAME) $(LDFLAGS) \
 		-Wl,-rpath,$(ORIGIN)/../../lib
- 
+
 proto: $(PROTO_GEN_CC) $(PROTO_GEN_HEADER)
- 
+
 $(PROTO_BUILD_DIR)/%.pb.cc $(PROTO_BUILD_DIR)/%.pb.h : \
 		$(PROTO_SRC_DIR)/%.proto | $(PROTO_BUILD_DIR)
 	@ echo PROTOC $<
 	$(Q)protoc --proto_path=$(PROTO_SRC_DIR) --cpp_out=$(PROTO_BUILD_DIR) $<
- 
+
 $(PY_PROTO_BUILD_DIR)/%_pb2.py : $(PROTO_SRC_DIR)/%.proto \
 		$(PY_PROTO_INIT) | $(PY_PROTO_BUILD_DIR)
 	@ echo PROTOC \(python\) $<
 	$(Q)protoc --proto_path=src --python_out=python $<
- 
+
 $(PY_PROTO_INIT): | $(PY_PROTO_BUILD_DIR)
 	touch $(PY_PROTO_INIT)
- 
+
 clean:
 	@- $(RM) -rf $(ALL_BUILD_DIRS)
 	@- $(RM) -rf $(OTHER_BUILD_DIR)
@@ -3769,12 +3772,12 @@ clean:
 	@- $(RM) -rf $(DISTRIBUTE_DIR)
 	@- $(RM) $(PY$(PROJECT)_SO)
 	@- $(RM) $(MAT$(PROJECT)_SO)
- 
+
 supercleanfiles:
 	$(eval SUPERCLEAN_FILES := $(strip \
 			$(foreach ext,$(SUPERCLEAN_EXTS), $(shell find . -name '*$(ext)' \
 			-not -path './data/*'))))
- 
+
 supercleanlist: supercleanfiles
 	@ \
 	if [ -z "$(SUPERCLEAN_FILES)" ]; then \
@@ -3782,7 +3785,7 @@ supercleanlist: supercleanfiles
 	else \
 		echo $(SUPERCLEAN_FILES) | tr ' ' '\n'; \
 	fi
- 
+
 superclean: clean supercleanfiles
 	@ \
 	if [ -z "$(SUPERCLEAN_FILES)" ]; then \
@@ -3792,9 +3795,9 @@ superclean: clean supercleanfiles
 		echo $(SUPERCLEAN_FILES) | tr ' ' '\n'; \
 		$(RM) $(SUPERCLEAN_FILES); \
 	fi
- 
+
 $(DIST_ALIASES): $(DISTRIBUTE_DIR)
- 
+
 $(DISTRIBUTE_DIR): all py | $(DISTRIBUTE_SUBDIRS)
 	# add proto
 	cp -r src/caffe/proto $(DISTRIBUTE_DIR)/
@@ -3811,7 +3814,7 @@ $(DISTRIBUTE_DIR): all py | $(DISTRIBUTE_SUBDIRS)
 	cd $(DISTRIBUTE_DIR)/lib; rm -f $(DYNAMIC_NAME_SHORT);   ln -s $(DYNAMIC_VERSIONED_NAME_SHORT) $(DYNAMIC_NAME_SHORT)
 	# add python - it's not the standard way, indeed...
 	cp -r python $(DISTRIBUTE_DIR)/
- 
+
 -include $(DEPS)
 ```
 
@@ -3833,27 +3836,27 @@ cd .. && sudo make clean
 sudo make all -j$(nproc)
 ```
 
- 由于caffe最后支持的版本是cuDNN7.6.5，为了能在cuDNN8的环境下编译通过，需要修改两个cpp文件，路径为/caffe/src/caffe/layers下的cudnn_conv_layer.cpp和cudnn_deconv_layer.cpp两个文件，分别将他们内容替换为：
+由于caffe最后支持的版本是cuDNN7.6.5，为了能在cuDNN8的环境下编译通过，需要修改两个cpp文件，路径为/caffe/src/caffe/layers下的cudnn_conv_layer.cpp和cudnn_deconv_layer.cpp两个文件，分别将他们内容替换为：
 
 ```cpp
 /**
  * @File Name : cudnn_conv_layer.cpp
  */
- 
+
 #ifdef USE_CUDNN
 #include <algorithm>
 #include <vector>
- 
+
 #include "caffe/layers/cudnn_conv_layer.hpp"
- 
+
 namespace caffe
 {
- 
+
 // Set to three for the benefit of the backward pass, which
 // can use separate streams for calculating the gradient w.r.t.
 // bias, filter weights, and bottom data for each group independently
 #define CUDNN_STREAMS_PER_GROUP 3
- 
+
   /**
    * TODO(dox) explain cuDNN interface
    */
@@ -3865,22 +3868,22 @@ namespace caffe
     // Initialize CUDA streams and cuDNN.
     stream_ = new cudaStream_t[this->group_ * CUDNN_STREAMS_PER_GROUP];
     handle_ = new cudnnHandle_t[this->group_ * CUDNN_STREAMS_PER_GROUP];
- 
+
     // Initialize algorithm arrays
     fwd_algo_ = new cudnnConvolutionFwdAlgo_t[bottom.size()];
     bwd_filter_algo_ = new cudnnConvolutionBwdFilterAlgo_t[bottom.size()];
     bwd_data_algo_ = new cudnnConvolutionBwdDataAlgo_t[bottom.size()];
- 
+
     // initialize size arrays
     workspace_fwd_sizes_ = new size_t[bottom.size()];
     workspace_bwd_filter_sizes_ = new size_t[bottom.size()];
     workspace_bwd_data_sizes_ = new size_t[bottom.size()];
- 
+
     // workspace data
     workspaceSizeInBytes = 0;
     workspaceData = NULL;
     workspace = new void *[this->group_ * CUDNN_STREAMS_PER_GROUP];
- 
+
     for (size_t i = 0; i < bottom.size(); ++i)
     {
       // initialize all to default algorithms
@@ -3892,7 +3895,7 @@ namespace caffe
       workspace_bwd_data_sizes_[i] = 0;
       workspace_bwd_filter_sizes_[i] = 0;
     }
- 
+
     for (int g = 0; g < this->group_ * CUDNN_STREAMS_PER_GROUP; g++)
     {
       CUDA_CHECK(cudaStreamCreate(&stream_[g]));
@@ -3900,10 +3903,10 @@ namespace caffe
       CUDNN_CHECK(cudnnSetStream(handle_[g], stream_[g]));
       workspace[g] = NULL;
     }
- 
+
     // Set the indexing parameters.
     bias_offset_ = (this->num_output_ / this->group_);
- 
+
     // Create filter descriptor.
     const int *kernel_shape_data = this->kernel_shape_.cpu_data();
     const int kernel_h = kernel_shape_data[0];
@@ -3911,7 +3914,7 @@ namespace caffe
     cudnn::createFilterDesc<Dtype>(&filter_desc_,
                                    this->num_output_ / this->group_, this->channels_ / this->group_,
                                    kernel_h, kernel_w);
- 
+
     // Create tensor descriptor(s) for data and corresponding convolution(s).
     for (int i = 0; i < bottom.size(); i++)
     {
@@ -3925,16 +3928,16 @@ namespace caffe
       cudnn::createConvolutionDesc<Dtype>(&conv_desc);
       conv_descs_.push_back(conv_desc);
     }
- 
+
     // Tensor descriptor for bias.
     if (this->bias_term_)
     {
       cudnn::createTensor4dDesc<Dtype>(&bias_desc_);
     }
- 
+
     handles_setup_ = true;
   }
- 
+
   template <typename Dtype>
   void CuDNNConvolutionLayer<Dtype>::Reshape(
       const vector<Blob<Dtype> *> &bottom, const vector<Blob<Dtype> *> &top)
@@ -3962,7 +3965,7 @@ namespace caffe
     size_t free_memory, total_memory;
     cudnnConvolutionFwdAlgoPerf_t fwd_algo_pref_[4];
     cudnnConvolutionBwdDataAlgoPerf_t bwd_data_algo_pref_[4];
- 
+
     // get memory sizes
     cudaMemGetInfo(&free_memory, &total_memory);
 #else
@@ -3985,7 +3988,7 @@ namespace caffe
       cudnn::setConvolutionDesc<Dtype>(&conv_descs_[i], bottom_descs_[i],
                                        filter_desc_, pad_h, pad_w,
                                        stride_h, stride_w);
- 
+
 #if CUDNN_VERSION_MIN(8, 0, 0)
       // choose forward algorithm for filter
       // in forward filter the CUDNN_CONVOLUTION_FWD_ALGO_WINOGRAD_NONFUSED is not implemented in cuDNN 8
@@ -3997,7 +4000,7 @@ namespace caffe
                                                          4,
                                                          &RetCnt,
                                                          fwd_algo_pref_));
- 
+
       found_conv_algorithm = false;
       for (int n = 0; n < RetCnt; n++)
       {
@@ -4022,7 +4025,7 @@ namespace caffe
         // twice the amount of the forward search to be save
         workspace_bwd_filter_sizes_[i] = 2 * workspace_fwd_sizes_[i];
       }
- 
+
       // choose backward algo for data
       CUDNN_CHECK(cudnnGetConvolutionBackwardDataAlgorithm_v7(handle_[0],
                                                               filter_desc_,
@@ -4032,7 +4035,7 @@ namespace caffe
                                                               4,
                                                               &RetCnt,
                                                               bwd_data_algo_pref_));
- 
+
       found_conv_algorithm = false;
       for (int n = 0; n < RetCnt; n++)
       {
@@ -4059,7 +4062,7 @@ namespace caffe
                                                       CUDNN_CONVOLUTION_FWD_SPECIFY_WORKSPACE_LIMIT,
                                                       workspace_limit_bytes,
                                                       &fwd_algo_[i]));
- 
+
       CUDNN_CHECK(cudnnGetConvolutionForwardWorkspaceSize(handle_[0],
                                                           bottom_descs_[i],
                                                           filter_desc_,
@@ -4067,24 +4070,24 @@ namespace caffe
                                                           top_descs_[i],
                                                           fwd_algo_[i],
                                                           &(workspace_fwd_sizes_[i])));
- 
+
       // choose backward algorithm for filter
       CUDNN_CHECK(cudnnGetConvolutionBackwardFilterAlgorithm(handle_[0],
                                                              bottom_descs_[i], top_descs_[i], conv_descs_[i], filter_desc_,
                                                              CUDNN_CONVOLUTION_BWD_FILTER_SPECIFY_WORKSPACE_LIMIT,
                                                              workspace_limit_bytes, &bwd_filter_algo_[i]));
- 
+
       // get workspace for backwards filter algorithm
       CUDNN_CHECK(cudnnGetConvolutionBackwardFilterWorkspaceSize(handle_[0],
                                                                  bottom_descs_[i], top_descs_[i], conv_descs_[i], filter_desc_,
                                                                  bwd_filter_algo_[i], &workspace_bwd_filter_sizes_[i]));
- 
+
       // choose backward algo for data
       CUDNN_CHECK(cudnnGetConvolutionBackwardDataAlgorithm(handle_[0],
                                                            filter_desc_, top_descs_[i], conv_descs_[i], bottom_descs_[i],
                                                            CUDNN_CONVOLUTION_BWD_DATA_SPECIFY_WORKSPACE_LIMIT,
                                                            workspace_limit_bytes, &bwd_data_algo_[i]));
- 
+
       // get workspace size
       CUDNN_CHECK(cudnnGetConvolutionBackwardDataWorkspaceSize(handle_[0],
                                                                filter_desc_, top_descs_[i], conv_descs_[i], bottom_descs_[i],
@@ -4095,7 +4098,7 @@ namespace caffe
     size_t total_workspace_fwd = 0;
     size_t total_workspace_bwd_data = 0;
     size_t total_workspace_bwd_filter = 0;
- 
+
     for (size_t i = 0; i < bottom.size(); i++)
     {
       total_workspace_fwd = std::max(total_workspace_fwd,
@@ -4112,16 +4115,16 @@ namespace caffe
     // ensure all groups have enough workspace
     size_t total_max_workspace = max_workspace *
                                  (this->group_ * CUDNN_STREAMS_PER_GROUP);
- 
+
     // this is the total amount of storage needed over all groups + streams
     if (total_max_workspace > workspaceSizeInBytes)
     {
       DLOG(INFO) << "Reallocating workspace storage: " << total_max_workspace;
       workspaceSizeInBytes = total_max_workspace;
- 
+
       // free the existing workspace and allocate a new (larger) one
       cudaFree(this->workspaceData);
- 
+
       cudaError_t err = cudaMalloc(&(this->workspaceData), workspaceSizeInBytes);
       if (err != cudaSuccess)
       {
@@ -4135,7 +4138,7 @@ namespace caffe
           bwd_filter_algo_[i] = CUDNN_CONVOLUTION_BWD_FILTER_ALGO_0;
           bwd_data_algo_[i] = CUDNN_CONVOLUTION_BWD_DATA_ALGO_0;
         }
- 
+
         // NULL out all workspace pointers
         for (int g = 0; g < (this->group_ * CUDNN_STREAMS_PER_GROUP); g++)
         {
@@ -4145,14 +4148,14 @@ namespace caffe
         workspaceData = NULL;
         workspaceSizeInBytes = 0;
       }
- 
+
       // if we succeed in the allocation, set pointer aliases for workspaces
       for (int g = 0; g < (this->group_ * CUDNN_STREAMS_PER_GROUP); g++)
       {
         workspace[g] = reinterpret_cast<char *>(workspaceData) + g * max_workspace;
       }
     }
- 
+
     // Tensor descriptor for bias.
     if (this->bias_term_)
     {
@@ -4160,7 +4163,7 @@ namespace caffe
                                     1, this->num_output_ / this->group_, 1, 1);
     }
   }
- 
+
   template <typename Dtype>
   CuDNNConvolutionLayer<Dtype>::~CuDNNConvolutionLayer()
   {
@@ -4169,7 +4172,7 @@ namespace caffe
     {
       return;
     }
- 
+
     for (int i = 0; i < bottom_descs_.size(); i++)
     {
       cudnnDestroyTensorDescriptor(bottom_descs_[i]);
@@ -4181,13 +4184,13 @@ namespace caffe
       cudnnDestroyTensorDescriptor(bias_desc_);
     }
     cudnnDestroyFilterDescriptor(filter_desc_);
- 
+
     for (int g = 0; g < this->group_ * CUDNN_STREAMS_PER_GROUP; g++)
     {
       cudaStreamDestroy(stream_[g]);
       cudnnDestroy(handle_[g]);
     }
- 
+
     cudaFree(workspaceData);
     delete[] stream_;
     delete[] handle_;
@@ -4198,9 +4201,9 @@ namespace caffe
     delete[] workspace_bwd_data_sizes_;
     delete[] workspace_bwd_filter_sizes_;
   }
- 
+
   INSTANTIATE_CLASS(CuDNNConvolutionLayer);
- 
+
 } // namespace caffe
 #endif
 ```
@@ -4209,21 +4212,21 @@ namespace caffe
 /**
  * @File Name : cudnn_deconv_layer.cpp
  */
- 
+
 #ifdef USE_CUDNN
 #include <algorithm>
 #include <vector>
- 
+
 #include "caffe/layers/cudnn_deconv_layer.hpp"
- 
+
 namespace caffe
 {
- 
+
 // Set to three for the benefit of the backward pass, which
 // can use separate streams for calculating the gradient w.r.t.
 // bias, filter weights, and bottom data for each group independently
 #define CUDNN_STREAMS_PER_GROUP 3
- 
+
   /**
    * TODO(dox) explain cuDNN interface
    */
@@ -4235,22 +4238,22 @@ namespace caffe
     // Initialize CUDA streams and cuDNN.
     stream_ = new cudaStream_t[this->group_ * CUDNN_STREAMS_PER_GROUP];
     handle_ = new cudnnHandle_t[this->group_ * CUDNN_STREAMS_PER_GROUP];
- 
+
     // Initialize algorithm arrays
     fwd_algo_ = new cudnnConvolutionFwdAlgo_t[bottom.size()];
     bwd_filter_algo_ = new cudnnConvolutionBwdFilterAlgo_t[bottom.size()];
     bwd_data_algo_ = new cudnnConvolutionBwdDataAlgo_t[bottom.size()];
- 
+
     // initialize size arrays
     workspace_fwd_sizes_ = new size_t[bottom.size()];
     workspace_bwd_filter_sizes_ = new size_t[bottom.size()];
     workspace_bwd_data_sizes_ = new size_t[bottom.size()];
- 
+
     // workspace data
     workspaceSizeInBytes = 0;
     workspaceData = NULL;
     workspace = new void *[this->group_ * CUDNN_STREAMS_PER_GROUP];
- 
+
     for (size_t i = 0; i < bottom.size(); ++i)
     {
       // initialize all to default algorithms
@@ -4262,7 +4265,7 @@ namespace caffe
       workspace_bwd_data_sizes_[i] = 0;
       workspace_bwd_filter_sizes_[i] = 0;
     }
- 
+
     for (int g = 0; g < this->group_ * CUDNN_STREAMS_PER_GROUP; g++)
     {
       CUDA_CHECK(cudaStreamCreate(&stream_[g]));
@@ -4270,10 +4273,10 @@ namespace caffe
       CUDNN_CHECK(cudnnSetStream(handle_[g], stream_[g]));
       workspace[g] = NULL;
     }
- 
+
     // Set the indexing parameters.
     bias_offset_ = (this->num_output_ / this->group_);
- 
+
     // Create filter descriptor.
     const int *kernel_shape_data = this->kernel_shape_.cpu_data();
     const int kernel_h = kernel_shape_data[0];
@@ -4283,7 +4286,7 @@ namespace caffe
                                    this->num_output_ / this->group_,
                                    kernel_h,
                                    kernel_w);
- 
+
     // Create tensor descriptor(s) for data and corresponding convolution(s).
     for (int i = 0; i < bottom.size(); i++)
     {
@@ -4297,16 +4300,16 @@ namespace caffe
       cudnn::createConvolutionDesc<Dtype>(&conv_desc);
       conv_descs_.push_back(conv_desc);
     }
- 
+
     // Tensor descriptor for bias.
     if (this->bias_term_)
     {
       cudnn::createTensor4dDesc<Dtype>(&bias_desc_);
     }
- 
+
     handles_setup_ = true;
   }
- 
+
   template <typename Dtype>
   void CuDNNDeconvolutionLayer<Dtype>::Reshape(
       const vector<Blob<Dtype> *> &bottom, const vector<Blob<Dtype> *> &top)
@@ -4334,7 +4337,7 @@ namespace caffe
     size_t free_memory, total_memory;
     cudnnConvolutionFwdAlgoPerf_t fwd_algo_pref_[4];
     cudnnConvolutionBwdDataAlgoPerf_t bwd_data_algo_pref_[4];
- 
+
     // get memory sizes
     cudaMemGetInfo(&free_memory, &total_memory);
 #else
@@ -4369,7 +4372,7 @@ namespace caffe
                                        pad_w,
                                        stride_h,
                                        stride_w);
- 
+
 #if CUDNN_VERSION_MIN(8, 0, 0)
       // choose forward algorithm for filter
       // in forward filter the CUDNN_CONVOLUTION_FWD_ALGO_WINOGRAD_NONFUSED is not implemented in cuDNN 8
@@ -4381,7 +4384,7 @@ namespace caffe
                                                          4,
                                                          &RetCnt,
                                                          fwd_algo_pref_));
- 
+
       found_conv_algorithm = false;
       for (int n = 0; n < RetCnt; n++)
       {
@@ -4406,7 +4409,7 @@ namespace caffe
         // twice the amount of the forward search to be save
         workspace_bwd_filter_sizes_[i] = 2 * workspace_fwd_sizes_[i];
       }
- 
+
       // choose backward algo for data
       CUDNN_CHECK(cudnnGetConvolutionBackwardDataAlgorithm_v7(handle_[0],
                                                               filter_desc_,
@@ -4416,7 +4419,7 @@ namespace caffe
                                                               4,
                                                               &RetCnt,
                                                               bwd_data_algo_pref_));
- 
+
       found_conv_algorithm = false;
       for (int n = 0; n < RetCnt; n++)
       {
@@ -4444,7 +4447,7 @@ namespace caffe
           CUDNN_CONVOLUTION_FWD_SPECIFY_WORKSPACE_LIMIT,
           workspace_limit_bytes,
           &fwd_algo_[i]));
- 
+
       // We have found that CUDNN_CONVOLUTION_FWD_ALGO_IMPLICIT_PRECOMP_GEMM is
       // buggy. Thus, if this algo was chosen, choose winograd instead. If
       // winograd is not supported or workspace is larger than threshold, choose
@@ -4470,7 +4473,7 @@ namespace caffe
           fwd_algo_[i] = CUDNN_CONVOLUTION_FWD_ALGO_WINOGRAD;
         }
       }
- 
+
       CUDNN_CHECK(cudnnGetConvolutionForwardWorkspaceSize(
           handle_[0],
           top_descs_[i],
@@ -4479,7 +4482,7 @@ namespace caffe
           bottom_descs_[i],
           fwd_algo_[i],
           &(workspace_fwd_sizes_[i])));
- 
+
       // choose backward algorithm for filter
       CUDNN_CHECK(cudnnGetConvolutionBackwardFilterAlgorithm(
           handle_[0],
@@ -4490,7 +4493,7 @@ namespace caffe
           CUDNN_CONVOLUTION_BWD_FILTER_SPECIFY_WORKSPACE_LIMIT,
           workspace_limit_bytes,
           &bwd_filter_algo_[i]));
- 
+
       // get workspace for backwards filter algorithm
       CUDNN_CHECK(cudnnGetConvolutionBackwardFilterWorkspaceSize(
           handle_[0],
@@ -4500,7 +4503,7 @@ namespace caffe
           filter_desc_,
           bwd_filter_algo_[i],
           &workspace_bwd_filter_sizes_[i]));
- 
+
       // choose backward algo for data
       CUDNN_CHECK(cudnnGetConvolutionBackwardDataAlgorithm(
           handle_[0],
@@ -4511,7 +4514,7 @@ namespace caffe
           CUDNN_CONVOLUTION_BWD_DATA_SPECIFY_WORKSPACE_LIMIT,
           workspace_limit_bytes,
           &bwd_data_algo_[i]));
- 
+
       // get workspace size
       CUDNN_CHECK(cudnnGetConvolutionBackwardDataWorkspaceSize(
           handle_[0],
@@ -4523,12 +4526,12 @@ namespace caffe
           &workspace_bwd_data_sizes_[i]));
 #endif
     }
- 
+
     // reduce over all workspace sizes to get a maximum to allocate / reallocate
     size_t total_workspace_fwd = 0;
     size_t total_workspace_bwd_data = 0;
     size_t total_workspace_bwd_filter = 0;
- 
+
     for (size_t i = 0; i < bottom.size(); i++)
     {
       total_workspace_fwd = std::max(total_workspace_fwd,
@@ -4545,16 +4548,16 @@ namespace caffe
     // ensure all groups have enough workspace
     size_t total_max_workspace = max_workspace *
                                  (this->group_ * CUDNN_STREAMS_PER_GROUP);
- 
+
     // this is the total amount of storage needed over all groups + streams
     if (total_max_workspace > workspaceSizeInBytes)
     {
       DLOG(INFO) << "Reallocating workspace storage: " << total_max_workspace;
       workspaceSizeInBytes = total_max_workspace;
- 
+
       // free the existing workspace and allocate a new (larger) one
       cudaFree(this->workspaceData);
- 
+
       cudaError_t err = cudaMalloc(&(this->workspaceData), workspaceSizeInBytes);
       if (err != cudaSuccess)
       {
@@ -4568,7 +4571,7 @@ namespace caffe
           bwd_filter_algo_[i] = CUDNN_CONVOLUTION_BWD_FILTER_ALGO_0;
           bwd_data_algo_[i] = CUDNN_CONVOLUTION_BWD_DATA_ALGO_0;
         }
- 
+
         // NULL out all workspace pointers
         for (int g = 0; g < (this->group_ * CUDNN_STREAMS_PER_GROUP); g++)
         {
@@ -4578,14 +4581,14 @@ namespace caffe
         workspaceData = NULL;
         workspaceSizeInBytes = 0;
       }
- 
+
       // if we succeed in the allocation, set pointer aliases for workspaces
       for (int g = 0; g < (this->group_ * CUDNN_STREAMS_PER_GROUP); g++)
       {
         workspace[g] = reinterpret_cast<char *>(workspaceData) + g * max_workspace;
       }
     }
- 
+
     // Tensor descriptor for bias.
     if (this->bias_term_)
     {
@@ -4593,7 +4596,7 @@ namespace caffe
           &bias_desc_, 1, this->num_output_ / this->group_, 1, 1);
     }
   }
- 
+
   template <typename Dtype>
   CuDNNDeconvolutionLayer<Dtype>::~CuDNNDeconvolutionLayer()
   {
@@ -4602,7 +4605,7 @@ namespace caffe
     {
       return;
     }
- 
+
     for (int i = 0; i < bottom_descs_.size(); i++)
     {
       cudnnDestroyTensorDescriptor(bottom_descs_[i]);
@@ -4614,13 +4617,13 @@ namespace caffe
       cudnnDestroyTensorDescriptor(bias_desc_);
     }
     cudnnDestroyFilterDescriptor(filter_desc_);
- 
+
     for (int g = 0; g < this->group_ * CUDNN_STREAMS_PER_GROUP; g++)
     {
       cudaStreamDestroy(stream_[g]);
       cudnnDestroy(handle_[g]);
     }
- 
+
     cudaFree(workspaceData);
     delete[] workspace;
     delete[] stream_;
@@ -4632,14 +4635,14 @@ namespace caffe
     delete[] workspace_bwd_data_sizes_;
     delete[] workspace_bwd_filter_sizes_;
   }
- 
+
   INSTANTIATE_CLASS(CuDNNDeconvolutionLayer);
- 
+
 } // namespace caffe
 #endif
 ```
 
- 由于cuDNN对代码进行了改版，在cudnn.h文件中不再指出cudnn的版本号，而是放在了cudnn_version.h文件中，所以，将cudnn_version.h中对于版本段的代码复制到cudnn.h文件中，代码如下：
+由于cuDNN对代码进行了改版，在cudnn.h文件中不再指出cudnn的版本号，而是放在了cudnn_version.h文件中，所以，将cudnn_version.h中对于版本段的代码复制到cudnn.h文件中，代码如下：
 
 ```bash
 locate cudnn_version.h
@@ -4667,7 +4670,7 @@ sudo gedit /usr/local/cuda/targets/x86_64-linux/include/cudnn.h
 
 ![8a8df47d267a4f35a0e641ea1e4057c4](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:15_8a8df47d267a4f35a0e641ea1e4057c4.png)
 
- 之后重新执行编译：
+之后重新执行编译：
 
 ```bash
 sudo make clean && make all -j$(nproc)
@@ -4677,7 +4680,7 @@ sudo make clean && make all -j$(nproc)
 
 ![a97e353858cb415487b0c511e20a3d8e](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:29:12_a97e353858cb415487b0c511e20a3d8e.png)
 
- 测试，时间较慢，耐心等待~
+测试，时间较慢，耐心等待~
 
 ```bash
 sudo make test -j$(nproc)
@@ -4691,7 +4694,7 @@ sudo make runtest -j$(nproc)
 sudo make pycaffe -j$(nproc)
 ```
 
- 可能会有报错，但问题不大，我们只是需要那些库文件~
+可能会有报错，但问题不大，我们只是需要那些库文件~
 
 ## 24.安装libfreenect2
 
@@ -4737,7 +4740,7 @@ sudo cp ../platform/linux/udev/90-kinect2.rules /etc/udev/rules.d/
 
 ![6895bcbb15424c2db7b82265cd3873d5](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:16_6895bcbb15424c2db7b82265cd3873d5.png)
 
- 解压之后，进入文件夹打开终端：
+解压之后，进入文件夹打开终端：
 
 ```bash
 sudo apt install cmake-gui && mkdir build && cd  build && cmake-gui
@@ -4869,28 +4872,28 @@ CONTENT_LINK=https://mirrors.sustech.edu.cn/carla/carla_content/${CONTENT_ID}.ta
 
 ```cpp
 // @file : test_streaming.cpp
- 
+
 // Line 58
 carla::streaming::low_level::Server<tcp::Server> srv(io.service, TESTING_PORT);
- 
+
 // Line 63
 carla::streaming::low_level::Client<tcp::Client> c;
- 
+
 // Line 93
 carla::streaming::low_level::Server<tcp::Server> srv(io.service, TESTING_PORT);
- 
+
 // Line 96
 carla::streaming::low_level::Client<tcp::Client> c;
 ```
 
 ```shell
 # @file : Package.sh(https://github.com/annaornatskaya/carla/tree/fisheye-sensor)
- 
+
   # copy_if_changed "./Plugins/" "${DESTINATION}/Plugins/"
- 
+
   copy_if_changed "./Unreal/CarlaUE4/Content/Carla/HDMaps/*.pcd" "${DESTINATION}/HDMaps/"
   copy_if_changed "./Unreal/CarlaUE4/Content/Carla/HDMaps/Readme.md" "${DESTINATION}/HDMaps/README"
- 
+
   # NOTE: Modified by M0rtzz
   if [ -d "./Plugins/" ] ; then
     copy_if_changed "./Plugins/" "${DESTINATION}/Plugins/"
@@ -4927,7 +4930,7 @@ carla::streaming::low_level::Client<tcp::Client> c;
 
 ![image-20240718162329579](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/16:23:29_image-20240718162329579.png)
 
-[Linux原生微信_需要安装星火应用商店](spk://store/chat/store.spark-app.wechat-linux-spark)
+[Linux原生微信\_需要安装星火应用商店](spk://store/chat/store.spark-app.wechat-linux-spark)
 
 ![image-20240718202231084](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/20:22:31_image-20240718202231084.png)
 
@@ -4984,7 +4987,7 @@ sudo apt update
 ```
 
 ```bash
-sudo apt install libdvdnav4 libdvdread4 gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly libdvd-pkg
+sudo apt install libdvdnav-dev libdvdread-dev gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly libdvd-pkg
 ```
 
 ```bash
@@ -5028,13 +5031,11 @@ sudo apt update && sudo apt install diodon
 
 ![image-20240718160648762](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/16:06:48_image-20240718160648762.png)
 
-
-
 另外可使用中科大反向代理`Canonical`的`ppa仓库`：
 
->   [!TIP]
+> [!TIP]
 >
->   将`/etc/apt/sources.list.d`下`.list`文件中的`http://ppa.launchpad.net`替换为`https://launchpad.proxy.ustclug.org`即可，建议替换前先`sudo cp /etc/apt/sources.list.d/your-file.list /etc/apt/sources.list.d/your-file.list.save`备份一下（请自行替换文件名）
+> 将`/etc/apt/sources.list.d`下`.list`文件中的`http://ppa.launchpad.net`替换为`https://launchpad.proxy.ustclug.org`即可，建议替换前先`sudo cp /etc/apt/sources.list.d/your-file.list /etc/apt/sources.list.d/your-file.list.save`备份一下（请自行替换文件名）
 
 ![image-20240718163012569](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/16:30:12_image-20240718163012569.png)
 
