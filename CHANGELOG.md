@@ -1,10 +1,8 @@
-## <small>2.5.4 (2024-07-19)</small>
+# Changelog
 
-* 🐛 fix(music.tsx): fix the bug of the music not automatically playing again when it ends ([9c19359](https://github.com/M0rtzz/m0rtzz.blog/commit/9c19359))
-* 📝 docs(environment_configuration.md): update image and cmd ([00c1a57](https://github.com/M0rtzz/m0rtzz.blog/commit/00c1a57))
-* 🔖 tag(package.json): v2.5.4 ([965690c](https://github.com/M0rtzz/m0rtzz.blog/commit/965690c))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
+## [2.5.5](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.5.4...v2.5.5) (2024-07-19)
 
 ## 2.5.0 (2024-07-18)
 
@@ -1321,5 +1319,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
