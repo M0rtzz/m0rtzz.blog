@@ -159,7 +159,7 @@ deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted univ
 sudo apt update
 ```
 
-anaconda镜像源（~/.condarc）:
+anaconda镜像源（~/.condarc）【**注意替换**`envs_dirs`**中的绝对路径**】:
 
 ```yaml
 channels:
@@ -235,7 +235,11 @@ sudo update-initramfs -u
 reboot
 ```
 
-## 5.安装Nvidia驱动（有可能会损坏系统，如果损坏可以重装并看看网上的其他教程，除了这种安装方法还有其他安装方法，自行上网了解）
+## 5.安装Nvidia驱动
+
+>   [!CAUTION]
+>
+>   有可能会损坏系统，如果损坏可以重装并看看网上的其他教程，除了这种安装方法还有其他安装方法，但是曾经试过很多种方法，鄙人认为这种方法最快捷且最不容易损坏系统。
 
 打开终端，输入：
 
@@ -488,7 +492,7 @@ git clone -b 3.4.16 https://github.com/opencv/opencv.git opencv-3.4.16
 或镜像：
 
 ```bash
-git clone -b 3.4.16 https://gitcode.com/mirrors/opencv/opencv.git opencv-3.4.16
+git clone -b 3.4.16 https://kkgithub.com/opencv/opencv.git opencv-3.4.16
 ```
 
 ```bash
@@ -502,7 +506,7 @@ git clone -b 3.4.16 https://github.com/opencv/opencv_contrib.git opencv-3.4.16
 或镜像：
 
 ```bash
-git clone -b 3.4.16 https://gitcode.com/mirrors/opencv/opencv_contrib.git opencv_contrib-3.4.16
+git clone -b 3.4.16 https://mirror.ghproxy.com/https://github.com/opencv/opencv_contrib.git opencv_contrib-3.4.16
 ```
 
 安装所需依赖库，打开终端，输入：
@@ -578,11 +582,7 @@ cd downloads && pwd
 
 [https://github.com/opencv/opencv_3rdparty](https://github.com/opencv/opencv_3rdparty)
 
-或镜像：
-
-[https://gitcode.com/mirrors/opencv/opencv_3rdparty](https://gitcode.com/mirrors/opencv/opencv_3rdparty)
-
-然后重新打开终端，输入：cmake（**别忘了改路径**）：
+然后重新打开终端，输入：（**别忘了改路径**）：
 
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
@@ -1463,7 +1463,7 @@ git clone https://github.com/AlexeyAB/darknet.git darknet
 或镜像：
 
 ```bash
-git clone https://gitcode.com/mirrors/AlexeyAB/darknet.git darknet
+git clone https://mirror.ghproxy.com/https://github.com/AlexeyAB/darknet.git darknet
 ```
 
 ```bash
@@ -1649,7 +1649,7 @@ git clone --recursive https://github.com/leggedrobotics/darknet_ros.git darknet_
 或镜像：
 
 ```bash
-git clone --recursive https://gitcode.com/mirrors/leggedrobotics/darknet_ros.git darknet_ros
+git clone --recursive https://mirror.ghproxy.com/https://github.com/leggedrobotics/darknet_ros.git darknet_ros
 ```
 
 ### ①如果是OpenCV4
@@ -1728,7 +1728,7 @@ git clone https://github.com/AlexeyAB/darknet.git darknet
 或镜像：
 
 ```bash
-git clone https://gitcode.com/mirrors/AlexeyAB/darknet.git darknet
+git clone https://mirror.ghproxy.com/https://github.com/AlexeyAB/darknet.git darknet
 ```
 
 catkin_make如果编译不过的话（error: ‘IplImage’之类的，之前装OpenCV提到过避免报错的方法），注意以下命令是只编译darknet-ros一个包，若工作空间下有多个包需要一起编译那么把命令中的darknet-ros删除重新执行即可：
@@ -1758,7 +1758,7 @@ git clone -b v1.4.0 https://github.com/microsoft/Azure-Kinect-Sensor-SDK.git Azu
 或镜像：
 
 ```bash
-git clone -b v1.4.0 https://gitcode.com/mirrors/microsoft/Azure-Kinect-Sensor-SDK.git Azure-Kinect-Sensor-SDK-v1.4.0
+git clone -b v1.4.0 https://mirror.ghproxy.com/https://github.com/microsoft/Azure-Kinect-Sensor-SDK.git Azure-Kinect-Sensor-SDK-v1.4.0
 ```
 
 ```bash
@@ -1920,9 +1920,9 @@ LABEL="k4a_logic_rules_end"
 
 ### ②Ubuntu20.04
 
-### Reference
-
-[https://blog.csdn.net/qq_42108414/article/details/129015474](https://blog.csdn.net/qq_42108414/article/details/129015474)
+>   Reference：
+>
+>   [https://blog.csdn.net/qq_42108414/article/details/129015474](https://blog.csdn.net/qq_42108414/article/details/129015474)
 
 ## 19.配置科大讯飞
 
@@ -2052,7 +2052,7 @@ git clone -b v2.50.0 https://github.com/IntelRealSense/librealsense.git libreals
 或镜像：
 
 ```bash
-git clone -b v2.50.0 https://gitcode.com/mirrors/IntelRealSense/librealsense.git librealsense-2.50.0
+git clone -b v2.50.0 https://mirror.ghproxy.com/https://github.com/IntelRealSense/librealsense.git librealsense-2.50.0
 ```
 
 ![image-20240206162428124](https://static.m0rtzz.com/images/Year:2024/Month:03/Day:10/17:35:25_16_24_28_image-20240206162428124.png)
@@ -2074,6 +2074,7 @@ cd librealsense-2.50.0/
 ```
 
 ```bash
+# 应该是只能在Ubuntu18.04下执行
 ./scripts/patch-realsense-ubuntu-lts.sh
 ```
 
@@ -2138,7 +2139,7 @@ git clone -b ros1-legacy https://github.com/IntelRealSense/realsense-ros.git rea
 或镜像：
 
 ```bash
-git clone -b ros1-legacy https://gitcode.com/mirrors/IntelRealSense/realsense-ros.git realsense-ros
+git clone -b ros1-legacy https://mirror.ghproxy.com/https://github.com/IntelRealSense/realsense-ros.git realsense-ros
 ```
 
 ![2c9b3f3767d845dcb4e2ace8830f6d7b.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:10_2c9b3f3767d845dcb4e2ace8830f6d7b.png)
@@ -2206,7 +2207,7 @@ git clone https://github.com/Kinovarobotics/kinova-ros.git kinova-ros
 或镜像：
 
 ```bash
-git clone https://gitcode.com/mirrors/Kinovarobotics/kinova-ros.git kinova-ros
+git clone https://mirror.ghproxy.com/https://github.com/Kinovarobotics/kinova-ros.git kinova-ros
 ```
 
 ```bash
@@ -2964,7 +2965,7 @@ git clone https://github.com/BVLC/caffe.git caffe
 或镜像：
 
 ```bash
-git clone https://gitcode.com/mirrors/BVLC/caffe.git caffe
+git clone https://mirror.ghproxy.com/https://github.com/BVLC/caffe.git caffe
 ```
 
 ```bash
@@ -4705,7 +4706,7 @@ git clone https://github.com/OpenKinect/libfreenect2.git
 或镜像：
 
 ```bash
-git clone https://gitcode.com/mirrors/OpenKinect/libfreenect2.git
+git clone https://mirror.ghproxy.com/https://github.com/OpenKinect/libfreenect2.git
 ```
 
 ```bash
@@ -4775,7 +4776,7 @@ git clone -b pcl-1.9.1 https://github.com/PointCloudLibrary/pcl.git pcl-1.9.1
 或镜像：
 
 ```bash
-git clone -b pcl-1.9.1 https://gitcode.com/mirrors/PointCloudLibrary/pcl.git pcl-1.9.1
+git clone -b pcl-1.9.1 https://mirror.ghproxy.com/https://github.com/PointCloudLibrary/pcl.git pcl-1.9.1
 ```
 
 之后进入文件夹打开终端输入：
@@ -4833,7 +4834,7 @@ sudo chown -R m0rtzz: *
 
 ![a430a7833c97404cae877a549b6b2322](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:18_a430a7833c97404cae877a549b6b2322.png)
 
-个人认为是因执行Setup.sh脚本未赋予root权限导致依赖未安装完整，所以再次执行：
+鄙人认为是因执行Setup.sh脚本未赋予root权限导致依赖未安装完整，所以再次执行：
 
 ```bash
 sudo ./Setup.sh
@@ -4861,7 +4862,7 @@ cd your-path/UnrealEngine_4.26/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linu
 tar -zxvf native-linux-v17_clang-10.0.1-centos7.tar.gz
 ```
 
-## 27.安装Carla0.9.13（添加fisheye sensor模块）
+## 27.安装CARLA0.9.14（添加fisheye sensor模块）
 
 修改Update.sh下载网址为南方科技大学镜像站的网址：
 
