@@ -95,6 +95,52 @@ function copyLastCommand()
 
 # 创建一个别名，若与你的其他软件包内置命令冲突，请自行更换别名
 alias clc="copyLastCommand"
+
+function powerOff() {
+    sudo shutdown -c # 取消之前的计划关机
+
+    echo "已取消之前的计划关机，下面进行新的计划~"
+
+    echo "请输入关机的年份（YYYY）："
+    read shutdown_year
+
+    echo "请输入关机的月份（MM）："
+    read shutdown_month
+
+    echo "请输入关机的日期（DD）："
+    read shutdown_day
+
+    echo "请输入关机的小时（24小时制，HH）："
+    read shutdown_hour
+
+    echo "请输入关机的分钟（MM）："
+    read shutdown_minute
+
+    shutdown_datetime="${shutdown_year}-${shutdown_month}-${shutdown_day} ${shutdown_hour}:${shutdown_minute}"
+
+    # 检查日期时间是否合法
+    date -d "${shutdown_datetime}" &>/dev/null
+    if [ $? -ne 0 ]; then
+        echo "错误：请输入合法的日期和时间格式（YYYY-MM-DD HH:MM）"
+        return 1
+    fi
+
+    # 计算等待时间（秒数）
+    current_timestamp=$(date +%s)
+    shutdown_timestamp=$(date -d "${shutdown_datetime}" +%s)
+    wait_time=$(echo "(${shutdown_timestamp} - ${current_timestamp}) / 60" | bc)
+
+    # 检查是否为未来时间
+    if [ ${wait_time} -le 0 ]; then
+        echo "错误：请输入未来的日期和时间"
+        return 1
+    fi
+
+    echo "计划在 ${shutdown_datetime} 关机"
+    sudo shutdown -h +${wait_time}
+}
+
+alias po="powerOff"
 ```
 
 之后保存退出
@@ -113,7 +159,7 @@ sudo gedit /etc/apt/sources.list
 
 将原本的注释掉，在最下方加入:
 
-```shell
+```bash
 # 中科大源（Ubuntu 18.04）
 deb https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse
 deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse
@@ -132,7 +178,7 @@ deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-backports main restricted uni
 # deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
 ```
 
-```shell
+```bash
 # 中科大源（Ubuntu 20.04）
 deb https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse
 deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse
@@ -485,7 +531,7 @@ rosrun turtlesim turtle_teleop_key
 
 ### ①OpenCV3的安装步骤
 
-```shell
+```bash
 git clone -b 3.4.16 https://github.com/opencv/opencv.git opencv-3.4.16
 ```
 
@@ -499,7 +545,7 @@ git clone -b 3.4.16 https://mirror.ghproxy.com/https://github.com/opencv/opencv.
 cd opencv-3.4.16
 ```
 
-```shell
+```bash
 git clone -b 3.4.16 https://github.com/opencv/opencv_contrib.git opencv-3.4.16
 ```
 
@@ -1456,7 +1502,7 @@ reboot
 
 ## 17.安装darknet版yolov3及darknet-ros工作空间
 
-```shell
+```bash
 git clone https://github.com/AlexeyAB/darknet.git darknet
 ```
 
@@ -1642,7 +1688,7 @@ cd src/
 
 ### ①如果是OpenCV3
 
-```shell
+```bash
 git clone --recursive https://github.com/leggedrobotics/darknet_ros.git darknet_ros
 ```
 
@@ -1721,7 +1767,7 @@ void rgbgr_image(image im)
 cd darknet_ros && sudo rm -rf darknet
 ```
 
-```shell
+```bash
 git clone https://github.com/AlexeyAB/darknet.git darknet
 ```
 
@@ -1755,7 +1801,7 @@ catkin_make -j$(nproc) darknet_ros --cmake-args -DCMAKE_CXX_FLAGS=-DCV__ENABLE_C
 
 [https://blog.csdn.net/BlacKingZ/article/details/119115883](https://blog.csdn.net/BlacKingZ/article/details/119115883)
 
-```shell
+```bash
 git clone -b v1.4.0 https://github.com/microsoft/Azure-Kinect-Sensor-SDK.git Azure-Kinect-Sensor-SDK-v1.4.0
 ```
 
@@ -2049,7 +2095,7 @@ realsense-viewer
 
 下载lib并指定版本为v2.50.0，否则接下来会与realsense-ros版本冲突导致无法打开摄像头:
 
-```shell
+```bash
 git clone -b v2.50.0 https://github.com/IntelRealSense/librealsense.git librealsense-2.50.0
 ```
 
@@ -2136,7 +2182,7 @@ mkdir src && cd src/
 
 下载功能包:
 
-```shell
+```bash
 git clone -b ros1-legacy https://github.com/IntelRealSense/realsense-ros.git realsense-ros
 ```
 
@@ -2204,7 +2250,7 @@ echo 'source /home/m0rtzz/Workspaces/kinova_test_ws/devel/setup.bash' >> ~/.bash
 cd src/
 ```
 
-```shell
+```bash
 git clone https://github.com/Kinovarobotics/kinova-ros.git kinova-ros
 ```
 
@@ -2962,7 +3008,7 @@ touch auto_slam.launch && code auto_slam.launch
 sudo apt install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler libatlas-base-dev libgflags-dev libgoogle-glog-dev liblmdb-dev && sudo apt install --no-install-recommends libboost-all-dev
 ```
 
-```shell
+```bash
 git clone https://github.com/BVLC/caffe.git caffe
 ```
 
@@ -4703,7 +4749,7 @@ sudo make pycaffe -j$(nproc)
 
 ## 24.安装libfreenect2
 
-```shell
+```bash
 git clone https://github.com/OpenKinect/libfreenect2.git libfreenect2
 ```
 
@@ -4773,7 +4819,7 @@ sudo make install
 
 接下来安装pcl：
 
-```shell
+```bash
 git clone -b pcl-1.9.1 https://github.com/PointCloudLibrary/pcl.git pcl-1.9.1
 ```
 
@@ -4874,7 +4920,7 @@ tar -zxvf native-linux-v17_clang-10.0.1-centos7.tar.gz
 
 修改Update.sh下载网址为南方科技大学镜像站的网址：
 
-```shell
+```bash
 #CONTENT_LINK=http://carla-assets.s3.amazonaws.com/${CONTENT_ID}.tar.gz
 CONTENT_LINK=https://mirrors.sustech.edu.cn/carla/carla_content/${CONTENT_ID}.tar.gz
 ```
@@ -4895,7 +4941,7 @@ carla::streaming::low_level::Server<tcp::Server> srv(io.service, TESTING_PORT);
 carla::streaming::low_level::Client<tcp::Client> c;
 ```
 
-```shell
+```bash
 # @file : Package.sh(https://github.com/annaornatskaya/carla/tree/fisheye-sensor)
 
   # copy_if_changed "./Plugins/" "${DESTINATION}/Plugins/"
@@ -4977,7 +5023,7 @@ sudo apt install neofetch
 
 或安装用C语言写的更快的`fastfetch`：
 
-```shell
+```bash
 wget -q --show-progress https://github.com/fastfetch-cli/fastfetch/releases/latest/download/fastfetch-linux-amd64.deb -O fastfetch-linux-amd64.deb && sudo apt install -y ./fastfetch-linux-amd64.deb
 ```
 
@@ -5019,7 +5065,7 @@ sudo apt install gnome-tweak-tool
 
 命令启动：
 
-```shell
+```bash
 gnome-tweaks
 ```
 
@@ -5031,7 +5077,7 @@ gnome-tweaks
 
 剪贴板管理工具：
 
-```shell
+```bash
 sudo add-apt-repository ppa:diodon-team/stable
 sudo apt update && sudo apt install diodon
 ```
@@ -5056,13 +5102,13 @@ Flatpak：
 
 Ubuntu 18.10 (Cosmic Cuttlefish) or later：
 
-```shell
+```bash
 sudo apt install flatpak
 ```
 
 Older Ubuntu versions：
 
-```shell
+```bash
 sudo add-apt-repository ppa:flatpak/stable
 sudo apt update
 sudo apt install flatpak
@@ -5074,7 +5120,7 @@ FlatHub上交镜像源：
 
 切换之后更新Flatpak应用将加速：
 
-```shell
+```bash
 sudo flatpak update
 ```
 
