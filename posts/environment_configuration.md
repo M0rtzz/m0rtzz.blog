@@ -4990,7 +4990,7 @@ carla::streaming::low_level::Client<tcp::Client> c;
 
 ![image-20240718202231084](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/20:22:31_image-20240718202231084.png)
 
-Ubuntu18.10以下版本或者不想安装星火应用商店的用户可安装Flatpak打包的微信（需安装Flatpak，下文有Flatpak安装教程）：
+Ubuntu20.04以下版本或者不想安装星火应用商店的用户可安装Flatpak打包的微信（需安装Flatpak，下文有Flatpak安装教程）：
 
 ```bash
 wget -q --show-progress https://github.com/web1n/wechat-universal-flatpak/releases/latest/download/com.tencent.WeChat-x86_64.flatpak -O com.tencent.WeChat-x86_64.flatpak && sudo flatpak install ./com.tencent.WeChat-x86_64.flatpak
