@@ -1,12 +1,8 @@
-## <small>2.6.1 (2024-07-20)</small>
+# Changelog
 
-* 💄 ui(globals.css): add the style for hyperlinks in the warning box ([b28efdb](https://github.com/M0rtzz/m0rtzz.blog/commit/b28efdb))
-* 📝 docs(CHANGELOG.md): automatic update ([a313742](https://github.com/M0rtzz/m0rtzz.blog/commit/a313742))
-* 📝 docs(environment_configuration.md): update images ([cfb3ca7](https://github.com/M0rtzz/m0rtzz.blog/commit/cfb3ca7))
-* 🔖 tag(package.json): v2.5.4 ([ebea91f](https://github.com/M0rtzz/m0rtzz.blog/commit/ebea91f))
-* 🔖 tag(package.json): v2.6.1 ([dba12ae](https://github.com/M0rtzz/m0rtzz.blog/commit/dba12ae))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
+## [2.6.2](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.6.1...v2.6.2) (2024-07-20)
 
 ## 2.6.0 (2024-07-20)
 
@@ -1383,5 +1379,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
