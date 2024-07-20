@@ -279,7 +279,7 @@ reboot
 nvidia-smi
 ```
 
-![image-20240219202426153](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:19/20:24:26_image-20240219202426153.png)
+![image-20240720105532528](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:20/10:55:32_image-20240720105532528.png)
 
 ## 6.cuda安装
 
@@ -314,7 +314,7 @@ source ~/.bashrc
 nvcc --version
 ```
 
-![image-20240219202216276](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:19/20:22:21_image-20240219202216276.png)
+![image-20240720105543634](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:20/10:55:43_image-20240720105543634.png)
 
 安装成功！
 
@@ -339,7 +339,7 @@ sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
 cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
 ```
 
-![image-20240206155459623](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/15:54:59_image-20240206155459623.png)
+![image-20240720105555452](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:20/10:55:55_image-20240720105555452.png)
 
 ## 8.安装ROS（有些图忘记截了）
 
@@ -4973,7 +4973,7 @@ sudo apt install tree
 sudo apt install neofetch
 ```
 
-![image-20240718163244367](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/16:32:44_image-20240718163244367.png)
+![image-20240720105620903](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:20/10:56:21_image-20240720105620903.png)
 
 或安装用C语言写的更快的`fastfetch`：
 
@@ -4981,7 +4981,7 @@ sudo apt install neofetch
 wget -q --show-progress https://github.com/fastfetch-cli/fastfetch/releases/latest/download/fastfetch-linux-amd64.deb -O fastfetch-linux-amd64.deb && sudo apt install -y ./fastfetch-linux-amd64.deb
 ```
 
-![image-20240718171137845](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/17:11:37_image-20240718171137845.png)
+![image-20240720105657155](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:20/10:56:57_image-20240720105657155.png)
 
 rar文件解压工具：
 
@@ -5050,7 +5050,7 @@ sudo apt update && sudo apt install diodon
 >
 > 将`/etc/apt/sources.list.d`下`.list`文件中的`http://ppa.launchpad.net`替换为`https://launchpad.proxy.ustclug.org`即可，建议替换前先`sudo cp /etc/apt/sources.list.d/your-file.list /etc/apt/sources.list.d/your-file.list.save`备份一下（请自行替换文件名）
 
-![image-20240718163012569](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/16:30:12_image-20240718163012569.png)
+![image-20240720105759025](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:20/10:57:59_image-20240720105759025.png)
 
 Flatpak：
 
