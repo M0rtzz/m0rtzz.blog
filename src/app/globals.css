@@ -656,3 +656,26 @@ h6 {
 .thin-scrollbar {
   scrollbar-width: thin;
 }
+
+/* 警告框中超链接的样式 */
+div.not-prose:nth-child(n) > div:nth-child(n) > p:nth-child(n) > a:nth-child(n),
+div.not-prose:nth-child(n)
+  > div:nth-child(n)
+  > p:nth-child(n)
+  > em:nth-child(n)
+  > a:nth-child(n),
+div.not-prose:nth-child(n)
+  > div:nth-child(n)
+  > p:nth-child(n)
+  > strong:nth-child(n)
+  > a:nth-child(n),
+div.not-prose:nth-child(n)
+  > div:nth-child(n)
+  > p:nth-child(n)
+  > em:nth-child(n)
+  > strong:nth-child(n)
+  > a:nth-child(n) {
+  color: var(--tw-prose-links);
+  text-decoration: underline;
+  font-weight: 500;
+}
