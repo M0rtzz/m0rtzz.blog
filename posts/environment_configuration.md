@@ -96,6 +96,7 @@ function copyLastCommand()
 # 创建一个别名，若与你的其他软件包内置命令冲突，请自行更换别名
 alias clc="copyLastCommand"
 
+# 计划关机
 function powerOff() {
     sudo shutdown -c # 取消之前的计划关机
 
@@ -121,7 +122,7 @@ function powerOff() {
     # 检查日期时间是否合法
     date -d "${shutdown_datetime}" &>/dev/null
     if [ $? -ne 0 ]; then
-        echo "错误：请输入合法的日期和时间格式（YYYY-MM-DD HH:MM）"
+        echo "Error：请输入合法的日期和时间格式（YYYY-MM-DD HH:MM）"
         return 1
     fi
 
@@ -132,7 +133,7 @@ function powerOff() {
 
     # 检查是否为未来时间
     if [ ${wait_time} -le 0 ]; then
-        echo "错误：请输入未来的日期和时间"
+        echo "Error：请输入未来的日期和时间"
         return 1
     fi
 
