@@ -29,7 +29,7 @@
     > code:nth-child(n) {
     padding: 0.2em 0.4em;
     color: #1f2328;
-    background-color: #afb8c133;
+    background-color: #eff1f5;
     border-radius: 6px;
     margin: 0;
     white-space: break-spaces;
@@ -40,7 +40,7 @@
   .prose > blockquote:nth-child(n) > p:nth-child(n) > code:nth-child(n) {
     padding: 0.2em 0.4em;
     color: #1f2328;
-    background-color: #afb8c133;
+    background-color: #eff1f5;
     border-radius: 6px;
     margin: 0;
     white-space: break-spaces;
@@ -56,7 +56,7 @@
     > code:nth-child(n) {
     padding: 0.2em 0.4em;
     color: #1f2328;
-    background-color: #afb8c133;
+    background-color: #eff1f5;
     border-radius: 6px;
     margin: 0;
     white-space: break-spaces;
@@ -72,7 +72,7 @@
     > code:nth-child(n) {
     padding: 0.2em 0.4em;
     color: #1f2328;
-    background-color: #afb8c133;
+    background-color: #eff1f5;
     border-radius: 6px;
     margin: 0;
     white-space: break-spaces;
@@ -83,7 +83,7 @@
   ol li code {
     padding: 0.2em 0.4em;
     color: #1f2328;
-    background-color: #afb8c133;
+    background-color: #eff1f5;
     border-radius: 6px;
     margin: 0;
     white-space: break-spaces;
@@ -94,7 +94,7 @@
   ul li code {
     padding: 0.2em 0.4em;
     color: #1f2328;
-    background-color: #afb8c133;
+    background-color: #eff1f5;
     border-radius: 6px;
     margin: 0;
     white-space: break-spaces;
@@ -104,7 +104,7 @@
   .prose > p:nth-child(n) > code:nth-child(n) {
     padding: 0.2em 0.4em;
     color: #1f2328;
-    background-color: #afb8c133;
+    background-color: #eff1f5;
     border-radius: 6px;
     margin: 0;
     white-space: break-spaces;
@@ -139,16 +139,6 @@
       :where([class~='not-prose'], [class~='not-prose'] *)
     )::after {
     content: none;
-  }
-
-  .prose > p:nth-child(n) > code:nth-child(n) {
-    padding: 0.2em 0.4em;
-    border-radius: 6px;
-    color: #e6edf3;
-    background-color: rgba(90, 97, 101, 0.4);
-    margin: 0;
-    white-space: break-spaces;
-    font-weight: normal;
   }
 
   /* 警告框内局部代码块 */
