@@ -489,10 +489,10 @@ rosrun turtlesim turtle_teleop_key
 git clone -b 3.4.16 https://github.com/opencv/opencv.git opencv-3.4.16
 ```
 
-或镜像：
+或公益加速源：
 
 ```bash
-git clone -b 3.4.16 https://kkgithub.com/opencv/opencv.git opencv-3.4.16
+git clone -b 3.4.16 https://mirror.ghproxy.com/https://github.com/opencv/opencv.git opencv-3.4.16
 ```
 
 ```bash
@@ -503,7 +503,7 @@ cd opencv-3.4.16
 git clone -b 3.4.16 https://github.com/opencv/opencv_contrib.git opencv-3.4.16
 ```
 
-或镜像：
+或公益加速源：
 
 ```bash
 git clone -b 3.4.16 https://mirror.ghproxy.com/https://github.com/opencv/opencv_contrib.git opencv_contrib-3.4.16
@@ -1460,7 +1460,7 @@ reboot
 git clone https://github.com/AlexeyAB/darknet.git darknet
 ```
 
-或镜像：
+或公益加速源：
 
 ```bash
 git clone https://mirror.ghproxy.com/https://github.com/AlexeyAB/darknet.git darknet
@@ -1646,7 +1646,7 @@ cd src/
 git clone --recursive https://github.com/leggedrobotics/darknet_ros.git darknet_ros
 ```
 
-或镜像：
+或公益加速源：
 
 ```bash
 git clone --recursive https://mirror.ghproxy.com/https://github.com/leggedrobotics/darknet_ros.git darknet_ros
@@ -1725,7 +1725,7 @@ cd darknet_ros && sudo rm -rf darknet
 git clone https://github.com/AlexeyAB/darknet.git darknet
 ```
 
-或镜像：
+或公益加速源：
 
 ```bash
 git clone https://mirror.ghproxy.com/https://github.com/AlexeyAB/darknet.git darknet
@@ -1755,7 +1755,7 @@ catkin_make -j$(nproc) darknet_ros --cmake-args -DCMAKE_CXX_FLAGS=-DCV__ENABLE_C
 git clone -b v1.4.0 https://github.com/microsoft/Azure-Kinect-Sensor-SDK.git Azure-Kinect-Sensor-SDK-v1.4.0
 ```
 
-或镜像：
+或公益加速源：
 
 ```bash
 git clone -b v1.4.0 https://mirror.ghproxy.com/https://github.com/microsoft/Azure-Kinect-Sensor-SDK.git Azure-Kinect-Sensor-SDK-v1.4.0
@@ -2049,7 +2049,7 @@ realsense-viewer
 git clone -b v2.50.0 https://github.com/IntelRealSense/librealsense.git librealsense-2.50.0
 ```
 
-或镜像：
+或公益加速源：
 
 ```bash
 git clone -b v2.50.0 https://mirror.ghproxy.com/https://github.com/IntelRealSense/librealsense.git librealsense-2.50.0
@@ -2136,7 +2136,7 @@ mkdir src && cd src/
 git clone -b ros1-legacy https://github.com/IntelRealSense/realsense-ros.git realsense-ros
 ```
 
-或镜像：
+或公益加速源：
 
 ```bash
 git clone -b ros1-legacy https://mirror.ghproxy.com/https://github.com/IntelRealSense/realsense-ros.git realsense-ros
@@ -2204,7 +2204,7 @@ cd src/
 git clone https://github.com/Kinovarobotics/kinova-ros.git kinova-ros
 ```
 
-或镜像：
+或公益加速源：
 
 ```bash
 git clone https://mirror.ghproxy.com/https://github.com/Kinovarobotics/kinova-ros.git kinova-ros
@@ -2962,7 +2962,7 @@ sudo apt install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libh
 git clone https://github.com/BVLC/caffe.git caffe
 ```
 
-或镜像：
+或公益加速源：
 
 ```bash
 git clone https://mirror.ghproxy.com/https://github.com/BVLC/caffe.git caffe
@@ -4700,13 +4700,13 @@ sudo make pycaffe -j$(nproc)
 ## 24.安装libfreenect2
 
 ```shell
-git clone https://github.com/OpenKinect/libfreenect2.git
+git clone https://github.com/OpenKinect/libfreenect2.git libfreenect2
 ```
 
-或镜像：
+或公益加速源：
 
 ```bash
-git clone https://mirror.ghproxy.com/https://github.com/OpenKinect/libfreenect2.git
+git clone https://mirror.ghproxy.com/https://github.com/OpenKinect/libfreenect2.git libfreenect2
 ```
 
 ```bash
@@ -4773,7 +4773,7 @@ sudo make install
 git clone -b pcl-1.9.1 https://github.com/PointCloudLibrary/pcl.git pcl-1.9.1
 ```
 
-或镜像：
+或公益加速源：
 
 ```bash
 git clone -b pcl-1.9.1 https://mirror.ghproxy.com/https://github.com/PointCloudLibrary/pcl.git pcl-1.9.1
