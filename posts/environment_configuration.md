@@ -481,7 +481,7 @@ rosrun turtlesim turtle_teleop_key
 
 ~~虽然使用cv_bridge时某些shared object有可能和ROS自带的opencv-3.2.0版本冲突，但实测安装3.2.0对cuda的兼容性太差导致无法使用深度相机，所以安装官网最近更新过的OpenCV3.4.16~~
 
-**_经尝试多版本Ubuntu和OpenCV，装Ubuntu20.04，ROS noetic和OpenCV4.2.0及其扩展模块才能解决将彩色图像转换为网络所需的输入Blob后前馈时抛出的（raised OpenCV exception，error: (-215:Assertion failed)等等）。下方OpenCV3的安装步骤仅供参考，OpenCV4.2.0的cmake命令及注意事项在本小节最后！_**
+***经尝试多版本Ubuntu和OpenCV，装Ubuntu20.04，ROS noetic和OpenCV4.2.0及其扩展模块才能解决将彩色图像转换为网络所需的输入Blob后前馈时抛出的（raised OpenCV exception，error: (-215:Assertion failed)等等）。下方OpenCV3的安装步骤仅供参考，OpenCV4.2.0的cmake命令及注意事项在本小节最后！***
 
 ### ①OpenCV3的安装步骤
 
@@ -1743,7 +1743,11 @@ catkin_make -j$(nproc) darknet_ros --cmake-args -DCMAKE_CXX_FLAGS=-DCV__ENABLE_C
 
 ![da1d083fd06f4aed9dd17b0e1446223f](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:06_da1d083fd06f4aed9dd17b0e1446223f.png)
 
-## 18.Azure Kinect SDK-v1.4.0的安装（Ubuntu18.04源码编译安装，也可像本小节末尾Ubuntu20.04一样直接使用.deb包安装）
+## 18.Azure Kinect SDK-v1.4.0的安装
+
+>   [!NOTE]
+>
+>   鄙人在Ubuntu18.04下是通过源码编译安装的，在Ubuntu20.04下是通过deb包直接安装的。
 
 ### ①Ubuntu18.04源码编译安装
 
@@ -4808,7 +4812,11 @@ sudo make install
 
 ![69d7d955c7f24ab4926dadd31dddfb04](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:18_69d7d955c7f24ab4926dadd31dddfb04.png)
 
-## 26.安装CarlaUE4（必须是Carla的UE仓库里的carla分支才可以通过安装Carla时的编译）
+## 26.安装CarlaUE4
+
+>   [!IMPORTANT]
+>
+>   必须是[CarlaUnreal的UE仓库中的carla分支](https://github.com/CarlaUnreal/UnrealEngine/tree/carla)才可以通过安装Carla时的编译。
 
 ```bash
 find . -name "*.sh" -exec dos2unix {} +
@@ -5009,9 +5017,13 @@ sudo apt update
 sudo apt install gnome-tweak-tool
 ```
 
+命令启动：
+
 ```shell
 gnome-tweaks
 ```
+
+或：
 
 ![image-20240718201417588](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/20:14:18_image-20240718201417588.png)
 
