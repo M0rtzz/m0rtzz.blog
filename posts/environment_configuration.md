@@ -744,7 +744,7 @@ sudo make -j$(nproc)
 
 安装成功！
 
-**_`<u>`设置cv_bridge的版本（ROS-melodic，经实践发现毫无效果）：`</u>`_**
+***设置cv_bridge的版本（ROS-melodic，经实践发现毫无效果）：***
 
 ```bash
 sudo gedit /opt/ros/melodic/share/cv_bridge/cmake/cv_bridgeConfig.cmake
