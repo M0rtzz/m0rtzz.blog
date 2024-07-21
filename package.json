@@ -1,6 +1,6 @@
 {
   "name": "m0rtzz.blog",
-  "version": "v2.6.8",
+  "version": "v2.6.9",
   "private": true,
   "scripts": {
     "dev": "next dev",
