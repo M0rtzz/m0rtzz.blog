@@ -1,8 +1,17 @@
-# Changelog
+## <small>2.7.2 (2024-07-28)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 🐛 fix(details.tsx): fix the details block display bug ([3f035d1](https://github.com/M0rtzz/m0rtzz.blog/commit/3f035d1))
+* 🔖 tag(package.json): v2.7.2 ([451b472](https://github.com/M0rtzz/m0rtzz.blog/commit/451b472))
 
-## [2.7.2](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.7.1...v2.7.2) (2024-07-28)
+
+
+## <small>2.7.1 (2024-07-28)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([3a6402b](https://github.com/M0rtzz/m0rtzz.blog/commit/3a6402b))
+* 📝 docs(environment_configuration.md): add github issue url ([cbc6589](https://github.com/M0rtzz/m0rtzz.blog/commit/cbc6589))
+* 🔖 tag(package.json): v2.7.1 ([986db43](https://github.com/M0rtzz/m0rtzz.blog/commit/986db43))
+
+
 
 ## 2.7.0 (2024-07-21)
 
@@ -1462,3 +1471,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
