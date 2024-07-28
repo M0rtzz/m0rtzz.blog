@@ -1,11 +1,13 @@
-# Changelog
+## <small>2.7.1 (2024-07-28)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 📝 docs(environment_configuration.md): add github issue url ([cbc6589](https://github.com/M0rtzz/m0rtzz.blog/commit/cbc6589))
+* 🔖 tag(package.json): v2.7.1 ([986db43](https://github.com/M0rtzz/m0rtzz.blog/commit/986db43))
 
-## [2.7.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.7.0...v2.7.1) (2024-07-28)
+
 
 ## 2.7.0 (2024-07-21)
 
+* 📝 docs(CHANGELOG.md): automatic update ([2587b0f](https://github.com/M0rtzz/m0rtzz.blog/commit/2587b0f))
 * 📝 docs(environment_configuration.md): rm html tag ([a493761](https://github.com/M0rtzz/m0rtzz.blog/commit/a493761))
 * 🔖 tag(package.json): v2.7.0 ([9860236](https://github.com/M0rtzz/m0rtzz.blog/commit/9860236))
 
@@ -1461,3 +1463,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
