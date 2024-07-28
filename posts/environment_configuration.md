@@ -4986,11 +4986,13 @@ carla::streaming::low_level::Client<tcp::Client> c;
 
 ![image-20240718162329579](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/16:23:29_image-20240718162329579.png)
 
-[Linux原生微信\_需要安装星火应用商店](spk://store/chat/store.spark-app.wechat-linux-spark)
+[Linux原生微信\_需要安装星火应用商店（最近的版本好像使用Fcitx输入法时中文输入有问题）](spk://store/chat/store.spark-app.wechat-linux-spark)
 
 ![image-20240718202231084](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/20:22:31_image-20240718202231084.png)
 
 Ubuntu20.04以下版本或者不想安装星火应用商店的用户可安装Flatpak打包的微信（需安装Flatpak，下文有Flatpak安装教程）：
+
+解决基于Fcitx5的搜狗输入法无法在Flatpak版微信中进行中文输入的问题：[https://github.com/web1n/wechat-universal-flatpak/issues/33#issuecomment-2222259823](https://github.com/web1n/wechat-universal-flatpak/issues/33#issuecomment-2222259823)
 
 ```bash
 wget -q --show-progress https://github.com/web1n/wechat-universal-flatpak/releases/latest/download/com.tencent.WeChat-x86_64.flatpak -O com.tencent.WeChat-x86_64.flatpak && sudo flatpak install ./com.tencent.WeChat-x86_64.flatpak
