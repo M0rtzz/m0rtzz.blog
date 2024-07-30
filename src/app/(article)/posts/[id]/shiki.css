@@ -142,8 +142,9 @@
 
 span.line.highlighted::before {
   text-align: unset !important;
-  left: -7.5px !important;
-  width: 0.75rem !important;
+  /* left: -7.5px !important; */
+  margin-left: -0.2rem !important;
+  width: 0.95rem !important;
 }
 
 span.line.diff::before {
