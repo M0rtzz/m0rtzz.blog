@@ -56,3 +56,189 @@ saveTextToFile(output, 'output.txt');
 ![image-20240119231531508](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:26/16:40:11_bfad784f1a5a656d5c45522878e8b623.png)
 
 大功告成~
+
+---
+
+***以下为测试内容：***
+
+## MDX components
+
+### Code Group
+
+<CodeGroup >
+
+```ts blog-config.ts
+export const repoName = 'm0rtzz.blog'
+export const repoOwner = 'M0rtzz'
+export const site = 'https://m0rtzz.com'
+```
+
+```yml graphql.config.yml
+schema:
+  - https://api.github.com/graphql:
+      headers:
+        Authorization: Bearer ${GITHUB_TOKEN}
+documents: '**/*.ts'
+```
+
+</CodeGroup>
+
+### Details
+
+<Details summary="Details">
+
+Details Block
+
+```yml graphql.config.yml
+schema:
+  - https://api.github.com/graphql:
+      headers:
+        Authorization: Bearer ${GITHUB_TOKEN}
+documents: '**/*.ts'
+```
+
+Details block is a collapsible component.
+
+</Details>
+
+### Github Alerts
+
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
+
+> [!TIP]
+> Helpful advice for doing things better or more easily.
+
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+
+> [!WARNING]
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]
+> Advises about risks or negative outcomes of certain actions.
+
+## Shiki
+
+### Twoslash
+
+```ts twoslash
+// @errors: 2540
+interface Todo {
+  title: string
+}
+
+const todo: Readonly<Todo> = {
+  title: 'Delete inactive users'.toUpperCase(),
+  //  ^?
+}
+
+todo.title = 'Hello'
+
+Number.parseInt('123', 10)
+//      ^|
+
+
+
+
+```
+
+```ts twoslash
+// @log: Custom log message
+const a = 1
+// @error: Custom error message
+const b = 1
+// @warn: Custom warning message
+const c = 1
+// @annotate: Custom annotation message
+```
+
+---
+
+### Shiki Transformers
+
+#### transformerNotationDiff
+
+```ts
+console.log('hewwo') // [!code --]
+console.log('hello') // [!code ++]
+console.log('goodbye')
+```
+
+---
+
+#### transformerNotationHighlight
+
+```ts
+console.log('Not highlighted')
+console.log('Highlighted') // [!code highlight]
+console.log('Not highlighted')
+```
+
+```ts
+// [!code highlight:3]
+console.log('Highlighted')
+console.log('Highlighted')
+console.log('Not highlighted')
+```
+
+---
+
+#### transformerNotationWordHighlight
+
+```ts
+// [!code word:Hello]
+const message = 'Hello World'
+console.log(message) // prints Hello World
+```
+
+```ts
+// [!code word:Hello:1]
+const message = 'Hello World'
+console.log(message) // prints Hello World
+```
+
+---
+
+#### transformerNotationFocus
+
+```ts
+console.log('Not focused')
+console.log('Focused') // [!code focus]
+console.log('Not focused')
+```
+
+```ts
+// [!code focus:3]
+console.log('Focused')
+console.log('Focused')
+console.log('Not focused')
+```
+
+---
+
+#### transformerNotationErrorLevel
+
+```ts
+console.log('No errors or warnings')
+console.error('Error') // [!code error]
+console.warn('Warning') // [!code warning]
+```
+
+---
+
+#### transformerMetaHighlight
+
+```js {1,3-4}
+console.log('1')
+console.log('2')
+console.log('3')
+console.log('4')
+```
+
+#### transformerMetaWordHighlight
+
+```js /Hello/
+const msg = 'Hello World'
+console.log(msg) // prints Hello World
+```

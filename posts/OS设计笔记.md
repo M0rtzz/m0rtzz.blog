@@ -24,9 +24,9 @@ touch score/1.txt score/2.txt score/3.txt
 
 内容如下：
 
-`1.txt`
+<CodeGroup >
 
-```txt
+```txt 1.txt
 李娜 郑州大学 2021级 1班 85
 张伟 郑州大学 2021级 1班 72
 刘波 郑州大学 2021级 1班 93
@@ -39,9 +39,7 @@ touch score/1.txt score/2.txt score/3.txt
 吴婷 郑州大学 2021级 1班 79
 ```
 
-`2.txt`
-
-```txt
+```txt 2.txt
 萧燕 郑州大学 2021级 2班 88
 方莹 郑州大学 2021级 2班 76
 高翔 郑州大学 2021级 2班 95
@@ -53,9 +51,7 @@ touch score/1.txt score/2.txt score/3.txt
 宁娜 郑州大学 2021级 2班 84
 ```
 
-`3.txt`
-
-```txt
+```txt 3.txt
 彭辉 郑州大学 2021级 3班 92
 齐东 郑州大学 2021级 3班 74
 任梅 郑州大学 2021级 3班 89
@@ -65,6 +61,8 @@ touch score/1.txt score/2.txt score/3.txt
 王维 郑州大学 2021级 3班 75
 吴雯 郑州大学 2021级 3班 69
 ```
+
+</CodeGroup>
 
 ### ②代码
 
@@ -184,6 +182,10 @@ clean:
 ```
 
 ### ③代码
+
+<Details summary="pv.c（点击展开）">
+
+`pv.c`
 
 ```c
 /**
@@ -345,6 +347,8 @@ signed main()
 }
 ```
 
+</Details>
+
 ### ④运行
 
 ```shell
@@ -359,6 +363,9 @@ make all
 ## 第三题
 
 ### ①代码（构建工具同上）
+
+<Details summary="socket_server.c（点击展开）">
+`socket_server.c`
 
 ```c
 /**
@@ -521,6 +528,12 @@ signed main()
 }
 ```
 
+</Details>
+
+<Details summary="socket_client.c（点击展开）">
+
+`socket_client.c`
+
 ```c
 /**
  * @file socket_client.c
@@ -628,6 +641,8 @@ signed main()
     return EXIT_SUCCESS;
 }
 ```
+
+</Details>
 
 ### ②运行
 
