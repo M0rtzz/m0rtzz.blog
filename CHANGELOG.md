@@ -1,41 +1,8 @@
-## <small>2.7.5 (2024-07-30)</small>
+# Changelog
 
-* ✅ test(shiki.css): test value ([41cd5e8](https://github.com/M0rtzz/m0rtzz.blog/commit/41cd5e8))
-* 🔖 tag(package.json): v2.7.5 ([d9bee0c](https://github.com/M0rtzz/m0rtzz.blog/commit/d9bee0c))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>2.7.4 (2024-07-30)</small>
-
-* ✅ test(shiki.css): test value ([b00b7f5](https://github.com/M0rtzz/m0rtzz.blog/commit/b00b7f5))
-* 📝 docs(CHANGELOG.md): automatic update ([c17f81d](https://github.com/M0rtzz/m0rtzz.blog/commit/c17f81d))
-* 🔖 tag(package.json): v2.7.4 ([e2ab222](https://github.com/M0rtzz/m0rtzz.blog/commit/e2ab222))
-
-
-
-## <small>2.7.3 (2024-07-30)</small>
-
-* 💄 ui: add diff line style ([614dca1](https://github.com/M0rtzz/m0rtzz.blog/commit/614dca1))
-* 📝 docs(CHANGELOG.md): automatic update ([99e1379](https://github.com/M0rtzz/m0rtzz.blog/commit/99e1379))
-* 🔖 tag(package.json): v2.7.3 ([0ef482d](https://github.com/M0rtzz/m0rtzz.blog/commit/0ef482d))
-
-
-
-## <small>2.7.2 (2024-07-28)</small>
-
-* 🐛 fix(details.tsx): fix the details block display bug ([3f035d1](https://github.com/M0rtzz/m0rtzz.blog/commit/3f035d1))
-* 📝 docs(CHANGELOG.md): automatic update ([e2ea0c5](https://github.com/M0rtzz/m0rtzz.blog/commit/e2ea0c5))
-* 🔖 tag(package.json): v2.7.2 ([451b472](https://github.com/M0rtzz/m0rtzz.blog/commit/451b472))
-
-
-
-## <small>2.7.1 (2024-07-28)</small>
-
-* 📝 docs(CHANGELOG.md): automatic update ([3a6402b](https://github.com/M0rtzz/m0rtzz.blog/commit/3a6402b))
-* 📝 docs(environment_configuration.md): add github issue url ([cbc6589](https://github.com/M0rtzz/m0rtzz.blog/commit/cbc6589))
-* 🔖 tag(package.json): v2.7.1 ([986db43](https://github.com/M0rtzz/m0rtzz.blog/commit/986db43))
-
-
+## [2.7.6](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.7.5...v2.7.6) (2024-07-30)
 
 ## 2.7.0 (2024-07-21)
 
@@ -1495,5 +1462,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
