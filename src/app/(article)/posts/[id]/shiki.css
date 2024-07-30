@@ -150,7 +150,8 @@
 span.line.diff::before {
   content: counter(step) var(--tw-content, 'default') !important;
   /* margin-left: 0.31rem !important; */
-  left: 0.75rem !important;
+  left: 0.95rem !important;
+  letter-spacing: 0.1rem;
 }
 
 .small-line-numbers code .line:not(:last-child) {
