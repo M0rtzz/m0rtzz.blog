@@ -22,6 +22,7 @@
 .twoslash-meta-line,
 .twoslash-tag-line {
   @apply my-1 flex min-w-full items-center gap-2 whitespace-break-spaces border-l-2 px-3 py-2.5;
+  margin-left: 2rem;
 }
 
 .twoslash-error-line,
@@ -90,6 +91,7 @@
   .highlighted {
     width: calc(100% + theme('spacing.10'));
     @apply relative -mx-5 inline-block px-5;
+    margin-left: 0;
   }
 
   .highlighted,
@@ -114,10 +116,11 @@
     &.remove,
     &.add {
       @apply before:absolute before:left-2.5 before:-translate-x-1/2;
+      padding-left: 2.5rem;
     }
 
     &.remove {
-      @apply !bg-red-600/20 opacity-70 before:text-red-400 before:content-['-'];
+      @apply !bg-red-600/20 before:text-red-400 before:content-['-'];
     }
 
     &.add {
@@ -135,6 +138,18 @@
       }
     }
   }
+}
+
+span.line.highlighted::before {
+  text-align: unset !important;
+  left: -7.5px !important;
+  width: 0.75rem !important;
+}
+
+span.line.diff::before {
+  content: counter(step) var(--tw-content, 'default') !important;
+  margin-left: 0.31rem !important;
+  letter-spacing: 0.1rem;
 }
 
 .small-line-numbers code .line:not(:last-child) {
@@ -229,4 +244,13 @@ code .line:not(:last-child)::after {
 /* 解决代码越界bug */
 .shiki {
   overflow: auto;
+}
+
+.code-group-disable-spacing div.relative:nth-child(n) > pre:nth-child(n) {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.code-group-disable-spacing .code-block-spacing {
+  margin-bottom: 0em;
 }

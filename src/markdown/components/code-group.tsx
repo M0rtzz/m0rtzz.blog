@@ -30,7 +30,7 @@ const CodeGroup = (props: CodeGroupProps) => {
   const current = childrenArray[index]
 
   return (
-    <div className='mdx-components -mx-4 border bg-surface-1 md:-mx-8 md:rounded'>
+    <div className='code-group-disable-spacing mdx-components -mx-4 border bg-surface-1 md:-mx-8 md:rounded'>
       <header className='flex border-b px-4'>
         {fileNames.map((fileName, i) => (
           <button
