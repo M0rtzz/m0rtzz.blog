@@ -89,7 +89,7 @@
 .shiki {
   .diff,
   .highlighted {
-    width: calc(100% + theme('spacing.10'));
+    /* width: calc(100% + theme('spacing.10')); */
     @apply relative inline-block;
     margin-left: 0;
   }
