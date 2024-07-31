@@ -1,3 +1,9 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [2.8.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.8.0...v2.8.1) (2024-07-31)
+
 ## 2.8.0 (2024-07-31)
 
 * 👷 ci(pre-push): add echo cmd ([2ef9868](https://github.com/M0rtzz/m0rtzz.blog/commit/2ef9868))
@@ -1542,5 +1548,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
