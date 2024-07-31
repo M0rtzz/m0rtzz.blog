@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## <small>3.3.5 (2024-08-31)</small>
 
 * 📝 doc(environment_configuration.md): update doc ([cd3e429](https://github.com/M0rtzz/m0rtzz.blog/commit/cd3e429))
@@ -461,8 +462,13 @@
 * 📝 docs(CHANGELOG.md): automatic update ([4021ef4](https://github.com/M0rtzz/m0rtzz.blog/commit/4021ef4))
 * 🔖 tag(package.json): v2.8.1 ([36bc317](https://github.com/M0rtzz/m0rtzz.blog/commit/36bc317))
 * 🚚 move: rename file ([9d177d2](https://github.com/M0rtzz/m0rtzz.blog/commit/9d177d2))
+=======
+# Changelog
+>>>>>>> de5a13c (🔖 tag(package.json): v2.8.2)
 
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.8.2](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.8.1...v2.8.2) (2024-07-31)
 
 ## 2.8.0 (2024-07-31)
 
@@ -1999,5 +2005,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
