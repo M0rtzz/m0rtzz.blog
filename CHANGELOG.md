@@ -1,8 +1,83 @@
-# Changelog
+## 2.8.0 (2024-07-31)
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 👷 ci(pre-push): add echo cmd ([2ef9868](https://github.com/M0rtzz/m0rtzz.blog/commit/2ef9868))
+* 🔖 tag(package.json): v2.8.0 ([b87d29a](https://github.com/M0rtzz/m0rtzz.blog/commit/b87d29a))
 
-## [2.7.10](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.7.9...v2.7.10) (2024-07-31)
+
+
+## <small>2.7.9 (2024-07-31)</small>
+
+* 👷 ci(pre-push): add pull cmd ([cadeca4](https://github.com/M0rtzz/m0rtzz.blog/commit/cadeca4))
+* 💄 ui(details.tsx): add spacing after details block ([acd58eb](https://github.com/M0rtzz/m0rtzz.blog/commit/acd58eb))
+* 📝 docs(CHANGELOG.md): automatic update ([3e0cbe9](https://github.com/M0rtzz/m0rtzz.blog/commit/3e0cbe9))
+* 🔖 tag(package.json): v2.7.9 ([be5b107](https://github.com/M0rtzz/m0rtzz.blog/commit/be5b107))
+
+
+
+## <small>2.7.8 (2024-07-30)</small>
+
+* 💄 ui: update diff line style and the style of inline code block in details block ([8dcba41](https://github.com/M0rtzz/m0rtzz.blog/commit/8dcba41))
+* 📝 docs(CHANGELOG.md): automatic update ([02b29bb](https://github.com/M0rtzz/m0rtzz.blog/commit/02b29bb))
+* 🔖 tag(package.json): v2.7.8 ([4c23ee3](https://github.com/M0rtzz/m0rtzz.blog/commit/4c23ee3))
+
+
+
+## <small>2.7.7 (2024-07-30)</small>
+
+* 💄 ui(shiki.css): update image style in warning box ([7332901](https://github.com/M0rtzz/m0rtzz.blog/commit/7332901))
+* 📝 docs: convert excessively long code block into details block ([ca4c07d](https://github.com/M0rtzz/m0rtzz.blog/commit/ca4c07d))
+* 📝 docs(CHANGELOG.md): automatic update ([fbef704](https://github.com/M0rtzz/m0rtzz.blog/commit/fbef704))
+* 🔖 tag(package.json): v2.7.7 ([825a1aa](https://github.com/M0rtzz/m0rtzz.blog/commit/825a1aa))
+
+
+
+## <small>2.7.6 (2024-07-30)</small>
+
+* ✅ test(shiki.css): test value ([87af334](https://github.com/M0rtzz/m0rtzz.blog/commit/87af334))
+* 📝 docs(CHANGELOG.md): automatic update ([e48d81e](https://github.com/M0rtzz/m0rtzz.blog/commit/e48d81e))
+* 🔖 tag(package.json): v2.7.6 ([9f24e78](https://github.com/M0rtzz/m0rtzz.blog/commit/9f24e78))
+
+
+
+## <small>2.7.5 (2024-07-30)</small>
+
+* ✅ test(shiki.css): test value ([41cd5e8](https://github.com/M0rtzz/m0rtzz.blog/commit/41cd5e8))
+* 📝 docs(CHANGELOG.md): automatic update ([f29596e](https://github.com/M0rtzz/m0rtzz.blog/commit/f29596e))
+* 🔖 tag(package.json): v2.7.5 ([d9bee0c](https://github.com/M0rtzz/m0rtzz.blog/commit/d9bee0c))
+
+
+
+## <small>2.7.4 (2024-07-30)</small>
+
+* ✅ test(shiki.css): test value ([b00b7f5](https://github.com/M0rtzz/m0rtzz.blog/commit/b00b7f5))
+* 📝 docs(CHANGELOG.md): automatic update ([c17f81d](https://github.com/M0rtzz/m0rtzz.blog/commit/c17f81d))
+* 🔖 tag(package.json): v2.7.4 ([e2ab222](https://github.com/M0rtzz/m0rtzz.blog/commit/e2ab222))
+
+
+
+## <small>2.7.3 (2024-07-30)</small>
+
+* 💄 ui: add diff line style ([614dca1](https://github.com/M0rtzz/m0rtzz.blog/commit/614dca1))
+* 📝 docs(CHANGELOG.md): automatic update ([99e1379](https://github.com/M0rtzz/m0rtzz.blog/commit/99e1379))
+* 🔖 tag(package.json): v2.7.3 ([0ef482d](https://github.com/M0rtzz/m0rtzz.blog/commit/0ef482d))
+
+
+
+## <small>2.7.2 (2024-07-28)</small>
+
+* 🐛 fix(details.tsx): fix the details block display bug ([3f035d1](https://github.com/M0rtzz/m0rtzz.blog/commit/3f035d1))
+* 📝 docs(CHANGELOG.md): automatic update ([e2ea0c5](https://github.com/M0rtzz/m0rtzz.blog/commit/e2ea0c5))
+* 🔖 tag(package.json): v2.7.2 ([451b472](https://github.com/M0rtzz/m0rtzz.blog/commit/451b472))
+
+
+
+## <small>2.7.1 (2024-07-28)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([3a6402b](https://github.com/M0rtzz/m0rtzz.blog/commit/3a6402b))
+* 📝 docs(environment_configuration.md): add github issue url ([cbc6589](https://github.com/M0rtzz/m0rtzz.blog/commit/cbc6589))
+* 🔖 tag(package.json): v2.7.1 ([986db43](https://github.com/M0rtzz/m0rtzz.blog/commit/986db43))
+
+
 
 ## 2.7.0 (2024-07-21)
 
@@ -1467,3 +1542,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
