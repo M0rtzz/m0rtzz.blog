@@ -1,8 +1,18 @@
-# Changelog
+## <small>2.8.2 (2024-07-31)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 📝 docs(environment_configuration.md): update conda mirror site url ([a0f884d](https://github.com/M0rtzz/m0rtzz.blog/commit/a0f884d))
+* 🔖 tag(package.json): v2.8.2 ([de5a13c](https://github.com/M0rtzz/m0rtzz.blog/commit/de5a13c))
 
-## [2.8.2](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.8.1...v2.8.2) (2024-07-31)
+
+
+## <small>2.8.1 (2024-07-31)</small>
+
+* 📝 docs: add git config cmd ([9a4c2df](https://github.com/M0rtzz/m0rtzz.blog/commit/9a4c2df))
+* 📝 docs(CHANGELOG.md): automatic update ([4021ef4](https://github.com/M0rtzz/m0rtzz.blog/commit/4021ef4))
+* 🔖 tag(package.json): v2.8.1 ([36bc317](https://github.com/M0rtzz/m0rtzz.blog/commit/36bc317))
+* 🚚 move: rename file ([9d177d2](https://github.com/M0rtzz/m0rtzz.blog/commit/9d177d2))
+
+
 
 ## 2.8.0 (2024-07-31)
 
@@ -1549,3 +1559,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
