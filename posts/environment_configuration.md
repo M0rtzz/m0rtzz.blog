@@ -213,21 +213,21 @@ channels:
   - defaults
 show_channel_urls: true
 default_channels:
-  - https://mirrors.cernet.edu.cn/anaconda/pkgs/main
-  - https://mirrors.cernet.edu.cn/anaconda/pkgs/free
-  - https://mirrors.cernet.edu.cn/anaconda/pkgs/r
-  - https://mirrors.cernet.edu.cn/anaconda/pkgs/pro
-  - https://mirrors.cernet.edu.cn/anaconda/pkgs/msys2
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
 custom_channels:
-  conda-forge: https://mirrors.cernet.edu.cn/anaconda/cloud
-  msys2: https://mirrors.cernet.edu.cn/anaconda/cloud
-  bioconda: https://mirrors.cernet.edu.cn/anaconda/cloud
-  menpo: https://mirrors.cernet.edu.cn/anaconda/cloud
-  pytorch: https://mirrors.cernet.edu.cn/anaconda/cloud
-  pytorch-lts: https://mirrors.cernet.edu.cn/anaconda/cloud
-  simpleitk: https://mirrors.cernet.edu.cn/anaconda/cloud
-  deepmodeling: https://mirrors.cernet.edu.cn/anaconda/cloud
-  nvidia: https://mirrors.cernet.edu.cn/anaconda-extra/cloud
+  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  deepmodeling: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  nvidia: https://mirrors.sustech.edu.cn/anaconda-extra/cloud
 
 envs_dirs:
   - /home/m0rtzz/Program_Files/anaconda3/envs
