@@ -53,6 +53,12 @@ echo '{ "path": "cz-customizable" }' > ~/.czrc
 
 ## 3.本地创建git仓库
 
+解决Git显示中文文件名为乱码：
+
+```shell
+git config --global core.quotepath false
+```
+
 ```shell
 mkdir test-git-commit && cd test-git-commit
 git init
