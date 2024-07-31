@@ -297,6 +297,13 @@ husky
 ```shell
 #!/bin/sh
 
+git pull --rebase || {
+    echo "\e[1;31m代码拉取失败\e[0m"
+    exit 1
+}
+
+echo "\e[1;32m\e[1m代码拉取成功\e[0m"
+
 commit-and-tag-version
 
 # 获取仓库根目录
