@@ -5,6 +5,8 @@ git pull --rebase || {
     exit 1
 }
 
+echo "\e[1;32m\e[1m代码拉取成功\e[0m"
+
 commit-and-tag-version
 
 # 获取仓库根目录
