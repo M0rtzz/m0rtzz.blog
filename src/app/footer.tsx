@@ -48,6 +48,25 @@ const Footer = () => {
             豫ICP备2024072448号
           </a>
         </div>
+        <div style={{ margin: '0 10px' }}></div>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <span style={{ color: '#1E90FF' }}>本站由</span>
+            <a href='https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral'>
+              <Image
+                src='/icon/upyun.png'
+                alt='UpYun Logo'
+                width={40}
+                height={40}
+                style={{
+                  marginLeft: '2px',
+                  marginRight: '2px',
+                }}
+              />
+            </a>
+            <span style={{ color: '#1E90FF' }}>提供CDN/云存储服务</span>
+          </div>
+        </div>
       </div>
     </footer>
   )
