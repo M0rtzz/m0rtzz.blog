@@ -228,9 +228,9 @@ custom_channels:
   simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   deepmodeling: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   nvidia: https://mirrors.sustech.edu.cn/anaconda-extra/cloud
-
+/Programs
 envs_dirs:
-  - /home/m0rtzz/Program_Files/anaconda3/envs
+  - /home/m0rtzz/Programs/anaconda3/envs
 ```
 
 ## 3.设置$HOME下的文件夹为英文
@@ -286,9 +286,9 @@ reboot
 
 ## 5.安装Nvidia驱动
 
->   [!CAUTION]
+> [!CAUTION]
 >
->   有可能会损坏系统，如果损坏可以重装并看看网上的其他教程，除了这种安装方法还有其他安装方法，但是曾经试过很多种方法，鄙人认为这种方法最快捷且最不容易损坏系统。
+> 有可能会损坏系统，如果损坏可以重装并看看网上的其他教程，除了这种安装方法还有其他安装方法，但是曾经试过很多种方法，鄙人认为这种方法最快捷且最不容易损坏系统。
 
 打开终端，输入：
 
@@ -530,7 +530,7 @@ rosrun turtlesim turtle_teleop_key
 
 ~~虽然使用cv_bridge时某些shared object有可能和ROS自带的opencv-3.2.0版本冲突，但实测安装3.2.0对cuda的兼容性太差导致无法使用深度相机，所以安装官网最近更新过的OpenCV3.4.16~~
 
-***经尝试多版本Ubuntu和OpenCV，装Ubuntu20.04，ROS noetic和OpenCV4.2.0及其扩展模块才能解决将彩色图像转换为网络所需的输入Blob后前馈时抛出的（raised OpenCV exception，error: (-215:Assertion failed)等等）。下方OpenCV3的安装步骤仅供参考，OpenCV4.2.0的cmake命令及注意事项在本小节最后！***
+**_经尝试多版本Ubuntu和OpenCV，装Ubuntu20.04，ROS noetic和OpenCV4.2.0及其扩展模块才能解决将彩色图像转换为网络所需的输入Blob后前馈时抛出的（raised OpenCV exception，error: (-215:Assertion failed)等等）。下方OpenCV3的安装步骤仅供参考，OpenCV4.2.0的cmake命令及注意事项在本小节最后！_**
 
 ### ①OpenCV3的安装步骤
 
@@ -589,9 +589,9 @@ cd build
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D WITH_GTK_2_X=ON \
--D OPENCV_ENABLE_NONFREE=ON \
+-D OPENCV_ENABLE_NONFREE=ON \/Programs
 -D OPENCV_GENERATE_PKGCONFIG=YES \
--D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Program_Files/opencv-3.4.16/opencv_contrib-3.4.16/modules \
+-D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.16/opencv_contrib-3.4.16/modules \
 -D WITH_CUDA=ON \
 -D WITH_CUDNN=ON \
 -D WITH_FFMPEG=ON \
@@ -636,9 +636,9 @@ cd downloads && pwd
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D WITH_GTK_2_X=ON \
--D OPENCV_ENABLE_NONFREE=ON \
+-D OPENCV_ENABLE_NONFREE=ON \/Programs
 -D OPENCV_GENERATE_PKGCONFIG=YES \
--D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Program_Files/opencv-3.4.16/opencv_contrib-3.4.16/modules \
+-D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.16/opencv_contrib-3.4.16/modules \
 -D WITH_CUDA=ON \
 -D WITH_CUDNN=ON \
 -D WITH_FFMPEG=ON \
@@ -661,9 +661,9 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D WITH_GTK_2_X=ON \
--D OPENCV_ENABLE_NONFREE=ON \
+-D OPENCV_ENABLE_NONFREE=ON \/Programs
 -D OPENCV_GENERATE_PKGCONFIG=YES \
--D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Program_Files/opencv-3.4.16/opencv_contrib-3.4.16/modules \
+-D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.16/opencv_contrib-3.4.16/modules \
 -D WITH_CUDA=ON \
 -D WITH_CUDNN=ON \
 -D WITH_FFMPEG=ON \
@@ -746,7 +746,7 @@ sudo make -j$(nproc)
 
 安装成功！
 
-***设置cv_bridge的版本（ROS-melodic，经实践发现毫无效果）：***
+**_设置cv_bridge的版本（ROS-melodic，经实践发现毫无效果）：_**
 
 ```bash
 sudo gedit /opt/ros/melodic/share/cv_bridge/cmake/cv_bridgeConfig.cmake
@@ -774,9 +774,9 @@ opencv-3.4.4cmake命令：
 cmake -D CMAKE_BUILD_TYPE=BUILD \
 -D CMAKE_INSTALL_PREFIX=/usr/local \
 -D WITH_GTK_2_X=ON \
--D OPENCV_ENABLE_NONFREE=ON \
+-D OPENCV_ENABLE_NONFREE=ON \/Programs
 -D OPENCV_GENERATE_PKGCONFIG=YES \
--D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Program_Files/opencv-3.4.4/opencv_contrib-3.4.4/modules \
+-D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.4/opencv_contrib-3.4.4/modules \
 -D WITH_CUDA=ON \
 -D WITH_CUDNN=ON \
 -D OPENCV_DNN_CUDA=ON \
@@ -800,9 +800,9 @@ cmake -D CMAKE_BUILD_TYPE=BUILD \
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D OPENCV_GENERATE_PKGCONFIG=ON \
--D INSTALL_PYTHON_EXAMPLES=ON \
+-D INSTALL_PYTHON_EXAMPLES=ON \/Programs
 -D INSTALL_C_EXAMPLES=ON \
--D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Program_Files/opencv-4.2.0/opencv_contrib-4.2.0/modules \
+-D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-4.2.0/opencv_contrib-4.2.0/modules \
 -D WITH_V4L=ON \
 -D WITH_QT=ON \
 -D WITH_GTK=ON \
@@ -828,9 +828,9 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D OPENCV_GENERATE_PKGCONFIG=ON \
--D INSTALL_PYTHON_EXAMPLES=ON \
+-D INSTALL_PYTHON_EXAMPLES=ON \/Programs
 -D INSTALL_C_EXAMPLES=ON \
--D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Program_Files/opencv-4.2.0/opencv_contrib-4.2.0/modules \
+-D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-4.2.0/opencv_contrib-4.2.0/modules \
 -D WITH_V4L=ON \
 -D WITH_QT=ON \
 -D WITH_GTK=ON \
@@ -856,7 +856,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D OPENCV_GENERATE_PKGCONFIG=ON \
--D INSTALL_PYTHON_EXAMPLES=ON \
+-D INSTALL_PYTHON_EXAMPLES=ON \/Programs
 -D INSTALL_C_EXAMPLES=ON \
 -D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Program_Files/opencv-4.2.0/opencv_contrib-4.2.0/modules \
 -D WITH_V4L=ON \
@@ -1547,9 +1547,9 @@ catkin_make -j$(nproc) darknet_ros --cmake-args -DCMAKE_CXX_FLAGS=-DCV__ENABLE_C
 
 ## 18.Azure Kinect SDK-v1.4.0的安装
 
->   [!NOTE]
+> [!NOTE]
 >
->   鄙人在Ubuntu18.04下是通过源码编译安装的，在Ubuntu20.04下是通过deb包直接安装的。
+> 鄙人在Ubuntu18.04下是通过源码编译安装的，在Ubuntu20.04下是通过deb包直接安装的。
 
 ### ①Ubuntu18.04源码编译安装
 
@@ -1726,9 +1726,9 @@ LABEL="k4a_logic_rules_end"
 
 ### ②Ubuntu20.04
 
->   Reference：
+> Reference：
 >
->   [https://blog.csdn.net/qq_42108414/article/details/129015474](https://blog.csdn.net/qq_42108414/article/details/129015474)
+> [https://blog.csdn.net/qq_42108414/article/details/129015474](https://blog.csdn.net/qq_42108414/article/details/129015474)
 
 ## 19.配置科大讯飞
 
@@ -4646,9 +4646,9 @@ sudo make install
 
 ## 26.安装CarlaUE4
 
->   [!IMPORTANT]
+> [!IMPORTANT]
 >
->   必须是[CarlaUnreal的UE仓库中的carla分支](https://github.com/CarlaUnreal/UnrealEngine/tree/carla)才可以通过安装Carla时的编译。
+> 必须是[CarlaUnreal的UE仓库中的carla分支](https://github.com/CarlaUnreal/UnrealEngine/tree/carla)才可以通过安装Carla时的编译。
 
 ```bash
 find . -name "*.sh" -exec dos2unix {} +
