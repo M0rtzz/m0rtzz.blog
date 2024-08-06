@@ -253,7 +253,8 @@ code .line:not(:last-child)::after {
 
 /* 解决代码越界bug */
 .shiki {
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .code-group-disable-spacing div.relative:nth-child(n) > pre:nth-child(n) {
