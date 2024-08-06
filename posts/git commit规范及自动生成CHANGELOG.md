@@ -120,36 +120,20 @@ module.exports = {
             name: '💩 poop:\tPoop | 写了一些屎一样待优化的代码'
         },
         {
+            value: '💄 ui',
+            name: '💄 ui:\tUpdated UI and style files | 更新UI'
+        },
+        {
             value: '🎨 style',
             name: '🎨 style:\tMarkup, white-space, formatting, missing semi-colons... | 风格'
-        },
-        {
-            value: '🔀 merge',
-            name: '🔀 merge:\tMerge branch | 合并'
-        },
-        {
-            value: '🔖 release',
-            name: '🔖 release:\tCreate a release commit | 发行版'
-        },
-        {
-            value: '🚚 move',
-            name: '🚚 move:\tMove or rename resources (e.g.: files, paths, routes) | 移动'
         },
         {
             value: '🔨 script',
             name: '🔨 script:\tAdd or update the build system | 脚本'
         },
         {
-            value: '🤖 chore',
-            name: '🤖 chore:\tBuild process or auxiliary tool changes | 构建/工程依赖/工具'
-        },
-        {
-            value: '🔧 config',
-            name: '🔧 config:\tAdd or update configuration files | 配置文件'
-        },
-        {
-            value: '💄 ui',
-            name: '💄 ui:\tUpdated UI and style files | 更新UI'
+            value: '💡 comment',
+            name: '💡 comment:\tComment | 注释'
         },
         {
             value: '🍱 asset',
@@ -160,12 +144,52 @@ module.exports = {
             name: '📸 image:\tAdd or update images | 图像'
         },
         {
+            value: '🔧 config',
+            name: '🔧 config:\tAdd or update configuration files | 配置文件'
+        },
+        {
+            value: '🚚 move',
+            name: '🚚 move:\tMove or rename resources (e.g.: files, paths, routes) | 移动'
+        },
+        {
+            value: '🤖 chore',
+            name: '🤖 chore:\tBuild process or auxiliary tool changes | 构建/工程依赖/工具'
+        },
+        {
             value: '⚡️ perf',
             name: '⚡️ perf:\tA code change that improves performance | 性能优化'
         },
         {
             value: '🧵 thread',
             name: '🧵 thread:\tAdd or update code related to multithreading or concurrency | 线程'
+        },
+        {
+            value: '🔐 secert',
+            name: '🔐 secert:\tSecert | 秘钥'
+        },
+        {
+            value: '🔀 merge',
+            name: '🔀 merge:\tMerge branch | 合并'
+        },
+        {
+            value: '⏪ revert',
+            name: '⏪ revert:\tRevert | 回退'
+        },
+        {
+            value: '🔖 release',
+            name: '🔖 release:\tCreate a release commit | 发行版'
+        },
+        {
+            value: '📦 build',
+            name: '📦 build:\tBuild System | 打包构建'
+        },
+        {
+            value: '🔊 add_log',
+            name: '🔊 add_log:\tAdd or update logs | 添加日志'
+        },
+        {
+            value: '🔇 rm_log',
+            name: '🔇 rm_log:\tRemove logs | 移除日志'
         },
         {
             value: '➕ add_dep',
@@ -184,40 +208,16 @@ module.exports = {
             name: '⬇️  down_dep:\tDowngrade dep | 降级依赖'
         },
         {
-            value: '💡 comment',
-            name: '💡 comment:\tComment | 注释'
-        },
-        {
-            value: '🔐 secert',
-            name: '🔐 secert:\tSecert | 秘钥'
-        },
-        {
-            value: '✅ test',
-            name: '✅ test:\tAdding missing tests | 测试'
-        },
-        {
-            value: '🔊 add_log',
-            name: '🔊 add_log:\tAdd or update logs | 添加日志'
-        },
-        {
-            value: '🔇 rm_log',
-            name: '🔇 rm_log:\tRemove logs | 移除日志'
+            value: '👷 ci',
+            name: '👷 ci:\tCI related changes | CI 配置'
         },
         {
             value: '♻️ refactor',
             name: '♻️  refactor:\tA code change that neither fixes a bug or adds a feature | 代码重构'
         },
         {
-            value: '⏪ revert',
-            name: '⏪ revert:\tRevert | 回退'
-        },
-        {
-            value: '📦 build',
-            name: '📦 build:\tBuild System | 打包构建'
-        },
-        {
-            value: '👷 ci',
-            name: '👷 ci:\tCI related changes | CI 配置'
+            value: '✅ test',
+            name: '✅ test:\tAdding missing tests | 测试'
         },
         {
             value: '🎉 init',
