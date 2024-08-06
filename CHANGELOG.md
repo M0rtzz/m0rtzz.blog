@@ -1,18 +1,58 @@
-# Changelog
+## <small>2.8.4 (2024-08-06)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 💄 ui(shiki.css): update scrollbar style ([7b8631f](https://github.com/M0rtzz/m0rtzz.blog/commit/7b8631f))
+* 📝 docs(git commit规范及自动生成CHANGELOG.md): update `.cz-config.js` content ([bfeb943](https://github.com/M0rtzz/m0rtzz.blog/commit/bfeb943))
+* 🔖 tag(package.json): v2.8.4 ([c67f376](https://github.com/M0rtzz/m0rtzz.blog/commit/c67f376))
 
-## [2.8.4](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.8.3...v2.8.4) (2024-08-06)
+
+
+## <small>2.8.3 (2024-08-06)</small>
+
+* ✨ feat(footer.tsx): add upyun logo ([38e7bd3](https://github.com/M0rtzz/m0rtzz.blog/commit/38e7bd3))
+* 🍱 asset(upyun.png): add upyun logo ([818a5e7](https://github.com/M0rtzz/m0rtzz.blog/commit/818a5e7))
+* 📝 docs(CHANGELOG.md): automatic update ([58219b6](https://github.com/M0rtzz/m0rtzz.blog/commit/58219b6))
+* 📝 docs(environment_configuration.md): update path ([1f4c9fd](https://github.com/M0rtzz/m0rtzz.blog/commit/1f4c9fd))
+* 🔖 tag(package.json): v2.8.3 ([339389d](https://github.com/M0rtzz/m0rtzz.blog/commit/339389d))
+
+
+
+## <small>2.8.2 (2024-08-06)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([d5d5c4a](https://github.com/M0rtzz/m0rtzz.blog/commit/d5d5c4a))
+* 📝 docs(CHANGELOG.md): automatic update ([5968a86](https://github.com/M0rtzz/m0rtzz.blog/commit/5968a86))
+* 📝 docs(CHANGELOG.md): automatic update ([2ca1fdf](https://github.com/M0rtzz/m0rtzz.blog/commit/2ca1fdf))
+* 📝 docs(environment_configuration.md): update conda mirror site url ([552dddc](https://github.com/M0rtzz/m0rtzz.blog/commit/552dddc))
+* 📝 docs(environment_configuration.md): update conda mirror site url ([a0f884d](https://github.com/M0rtzz/m0rtzz.blog/commit/a0f884d))
+* 📝 docs(environment_configuration.md): update path ([632f6e1](https://github.com/M0rtzz/m0rtzz.blog/commit/632f6e1))
+* 🔖 tag(package.json): v2.4.0 ([cf27f4e](https://github.com/M0rtzz/m0rtzz.blog/commit/cf27f4e))
+* 🔖 tag(package.json): v2.7.9 ([8074510](https://github.com/M0rtzz/m0rtzz.blog/commit/8074510))
+* 🔖 tag(package.json): v2.8.2 ([bbf8986](https://github.com/M0rtzz/m0rtzz.blog/commit/bbf8986))
+
+
+
+## <small>2.8.1 (2024-07-31)</small>
+
+* 📝 docs: add git config cmd ([9a4c2df](https://github.com/M0rtzz/m0rtzz.blog/commit/9a4c2df))
+* 📝 docs(CHANGELOG.md): automatic update ([4021ef4](https://github.com/M0rtzz/m0rtzz.blog/commit/4021ef4))
+* 🔖 tag(package.json): v2.8.1 ([36bc317](https://github.com/M0rtzz/m0rtzz.blog/commit/36bc317))
+* 🚚 move: rename file ([9d177d2](https://github.com/M0rtzz/m0rtzz.blog/commit/9d177d2))
+
+
 
 ## 2.8.0 (2024-07-31)
 
 * 👷 ci(pre-push): add echo cmd ([2ef9868](https://github.com/M0rtzz/m0rtzz.blog/commit/2ef9868))
+* 📝 docs(CHANGELOG.md): automatic update ([83d66e0](https://github.com/M0rtzz/m0rtzz.blog/commit/83d66e0))
+* 🔖 tag(package.json): v2.8.0 ([b87d29a](https://github.com/M0rtzz/m0rtzz.blog/commit/b87d29a))
+
+
+
+## <small>2.7.9 (2024-07-31)</small>
+
 * 👷 ci(pre-push): add pull cmd ([cadeca4](https://github.com/M0rtzz/m0rtzz.blog/commit/cadeca4))
 * 💄 ui(details.tsx): add spacing after details block ([acd58eb](https://github.com/M0rtzz/m0rtzz.blog/commit/acd58eb))
-* 📝 docs(CHANGELOG.md): automatic update ([83d66e0](https://github.com/M0rtzz/m0rtzz.blog/commit/83d66e0))
 * 📝 docs(CHANGELOG.md): automatic update ([3e0cbe9](https://github.com/M0rtzz/m0rtzz.blog/commit/3e0cbe9))
 * 🔖 tag(package.json): v2.7.9 ([be5b107](https://github.com/M0rtzz/m0rtzz.blog/commit/be5b107))
-* 🔖 tag(package.json): v2.8.0 ([b87d29a](https://github.com/M0rtzz/m0rtzz.blog/commit/b87d29a))
 
 
 
@@ -147,20 +187,15 @@ All notable changes to this project will be documented in this file. See [commit
 
 ## <small>2.6.2 (2024-07-20)</small>
 
-* 📝 docs(CHANGELOG.md): automatic update ([cb566f2](https://github.com/M0rtzz/m0rtzz.blog/commit/cb566f2))
-* 📝 docs(environment_configuration.md): update title ([434b23e](https://github.com/M0rtzz/m0rtzz.blog/commit/434b23e))
-* 🔖 tag(package.json): v2.6.2 ([dbe4d45](https://github.com/M0rtzz/m0rtzz.blog/commit/dbe4d45))
-
-
-
-## <small>2.6.1 (2024-07-20)</small>
-
 * 💄 ui(globals.css): add the style for hyperlinks in the warning box ([b28efdb](https://github.com/M0rtzz/m0rtzz.blog/commit/b28efdb))
+* 📝 docs(CHANGELOG.md): automatic update ([cb566f2](https://github.com/M0rtzz/m0rtzz.blog/commit/cb566f2))
 * 📝 docs(CHANGELOG.md): automatic update ([653a540](https://github.com/M0rtzz/m0rtzz.blog/commit/653a540))
 * 📝 docs(CHANGELOG.md): automatic update ([a313742](https://github.com/M0rtzz/m0rtzz.blog/commit/a313742))
 * 📝 docs(environment_configuration.md): update images ([cfb3ca7](https://github.com/M0rtzz/m0rtzz.blog/commit/cfb3ca7))
+* 📝 docs(environment_configuration.md): update title ([434b23e](https://github.com/M0rtzz/m0rtzz.blog/commit/434b23e))
 * 🔖 tag(package.json): v2.5.4 ([ebea91f](https://github.com/M0rtzz/m0rtzz.blog/commit/ebea91f))
 * 🔖 tag(package.json): v2.6.1 ([dba12ae](https://github.com/M0rtzz/m0rtzz.blog/commit/dba12ae))
+* 🔖 tag(package.json): v2.6.2 ([dbe4d45](https://github.com/M0rtzz/m0rtzz.blog/commit/dbe4d45))
 
 
 
@@ -206,15 +241,25 @@ All notable changes to this project will be documented in this file. See [commit
 
 ## <small>2.5.5 (2024-07-19)</small>
 
-* 🐛 fix(music.tsx): fix the bug of the music not automatically playing again when it ends ([9c19359](https://github.com/M0rtzz/m0rtzz.blog/commit/9c19359))
 * 📝 docs(CHANGELOG.md): automatic update ([9104985](https://github.com/M0rtzz/m0rtzz.blog/commit/9104985))
-* 📝 docs(CHANGELOG.md): automatic update ([6c818fa](https://github.com/M0rtzz/m0rtzz.blog/commit/6c818fa))
-* 📝 docs(CHANGELOG.md): automatic update ([644a89d](https://github.com/M0rtzz/m0rtzz.blog/commit/644a89d))
 * 📝 docs(environment_configuration.md): update cmd ([cad3ef3](https://github.com/M0rtzz/m0rtzz.blog/commit/cad3ef3))
-* 📝 docs(environment_configuration.md): update image and cmd ([00c1a57](https://github.com/M0rtzz/m0rtzz.blog/commit/00c1a57))
-* 🔖 tag(package.json): v2.5.0 ([5339840](https://github.com/M0rtzz/m0rtzz.blog/commit/5339840))
-* 🔖 tag(package.json): v2.5.4 ([965690c](https://github.com/M0rtzz/m0rtzz.blog/commit/965690c))
 * 🔖 tag(package.json): v2.5.5 ([01e53a6](https://github.com/M0rtzz/m0rtzz.blog/commit/01e53a6))
+
+
+
+## <small>2.5.4 (2024-07-19)</small>
+
+* 🐛 fix(music.tsx): fix the bug of the music not automatically playing again when it ends ([9c19359](https://github.com/M0rtzz/m0rtzz.blog/commit/9c19359))
+* 📝 docs(CHANGELOG.md): automatic update ([6c818fa](https://github.com/M0rtzz/m0rtzz.blog/commit/6c818fa))
+* 📝 docs(environment_configuration.md): update image and cmd ([00c1a57](https://github.com/M0rtzz/m0rtzz.blog/commit/00c1a57))
+* 🔖 tag(package.json): v2.5.4 ([965690c](https://github.com/M0rtzz/m0rtzz.blog/commit/965690c))
+
+
+
+## 2.5.0 (2024-07-18)
+
+* 📝 docs(CHANGELOG.md): automatic update ([644a89d](https://github.com/M0rtzz/m0rtzz.blog/commit/644a89d))
+* 🔖 tag(package.json): v2.5.0 ([5339840](https://github.com/M0rtzz/m0rtzz.blog/commit/5339840))
 
 
 
@@ -230,7 +275,10 @@ All notable changes to this project will be documented in this file. See [commit
 
 * 📝 docs(CHANGELOG.md): automatic update ([c629c08](https://github.com/M0rtzz/m0rtzz.blog/commit/c629c08))
 * 📝 docs(CHANGELOG.md): automatic update ([3bc80a3](https://github.com/M0rtzz/m0rtzz.blog/commit/3bc80a3))
+* 📝 docs(CHANGELOG.md): automatic update ([bd945ef](https://github.com/M0rtzz/m0rtzz.blog/commit/bd945ef))
 * 📝 docs(environment_configuration.md): update cmd ([11463fb](https://github.com/M0rtzz/m0rtzz.blog/commit/11463fb))
+* 📝 docs(OS设计笔记.md): update url ([4847c23](https://github.com/M0rtzz/m0rtzz.blog/commit/4847c23))
+* 🔖 tag(package.json): v2.5.0 ([b03ccc0](https://github.com/M0rtzz/m0rtzz.blog/commit/b03ccc0))
 * 🔖 tag(package.json): v2.5.1 ([542305f](https://github.com/M0rtzz/m0rtzz.blog/commit/542305f))
 * 🔖 tag(package.json): v2.5.2 ([466227f](https://github.com/M0rtzz/m0rtzz.blog/commit/466227f))
 
@@ -239,9 +287,8 @@ All notable changes to this project will be documented in this file. See [commit
 ## 2.5.0 (2024-07-18)
 
 * ➕ add_dep(package.json): add package ([17697a9](https://github.com/M0rtzz/m0rtzz.blog/commit/17697a9))
-* 📝 docs(CHANGELOG.md): automatic update ([bd945ef](https://github.com/M0rtzz/m0rtzz.blog/commit/bd945ef))
-* 📝 docs(OS设计笔记.md): update url ([4847c23](https://github.com/M0rtzz/m0rtzz.blog/commit/4847c23))
-* 🔖 tag(package.json): v2.5.0 ([b03ccc0](https://github.com/M0rtzz/m0rtzz.blog/commit/b03ccc0))
+* 📝 docs(CHANGELOG.md): automatic update ([644a89d](https://github.com/M0rtzz/m0rtzz.blog/commit/644a89d))
+* 🔖 tag(package.json): v2.5.0 ([5339840](https://github.com/M0rtzz/m0rtzz.blog/commit/5339840))
 
 
 
@@ -312,19 +359,14 @@ All notable changes to this project will be documented in this file. See [commit
 * 💄 ui: change inline code style ([ae88e82](https://github.com/M0rtzz/m0rtzz.blog/commit/ae88e82))
 * 📝 docs(CHANGELOG.md): automatic update ([face023](https://github.com/M0rtzz/m0rtzz.blog/commit/face023))
 * 📝 docs(CHANGELOG.md): automatic update ([83169fa](https://github.com/M0rtzz/m0rtzz.blog/commit/83169fa))
-* 🔀 merge(CHANGELOG.md): gpr ([bb834d3](https://github.com/M0rtzz/m0rtzz.blog/commit/bb834d3))
-* 🔖 tag(package.json): v2.3.9 ([a5a41b4](https://github.com/M0rtzz/m0rtzz.blog/commit/a5a41b4))
-* 🔖 tag(package.json): v2.4.0 ([5f2a1ca](https://github.com/M0rtzz/m0rtzz.blog/commit/5f2a1ca))
-
-
-
-## <small>2.3.9 (2024-07-02)</small>
-
 * 📝 docs(CHANGELOG.md): automatic update ([e2fc80c](https://github.com/M0rtzz/m0rtzz.blog/commit/e2fc80c))
 * 📝 docs(CHANGELOG.md): automatic update ([f9b516f](https://github.com/M0rtzz/m0rtzz.blog/commit/f9b516f))
 * 📝 docs(CHANGELOG.md): pull ([d33c57c](https://github.com/M0rtzz/m0rtzz.blog/commit/d33c57c))
+* 🔀 merge(CHANGELOG.md): gpr ([bb834d3](https://github.com/M0rtzz/m0rtzz.blog/commit/bb834d3))
 * 🔖 tag(package.json): v2.3.8 ([8fd3528](https://github.com/M0rtzz/m0rtzz.blog/commit/8fd3528))
+* 🔖 tag(package.json): v2.3.9 ([a5a41b4](https://github.com/M0rtzz/m0rtzz.blog/commit/a5a41b4))
 * 🔖 tag(package.json): v2.3.9 ([e5d2cfb](https://github.com/M0rtzz/m0rtzz.blog/commit/e5d2cfb))
+* 🔖 tag(package.json): v2.4.0 ([5f2a1ca](https://github.com/M0rtzz/m0rtzz.blog/commit/5f2a1ca))
 
 
 
@@ -332,16 +374,11 @@ All notable changes to this project will be documented in this file. See [commit
 
 * 📝 docs(CHANGELOG.md): automatic update ([fc14a9b](https://github.com/M0rtzz/m0rtzz.blog/commit/fc14a9b))
 * 📝 docs(CHANGELOG.md): automatic update ([8772900](https://github.com/M0rtzz/m0rtzz.blog/commit/8772900))
-* 🔖 tag(package.json): v2.3.7 ([acd2cf3](https://github.com/M0rtzz/m0rtzz.blog/commit/acd2cf3))
-* 🔖 tag(package.json): v2.3.8 ([3ab2d9a](https://github.com/M0rtzz/m0rtzz.blog/commit/3ab2d9a))
-
-
-
-## <small>2.3.7 (2024-07-02)</small>
-
 * 📝 docs(CHANGELOG.md): automatic update ([6ea0c77](https://github.com/M0rtzz/m0rtzz.blog/commit/6ea0c77))
 * 📝 docs(CHANGELOG.md): automatic update ([a2a0921](https://github.com/M0rtzz/m0rtzz.blog/commit/a2a0921))
+* 🔖 tag(package.json): v2.3.7 ([acd2cf3](https://github.com/M0rtzz/m0rtzz.blog/commit/acd2cf3))
 * 🔖 tag(package.json): v2.3.7 ([0d44b70](https://github.com/M0rtzz/m0rtzz.blog/commit/0d44b70))
+* 🔖 tag(package.json): v2.3.8 ([3ab2d9a](https://github.com/M0rtzz/m0rtzz.blog/commit/3ab2d9a))
 
 
 
@@ -366,20 +403,15 @@ All notable changes to this project will be documented in this file. See [commit
 
 ## <small>2.3.4 (2024-06-27)</small>
 
-* 📝 docs(CHANGELOG.md): automatic update ([68946ae](https://github.com/M0rtzz/m0rtzz.blog/commit/68946ae))
-* 🔖 tag(package.json): v2.3.4 ([9e6ac5d](https://github.com/M0rtzz/m0rtzz.blog/commit/9e6ac5d))
-
-
-
-## <small>2.3.3 (2024-06-27)</small>
-
 * ✨ feat(markdown.tsx): add plugins to render latex math formula ([1f780a5](https://github.com/M0rtzz/m0rtzz.blog/commit/1f780a5))
 * ➕ add_dep(package.json): add package to render latex math formula ([a7b7500](https://github.com/M0rtzz/m0rtzz.blog/commit/a7b7500))
+* 📝 docs(CHANGELOG.md): automatic update ([68946ae](https://github.com/M0rtzz/m0rtzz.blog/commit/68946ae))
 * 📝 docs(CHANGELOG.md): automatic update ([a0db784](https://github.com/M0rtzz/m0rtzz.blog/commit/a0db784))
 * 📝 docs(CHANGELOG.md): automatic update ([3a2f84d](https://github.com/M0rtzz/m0rtzz.blog/commit/3a2f84d))
 * 📝 docs(CHANGELOG.md): automatic update ([83b8ac2](https://github.com/M0rtzz/m0rtzz.blog/commit/83b8ac2))
 * 🔖 tag(package.json): v2.0.6 ([2ddebb3](https://github.com/M0rtzz/m0rtzz.blog/commit/2ddebb3))
 * 🔖 tag(package.json): v2.3.3 ([0f39e04](https://github.com/M0rtzz/m0rtzz.blog/commit/0f39e04))
+* 🔖 tag(package.json): v2.3.4 ([9e6ac5d](https://github.com/M0rtzz/m0rtzz.blog/commit/9e6ac5d))
 
 
 
@@ -1539,3 +1571,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
