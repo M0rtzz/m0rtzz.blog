@@ -396,7 +396,7 @@ nvcc --version
 
 [https://developer.nvidia.com/rdp/cudnn-archive](https://developer.nvidia.com/rdp/cudnn-archive)
 
-官方安装教程（选择合适版本的**NVIDIA cuDNN Installation Guide**，鄙人一般来说会安装和已安装CUDA的发布时间相近的版本进行安装，之前安装PaddlePaddle的时候发现GPU版PaddlePaddle依赖库要求的CUDA工具包版本和CUDNN版本貌似也是这样对应的）：
+官方安装教程（选择合适版本的**NVIDIA cuDNN Installation Guide**，鄙人一般来说会安装和已安装CUDA的发布时间相近的版本，之前安装PaddlePaddle的时候发现GPU版PaddlePaddle依赖库要求的CUDA工具包版本和CUDNN版本貌似也是这样对应的）：
 
 [https://docs.nvidia.com/deeplearning/cudnn/archives/index.html](https://docs.nvidia.com/deeplearning/cudnn/archives/index.html)
 
