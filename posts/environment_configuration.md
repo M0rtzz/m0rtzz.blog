@@ -292,7 +292,7 @@ reboot
 sudo gedit /etc/modprobe.d/blacklist.conf
 ```
 
-输入
+在最后输入：
 
 ```ini
 blacklist nouveau
@@ -355,11 +355,11 @@ nvidia-smi
 
 ![image-20240720105532528](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:20/10:55:32_image-20240720105532528.png)
 
-## 6.cuda安装
+## 6.CUDA安装
 
 [https://developer.nvidia.com/cuda-toolkit-archive](https://developer.nvidia.com/cuda-toolkit-archive)
 
-选择和上一步nvidia-smi显示的cuda版本对应的进行安装，官方有教程
+选择≤上一步nvidia-smi显示的CUDA版本进行安装，官方有教程。
 
 安装好之后打开终端输入
 
@@ -392,11 +392,11 @@ nvcc --version
 
 安装成功！
 
-## 7.cudnn安装
+## 7.CUDNN安装
 
 [https://developer.nvidia.com/rdp/cudnn-archive](https://developer.nvidia.com/rdp/cudnn-archive)
 
-官方安装教程（选择合适版本的**NVIDIA cuDNN Installation Guide**）：
+官方安装教程（选择合适版本的**NVIDIA cuDNN Installation Guide**，鄙人一般来说会安装和已安装CUDA的发布时间相近的版本进行安装，之前安装PaddlePaddle的时候发现GPU版PaddlePaddle依赖库要求的CUDA工具包版本和CUDNN版本貌似也是这样对应的）：
 
 [https://docs.nvidia.com/deeplearning/cudnn/archives/index.html](https://docs.nvidia.com/deeplearning/cudnn/archives/index.html)
 
