@@ -142,6 +142,9 @@ function powerOff() {
 }
 
 alias po="powerOff"
+
+alias pip3='python3 -m pip'
+alias pip='python3 -m pip'
 ```
 
 之后保存退出
@@ -161,35 +164,39 @@ sudo gedit /etc/apt/sources.list
 将原本的注释掉，在最下方加入:
 
 ```bash
-# 华科源（Ubuntu 18.04）
+# 华科源（Ubuntu 18.04）【默认注释了源码仓库，如有需要可自行取消注释】
 deb https://mirrors.hust.edu.cn/ubuntu/ bionic main restricted universe multiverse
 # deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic main restricted universe multiverse
+
 deb https://mirrors.hust.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
 # deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+
 deb https://mirrors.hust.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
 # deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
 
 deb https://mirrors.hust.edu.cn/ubuntu bionic-security main restricted universe multiverse
 # deb-src https://mirrors.hust.edu.cn/ubuntu bionic-security main restricted universe multiverse
 
-## Not recommended
+## 预发布软件源，不建议启用
 # deb https://mirrors.hust.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
 # deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
 ```
 
 ```bash
-# 华科源（Ubuntu 20.04）
+# 华科源（Ubuntu 20.04）【默认注释了源码仓库，如有需要可自行取消注释】
 deb https://mirrors.hust.edu.cn/ubuntu/ focal main restricted universe multiverse
 # deb-src https://mirrors.hust.edu.cn/ubuntu/ focal main restricted universe multiverse
+
 deb https://mirrors.hust.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
 # deb-src https://mirrors.hust.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+
 deb https://mirrors.hust.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
 # deb-src https://mirrors.hust.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
 
 deb https://mirrors.hust.edu.cn/ubuntu focal-security main restricted universe multiverse
 # deb-src https://mirrors.hust.edu.cn/ubuntu focal-security main restricted universe multiverse
 
-## Not recommended
+## 预发布软件源，不建议启用
 # deb https://mirrors.hust.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
 # deb-src https://mirrors.hust.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
 ```
