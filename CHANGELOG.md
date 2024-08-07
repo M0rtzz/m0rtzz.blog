@@ -1,8 +1,83 @@
-# Changelog
+## <small>2.8.9 (2024-08-07)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 📝 docs(environment_configuration.md): update content ([f40e097](https://github.com/M0rtzz/m0rtzz.blog/commit/f40e097))
+* 🔖 tag(package.json): v2.8.9 ([0ce1f29](https://github.com/M0rtzz/m0rtzz.blog/commit/0ce1f29))
 
-## [2.8.9](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.8.8...v2.8.9) (2024-08-07)
+
+
+## <small>2.8.8 (2024-08-07)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([8efc60f](https://github.com/M0rtzz/m0rtzz.blog/commit/8efc60f))
+* 📝 docs(environment_configuration.md): update pypi mirror site ([437eb08](https://github.com/M0rtzz/m0rtzz.blog/commit/437eb08))
+* 🔖 tag(package.json): v2.8.8 ([892263f](https://github.com/M0rtzz/m0rtzz.blog/commit/892263f))
+
+
+
+## <small>2.8.7 (2024-08-07)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([bdc94fc](https://github.com/M0rtzz/m0rtzz.blog/commit/bdc94fc))
+* 📝 docs(environment_configuration.md): update sources.list ([aae0451](https://github.com/M0rtzz/m0rtzz.blog/commit/aae0451))
+* 🔖 tag(package.json): v2.8.7 ([3ce2a39](https://github.com/M0rtzz/m0rtzz.blog/commit/3ce2a39))
+
+
+
+## <small>2.8.6 (2024-08-07)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([2c9c7d9](https://github.com/M0rtzz/m0rtzz.blog/commit/2c9c7d9))
+* 🔖 tag(package.json): v2.8.6 ([2b1a821](https://github.com/M0rtzz/m0rtzz.blog/commit/2b1a821))
+* 🤖 chore(transfer.sh): change package manager ([4176f34](https://github.com/M0rtzz/m0rtzz.blog/commit/4176f34))
+
+
+
+## <small>2.8.5 (2024-08-07)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([99be344](https://github.com/M0rtzz/m0rtzz.blog/commit/99be344))
+* 📝 docs(environment_configuration.md): update mirror site url and fix path bug ([d754eea](https://github.com/M0rtzz/m0rtzz.blog/commit/d754eea))
+* 🔖 tag(package.json): v2.8.5 ([c835a00](https://github.com/M0rtzz/m0rtzz.blog/commit/c835a00))
+
+
+
+## <small>2.8.4 (2024-08-06)</small>
+
+* 💄 ui(shiki.css): update scrollbar style ([7b8631f](https://github.com/M0rtzz/m0rtzz.blog/commit/7b8631f))
+* 📝 docs(CHANGELOG.md): automatic update ([caef25f](https://github.com/M0rtzz/m0rtzz.blog/commit/caef25f))
+* 📝 docs(git commit规范及自动生成CHANGELOG.md): update `.cz-config.js` content ([bfeb943](https://github.com/M0rtzz/m0rtzz.blog/commit/bfeb943))
+* 🔖 tag(package.json): v2.8.4 ([c67f376](https://github.com/M0rtzz/m0rtzz.blog/commit/c67f376))
+
+
+
+## <small>2.8.3 (2024-08-06)</small>
+
+* ✨ feat(footer.tsx): add upyun logo ([38e7bd3](https://github.com/M0rtzz/m0rtzz.blog/commit/38e7bd3))
+* 🍱 asset(upyun.png): add upyun logo ([818a5e7](https://github.com/M0rtzz/m0rtzz.blog/commit/818a5e7))
+* 📝 docs(CHANGELOG.md): automatic update ([58219b6](https://github.com/M0rtzz/m0rtzz.blog/commit/58219b6))
+* 📝 docs(environment_configuration.md): update path ([1f4c9fd](https://github.com/M0rtzz/m0rtzz.blog/commit/1f4c9fd))
+* 🔖 tag(package.json): v2.8.3 ([339389d](https://github.com/M0rtzz/m0rtzz.blog/commit/339389d))
+
+
+
+## <small>2.8.2 (2024-08-06)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([d5d5c4a](https://github.com/M0rtzz/m0rtzz.blog/commit/d5d5c4a))
+* 📝 docs(CHANGELOG.md): automatic update ([5968a86](https://github.com/M0rtzz/m0rtzz.blog/commit/5968a86))
+* 📝 docs(CHANGELOG.md): automatic update ([2ca1fdf](https://github.com/M0rtzz/m0rtzz.blog/commit/2ca1fdf))
+* 📝 docs(environment_configuration.md): update conda mirror site url ([552dddc](https://github.com/M0rtzz/m0rtzz.blog/commit/552dddc))
+* 📝 docs(environment_configuration.md): update conda mirror site url ([a0f884d](https://github.com/M0rtzz/m0rtzz.blog/commit/a0f884d))
+* 📝 docs(environment_configuration.md): update path ([632f6e1](https://github.com/M0rtzz/m0rtzz.blog/commit/632f6e1))
+* 🔖 tag(package.json): v2.4.0 ([cf27f4e](https://github.com/M0rtzz/m0rtzz.blog/commit/cf27f4e))
+* 🔖 tag(package.json): v2.7.9 ([8074510](https://github.com/M0rtzz/m0rtzz.blog/commit/8074510))
+* 🔖 tag(package.json): v2.8.2 ([bbf8986](https://github.com/M0rtzz/m0rtzz.blog/commit/bbf8986))
+
+
+
+## <small>2.8.1 (2024-07-31)</small>
+
+* 📝 docs: add git config cmd ([9a4c2df](https://github.com/M0rtzz/m0rtzz.blog/commit/9a4c2df))
+* 📝 docs(CHANGELOG.md): automatic update ([4021ef4](https://github.com/M0rtzz/m0rtzz.blog/commit/4021ef4))
+* 🔖 tag(package.json): v2.8.1 ([36bc317](https://github.com/M0rtzz/m0rtzz.blog/commit/36bc317))
+* 🚚 move: rename file ([9d177d2](https://github.com/M0rtzz/m0rtzz.blog/commit/9d177d2))
+
+
 
 ## 2.8.0 (2024-07-31)
 
@@ -1536,3 +1611,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
