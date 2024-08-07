@@ -250,7 +250,7 @@ td {
   margin-bottom: 1rem;
 }
 
-strong.text-2xl {
+strong .text-2xl {
   color: unset !important;
 }
 
@@ -550,6 +550,7 @@ div.not-prose:nth-child(n)
   font-weight: 500;
 }
 
-strong > a {
+/* 加粗的超链接 */
+strong a {
   font-weight: unset !important;
 }

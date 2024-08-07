@@ -147,7 +147,7 @@
   width: 0.75rem !important;
 } */
 
-span.line.diff::before {
+span .line.diff::before {
   content: counter(step) var(--tw-content, 'default') !important;
   /* margin-left: 0.31rem !important; */
   left: 0.95rem !important;
