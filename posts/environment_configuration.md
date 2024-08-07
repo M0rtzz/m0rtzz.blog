@@ -20,7 +20,7 @@ zwz4
 
 ## 1.注意
 
-刚进入系统一段时间，系统会通知更新到新版本系统（Ubuntu18.04），选择否，之后会询问是否更新系统组件（大概400mb），选择是。
+刚进入系统一段时间，系统会通知是否更新到新版本的系统（比如Ubuntu20.04→Ubuntu22.04/Ubuntu24.04），选择否，之后会询问是否更新系统组件，选择否。
 
 阻止软件更新弹窗：
 
@@ -143,11 +143,12 @@ function powerOff() {
 
 alias po="powerOff"
 
-alias pip3='python3 -m pip'
+# 有效解决Anaconda3激活虚拟环境后使用`pip install`或`pip3 install`会安装到其他虚拟环境的问题
 alias pip='python3 -m pip'
+alias pip3='python3 -m pip'
 ```
 
-之后保存退出
+之后保存退出。
 
 ```bash
 source ~/.bashrc
@@ -202,7 +203,7 @@ deb https://mirrors.hust.edu.cn/ubuntu focal-security main restricted universe m
 ```
 
 ```bash
-sudo apt update
+sudo apt update && sudo apt upgrade
 ```
 
 anaconda镜像源（~/.condarc）【**注意替换**`envs_dirs`**中的绝对路径**】:
