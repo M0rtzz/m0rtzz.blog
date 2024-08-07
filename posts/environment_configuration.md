@@ -161,46 +161,38 @@ sudo gedit /etc/apt/sources.list
 将原本的注释掉，在最下方加入:
 
 ```bash
-# 中科大源（Ubuntu 18.04）
-deb https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse
-deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse
+# 华科源（Ubuntu 18.04）
+deb https://mirrors.hust.edu.cn/ubuntu/ bionic main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic main restricted universe multiverse
+deb https://mirrors.hust.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+deb https://mirrors.hust.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
 
-deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
-deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
-
-deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
-deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
-
-deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
-deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+deb https://mirrors.hust.edu.cn/ubuntu bionic-security main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu bionic-security main restricted universe multiverse
 
 ## Not recommended
-# deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
-# deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+# deb https://mirrors.hust.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
 ```
 
 ```bash
-# 中科大源（Ubuntu 20.04）
-deb https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse
-deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse
+# 华科源（Ubuntu 20.04）
+deb https://mirrors.hust.edu.cn/ubuntu/ focal main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal main restricted universe multiverse
+deb https://mirrors.hust.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+deb https://mirrors.hust.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
 
-deb https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse
-deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse
-
-deb https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
-deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
-
-deb https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
-deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+deb https://mirrors.hust.edu.cn/ubuntu focal-security main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu focal-security main restricted universe multiverse
 
 ## Not recommended
-# deb https://mirrors.ustc.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
-# deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
+# deb https://mirrors.hust.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
 ```
-
-或（寻找属于自己的发行版）：
-
-[https://mirrors.ustc.edu.cn/repogen/](https://mirrors.ustc.edu.cn/repogen/)
 
 ```bash
 sudo apt update
@@ -228,9 +220,33 @@ custom_channels:
   simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   deepmodeling: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   nvidia: https://mirrors.sustech.edu.cn/anaconda-extra/cloud
-/Programs
+
 envs_dirs:
   - /home/m0rtzz/Programs/anaconda3/envs
+```
+
+pip设置镜像源：
+
+```bash
+cd ${HOME}/.config/pip/ || (mkdir -p ${HOME}/.config/pip/ && gedit ${HOME}/.config/pip/pip.conf)
+```
+
+```ini
+[global]
+index-url = https://mirrors.hust.edu.cn/pypi/web/simple
+
+extra-index-url =
+    https://pypi.tuna.tsinghua.edu.cn/simple
+    https://mirrors.bfsu.edu.cn/pypi/web/simple
+    https://pypi.ngc.nvidia.com
+
+trusted-host =
+    mirrors.hust.edu.cn
+    pypi.tuna.tsinghua.edu.cn
+    mirrors.bfsu.edu.cn
+    pypi.ngc.nvidia.com
+
+no-cache-dir = true
 ```
 
 ## 3.设置$HOME下的文件夹为英文
@@ -589,7 +605,7 @@ cd build
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D WITH_GTK_2_X=ON \
--D OPENCV_ENABLE_NONFREE=ON \/Programs
+-D OPENCV_ENABLE_NONFREE=ON \
 -D OPENCV_GENERATE_PKGCONFIG=YES \
 -D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.16/opencv_contrib-3.4.16/modules \
 -D WITH_CUDA=ON \
@@ -636,7 +652,7 @@ cd downloads && pwd
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D WITH_GTK_2_X=ON \
--D OPENCV_ENABLE_NONFREE=ON \/Programs
+-D OPENCV_ENABLE_NONFREE=ON \
 -D OPENCV_GENERATE_PKGCONFIG=YES \
 -D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.16/opencv_contrib-3.4.16/modules \
 -D WITH_CUDA=ON \
@@ -661,7 +677,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D WITH_GTK_2_X=ON \
--D OPENCV_ENABLE_NONFREE=ON \/Programs
+-D OPENCV_ENABLE_NONFREE=ON \
 -D OPENCV_GENERATE_PKGCONFIG=YES \
 -D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.16/opencv_contrib-3.4.16/modules \
 -D WITH_CUDA=ON \
@@ -774,7 +790,7 @@ opencv-3.4.4cmake命令：
 cmake -D CMAKE_BUILD_TYPE=BUILD \
 -D CMAKE_INSTALL_PREFIX=/usr/local \
 -D WITH_GTK_2_X=ON \
--D OPENCV_ENABLE_NONFREE=ON \/Programs
+-D OPENCV_ENABLE_NONFREE=ON \
 -D OPENCV_GENERATE_PKGCONFIG=YES \
 -D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.4/opencv_contrib-3.4.4/modules \
 -D WITH_CUDA=ON \
@@ -800,7 +816,7 @@ cmake -D CMAKE_BUILD_TYPE=BUILD \
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D OPENCV_GENERATE_PKGCONFIG=ON \
--D INSTALL_PYTHON_EXAMPLES=ON \/Programs
+-D INSTALL_PYTHON_EXAMPLES=ON \
 -D INSTALL_C_EXAMPLES=ON \
 -D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-4.2.0/opencv_contrib-4.2.0/modules \
 -D WITH_V4L=ON \
@@ -828,7 +844,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D OPENCV_GENERATE_PKGCONFIG=ON \
--D INSTALL_PYTHON_EXAMPLES=ON \/Programs
+-D INSTALL_PYTHON_EXAMPLES=ON \
 -D INSTALL_C_EXAMPLES=ON \
 -D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-4.2.0/opencv_contrib-4.2.0/modules \
 -D WITH_V4L=ON \
@@ -856,7 +872,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D OPENCV_GENERATE_PKGCONFIG=ON \
--D INSTALL_PYTHON_EXAMPLES=ON \/Programs
+-D INSTALL_PYTHON_EXAMPLES=ON \
 -D INSTALL_C_EXAMPLES=ON \
 -D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-4.2.0/opencv_contrib-4.2.0/modules \
 -D WITH_V4L=ON \
