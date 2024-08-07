@@ -245,12 +245,14 @@ index-url = https://mirrors.hust.edu.cn/pypi/web/simple
 extra-index-url =
     https://pypi.tuna.tsinghua.edu.cn/simple
     https://mirrors.bfsu.edu.cn/pypi/web/simple
+    https://pypi.nvidia.com
     https://pypi.ngc.nvidia.com
 
 trusted-host =
     mirrors.hust.edu.cn
     pypi.tuna.tsinghua.edu.cn
     mirrors.bfsu.edu.cn
+    pypi.nvidia.com
     pypi.ngc.nvidia.com
 
 no-cache-dir = true
