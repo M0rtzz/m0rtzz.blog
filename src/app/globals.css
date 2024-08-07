@@ -549,3 +549,7 @@ div.not-prose:nth-child(n)
   text-decoration: underline;
   font-weight: 500;
 }
+
+strong > a {
+  font-weight: unset !important;
+}
