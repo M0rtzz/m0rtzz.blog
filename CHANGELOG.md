@@ -1,17 +1,8 @@
-## <small>2.9.2 (2024-08-07)</small>
+# Changelog
 
-* 💄 ui(globals.css): update the style of hyperlink in bold font ([418d606](https://github.com/M0rtzz/m0rtzz.blog/commit/418d606))
-* 🔖 tag(package.json): v2.9.2 ([a98c66f](https://github.com/M0rtzz/m0rtzz.blog/commit/a98c66f))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>2.9.1 (2024-08-07)</small>
-
-* 📝 docs(CHANGELOG.md): automatic update ([fae69f4](https://github.com/M0rtzz/m0rtzz.blog/commit/fae69f4))
-* 📝 docs(environment_configuration.md): update .bashrc ([90d941f](https://github.com/M0rtzz/m0rtzz.blog/commit/90d941f))
-* 🔖 tag(package.json): v2.9.1 ([33d1764](https://github.com/M0rtzz/m0rtzz.blog/commit/33d1764))
-
-
+## [2.9.3](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.9.2...v2.9.3) (2024-08-07)
 
 ## 2.9.0 (2024-08-07)
 
@@ -1635,5 +1626,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
