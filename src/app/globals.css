@@ -310,6 +310,11 @@ ul.contains-task-list:nth-child(n) > li:nth-child(n) > em:nth-child(n) {
   font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
 }
 
+/* 加粗的超链接 */
+strong a {
+  font-weight: unset !important;
+}
+
 /* 引用块中禁止全局斜体 */
 .prose > blockquote:nth-child(n) {
   font-style: normal;
@@ -475,9 +480,4 @@ div.not-prose:nth-child(n)
   color: var(--tw-prose-links);
   text-decoration: underline;
   font-weight: 500;
-}
-
-/* 加粗的超链接 */
-strong a {
-  font-weight: unset !important;
 }
