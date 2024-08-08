@@ -265,42 +265,47 @@ strong {
   color: rgb(59, 141, 254) !important;
 }
 
-/* 加粗斜体字体的颜色 */
-.prose > p:nth-child(n) > em:nth-child(n) strong {
-  color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
-}
-
-/* 斜体字体的颜色 */
-.prose > p:nth-child(n) > em:nth-child(n) {
-  color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
-}
-
-/* 引用块中加粗斜体字体的颜色 */
+/* 加粗斜体字体的颜色 */ /* 斜体字体的颜色 */ /* 引用块中加粗斜体字体的颜色 */ /* 引用块中斜体字体的颜色 */ /* 警告块中加粗斜体字体的颜色 */ /* 警告块中斜体字体的颜色 */ /* 使用后代选择器统一匹配所有层级的元素 */ /* 表格中加粗斜体字体的颜色 */ /* 表格中斜体字体的颜色 */ /* 任务列表第一层中加粗斜体字体的颜色 */ /* 任务列表第一层中斜体字体的颜色 */ /* 任务列表剩余层中斜体字体的颜色 */ /* 任务列表剩余层中加粗斜体字体的颜色 */
+.prose > p:nth-child(n) > em:nth-child(n) strong,
+.prose > p:nth-child(n) > em:nth-child(n),
 .prose
   > blockquote:nth-child(n)
   > p:nth-child(n)
   > em:nth-child(n)
-  > strong:nth-child(n) {
-  color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
-}
-
-/* 引用块中斜体字体的颜色 */
-.prose > blockquote:nth-child(n) > p:nth-child(n) > em:nth-child(n) {
-  color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
-}
-
-/* 警告块中加粗斜体字体的颜色 */
-.small-line-numbers > p:nth-child(n) > em:nth-child(n) > strong:nth-child(n) {
-  color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
-}
-
-/* 警告块中斜体字体的颜色 */
-.small-line-numbers > p:nth-child(n) > em:nth-child(n) {
+  > strong:nth-child(n),
+.prose > blockquote:nth-child(n) > p:nth-child(n) > em:nth-child(n),
+.small-line-numbers > p:nth-child(n) > em:nth-child(n) > strong:nth-child(n),
+.small-line-numbers > p:nth-child(n) > em:nth-child(n),
+ol li em,
+ol li em strong,
+ul li em,
+ul li em strong,
+.prose
+  > table:nth-child(n)
+  > tbody:nth-child(n)
+  > tr:nth-child(n)
+  > td:nth-child(n)
+  > em:nth-child(n)
+  > strong:nth-child(n),
+.prose
+  > table:nth-child(n)
+  > tbody:nth-child(n)
+  > tr:nth-child(n)
+  > td:nth-child(n)
+  > em:nth-child(n),
+li.task-list-item:nth-child(n)
+  > p:nth-child(n)
+  > em:nth-child(n)
+  > strong:nth-child(n),
+ul.contains-task-list:nth-child(n)
+  > li:nth-child(n)
+  > p:nth-child(n)
+  > em:nth-child(n),
+ul.contains-task-list:nth-child(n)
+  > li:nth-child(n)
+  > em:nth-child(n)
+  > strong:nth-child(n),
+ul.contains-task-list:nth-child(n) > li:nth-child(n) > em:nth-child(n) {
   color: rgb(201, 77, 255) !important;
   font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
 }
@@ -308,84 +313,6 @@ strong {
 /* 引用块中禁止全局斜体 */
 .prose > blockquote:nth-child(n) {
   font-style: normal;
-}
-
-/* 使用后代选择器统一匹配所有层级的元素 */
-ol li em {
-  color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
-}
-
-ol li em strong {
-  color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
-}
-
-/* 使用后代选择器统一匹配所有层级的元素 */
-ul li em {
-  color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
-}
-
-ul li em strong {
-  color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
-}
-
-/* 表格中加粗斜体字体的颜色 */
-.prose
-  > table:nth-child(n)
-  > tbody:nth-child(n)
-  > tr:nth-child(n)
-  > td:nth-child(n)
-  > em:nth-child(n)
-  > strong:nth-child(n) {
-  color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
-}
-
-/* 表格中斜体字体的颜色 */
-.prose
-  > table:nth-child(n)
-  > tbody:nth-child(n)
-  > tr:nth-child(n)
-  > td:nth-child(n)
-  > em:nth-child(n) {
-  color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
-}
-
-/* 任务列表第一层中加粗斜体字体的颜色 */
-li.task-list-item:nth-child(n)
-  > p:nth-child(n)
-  > em:nth-child(n)
-  > strong:nth-child(n) {
-  color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
-}
-
-/* 任务列表第一层中斜体字体的颜色 */
-ul.contains-task-list:nth-child(n)
-  > li:nth-child(n)
-  > p:nth-child(n)
-  > em:nth-child(n) {
-  color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
-}
-
-/* 任务列表剩余层中斜体字体的颜色 */
-ul.contains-task-list:nth-child(n)
-  > li:nth-child(n)
-  > em:nth-child(n)
-  > strong:nth-child(n) {
-  color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
-}
-
-/* 任务列表剩余层中加粗斜体字体的颜色 */
-ul.contains-task-list:nth-child(n) > li:nth-child(n) > em:nth-child(n) {
-  color: rgb(201, 77, 255) !important;
-  font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
 }
 
 /* resume中加粗字体颜色默认 */
