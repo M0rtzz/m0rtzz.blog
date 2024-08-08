@@ -556,7 +556,7 @@ rosrun turtlesim turtle_teleop_key
 
 ~~虽然使用cv_bridge时某些shared object有可能和ROS自带的opencv-3.2.0版本冲突，但实测安装3.2.0对cuda的兼容性太差导致无法使用深度相机，所以安装官网最近更新过的OpenCV3.4.16~~
 
-**_经尝试多版本Ubuntu和OpenCV，装Ubuntu20.04，ROS noetic和OpenCV4.2.0及其扩展模块才能解决将彩色图像转换为网络所需的输入Blob后前馈时抛出的（raised OpenCV exception，error: (-215:Assertion failed)等等）。下方OpenCV3的安装步骤仅供参考，OpenCV4.2.0的cmake命令及注意事项在本小节最后！_**
+***经尝试多版本Ubuntu和OpenCV，装Ubuntu20.04，ROS noetic和OpenCV4.2.0及其扩展模块才能解决将彩色图像转换为网络所需的输入Blob后前馈时抛出的（raised OpenCV exception，error: (-215:Assertion failed)等等）。下方OpenCV3的安装步骤仅供参考，OpenCV4.2.0的cmake命令及注意事项在本小节最后！***
 
 ### ①OpenCV3的安装步骤
 
@@ -772,7 +772,7 @@ sudo make -j$(nproc)
 
 安装成功！
 
-**_设置cv_bridge的版本（ROS-melodic，经实践发现毫无效果）：_**
+***设置cv_bridge的版本（ROS-melodic，经实践发现毫无效果）：***
 
 ```bash
 sudo gedit /opt/ros/melodic/share/cv_bridge/cmake/cv_bridgeConfig.cmake
@@ -918,7 +918,7 @@ $(mlocate deviceQuery | grep cuda | head -n 1)
 
 ![image-20240206162114753](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/16:21:14_image-20240206162114753.png)
 
-**_（解决CUDNN8编译报错，需手动加入PR代码）_**
+***（解决CUDNN8编译报错，需手动加入PR代码）***
 
 [https://github.com/opencv/opencv/pull/17685/files](https://github.com/opencv/opencv/pull/17685/files)
 
@@ -928,7 +928,7 @@ $(mlocate deviceQuery | grep cuda | head -n 1)
 wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support-patch/assets/149 -O opencv_PR_17685.patch
 ```
 
-**_（如果不执行以下几步，编译darknet_ros会报错:error:‘IplImage’之类的）_**
+***（如果不执行以下几步，编译darknet_ros会报错:error:‘IplImage’之类的）***
 
 ```bash
 sudo cp /usr/local/lib/pkgconfig/opencv4.pc /usr/lib/pkgconfig/opencv4.pc
