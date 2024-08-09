@@ -310,7 +310,7 @@ sudo update-initramfs -u
 reboot
 ```
 
-## 5.安装Nvidia驱动
+## 5.安装NVIDIA驱动
 
 > [!CAUTION]
 >
