@@ -250,7 +250,7 @@ td {
   margin-bottom: 1rem;
 }
 
-strong .text-2xl {
+strong.text-2xl {
   color: unset !important;
 }
 
