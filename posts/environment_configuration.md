@@ -2,7 +2,7 @@
 
 **Updating（最速更新链接：[博客](https://www.m0rtzz.com/posts/3)）...**
 
-ZZU-SR的童鞋配置环境前可以给我发邮件：[E-mail](mailto:m0rtzz@stu.zzu.edu.cn)
+ZZU-SR的童鞋配置环境前可以给鄙人发邮件：[E-mail](mailto:m0rtzz@stu.zzu.edu.cn)
 
 ---
 
@@ -397,9 +397,11 @@ nvcc --version
 
 [https://developer.nvidia.com/rdp/cudnn-archive](https://developer.nvidia.com/rdp/cudnn-archive)
 
-官方安装教程（选择合适版本的**NVIDIA cuDNN Installation Guide**，鄙人一般来说会安装和已安装CUDA的发布时间相近的版本，之前安装PaddlePaddle的时候发现GPU版PaddlePaddle依赖库要求的CUDA工具包版本和CUDNN版本貌似也是这样对应的）：
-
-[https://docs.nvidia.com/deeplearning/cudnn/archives/index.html](https://docs.nvidia.com/deeplearning/cudnn/archives/index.html)
+> [!TIP]
+>
+> 官方安装教程（选择合适版本的**NVIDIA cuDNN Installation Guide**，鄙人一般来说会安装和已安装CUDA的发布时间相近的版本，之前安装PaddlePaddle的时候发现GPU版PaddlePaddle依赖库要求的CUDA工具包版本和CUDNN版本貌似也是这样对应的）：
+>
+> [https://docs.nvidia.com/deeplearning/cudnn/archives/index.html](https://docs.nvidia.com/deeplearning/cudnn/archives/index.html)
 
 ```bash
 tar -xvf cudnn-linux-x86_64-8.x.x.x_cudaX.Y-archive.tar.xz
@@ -593,11 +595,7 @@ sudo apt install libjasper1 libjasper-dev
 ```
 
 ```bash
-sudo apt install build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev liblapacke-dev checkinstall
-```
-
-```bash
-sudo apt install liblapacke-dev checkinstall
+sudo apt install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev liblapacke-dev checkinstall
 ```
 
 进入opencv-3.4.16文件夹，打开终端，输入：
@@ -1165,7 +1163,7 @@ git apply patches/*.patch
 安装依赖
 
 ```bash
-sudo apt install  intltool  libvte-2.91-dev gsettings-desktop-schemas-dev uuid-dev libdconf-dev libpcre2-dev libgconf2-dev libxml2-utils  gnome-shell libnautilus-extension-dev itstool  yelp-tools pcre2-utils
+sudo apt install intltool libvte-2.91-dev gsettings-desktop-schemas-dev uuid-dev libdconf-dev libpcre2-dev libgconf2-dev libxml2-utils gnome-shell libnautilus-extension-dev itstool yelp-tools pcre2-utils
 ```
 
 打开src/下的terminal-nautilus.c
@@ -1367,10 +1365,6 @@ mkdir weights && cd ./weights && wget -q --show-progress https://pjreddie.com/me
 正常wget太慢，我们使用mwget进行安装：
 
 找一个你想安装mwget的地方打开终端，输入：
-
-```bash
-sudo apt install build-essential intltool
-```
 
 ```bash
 sudo apt upgrade intltool
@@ -1602,7 +1596,7 @@ sudo apt update
 ```
 
 ```bash
-sudo apt install -y  pkg-config  ninja-build doxygen clang  gcc-multilib  g++-multilib python3 nasm cmake libgl1-mesa-dev libsoundio-dev libvulkan-dev libx11-dev libxcursor-dev libxinerama-dev libxrandr-dev libusb-1.0-0-dev libssl-dev libudev-dev mesa-common-dev uuid-dev
+sudo apt install -y ninja-build doxygen clang gcc-multilib g++-multilib python3 nasm libgl1-mesa-dev libsoundio-dev libvulkan-dev libx11-dev libxcursor-dev libxinerama-dev libxrandr-dev libusb-1.0-0-dev libudev-dev mesa-common-dev uuid-dev
 ```
 
 [https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/](https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/)
@@ -1892,7 +1886,7 @@ git clone -b v2.50.0 https://mirror.ghproxy.com/https://github.com/IntelRealSens
 安装依赖：
 
 ```bash
-sudo apt install libudev-dev pkg-config libgtk-3-dev libusb-1.0-0-dev pkg-config libglfw3-dev
+sudo apt install libgtk-3-dev libusb-1.0-0-dev libglfw3-dev
 ```
 
 进入刚才克隆的librealsense文件夹内：
