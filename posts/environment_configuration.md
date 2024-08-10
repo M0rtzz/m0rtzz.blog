@@ -246,8 +246,8 @@ index-url = https://mirrors.hust.edu.cn/pypi/web/simple
 extra-index-url =
     https://pypi.tuna.tsinghua.edu.cn/simple
     https://mirrors.bfsu.edu.cn/pypi/web/simple
-    https://pypi.nvidia.com
-    https://pypi.ngc.nvidia.com
+    # https://pypi.nvidia.com 
+    # https://pypi.ngc.nvidia.com
 
 trusted-host =
     mirrors.hust.edu.cn
