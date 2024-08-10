@@ -1,8 +1,59 @@
-# Changelog
+## <small>2.9.7 (2024-08-10)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 💡 comment(pip.conf): comment nvidia python package site ([4a001d1](https://github.com/M0rtzz/m0rtzz.blog/commit/4a001d1))
+* 🔖 tag(package.json): v2.9.7 ([812e148](https://github.com/M0rtzz/m0rtzz.blog/commit/812e148))
 
-## [2.9.7](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.9.6...v2.9.7) (2024-08-10)
+
+
+## <small>2.9.6 (2024-08-09)</small>
+
+* 🐛 fix(globals.css): fix the bug of website color ([84f6aa6](https://github.com/M0rtzz/m0rtzz.blog/commit/84f6aa6))
+* 📝 docs(CHANGELOG.md): automatic update ([7cf2315](https://github.com/M0rtzz/m0rtzz.blog/commit/7cf2315))
+* 🔖 tag(package.json): v2.9.6 ([ac04b33](https://github.com/M0rtzz/m0rtzz.blog/commit/ac04b33))
+
+
+
+## <small>2.9.5 (2024-08-09)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([8a31f55](https://github.com/M0rtzz/m0rtzz.blog/commit/8a31f55))
+* 📝 docs(environment_configuration.md): update title ([4ebd932](https://github.com/M0rtzz/m0rtzz.blog/commit/4ebd932))
+* 🔖 tag(package.json): v2.9.5 ([9ee9bdd](https://github.com/M0rtzz/m0rtzz.blog/commit/9ee9bdd))
+
+
+
+## <small>2.9.4 (2024-08-09)</small>
+
+* ♻️ refactor(globals.css): merge css classes with the same value ([725c822](https://github.com/M0rtzz/m0rtzz.blog/commit/725c822))
+* 📝 docs(CHANGELOG.md): automatic update ([4d3af09](https://github.com/M0rtzz/m0rtzz.blog/commit/4d3af09))
+* 📝 docs(environment_configuration.md): update bold italics ([3c350aa](https://github.com/M0rtzz/m0rtzz.blog/commit/3c350aa))
+* 📝 docs(environment_configuration.md): update install cmd ([dbdf560](https://github.com/M0rtzz/m0rtzz.blog/commit/dbdf560))
+* 🔖 tag(package.json): v2.9.4 ([605574e](https://github.com/M0rtzz/m0rtzz.blog/commit/605574e))
+
+
+
+## <small>2.9.3 (2024-08-07)</small>
+
+* 🎨 style: format code ([a9bb676](https://github.com/M0rtzz/m0rtzz.blog/commit/a9bb676))
+* 📝 docs(CHANGELOG.md): automatic update ([4432584](https://github.com/M0rtzz/m0rtzz.blog/commit/4432584))
+* 🔖 tag(package.json): v2.9.3 ([e732c57](https://github.com/M0rtzz/m0rtzz.blog/commit/e732c57))
+
+
+
+## <small>2.9.2 (2024-08-07)</small>
+
+* 💄 ui(globals.css): update the style of hyperlink in bold font ([418d606](https://github.com/M0rtzz/m0rtzz.blog/commit/418d606))
+* 📝 docs(CHANGELOG.md): automatic update ([d9dd6f7](https://github.com/M0rtzz/m0rtzz.blog/commit/d9dd6f7))
+* 🔖 tag(package.json): v2.9.2 ([a98c66f](https://github.com/M0rtzz/m0rtzz.blog/commit/a98c66f))
+
+
+
+## <small>2.9.1 (2024-08-07)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([fae69f4](https://github.com/M0rtzz/m0rtzz.blog/commit/fae69f4))
+* 📝 docs(environment_configuration.md): update .bashrc ([90d941f](https://github.com/M0rtzz/m0rtzz.blog/commit/90d941f))
+* 🔖 tag(package.json): v2.9.1 ([33d1764](https://github.com/M0rtzz/m0rtzz.blog/commit/33d1764))
+
+
 
 ## 2.9.0 (2024-08-07)
 
@@ -1624,3 +1675,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
