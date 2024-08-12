@@ -193,7 +193,7 @@ module.exports = {
         },
         {
             value: '🗃️ db',
-            name: '🗃️ db:\tPerform database related changes | 数据库相关'
+            name: '🗃️  db:\tPerform database related changes | 数据库相关'
         },
         {
             value: '🧵 thread',
