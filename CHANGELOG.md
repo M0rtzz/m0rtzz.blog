@@ -371,7 +371,9 @@
 * 📝 docs(environment_configuration.md): update .bashrc ([90d941f](https://github.com/M0rtzz/m0rtzz.blog/commit/90d941f))
 * 🔖 tag(package.json): v2.9.1 ([33d1764](https://github.com/M0rtzz/m0rtzz.blog/commit/33d1764))
 
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.9.8](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.9.6...v2.9.8) (2024-08-12)
 
 ## 2.9.0 (2024-08-07)
 
@@ -2008,5 +2010,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
