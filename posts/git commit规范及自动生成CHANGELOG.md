@@ -113,7 +113,11 @@ module.exports = {
         },
         {
             value: '🔥 remove',
-            name: '🔥 remove:\tRemove code or files | 移除'
+            name: '🔥 remove:\tRemove code or files | 移除代码或文件'
+        },
+        {
+            value: '⚰️ dead',
+            name: '⚰️  dead:\tRemove dead code | 移除无用代码'
         },
         {
             value: '💩 poop',
@@ -152,12 +156,44 @@ module.exports = {
             name: '🚚 move:\tMove or rename resources (e.g.: files, paths, routes) | 移动'
         },
         {
-            value: '🤖 chore',
-            name: '🤖 chore:\tBuild process or auxiliary tool changes | 构建/工程依赖/工具'
+            value: '🚀 chore',
+            name: '🚀 chore:\tBuild process or auxiliary tool changes | 构建/工程依赖/工具'
+        },
+        {
+            value: '🚨 lint',
+            name: '🚨 lint:\tFix compiler or linter warnings | 编译/代码检查工具警告'
+        },
+        {
+            value: '🚑️ hotfix',
+            name: '🚑️ hotfix:\tCritical hotfix | 紧急修复'
+        },
+        {
+            value: '✏️ typo',
+            name: '✏️  typo:\tFix typos | 错别字'
+        },
+        {
+            value: '🛂 passport',
+            name: '🛂 passport:\tWork on code related to authorization, roles and permissions | 与授权、身份和权限相关'
+        },
+        {
+            value: '💫 anim',
+            name: '💫 anim:\tAdd or update animations and transitions | 动画和过渡'
+        },
+        {
+            value: '👔 logic',
+            name: '👔 logic:\tAdd or update business logic | 业务逻辑'
+        },
+        {
+            value: '💬 text',
+            name: '💬 text:\tAdd or update text and literals | 文本和文字'
         },
         {
             value: '⚡️ perf',
             name: '⚡️ perf:\tA code change that improves performance | 性能优化'
+        },
+        {
+            value: '🗃️ db',
+            name: '🗃️ db:\tPerform database related changes | 数据库相关'
         },
         {
             value: '🧵 thread',
@@ -166,6 +202,10 @@ module.exports = {
         {
             value: '🔐 secert',
             name: '🔐 secert:\tSecert | 秘钥'
+        },
+        {
+            value: '🚸 usability',
+            name: '🚸 usability:\tImprove user experience or usability | 增强用户体验/可用性'
         },
         {
             value: '🔀 merge',
@@ -182,6 +222,10 @@ module.exports = {
         {
             value: '📦 build',
             name: '📦 build:\tBuild System | 打包构建'
+        },
+        {
+            value: '🥅 catch',
+            name: '🥅 catch:\tCatch errors | 捕捉错误'
         },
         {
             value: '🔊 add_log',
@@ -208,8 +252,16 @@ module.exports = {
             name: '⬇️  down_dep:\tDowngrade dep | 降级依赖'
         },
         {
+            value: '📌 pin_dep',
+            name: '📌 pin_dep:\tPin dependencies to specific versions | 固定依赖版本'
+        },
+        {
             value: '👷 ci',
             name: '👷 ci:\tCI related changes | CI 配置'
+        },
+        {
+            value: '📈 chore',
+            name: '📈 chore:\tAdd or update analytics or track code | 分析或跟踪'
         },
         {
             value: '♻️ refactor',
@@ -217,7 +269,11 @@ module.exports = {
         },
         {
             value: '✅ test',
-            name: '✅ test:\tAdding missing tests | 测试'
+            name: '✅ test:\tAdding tests | 测试'
+        },
+        {
+            value: '⚗️ exp',
+            name: '⚗️  exp:\tPerform experiments | 实验'
         },
         {
             value: '🎉 init',
@@ -232,8 +288,8 @@ module.exports = {
             name: '📄 license:\tAdd or update license | 证书'
         },
         {
-            value: '📝 docs',
-            name: '📝 docs:\tDocumentation only changes | 文档'
+            value: '📝 doc',
+            name: '📝 doc:\tDocumentation only changes | 文档'
         },
     ],
     messages: {
@@ -246,7 +302,7 @@ module.exports = {
         confirmCommit: '确定提交此说明吗？:'
     },
     allowCustomScopes: true,
-    allowBreakingChanges: ['✨ feat', '🐛 fix', '🚧 wip', '🔥 remove', '🚚 move', '💩 poop', '⏪ revert', '➖ rm_dep', '➕ add_dep','⬆️ up_dep','⬇️ down_dep'],
+    allowBreakingChanges: ['✨ feat', '🐛 fix', '🚧 wip', '🔥 remove', '🚚 move', '💩 poop', '⏪ revert', '➖ rm_dep', '➕ add_dep', '⬆️ up_dep', '⬇️ down_dep', '📌 pin_dep'],
     subjectLimit: 100
 };
 ```
@@ -301,7 +357,7 @@ husky
 修改后：
 
 ```shell
-#!/bin/sh
+#!/usr/bin/env sh
 
 git pull --rebase || {
     echo "\e[1;31m代码拉取失败\e[0m"
