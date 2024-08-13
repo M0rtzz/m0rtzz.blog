@@ -117,7 +117,7 @@ module.exports = {
         },
         {
             value: '⚰️ bury',
-            name: '⚰️  bury:\tRemove dead code | 移除无用代码'
+            name: '⚰️  bury:\tBury dead code | 埋葬无用代码'
         },
         {
             value: '💩 poop',
