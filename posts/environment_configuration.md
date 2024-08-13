@@ -283,7 +283,7 @@ export LANG=zh_CN
 reboot
 ```
 
-勾选不要在次询问我，并选择保留旧的名称
+勾选不要再次询问我，并选择保留旧的名称
 
 ![560bffa1f8fd4255a9bec1f2be43efcd.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:58:57_560bffa1f8fd4255a9bec1f2be43efcd.png)
 
