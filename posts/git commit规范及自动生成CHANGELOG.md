@@ -116,8 +116,8 @@ module.exports = {
             name: '🔥 remove:\tRemove code or files | 移除代码或文件'
         },
         {
-            value: '⚰️ dead',
-            name: '⚰️  dead:\tRemove dead code | 移除无用代码'
+            value: '⚰️ bury',
+            name: '⚰️  bury:\tRemove dead code | 移除无用代码'
         },
         {
             value: '💩 poop',
