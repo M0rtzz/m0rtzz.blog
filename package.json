@@ -1,6 +1,10 @@
 {
   "name": "m0rtzz.blog",
+<<<<<<< HEAD
   "version": "v3.0.1",
+=======
+  "version": "v2.9.8",
+>>>>>>> 🔖 tag(package.json): v2.9.8
   "private": true,
   "scripts": {
     "dev": "next dev",
