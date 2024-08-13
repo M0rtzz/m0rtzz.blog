@@ -1,13 +1,15 @@
-# Changelog
+## <small>3.0.1 (2024-08-13)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 🔖 tag(package.json): v3.0.1 ([c08570d](https://github.com/M0rtzz/m0rtzz.blog/commit/c08570d))
+* 🔥 remove: rm unused code ([68e4550](https://github.com/M0rtzz/m0rtzz.blog/commit/68e4550))
 
-## [3.0.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v3.0.0...v3.0.1) (2024-08-13)
+
 
 ## 3.0.0 (2024-08-13)
 
 * ⚡️ perf(url_fixer.cc): replace google url to mirror site ([07db5c7](https://github.com/M0rtzz/m0rtzz.blog/commit/07db5c7))
 * ⚰️ bury(transfer.sh): bury dead code ([9538c8d](https://github.com/M0rtzz/m0rtzz.blog/commit/9538c8d))
+* 📝 docs(CHANGELOG.md): automatic update ([c525627](https://github.com/M0rtzz/m0rtzz.blog/commit/c525627))
 * 🔖 tag(package.json): v3.0.0 ([4eb9041](https://github.com/M0rtzz/m0rtzz.blog/commit/4eb9041))
 * 🧱 chore(Makefile): add Makefile to compile cc file ([77235b8](https://github.com/M0rtzz/m0rtzz.blog/commit/77235b8))
 * 🙈 ignore(.gitignore): update .gitignore ([d988172](https://github.com/M0rtzz/m0rtzz.blog/commit/d988172))
@@ -1712,3 +1714,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
