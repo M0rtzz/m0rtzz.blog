@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## <small>3.0.1 (2024-08-13)</small>
 
 * 🔖 tag(package.json): v3.0.1 ([c08570d](https://github.com/M0rtzz/m0rtzz.blog/commit/c08570d))
@@ -32,18 +33,38 @@
 * 📝 doc(git commit规范及自动生成CHANGELOG.md): update config and add cmd ([2f2f527](https://github.com/M0rtzz/m0rtzz.blog/commit/2f2f527))
 * 📝 docs(CHANGELOG.md): automatic update ([deded6a](https://github.com/M0rtzz/m0rtzz.blog/commit/deded6a))
 * 📝 docs(CHANGELOG.md): automatic update ([c9b3ee4](https://github.com/M0rtzz/m0rtzz.blog/commit/c9b3ee4))
+=======
+## <small>2.9.8 (2024-08-13)</small>
+
+* 🔖 tag(package.json): v2.9.8 ([da29516](https://github.com/M0rtzz/m0rtzz.blog/commit/da29516))
+* 🚀 deploy(transfer.sh): change tool from cnpm to pnpm ([8d15016](https://github.com/M0rtzz/m0rtzz.blog/commit/8d15016))
+
+
+
+## <small>2.9.7 (2024-08-13)</small>
+
+* 💡 comment(pip.conf): comment nvidia python package site ([4a001d1](https://github.com/M0rtzz/m0rtzz.blog/commit/4a001d1))
+* 📝 doc: update config file ([d1b33ed](https://github.com/M0rtzz/m0rtzz.blog/commit/d1b33ed))
+* 📝 doc(git commit规范及自动生成CHANGELOG.md): update config and add cmd ([2f2f527](https://github.com/M0rtzz/m0rtzz.blog/commit/2f2f527))
+>>>>>>> 📝 docs(CHANGELOG.md): automatic update
 * 📝 docs(CHANGELOG.md): automatic update ([065131d](https://github.com/M0rtzz/m0rtzz.blog/commit/065131d))
 * 📝 docs(CHANGELOG.md): automatic update ([6c4f200](https://github.com/M0rtzz/m0rtzz.blog/commit/6c4f200))
 * 📝 docs(CHANGELOG.md): automatic update ([dfc9fa7](https://github.com/M0rtzz/m0rtzz.blog/commit/dfc9fa7))
 * 📝 docs(CHANGELOG.md): automatic update ([4b55272](https://github.com/M0rtzz/m0rtzz.blog/commit/4b55272))
 * 🔖 tag(package.json): v2.8.2 ([36553fe](https://github.com/M0rtzz/m0rtzz.blog/commit/36553fe))
 * 🔖 tag(package.json): v2.9.4 ([ebbd400](https://github.com/M0rtzz/m0rtzz.blog/commit/ebbd400))
+<<<<<<< HEAD
 * 🔖 tag(package.json): v2.9.7 ([714161a](https://github.com/M0rtzz/m0rtzz.blog/commit/714161a))
 * 🔖 tag(package.json): v2.9.7 ([d1c9f20](https://github.com/M0rtzz/m0rtzz.blog/commit/d1c9f20))
 * 🔖 tag(package.json): v2.9.7 ([6636b15](https://github.com/M0rtzz/m0rtzz.blog/commit/6636b15))
 * 🔖 tag(package.json): v2.9.8 ([d9c7a90](https://github.com/M0rtzz/m0rtzz.blog/commit/d9c7a90))
 * 🔧 config(git commit规范及自动生成CHANGELOG.md): update config ([37d124d](https://github.com/M0rtzz/m0rtzz.blog/commit/37d124d))
 * 🚀 deploy(transfer.sh): change tool from cnpm to pnpm ([8d15016](https://github.com/M0rtzz/m0rtzz.blog/commit/8d15016))
+=======
+* 🔖 tag(package.json): v2.9.7 ([d1c9f20](https://github.com/M0rtzz/m0rtzz.blog/commit/d1c9f20))
+* 🔖 tag(package.json): v2.9.7 ([6636b15](https://github.com/M0rtzz/m0rtzz.blog/commit/6636b15))
+* 🔧 config(git commit规范及自动生成CHANGELOG.md): update config ([37d124d](https://github.com/M0rtzz/m0rtzz.blog/commit/37d124d))
+>>>>>>> 📝 docs(CHANGELOG.md): automatic update
 
 
 
@@ -57,6 +78,7 @@
 
 ## <small>2.9.5 (2024-08-09)</small>
 
+<<<<<<< HEAD
 * ♻️ refactor(globals.css): merge css classes with the same value ([725c822](https://github.com/M0rtzz/m0rtzz.blog/commit/725c822))
 * 📝 docs(CHANGELOG.md): automatic update ([8a31f55](https://github.com/M0rtzz/m0rtzz.blog/commit/8a31f55))
 * 📝 docs(CHANGELOG.md): automatic update ([4d3af09](https://github.com/M0rtzz/m0rtzz.blog/commit/4d3af09))
@@ -65,6 +87,21 @@
 * 📝 docs(environment_configuration.md): update title ([4ebd932](https://github.com/M0rtzz/m0rtzz.blog/commit/4ebd932))
 * 🔖 tag(package.json): v2.9.4 ([605574e](https://github.com/M0rtzz/m0rtzz.blog/commit/605574e))
 * 🔖 tag(package.json): v2.9.5 ([9ee9bdd](https://github.com/M0rtzz/m0rtzz.blog/commit/9ee9bdd))
+=======
+* 📝 docs(CHANGELOG.md): automatic update ([8a31f55](https://github.com/M0rtzz/m0rtzz.blog/commit/8a31f55))
+* 📝 docs(environment_configuration.md): update title ([4ebd932](https://github.com/M0rtzz/m0rtzz.blog/commit/4ebd932))
+* 🔖 tag(package.json): v2.9.5 ([9ee9bdd](https://github.com/M0rtzz/m0rtzz.blog/commit/9ee9bdd))
+
+
+
+## <small>2.9.4 (2024-08-09)</small>
+
+* ♻️ refactor(globals.css): merge css classes with the same value ([725c822](https://github.com/M0rtzz/m0rtzz.blog/commit/725c822))
+* 📝 docs(CHANGELOG.md): automatic update ([4d3af09](https://github.com/M0rtzz/m0rtzz.blog/commit/4d3af09))
+* 📝 docs(environment_configuration.md): update bold italics ([3c350aa](https://github.com/M0rtzz/m0rtzz.blog/commit/3c350aa))
+* 📝 docs(environment_configuration.md): update install cmd ([dbdf560](https://github.com/M0rtzz/m0rtzz.blog/commit/dbdf560))
+* 🔖 tag(package.json): v2.9.4 ([605574e](https://github.com/M0rtzz/m0rtzz.blog/commit/605574e))
+>>>>>>> 📝 docs(CHANGELOG.md): automatic update
 
 
 
@@ -90,9 +127,7 @@
 * 📝 docs(environment_configuration.md): update .bashrc ([90d941f](https://github.com/M0rtzz/m0rtzz.blog/commit/90d941f))
 * 🔖 tag(package.json): v2.9.1 ([33d1764](https://github.com/M0rtzz/m0rtzz.blog/commit/33d1764))
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-## [2.9.8](https://github.com/M0rtzz/m0rtzz.blog/compare/v2.9.7...v2.9.8) (2024-08-13)
 
 ## 2.9.0 (2024-08-07)
 
@@ -1716,3 +1751,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
