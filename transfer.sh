@@ -10,9 +10,9 @@ trap 'onCtrlC' INT
 echo $'\e[1;32m开始构建静态资源...\e[0m'
 
 rm -rf out/ .next/
-source /home/m0rtzz/.nvm/nvm.sh
+source ~/.nvm/nvm.sh
 nvm use v18.20.3
-cnpm run build || {
+pnpm build || {
     echo $'\e[1;31m静态资源构建失败\e[0m'
     exit 1
 }
