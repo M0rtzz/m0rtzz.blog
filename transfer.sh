@@ -12,7 +12,7 @@ echo $'\e[1;32m开始构建静态资源...\e[0m'
 rm -rf out/ .next/
 source ~/.nvm/nvm.sh
 nvm use v18.20.3
-make && ./url_fixer.out && pnpm build || {
+pnpm build || {
     echo $'\e[1;31m静态资源构建失败\e[0m'
     exit 1
 }
