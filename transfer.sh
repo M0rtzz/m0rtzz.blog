@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 function onCtrlC() {
     echo $'\e[1;31m部署中断\e[0m'
@@ -12,15 +12,18 @@ echo $'\e[1;32m开始构建静态资源...\e[0m'
 rm -rf out/ .next/
 source ~/.nvm/nvm.sh
 nvm use v18.20.3
-pnpm build || {
+make && ./url_fixer.out && pnpm build || {
     echo $'\e[1;31m静态资源构建失败\e[0m'
     exit 1
 }
 
-# find out/ -type f -exec file {} \; | awk -F: '/text/ {print $1}' | while read -r file; do
-#     sed -i 's/fonts.googleapis.com/fonts.loli.net/g' "${file}"
-#     sed -i 's/fonts.gstatic.com/gstatic.loli.net/g' "${file}"
-# done
+#find out/ -type f -exec file {} \; | awk -F: '/text/ {print $1}' | while read -r file; do
+    #sed -i 's/fonts.googleapis.com/gfonts.aby.pub/g' "${file}"
+    #sed -i 's/fonts.googleapis.com/fonts.loli.net/g' "${file}"
+    #sed -i 's/fonts.googleapis.com/google-fonts.mirrors.sjtug.sjtu.edu.cn/g' "${file}"
+    #sed -i 's/fonts.gstatic.com/gfonts.aby.pub/g' "${file}"
+    #sed -i 's/fonts.gstatic.com/gstatic.loli.net/g' "${file}"
+#done
 
 echo $'\e[1;32m静态资源构建完成\e[0m'
 
