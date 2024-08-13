@@ -156,8 +156,8 @@ module.exports = {
             name: '🚚 move:\tMove or rename resources (e.g.: files, paths, routes) | 移动'
         },
         {
-            value: '🚀 chore',
-            name: '🚀 chore:\tBuild process or auxiliary tool changes | 构建/工程依赖/工具'
+            value: '🧱 chore',
+            name: '🧱 chore:\tBuild process or auxiliary tool changes | 构建/工程依赖/工具'
         },
         {
             value: '🚨 lint',
@@ -172,8 +172,16 @@ module.exports = {
             name: '✏️  typo:\tFix typos | 错别字'
         },
         {
+            value: '🏷️ type',
+            name: '🏷️  type:\tAdd or update types | 增加或更新类型'
+        },
+        {
             value: '🛂 passport',
-            name: '🛂 passport:\tWork on code related to authorization, roles and permissions | 与授权、身份和权限相关'
+            name: '🛂 passport:\tWork on code related to authorization, roles and permissions | 授权、身份和权限相关'
+        },
+        {
+            value: '🦺 val',
+            name: '🦺 val:\tAdd or update code related to validation | 验证相关'
         },
         {
             value: '💫 anim',
@@ -202,6 +210,14 @@ module.exports = {
         {
             value: '🔐 secert',
             name: '🔐 secert:\tSecert | 秘钥'
+        },
+        {
+            value: '💸 fund',
+            name: '💸 fund:\tAdd sponsorships or money related infrastructure | 资金相关'
+        },
+        {
+            value: '🚀 deploy',
+            name: '🚀 deploy:\tDeploy stuff | 部署'
         },
         {
             value: '🚸 usability',
@@ -256,12 +272,16 @@ module.exports = {
             name: '📌 pin_dep:\tPin dependencies to specific versions | 固定依赖版本'
         },
         {
+            value: '💚 fix_ci',
+            name: '💚 fix_ci:\tFix CI Build | CI 修复'
+        },
+        {
             value: '👷 ci',
             name: '👷 ci:\tCI related changes | CI 配置'
         },
         {
-            value: '📈 chore',
-            name: '📈 chore:\tAdd or update analytics or track code | 分析或跟踪'
+            value: '📈 monitor',
+            name: '📈 monitor:\tAdd or update analytics or track code | 分析或跟踪'
         },
         {
             value: '♻️ refactor',
@@ -476,6 +496,24 @@ cz-cust
 ![image-20240409130252142](https://static.m0rtzz.com/images/Year:2024/Month:04/Day:09/13:02:52_image-20240409130252142.png)
 
 ![image-20240409130354052](https://static.m0rtzz.com/images/Year:2024/Month:04/Day:09/13:03:54_image-20240409130354052.png)
+
+或者起一个别名：
+
+```shell
+sudo vi /etc/profile # 为了使多用户和多Shell解释器同时生效
+```
+
+在最后加上：
+
+```shell
+alias cz='cz-cust'
+```
+
+保存退出：
+
+```shell
+source /etc/profile
+```
 
 ```shell
 git log
