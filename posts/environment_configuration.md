@@ -1,8 +1,18 @@
-# 关于Ubuntu18.04/20.04安装后的一系列环境配置过程的总结
+# ZZU-RoboCup环境配置
 
-**Updating（最速更新链接：[博客](https://www.m0rtzz.com/posts/3)）...**
+**Updating（最速更新链接【支持一些扩展语法，观感良好】）：[博客](https://www.m0rtzz.com/posts/3)）...**
 
-ZZU-SR的童鞋配置环境前可以给鄙人发邮件：[E-mail](mailto:m0rtzz@stu.zzu.edu.cn)
+> [!IMPORTANT]
+>
+> ZZU-SR的童鞋配置环境前可以给鄙人发邮件：[E-mail](mailto:m0rtzz@stu.zzu.edu.cn)，另外：
+>
+> 本文根据重要程度对各个步骤进行分类：
+>
+> - ESSENTIAL（必须）
+> - RECOMMENDED（推荐）
+> - OPTIONAL（可选）
+> - NOT RECOMMENDED（不推荐）
+> - NOT REQUIRED（不需要）
 
 ---
 
@@ -18,7 +28,7 @@ zwz4
 
 --来自百度网盘超级会员v4的分享
 
-## 1.注意
+## ESSENTIAL
 
 刚进入系统一段时间，系统会通知是否更新到新版本的系统（比如Ubuntu20.04→Ubuntu22.04/Ubuntu24.04），选择否，之后会询问是否更新系统组件，选择否。
 
@@ -56,238 +66,7 @@ DefaultTimeoutStopSec=5s
 sudo systemctl daemon-reload
 ```
 
-打开终端输入：
-
-```bash
-gedit ~/.bashrc
-```
-
-```bash
-# 在最后（WARNING：如果安装了Anaconda3，需要加在__conda_setup之前）加入如下代码段：
-# 显示git分支
-function customizePrompt()
-{
-    local none='\[\033[00m\]'  # 重置所有属性到默认状态
-    local green='\[\033[0;32m\]'   # 绿色，用于用户名和主机名
-    local user_at_host="${green}\[\033[1m\]\u@\h${none}"  # 用户名和主机名显示为绿色并加粗
-    local blue='\[\033[0;34m\]'   # 蓝色，用于当前工作目录
-    local git_branch_color='\[\033[1;43;37m\]' # 黄色背景，白色字体，用于git分支
-    local command_prompt='$' # 命令提示符
-
-    if [ $UID -eq 0 ]; then
-        command_prompt='#'
-    fi
-    local working_directory="${blue}\[\033[1m\]\w${none}"  # 当前工作目录显示为蓝色并加粗
-    # 使用__git_ps1函数来显示当前git分支，使用自定义的颜色
-    echo "${user_at_host}:${working_directory}\$(__git_ps1 \" ${git_branch_color}[%s]${none} \")${command_prompt} "
-}
-
-export PS1="$(customizePrompt)"
-
-
-# 复制上一个命令到系统剪切板，sudo apt install xsel
-function copyLastCommand()
-{
-    # fc获取最后执行的命令，echo发送给xsel复制到剪切板
-    # -nl以列表形式显示命令历史，但不包括命令编号，-1只获取最近一条命令
-    echo -n $(fc -nl -1) | xsel --clipboard --input
-}
-
-# 创建一个别名，若与你的其他软件包内置命令冲突，请自行更换别名
-alias clc="copyLastCommand"
-
-# 计划关机
-function powerOff() {
-    sudo shutdown -c # 取消之前的计划关机
-
-    echo "已取消之前的计划关机，下面进行新的计划~"
-
-    echo "请输入关机的年份（YYYY）："
-    read shutdown_year
-
-    echo "请输入关机的月份（MM）："
-    read shutdown_month
-
-    echo "请输入关机的日期（DD）："
-    read shutdown_day
-
-    echo "请输入关机的小时（24小时制，HH）："
-    read shutdown_hour
-
-    echo "请输入关机的分钟（MM）："
-    read shutdown_minute
-
-    shutdown_datetime="${shutdown_year}-${shutdown_month}-${shutdown_day} ${shutdown_hour}:${shutdown_minute}"
-
-    # 检查日期时间是否合法
-    date -d "${shutdown_datetime}" &>/dev/null
-    if [ $? -ne 0 ]; then
-        echo "Error：请输入合法的日期和时间格式（YYYY-MM-DD HH:MM）"
-        return 1
-    fi
-
-    # 计算等待时间（秒数）
-    current_timestamp=$(date +%s)
-    shutdown_timestamp=$(date -d "${shutdown_datetime}" +%s)
-    wait_time=$(echo "(${shutdown_timestamp} - ${current_timestamp}) / 60" | bc)
-
-    # 检查是否为未来时间
-    if [ ${wait_time} -le 0 ]; then
-        echo "Error：请输入未来的日期和时间"
-        return 1
-    fi
-
-    echo "计划在 ${shutdown_datetime} 关机"
-    sudo shutdown -h +${wait_time}
-}
-
-alias po="powerOff"
-
-# 有效解决Anaconda3激活虚拟环境后使用`pip install`或`pip3 install`会安装到其他虚拟环境的问题
-alias pip='python3 -m pip'
-alias pip3='python3 -m pip'
-```
-
-之后保存退出。
-
-```bash
-source ~/.bashrc
-```
-
-这样就可以更清晰的显示git分支~
-
-## 2.更换国内源
-
-```bash
-sudo gedit /etc/apt/sources.list
-```
-
-将原本的注释掉，在最下方加入:
-
-```bash
-# 华科源（Ubuntu 18.04）【默认注释了源码仓库，如有需要可自行取消注释】
-deb https://mirrors.hust.edu.cn/ubuntu/ bionic main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic main restricted universe multiverse
-
-deb https://mirrors.hust.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
-
-deb https://mirrors.hust.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
-
-deb https://mirrors.hust.edu.cn/ubuntu bionic-security main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu bionic-security main restricted universe multiverse
-
-## 预发布软件源，不建议启用
-# deb https://mirrors.hust.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
-```
-
-```bash
-# 华科源（Ubuntu 20.04）【默认注释了源码仓库，如有需要可自行取消注释】
-deb https://mirrors.hust.edu.cn/ubuntu/ focal main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal main restricted universe multiverse
-
-deb https://mirrors.hust.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
-
-deb https://mirrors.hust.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
-
-deb https://mirrors.hust.edu.cn/ubuntu focal-security main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu focal-security main restricted universe multiverse
-
-## 预发布软件源，不建议启用
-# deb https://mirrors.hust.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
-```
-
-```bash
-sudo apt update && sudo apt upgrade
-```
-
-anaconda镜像源（~/.condarc）【**注意替换**`envs_dirs`**中的绝对路径**】:
-
-```yaml
-channels:
-  - defaults
-show_channel_urls: true
-default_channels:
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
-custom_channels:
-  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  deepmodeling: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  nvidia: https://mirrors.sustech.edu.cn/anaconda-extra/cloud
-
-envs_dirs:
-  - /home/m0rtzz/Programs/anaconda3/envs
-```
-
-pip设置镜像源：
-
-```bash
-cd ${HOME}/.config/pip/ || (mkdir -p ${HOME}/.config/pip/ && gedit ${HOME}/.config/pip/pip.conf)
-```
-
-```ini
-[global]
-index-url = https://mirrors.hust.edu.cn/pypi/web/simple
-
-extra-index-url =
-    https://pypi.tuna.tsinghua.edu.cn/simple
-    https://mirrors.bfsu.edu.cn/pypi/web/simple
-    # https://pypi.nvidia.com 
-    # https://pypi.ngc.nvidia.com
-
-trusted-host =
-    mirrors.hust.edu.cn
-    pypi.tuna.tsinghua.edu.cn
-    mirrors.bfsu.edu.cn
-    pypi.nvidia.com
-    pypi.ngc.nvidia.com
-
-no-cache-dir = true
-```
-
-## 3.设置$HOME下的文件夹为英文
-
-```bash
-export LANG=en_US
-```
-
-```bash
-xdg-user-dirs-gtk-update
-```
-
-编辑选择右边的Update Names
-
-![11860bd995624609b10076f25fc108fb.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:25:55_11860bd995624609b10076f25fc108fb.png)
-
-之后执行以下语句：
-
-```bash
-export LANG=zh_CN
-```
-
-```bash
-reboot
-```
-
-勾选不要再次询问我，并选择保留旧的名称
-
-![560bffa1f8fd4255a9bec1f2be43efcd.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:58:57_560bffa1f8fd4255a9bec1f2be43efcd.png)
-
-## 4.禁用Nouveau驱动
+### 禁用Nouveau驱动
 
 ```bash
 sudo gedit /etc/modprobe.d/blacklist.conf
@@ -310,7 +89,7 @@ sudo update-initramfs -u
 reboot
 ```
 
-## 5.安装NVIDIA驱动
+### NVIDIA驱动
 
 > [!CAUTION]
 >
@@ -356,11 +135,11 @@ nvidia-smi
 
 ![image-20240720105532528](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:20/10:55:32_image-20240720105532528.png)
 
-## 6.CUDA安装
+### CUDA安装
 
 [https://developer.nvidia.com/cuda-toolkit-archive](https://developer.nvidia.com/cuda-toolkit-archive)
 
-选择≤上一步nvidia-smi显示的CUDA版本进行安装，官方有教程。
+选择≤上一步`nvidia-smi`显示的`CUDA Version`进行安装，官方有教程。
 
 安装好之后打开终端输入
 
@@ -374,7 +153,7 @@ gedit ~/.bashrc
 # cuda
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/cuda/lib64
 export PATH=${PATH}:/usr/local/cuda/bin
-export CUDA_HOME=/usr/local/cuda  #cuda的软连接库,可以设置多版本共存指向
+export CUDA_HOME=/usr/local/cuda #通过设置软链接`/usr/local/cuda`,可以做到多版本CUDA共存
 ```
 
 保存后关闭，打开终端，输入：
@@ -393,7 +172,7 @@ nvcc --version
 
 安装成功！
 
-## 7.CUDNN安装
+### CUDNN安装
 
 [https://developer.nvidia.com/rdp/cudnn-archive](https://developer.nvidia.com/rdp/cudnn-archive)
 
@@ -418,71 +197,7 @@ cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
 
 ![image-20240720105555452](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:20/10:55:55_image-20240720105555452.png)
 
-## 8.安装ROS（有些图忘记截了）
-
-### ①ROS-melodic
-
-**导入Key**
-
-```bash
-sudo gpg --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-```
-
-```bash
-sudo gpg --export C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654 | sudo tee /usr/share/keyrings/ros.gpg > /dev/null
-```
-
-**设置中科大源**
-
-```bash
-sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/ros.gpg] https://mirrors.ustc.edu.cn/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-```
-
-```bash
-sudo apt update
-```
-
-```bash
-sudo apt install ros-melodic-desktop-full
-```
-
-```bash
-echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
-source ~/.bashrc
-```
-
-```bash
-sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
-```
-
-```bash
-sudo apt install python3-pip
-```
-
-使用阿里镜像源加速pip下载：
-
-```bash
-sudo pip3 install rosdepc -i https://mirrors.aliyun.com/pypi/simple/
-```
-
-```bash
-sudo rosdepc init
-rosdepc update
-```
-
-```bash
-sudo chmod 777 -R ~/.ros/
-```
-
-```bash
-roscore
-```
-
-![52b0561164a34d3ea62b74322abe50bc.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:26:21_52b0561164a34d3ea62b74322abe50bc.png)
-
----
-
-### ②ROS-noetic
+### ROS-noetic（有些图忘记截了）
 
 **导入Key**
 
@@ -538,8 +253,6 @@ roscore
 
 ![image-20240219203852347](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:19/20:38:52_image-20240219203852347.png)
 
----
-
 再新建两个终端，分别输入
 
 ```bash
@@ -554,272 +267,13 @@ rosrun turtlesim turtle_teleop_key
 
 ![c40128bd8c5245a48d386c21ba465449.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:26:29_c40128bd8c5245a48d386c21ba465449.png)
 
-## 9.安装opencv-3.4.16和opencv_contrib-3.4.16（Ubuntu18.04），Ubuntu20.04请装opencv-4.2.0及其扩展模块
+### OpenCV-4.2.0及其扩展模块
 
 ~~虽然使用cv_bridge时某些shared object有可能和ROS自带的opencv-3.2.0版本冲突，但实测安装3.2.0对cuda的兼容性太差导致无法使用深度相机，所以安装官网最近更新过的OpenCV3.4.16~~
 
-***经尝试多版本Ubuntu和OpenCV，装Ubuntu20.04，ROS noetic和OpenCV4.2.0及其扩展模块才能解决将彩色图像转换为网络所需的输入Blob后前馈时抛出的（raised OpenCV exception，error: (-215:Assertion failed)等等）。下方OpenCV3的安装步骤仅供参考，OpenCV4.2.0的cmake命令及注意事项在本小节最后！***
+***经尝试多版本Ubuntu和OpenCV，装Ubuntu20.04，ROS noetic和OpenCV4.2.0及其扩展模块才能解决将彩色图像转换为网络所需的输入Blob后前馈时抛出的（raised OpenCV exception，error: (-215:Assertion failed)等等）。***
 
-### ①OpenCV3的安装步骤
-
-```bash
-git clone -b 3.4.16 https://github.com/opencv/opencv.git opencv-3.4.16
-```
-
-或公益加速源：
-
-```bash
-git clone -b 3.4.16 https://mirror.ghproxy.com/https://github.com/opencv/opencv.git opencv-3.4.16
-```
-
-```bash
-cd opencv-3.4.16
-```
-
-```bash
-git clone -b 3.4.16 https://github.com/opencv/opencv_contrib.git opencv-3.4.16
-```
-
-或公益加速源：
-
-```bash
-git clone -b 3.4.16 https://mirror.ghproxy.com/https://github.com/opencv/opencv_contrib.git opencv_contrib-3.4.16
-```
-
-安装所需依赖库，打开终端，输入：
-
-```bash
-sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
-sudo apt update
-sudo apt install libjasper1 libjasper-dev
-```
-
-```bash
-sudo apt install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev liblapacke-dev checkinstall
-```
-
-进入opencv-3.4.16文件夹，打开终端，输入：
-
-```bash
-mkdir build
-```
-
-```bash
-cd build
-```
-
-**接下来编译安装，注意此命令的OPENCV_EXTRA_MODULES_PATH=后边的路径是你电脑下的绝对路径，请自行修改**
-
-```bash
-cmake -D CMAKE_BUILD_TYPE=RELEASE \
--D WITH_GTK_2_X=ON \
--D OPENCV_ENABLE_NONFREE=ON \
--D OPENCV_GENERATE_PKGCONFIG=YES \
--D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.16/opencv_contrib-3.4.16/modules \
--D WITH_CUDA=ON \
--D WITH_CUDNN=ON \
--D WITH_FFMPEG=ON \
--D WITH_OPENGL=ON \
--D WITH_NVCUVID=ON \
--D ENABLE_PRECOMPILED_HEADERS=OFF \
--D CMAKE_EXE_LINKER_FLAGS=-lcblas \
--D WITH_LAPACK=OFF \
--j$(nproc) ..
-```
-
-过程中会出现IPPICV: Download: ippicv_2020_lnx_intel64_20191018_general.tgz
-
-解决方法：
-
-```bash
-cd ../ && mkdir downloads
-```
-
-```bash
-cd downloads && pwd
-```
-
-![34afaa6be110406889d65e506c8e2a2b](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:58:58_34afaa6be110406889d65e506c8e2a2b.png)
-
-复制绝对路径后：
-
-打开这个ippicv.cmake
-
-![6e9cc239b5a048ef932999f88634f470](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:26:38_6e9cc239b5a048ef932999f88634f470.png)
-
-把绝对路径复制进去：
-
-![e3d64802ff8748d7b5921fdbed6093a3](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:58:59_e3d64802ff8748d7b5921fdbed6093a3.png)
-
-然后把下面网址下载的文件cp进去就行了（或者开头百度云分享链接中自取~）
-
-[https://github.com/opencv/opencv_3rdparty](https://github.com/opencv/opencv_3rdparty)
-
-然后重新打开终端，输入：（**别忘了改路径**）：
-
-```bash
-cmake -D CMAKE_BUILD_TYPE=RELEASE \
--D WITH_GTK_2_X=ON \
--D OPENCV_ENABLE_NONFREE=ON \
--D OPENCV_GENERATE_PKGCONFIG=YES \
--D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.16/opencv_contrib-3.4.16/modules \
--D WITH_CUDA=ON \
--D WITH_CUDNN=ON \
--D WITH_FFMPEG=ON \
--D WITH_OPENGL=ON \
--D WITH_NVCUVID=ON \
--D ENABLE_PRECOMPILED_HEADERS=OFF \
--D CMAKE_EXE_LINKER_FLAGS=-lcblas \
--D WITH_LAPACK=OFF \
--j$(nproc) ..
-```
-
-![875eccbb886649e9af1df6fa04c0a168](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:26:49_875eccbb886649e9af1df6fa04c0a168.png)
-
-这些.i文件需要在国外下载，网上说下载好文件直接把他们放进相对应的目录下就行，实测不行（建议科学的上网，想试试网上说法的：
-
-[https://blog.csdn.net/curious_undergather/article/details/111639199](https://blog.csdn.net/curious_undergather/article/details/111639199)
-
-文件的话，开头百度云分享链接里都有)
-
-```bash
-cmake -D CMAKE_BUILD_TYPE=RELEASE \
--D WITH_GTK_2_X=ON \
--D OPENCV_ENABLE_NONFREE=ON \
--D OPENCV_GENERATE_PKGCONFIG=YES \
--D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.16/opencv_contrib-3.4.16/modules \
--D WITH_CUDA=ON \
--D WITH_CUDNN=ON \
--D WITH_FFMPEG=ON \
--D WITH_OPENGL=ON \
--D WITH_NVCUVID=ON \
--D ENABLE_PRECOMPILED_HEADERS=OFF \
--D CMAKE_EXE_LINKER_FLAGS=-lcblas \
--D WITH_LAPACK=OFF \
--j$(nproc) ..
-```
-
-![52f9d072a94643efb55ffa119bf1db67](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:58:59_52f9d072a94643efb55ffa119bf1db67.png)
-
-```bash
-sudo make -j$(nproc)
-```
-
-![image-20240206162428124](https://static.m0rtzz.com/images/Year:2024/Month:03/Day:10/17:34:12_16_24_28_image-20240206162428124.png)
-
-打开那个头文件，把报错所在行改为：
-
-```cpp
-#include "lapacke.h"
-```
-
-```bash
-sudo make -j$(nproc)
-```
-
-![e8807dc847184bdd9935739a3a623c75](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:00_e8807dc847184bdd9935739a3a623c75.png)
-
-```bash
-sudo make install
-```
-
-![325ba9f219904c1abf99cc8924c2374e](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:27:04_325ba9f219904c1abf99cc8924c2374e.png)
-
-```bash
-sudo gedit /etc/ld.so.conf.d/opencv.conf
-```
-
-加入
-
-```ini
-/usr/local/lib
-```
-
-保存后关闭，打开终端，输入：
-
-```bash
-sudo ldconfig
-```
-
-```bash
-sudo gedit /etc/bash.bashrc
-```
-
-加入
-
-```bash
-export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:/usr/local/lib/pkgconfig
-```
-
-保存后关闭，打开终端，输入：
-
-```bash
-source /etc/bash.bashrc
-```
-
-测试
-
-```bash
-cd ../samples/cpp/example_cmake
-cmake -j$(nproc) .
-sudo make -j$(nproc)
-./opencv_example
-```
-
-![1cb714361c874eacb01f3bce3f37e1fb.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:00_1cb714361c874eacb01f3bce3f37e1fb.png)
-
-安装成功！
-
-***设置cv_bridge的版本（ROS-melodic，经实践发现毫无效果）：***
-
-```bash
-sudo gedit /opt/ros/melodic/share/cv_bridge/cmake/cv_bridgeConfig.cmake
-```
-
-修改其中的以下内容：
-
-```cmake
-# 94行左右
-if(NOT "include;/usr/include;/usr/include/opencv " STREQUAL " ") // [!code --]
-  set(cv_bridge_INCLUDE_DIRS "") // [!code --]
-  set(_include_dirs "include;/usr/include;/usr/include/opencv") // [!code --]
-if(NOT "include;/usr/local/include/opencv;/usr/local/include/opencv2 " STREQUAL " ") // [!code ++]
-  set(cv_bridge_INCLUDE_DIRS "") // [!code ++]
-  set(_include_dirs "include;/usr/local/include/opencv;/usr/local/include/opencv;/usr/local/include/;/usr/include") // [!code ++]
-
-# 119行左右
-set(libraries "cv_bridge;/usr/lib/x86_64-linux-gnu/libopencv_core.so.3.2.0;/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.3.2.0;/usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.3.2.0") // [!code --]
-set(libraries "cv_bridge;/usr/local/lib/libopencv_core.so.3.4.16;/usr/local/lib/libopencv_imgproc.so.3.4.16;/usr/local/lib/libopencv_imgcodecs.so.3.4.16") // [!code ++]
-```
-
-opencv-3.4.4cmake命令：
-
-```bash
-cmake -D CMAKE_BUILD_TYPE=BUILD \
--D CMAKE_INSTALL_PREFIX=/usr/local \
--D WITH_GTK_2_X=ON \
--D OPENCV_ENABLE_NONFREE=ON \
--D OPENCV_GENERATE_PKGCONFIG=YES \
--D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.4/opencv_contrib-3.4.4/modules \
--D WITH_CUDA=ON \
--D WITH_CUDNN=ON \
--D OPENCV_DNN_CUDA=ON \
--D WITH_FFMPEG=ON \
--D WITH_OPENGL=ON \
--D WITH_NVCUVID=ON \
--D ENABLE_PRECOMPILED_HEADERS=OFF \
--D CMAKE_EXE_LINKER_FLAGS=-lcblas \
--D WITH_LAPACK=OFF \
--D WITH_OPENMP=ON \
--D BUILD_TESTS=OFF \
--D BUILD_opencv_xfeatures2d=ON \
--D CUDA_ARCH_BIN=8.6 \
--D CUDA_GENERATION=Auto \
--D CUDA_HOST_COMPILER:FILEPATH=/usr/bin/gcc-7 \
--j$(nproc) ..
-```
-
-### ②OpenCV4.2.0的cmake命令及注意事项（Ubuntu20.04装这个）
+以下为几次成功安装的命令，安装过程可以参考**NOT RECOMMENDED**中的OpenCV3安装步骤：
 
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
@@ -933,192 +387,7 @@ sudo cp /usr/local/lib/pkgconfig/opencv4.pc /usr/lib/pkgconfig/opencv4.pc
 sudo cp /usr/lib/pkgconfig/opencv4.pc /usr/lib/pkgconfig/opencv.pc
 ```
 
-## 10.安装protobuf2.6.1
-
-```bash
-sudo apt install libtool
-```
-
-[https://github.com/google/protobuf/releases/download/v2.6.1/protobuf-2.6.1.tar.gz](https://github.com/google/protobuf/releases/download/v2.6.1/protobuf-2.6.1.tar.gz)
-
-或镜像：
-
-```bash
-wget -q --show-progress https://raw.gitcode.com/M0rtzz/protobuf-2.6.1/assets/199 -O protobuf-2.6.1.tar.gz
-```
-
-解压压缩包后进入文件夹，打开终端，输入：
-
-```bash
-./autogen.sh
-```
-
-![da01acbb001f42cea9ca08ddad814655.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:01_da01acbb001f42cea9ca08ddad814655.png)
-
-```bash
-./configure --prefix=/usr/local/protobuf
-```
-
-![1c6a5408dece4f7aa5fb4e78680eb913.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:27:11_1c6a5408dece4f7aa5fb4e78680eb913.png)
-
-```bash
-sudo make -j$(nproc)
-```
-
-![140562b609004503a731358eea387731.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:27:28_140562b609004503a731358eea387731.png)
-
-养成 `make check`的好习惯
-
-```bash
-sudo make check -j$(nproc)
-```
-
-![f9827d81f7f946d8ba91d26494c7251d.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:01_f9827d81f7f946d8ba91d26494c7251d.png)
-
-```bash
-sudo make install
-```
-
-![bf530b0ab13e4939bd810d4731e2764d.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:01_bf530b0ab13e4939bd810d4731e2764d.png)
-
-```bash
-sudo gedit /etc/profile
-```
-
-在最后加入：
-
-```bash
-#protobuf
-export PATH=${PATH}:/usr/local/protobuf/bin/export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:/usr/local/protobuf/lib/pkgconfig/
-```
-
-保存后关闭，打开终端，输入：
-
-```bash
-source /etc/profile
-```
-
-```bash
-sudo gedit /etc/ld.so.conf
-```
-
-在最后一行输入：
-
-```ini
-/usr/local/protobuf/lib
-```
-
-保存后关闭，打开终端，输入：
-
-```bash
-sudo ldconfig
-```
-
-![d80cbadb617b4986a99827d13170e9eb.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:02_d80cbadb617b4986a99827d13170e9eb.png)
-
-最后验证版本：
-
-```bash
-protoc --version
-```
-
-## 11.配置OpenBLAS
-
-```bash
-sudo apt install gcc-arm-linux-gnueabihf libnewlib-arm-none-eabi libc6-dev-i386
-```
-
-OpenBLAS源码（非最新）最上方百度网盘里有，或者使用公益加速源：
-
-```bash
-git clone https://gitclone.com/github.com/OpenMathLib/OpenBLAS.git OpenBLAS
-```
-
-```bash
-cd OpenBLAS
-```
-
-```bash
-sudo apt install gfortran
-```
-
-```bash
-sudo make FC=gfortran TARGET=ARMV8 -j$(nproc)
-```
-
-```bash
-sudo make PREFIX=/usr/local install
-```
-
-![af045e49e18643d8a1c0c12deb166d44.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:27:35_af045e49e18643d8a1c0c12deb166d44.png)
-
-查看版本
-
-```bash
-grep OPENBLAS_VERSION /usr/local/include/openblas_config.h
-```
-
-![e76d37851f2e4d08b08c4ac035423cbc.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:02_e76d37851f2e4d08b08c4ac035423cbc.png)
-
-## 12.配置seetaface2工作空间
-
-```bash
-gedit ~/.bashrc
-```
-
-在最后加入
-
-```bash
-source /home/m0rtzz/Workspaces/catkin_ws/devel/setup.bash
-```
-
-保存后关闭，打开终端，输入：
-
-```bash
-source ~/.bashrc
-```
-
-![597806c7f0834400b846b99cae4c9d63.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:02_597806c7f0834400b846b99cae4c9d63.png)
-
-![0bccdd5c978048189fcd47437ad89dfc.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:03_0bccdd5c978048189fcd47437ad89dfc.png)
-
-解决办法：
-
-终端输入：
-
-```bash
-gedit ~/.bashrc
-```
-
-加入工作空间下lib文件夹的路径
-
-```bash
-export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/home/m0rtzz/Workspaces/catkin_ws/lib
-```
-
-保存后关闭，打开终端，输入：
-
-```bash
-source ~/.bashrc
-```
-
-![4000fa5374ee48dfbc2fdee5c5ddf2d0.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:27:47_4000fa5374ee48dfbc2fdee5c5ddf2d0.png)
-
-解决！
-
-报错：
-
-```bash
-Gtk-Message: 15:22:30.610: Failed to load module "canberra-gtk-module"
-```
-
-解决方法：
-
-```bash
-sudo apt install libcanberra-gtk*
-```
-
-## 13.百度智能云
+### 百度智能云
 
 ```bash
 sudo apt install curl
@@ -1133,154 +402,16 @@ include jsoncpp库的头文件改为
 g++编译
 
 ```bash
-g++ *.cpp -o * -lcurl -ljsoncpp
+g++ test.cpp -o test -lcurl -ljsoncpp
 ```
 
 运行
 
 ```bash
-./*
+./test
 ```
 
-## 14.使在桌面上右键打开终端时进入Desktop目录（Ubuntu18.04）
-
-[https://packages.ubuntu.com/source/bionic/gnome-terminal](https://packages.ubuntu.com/source/bionic/gnome-terminal)
-
-下载下图表格中的下边两个文件
-
-![ae94b3493cf44d08a7a962e070256653.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:03_ae94b3493cf44d08a7a962e070256653.png)
-
-下载好gnome-terminal_3.28.1.orig.tar.xz文件之后解压出一个文件夹gnome-terminal-3.28.1，将gnome-terminal_3.28.1-1ubuntu1.debian.tar.xz 里面debian目录下的文件解压到之前解压出的gnome-terminal-3.28.1目录下
-
-![5097eb7f2b8b474a8411cf11a3694b55.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:27:55_5097eb7f2b8b474a8411cf11a3694b55.png)
-
-在此目录下打开终端
-
-```bash
-git apply patches/*.patch
-```
-
-安装依赖
-
-```bash
-sudo apt install intltool libvte-2.91-dev gsettings-desktop-schemas-dev uuid-dev libdconf-dev libpcre2-dev libgconf2-dev libxml2-utils gnome-shell libnautilus-extension-dev itstool yelp-tools pcre2-utils
-```
-
-打开src/下的terminal-nautilus.c
-
-找到
-
-```c
-static inline gboolean
-desktop_opens_home_dir (TerminalNautilus *nautilus)
-{
-#if 0
-  return  _client_get_bool (gconf_client,
-                                "/apps/nautilus-open-terminal/desktop_opens_home_dir",
-                                NULL);
-#endif
-  return TRUE;
-}
-```
-
-改为
-
-```c
-static inline gboolean
-desktop_opens_home_dir (TerminalNautilus *nautilus)
-{
-#if 0
-  return  _client_get_bool (gconf_client,
-                                "/apps/nautilus-open-terminal/desktop_opens_home_dir",
-                                NULL);
-#endif
-  return FALSE;
-}
-```
-
-src下打开终端
-
-```bash
-cd ..
-```
-
-```bash
-autoreconf --install
-```
-
-```bash
-autoconf
-```
-
-```bash
-./configure --prefix='/usr'
-```
-
-```bash
-sudo make -j$(nproc)
-```
-
-```bash
-sudo make check -j$(nproc)
-```
-
-```bash
-sudo make install
-```
-
-![83ef9eec20fe4b5991ce5e0d3107d68d.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:03_83ef9eec20fe4b5991ce5e0d3107d68d.png)
-
-```bash
-sudo cp /usr/lib/nautilus/extensions-3.0/libterminal-nautilus.so /usr/lib/x86_64-linux-gnu/nautilus/extensions-3.0/
-```
-
-```bash
-reboot
-```
-
-问题解决！
-
-## 15.同步双系统时间
-
-```bash
-sudo apt install ntpdate
-```
-
-```bash
-sudo ntpdate time.windows.com
-```
-
-```bash
-timedatectl set-local-rtc 1 --adjust-system-clock
-```
-
-![c17b8bd812df4e5f86bfba16f5948a9d.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:04_c17b8bd812df4e5f86bfba16f5948a9d.png)
-
-## 16.启动菜单的默认项
-
-```bash
-sudo gedit /etc/default/grub
-```
-
-改一下GRUB_DEFAULT=后边的数字，默认是0，windows是第n个就设置为 n-1
-
-![2a4260711db540b6af9fd30682dc9257.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:04_2a4260711db540b6af9fd30682dc9257.png)
-
-保存后关闭，打开终端，输入：
-
-```bash
-sudo update-grub
-```
-
-![cb668a5bf2a84177956f1c6417f5310a.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:05_cb668a5bf2a84177956f1c6417f5310a.png)
-
-```bash
-reboot
-```
-
-重启后问题解决~
-
-## 17.安装darknet版yolov3及darknet-ros工作空间
+### darknet版yolov3及darknet-ros工作空间
 
 ```bash
 git clone https://github.com/AlexeyAB/darknet.git darknet
@@ -1444,7 +575,7 @@ sudo apt install libcanberra-gtk*
 
 安装之后重新运行就不会报错了。
 
-配置 darknet-ros工作空间：
+darknet_ros工作空间（OpenCV-4.2.0）：
 
 ```bash
 mkdir darknet-ros_test_ws && cd darknet-ros_test_ws/ && mkdir src
@@ -1462,20 +593,6 @@ cd .. && catkin_make -j$(nproc)
 cd src/
 ```
 
-### ①如果是OpenCV3
-
-```bash
-git clone --recursive https://github.com/leggedrobotics/darknet_ros.git darknet_ros
-```
-
-或公益加速源：
-
-```bash
-git clone --recursive https://mirror.ghproxy.com/https://github.com/leggedrobotics/darknet_ros.git darknet_ros
-```
-
-### ①如果是OpenCV4
-
 ```bash
 git clone -b opencv4 --recursive https://github.com/kunaltyagi/darknet_ros.git darknet_ros
 cd darknet_ros
@@ -1484,7 +601,7 @@ git checkout remotes/origin/opencv4
 git submodule update --recursive
 ```
 
-如果是OpenCV4，视频流只有第一帧是RGB8编码格式，阅读源码后发现在show_image之前调用image.cpp中的rgbgr_image函数循环转换图像编码格式即可解决此问题：
+如果视频流只有第一帧是RGB8编码格式，阅读源码后发现在show_image之前调用image.cpp中的rgbgr_image函数循环转换图像编码格式即可解决此问题：
 
 ```cpp
 // @file : image.cpp
@@ -1565,192 +682,17 @@ catkin_make -j$(nproc) darknet_ros --cmake-args -DCMAKE_CXX_FLAGS=-DCV__ENABLE_C
 
 ![da1d083fd06f4aed9dd17b0e1446223f](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:06_da1d083fd06f4aed9dd17b0e1446223f.png)
 
-## 18.Azure Kinect SDK-v1.4.0的安装
+### Azure Kinect SDK-v1.4.0（软件包）
 
 > [!NOTE]
 >
 > 鄙人在Ubuntu18.04下是通过源码编译安装的，在Ubuntu20.04下是通过deb包直接安装的。
 
-### ①Ubuntu18.04源码编译安装
-
-**Reference：**
-
-[https://blog.csdn.net/BlacKingZ/article/details/119115883](https://blog.csdn.net/BlacKingZ/article/details/119115883)
-
-```bash
-git clone -b v1.4.0 https://github.com/microsoft/Azure-Kinect-Sensor-SDK.git Azure-Kinect-Sensor-SDK-v1.4.0
-```
-
-或公益加速源：
-
-```bash
-git clone -b v1.4.0 https://mirror.ghproxy.com/https://github.com/microsoft/Azure-Kinect-Sensor-SDK.git Azure-Kinect-Sensor-SDK-v1.4.0
-```
-
-```bash
-sudo dpkg --add-architecture amd64
-```
-
-```bash
-sudo apt update
-```
-
-```bash
-sudo apt install -y ninja-build doxygen clang gcc-multilib g++-multilib python3 nasm libgl1-mesa-dev libsoundio-dev libvulkan-dev libx11-dev libxcursor-dev libxinerama-dev libxrandr-dev libusb-1.0-0-dev libudev-dev mesa-common-dev uuid-dev
-```
-
-[https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/](https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/)
-
-从上面的网站下载 `libk4a1.2` 中 `libk4a1.2_1.2.0_amd64.deb`文件
-
-![f806a0d411ac415497e78b45bf3c20ac.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:06_f806a0d411ac415497e78b45bf3c20ac.png)
-
-解压 .deb 文件，再解压内部的 `data.tar.gz`和 `control.tar.gz`文件,并进入data文件夹，打开终端输入：
-
-```bash
-cd usr/lib/x86_64-linux-gnu
-sudo cp libdepthengine.so.2.0 /usr/lib/x86_64-linux-gnu
-```
-
-随后进入下载好的 Azure-Kinect-Sensor-SDK-v1.4.0文件夹下打开终端输入
-
-```bash
-mkdir build && cd build
-cmake -j$(nproc) .. -GNinja
-```
-
-注意此步过程中extern/libyuv/src克隆较慢原因是使用了google的网站，我们把对应文件的克隆url改为github的就能正常克隆了，在Azure-Kinect-Sensor-SDK-v1.4.0文件夹下键盘Ctrl+H显示隐藏文件，打开.gitmodules文件，修改libyuv的部分为：
-
-```ini
-[submodule "extern/libyuv/src"]
-	path = extern/libyuv/src
-	url = https://github.com/lemenkov/libyuv.git
-```
-
-保存后关闭
-
-之后打开.git文件夹下的config文件，修改libyuv的部分为：
-
-```ini
-[submodule "extern/libyuv/src"]
-	active = true
-	url = https://github.com/lemenkov/libyuv.git
-```
-
-接下来就能正常克隆了，但是速度还是很慢，请耐心等待~
-
-保存后关闭，打开终端，输入：
-
-```bash
-cmake -j$(nproc) .. -GNinja
-```
-
-克隆完成后为如图所示：
-
-![b07fac22ae4b45ebb3e5a061739a4d87.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:06_b07fac22ae4b45ebb3e5a061739a4d87.png)
-
-之后输入：
-
-```bash
-sudo ninja -j$(nproc)
-```
-
-完成后如下：
-
-![c625650ae9744c02aea905984da47566.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:07_c625650ae9744c02aea905984da47566.png)
-
-最后输入：
-
-```bash
-sudo ninja install
-```
-
-完成后如下：
-
-![b71183010a584c469b0a6cbfc72b3e39.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:28:09_b71183010a584c469b0a6cbfc72b3e39.png)
-
-之后安装依赖：
-
-```bash
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-```
-
-```bash
-sudo apt update
-```
-
-```bash
-sudo gedit /etc/apt/sources.list
-```
-
-在最后一行加入：
-
-```bash
-## gcc-4.9
-deb http://dk.archive.ubuntu.com/ubuntu/ xenial main
-deb http://dk.archive.ubuntu.com/ubuntu/ xenial universe
-##
-```
-
-保存后关闭，打开终端，输入：
-
-```bash
-sudo apt update
-```
-
-```bash
-sudo apt install gcc-4.9
-```
-
-```bash
-sudo apt upgrade libstdc++6
-```
-
-```bash
-sudo cp /usr/lib/x86_64-linux-gnu/libk4a1.4/libdepthengine.so.2.0 /usr/lib
-```
-
-之后测试一下：
-
-```bash
-sudo ./bin/k4aviewer
-```
-
-![cd9e9d8ea9884b6eb7c73e864efb7912](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:28:14_cd9e9d8ea9884b6eb7c73e864efb7912.png)
-
-授予权限：
-
-```bash
-cd .. && sudo cp scripts/99-k4a.rules /etc/udev/rules.d
-```
-
-如果是.deb包安装，该udev规则文件（99-k4a.rules，将其保存在/etc/udev/rules.d下）内容如下：
-
-```bash
-# Bus 002 Device 116: ID 045e:097a Microsoft Corp.  - Generic Superspeed USB Hub
-# Bus 001 Device 015: ID 045e:097b Microsoft Corp.  - Generic USB Hub
-# Bus 002 Device 118: ID 045e:097c Microsoft Corp.  - Azure Kinect Depth Camera
-# Bus 002 Device 117: ID 045e:097d Microsoft Corp.  - Azure Kinect 4K Camera
-# Bus 001 Device 016: ID 045e:097e Microsoft Corp.  - Azure Kinect Microphone Array
-
-BUS!="usb", ACTION!="add", SUBSYSTEM!=="usb_device", GOTO="k4a_logic_rules_end"
-
-ATTRS{idVendor}=="045e", ATTRS{idProduct}=="097a", MODE="0666", GROUP="plugdev"
-ATTRS{idVendor}=="045e", ATTRS{idProduct}=="097b", MODE="0666", GROUP="plugdev"
-ATTRS{idVendor}=="045e", ATTRS{idProduct}=="097c", MODE="0666", GROUP="plugdev"
-ATTRS{idVendor}=="045e", ATTRS{idProduct}=="097d", MODE="0666", GROUP="plugdev"
-ATTRS{idVendor}=="045e", ATTRS{idProduct}=="097e", MODE="0666", GROUP="plugdev"
-
-LABEL="k4a_logic_rules_end"
-```
-
-### ②Ubuntu20.04
-
-> Reference：
+> ***Reference：***
 >
 > [https://blog.csdn.net/qq_42108414/article/details/129015474](https://blog.csdn.net/qq_42108414/article/details/129015474)
 
-## 19.配置科大讯飞
+### 科大讯飞语音
 
 [https://www.xfyun.cn/sdk/dispatcher](https://www.xfyun.cn/sdk/dispatcher)
 
@@ -1827,7 +769,7 @@ sudo apt install libasound2-dev
 
 编译通过~
 
-## 20.配置realsense及realsense工作空间
+### librealsense及realsense-ros工作空间
 
 ```bash
 sudo apt install ros-${ROS_DISTRO}-realsense2-camera ros-${ROS_DISTRO}-rgbd-launch
@@ -1948,7 +890,7 @@ cd examples/capture
 
 ![32507b26116048919945b01bb173b72c](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:28:40_32507b26116048919945b01bb173b72c.png)
 
-接下来我们配置realsense工作空间：
+接下来我们配置realsense-ros工作空间：
 
 创建一个realsense_test_ws文件夹，进入文件夹下，打开终端：
 
@@ -1994,7 +936,7 @@ roslaunch realsense2_camera rs_camera.launch
 
 还没安摄像头~
 
-## 21.配置Kinova机械臂工作空间
+### kinova-ros机械臂工作空间
 
 ```bash
 mkdir -p kinova_test_ws/src
@@ -2066,7 +1008,11 @@ sudo apt install $(apt-cache search ros-${ROS_DISTRO}-pr2- | grep -v "ros-${ROS_
 
 完成~
 
-## 22.配置机器人导航（实体）
+### 机器人导航（实体）
+
+> [!CAUTION]
+>
+> ZZU-SR的童鞋请注意，此小节只需安装软件包，导航相关代码直接Copy比赛电脑的`catkin_ws`中的`mrobot`即可。
 
 安装 Arduino IDE:
 
@@ -2124,9 +1070,9 @@ sudo apt install ros-${ROS_DISTRO}-navigation
 
 因tf和tf2迁移问题，需将工作空间内的所有global_costmap_params.yaml和local_costmap_params.yaml文件里的头几行去掉“/”,返回工作空间根目录下重新编译。
 
-**Reference：**
-
-[http://wiki.ros.org/tf2/Migration](http://wiki.ros.org/tf2/Migration)
+> ***Reference：***
+>
+> [http://wiki.ros.org/tf2/Migration](http://wiki.ros.org/tf2/Migration)
 
 ![1](https://static.m0rtzz.com/images/Year:2024/Month:03/Day:01/17:29:21_1.png)
 
@@ -2778,11 +1724,789 @@ touch auto_slam.launch && code auto_slam.launch
 </launch>
 ```
 
-## 23.安装配置caffe
+## RECOMMENDED
 
-**Reference：**
+### 自定义函数及别名
 
-[https://blog.csdn.net/weixin_39161727/article/details/120136500](https://blog.csdn.net/weixin_39161727/article/details/120136500)
+打开终端输入：
+
+```bash
+gedit ~/.bashrc
+```
+
+```bash
+# 在最后（WARNING：如果安装了Anaconda3，需要加在__conda_setup之前）加入如下代码段：
+# 显示git分支
+function customizePrompt()
+{
+    local none='\[\033[00m\]'  # 重置所有属性到默认状态
+    local green='\[\033[0;32m\]'   # 绿色，用于用户名和主机名
+    local user_at_host="${green}\[\033[1m\]\u@\h${none}"  # 用户名和主机名显示为绿色并加粗
+    local blue='\[\033[0;34m\]'   # 蓝色，用于当前工作目录
+    local git_branch_color='\[\033[1;43;37m\]' # 黄色背景，白色字体，用于git分支
+    local command_prompt='$' # 命令提示符
+
+    if [ $UID -eq 0 ]; then
+        command_prompt='#'
+    fi
+    local working_directory="${blue}\[\033[1m\]\w${none}"  # 当前工作目录显示为蓝色并加粗
+    # 使用__git_ps1函数来显示当前git分支，使用自定义的颜色
+    echo "${user_at_host}:${working_directory}\$(__git_ps1 \" ${git_branch_color}[%s]${none} \")${command_prompt} "
+}
+
+export PS1="$(customizePrompt)"
+
+# 复制上一个命令到系统剪切板，sudo apt install xsel
+function copyLastCommand()
+{
+    # fc获取最后执行的命令，echo发送给xsel复制到剪切板
+    # -nl以列表形式显示命令历史，但不包括命令编号，-1只获取最近一条命令
+    echo -n $(fc -nl -1) | xsel --clipboard --input
+}
+
+# 创建一个别名，若与你的其他软件包内置命令冲突，请自行更换别名
+alias clc="copyLastCommand"
+
+# 计划关机（为了使得`.zshrc`也能用此函数，就没有使用`read -p`）
+function powerOff() {
+    sudo shutdown -c # 取消之前的计划关机
+
+    echo "已取消之前的计划关机，下面进行新的计划~"
+
+    echo "请输入关机的年份（YYYY）："
+    read shutdown_year
+
+    echo "请输入关机的月份（MM）："
+    read shutdown_month
+
+    echo "请输入关机的日期（DD）："
+    read shutdown_day
+
+    echo "请输入关机的小时（24小时制，HH）："
+    read shutdown_hour
+
+    echo "请输入关机的分钟（MM）："
+    read shutdown_minute
+
+    shutdown_datetime="${shutdown_year}-${shutdown_month}-${shutdown_day} ${shutdown_hour}:${shutdown_minute}"
+
+    # 检查日期时间是否合法
+    date -d "${shutdown_datetime}" &>/dev/null
+    if [ $? -ne 0 ]; then
+        echo "Error：请输入合法的日期和时间格式（YYYY-MM-DD HH:MM）"
+        return 1
+    fi
+
+    # 计算等待时间（秒数）
+    current_timestamp=$(date +%s)
+    shutdown_timestamp=$(date -d "${shutdown_datetime}" +%s)
+    wait_time=$(echo "(${shutdown_timestamp} - ${current_timestamp}) / 60" | bc)
+
+    # 检查是否为未来时间
+    if [ ${wait_time} -le 0 ]; then
+        echo "Error：请输入未来的日期和时间"
+        return 1
+    fi
+
+    echo "计划在 ${shutdown_datetime} 关机"
+    sudo shutdown -h +${wait_time}
+}
+
+alias po="powerOff"
+
+# 有效解决Anaconda3激活虚拟环境后使用`pip install`或`pip3 install`会安装到其他虚拟环境的问题
+alias pip='python3 -m pip'
+alias pip3='python3 -m pip'
+```
+
+之后保存退出。
+
+```bash
+source ~/.bashrc
+```
+
+这样就可以更清晰的显示git分支~
+
+### 更换国内源
+
+```bash
+sudo gedit /etc/apt/sources.list
+```
+
+将原本的注释掉，在最下方加入:
+
+```bash
+# 华科源（Ubuntu 18.04）【默认注释了源码仓库，如有需要可自行取消注释】
+deb https://mirrors.hust.edu.cn/ubuntu/ bionic main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic main restricted universe multiverse
+
+deb https://mirrors.hust.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+
+deb https://mirrors.hust.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+
+deb https://mirrors.hust.edu.cn/ubuntu bionic-security main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu bionic-security main restricted universe multiverse
+
+# 预发布软件源，不建议启用
+# deb https://mirrors.hust.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+```
+
+```bash
+# 华科源（Ubuntu 20.04）【默认注释了源码仓库，如有需要可自行取消注释】
+deb https://mirrors.hust.edu.cn/ubuntu/ focal main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal main restricted universe multiverse
+
+deb https://mirrors.hust.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+
+deb https://mirrors.hust.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+
+deb https://mirrors.hust.edu.cn/ubuntu focal-security main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu focal-security main restricted universe multiverse
+
+# 预发布软件源，不建议启用
+# deb https://mirrors.hust.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
+```
+
+```bash
+sudo apt update && sudo apt upgrade
+```
+
+anaconda镜像源（~/.condarc）【**注意替换**`envs_dirs`**中的绝对路径**】:
+
+```yaml
+channels:
+  - defaults
+show_channel_urls: true
+default_channels:
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+custom_channels:
+  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  deepmodeling: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  nvidia: https://mirrors.sustech.edu.cn/anaconda-extra/cloud
+
+envs_dirs:
+  - /home/m0rtzz/Programs/anaconda3/envs
+```
+
+pip设置镜像源：
+
+```bash
+cd ${HOME}/.config/pip/ || (mkdir -p ${HOME}/.config/pip/ && gedit ${HOME}/.config/pip/pip.conf)
+```
+
+```ini
+[global]
+index-url = https://mirrors.hust.edu.cn/pypi/web/simple
+
+extra-index-url =
+    https://pypi.tuna.tsinghua.edu.cn/simple
+    https://mirrors.bfsu.edu.cn/pypi/web/simple
+    # https://pypi.nvidia.com
+    # https://pypi.ngc.nvidia.com
+
+trusted-host =
+    mirrors.hust.edu.cn
+    pypi.tuna.tsinghua.edu.cn
+    mirrors.bfsu.edu.cn
+    pypi.nvidia.com
+    pypi.ngc.nvidia.com
+
+no-cache-dir = true
+```
+
+### 设置$HOME下的文件夹为英文
+
+```bash
+export LANG=en_US
+```
+
+```bash
+xdg-user-dirs-gtk-update
+```
+
+编辑选择右边的Update Names
+
+![11860bd995624609b10076f25fc108fb.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:25:55_11860bd995624609b10076f25fc108fb.png)
+
+之后执行以下语句：
+
+```bash
+export LANG=zh_CN
+```
+
+```bash
+reboot
+```
+
+勾选不要再次询问我，并选择保留旧的名称
+
+![560bffa1f8fd4255a9bec1f2be43efcd.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:58:57_560bffa1f8fd4255a9bec1f2be43efcd.png)
+
+### 同步双系统时间
+
+```bash
+sudo apt install ntpdate
+```
+
+```bash
+sudo ntpdate time.windows.com
+```
+
+```bash
+timedatectl set-local-rtc 1 --adjust-system-clock
+```
+
+![c17b8bd812df4e5f86bfba16f5948a9d.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:04_c17b8bd812df4e5f86bfba16f5948a9d.png)
+
+### Software
+
+推荐一些linux办公常用的软件（linux版，不包括wine环境下，全部下载deb格式的安装包，系统架构可通过命令uname -a查看）：
+
+[百度网盘](https://pan.baidu.com/download#linux)
+
+[向日葵](https://sunlogin.oray.com/download/linux?type=personal)
+
+[ToDesk](https://www.todesk.com/linux.html)
+
+[QQ](https://im.qq.com/linuxqq/index.shtml)
+
+[腾讯会议](https://meeting.tencent.com/download?mfrom=OfficialIndex_TopBanner1_Download)
+
+[WPS Office](https://linux.wps.cn/)
+
+[搜狗输入法](https://shurufa.sogou.com/)（下载安装包后，官方会跳转至安装教程，严格按照步骤执行）
+
+[Visual Studio Code](https://code.visualstudio.com/docs/?dv=linux64_deb)（推荐打开Settings Sync，换电脑时设置可以同步）
+
+![195197efec704c98ba8f61ecc4c8370a.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:29:43_195197efec704c98ba8f61ecc4c8370a.png)
+
+![bd3b7b33a2744c5cb67011223648eabf.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:29:50_bd3b7b33a2744c5cb67011223648eabf.png)
+
+[星火应用商店](https://www.spark-app.store/download)
+
+仅支持Ubuntu20.04，需安装依赖包：
+
+![image-20240718162329579](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/16:23:29_image-20240718162329579.png)
+
+[Linux原生微信\_需要安装星火应用商店（最近的版本好像使用Fcitx输入法时中文输入有问题）](spk://store/chat/store.spark-app.wechat-linux-spark)
+
+![image-20240718202231084](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/20:22:31_image-20240718202231084.png)
+
+Ubuntu20.04以下版本或者不想安装星火应用商店的用户可安装Flatpak打包的微信（需安装Flatpak，下文有Flatpak安装教程）：
+
+解决基于Fcitx5的搜狗输入法无法在Flatpak版微信中进行中文输入的问题：[https://github.com/web1n/wechat-universal-flatpak/issues/33#issuecomment-2222259823](https://github.com/web1n/wechat-universal-flatpak/issues/33#issuecomment-2222259823)
+
+```bash
+wget -q --show-progress https://github.com/web1n/wechat-universal-flatpak/releases/latest/download/com.tencent.WeChat-x86_64.flatpak -O com.tencent.WeChat-x86_64.flatpak && sudo flatpak install ./com.tencent.WeChat-x86_64.flatpak
+```
+
+可以水平和垂直分割的终端：
+
+```bash
+sudo apt install terminator
+```
+
+![74c734b7ca9e4cc5a68246b4f8a73ee3.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:19_74c734b7ca9e4cc5a68246b4f8a73ee3.png)
+
+trash命令：
+
+```bash
+sudo apt install trash-cli
+```
+
+tree命令：
+
+```bash
+sudo apt install tree
+```
+
+![5434b41e73244f8f941b795586faaea2.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:19_5434b41e73244f8f941b795586faaea2.png)
+
+![c344c03378a74cdca9e9585f3c3c14d8.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:30:05_c344c03378a74cdca9e9585f3c3c14d8.png)
+
+查看系统信息：
+
+```bash
+sudo apt install neofetch
+```
+
+![image-20240720105620903](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:20/10:56:21_image-20240720105620903.png)
+
+或安装用C语言写的更快的`fastfetch`：
+
+```bash
+wget -q --show-progress https://github.com/fastfetch-cli/fastfetch/releases/latest/download/fastfetch-linux-amd64.deb -O fastfetch-linux-amd64.deb && sudo apt install -y ./fastfetch-linux-amd64.deb
+```
+
+![image-20240720105657155](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:20/10:56:57_image-20240720105657155.png)
+
+rar文件解压工具：
+
+```bash
+sudo apt install unrar
+```
+
+解决不能观看MP4文件：
+
+```bash
+sudo apt update
+```
+
+```bash
+sudo apt install libdvdnav-dev libdvdread-dev gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly libdvd-pkg
+```
+
+```bash
+sudo apt install ubuntu-restricted-extras
+```
+
+```bash
+sudo dpkg-reconfigure libdvd-pkg
+```
+
+系统优化：
+
+```bash
+sudo apt update
+```
+
+```bash
+sudo apt install gnome-tweak-tool
+```
+
+命令启动：
+
+```bash
+gnome-tweaks
+```
+
+或：
+
+![image-20240718201417588](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/20:14:18_image-20240718201417588.png)
+
+![image-20240718155818281](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/15:58:18_image-20240718155818281.png)
+
+剪贴板管理工具：
+
+```bash
+sudo add-apt-repository ppa:diodon-team/stable
+sudo apt update && sudo apt install diodon
+```
+
+然后使用刚才安装的优化工具将`diodon`设置为开机自启动：
+
+![2024-07-18](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/16:02:27_2024-07-18.png)
+
+这样就实现了类似于`Windows`下`Win + V`的剪贴板功能：
+
+![image-20240718160648762](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/16:06:48_image-20240718160648762.png)
+
+另外可使用中科大反向代理`Canonical`的`ppa仓库`：
+
+> [!TIP]
+>
+> 将`/etc/apt/sources.list.d`下`.list`文件中的`http://ppa.launchpad.net`替换为`https://launchpad.proxy.ustclug.org`即可，建议替换前先`sudo cp /etc/apt/sources.list.d/your-file.list /etc/apt/sources.list.d/your-file.list.save`备份一下（请自行替换文件名）
+
+![image-20240720105759025](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:20/10:57:59_image-20240720105759025.png)
+
+Flatpak：
+
+Ubuntu 18.10 (Cosmic Cuttlefish) or later：
+
+```bash
+sudo apt install flatpak
+```
+
+Older Ubuntu versions：
+
+```bash
+sudo add-apt-repository ppa:flatpak/stable
+sudo apt update
+sudo apt install flatpak
+```
+
+FlatHub上交镜像源：
+
+[https://mirrors.sjtug.sjtu.edu.cn/docs/flathub](https://mirrors.sjtug.sjtu.edu.cn/docs/flathub)
+
+切换之后更新Flatpak应用将加速：
+
+```bash
+sudo flatpak update
+```
+
+火狐浏览器优化：
+
+地址栏输入：
+
+```ini
+about:config
+```
+
+![4700bc61b15141609ce55f97e9334034](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:20_4700bc61b15141609ce55f97e9334034.png)
+
+```ini
+full-screen-api.warning.timeout
+```
+
+设置为0~
+
+```ini
+full-screen-api.transition-duration.enter
+```
+
+和
+
+```ini
+full-screen-api.transition-duration.leave
+```
+
+都设置为0 0~
+
+```ini
+browser.search.openintab
+```
+
+```ini
+browser.urlbar.openintab
+```
+
+```ini
+browser.tabs.loadBookmarksInTabs
+```
+
+都设置为true~
+
+## OPTIONAL
+
+### 启动菜单的默认项
+
+```bash
+sudo gedit /etc/default/grub
+```
+
+改一下GRUB_DEFAULT=后边的数字，默认是0，windows是第n个就设置为n-1
+
+![2a4260711db540b6af9fd30682dc9257.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:04_2a4260711db540b6af9fd30682dc9257.png)
+
+保存后关闭，打开终端，输入：
+
+```bash
+sudo update-grub
+```
+
+![cb668a5bf2a84177956f1c6417f5310a.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:05_cb668a5bf2a84177956f1c6417f5310a.png)
+
+```bash
+reboot
+```
+
+重启后问题解决~
+
+### 使在桌面上右键打开终端时进入Desktop目录（Ubuntu18.04）
+
+[https://packages.ubuntu.com/source/bionic/gnome-terminal](https://packages.ubuntu.com/source/bionic/gnome-terminal)
+
+下载下图表格中的下边两个文件
+
+![ae94b3493cf44d08a7a962e070256653.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:03_ae94b3493cf44d08a7a962e070256653.png)
+
+下载好gnome-terminal_3.28.1.orig.tar.xz文件之后解压出一个文件夹gnome-terminal-3.28.1，将gnome-terminal_3.28.1-1ubuntu1.debian.tar.xz 里面debian目录下的文件解压到之前解压出的gnome-terminal-3.28.1目录下
+
+![5097eb7f2b8b474a8411cf11a3694b55.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:27:55_5097eb7f2b8b474a8411cf11a3694b55.png)
+
+在此目录下打开终端
+
+```bash
+git apply patches/*.patch
+```
+
+安装依赖
+
+```bash
+sudo apt install intltool libvte-2.91-dev gsettings-desktop-schemas-dev uuid-dev libdconf-dev libpcre2-dev libgconf2-dev libxml2-utils gnome-shell libnautilus-extension-dev itstool yelp-tools pcre2-utils
+```
+
+打开src/下的terminal-nautilus.c
+
+找到
+
+```c
+static inline gboolean
+desktop_opens_home_dir (TerminalNautilus *nautilus)
+{
+#if 0
+  return  _client_get_bool (gconf_client,
+                                "/apps/nautilus-open-terminal/desktop_opens_home_dir",
+                                NULL);
+#endif
+  return TRUE;
+}
+```
+
+改为
+
+```c
+static inline gboolean
+desktop_opens_home_dir (TerminalNautilus *nautilus)
+{
+#if 0
+  return  _client_get_bool (gconf_client,
+                                "/apps/nautilus-open-terminal/desktop_opens_home_dir",
+                                NULL);
+#endif
+  return FALSE;
+}
+```
+
+src下打开终端
+
+```bash
+cd ..
+```
+
+```bash
+autoreconf --install
+```
+
+```bash
+autoconf
+```
+
+```bash
+./configure --prefix='/usr'
+```
+
+```bash
+sudo make -j$(nproc)
+```
+
+```bash
+sudo make check -j$(nproc)
+```
+
+```bash
+sudo make install
+```
+
+![83ef9eec20fe4b5991ce5e0d3107d68d.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:03_83ef9eec20fe4b5991ce5e0d3107d68d.png)
+
+```bash
+sudo cp /usr/lib/nautilus/extensions-3.0/libterminal-nautilus.so /usr/lib/x86_64-linux-gnu/nautilus/extensions-3.0/
+```
+
+```bash
+reboot
+```
+
+问题解决！
+
+### protobuf-2.6.1
+
+```bash
+sudo apt install libtool
+```
+
+[https://github.com/google/protobuf/releases/download/v2.6.1/protobuf-2.6.1.tar.gz](https://github.com/google/protobuf/releases/download/v2.6.1/protobuf-2.6.1.tar.gz)
+
+或镜像：
+
+```bash
+wget -q --show-progress https://raw.gitcode.com/M0rtzz/protobuf-2.6.1/assets/199 -O protobuf-2.6.1.tar.gz
+```
+
+解压压缩包后进入文件夹，打开终端，输入：
+
+```bash
+./autogen.sh
+```
+
+![da01acbb001f42cea9ca08ddad814655.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:01_da01acbb001f42cea9ca08ddad814655.png)
+
+```bash
+./configure --prefix=/usr/local/protobuf
+```
+
+![1c6a5408dece4f7aa5fb4e78680eb913.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:27:11_1c6a5408dece4f7aa5fb4e78680eb913.png)
+
+```bash
+sudo make -j$(nproc)
+```
+
+![140562b609004503a731358eea387731.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:27:28_140562b609004503a731358eea387731.png)
+
+养成 `make check`的好习惯
+
+```bash
+sudo make check -j$(nproc)
+```
+
+![f9827d81f7f946d8ba91d26494c7251d.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:01_f9827d81f7f946d8ba91d26494c7251d.png)
+
+```bash
+sudo make install
+```
+
+![bf530b0ab13e4939bd810d4731e2764d.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:01_bf530b0ab13e4939bd810d4731e2764d.png)
+
+```bash
+sudo gedit /etc/profile
+```
+
+在最后加入：
+
+```bash
+#protobuf
+export PATH=${PATH}:/usr/local/protobuf/bin/export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:/usr/local/protobuf/lib/pkgconfig/
+```
+
+保存后关闭，打开终端，输入：
+
+```bash
+source /etc/profile
+```
+
+```bash
+sudo gedit /etc/ld.so.conf
+```
+
+在最后一行输入：
+
+```ini
+/usr/local/protobuf/lib
+```
+
+保存后关闭，打开终端，输入：
+
+```bash
+sudo ldconfig
+```
+
+![d80cbadb617b4986a99827d13170e9eb.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:02_d80cbadb617b4986a99827d13170e9eb.png)
+
+最后验证版本：
+
+```bash
+protoc --version
+```
+
+### OpenBLAS
+
+```bash
+sudo apt install gcc-arm-linux-gnueabihf libnewlib-arm-none-eabi libc6-dev-i386
+```
+
+OpenBLAS源码（非最新）最上方百度网盘里有，或者使用公益加速源：
+
+```bash
+git clone https://gitclone.com/github.com/OpenMathLib/OpenBLAS.git OpenBLAS
+```
+
+```bash
+cd OpenBLAS
+```
+
+```bash
+sudo apt install gfortran
+```
+
+```bash
+sudo make FC=gfortran TARGET=ARMV8 -j$(nproc)
+```
+
+```bash
+sudo make PREFIX=/usr/local install
+```
+
+![af045e49e18643d8a1c0c12deb166d44.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:27:35_af045e49e18643d8a1c0c12deb166d44.png)
+
+查看版本
+
+```bash
+grep OPENBLAS_VERSION /usr/local/include/openblas_config.h
+```
+
+![e76d37851f2e4d08b08c4ac035423cbc.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:02_e76d37851f2e4d08b08c4ac035423cbc.png)
+
+### seetaface2工作空间
+
+```bash
+gedit ~/.bashrc
+```
+
+在最后加入
+
+```bash
+source /home/m0rtzz/Workspaces/catkin_ws/devel/setup.bash
+```
+
+保存后关闭，打开终端，输入：
+
+```bash
+source ~/.bashrc
+```
+
+![597806c7f0834400b846b99cae4c9d63.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:02_597806c7f0834400b846b99cae4c9d63.png)
+
+![0bccdd5c978048189fcd47437ad89dfc.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:03_0bccdd5c978048189fcd47437ad89dfc.png)
+
+解决办法：
+
+终端输入：
+
+```bash
+gedit ~/.bashrc
+```
+
+加入工作空间下lib文件夹的路径
+
+```bash
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/home/m0rtzz/Workspaces/catkin_ws/lib
+```
+
+保存后关闭，打开终端，输入：
+
+```bash
+source ~/.bashrc
+```
+
+![4000fa5374ee48dfbc2fdee5c5ddf2d0.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:27:47_4000fa5374ee48dfbc2fdee5c5ddf2d0.png)
+
+解决！
+
+报错：
+
+```bash
+Gtk-Message: 15:22:30.610: Failed to load module "canberra-gtk-module"
+```
+
+解决方法：
+
+```bash
+sudo apt install libcanberra-gtk*
+```
+
+### caffe
+
+> ***Reference：***
+>
+> [https://blog.csdn.net/weixin_39161727/article/details/120136500](https://blog.csdn.net/weixin_39161727/article/details/120136500)
 
 首先安装依赖：
 
@@ -4553,7 +4277,7 @@ sudo make pycaffe -j$(nproc)
 
 可能会有报错，但问题不大，我们只是需要那些库文件~
 
-## 24.安装libfreenect2
+### libfreenect2
 
 ```bash
 git clone https://github.com/OpenKinect/libfreenect2.git libfreenect2
@@ -4589,7 +4313,7 @@ sudo make install
 sudo cp ../platform/linux/udev/90-kinect2.rules /etc/udev/rules.d/
 ```
 
-## 25.安装vtk8.2.0及PCL1.9.1
+### VTK-8.2.0及PCL-1.9.1
 
 [https://vtk.org/download/](https://vtk.org/download/)
 
@@ -4664,7 +4388,512 @@ sudo make install
 
 ![69d7d955c7f24ab4926dadd31dddfb04](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:18_69d7d955c7f24ab4926dadd31dddfb04.png)
 
-## 26.安装CarlaUE4
+## NOT RECOMMENDED
+
+### ROS-melodic（有些图忘记截了）
+
+**导入Key**
+
+```bash
+sudo gpg --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+```
+
+```bash
+sudo gpg --export C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654 | sudo tee /usr/share/keyrings/ros.gpg > /dev/null
+```
+
+**设置中科大源**
+
+```bash
+sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/ros.gpg] https://mirrors.ustc.edu.cn/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+```
+
+```bash
+sudo apt update
+```
+
+```bash
+sudo apt install ros-melodic-desktop-full
+```
+
+```bash
+echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+```
+
+```bash
+sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
+```
+
+```bash
+sudo apt install python3-pip
+```
+
+使用阿里镜像源加速pip下载：
+
+```bash
+sudo pip3 install rosdepc -i https://mirrors.aliyun.com/pypi/simple/
+```
+
+```bash
+sudo rosdepc init
+rosdepc update
+```
+
+```bash
+sudo chmod 777 -R ~/.ros/
+```
+
+```bash
+roscore
+```
+
+![52b0561164a34d3ea62b74322abe50bc.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:26:21_52b0561164a34d3ea62b74322abe50bc.png)
+
+再新建两个终端，分别输入
+
+```bash
+rosrun turtlesim turtlesim_node
+```
+
+```bash
+rosrun turtlesim turtle_teleop_key
+```
+
+在`rosrun turtlesim turtle_teleop_key`所在终端点击一下任意位置，然后使用←↕→小键盘控制，看小海龟会不会动，如果会动则安装成功
+
+![c40128bd8c5245a48d386c21ba465449.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:26:29_c40128bd8c5245a48d386c21ba465449.png)
+
+### OpenCV-3.4.16及其扩展模块（Ubuntu18.04）
+
+```bash
+git clone -b 3.4.16 https://github.com/opencv/opencv.git opencv-3.4.16
+```
+
+或公益加速源：
+
+```bash
+git clone -b 3.4.16 https://mirror.ghproxy.com/https://github.com/opencv/opencv.git opencv-3.4.16
+```
+
+```bash
+cd opencv-3.4.16
+```
+
+```bash
+git clone -b 3.4.16 https://github.com/opencv/opencv_contrib.git opencv-3.4.16
+```
+
+或公益加速源：
+
+```bash
+git clone -b 3.4.16 https://mirror.ghproxy.com/https://github.com/opencv/opencv_contrib.git opencv_contrib-3.4.16
+```
+
+安装所需依赖库，打开终端，输入：
+
+```bash
+sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
+sudo apt update
+sudo apt install libjasper1 libjasper-dev
+```
+
+```bash
+sudo apt install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev liblapacke-dev checkinstall
+```
+
+进入opencv-3.4.16文件夹，打开终端，输入：
+
+```bash
+mkdir build
+```
+
+```bash
+cd build
+```
+
+**接下来编译安装，注意此命令的OPENCV_EXTRA_MODULES_PATH=后边的路径是你电脑下的绝对路径，请自行修改**
+
+```bash
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+-D WITH_GTK_2_X=ON \
+-D OPENCV_ENABLE_NONFREE=ON \
+-D OPENCV_GENERATE_PKGCONFIG=YES \
+-D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.16/opencv_contrib-3.4.16/modules \
+-D WITH_CUDA=ON \
+-D WITH_CUDNN=ON \
+-D WITH_FFMPEG=ON \
+-D WITH_OPENGL=ON \
+-D WITH_NVCUVID=ON \
+-D ENABLE_PRECOMPILED_HEADERS=OFF \
+-D CMAKE_EXE_LINKER_FLAGS=-lcblas \
+-D WITH_LAPACK=OFF \
+-j$(nproc) ..
+```
+
+过程中会出现IPPICV: Download: ippicv_2020_lnx_intel64_20191018_general.tgz
+
+解决方法：
+
+```bash
+cd ../ && mkdir downloads
+```
+
+```bash
+cd downloads && pwd
+```
+
+![34afaa6be110406889d65e506c8e2a2b](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:58:58_34afaa6be110406889d65e506c8e2a2b.png)
+
+复制绝对路径后：
+
+打开这个ippicv.cmake
+
+![6e9cc239b5a048ef932999f88634f470](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:26:38_6e9cc239b5a048ef932999f88634f470.png)
+
+把绝对路径复制进去：
+
+![e3d64802ff8748d7b5921fdbed6093a3](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:58:59_e3d64802ff8748d7b5921fdbed6093a3.png)
+
+然后把下面网址下载的文件cp进去就行了（或者开头百度云分享链接中自取~）
+
+[https://github.com/opencv/opencv_3rdparty](https://github.com/opencv/opencv_3rdparty)
+
+然后重新打开终端，输入：（**别忘了改路径**）：
+
+```bash
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+-D WITH_GTK_2_X=ON \
+-D OPENCV_ENABLE_NONFREE=ON \
+-D OPENCV_GENERATE_PKGCONFIG=YES \
+-D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.16/opencv_contrib-3.4.16/modules \
+-D WITH_CUDA=ON \
+-D WITH_CUDNN=ON \
+-D WITH_FFMPEG=ON \
+-D WITH_OPENGL=ON \
+-D WITH_NVCUVID=ON \
+-D ENABLE_PRECOMPILED_HEADERS=OFF \
+-D CMAKE_EXE_LINKER_FLAGS=-lcblas \
+-D WITH_LAPACK=OFF \
+-j$(nproc) ..
+```
+
+![875eccbb886649e9af1df6fa04c0a168](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:26:49_875eccbb886649e9af1df6fa04c0a168.png)
+
+这些.i文件需要在国外服务器上下载，网上说下载好文件直接把他们放进相对应的目录下就行，实测不行（建议科学的上网，想试试网上说法的：
+
+[https://blog.csdn.net/curious_undergather/article/details/111639199](https://blog.csdn.net/curious_undergather/article/details/111639199)
+
+文件的话，开头百度云分享链接里都有)
+
+```bash
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+-D WITH_GTK_2_X=ON \
+-D OPENCV_ENABLE_NONFREE=ON \
+-D OPENCV_GENERATE_PKGCONFIG=YES \
+-D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.16/opencv_contrib-3.4.16/modules \
+-D WITH_CUDA=ON \
+-D WITH_CUDNN=ON \
+-D WITH_FFMPEG=ON \
+-D WITH_OPENGL=ON \
+-D WITH_NVCUVID=ON \
+-D ENABLE_PRECOMPILED_HEADERS=OFF \
+-D CMAKE_EXE_LINKER_FLAGS=-lcblas \
+-D WITH_LAPACK=OFF \
+-j$(nproc) ..
+```
+
+![52f9d072a94643efb55ffa119bf1db67](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:58:59_52f9d072a94643efb55ffa119bf1db67.png)
+
+```bash
+sudo make -j$(nproc)
+```
+
+![image-20240206162428124](https://static.m0rtzz.com/images/Year:2024/Month:03/Day:10/17:34:12_16_24_28_image-20240206162428124.png)
+
+打开那个头文件，把报错所在行改为：
+
+```cpp
+#include "lapacke.h"
+```
+
+```bash
+sudo make -j$(nproc)
+```
+
+![e8807dc847184bdd9935739a3a623c75](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:00_e8807dc847184bdd9935739a3a623c75.png)
+
+```bash
+sudo make install
+```
+
+![325ba9f219904c1abf99cc8924c2374e](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:27:04_325ba9f219904c1abf99cc8924c2374e.png)
+
+```bash
+sudo gedit /etc/ld.so.conf.d/opencv.conf
+```
+
+加入
+
+```ini
+/usr/local/lib
+```
+
+保存后关闭，打开终端，输入：
+
+```bash
+sudo ldconfig
+```
+
+```bash
+sudo gedit /etc/bash.bashrc
+```
+
+加入
+
+```bash
+export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:/usr/local/lib/pkgconfig
+```
+
+保存后关闭，打开终端，输入：
+
+```bash
+source /etc/bash.bashrc
+```
+
+测试
+
+```bash
+cd ../samples/cpp/example_cmake
+cmake -j$(nproc) .
+sudo make -j$(nproc)
+./opencv_example
+```
+
+![1cb714361c874eacb01f3bce3f37e1fb.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:00_1cb714361c874eacb01f3bce3f37e1fb.png)
+
+安装成功！
+
+***设置cv_bridge的版本（ROS-melodic，经实践发现毫无效果）：***
+
+```bash
+sudo gedit /opt/ros/melodic/share/cv_bridge/cmake/cv_bridgeConfig.cmake
+```
+
+修改其中的以下内容：
+
+```cmake
+# 94行左右
+if(NOT "include;/usr/include;/usr/include/opencv " STREQUAL " ") // [!code --]
+  set(cv_bridge_INCLUDE_DIRS "") // [!code --]
+  set(_include_dirs "include;/usr/include;/usr/include/opencv") // [!code --]
+if(NOT "include;/usr/local/include/opencv;/usr/local/include/opencv2 " STREQUAL " ") // [!code ++]
+  set(cv_bridge_INCLUDE_DIRS "") // [!code ++]
+  set(_include_dirs "include;/usr/local/include/opencv;/usr/local/include/opencv;/usr/local/include/;/usr/include") // [!code ++]
+
+# 119行左右
+set(libraries "cv_bridge;/usr/lib/x86_64-linux-gnu/libopencv_core.so.3.2.0;/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.3.2.0;/usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.3.2.0") // [!code --]
+set(libraries "cv_bridge;/usr/local/lib/libopencv_core.so.3.4.16;/usr/local/lib/libopencv_imgproc.so.3.4.16;/usr/local/lib/libopencv_imgcodecs.so.3.4.16") // [!code ++]
+```
+
+opencv-3.4.4cmake命令：
+
+```bash
+cmake -D CMAKE_BUILD_TYPE=BUILD \
+-D CMAKE_INSTALL_PREFIX=/usr/local \
+-D WITH_GTK_2_X=ON \
+-D OPENCV_ENABLE_NONFREE=ON \
+-D OPENCV_GENERATE_PKGCONFIG=YES \
+-D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.4/opencv_contrib-3.4.4/modules \
+-D WITH_CUDA=ON \
+-D WITH_CUDNN=ON \
+-D OPENCV_DNN_CUDA=ON \
+-D WITH_FFMPEG=ON \
+-D WITH_OPENGL=ON \
+-D WITH_NVCUVID=ON \
+-D ENABLE_PRECOMPILED_HEADERS=OFF \
+-D CMAKE_EXE_LINKER_FLAGS=-lcblas \
+-D WITH_LAPACK=OFF \
+-D WITH_OPENMP=ON \
+-D BUILD_TESTS=OFF \
+-D BUILD_opencv_xfeatures2d=ON \
+-D CUDA_ARCH_BIN=8.6 \
+-D CUDA_GENERATION=Auto \
+-D CUDA_HOST_COMPILER:FILEPATH=/usr/bin/gcc-7 \
+-j$(nproc) ..
+```
+
+### OpenCV3配置darknet_ros工作空间（OpenCV3）
+
+```bash
+git clone --recursive https://github.com/leggedrobotics/darknet_ros.git darknet_ros
+```
+
+或公益加速源：
+
+```bash
+git clone --recursive https://mirror.ghproxy.com/https://github.com/leggedrobotics/darknet_ros.git darknet_ros
+```
+
+### Azure Kinect SDK-v1.4.0（源码编译）
+
+> ***Reference：***
+>
+> [https://blog.csdn.net/BlacKingZ/article/details/119115883](https://blog.csdn.net/BlacKingZ/article/details/119115883)
+
+```bash
+git clone -b v1.4.0 https://github.com/microsoft/Azure-Kinect-Sensor-SDK.git Azure-Kinect-Sensor-SDK-v1.4.0
+```
+
+或公益加速源：
+
+```bash
+git clone -b v1.4.0 https://mirror.ghproxy.com/https://github.com/microsoft/Azure-Kinect-Sensor-SDK.git Azure-Kinect-Sensor-SDK-v1.4.0
+```
+
+```bash
+sudo dpkg --add-architecture amd64
+```
+
+```bash
+sudo apt update
+```
+
+```bash
+sudo apt install -y ninja-build doxygen clang gcc-multilib g++-multilib python3 nasm libgl1-mesa-dev libsoundio-dev libvulkan-dev libx11-dev libxcursor-dev libxinerama-dev libxrandr-dev libusb-1.0-0-dev libudev-dev mesa-common-dev uuid-dev
+```
+
+[https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/](https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/)
+
+从上面的网站下载`libk4a1.2`中`libk4a1.2_1.2.0_amd64.deb`文件
+
+![f806a0d411ac415497e78b45bf3c20ac.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:06_f806a0d411ac415497e78b45bf3c20ac.png)
+
+解压 .deb 文件，再解压内部的`data.tar.gz`和`control.tar.gz`文件,并进入data文件夹，打开终端输入：
+
+```bash
+cd usr/lib/x86_64-linux-gnu
+sudo cp libdepthengine.so.2.0 /usr/lib/x86_64-linux-gnu
+```
+
+随后进入下载好的Azure-Kinect-Sensor-SDK-v1.4.0文件夹下打开终端输入
+
+```bash
+mkdir build && cd build
+cmake -j$(nproc) .. -GNinja
+```
+
+注意此步过程中extern/libyuv/src克隆较慢原因是使用了google的网站，我们把对应文件的克隆url改为github的就能正常克隆了，在Azure-Kinect-Sensor-SDK-v1.4.0文件夹下键盘Ctrl+H显示隐藏文件，打开.gitmodules文件，修改libyuv的部分为：
+
+```ini
+[submodule "extern/libyuv/src"]
+	path = extern/libyuv/src
+	url = https://github.com/lemenkov/libyuv.git
+```
+
+保存后关闭
+
+之后打开.git文件夹下的config文件，修改libyuv的部分为：
+
+```ini
+[submodule "extern/libyuv/src"]
+	active = true
+	url = https://github.com/lemenkov/libyuv.git
+```
+
+接下来就能正常克隆了，但是速度还是很慢，请耐心等待~
+
+保存后关闭，打开终端，输入：
+
+```bash
+cmake -j$(nproc) .. -GNinja
+```
+
+克隆完成后为如图所示：
+
+![b07fac22ae4b45ebb3e5a061739a4d87.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:06_b07fac22ae4b45ebb3e5a061739a4d87.png)
+
+之后输入：
+
+```bash
+sudo ninja -j$(nproc)
+```
+
+完成后如下：
+
+![c625650ae9744c02aea905984da47566.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:07_c625650ae9744c02aea905984da47566.png)
+
+最后输入：
+
+```bash
+sudo ninja install
+```
+
+完成后如下：
+
+![b71183010a584c469b0a6cbfc72b3e39.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:28:09_b71183010a584c469b0a6cbfc72b3e39.png)
+
+之后安装依赖：
+
+```bash
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+```
+
+```bash
+sudo apt update
+```
+
+```bash
+sudo gedit /etc/apt/sources.list
+```
+
+在最后一行加入：
+
+```bash
+# gcc-4.9
+deb http://dk.archive.ubuntu.com/ubuntu/ xenial main
+deb http://dk.archive.ubuntu.com/ubuntu/ xenial universe
+```
+
+保存后关闭，打开终端，输入：
+
+```bash
+sudo apt update
+```
+
+```bash
+sudo apt install gcc-4.9
+```
+
+```bash
+sudo apt upgrade libstdc++6
+```
+
+```bash
+sudo cp /usr/lib/x86_64-linux-gnu/libk4a1.4/libdepthengine.so.2.0 /usr/lib
+```
+
+之后测试一下：
+
+```bash
+sudo ./bin/k4aviewer
+```
+
+![cd9e9d8ea9884b6eb7c73e864efb7912](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:28:14_cd9e9d8ea9884b6eb7c73e864efb7912.png)
+
+授予权限：
+
+```bash
+cd .. && sudo cp scripts/99-k4a.rules /etc/udev/rules.d
+```
+
+## NOT REQUIRED
+
+> [!WARNING]
+>
+> 此小节为科研项目所需，比赛无需安装。
+
+### CarlaUE4
 
 > [!IMPORTANT]
 >
@@ -4722,7 +4951,7 @@ cd your-path/UnrealEngine_4.26/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linu
 tar -zxvf native-linux-v17_clang-10.0.1-centos7.tar.gz
 ```
 
-## 27.安装CARLA0.9.14（添加fisheye sensor模块）
+### CARLA-0.9.14（添加fisheye sensor模块）
 
 修改Update.sh下载网址为南方科技大学镜像站的网址：
 
@@ -4760,222 +4989,3 @@ carla::streaming::low_level::Client<tcp::Client> c;
     copy_if_changed "./Plugins/" "${DESTINATION}/Plugins/"
   fi
 ```
-
-## 28.P.S
-
-推荐一些linux办公常用的软件（linux版，不包括wine环境下，全部下载deb格式的安装包，系统架构可通过命令uname -a查看）：
-
-[百度网盘](https://pan.baidu.com/download#linux)
-
-[向日葵](https://sunlogin.oray.com/download/linux?type=personal)
-
-[ToDesk](https://www.todesk.com/linux.html)
-
-[QQ](https://im.qq.com/linuxqq/index.shtml)
-
-[腾讯会议](https://meeting.tencent.com/download?mfrom=OfficialIndex_TopBanner1_Download)
-
-[WPS Office](https://linux.wps.cn/)
-
-[搜狗输入法](https://shurufa.sogou.com/)（下载安装包后，官方会跳转至安装教程，严格按照步骤执行）
-
-[Visual Studio Code](https://code.visualstudio.com/docs/?dv=linux64_deb)（推荐打开Settings Sync，换电脑时设置可以同步）
-
-![195197efec704c98ba8f61ecc4c8370a.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:29:43_195197efec704c98ba8f61ecc4c8370a.png)
-
-![bd3b7b33a2744c5cb67011223648eabf.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:29:50_bd3b7b33a2744c5cb67011223648eabf.png)
-
-[星火应用商店](https://www.spark-app.store/download)
-
-仅支持Ubuntu20.04，需安装依赖包：
-
-![image-20240718162329579](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/16:23:29_image-20240718162329579.png)
-
-[Linux原生微信\_需要安装星火应用商店（最近的版本好像使用Fcitx输入法时中文输入有问题）](spk://store/chat/store.spark-app.wechat-linux-spark)
-
-![image-20240718202231084](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/20:22:31_image-20240718202231084.png)
-
-Ubuntu20.04以下版本或者不想安装星火应用商店的用户可安装Flatpak打包的微信（需安装Flatpak，下文有Flatpak安装教程）：
-
-解决基于Fcitx5的搜狗输入法无法在Flatpak版微信中进行中文输入的问题：[https://github.com/web1n/wechat-universal-flatpak/issues/33#issuecomment-2222259823](https://github.com/web1n/wechat-universal-flatpak/issues/33#issuecomment-2222259823)
-
-```bash
-wget -q --show-progress https://github.com/web1n/wechat-universal-flatpak/releases/latest/download/com.tencent.WeChat-x86_64.flatpak -O com.tencent.WeChat-x86_64.flatpak && sudo flatpak install ./com.tencent.WeChat-x86_64.flatpak
-```
-
-可以水平和垂直分割的终端：
-
-```bash
-sudo apt install terminator
-```
-
-![74c734b7ca9e4cc5a68246b4f8a73ee3.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:19_74c734b7ca9e4cc5a68246b4f8a73ee3.png)
-
-trash命令：
-
-```bash
-sudo apt install trash-cli
-```
-
-tree命令：
-
-```bash
-sudo apt install tree
-```
-
-![5434b41e73244f8f941b795586faaea2.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:19_5434b41e73244f8f941b795586faaea2.png)
-
-![c344c03378a74cdca9e9585f3c3c14d8.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:30:05_c344c03378a74cdca9e9585f3c3c14d8.png)
-
-查看系统信息：
-
-```bash
-sudo apt install neofetch
-```
-
-![image-20240720105620903](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:20/10:56:21_image-20240720105620903.png)
-
-或安装用C语言写的更快的`fastfetch`：
-
-```bash
-wget -q --show-progress https://github.com/fastfetch-cli/fastfetch/releases/latest/download/fastfetch-linux-amd64.deb -O fastfetch-linux-amd64.deb && sudo apt install -y ./fastfetch-linux-amd64.deb
-```
-
-![image-20240720105657155](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:20/10:56:57_image-20240720105657155.png)
-
-rar文件解压工具：
-
-```bash
-sudo apt install unrar
-```
-
-解决不能观看MP4文件：
-
-```bash
-sudo apt update
-```
-
-```bash
-sudo apt install libdvdnav-dev libdvdread-dev gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly libdvd-pkg
-```
-
-```bash
-sudo apt install ubuntu-restricted-extras
-```
-
-```bash
-sudo dpkg-reconfigure libdvd-pkg
-```
-
-系统优化：
-
-```bash
-sudo apt update
-```
-
-```bash
-sudo apt install gnome-tweak-tool
-```
-
-命令启动：
-
-```bash
-gnome-tweaks
-```
-
-或：
-
-![image-20240718201417588](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/20:14:18_image-20240718201417588.png)
-
-![image-20240718155818281](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/15:58:18_image-20240718155818281.png)
-
-剪贴板管理工具：
-
-```bash
-sudo add-apt-repository ppa:diodon-team/stable
-sudo apt update && sudo apt install diodon
-```
-
-然后使用刚才安装的优化工具将`diodon`设置为开机自启动：
-
-![2024-07-18](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/16:02:27_2024-07-18.png)
-
-这样就实现了类似于`Windows`下`Win + V`的剪贴板功能：
-
-![image-20240718160648762](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/16:06:48_image-20240718160648762.png)
-
-另外可使用中科大反向代理`Canonical`的`ppa仓库`：
-
-> [!TIP]
->
-> 将`/etc/apt/sources.list.d`下`.list`文件中的`http://ppa.launchpad.net`替换为`https://launchpad.proxy.ustclug.org`即可，建议替换前先`sudo cp /etc/apt/sources.list.d/your-file.list /etc/apt/sources.list.d/your-file.list.save`备份一下（请自行替换文件名）
-
-![image-20240720105759025](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:20/10:57:59_image-20240720105759025.png)
-
-Flatpak：
-
-Ubuntu 18.10 (Cosmic Cuttlefish) or later：
-
-```bash
-sudo apt install flatpak
-```
-
-Older Ubuntu versions：
-
-```bash
-sudo add-apt-repository ppa:flatpak/stable
-sudo apt update
-sudo apt install flatpak
-```
-
-FlatHub上交镜像源：
-
-[https://mirrors.sjtug.sjtu.edu.cn/docs/flathub](https://mirrors.sjtug.sjtu.edu.cn/docs/flathub)
-
-切换之后更新Flatpak应用将加速：
-
-```bash
-sudo flatpak update
-```
-
-火狐浏览器优化：
-
-地址栏输入：
-
-```ini
-about:config
-```
-
-![4700bc61b15141609ce55f97e9334034](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:20_4700bc61b15141609ce55f97e9334034.png)
-
-```ini
-full-screen-api.warning.timeout
-```
-
-设置为0~
-
-```ini
-full-screen-api.transition-duration.enter
-```
-
-和
-
-```ini
-full-screen-api.transition-duration.leave
-```
-
-都设置为0 0~
-
-```ini
-browser.search.openintab
-```
-
-```ini
-browser.urlbar.openintab
-```
-
-```ini
-browser.tabs.loadBookmarksInTabs
-```
-
-都设置为true~
