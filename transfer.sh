@@ -9,6 +9,9 @@ trap 'onCtrlC' INT
 
 echo $'\e[1;32m开始构建静态资源...\e[0m'
 
+grep -rl --binary-files=without-match "fonts.googleapis.com" ./node_modules | xargs sed -i 's/fonts.googleapis.com/gfonts.aby.pub/g'
+grep -rl --binary-files=without-match "fonts.gstatic.com" ./node_modules | xargs sed -i 's/fonts.gstatic.com/gfonts.aby.pub/g'
+
 rm -rf out/ .next/
 source ~/.nvm/nvm.sh
 nvm use v18.20.3
