@@ -9,8 +9,9 @@ trap 'onCtrlC' INT
 
 echo $'\e[1;32m开始构建静态资源...\e[0m'
 
-grep -rl --binary-files=without-match "fonts.googleapis.com" ./node_modules | xargs -r sed -i 's/fonts.googleapis.com/gfonts.aby.pub/g'
-grep -rl --binary-files=without-match "fonts.gstatic.com" ./node_modules | xargs -r sed -i 's/fonts.gstatic.com/gfonts.aby.pub/g'
+repo_root_dir=$(git rev-parse --show-toplevel)
+grep -rl --binary-files=without-match "fonts.googleapis.com" "${repo_root_dir}/node_modules" | xargs -r sed -i 's/fonts.googleapis.com/gfonts.aby.pub/g'
+grep -rl --binary-files=without-match "fonts.gstatic.com" "${repo_root_dir}/node_modules" | xargs -r sed -i 's/fonts.gstatic.com/gfonts.aby.pub/g'
 
 echo $'\e[1;32m镜像站URL替换完成\e[0m'
 
