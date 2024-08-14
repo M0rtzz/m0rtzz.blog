@@ -11,8 +11,8 @@
 > - ESSENTIAL（必需）
 > - RECOMMENDED（推荐）
 > - OPTIONAL（可选）
-> - NOT RECOMMENDED（不推荐）
-> - NOT REQUIRED（不需要）
+> - NOT RECOMMENDED（不宜）
+> - NOT REQUIRED（无需）
 
 ---
 
