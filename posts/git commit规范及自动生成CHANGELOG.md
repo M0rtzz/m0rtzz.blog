@@ -477,7 +477,7 @@ case "${remote_url}" in
 esac
 
 git add "${repo_root_dir}/CHANGELOG.md"
-git commit -m "📝 docs(CHANGELOG.md): automatic update"
+git commit -m "📝 doc(CHANGELOG.md): automatic update"
 
 git tag -a "${new_tag}" -m "🔖 tag: ${new_tag}"
 echo "\e[1;32m更新后的标签为: ${new_tag}\e[0m"
