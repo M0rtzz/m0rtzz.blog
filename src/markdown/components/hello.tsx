@@ -1,4 +1,4 @@
-import { tw } from 'tw-styled'
+import { tw } from 'tw-styled/merge'
 
 const Message = tw.span`absolute -top-5 inline-flex h-11 items-center whitespace-nowrap rounded-[1.33rem] bg-[#30db5b] text-xl before:absolute before:content-["_"] after:absolute after:content-["_"] max-sm:scale-90 sm:left-32 md:left-[60%] md:scale-110`
 
