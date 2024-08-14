@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## <small>3.0.1 (2024-08-13)</small>
 
 * 🔖 tag(package.json): v3.0.1 ([c08570d](https://github.com/M0rtzz/m0rtzz.blog/commit/c08570d))
@@ -33,20 +32,6 @@
 * 📝 doc(git commit规范及自动生成CHANGELOG.md): update config and add cmd ([2f2f527](https://github.com/M0rtzz/m0rtzz.blog/commit/2f2f527))
 * 📝 docs(CHANGELOG.md): automatic update ([deded6a](https://github.com/M0rtzz/m0rtzz.blog/commit/deded6a))
 * 📝 docs(CHANGELOG.md): automatic update ([c9b3ee4](https://github.com/M0rtzz/m0rtzz.blog/commit/c9b3ee4))
-=======
-## <small>2.9.8 (2024-08-13)</small>
-
-* 🔖 tag(package.json): v2.9.8 ([da29516](https://github.com/M0rtzz/m0rtzz.blog/commit/da29516))
-* 🚀 deploy(transfer.sh): change tool from cnpm to pnpm ([8d15016](https://github.com/M0rtzz/m0rtzz.blog/commit/8d15016))
-
-
-
-## <small>2.9.7 (2024-08-13)</small>
-
-* 💡 comment(pip.conf): comment nvidia python package site ([4a001d1](https://github.com/M0rtzz/m0rtzz.blog/commit/4a001d1))
-* 📝 doc: update config file ([d1b33ed](https://github.com/M0rtzz/m0rtzz.blog/commit/d1b33ed))
-* 📝 doc(git commit规范及自动生成CHANGELOG.md): update config and add cmd ([2f2f527](https://github.com/M0rtzz/m0rtzz.blog/commit/2f2f527))
->>>>>>> 📝 docs(CHANGELOG.md): automatic update
 * 📝 docs(CHANGELOG.md): automatic update ([065131d](https://github.com/M0rtzz/m0rtzz.blog/commit/065131d))
 * 📝 docs(CHANGELOG.md): automatic update ([6c4f200](https://github.com/M0rtzz/m0rtzz.blog/commit/6c4f200))
 * 📝 docs(CHANGELOG.md): automatic update ([dfc9fa7](https://github.com/M0rtzz/m0rtzz.blog/commit/dfc9fa7))
