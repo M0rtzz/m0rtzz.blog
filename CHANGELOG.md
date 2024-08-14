@@ -1,39 +1,8 @@
-## <small>3.0.4 (2024-08-14)</small>
+# Changelog
 
-* 📝 doc(git commit规范及自动生成CHANGELOG.md): update script ([4a05751](https://github.com/M0rtzz/m0rtzz.blog/commit/4a05751))
-* 📝 docs(CHANGELOG.md): automatic update ([8a58c39](https://github.com/M0rtzz/m0rtzz.blog/commit/8a58c39))
-* 🔖 tag(package.json): v3.0.2 ([629d527](https://github.com/M0rtzz/m0rtzz.blog/commit/629d527))
-* 🔖 tag(package.json): v3.0.4 ([5c9b032](https://github.com/M0rtzz/m0rtzz.blog/commit/5c9b032))
-* 🚸 usability(transfer.sh): update the search path for grep ([a90fa1e](https://github.com/M0rtzz/m0rtzz.blog/commit/a90fa1e))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>3.0.3 (2024-08-14)</small>
-
-* ⚗️ exp(transfer.sh): googlefonts and gstatic mirror site experiment ([58bbcc4](https://github.com/M0rtzz/m0rtzz.blog/commit/58bbcc4))
-* ⬆️ up_dep: upgrade dependency ([b7c4445](https://github.com/M0rtzz/m0rtzz.blog/commit/b7c4445))
-* 👽️ api(shiki): upgrade shikijs ([efac911](https://github.com/M0rtzz/m0rtzz.blog/commit/efac911))
-* 👽️ api(tw-styled): upgrade tw-styled ([15edaf2](https://github.com/M0rtzz/m0rtzz.blog/commit/15edaf2))
-* 💬 text(environment_configuration.md): update text ([9f790b8](https://github.com/M0rtzz/m0rtzz.blog/commit/9f790b8))
-* 📝 doc(git commit规范及自动生成CHANGELOG.md): update config ([e661022](https://github.com/M0rtzz/m0rtzz.blog/commit/e661022))
-* 📝 docs(CHANGELOG.md): automatic update ([7b19742](https://github.com/M0rtzz/m0rtzz.blog/commit/7b19742))
-* 📝 docs(CHANGELOG.md): automatic update ([11aa8cb](https://github.com/M0rtzz/m0rtzz.blog/commit/11aa8cb))
-* 📝 docs(CHANGELOG.md): automatic update ([b607c01](https://github.com/M0rtzz/m0rtzz.blog/commit/b607c01))
-* 🔖 tag(package.json): v2.9.8 ([a9d787f](https://github.com/M0rtzz/m0rtzz.blog/commit/a9d787f))
-* 🔖 tag(package.json): v3.0.2 ([0ac6954](https://github.com/M0rtzz/m0rtzz.blog/commit/0ac6954))
-* 🔖 tag(package.json): v3.0.3 ([3c71fa4](https://github.com/M0rtzz/m0rtzz.blog/commit/3c71fa4))
-* 🦺 val(transfer.sh): add the -r option of xargs to avoid executing sed cmd without pipe input ([96b5ac5](https://github.com/M0rtzz/m0rtzz.blog/commit/96b5ac5))
-* 🙈 ignore(.gitignore): update .gitignore ([ce9828b](https://github.com/M0rtzz/m0rtzz.blog/commit/ce9828b))
-
-
-
-## <small>3.0.1 (2024-08-13)</small>
-
-* 📝 docs(CHANGELOG.md): automatic update ([422e1de](https://github.com/M0rtzz/m0rtzz.blog/commit/422e1de))
-* 🔖 tag(package.json): v3.0.1 ([c08570d](https://github.com/M0rtzz/m0rtzz.blog/commit/c08570d))
-* 🔥 remove: rm unused code ([68e4550](https://github.com/M0rtzz/m0rtzz.blog/commit/68e4550))
-
-
+## [3.0.5](https://github.com/M0rtzz/m0rtzz.blog/compare/v3.0.4...v3.0.5) (2024-08-14)
 
 ## 3.0.0 (2024-08-13)
 
@@ -1744,5 +1713,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
