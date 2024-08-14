@@ -1,4 +1,4 @@
-import { tw } from 'tw-styled'
+import { tw } from 'tw-styled/merge'
 
 const WaveCircle = tw.i`animation-breath absolute rounded-full shadow-bento`
 export const Wave = () => {
