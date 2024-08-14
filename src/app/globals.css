@@ -481,3 +481,13 @@ div.not-prose:nth-child(n)
   text-decoration: underline;
   font-weight: 500;
 }
+
+div.not-prose:nth-child(n) > div:nth-child(n) > ul:nth-child(n) {
+  list-style-type: disc;
+  padding-left: 18px;
+}
+
+div.not-prose:nth-child(n) > div:nth-child(n) > ol:nth-child(n) {
+  list-style-type: decimal;
+  padding-left: 18px;
+}
