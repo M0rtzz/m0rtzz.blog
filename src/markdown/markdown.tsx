@@ -1,6 +1,6 @@
 import path from 'node:path'
 
-import rehypeShiki, { type RehypeShikiOptions } from '@shikijs/rehype'
+import rehypeShikiFromHighlighter from '@shikijs/rehype/core'
 import {
   transformerNotationDiff,
   transformerNotationHighlight,
@@ -18,14 +18,26 @@ import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
 import { MDX, type MDXProps } from 'rsc-mdx'
+import {
+  bundledLanguages,
+  bundledThemes,
+  createHighlighter,
+} from 'shiki/bundle/full'
 
 import { rehypeGithubAlert, findCodeText } from './plugins'
 import { rendererMdx } from './twoslash/renderMdx'
+
+import type { RehypeShikiOptions } from '@shikijs/rehype'
 
 interface MarkdownProps {
   source: string
   useMDXComponents?: MDXProps['useMDXComponents']
 }
+
+const highlighter = await createHighlighter({
+  langs: Object.keys(bundledLanguages),
+  themes: Object.keys(bundledThemes),
+})
 
 export async function Markdown(props: MarkdownProps) {
   const { source, useMDXComponents } = props
@@ -47,7 +59,8 @@ export async function Markdown(props: MarkdownProps) {
           },
         ],
         [
-          rehypeShiki,
+          rehypeShikiFromHighlighter,
+          highlighter,
           {
             parseMetaString: (meta, node) => {
               const metaData = meta.split(' ')
