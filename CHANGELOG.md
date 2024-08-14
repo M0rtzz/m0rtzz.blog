@@ -1,24 +1,8 @@
-## <small>3.0.2 (2024-08-14)</small>
+# Changelog
 
-* ⚗️ exp(transfer.sh): googlefonts and gstatic mirror site experiment ([58bbcc4](https://github.com/M0rtzz/m0rtzz.blog/commit/58bbcc4))
-* ⬆️ up_dep: upgrade dependency ([b7c4445](https://github.com/M0rtzz/m0rtzz.blog/commit/b7c4445))
-* 👽️ api(shiki): upgrade shikijs ([efac911](https://github.com/M0rtzz/m0rtzz.blog/commit/efac911))
-* 👽️ api(tw-styled): upgrade tw-styled ([15edaf2](https://github.com/M0rtzz/m0rtzz.blog/commit/15edaf2))
-* 💬 text(environment_configuration.md): update text ([9f790b8](https://github.com/M0rtzz/m0rtzz.blog/commit/9f790b8))
-* 📝 doc(git commit规范及自动生成CHANGELOG.md): update config ([e661022](https://github.com/M0rtzz/m0rtzz.blog/commit/e661022))
-* 📝 docs(CHANGELOG.md): automatic update ([b607c01](https://github.com/M0rtzz/m0rtzz.blog/commit/b607c01))
-* 🔖 tag(package.json): v2.9.8 ([a9d787f](https://github.com/M0rtzz/m0rtzz.blog/commit/a9d787f))
-* 🔖 tag(package.json): v3.0.2 ([0ac6954](https://github.com/M0rtzz/m0rtzz.blog/commit/0ac6954))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>3.0.1 (2024-08-13)</small>
-
-* 📝 docs(CHANGELOG.md): automatic update ([422e1de](https://github.com/M0rtzz/m0rtzz.blog/commit/422e1de))
-* 🔖 tag(package.json): v3.0.1 ([c08570d](https://github.com/M0rtzz/m0rtzz.blog/commit/c08570d))
-* 🔥 remove: rm unused code ([68e4550](https://github.com/M0rtzz/m0rtzz.blog/commit/68e4550))
-
-
+## [3.0.3](https://github.com/M0rtzz/m0rtzz.blog/compare/v3.0.2...v3.0.3) (2024-08-14)
 
 ## 3.0.0 (2024-08-13)
 
@@ -1729,5 +1713,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
