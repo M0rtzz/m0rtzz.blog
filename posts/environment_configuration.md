@@ -8,7 +8,7 @@
 >
 > 本文根据重要程度对各个步骤进行分类：
 >
-> - ESSENTIAL（必须）
+> - ESSENTIAL（必需）
 > - RECOMMENDED（推荐）
 > - OPTIONAL（可选）
 > - NOT RECOMMENDED（不推荐）
