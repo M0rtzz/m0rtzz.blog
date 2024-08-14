@@ -208,6 +208,10 @@ module.exports = {
             name: '🧵 thread:\tAdd or update code related to multithreading or concurrency | 线程'
         },
         {
+            value: '👽️ api',
+            name: '👽️ api:\tUpdate code due to external API changes | API相关'
+        },
+        {
             value: '🔐 secert',
             name: '🔐 secert:\tSecert | 秘钥'
         },
