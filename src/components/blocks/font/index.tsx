@@ -1,4 +1,4 @@
-import { tw } from 'tw-styled'
+import { tw } from 'tw-styled/merge'
 
 import { Block } from '@/components/blocks/block'
 
