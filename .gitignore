@@ -42,4 +42,6 @@ dist
 .vscode/
 # .husky/
 .github/
+out.zip
 *.out
+
