@@ -48,20 +48,14 @@
 * 👽️ api(tw-styled): upgrade tw-styled ([15edaf2](https://github.com/M0rtzz/m0rtzz.blog/commit/15edaf2))
 * 💬 text(environment_configuration.md): update text ([9f790b8](https://github.com/M0rtzz/m0rtzz.blog/commit/9f790b8))
 * 📝 doc(git commit规范及自动生成CHANGELOG.md): update config ([e661022](https://github.com/M0rtzz/m0rtzz.blog/commit/e661022))
-<<<<<<< HEAD
 * 📝 docs(CHANGELOG.md): automatic update ([7b19742](https://github.com/M0rtzz/m0rtzz.blog/commit/7b19742))
-=======
->>>>>>> 📝 docs(CHANGELOG.md): automatic update
 * 📝 docs(CHANGELOG.md): automatic update ([11aa8cb](https://github.com/M0rtzz/m0rtzz.blog/commit/11aa8cb))
 * 📝 docs(CHANGELOG.md): automatic update ([b607c01](https://github.com/M0rtzz/m0rtzz.blog/commit/b607c01))
 * 🔖 tag(package.json): v2.9.8 ([a9d787f](https://github.com/M0rtzz/m0rtzz.blog/commit/a9d787f))
 * 🔖 tag(package.json): v3.0.2 ([0ac6954](https://github.com/M0rtzz/m0rtzz.blog/commit/0ac6954))
-<<<<<<< HEAD
 * 🔖 tag(package.json): v3.0.3 ([3c71fa4](https://github.com/M0rtzz/m0rtzz.blog/commit/3c71fa4))
 * 🦺 val(transfer.sh): add the -r option of xargs to avoid executing sed cmd without pipe input ([96b5ac5](https://github.com/M0rtzz/m0rtzz.blog/commit/96b5ac5))
 * 🙈 ignore(.gitignore): update .gitignore ([ce9828b](https://github.com/M0rtzz/m0rtzz.blog/commit/ce9828b))
-=======
->>>>>>> 📝 docs(CHANGELOG.md): automatic update
 
 
 
