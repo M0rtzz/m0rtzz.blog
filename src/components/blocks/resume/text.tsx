@@ -11,7 +11,7 @@ export const ResumeText = () => {
       return
     }
     const typed = new Typed(ref.current, {
-      strings: ['^200ls resume', '^200nvim resume', '^200cat resume', '^200more resume'],
+      strings: ['^200ls resume', '^200vim resume', '^200cat resume', '^200more resume'],
       typeSpeed: 120,
       backSpeed: 120,
       backDelay: 1000,
