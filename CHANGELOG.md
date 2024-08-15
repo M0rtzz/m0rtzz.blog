@@ -1,10 +1,4 @@
-# Changelog
-
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
-
-## [3.1.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v3.0.8...v3.1.1) (2024-08-15)
-
-## 3.1.0 (2024-08-15)
+## <small>3.1.1 (2024-08-15)</small>
 
 * ✨ feat: ([524f4d3](https://github.com/M0rtzz/m0rtzz.blog/commit/524f4d3))
 * 🐛 fix(globals.css): fix the indentation issue of multi-level lists in warning box ([9143e75](https://github.com/M0rtzz/m0rtzz.blog/commit/9143e75))
@@ -12,11 +6,13 @@ All notable changes to this project will be documented in this file. See [commit
 * 💄 ui(globals.css): hide marker of ul ([1eec6bd](https://github.com/M0rtzz/m0rtzz.blog/commit/1eec6bd))
 * 💩 poop(CHANGELOG.md): shit issue ([519ed24](https://github.com/M0rtzz/m0rtzz.blog/commit/519ed24))
 * 💬 text(text.tsx): from `nvim` to `vim` ([cad280d](https://github.com/M0rtzz/m0rtzz.blog/commit/cad280d))
+* 📝 docs(CHANGELOG.md): automatic update ([87e6cf9](https://github.com/M0rtzz/m0rtzz.blog/commit/87e6cf9))
 * 📝 docs(CHANGELOG.md): automatic update ([ef1bd4f](https://github.com/M0rtzz/m0rtzz.blog/commit/ef1bd4f))
 * 📝 docs(CHANGELOG.md): automatic update ([6dcfd4b](https://github.com/M0rtzz/m0rtzz.blog/commit/6dcfd4b))
 * 📝 docs(CHANGELOG.md): automatic update ([4ced151](https://github.com/M0rtzz/m0rtzz.blog/commit/4ced151))
 * 🔖 tag(package.json): v3.0.9 ([6ab2ccd](https://github.com/M0rtzz/m0rtzz.blog/commit/6ab2ccd))
-* 🔖 tag(package.json): v3.1.0 ([97286be](https://github.com/M0rtzz/m0rtzz.blog/commit/97286be))
+* 🔖 tag(package.json): v3.1.0 ([e2ad319](https://github.com/M0rtzz/m0rtzz.blog/commit/e2ad319))
+* 🔖 tag(package.json): v3.1.1 ([0a45c40](https://github.com/M0rtzz/m0rtzz.blog/commit/0a45c40))
 
 
 
@@ -1799,3 +1795,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
