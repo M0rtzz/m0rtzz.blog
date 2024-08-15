@@ -31,7 +31,7 @@ pnpm build || {
     #sed -i 's/fonts.gstatic.com/gstatic.loli.net/g' "${file}"
 #done
 
-echo $'\e[1;32m静态资源构建完成\e[0m'
+echo $'\e[1;32m静态 资源构建完成\e[0m'
 
 # 压缩 out 目录为 out.zip
 zip -r -q out.zip out/
