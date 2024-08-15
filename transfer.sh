@@ -40,19 +40,19 @@ remote_user="root"
 remote_host="${JDCLOUD}"
 remote_folder="/root/Web/m0rtzz.blog/"
 
-ssh "${remote_user}"@"${remote_host}" "nginx -s stop && echo $'\e[1;32mnginx -s stop success\e[0m' || echo $'\e[1;31mnginx -s stop fail\e[0m'"
-
 ssh "${remote_user}"@"${remote_host}" "cd ${remote_folder} && git pull --rebase"
 
 echo $'\e[1;32m代码拉取完成\e[0m'
-
-ssh "${remote_user}"@"${remote_host}" "rm -rf ${remote_folder}out/ ${remote_folder}.next/"
 
 echo $'\e[1;32m开始传输静态资源...\e[0m'
 
 scp out.zip "${remote_user}"@"${remote_host}":"${remote_folder}"
 
-ssh "${remote_user}"@"${remote_host}" "unzip -o -q ${remote_folder}out.zip -d ${remote_folder} && rm ${remote_folder}out.zip && echo $'\e[1;32munzip success\e[0m' || echo $'\e[1;31munzip fail\e[0m'"
+ssh "${remote_user}"@"${remote_host}" "nginx -s stop && echo $'\e[1;32mnginx -s stop success\e[0m' || echo $'\e[1;31mnginx -s stop fail\e[0m'"
+
+ssh "${remote_user}"@"${remote_host}" "rm -rf ${remote_folder}out/ ${remote_folder}.next/"
+
+ssh "${remote_user}"@"${remote_host}" "unzip -o -q ${remote_folder}out.zip -d ${remote_folder} && rm -f ${remote_folder}out.zip && echo $'\e[1;32munzip success\e[0m' || echo $'\e[1;31munzip fail\e[0m'"
 
 ssh "${remote_user}"@"${remote_host}" "nginx && nginx -s reload && echo $'\e[1;32mnginx -s reload success\e[0m' || echo $'\e[1;31mnginx -s reload fail\e[0m'"
 
