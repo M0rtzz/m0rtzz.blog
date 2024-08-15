@@ -199,6 +199,12 @@
   background: transparent;
 }
 
+/* 目录内容左对齐 */
+.toc-left {
+  text-align: left;
+  display: block;
+}
+
 /* 特殊处理Linux下的滚动条 */
 .linux-special-scroll-bar {
   scrollbar-width: unset !important;
@@ -336,89 +342,81 @@ div.prose-sm:nth-child(n) > p:nth-child(n) > strong:nth-child(n) {
 }
 
 /* 有序列表序号 */
-.prose :where(ol):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
-  list-style-type: decimal;
+ol {
+  list-style-type: decimal !important;
 }
 
-.prose
-  :where(ul ul, ul ol, ol ul, ol ol):not(
-    :where([class~='not-prose'], [class~='not-prose'] *)
-  ) {
-  list-style-type: lower-roman;
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  list-style-type: lower-roman !important;
 }
 
-.prose
-  :where(
-    ul ul ul,
-    ul ul ol,
-    ul ol ul,
-    ul ol ol,
-    ol ul ul,
-    ol ul ol,
-    ol ol ul,
-    ol ol ol
-  ):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
-  list-style-type: lower-alpha;
+ul ul ul,
+ul ul ol,
+ul ol ul,
+ul ol ol,
+ol ul ul,
+ol ul ol,
+ol ol ul,
+ol ol ol {
+  list-style-type: lower-alpha !important;
 }
 
-.prose
-  :where(
-    ul ul ul ol,
-    ul ul ol ol,
-    ul ol ul ol,
-    ul ol ol ol,
-    ol ul ul ol,
-    ol ul ol ol,
-    ol ol ul ol,
-    ol ol ol ol
-  ):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
-  list-style-type: lower-greek;
-}
-
-/* 目录内容左对齐 */
-.toc-left {
-  text-align: left;
-  display: block;
+ul ul ul ol,
+ul ul ol ol,
+ul ol ul ol,
+ul ol ol ol,
+ol ul ul ol,
+ol ul ol ol,
+ol ol ul ol,
+ol ol ol ol {
+  list-style-type: lower-greek !important;
 }
 
 /* 无序列表序号 */
-.prose :where(ul):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
-  list-style-type: disc;
+ul {
+  list-style-type: disc !important;
 }
 
-.prose > ul:nth-child(n) > li:nth-child(n) > ul:nth-child(n) > li:nth-child(n) {
-  list-style-type: circle;
+ul > li > ul > li {
+  list-style-type: circle !important;
 }
 
-.prose
-  > ul:nth-child(n)
-  > li:nth-child(n)
-  > ul:nth-child(n)
-  > li:nth-child(n)
-  > ul:nth-child(n)
-  > li:nth-child(n) {
-  list-style-type: square;
+ul > li > ul > li > ul > li {
+  list-style-type: square !important;
 }
 
 /* 为剩余所有无序列表子列表设置样式 */
-.prose ul li > ul {
-  list-style-type: square;
+ul li > ul {
+  list-style-type: square !important;
 }
 
 /* 有序列表序号颜色 */
-.prose
-  :where(ol > li):not(
-    :where([class~='not-prose'], [class~='not-prose'] *)
-  )::marker {
-  color: unset;
+ol > li::marker {
+  color: unset !important;
 }
 
 /* 无序列表序号颜色 */
-.prose
-  :where(ul > li):not(
-    :where([class~='not-prose'], [class~='not-prose'] *)
-  )::marker {
-  color: unset;
+ul > li::marker {
+  color: unset !important;
+}
+
+div.not-prose:nth-child(n) > div:nth-child(n) > ul:nth-child(n) {
+  padding-left: 18px;
+}
+
+div.not-prose:nth-child(n) > div:nth-child(n) > ol:nth-child(n) {
+  padding-left: 18px;
+}
+
+ul {
+  padding-inline-start: 1.625rem;
+}
+
+ol {
+  padding-inline-start: 1.625rem;
 }
 
 /* 5,6级标题颜色 */
@@ -480,14 +478,4 @@ div.not-prose:nth-child(n)
   color: var(--tw-prose-links);
   text-decoration: underline;
   font-weight: 500;
-}
-
-div.not-prose:nth-child(n) > div:nth-child(n) > ul:nth-child(n) {
-  list-style-type: disc;
-  padding-left: 18px;
-}
-
-div.not-prose:nth-child(n) > div:nth-child(n) > ol:nth-child(n) {
-  list-style-type: decimal;
-  padding-left: 18px;
 }
