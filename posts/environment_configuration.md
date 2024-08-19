@@ -13,6 +13,7 @@
 > - OPTIONAL（可选）
 > - NOT RECOMMENDED（不宜）
 > - NOT REQUIRED（无需）
+> - EOL（停更）
 
 ---
 
@@ -64,6 +65,111 @@ DefaultTimeoutStopSec=5s
 
 ```bash
 sudo systemctl daemon-reload
+```
+
+### 更换国内源（可替换为自己中意的镜像源）
+
+```bash
+sudo gedit /etc/apt/sources.list
+```
+
+将原本的注释掉，在最下方加入:
+
+```bash
+# 华科源（Ubuntu 18.04）【默认注释了源码仓库，如有需要可自行取消注释】
+deb https://mirrors.hust.edu.cn/ubuntu/ bionic main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic main restricted universe multiverse
+
+deb https://mirrors.hust.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+
+deb https://mirrors.hust.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+
+deb https://mirrors.hust.edu.cn/ubuntu bionic-security main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu bionic-security main restricted universe multiverse
+
+# 预发布软件源，不建议启用
+# deb https://mirrors.hust.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+```
+
+```bash
+# 华科源（Ubuntu 20.04）【默认注释了源码仓库，如有需要可自行取消注释】
+deb https://mirrors.hust.edu.cn/ubuntu/ focal main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal main restricted universe multiverse
+
+deb https://mirrors.hust.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+
+deb https://mirrors.hust.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+
+deb https://mirrors.hust.edu.cn/ubuntu focal-security main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu focal-security main restricted universe multiverse
+
+# 预发布软件源，不建议启用
+# deb https://mirrors.hust.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
+```
+
+```bash
+sudo apt update && sudo apt upgrade
+```
+
+anaconda镜像源（~/.condarc）【**注意替换**`envs_dirs`**中的绝对路径**】:
+
+```yaml
+channels:
+  - defaults
+show_channel_urls: true
+default_channels:
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+custom_channels:
+  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  deepmodeling: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  nvidia: https://mirrors.sustech.edu.cn/anaconda-extra/cloud
+
+envs_dirs:
+  - /home/m0rtzz/Programs/anaconda3/envs
+  
+auto_activate_base: false
+```
+
+pip设置镜像源：
+
+```bash
+cd ${HOME}/.config/pip/ || (mkdir -p ${HOME}/.config/pip/ && gedit ${HOME}/.config/pip/pip.conf)
+```
+
+```ini
+[global]
+index-url = https://mirrors.hust.edu.cn/pypi/web/simple
+
+extra-index-url =
+    https://pypi.tuna.tsinghua.edu.cn/simple
+    https://mirrors.bfsu.edu.cn/pypi/web/simple
+    # https://pypi.nvidia.com
+    # https://pypi.ngc.nvidia.com
+
+trusted-host =
+    mirrors.hust.edu.cn
+    pypi.tuna.tsinghua.edu.cn
+    mirrors.bfsu.edu.cn
+    pypi.nvidia.com
+    pypi.ngc.nvidia.com
+
+no-cache-dir = true
 ```
 
 ### 禁用Nouveau驱动
@@ -153,7 +259,7 @@ gedit ~/.bashrc
 # cuda
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/cuda/lib64
 export PATH=${PATH}:/usr/local/cuda/bin
-export CUDA_HOME=/usr/local/cuda #通过设置软链接`/usr/local/cuda`,可以做到多版本CUDA共存
+export CUDA_HOME=/usr/local/cuda #通过设置软链接`/usr/local/cuda`，可以做到多版本CUDA共存
 ```
 
 保存后关闭，打开终端，输入：
@@ -263,17 +369,15 @@ rosrun turtlesim turtlesim_node
 rosrun turtlesim turtle_teleop_key
 ```
 
-在 `rosrun turtlesim turtle_teleop_key`所在终端点击一下任意位置，然后使用↕↔小键盘控制，看小海龟会不会动，如果会动则安装成功
+在 `rosrun turtlesim turtle_teleop_key`所在终端点击一下任意位置，然后使用←↕→小键盘控制，看小海龟会不会动，如果会动则安装成功。
 
-![c40128bd8c5245a48d386c21ba465449.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:26:29_c40128bd8c5245a48d386c21ba465449.png)
+![image-20240819153523553](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:19/15:35:28_image-20240819153523553.png)
 
 ### OpenCV-4.2.0及其扩展模块
 
-~~虽然使用cv_bridge时某些shared object有可能和ROS自带的opencv-3.2.0版本冲突，但实测安装3.2.0对cuda的兼容性太差导致无法使用深度相机，所以安装官网最近更新过的OpenCV3.4.16~~
+***经尝试多版本Ubuntu和OpenCV，装Ubuntu20.04，ROS noetic和OpenCV4.2.0及其扩展模块才能解决将彩色图像转换为网络所需的输入Blob后前馈时抛出的【raised OpenCV exception，error: (-215:Assertion failed)等等】。***
 
-***经尝试多版本Ubuntu和OpenCV，装Ubuntu20.04，ROS noetic和OpenCV4.2.0及其扩展模块才能解决将彩色图像转换为网络所需的输入Blob后前馈时抛出的（raised OpenCV exception，error: (-215:Assertion failed)等等）。***
-
-以下为几次成功安装的命令，安装过程可以参考**NOT RECOMMENDED**中的OpenCV3安装步骤：
+以下为几次成功安装的命令（注意替换命令中的绝对路径），安装过程可以参考**NOT RECOMMENDED**中的OpenCV3安装步骤：
 
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
@@ -298,7 +402,8 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D CUDA_CUDA_LIBRARY=/usr/local/cuda/lib64/stubs/libcuda.so \
 -D CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda \
 -D CUDNN_LIBRARY=/usr/local/cuda/lib64/libcudnn.so \
--D WITH_ADE=OFF ..
+-D WITH_ADE=OFF \
+-j$(nproc) ..
 ```
 
 或：
@@ -354,7 +459,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D WITH_ADE=OFF \
 -D CUDA_CUDA_LIBRARY=true \
 -D CUDNN_LIBRARY=/usr/local/cuda/lib64/libcudnn.so \
--D CUDA_ARCH_BIN= 8.6\
+-D CUDA_ARCH_BIN=8.6\
 -D CUDA_nppicom_LIBRARY=stdc++ \
 -D CUDA_HOST_COMPILER:FILEPATH=/usr/bin/gcc \
 -j$(nproc) ..
@@ -380,7 +485,7 @@ $(mlocate deviceQuery | grep cuda | head -n 1)
 wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support-patch/assets/149 -O opencv_PR_17685.patch
 ```
 
-***（如果不执行以下几步，编译darknet_ros会报错:error:‘IplImage’之类的）***
+***（如果不执行以下几步，编译darknet_ros会报错:error: 'IplImage'类的）***
 
 ```bash
 sudo cp /usr/local/lib/pkgconfig/opencv4.pc /usr/lib/pkgconfig/opencv4.pc
@@ -396,7 +501,7 @@ sudo apt install curl
 include jsoncpp库的头文件改为
 
 ```cpp
-#include "jsoncpp/json/json.h"
+#include <jsoncpp/json/json.h>
 ```
 
 g++编译
@@ -411,7 +516,7 @@ g++ test.cpp -o test -lcurl -ljsoncpp
 ./test
 ```
 
-### darknet版yolov3及darknet-ros工作空间
+### darknet、yolov3及darknet_ros工作空间
 
 ```bash
 git clone https://github.com/AlexeyAB/darknet.git darknet
@@ -481,7 +586,7 @@ sudo make -j$(nproc)
 
 输出为：
 
-```bash
+```txt
 usage: ./darknet <function>
 ```
 
@@ -542,14 +647,12 @@ cd darknet/ && mkdir weights && cd weights/
 ```
 
 ```bash
-mwget https://pjreddie.com/media/files/yolov3.weights -n16
+mwget https://pjreddie.com/media/files/yolov3.weights -n$(nproc)
 ```
 
-上方命令是16线程获取 ，速度会快很多
+上方命令是16线程获取 ，速度会快很多。
 
-![05ea3530787d45c1b9672559eb8df952.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:05_05ea3530787d45c1b9672559eb8df952.png)
-
-到此为止darknet版yolov3就配置好了
+到此为止darknet就配置好了。
 
 下面我们测试一下：
 
@@ -578,7 +681,7 @@ sudo apt install libcanberra-gtk*
 darknet_ros工作空间（OpenCV-4.2.0）：
 
 ```bash
-mkdir darknet-ros_test_ws && cd darknet-ros_test_ws/ && mkdir src
+mkdir darknet_ros_test_ws && cd darknet_ros_test_ws/ && mkdir src
 ```
 
 ```bash
@@ -620,7 +723,7 @@ void rgbgr_image(image im)
 // @file : YoloObjectDetector.cpp
   void *YoloObjectDetector::displayInThread(void *ptr)
   {
-    // NOTE: Modified by M0rtzz，Solved the problem of displaying video streams as bgr8
+    // NOTE: Modified by M0rtzz, solved the problem of displaying video streams as bgr8
     rgbgr_image(buff_[(buffIndex_ + 1) % 3]);
     int c = show_image(buff_[(buffIndex_ + 1) % 3], "YOLO V3", waitKeyDelay_);
     if (c != -1)
@@ -670,7 +773,7 @@ git clone https://github.com/AlexeyAB/darknet.git darknet
 git clone https://mirror.ghproxy.com/https://github.com/AlexeyAB/darknet.git darknet
 ```
 
-catkin_make如果编译不过的话（error: ‘IplImage’之类的，之前装OpenCV提到过避免报错的方法），注意以下命令是只编译darknet-ros一个包，若工作空间下有多个包需要一起编译那么把命令中的darknet-ros删除重新执行即可：
+catkin_make如果编译不过的话（error:  'IplImage' 之类的，之前装OpenCV提到过避免报错的方法），注意以下命令是只编译darknet_ros一个包，若工作空间下有多个包需要一起编译那么把命令中的darknet_ros删除重新执行即可：
 
 ```bash
 catkin_make -j$(nproc) darknet_ros --cmake-args -DCMAKE_CXX_FLAGS=-DCV__ENABLE_C_API_CTORS
@@ -691,6 +794,50 @@ catkin_make -j$(nproc) darknet_ros --cmake-args -DCMAKE_CXX_FLAGS=-DCV__ENABLE_C
 > ***Reference：***
 >
 > [https://blog.csdn.net/qq_42108414/article/details/129015474](https://blog.csdn.net/qq_42108414/article/details/129015474)
+
+下载软件包：
+
+```bash
+wget -q --show-progress https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/libk4a1.4/libk4a1.4_1.4.2_amd64.deb -O ./libk4a1.4_1.4.2_amd64.deb && \
+wget -q --show-progress https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/libk4a1.4-dev/libk4a1.4-dev_1.4.2_amd64.deb -O ./libk4a1.4-dev_1.4.2_amd64.deb && \
+wget -q --show-progress https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/k/k4a-tools/k4a-tools_1.4.2_amd64.deb -O ./k4a-tools_1.4.2_amd64.deb
+```
+
+安装：
+
+```bash
+sudo apt install ./libk4a1.4_1.4.2_amd64.deb && sudo cp /usr/lib/x86_64-linux-gnu/libk4a1.4/libdepthengine.so.2.0 /usr/lib/ && sudo cp /usr/lib/libdepthengine.so.2.0 /usr/lib/x86_64-linux-gnu/
+```
+
+![image-20240819154538551](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:19/15:45:38_image-20240819154538551.png)
+
+```bash
+sudo apt install ./libk4a1.4-dev_1.4.2_amd64.deb ./k4a-tools_1.4.2_amd64.deb
+```
+
+配置`udev`规则：
+
+```bash
+sudo gedit /etc/udev/rules.d/99-k4a.rules
+```
+
+```bash
+# Bus 002 Device 116: ID 045e:097a Microsoft Corp.  - Generic Superspeed USB Hub
+# Bus 001 Device 015: ID 045e:097b Microsoft Corp.  - Generic USB Hub
+# Bus 002 Device 118: ID 045e:097c Microsoft Corp.  - Azure Kinect Depth Camera
+# Bus 002 Device 117: ID 045e:097d Microsoft Corp.  - Azure Kinect 4K Camera
+# Bus 001 Device 016: ID 045e:097e Microsoft Corp.  - Azure Kinect Microphone Array
+
+BUS!="usb", ACTION!="add", SUBSYSTEM!=="usb_device", GOTO="k4a_logic_rules_end"
+
+ATTRS{idVendor}=="045e", ATTRS{idProduct}=="097a", MODE="0666", GROUP="plugdev"
+ATTRS{idVendor}=="045e", ATTRS{idProduct}=="097b", MODE="0666", GROUP="plugdev"
+ATTRS{idVendor}=="045e", ATTRS{idProduct}=="097c", MODE="0666", GROUP="plugdev"
+ATTRS{idVendor}=="045e", ATTRS{idProduct}=="097d", MODE="0666", GROUP="plugdev"
+ATTRS{idVendor}=="045e", ATTRS{idProduct}=="097e", MODE="0666", GROUP="plugdev"
+
+LABEL="k4a_logic_rules_end"
+```
 
 ### 科大讯飞语音
 
@@ -723,7 +870,7 @@ private:
 ```cmake
 cmake_minimum_required(VERSION 3.0.2)
 project(tts_voice_test)
-SET(CMAKE_CXX_FLAGS "-std=c++0x")
+SET(CMAKE_CXX_FLAGS "-std=c++11")
 find_package(k4a REQUIRED)
 find_package(OpenCV REQUIRED)
 find_package(catkin REQUIRED COMPONENTS
@@ -744,15 +891,15 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-add_executable(tts_voice_test src/tts_voice_test.cpp)
+add_executable(tts_voice_test src/tts_voice_test.cc)
 
 target_link_libraries(tts_voice_test
   PRIVATE k4a::k4a
   ${catkin_LIBRARIES}
   ${OpenCV_LIBRARIES}
   ${PCL_LIBRARIES}
-  -lcurl -ljsoncpp -lmsc -lrt -ldl -pthread  -lasound
-  /home/m0rtzz/Workspaces/tts_voice_test_ws/libs/x64/libmsc.so
+  -lcurl -ljsoncpp -lmsc -lrt -ldl -pthread -lasound
+  /home/m0rtzz/Workspaces/tts_voice_test_ws/lib/your-appid/libmsc.so # 替换为你的appid
 ```
 
 打开终端：
@@ -823,8 +970,6 @@ git clone -b v2.50.0 https://github.com/IntelRealSense/librealsense.git libreals
 git clone -b v2.50.0 https://mirror.ghproxy.com/https://github.com/IntelRealSense/librealsense.git librealsense-2.50.0
 ```
 
-![image-20240206162428124](https://static.m0rtzz.com/images/Year:2024/Month:03/Day:10/17:35:25_16_24_28_image-20240206162428124.png)
-
 安装依赖：
 
 ```bash
@@ -842,7 +987,9 @@ cd librealsense-2.50.0/
 ```
 
 ```bash
-# 应该是只能在Ubuntu18.04下执行
+# The Bionic patches are maintained for Bionic Beaver LTS kernels 4.1[5/8], 5.[0/3/4] （Ubuntu18.04，`uname -r`查看自己的内核版本）
+# The Focal patches are maintained for Ubuntu LTS with kernel 5.4, 5.8, 5.11 （Ubuntu20.04，`uname -r`查看自己的内核版本）
+# 貌似不执行也不影响
 ./scripts/patch-realsense-ubuntu-lts.sh
 ```
 
@@ -1826,109 +1973,6 @@ source ~/.bashrc
 ```
 
 这样就可以更清晰的显示git分支~
-
-### 更换国内源
-
-```bash
-sudo gedit /etc/apt/sources.list
-```
-
-将原本的注释掉，在最下方加入:
-
-```bash
-# 华科源（Ubuntu 18.04）【默认注释了源码仓库，如有需要可自行取消注释】
-deb https://mirrors.hust.edu.cn/ubuntu/ bionic main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic main restricted universe multiverse
-
-deb https://mirrors.hust.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
-
-deb https://mirrors.hust.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
-
-deb https://mirrors.hust.edu.cn/ubuntu bionic-security main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu bionic-security main restricted universe multiverse
-
-# 预发布软件源，不建议启用
-# deb https://mirrors.hust.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
-```
-
-```bash
-# 华科源（Ubuntu 20.04）【默认注释了源码仓库，如有需要可自行取消注释】
-deb https://mirrors.hust.edu.cn/ubuntu/ focal main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal main restricted universe multiverse
-
-deb https://mirrors.hust.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
-
-deb https://mirrors.hust.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
-
-deb https://mirrors.hust.edu.cn/ubuntu focal-security main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu focal-security main restricted universe multiverse
-
-# 预发布软件源，不建议启用
-# deb https://mirrors.hust.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
-```
-
-```bash
-sudo apt update && sudo apt upgrade
-```
-
-anaconda镜像源（~/.condarc）【**注意替换**`envs_dirs`**中的绝对路径**】:
-
-```yaml
-channels:
-  - defaults
-show_channel_urls: true
-default_channels:
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
-custom_channels:
-  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  deepmodeling: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  nvidia: https://mirrors.sustech.edu.cn/anaconda-extra/cloud
-
-envs_dirs:
-  - /home/m0rtzz/Programs/anaconda3/envs
-```
-
-pip设置镜像源：
-
-```bash
-cd ${HOME}/.config/pip/ || (mkdir -p ${HOME}/.config/pip/ && gedit ${HOME}/.config/pip/pip.conf)
-```
-
-```ini
-[global]
-index-url = https://mirrors.hust.edu.cn/pypi/web/simple
-
-extra-index-url =
-    https://pypi.tuna.tsinghua.edu.cn/simple
-    https://mirrors.bfsu.edu.cn/pypi/web/simple
-    # https://pypi.nvidia.com
-    # https://pypi.ngc.nvidia.com
-
-trusted-host =
-    mirrors.hust.edu.cn
-    pypi.tuna.tsinghua.edu.cn
-    mirrors.bfsu.edu.cn
-    pypi.nvidia.com
-    pypi.ngc.nvidia.com
-
-no-cache-dir = true
-```
 
 ### 设置$HOME下的文件夹为英文
 
@@ -4388,7 +4432,7 @@ sudo make install
 
 ![69d7d955c7f24ab4926dadd31dddfb04](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:18_69d7d955c7f24ab4926dadd31dddfb04.png)
 
-## NOT RECOMMENDED
+## NOT RECOMMENDED (EOL)
 
 ### ROS-melodic（有些图忘记截了）
 
@@ -4460,7 +4504,7 @@ rosrun turtlesim turtlesim_node
 rosrun turtlesim turtle_teleop_key
 ```
 
-在`rosrun turtlesim turtle_teleop_key`所在终端点击一下任意位置，然后使用←↕→小键盘控制，看小海龟会不会动，如果会动则安装成功
+在`rosrun turtlesim turtle_teleop_key`所在终端点击一下任意位置，然后使用←↕→小键盘控制，看小海龟会不会动，如果会动则安装成功。
 
 ![c40128bd8c5245a48d386c21ba465449.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:26:29_c40128bd8c5245a48d386c21ba465449.png)
 
@@ -4763,17 +4807,15 @@ sudo apt update
 sudo apt install -y ninja-build doxygen clang gcc-multilib g++-multilib python3 nasm libgl1-mesa-dev libsoundio-dev libvulkan-dev libx11-dev libxcursor-dev libxinerama-dev libxrandr-dev libusb-1.0-0-dev libudev-dev mesa-common-dev uuid-dev
 ```
 
-[https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/](https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/)
+```bash
+wget -q --show-progress https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/libk4a1.4/libk4a1.4_1.4.2_amd64.deb -O ./libk4a1.4_1.4.2_amd64.deb
+```
 
-从上面的网站下载`libk4a1.2`中`libk4a1.2_1.2.0_amd64.deb`文件
-
-![f806a0d411ac415497e78b45bf3c20ac.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:06_f806a0d411ac415497e78b45bf3c20ac.png)
-
-解压 .deb 文件，再解压内部的`data.tar.gz`和`control.tar.gz`文件,并进入data文件夹，打开终端输入：
+解压 .deb 文件，再解压内部的`data.tar.gz`文件,并进入`data/usr/lib/x86_64-linux-gnu/`文件夹，打开终端输入：
 
 ```bash
-cd usr/lib/x86_64-linux-gnu
-sudo cp libdepthengine.so.2.0 /usr/lib/x86_64-linux-gnu
+sudo cp libdepthengine.so.2.0 /usr/lib/x86_64-linux-gnu/
+sudo cp /usr/lib/x86_64-linux-gnu/libdepthengine.so.2.0 /usr/lib/
 ```
 
 随后进入下载好的Azure-Kinect-Sensor-SDK-v1.4.0文件夹下打开终端输入
@@ -4869,10 +4911,6 @@ sudo apt install gcc-4.9
 sudo apt upgrade libstdc++6
 ```
 
-```bash
-sudo cp /usr/lib/x86_64-linux-gnu/libk4a1.4/libdepthengine.so.2.0 /usr/lib
-```
-
 之后测试一下：
 
 ```bash
@@ -4956,7 +4994,7 @@ tar -zxvf native-linux-v17_clang-10.0.1-centos7.tar.gz
 修改Update.sh下载网址为南方科技大学镜像站的网址：
 
 ```bash
-#CONTENT_LINK=http://carla-assets.s3.amazonaws.com/${CONTENT_ID}.tar.gz
+# CONTENT_LINK=http://carla-assets.s3.amazonaws.com/${CONTENT_ID}.tar.gz
 CONTENT_LINK=https://mirrors.sustech.edu.cn/carla/carla_content/${CONTENT_ID}.tar.gz
 ```
 
