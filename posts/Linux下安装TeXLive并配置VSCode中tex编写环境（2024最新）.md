@@ -4,21 +4,21 @@
 
 ## 1.下载.iso镜像文件
 
-[TeXLive下载页](https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/)
+[下载页](https://mirrors.hust.edu.cn/CTAN/systems/texlive/Images/)
 
-![image-20240329231348856](https://static.m0rtzz.com/images/Year:2024/Month:03/Day:29/23:13:58_image-20240329231348856.png)
+![image-20240819171528777](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:19/17:15:28_image-20240819171528777.png)
 
 终端使用curl获取.iso镜像文件：
 
 ```bash
-sudo apt install curl && curl -L https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/texlive.iso -o texlive.iso
+sudo apt install curl && curl -L https://mirrors.hust.edu.cn/CTAN/systems/texlive/Images/texlive.iso -o texlive.iso
 ```
 
-![image-20240204125309909](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:04/12:53:09_image-20240204125309909.png)
+![image-20240819170549234](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:19/17:05:49_image-20240819170549234.png)
 
 ==或者使用XDM获取：==
 
-![image-20240204125549686](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:04/12:55:49_image-20240204125549686.png)
+![image-20240819170818452](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:19/17:08:18_image-20240819170818452.png)
 
 XDM安装教程：
 
