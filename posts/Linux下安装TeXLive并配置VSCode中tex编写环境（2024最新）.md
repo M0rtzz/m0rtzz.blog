@@ -20,7 +20,7 @@ sudo apt install curl && curl -L https://mirrors.hust.edu.cn/CTAN/systems/texliv
 
 ![image-20240819170818452](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:19/17:08:18_image-20240819170818452.png)
 
-XDM安装教程：
+*XDM安装教程：*
 
 [https://blog.csdn.net/M0rtzz/article/details/136023863](https://blog.csdn.net/M0rtzz/article/details/136023863)
 
