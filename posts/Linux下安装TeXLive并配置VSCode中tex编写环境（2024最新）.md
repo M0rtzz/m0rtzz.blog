@@ -16,7 +16,7 @@ sudo apt install curl && curl -L https://mirrors.hust.edu.cn/CTAN/systems/texliv
 
 ![image-20240819170549234](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:19/17:05:49_image-20240819170549234.png)
 
-==或者使用XDM获取：==
+或者使用XDM获取：
 
 ![image-20240819170818452](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:19/17:08:18_image-20240819170818452.png)
 
