@@ -114,7 +114,7 @@ deb https://mirrors.hust.edu.cn/ubuntu focal-security main restricted universe m
 ```
 
 ```bash
-sudo apt update && sudo apt upgrade
+sudo apt update -y && sudo apt upgrade -y
 ```
 
 anaconda镜像源（~/.condarc）【**注意替换**`envs_dirs`**中的绝对路径**】:
@@ -204,7 +204,7 @@ reboot
 打开终端，输入：
 
 ```bash
-sudo apt install gcc g++ make zlib1g
+sudo apt install -y gcc g++ make zlib1g
 ```
 
 ```bash
@@ -216,17 +216,17 @@ sudo ubuntu-drivers devices
 寻找带有recommended的版本，输入
 
 ```bash
-sudo apt install nvidia-driver-your_version nvidia-settings nvidia-prime
+sudo apt install -y nvidia-driver-your_version nvidia-settings nvidia-prime
 ```
 
 （your_version是你的版本号）
 
 ```bash
-sudo apt update
+sudo apt update -y
 ```
 
 ```bash
-sudo apt upgrade
+sudo apt upgrade -y
 ```
 
 ```bash
@@ -241,31 +241,25 @@ nvidia-smi
 
 ![image-20240720105532528](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:20/10:55:32_image-20240720105532528.png)
 
-### CUDA安装
+### CUDA
 
 [https://developer.nvidia.com/cuda-toolkit-archive](https://developer.nvidia.com/cuda-toolkit-archive)
 
 选择≤上一步`nvidia-smi`显示的`CUDA Version`进行安装，官方有教程。
 
-安装好之后打开终端输入
+安装好之后打开终端输入：
 
 ```bash
-gedit ~/.bashrc
-```
-
-在最后输入
-
-```bash
+sudo tee -a /etc/profile > /dev/null << 'EOF'
 # cuda
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/cuda/lib64
 export PATH=${PATH}:/usr/local/cuda/bin
 export CUDA_HOME=/usr/local/cuda #通过设置软链接`/usr/local/cuda`，可以做到多版本CUDA共存
+EOF
 ```
 
-保存后关闭，打开终端，输入：
-
 ```bash
-source ~/.bashrc
+source /etc/profile
 ```
 
 接下来验证cuda版本：
@@ -278,7 +272,7 @@ nvcc --version
 
 安装成功！
 
-### CUDNN安装
+### CUDNN
 
 [https://developer.nvidia.com/rdp/cudnn-archive](https://developer.nvidia.com/rdp/cudnn-archive)
 
@@ -322,20 +316,20 @@ sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/ros.gpg] https://mirrors.us
 ```
 
 ```bash
-sudo apt update && sudo apt install ros-noetic-desktop-full
+sudo apt update -y && sudo apt install -y ros-noetic-desktop-full
 ```
 
 ```bash
-echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+echo 'source /opt/ros/noetic/setup.bash' >> ~/.bashrc
 source ~/.bashrc
 ```
 
 ```bash
-sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+sudo apt install -y python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
 ```
 
 ```bash
-sudo apt install python3-pip
+sudo apt install -y python3-pip
 ```
 
 使用阿里镜像源加速pip下载：
@@ -468,24 +462,30 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 CUDA_ARCH_BIN查看命令：
 
 ```bash
-sudo apt install mlocate
+sudo apt install -y mlocate
 sudo updatedb.mlocate
-$(mlocate deviceQuery | grep cuda | head -n 1)
+mlocate deviceQuery | grep cuda | head -n 1 | xargs -r bash -c | grep 'CUDA Capability Major/Minor version number:'
 ```
 
-![image-20240206162114753](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/16:21:14_image-20240206162114753.png)
+![image-20240824153854954](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:24/15:38:55_image-20240824153854954.png)
 
 ***（解决CUDNN8编译报错，需手动加入PR代码）***
 
 [https://github.com/opencv/opencv/pull/17685/files](https://github.com/opencv/opencv/pull/17685/files)
 
-.patch文件可用以下命令下载：
+.diff文件：
 
 ```bash
-wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support-patch/assets/149 -O opencv_PR_17685.patch
+wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/raw/master/opencv_pr_17685.diff -O opencv_pr_17685.diff
 ```
 
-***（如果不执行以下几步，编译darknet_ros会报错:error: 'IplImage'类的）***
+.patch文件（有可能打不了补丁，还是需要自己手动加入）：
+
+```bash
+wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/raw/master/opencv_pr_17685.patch -O opencv_PR_17685.patch
+```
+
+***（如果不执行以下几步，编译darknet_ros会报错:error: 'IplImage'之类的）***
 
 ```bash
 sudo cp /usr/local/lib/pkgconfig/opencv4.pc /usr/lib/pkgconfig/opencv4.pc
@@ -495,7 +495,7 @@ sudo cp /usr/lib/pkgconfig/opencv4.pc /usr/lib/pkgconfig/opencv.pc
 ### 百度智能云
 
 ```bash
-sudo apt install curl
+sudo apt install -y curl libjsoncpp-dev
 ```
 
 include jsoncpp库的头文件改为
@@ -556,8 +556,6 @@ ZED_CAMERA_v2_8=0
 NVCC=/usr/local/cuda/bin/nvcc
 ```
 
-![image-20240206170152890](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:01:53_image-20240206170152890.png)
-
 之后保存退出后，打开终端，输入：
 
 ```bash
@@ -590,74 +588,18 @@ sudo make -j$(nproc)
 usage: ./darknet <function>
 ```
 
-![9e10fa48060244c9972d9db1be8178cb.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:05_9e10fa48060244c9972d9db1be8178cb.png)
-
 之后我们下载yolov3权重文件：
 
 ```bash
-mkdir weights && cd ./weights && wget -q --show-progress https://pjreddie.com/media/files/yolov3.weights
+mkdir weights && cd ./weights && wget -q --show-progress https://pjreddie.com/media/files/yolov3.weight
 ```
-
-正常wget太慢，我们使用mwget进行安装：
-
-找一个你想安装mwget的地方打开终端，输入：
-
-```bash
-sudo apt upgrade intltool
-```
-
-```bash
-sudo apt install libssl-dev
-```
-
-之后：
-
-```bash
-git clone https://github.com/rayylee/mwget.git mwget
-```
-
-或公益加速源：
-
-```bash
-git clone https://mirror.ghproxy.com/https://github.com/rayylee/mwget.git mwget
-```
-
-```bash
-cd mwget
-```
-
-```bash
-./configure
-```
-
-```bash
-sudo make -j$(nproc)
-```
-
-```bash
-sudo make install
-```
-
-之后mwget就安装成功了
-
-我们用mwget多线程获取权重文件：
-
-```bash
-cd darknet/ && mkdir weights && cd weights/
-```
-
-```bash
-mwget https://pjreddie.com/media/files/yolov3.weights -n$(nproc)
-```
-
-上方命令是16线程获取 ，速度会快很多。
 
 到此为止darknet就配置好了。
 
 下面我们测试一下：
 
 ```bash
-./darknet detect cfg/yolov3.cfg weights/yolov3.weights data/dog.jpg
+cd .. && ./darknet detect cfg/yolov3.cfg weights/yolov3.weights data/dog.jpg
 ```
 
 输出以下就证明配置没有问题：
@@ -666,14 +608,14 @@ mwget https://pjreddie.com/media/files/yolov3.weights -n$(nproc)
 
 输出的最后一行报错：
 
-```bash
+```txt
 Gtk-Message: 15:22:30.610: Failed to load module "canberra-gtk-module"
 ```
 
 解决方法：
 
 ```bash
-sudo apt install libcanberra-gtk*
+sudo apt install -y 'libcanberra-gtk*'
 ```
 
 安装之后重新运行就不会报错了。
@@ -699,9 +641,7 @@ cd src/
 ```bash
 git clone -b opencv4 --recursive https://github.com/kunaltyagi/darknet_ros.git darknet_ros
 cd darknet_ros
-git branch -a
-git checkout remotes/origin/opencv4
-git submodule update --recursive
+git submodule update --recursive # 可有可无
 ```
 
 如果视频流只有第一帧是RGB8编码格式，阅读源码后发现在show_image之前调用image.cpp中的rgbgr_image函数循环转换图像编码格式即可解决此问题：
@@ -760,7 +700,7 @@ void rgbgr_image(image im)
 之后：
 
 ```bash
-cd darknet_ros && sudo rm -rf darknet
+rm -rf darknet
 ```
 
 ```bash
@@ -806,22 +746,19 @@ wget -q --show-progress https://packages.microsoft.com/ubuntu/18.04/prod/pool/ma
 安装：
 
 ```bash
-sudo apt install ./libk4a1.4_1.4.2_amd64.deb && sudo cp /usr/lib/x86_64-linux-gnu/libk4a1.4/libdepthengine.so.2.0 /usr/lib/ && sudo cp /usr/lib/libdepthengine.so.2.0 /usr/lib/x86_64-linux-gnu/
+sudo apt install -y ./libk4a1.4_1.4.2_amd64.deb && sudo cp /usr/lib/x86_64-linux-gnu/libk4a1.4/libdepthengine.so.2.0 /usr/lib/ && sudo cp /usr/lib/libdepthengine.so.2.0 /usr/lib/x86_64-linux-gnu/
 ```
 
 ![image-20240819154538551](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:19/15:45:38_image-20240819154538551.png)
 
 ```bash
-sudo apt install ./libk4a1.4-dev_1.4.2_amd64.deb ./k4a-tools_1.4.2_amd64.deb
+sudo apt install -y ./libk4a1.4-dev_1.4.2_amd64.deb ./k4a-tools_1.4.2_amd64.deb
 ```
 
 配置`udev`规则：
 
 ```bash
-sudo gedit /etc/udev/rules.d/99-k4a.rules
-```
-
-```bash
+sudo tee /etc/udev/rules.d/99-k4a.rules > /dev/null << EOF
 # Bus 002 Device 116: ID 045e:097a Microsoft Corp.  - Generic Superspeed USB Hub
 # Bus 001 Device 015: ID 045e:097b Microsoft Corp.  - Generic USB Hub
 # Bus 002 Device 118: ID 045e:097c Microsoft Corp.  - Azure Kinect Depth Camera
@@ -837,6 +774,7 @@ ATTRS{idVendor}=="045e", ATTRS{idProduct}=="097d", MODE="0666", GROUP="plugdev"
 ATTRS{idVendor}=="045e", ATTRS{idProduct}=="097e", MODE="0666", GROUP="plugdev"
 
 LABEL="k4a_logic_rules_end"
+EOF
 ```
 
 ### 科大讯飞语音
@@ -844,7 +782,7 @@ LABEL="k4a_logic_rules_end"
 [https://www.xfyun.cn/sdk/dispatcher](https://www.xfyun.cn/sdk/dispatcher)
 
 ```bash
-sudo apt install sox libsox-fmt-all pavucontrol
+sudo apt install -y sox libsox-fmt-all pavucontrol
 ```
 
 ```bash
@@ -911,7 +849,7 @@ catkin_make
 若找不到asoundlib.h文件打开终端输入：
 
 ```bash
-sudo apt install libasound2-dev
+sudo apt install -y libasound2-dev
 ```
 
 编译通过~
@@ -919,10 +857,8 @@ sudo apt install libasound2-dev
 ### librealsense及realsense-ros工作空间
 
 ```bash
-sudo apt install ros-${ROS_DISTRO}-realsense2-camera ros-${ROS_DISTRO}-rgbd-launch
+sudo apt install -y ros-${ROS_DISTRO}-realsense2-camera ros-${ROS_DISTRO}-rgbd-launch
 ```
-
-![808f1ad01090402eafa94dd83545aed3.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:08_808f1ad01090402eafa94dd83545aed3.png)
 
 安装realsense sdk:
 
@@ -930,25 +866,43 @@ sudo apt install ros-${ROS_DISTRO}-realsense2-camera ros-${ROS_DISTRO}-rgbd-laun
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE
 ```
 
-![8fbc31d16a394fdc91f04302aa04b1d4.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:28:21_8fbc31d16a394fdc91f04302aa04b1d4.png)
-
 ```bash
 sudo add-apt-repository "deb https://librealsense.intel.com/Debian/apt-repo $(lsb_release -cs) main" -u
 ```
 
-![344007bb790841da91383d12d7eaa42b.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:08_344007bb790841da91383d12d7eaa42b.png)
-
 ```bash
-sudo apt update
+sudo apt update -y
 ```
 
-安装realsense lib
+安装realsense lib：
 
 ```bash
-sudo apt install librealsense2-dkms librealsense2-utils
+sudo apt install -y librealsense2-dkms librealsense2-utils
 ```
 
-![eaed28f89f1d421ca57b099a6266168a.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:08_eaed28f89f1d421ca57b099a6266168a.png)
+安装gcc-4.9，g++-4.9：
+
+```bash
+sudo tee -a /etc/apt/sources.list > /dev/null << EOF
+# gcc-4.9, g++4.9
+deb http://mirrors.hust.edu.cn/ubuntu/ xenial universe
+EOF
+```
+
+保存后关闭，打开终端，输入：
+
+```bash
+sudo apt update -y
+```
+
+```bash
+sudo apt install -y gcc-4.9 g++-4.9
+```
+
+```bash
+# 注释掉xenial软件源
+sudo sed -i '/^deb http:\/\/mirrors.hust.edu.cn\/ubuntu\/ xenial universe/s/^/# /' /etc/apt/sources.list && sudo apt update -y
+```
 
 测试：
 
@@ -973,7 +927,7 @@ git clone -b v2.50.0 https://mirror.ghproxy.com/https://github.com/IntelRealSens
 安装依赖：
 
 ```bash
-sudo apt install libgtk-3-dev libusb-1.0-0-dev libglfw3-dev
+sudo apt install -y libssl-dev libgtk-3-dev libusb-1.0-0-dev libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev 
 ```
 
 进入刚才克隆的librealsense文件夹内：
@@ -1057,8 +1011,6 @@ git clone -b ros1-legacy https://github.com/IntelRealSense/realsense-ros.git rea
 git clone -b ros1-legacy https://mirror.ghproxy.com/https://github.com/IntelRealSense/realsense-ros.git realsense-ros
 ```
 
-![2c9b3f3767d845dcb4e2ace8830f6d7b.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:10_2c9b3f3767d845dcb4e2ace8830f6d7b.png)
-
 ```bash
 cd ..
 ```
@@ -1070,8 +1022,6 @@ catkin_make -j$(nproc) -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
 ```bash
 catkin_make install
 ```
-
-![d66e547ed18645e380ba7beb0fd3c999.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:10_d66e547ed18645e380ba7beb0fd3c999.png)
 
 测试：
 
@@ -1097,8 +1047,6 @@ cd kinova_test_ws/src
 catkin_init_workspace
 ```
 
-![645ec87a65914495adcd474cda614d5f.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:10_645ec87a65914495adcd474cda614d5f.png)
-
 ```bash
 cd ..
 ```
@@ -1109,6 +1057,7 @@ catkin_make
 
 ```bash
 echo 'source /home/m0rtzz/Workspaces/kinova_test_ws/devel/setup.bash' >> ~/.bashrc
+source ~/.bashrc
 ```
 
 ```bash
@@ -1132,14 +1081,12 @@ cd ..
 安装缺少的moveit中相应的功能包 ：
 
 ```bash
-sudo apt install ros-${ROS_DISTRO}-moveit-visual-tools ros-${ROS_DISTRO}-moveit-ros-planning-interface
+sudo apt install -y ros-${ROS_DISTRO}-moveit-visual-tools ros-${ROS_DISTRO}-moveit-ros-planning-interface
 ```
 
 ```bash
 catkin_make -j$(nproc)
 ```
-
-![0808ea44aa244c66b30562c0307c9594.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:11_0808ea44aa244c66b30562c0307c9594.png)
 
 ```bash
 sudo cp src/kinova-ros/kinova_driver/udev/10-kinova-arm.rules /etc/udev/rules.d/
@@ -1148,20 +1095,56 @@ sudo cp src/kinova-ros/kinova_driver/udev/10-kinova-arm.rules /etc/udev/rules.d/
 安装Moveit和pr2：
 
 ```bash
-sudo apt install $(apt-cache search ros-${ROS_DISTRO}-pr2- | grep -v "ros-${ROS_DISTRO}-pr2-apps" | cut -d' ' -f1)
+sudo apt install -y $(apt-cache search ros-${ROS_DISTRO}-pr2- | grep -v "ros-${ROS_DISTRO}-pr2-apps" | cut -d' ' -f1)
 ```
-
-![image-20240206162428124](https://static.m0rtzz.com/images/Year:2024/Month:03/Day:10/17:36:15_16_24_28_image-20240206162428124.png)
 
 完成~
 
-### 机器人导航（实体）
+### 机器人导航
 
 > [!CAUTION]
 >
-> ZZU-SR的童鞋请注意，此小节只需安装软件包，导航相关代码直接Copy比赛电脑的`catkin_ws`中的`mrobot`即可。
+> ZZU-SR的童鞋请注意，此小节只需安装软件包，其他内容是之前[听课](https://www.bilibili.com/video/BV1Ub4y1a7PH?p=73)做的笔记，导航相关代码直接Copy比赛电脑的`catkin_ws`中的`mrobot`即可。
 
-安装 Arduino IDE:
+#### Runtime Dependency (ESSENTIAL)
+
+```bash
+sudo apt install -y "ros-${ROS_DISTRO}-move-base*" "ros-${ROS_DISTRO}-turtlebot3-*"
+```
+
+```bash
+sudo apt install -y ros-${ROS_DISTRO}-dwa-local-planner ros-${ROS_DISTRO}-joy ros-${ROS_DISTRO}-teleop-twist-joy ros-${ROS_DISTRO}-teleop-twist-keyboard ros-${ROS_DISTRO}-laser-proc ros-${ROS_DISTRO}-rgbd-launch ros-${ROS_DISTRO}-depthimage-to-laserscan ros-${ROS_DISTRO}-rosserial-arduino ros-${ROS_DISTRO}-rosserial-python ros-${ROS_DISTRO}-rosserial-server ros-${ROS_DISTRO}-rosserial-client ros-${ROS_DISTRO}-rosserial-msgs ros-${ROS_DISTRO}-amcl ros-${ROS_DISTRO}-map-server ros-${ROS_DISTRO}-move-base ros-${ROS_DISTRO}-urdf ros-${ROS_DISTRO}-xacro ros-${ROS_DISTRO}-compressed-image-transport ros-${ROS_DISTRO}-rqt-image-view ros-${ROS_DISTRO}-gmapping ros-${ROS_DISTRO}-navigation ros-${ROS_DISTRO}-interactive-markers
+```
+
+安装 gmapping 包（用于构建地图）：
+
+```bash
+sudo apt install -y ros-${ROS_DISTRO}-gmapping
+```
+
+安装地图服务包（用于保存与读取地图）:
+
+```bash
+sudo apt install -y ros-${ROS_DISTRO}-map-server
+```
+
+安装 navigation 包（用于定位以及路径规划）:
+
+```bash
+sudo apt install -y ros-${ROS_DISTRO}-navigation
+```
+
+因tf和tf2迁移问题，需将工作空间内的所有global_costmap_params.yaml和local_costmap_params.yaml文件里的头几行去掉“/”,返回工作空间根目录下重新编译。
+
+> ***Reference：***
+>
+> [http://wiki.ros.org/tf2/Migration](http://wiki.ros.org/tf2/Migration)
+
+![1](https://static.m0rtzz.com/images/Year:2024/Month:03/Day:01/17:29:21_1.png)
+
+![2](https://static.m0rtzz.com/images/Year:2024/Month:03/Day:10/17:29:09_2.png)
+
+#### Arduino IDE (NOT REQUIRED)
 
 [https://www.arduino.cc/en/software](https://www.arduino.cc/en/software)
 
@@ -1189,41 +1172,7 @@ sudo chmod +x install.sh
 sudo ./install.sh
 ```
 
-```bash
-sudo apt install ros-${ROS_DISTRO}-move-base* ros-${ROS_DISTRO}-turtlebot3-* ros-${ROS_DISTRO}-dwa-local-planner
-```
-
-```bash
-sudo apt install ros-${ROS_DISTRO}-joy ros-${ROS_DISTRO}-teleop-twist-joy ros-${ROS_DISTRO}-teleop-twist-keyboard ros-${ROS_DISTRO}-laser-proc ros-${ROS_DISTRO}-rgbd-launch ros-${ROS_DISTRO}-depthimage-to-laserscan ros-${ROS_DISTRO}-rosserial-arduino ros-${ROS_DISTRO}-rosserial-python ros-${ROS_DISTRO}-rosserial-server ros-${ROS_DISTRO}-rosserial-client ros-${ROS_DISTRO}-rosserial-msgs ros-${ROS_DISTRO}-amcl ros-${ROS_DISTRO}-map-server ros-${ROS_DISTRO}-move-base ros-${ROS_DISTRO}-urdf ros-${ROS_DISTRO}-xacro ros-${ROS_DISTRO}-compressed-image-transport ros-${ROS_DISTRO}-rqt-image-view ros-${ROS_DISTRO}-gmapping ros-${ROS_DISTRO}-navigation ros-${ROS_DISTRO}-interactive-markers
-```
-
-安装 gmapping 包（用于构建地图）：
-
-```bash
-sudo apt install ros-${ROS_DISTRO}-gmapping
-```
-
-安装地图服务包（用于保存与读取地图）:
-
-```bash
-sudo apt install ros-${ROS_DISTRO}-map-server
-```
-
-安装 navigation 包（用于定位以及路径规划）:
-
-```bash
-sudo apt install ros-${ROS_DISTRO}-navigation
-```
-
-因tf和tf2迁移问题，需将工作空间内的所有global_costmap_params.yaml和local_costmap_params.yaml文件里的头几行去掉“/”,返回工作空间根目录下重新编译。
-
-> ***Reference：***
->
-> [http://wiki.ros.org/tf2/Migration](http://wiki.ros.org/tf2/Migration)
-
-![1](https://static.m0rtzz.com/images/Year:2024/Month:03/Day:01/17:29:21_1.png)
-
-![2](https://static.m0rtzz.com/images/Year:2024/Month:03/Day:10/17:29:09_2.png)
+#### 听课笔记 (NOT REQUIRED)
 
 首先创建实体导航工作空间：
 
@@ -1231,25 +1180,17 @@ sudo apt install ros-${ROS_DISTRO}-navigation
 mkdir -p navigation_entity_test_ws/src
 ```
 
-![e6316e2fe5e941369669b43ab767ea9d.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:12_e6316e2fe5e941369669b43ab767ea9d.png)
-
 ```bash
 cd navigation_entity_test_ws/src
 ```
 
 ```bash
-catkin_create_pkg entity_test roscpp rospy std_msgs  gmapping map_server amcl move_base
+catkin_create_pkg entity_test roscpp rospy std_msgs gmapping map_server amcl move_base
 ```
-
-![12f06d657996445fa8d8cac418d21147.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:28:55_12f06d657996445fa8d8cac418d21147.png)
 
 ```bash
 cd .. && catkin_make
 ```
-
-![c5a44dee31014fcd9b8f97237e3f58e4.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:30:23_c5a44dee31014fcd9b8f97237e3f58e4.png)
-
-查看一下文件目录，tree命令在下边的PS小节有讲怎么安装
 
 ```bash
 tree .
@@ -1290,9 +1231,7 @@ cd src/
 catkin_create_pkg robot_description_test urdf xacro
 ```
 
-![0af4f65dceea471f94be94ef66fadbe2.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:29:02_0af4f65dceea471f94be94ef66fadbe2.png)
-
-在功能包下新建 urdf 目录，编写具体的 urdf 文件（code命令是VSCode，没安装的小伙伴下边PS小节有下载网址~）:
+在功能包下新建urdf目录，编写具体的urdf文件：
 
 ```bash
 cd robot_description_test/ && mkdir urdf
@@ -1878,10 +1817,7 @@ touch auto_slam.launch && code auto_slam.launch
 打开终端输入：
 
 ```bash
-gedit ~/.bashrc
-```
-
-```bash
+tee -a ~/.bashrc >> /dev/null << 'EOF'
 # 在最后（WARNING：如果安装了Anaconda3，需要加在__conda_setup之前）加入如下代码段：
 # 显示git分支
 function customizePrompt()
@@ -1903,7 +1839,7 @@ function customizePrompt()
 
 export PS1="$(customizePrompt)"
 
-# 复制上一个命令到系统剪切板，sudo apt install xsel
+# 复制上一个命令到系统剪切板，sudo apt install -y xsel
 function copyLastCommand()
 {
     # fc获取最后执行的命令，echo发送给xsel复制到剪切板
@@ -1912,7 +1848,7 @@ function copyLastCommand()
 }
 
 # 创建一个别名，若与你的其他软件包内置命令冲突，请自行更换别名
-alias clc="copyLastCommand"
+alias clc='copyLastCommand'
 
 # 计划关机（为了使得`.zshrc`也能用此函数，就没有使用`read -p`）
 function powerOff() {
@@ -1959,14 +1895,13 @@ function powerOff() {
     sudo shutdown -h +${wait_time}
 }
 
-alias po="powerOff"
+alias po='powerOff'
 
 # 有效解决Anaconda3激活虚拟环境后使用`pip install`或`pip3 install`会安装到其他虚拟环境的问题
 alias pip='python3 -m pip'
 alias pip3='python3 -m pip'
+EOF
 ```
-
-之后保存退出。
 
 ```bash
 source ~/.bashrc
@@ -2005,7 +1940,7 @@ reboot
 ### 同步双系统时间
 
 ```bash
-sudo apt install ntpdate
+sudo apt install -y ntpdate
 ```
 
 ```bash
@@ -2015,8 +1950,6 @@ sudo ntpdate time.windows.com
 ```bash
 timedatectl set-local-rtc 1 --adjust-system-clock
 ```
-
-![c17b8bd812df4e5f86bfba16f5948a9d.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:04_c17b8bd812df4e5f86bfba16f5948a9d.png)
 
 ### Software
 
@@ -2063,7 +1996,7 @@ wget -q --show-progress https://github.com/web1n/wechat-universal-flatpak/releas
 可以水平和垂直分割的终端：
 
 ```bash
-sudo apt install terminator
+sudo apt install -y terminator
 ```
 
 ![74c734b7ca9e4cc5a68246b4f8a73ee3.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:19_74c734b7ca9e4cc5a68246b4f8a73ee3.png)
@@ -2071,23 +2004,19 @@ sudo apt install terminator
 trash命令：
 
 ```bash
-sudo apt install trash-cli
+sudo apt install -y trash-cli
 ```
 
 tree命令：
 
 ```bash
-sudo apt install tree
+sudo apt install -y tree
 ```
-
-![5434b41e73244f8f941b795586faaea2.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:19_5434b41e73244f8f941b795586faaea2.png)
-
-![c344c03378a74cdca9e9585f3c3c14d8.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:30:05_c344c03378a74cdca9e9585f3c3c14d8.png)
 
 查看系统信息：
 
 ```bash
-sudo apt install neofetch
+sudo apt install -y neofetch
 ```
 
 ![image-20240720105620903](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:20/10:56:21_image-20240720105620903.png)
@@ -2103,21 +2032,21 @@ wget -q --show-progress https://github.com/fastfetch-cli/fastfetch/releases/late
 rar文件解压工具：
 
 ```bash
-sudo apt install unrar
+sudo apt install -y unrar
 ```
 
 解决不能观看MP4文件：
 
 ```bash
-sudo apt update
+sudo apt update -y
 ```
 
 ```bash
-sudo apt install libdvdnav-dev libdvdread-dev gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly libdvd-pkg
+sudo apt install -y libdvdnav-dev libdvdread-dev gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly libdvd-pkg
 ```
 
 ```bash
-sudo apt install ubuntu-restricted-extras
+sudo apt install -y ubuntu-restricted-extras
 ```
 
 ```bash
@@ -2127,11 +2056,11 @@ sudo dpkg-reconfigure libdvd-pkg
 系统优化：
 
 ```bash
-sudo apt update
+sudo apt update -y
 ```
 
 ```bash
-sudo apt install gnome-tweak-tool
+sudo apt install -y gnome-tweak-tool
 ```
 
 命令启动：
@@ -2150,7 +2079,7 @@ gnome-tweaks
 
 ```bash
 sudo add-apt-repository ppa:diodon-team/stable
-sudo apt update && sudo apt install diodon
+sudo apt update -y && sudo apt install -y diodon
 ```
 
 然后使用刚才安装的优化工具将`diodon`设置为开机自启动：
@@ -2174,15 +2103,15 @@ Flatpak：
 Ubuntu 18.10 (Cosmic Cuttlefish) or later：
 
 ```bash
-sudo apt install flatpak
+sudo apt install -y flatpak
 ```
 
 Older Ubuntu versions：
 
 ```bash
 sudo add-apt-repository ppa:flatpak/stable
-sudo apt update
-sudo apt install flatpak
+sudo apt update -y
+sudo apt install -y flatpak
 ```
 
 FlatHub上交镜像源：
@@ -2247,15 +2176,11 @@ sudo gedit /etc/default/grub
 
 改一下GRUB_DEFAULT=后边的数字，默认是0，windows是第n个就设置为n-1
 
-![2a4260711db540b6af9fd30682dc9257.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:04_2a4260711db540b6af9fd30682dc9257.png)
-
 保存后关闭，打开终端，输入：
 
 ```bash
 sudo update-grub
 ```
-
-![cb668a5bf2a84177956f1c6417f5310a.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:05_cb668a5bf2a84177956f1c6417f5310a.png)
 
 ```bash
 reboot
@@ -2284,7 +2209,7 @@ git apply patches/*.patch
 安装依赖
 
 ```bash
-sudo apt install intltool libvte-2.91-dev gsettings-desktop-schemas-dev uuid-dev libdconf-dev libpcre2-dev libgconf2-dev libxml2-utils gnome-shell libnautilus-extension-dev itstool yelp-tools pcre2-utils
+sudo apt install -y intltool libvte-2.91-dev gsettings-desktop-schemas-dev uuid-dev libdconf-dev libpcre2-dev libgconf2-dev libxml2-utils gnome-shell libnautilus-extension-dev itstool yelp-tools pcre2-utils
 ```
 
 打开src/下的terminal-nautilus.c
@@ -2349,8 +2274,6 @@ sudo make check -j$(nproc)
 sudo make install
 ```
 
-![83ef9eec20fe4b5991ce5e0d3107d68d.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:03_83ef9eec20fe4b5991ce5e0d3107d68d.png)
-
 ```bash
 sudo cp /usr/lib/nautilus/extensions-3.0/libterminal-nautilus.so /usr/lib/x86_64-linux-gnu/nautilus/extensions-3.0/
 ```
@@ -2364,7 +2287,7 @@ reboot
 ### protobuf-2.6.1
 
 ```bash
-sudo apt install libtool
+sudo apt install -y libtool
 ```
 
 [https://github.com/google/protobuf/releases/download/v2.6.1/protobuf-2.6.1.tar.gz](https://github.com/google/protobuf/releases/download/v2.6.1/protobuf-2.6.1.tar.gz)
@@ -2381,19 +2304,13 @@ wget -q --show-progress https://raw.gitcode.com/M0rtzz/protobuf-2.6.1/assets/199
 ./autogen.sh
 ```
 
-![da01acbb001f42cea9ca08ddad814655.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:01_da01acbb001f42cea9ca08ddad814655.png)
-
 ```bash
 ./configure --prefix=/usr/local/protobuf
 ```
 
-![1c6a5408dece4f7aa5fb4e78680eb913.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:27:11_1c6a5408dece4f7aa5fb4e78680eb913.png)
-
 ```bash
 sudo make -j$(nproc)
 ```
-
-![140562b609004503a731358eea387731.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:27:28_140562b609004503a731358eea387731.png)
 
 养成 `make check`的好习惯
 
@@ -2407,8 +2324,6 @@ sudo make check -j$(nproc)
 sudo make install
 ```
 
-![bf530b0ab13e4939bd810d4731e2764d.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:01_bf530b0ab13e4939bd810d4731e2764d.png)
-
 ```bash
 sudo gedit /etc/profile
 ```
@@ -2416,7 +2331,7 @@ sudo gedit /etc/profile
 在最后加入：
 
 ```bash
-#protobuf
+# protobuf
 export PATH=${PATH}:/usr/local/protobuf/bin/export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:/usr/local/protobuf/lib/pkgconfig/
 ```
 
@@ -2442,8 +2357,6 @@ sudo gedit /etc/ld.so.conf
 sudo ldconfig
 ```
 
-![d80cbadb617b4986a99827d13170e9eb.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:02_d80cbadb617b4986a99827d13170e9eb.png)
-
 最后验证版本：
 
 ```bash
@@ -2452,8 +2365,16 @@ protoc --version
 
 ### OpenBLAS
 
+#### 软件源安装 (RECOMMENDED)
+
 ```bash
-sudo apt install gcc-arm-linux-gnueabihf libnewlib-arm-none-eabi libc6-dev-i386
+sudo apt update -y && sudo apt install -y libopenblas-dev
+```
+
+#### 源码编译安装 (NOT RECOMMENDED)
+
+```bash
+sudo apt install -y gfortran gcc-arm-linux-gnueabihf libnewlib-arm-none-eabi libc6-dev-i386
 ```
 
 OpenBLAS源码（非最新）最上方百度网盘里有，或者使用公益加速源：
@@ -2467,18 +2388,12 @@ cd OpenBLAS
 ```
 
 ```bash
-sudo apt install gfortran
-```
-
-```bash
-sudo make FC=gfortran TARGET=ARMV8 -j$(nproc)
+sudo make -j$(nproc)
 ```
 
 ```bash
 sudo make PREFIX=/usr/local install
 ```
-
-![af045e49e18643d8a1c0c12deb166d44.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:27:35_af045e49e18643d8a1c0c12deb166d44.png)
 
 查看版本
 
@@ -2486,47 +2401,21 @@ sudo make PREFIX=/usr/local install
 grep OPENBLAS_VERSION /usr/local/include/openblas_config.h
 ```
 
-![e76d37851f2e4d08b08c4ac035423cbc.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:02_e76d37851f2e4d08b08c4ac035423cbc.png)
-
 ### seetaface2工作空间
 
 ```bash
-gedit ~/.bashrc
-```
-
-在最后加入
-
-```bash
-source /home/m0rtzz/Workspaces/catkin_ws/devel/setup.bash
-```
-
-保存后关闭，打开终端，输入：
-
-```bash
+echo 'source /home/m0rtzz/Workspaces/catkin_ws/devel/setup.bash' >> ~/.bashrc
 source ~/.bashrc
 ```
-
-![597806c7f0834400b846b99cae4c9d63.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:02_597806c7f0834400b846b99cae4c9d63.png)
 
 ![0bccdd5c978048189fcd47437ad89dfc.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:03_0bccdd5c978048189fcd47437ad89dfc.png)
 
 解决办法：
 
-终端输入：
+加入工作空间下lib文件夹的路径：
 
 ```bash
-gedit ~/.bashrc
-```
-
-加入工作空间下lib文件夹的路径
-
-```bash
-export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/home/m0rtzz/Workspaces/catkin_ws/lib
-```
-
-保存后关闭，打开终端，输入：
-
-```bash
+echo 'export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/home/m0rtzz/Workspaces/catkin_ws/lib' >> ~/.bashrc
 source ~/.bashrc
 ```
 
@@ -2536,17 +2425,17 @@ source ~/.bashrc
 
 报错：
 
-```bash
+```txt
 Gtk-Message: 15:22:30.610: Failed to load module "canberra-gtk-module"
 ```
 
 解决方法：
 
 ```bash
-sudo apt install libcanberra-gtk*
+sudo apt install -y 'libcanberra-gtk*'
 ```
 
-### caffe
+### caffe (EOL)
 
 > ***Reference：***
 >
@@ -2555,7 +2444,7 @@ sudo apt install libcanberra-gtk*
 首先安装依赖：
 
 ```bash
-sudo apt install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler libatlas-base-dev libgflags-dev libgoogle-glog-dev liblmdb-dev && sudo apt install --no-install-recommends libboost-all-dev
+sudo apt install -y libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler libatlas-base-dev libgflags-dev libgoogle-glog-dev liblmdb-dev libboost-all-dev
 ```
 
 ```bash
@@ -4277,8 +4166,6 @@ locate cudnn_version.h
 sudo gedit /usr/local/cuda/targets/x86_64-linux/include/cudnn_version.h
 ```
 
-![d02f7f01b16e41a1a5528d664a6623f2](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:29:08_d02f7f01b16e41a1a5528d664a6623f2.png)
-
 复制其中的非注释部分：
 
 ![841eda431c924b86bd9b14cc93472420](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:14_841eda431c924b86bd9b14cc93472420.png)
@@ -4321,7 +4208,7 @@ sudo make pycaffe -j$(nproc)
 
 可能会有报错，但问题不大，我们只是需要那些库文件~
 
-### libfreenect2
+### libfreenect2 (EOL)
 
 ```bash
 git clone https://github.com/OpenKinect/libfreenect2.git libfreenect2
@@ -4345,19 +4232,15 @@ cmake -j$(nproc) .. -DENABLE_CXX11=ON
 sudo make -j$(nproc)
 ```
 
-![6cadc0a213e2406ba85889e9723ad7c6](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:29:18_6cadc0a213e2406ba85889e9723ad7c6.png)
-
 ```bash
 sudo make install
 ```
-
-![472362d895074bb6bfe40f6ca40a91f8](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:29:28_472362d895074bb6bfe40f6ca40a91f8.png)
 
 ```bash
 sudo cp ../platform/linux/udev/90-kinect2.rules /etc/udev/rules.d/
 ```
 
-### VTK-8.2.0及PCL-1.9.1
+### VTK-8.2.0及PCL-1.9.1 (EOL)
 
 [https://vtk.org/download/](https://vtk.org/download/)
 
@@ -4368,7 +4251,7 @@ sudo cp ../platform/linux/udev/90-kinect2.rules /etc/udev/rules.d/
 解压之后，进入文件夹打开终端：
 
 ```bash
-sudo apt install cmake-gui && mkdir build && cd  build && cmake-gui
+sudo apt install -y cmake-gui && mkdir build && cd  build && cmake-gui
 ```
 
 ![19c7fca7f8e745cd8f97283961027dbb](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:16_19c7fca7f8e745cd8f97283961027dbb.png)
@@ -4383,13 +4266,9 @@ sudo apt install cmake-gui && mkdir build && cd  build && cmake-gui
 sudo make -j$(nproc)
 ```
 
-![fd63a2d3317447d5b982c5a1c6defc59](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:29:34_fd63a2d3317447d5b982c5a1c6defc59.png)
-
 ```bash
 sudo make install
 ```
-
-![image-20240206162428124](https://static.m0rtzz.com/images/Year:2024/Month:03/Day:10/17:39:26_16_24_28_image-20240206162428124.png)
 
 接下来安装pcl：
 
@@ -4418,19 +4297,13 @@ cmake -D CMAKE_BUILD_TYPE=None \
 -j$(nproc) ..
 ```
 
-![d8596882117248859b7c3cb104b19d13](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:17_d8596882117248859b7c3cb104b19d13.png)
-
 ```bash
 sudo make -j$(nproc)
 ```
 
-![8d1ac3a5ef5f417aa47abf5f5172ff1e](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:18_8d1ac3a5ef5f417aa47abf5f5172ff1e.png)
-
 ```bash
 sudo make install
 ```
-
-![69d7d955c7f24ab4926dadd31dddfb04](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:18_69d7d955c7f24ab4926dadd31dddfb04.png)
 
 ## NOT RECOMMENDED (EOL)
 
@@ -4453,24 +4326,24 @@ sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/ros.gpg] https://mirrors.us
 ```
 
 ```bash
-sudo apt update
+sudo apt update -y
 ```
 
 ```bash
-sudo apt install ros-melodic-desktop-full
+sudo apt install -y ros-melodic-desktop-full
 ```
 
 ```bash
-echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+echo 'source /opt/ros/melodic/setup.bash' >> ~/.bashrc
 source ~/.bashrc
 ```
 
 ```bash
-sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
+sudo apt install -y python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
 ```
 
 ```bash
-sudo apt install python3-pip
+sudo apt install -y python3-pip
 ```
 
 使用阿里镜像源加速pip下载：
@@ -4538,12 +4411,12 @@ git clone -b 3.4.16 https://mirror.ghproxy.com/https://github.com/opencv/opencv_
 
 ```bash
 sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
-sudo apt update
-sudo apt install libjasper1 libjasper-dev
+sudo apt update -y
+sudo apt install -y libjasper1 libjasper-dev
 ```
 
 ```bash
-sudo apt install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev liblapacke-dev checkinstall
+sudo apt install -y cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev liblapacke-dev checkinstall
 ```
 
 进入opencv-3.4.16文件夹，打开终端，输入：
@@ -4587,8 +4460,6 @@ cd ../ && mkdir downloads
 cd downloads && pwd
 ```
 
-![34afaa6be110406889d65e506c8e2a2b](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:58:58_34afaa6be110406889d65e506c8e2a2b.png)
-
 复制绝对路径后：
 
 打开这个ippicv.cmake
@@ -4597,13 +4468,13 @@ cd downloads && pwd
 
 把绝对路径复制进去：
 
-![e3d64802ff8748d7b5921fdbed6093a3](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:58:59_e3d64802ff8748d7b5921fdbed6093a3.png)
+![image-20240824150153324](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:24/15:02:06_image-20240824150153324.png)
 
 然后把下面网址下载的文件cp进去就行了（或者开头百度云分享链接中自取~）
 
 [https://github.com/opencv/opencv_3rdparty](https://github.com/opencv/opencv_3rdparty)
 
-然后重新打开终端，输入：（**别忘了改路径**）：
+然后重新打开终端，输入（**别忘了改路径**）：
 
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
@@ -4647,8 +4518,6 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -j$(nproc) ..
 ```
 
-![52f9d072a94643efb55ffa119bf1db67](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:58:59_52f9d072a94643efb55ffa119bf1db67.png)
-
 ```bash
 sudo make -j$(nproc)
 ```
@@ -4665,13 +4534,9 @@ sudo make -j$(nproc)
 sudo make -j$(nproc)
 ```
 
-![e8807dc847184bdd9935739a3a623c75](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:00_e8807dc847184bdd9935739a3a623c75.png)
-
 ```bash
 sudo make install
 ```
-
-![325ba9f219904c1abf99cc8924c2374e](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:27:04_325ba9f219904c1abf99cc8924c2374e.png)
 
 ```bash
 sudo gedit /etc/ld.so.conf.d/opencv.conf
@@ -4690,7 +4555,7 @@ sudo ldconfig
 ```
 
 ```bash
-sudo gedit /etc/bash.bashrc
+sudo gedit /etc/profile
 ```
 
 加入
@@ -4702,7 +4567,7 @@ export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:/usr/local/lib/pkgconfig
 保存后关闭，打开终端，输入：
 
 ```bash
-source /etc/bash.bashrc
+source /etc/profile
 ```
 
 测试
@@ -4800,11 +4665,11 @@ sudo dpkg --add-architecture amd64
 ```
 
 ```bash
-sudo apt update
+sudo apt update -y
 ```
 
 ```bash
-sudo apt install -y ninja-build doxygen clang gcc-multilib g++-multilib python3 nasm libgl1-mesa-dev libsoundio-dev libvulkan-dev libx11-dev libxcursor-dev libxinerama-dev libxrandr-dev libusb-1.0-0-dev libudev-dev mesa-common-dev uuid-dev
+sudo apt install -y ninja-build doxygen clang gcc-multilib g++-multilib python3 nasm libsoundio-dev libvulkan-dev libx11-dev libxcursor-dev libxinerama-dev libxrandr-dev libudev-dev mesa-common-dev uuid-dev
 ```
 
 ```bash
@@ -4853,62 +4718,16 @@ cmake -j$(nproc) .. -GNinja
 
 克隆完成后为如图所示：
 
-![b07fac22ae4b45ebb3e5a061739a4d87.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:06_b07fac22ae4b45ebb3e5a061739a4d87.png)
-
 之后输入：
 
 ```bash
 sudo ninja -j$(nproc)
 ```
 
-完成后如下：
-
-![c625650ae9744c02aea905984da47566.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:07_c625650ae9744c02aea905984da47566.png)
-
 最后输入：
 
 ```bash
 sudo ninja install
-```
-
-完成后如下：
-
-![b71183010a584c469b0a6cbfc72b3e39.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:28:09_b71183010a584c469b0a6cbfc72b3e39.png)
-
-之后安装依赖：
-
-```bash
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-```
-
-```bash
-sudo apt update
-```
-
-```bash
-sudo gedit /etc/apt/sources.list
-```
-
-在最后一行加入：
-
-```bash
-# gcc-4.9
-deb http://dk.archive.ubuntu.com/ubuntu/ xenial main
-deb http://dk.archive.ubuntu.com/ubuntu/ xenial universe
-```
-
-保存后关闭，打开终端，输入：
-
-```bash
-sudo apt update
-```
-
-```bash
-sudo apt install gcc-4.9
-```
-
-```bash
-sudo apt upgrade libstdc++6
 ```
 
 之后测试一下：
