@@ -1,13 +1,15 @@
-# Changelog
+## <small>3.2.1 (2024-08-25)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 📝 doc(environment_configuration.md): update doc ([0000f1a](https://github.com/M0rtzz/m0rtzz.blog/commit/0000f1a))
+* 🔖 tag(package.json): v3.2.1 ([e6a9856](https://github.com/M0rtzz/m0rtzz.blog/commit/e6a9856))
 
-## [3.2.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v3.2.0...v3.2.1) (2024-08-25)
+
 
 ## 3.2.0 (2024-08-25)
 
 * 📝 doc(environment_configuration.md): update comment ([f6cc9b1](https://github.com/M0rtzz/m0rtzz.blog/commit/f6cc9b1))
 * 📝 doc(environment_configuration.md): update version ([2238493](https://github.com/M0rtzz/m0rtzz.blog/commit/2238493))
+* 📝 docs(CHANGELOG.md): automatic update ([5109be4](https://github.com/M0rtzz/m0rtzz.blog/commit/5109be4))
 * 📝 docs(CHANGELOG.md): automatic update ([1398b44](https://github.com/M0rtzz/m0rtzz.blog/commit/1398b44))
 * 🔖 tag(package.json): v3.1.4 ([179dc3c](https://github.com/M0rtzz/m0rtzz.blog/commit/179dc3c))
 * 🔖 tag(package.json): v3.2.0 ([50d4e56](https://github.com/M0rtzz/m0rtzz.blog/commit/50d4e56))
@@ -1926,3 +1928,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
