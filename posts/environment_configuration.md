@@ -710,7 +710,7 @@ catkin_make -j$(nproc) darknet_ros --cmake-args -DCMAKE_CXX_FLAGS=-DCV__ENABLE_C
 
 ![image-20240825123152168](https://static.m0rtzz.com/images/Year%3A2024/Month%3A08/Day%3A25/12%3A32%3A01_image-20240825123152168.png)
 
-### Azure Kinect SDK-v1.4.0（软件包）
+### Azure Kinect SDK-v1.4.2（软件包）
 
 > [!NOTE]
 >
