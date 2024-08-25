@@ -4,7 +4,7 @@
 
 > [!IMPORTANT]
 >
-> ZZU-SR的童鞋配置环境前可以给鄙人发邮件：[E-mail](mailto:m0rtzz@stu.zzu.edu.cn)，另外：
+> **ZZU-SR**的童鞋配置环境前可以给鄙人发邮件：[E-mail](mailto:m0rtzz@stu.zzu.edu.cn)，另外：
 >
 > 本文根据重要程度对各个步骤进行分类：
 >
@@ -42,8 +42,6 @@ sudo chmod a-x /usr/bin/update-notifier
 ```
 
 将关机时间从90秒换为5秒：
-
-打开终端输入：
 
 ```bash
 sudo gedit /etc/systemd/system.conf
@@ -117,7 +115,7 @@ deb https://mirrors.hust.edu.cn/ubuntu focal-security main restricted universe m
 sudo apt update -y && sudo apt upgrade -y
 ```
 
-anaconda镜像源（~/.condarc）【**注意替换**`envs_dirs`**中的绝对路径**】:
+`anaconda`镜像源（`~/.condarc`）【**注意替换**`envs_dirs`**中的绝对路径**】:
 
 ```yaml
 channels:
@@ -146,7 +144,7 @@ envs_dirs:
 auto_activate_base: false
 ```
 
-pip设置镜像源：
+`pip`设置镜像源：
 
 ```bash
 cd ${HOME}/.config/pip/ || (mkdir -p ${HOME}/.config/pip/ && gedit ${HOME}/.config/pip/pip.conf)
@@ -175,17 +173,12 @@ no-cache-dir = true
 ### 禁用Nouveau驱动
 
 ```bash
-sudo gedit /etc/modprobe.d/blacklist.conf
-```
-
-在最后输入：
-
-```ini
+sudo tee -a /etc/modprobe.d/blacklist.conf > /dev/null << EOF
+# 禁用Nouveau驱动
 blacklist nouveau
 options nouveau modeset=0
+EOF
 ```
-
-保存后关闭，打开终端，输入：
 
 ```bash
 sudo update-initramfs -u
@@ -213,13 +206,13 @@ sudo ubuntu-drivers devices
 
 ![image-20240219202632909](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:19/20:26:33_image-20240219202632909.png)
 
-寻找带有recommended的版本，输入
+寻找带有recommended的版本，输入：
 
 ```bash
 sudo apt install -y nvidia-driver-your_version nvidia-settings nvidia-prime
 ```
 
-（your_version是你的版本号）
+（`your_version`是你的版本号）
 
 ```bash
 sudo apt update -y
@@ -233,7 +226,7 @@ sudo apt upgrade -y
 reboot
 ```
 
-验证版本
+验证版本：
 
 ```bash
 nvidia-smi
@@ -262,7 +255,7 @@ EOF
 source /etc/profile
 ```
 
-接下来验证cuda版本：
+接下来验证`CUDA`版本：
 
 ```bash
 nvcc --version
@@ -272,13 +265,13 @@ nvcc --version
 
 安装成功！
 
-### CUDNN
+### cuDNN
 
 [https://developer.nvidia.com/rdp/cudnn-archive](https://developer.nvidia.com/rdp/cudnn-archive)
 
 > [!TIP]
 >
-> 官方安装教程（选择合适版本的**NVIDIA cuDNN Installation Guide**，鄙人一般来说会安装和已安装CUDA的发布时间相近的版本，之前安装PaddlePaddle的时候发现GPU版PaddlePaddle依赖库要求的CUDA工具包版本和CUDNN版本貌似也是这样对应的）：
+> 官方安装教程（选择合适版本的**NVIDIA cuDNN Installation Guide**，鄙人一般来说会安装和已安装`CUDA`的发布时间相近的版本，之前安装`PaddlePaddle`的时候发现`GPU`版`PaddlePaddle`依赖库要求的`CUDA`工具包版本和`cuDNN`版本貌似也是这样对应的）：
 >
 > [https://docs.nvidia.com/deeplearning/cudnn/archives/index.html](https://docs.nvidia.com/deeplearning/cudnn/archives/index.html)
 
@@ -289,7 +282,7 @@ sudo cp -P cudnn-*-archive/lib/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
 ```
 
-验证是否安装成功
+验证是否安装成功：
 
 ```bash
 cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
@@ -332,7 +325,7 @@ sudo apt install -y python3-rosdep python3-rosinstall python3-rosinstall-generat
 sudo apt install -y python3-pip
 ```
 
-使用阿里镜像源加速pip下载：
+使用阿里镜像源加速`pip`下载：
 
 ```bash
 sudo pip3 install rosdepc -i https://mirrors.aliyun.com/pypi/simple/
@@ -353,7 +346,7 @@ roscore
 
 ![image-20240219203852347](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:19/20:38:52_image-20240219203852347.png)
 
-再新建两个终端，分别输入
+再新建两个终端，分别输入：
 
 ```bash
 rosrun turtlesim turtlesim_node
@@ -363,7 +356,7 @@ rosrun turtlesim turtlesim_node
 rosrun turtlesim turtle_teleop_key
 ```
 
-在 `rosrun turtlesim turtle_teleop_key`所在终端点击一下任意位置，然后使用←↕→小键盘控制，看小海龟会不会动，如果会动则安装成功。
+在 `rosrun turtlesim turtle_teleop_key`所在终端点击一下任意位置，然后使用`←↕→`小键盘控制，看小海龟会不会动，如果会动则安装成功。
 
 ![image-20240819153523553](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:19/15:35:28_image-20240819153523553.png)
 
@@ -371,7 +364,7 @@ rosrun turtlesim turtle_teleop_key
 
 ***经尝试多版本Ubuntu和OpenCV，装Ubuntu20.04，ROS noetic和OpenCV4.2.0及其扩展模块才能解决将彩色图像转换为网络所需的输入Blob后前馈时抛出的【raised OpenCV exception，error: (-215:Assertion failed)等等】。***
 
-以下为几次成功安装的命令（注意替换命令中的绝对路径），安装过程可以参考**NOT RECOMMENDED**中的OpenCV3安装步骤：
+以下为几次成功安装的命令（注意替换命令中的绝对路径），安装过程可以参考**NOT RECOMMENDED**中的`OpenCV3`安装步骤：
 
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
@@ -459,7 +452,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -j$(nproc) ..
 ```
 
-CUDA_ARCH_BIN查看命令：
+`CUDA_ARCH_BIN`查看命令：
 
 ```bash
 sudo apt install -y mlocate
@@ -473,19 +466,19 @@ mlocate deviceQuery | grep cuda | head -n 1 | xargs -r bash -c | grep 'CUDA Capa
 
 [https://github.com/opencv/opencv/pull/17685/files](https://github.com/opencv/opencv/pull/17685/files)
 
-.diff文件：
+`.diff`文件：
 
 ```bash
 wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/raw/master/opencv_pr_17685.diff -O opencv_pr_17685.diff
 ```
 
-.patch文件（有可能打不了补丁，还是需要自己手动加入）：
+`.patch`文件（有可能打不了补丁，还是需要自己手动加入）：
 
 ```bash
 wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/raw/master/opencv_pr_17685.patch -O opencv_PR_17685.patch
 ```
 
-***（如果不执行以下几步，编译darknet_ros会报错:error: 'IplImage'之类的）***
+***（如果不执行以下几步，编译`darknet_ros`会报错: `error: 'IplImage'`之类的）***
 
 ```bash
 sudo cp /usr/local/lib/pkgconfig/opencv4.pc /usr/lib/pkgconfig/opencv4.pc
@@ -498,13 +491,13 @@ sudo cp /usr/lib/pkgconfig/opencv4.pc /usr/lib/pkgconfig/opencv.pc
 sudo apt install -y curl libjsoncpp-dev
 ```
 
-include jsoncpp库的头文件改为
+`jsoncpp`库的头文件改为
 
 ```cpp
 #include <jsoncpp/json/json.h>
 ```
 
-g++编译
+`g++`编译
 
 ```bash
 g++ test.cpp -o test -lcurl -ljsoncpp
@@ -550,25 +543,19 @@ ZED_CAMERA=0
 ZED_CAMERA_v2_8=0
 ```
 
-然后修改NVCC=后边为nvcc路径：
+然后修改`NVCC=`后边为`nvcc`路径：
 
 ```makefile
 NVCC=/usr/local/cuda/bin/nvcc
 ```
 
-之后保存退出后，打开终端，输入：
+打开终端，输入：
 
 ```bash
-sudo gedit /etc/ld.so.conf.d/cuda.conf
-```
-
-加入以下内容后保存退出：
-
-```ini
+sudo tee /etc/ld.so.conf.d/cuda.conf > /dev/null << EOF
 /usr/local/cuda/lib64
+EOF
 ```
-
-打开终端输入：
 
 ```bash
 sudo ldconfig
@@ -588,13 +575,13 @@ sudo make -j$(nproc)
 usage: ./darknet <function>
 ```
 
-之后我们下载yolov3权重文件：
+之后我们下载`yolov3`权重文件：
 
 ```bash
 mkdir weights && cd ./weights && wget -q --show-progress https://pjreddie.com/media/files/yolov3.weight
 ```
 
-到此为止darknet就配置好了。
+到此为止`darknet`就配置好了。
 
 下面我们测试一下：
 
@@ -620,7 +607,7 @@ sudo apt install -y 'libcanberra-gtk*'
 
 安装之后重新运行就不会报错了。
 
-darknet_ros工作空间（OpenCV-4.2.0）：
+`darknet_ros`工作空间（`OpenCV-4.2.0`）：
 
 ```bash
 mkdir darknet_ros_test_ws && cd darknet_ros_test_ws/ && mkdir src
@@ -641,10 +628,10 @@ cd src/
 ```bash
 git clone -b opencv4 --recursive https://github.com/kunaltyagi/darknet_ros.git darknet_ros
 cd darknet_ros
-git submodule update --recursive # 可有可无
+git submodule update --recursive
 ```
 
-如果视频流只有第一帧是RGB8编码格式，阅读源码后发现在show_image之前调用image.cpp中的rgbgr_image函数循环转换图像编码格式即可解决此问题：
+如果视频流只有第一帧是`RGB8`编码格式，阅读源码后发现在`show_image`之前调用`image.cpp`中的`rgbgr_image`函数循环转换图像编码格式即可解决此问题：
 
 ```cpp
 // @file : image.cpp
@@ -663,7 +650,7 @@ void rgbgr_image(image im)
 // @file : YoloObjectDetector.cpp
   void *YoloObjectDetector::displayInThread(void *ptr)
   {
-    // NOTE: Modified by M0rtzz, solved the problem of displaying video streams as bgr8
+    // NOTE: Modified by M0rtzz, solved the problem of displaying video stream as bgr8
     rgbgr_image(buff_[(buffIndex_ + 1) % 3]);
     int c = show_image(buff_[(buffIndex_ + 1) % 3], "YOLO V3", waitKeyDelay_);
     if (c != -1)
@@ -713,23 +700,21 @@ git clone https://github.com/AlexeyAB/darknet.git darknet
 git clone https://mirror.ghproxy.com/https://github.com/AlexeyAB/darknet.git darknet
 ```
 
-catkin_make如果编译不过的话（error:  'IplImage' 之类的，之前装OpenCV提到过避免报错的方法），注意以下命令是只编译darknet_ros一个包，若工作空间下有多个包需要一起编译那么把命令中的darknet_ros删除重新执行即可：
+`catkin_make`如果编译不过的话（`error:  'IplImage' `之类的，之前装`OpenCV`提到过避免报错的方法），注意以下命令是只编译`darknet_ros`一个包，若工作空间下有多个包需要一起编译那么把命令中的`darknet_ros`删除重新执行即可：
 
 ```bash
 catkin_make -j$(nproc) darknet_ros --cmake-args -DCMAKE_CXX_FLAGS=-DCV__ENABLE_C_API_CTORS
 ```
 
-如果报错nvcc fatal : Unsupported gpu architecture 'compute_30'之类的，是因为CUDA11已经不支持compute_30了，我们将darknet_ros/darknet/Makefile和darknet_ros/darknet_ros/CMakeLists.txt中含有 'compute_30'的行进行注释后重新catkin_make：
+如果报错`nvcc fatal : Unsupported gpu architecture 'compute_30'`之类的，是因为`CUDA11.X`已经不支持`compute_30`了，我们将`darknet_ros/darknet_ros/CMakeLists.txt`中含有 `compute_30`的行进行注释后重新`catkin_make`：
 
-![b2175aecc6ec4d489d3b0703e4f9d00d](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:06_b2175aecc6ec4d489d3b0703e4f9d00d.png)
-
-![da1d083fd06f4aed9dd17b0e1446223f](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:06_da1d083fd06f4aed9dd17b0e1446223f.png)
+![image-20240825123152168](https://static.m0rtzz.com/images/Year%3A2024/Month%3A08/Day%3A25/12%3A32%3A01_image-20240825123152168.png)
 
 ### Azure Kinect SDK-v1.4.0（软件包）
 
 > [!NOTE]
 >
-> 鄙人在Ubuntu18.04下是通过源码编译安装的，在Ubuntu20.04下是通过deb包直接安装的。
+> 鄙人在`Ubuntu18.04`下是通过源码编译安装的，在`Ubuntu20.04`下是通过`deb`包直接安装的。
 
 > ***Reference：***
 >
@@ -803,41 +788,88 @@ private:
         registerMouseCallback (boost::function<void (const pcl::visualization::MouseEvent&)>);
 ```
 
-下载所需SDK,将libs/x64/libmsc.so文件拷贝至工作空间的某个位置。
+下载所需`SDK`,将`libs/x64/libmsc.so`文件拷贝至`工作空间根目录/lib/your-appid/libmsc.so`。
 
 ```cmake
 cmake_minimum_required(VERSION 3.0.2)
 project(tts_voice_test)
-SET(CMAKE_CXX_FLAGS "-std=c++11")
+set(CMAKE_CXX_FLAGS "-std=c++11")
+
+find_package(
+  catkin REQUIRED
+  COMPONENTS roscpp
+             rospy
+             std_msgs
+             genmsg
+             actionlib_msgs
+             actionlib
+             rostime
+             sensor_msgs
+             message_filters
+             cv_bridge
+             image_transport
+             compressed_image_transport
+             compressed_depth_image_transport
+             tf
+             tf2
+             tf2_ros
+             tf2_geometry_msgs
+             geometry_msgs
+             message_generation
+             nodelet
+             kinova_msgs)
+
 find_package(k4a REQUIRED)
+find_package(realsense2 REQUIRED)
+
+set(OpenCV_DIR "/usr/local/lib/cmake/opencv4")
 find_package(OpenCV REQUIRED)
-find_package(catkin REQUIRED COMPONENTS
-roscpp
-rospy
-std_msgs
-cv_bridge
-message_generation
-)
 
-generate_messages(
-  DEPENDENCIES
+find_package(OpenMP)
+find_package(PCL REQUIRED)
+
+add_message_files(FILES person_msgs.msg BoundingBoxes.msg BoundingBox.msg)
+
+generate_messages(DEPENDENCIES std_msgs)
+
+catkin_package(
+  INCLUDE_DIRS
+  include
+  CATKIN_DEPENDS
+  roscpp
+  rospy
   std_msgs
-)
+  message_runtime
+  actionlib_msgs)
 
-include_directories(
-  ~/Workspaces/tts_test_ws/include
-  ${catkin_INCLUDE_DIRS}
-)
+if(OPENMP_FOUND)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+endif()
+
+include_directories(~/Workspaces/tts_test_ws/include ${catkin_INCLUDE_DIRS}
+                    ${OpenCV_INCLUDE_DIRS} ${PCL_INCLUDE_DIRS})
+link_directories(~/Workspaces/tts_test_ws/lib/)
 
 add_executable(tts_voice_test src/tts_voice_test.cc)
-
-target_link_libraries(tts_voice_test
-  PRIVATE k4a::k4a
-  ${catkin_LIBRARIES}
-  ${OpenCV_LIBRARIES}
-  ${PCL_LIBRARIES}
-  -lcurl -ljsoncpp -lmsc -lrt -ldl -pthread -lasound
-  /home/m0rtzz/Workspaces/tts_voice_test_ws/lib/your-appid/libmsc.so # 替换为你的appid
+add_dependencies(tongyong_try ${${PROJECT_NAME}_EXPORTED_TARGETS}
+                 ${catkin_EXPORTED_TARGETS})
+target_link_libraries(
+  tts_voice_test
+  PRIVATE
+    k4a::k4a
+    ${PCL_LIBRARIES}
+    ${catkin_LIBRARIES}
+    ${OpenCV_LIBRARIES}
+    ${realsense2_LIBRARY}
+    -lrt
+    -ldl
+    -lhpdf
+    -lcurl
+    -pthread
+    -lasound
+    -ljsoncpp
+    /home/m0rtzz/Workspaces/tts_voice_test_ws/lib/your-appid/libmsc.so # 替换为你的appid
+)
 ```
 
 打开终端：
@@ -846,7 +878,7 @@ target_link_libraries(tts_voice_test
 catkin_make
 ```
 
-若找不到asoundlib.h文件打开终端输入：
+若找不到`asoundlib.h`文件打开终端输入：
 
 ```bash
 sudo apt install -y libasound2-dev
@@ -860,7 +892,7 @@ sudo apt install -y libasound2-dev
 sudo apt install -y ros-${ROS_DISTRO}-realsense2-camera ros-${ROS_DISTRO}-rgbd-launch
 ```
 
-安装realsense sdk:
+安装`realsense sdk`:
 
 ```bash
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE
@@ -874,13 +906,13 @@ sudo add-apt-repository "deb https://librealsense.intel.com/Debian/apt-repo $(ls
 sudo apt update -y
 ```
 
-安装realsense lib：
+安装`realsense lib`：
 
 ```bash
 sudo apt install -y librealsense2-dkms librealsense2-utils
 ```
 
-安装gcc-4.9，g++-4.9：
+安装`gcc-4.9`和`g++-4.9`：
 
 ```bash
 sudo tee -a /etc/apt/sources.list > /dev/null << EOF
@@ -912,7 +944,7 @@ realsense-viewer
 
 ![66d6e2234539406982aa1aaad9e82698.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:09_66d6e2234539406982aa1aaad9e82698.png)
 
-下载lib并指定版本为v2.50.0，否则接下来会与realsense-ros版本冲突导致无法打开摄像头:
+克隆`librealsense`源码并指定版本为`v2.50.0`:
 
 ```bash
 git clone -b v2.50.0 https://github.com/IntelRealSense/librealsense.git librealsense-2.50.0
@@ -930,7 +962,7 @@ git clone -b v2.50.0 https://mirror.ghproxy.com/https://github.com/IntelRealSens
 sudo apt install -y libssl-dev libgtk-3-dev libusb-1.0-0-dev libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev 
 ```
 
-进入刚才克隆的librealsense文件夹内：
+进入刚才克隆的`librealsense`文件夹内：
 
 ```bash
 cd librealsense-2.50.0/
@@ -969,7 +1001,7 @@ LINK_LIBRARIES(-lcurl -lcrypto)
 cmake -j$(nproc) ../ -DCMAKE_BUILD_TYPE=Release -DBUILD_EXAMPLES=true
 ```
 
-以下编译过慢，使用CPU最大线程进行make，速度会快很多：
+以下编译过慢，使用`CPU`最大线程进行`make`，速度会快很多：
 
 ```bash
 sudo make -j$(nproc)
@@ -991,9 +1023,9 @@ cd examples/capture
 
 ![32507b26116048919945b01bb173b72c](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:28:40_32507b26116048919945b01bb173b72c.png)
 
-接下来我们配置realsense-ros工作空间：
+接下来我们配置`realsense-ros`工作空间：
 
-创建一个realsense_test_ws文件夹，进入文件夹下，打开终端：
+创建一个`realsense_test_ws`文件夹，进入文件夹下，打开终端：
 
 ```bash
 mkdir src && cd src/
@@ -1078,7 +1110,7 @@ git clone https://mirror.ghproxy.com/https://github.com/Kinovarobotics/kinova-ro
 cd ..
 ```
 
-安装缺少的moveit中相应的功能包 ：
+安装缺少的`moveit`中相应的功能包 ：
 
 ```bash
 sudo apt install -y ros-${ROS_DISTRO}-moveit-visual-tools ros-${ROS_DISTRO}-moveit-ros-planning-interface
@@ -1104,7 +1136,7 @@ sudo apt install -y $(apt-cache search ros-${ROS_DISTRO}-pr2- | grep -v "ros-${R
 
 > [!CAUTION]
 >
-> ZZU-SR的童鞋请注意，此小节只需安装软件包，其他内容是之前[听课](https://www.bilibili.com/video/BV1Ub4y1a7PH?p=73)做的笔记，导航相关代码直接Copy比赛电脑的`catkin_ws`中的`mrobot`即可。
+> **ZZU-SR**的童鞋请注意，此小节只需安装软件包，其他内容是之前[听课](https://www.bilibili.com/video/BV1Ub4y1a7PH?p=73)做的笔记，导航相关代码直接`Copy`比赛电脑的`catkin_ws`中的`mrobot`即可。
 
 #### Runtime Dependency (ESSENTIAL)
 
@@ -1116,7 +1148,7 @@ sudo apt install -y "ros-${ROS_DISTRO}-move-base*" "ros-${ROS_DISTRO}-turtlebot3
 sudo apt install -y ros-${ROS_DISTRO}-dwa-local-planner ros-${ROS_DISTRO}-joy ros-${ROS_DISTRO}-teleop-twist-joy ros-${ROS_DISTRO}-teleop-twist-keyboard ros-${ROS_DISTRO}-laser-proc ros-${ROS_DISTRO}-rgbd-launch ros-${ROS_DISTRO}-depthimage-to-laserscan ros-${ROS_DISTRO}-rosserial-arduino ros-${ROS_DISTRO}-rosserial-python ros-${ROS_DISTRO}-rosserial-server ros-${ROS_DISTRO}-rosserial-client ros-${ROS_DISTRO}-rosserial-msgs ros-${ROS_DISTRO}-amcl ros-${ROS_DISTRO}-map-server ros-${ROS_DISTRO}-move-base ros-${ROS_DISTRO}-urdf ros-${ROS_DISTRO}-xacro ros-${ROS_DISTRO}-compressed-image-transport ros-${ROS_DISTRO}-rqt-image-view ros-${ROS_DISTRO}-gmapping ros-${ROS_DISTRO}-navigation ros-${ROS_DISTRO}-interactive-markers
 ```
 
-安装 gmapping 包（用于构建地图）：
+安装`gmapping`包（用于构建地图）：
 
 ```bash
 sudo apt install -y ros-${ROS_DISTRO}-gmapping
@@ -1128,29 +1160,29 @@ sudo apt install -y ros-${ROS_DISTRO}-gmapping
 sudo apt install -y ros-${ROS_DISTRO}-map-server
 ```
 
-安装 navigation 包（用于定位以及路径规划）:
+安装`navigation`包（用于定位以及路径规划）:
 
 ```bash
 sudo apt install -y ros-${ROS_DISTRO}-navigation
 ```
 
-因tf和tf2迁移问题，需将工作空间内的所有global_costmap_params.yaml和local_costmap_params.yaml文件里的头几行去掉“/”,返回工作空间根目录下重新编译。
+因`tf`和`tf2`迁移问题，需将工作空间内的所有`global_costmap_params.yaml`和`local_costmap_params.yaml`文件里的头几行去掉`/`,返回工作空间根目录下重新编译。
 
 > ***Reference：***
 >
-> [http://wiki.ros.org/tf2/Migration](http://wiki.ros.org/tf2/Migration)
+> [http://wiki.ros.org/tf2/Migration#Removal_of_support_for_tf_prefix](http://wiki.ros.org/tf2/Migration#Removal_of_support_for_tf_prefix)
 
-![1](https://static.m0rtzz.com/images/Year:2024/Month:03/Day:01/17:29:21_1.png)
+![image-20240825131636586](https://static.m0rtzz.com/images/Year%3A2024/Month%3A08/Day%3A25/13%3A16%3A36_image-20240825131636586.png)
 
-![2](https://static.m0rtzz.com/images/Year:2024/Month:03/Day:10/17:29:09_2.png)
+![image-20240825131656932](https://static.m0rtzz.com/images/Year%3A2024/Month%3A08/Day%3A25/13%3A16%3A57_image-20240825131656932.png)
 
-#### Arduino IDE (NOT REQUIRED)
+#### Arduino IDE (NOT REQUIRED) (EOL)
 
 [https://www.arduino.cc/en/software](https://www.arduino.cc/en/software)
 
 ![a5bb61f57e684a538b737a22d537a3c7](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:11_a5bb61f57e684a538b737a22d537a3c7.png)
 
-下载Linux 64bit安装包
+下载安装包：
 
 ```bash
 tar -xvf arduino-1.8.19-linux64.tar.xz
@@ -1172,7 +1204,7 @@ sudo chmod +x install.sh
 sudo ./install.sh
 ```
 
-#### 听课笔记 (NOT REQUIRED)
+#### 听课笔记 (NOT REQUIRED) (EOL)
 
 首先创建实体导航工作空间：
 
@@ -1191,12 +1223,6 @@ catkin_create_pkg entity_test roscpp rospy std_msgs gmapping map_server amcl mov
 ```bash
 cd .. && catkin_make
 ```
-
-```bash
-tree .
-```
-
-![f5242b23d16a43e88ce2626341f3ed33.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:13_f5242b23d16a43e88ce2626341f3ed33.png)
 
 ```bash
 cd src/ && catkin_create_pkg robot_start_test roscpp rospy std_msgs ros_arduino_python usb_cam rplidar_ros
@@ -1231,7 +1257,7 @@ cd src/
 catkin_create_pkg robot_description_test urdf xacro
 ```
 
-在功能包下新建urdf目录，编写具体的urdf文件：
+在功能包下新建`urdf`目录，编写具体的`urdf`文件：
 
 ```bash
 cd robot_description_test/ && mkdir urdf
@@ -1518,7 +1544,7 @@ roslaunch robot_description_test robot_test.launch
 
 ![756d60eb62c14cfe82eafa7e3bdf4862.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:13_756d60eb62c14cfe82eafa7e3bdf4862.png)
 
-之后Ctrl+Alt+T打开一个新的终端，输入：
+之后`Ctrl+Alt+T`打开一个新的终端，输入：
 
 ```bash
 rviz
@@ -1526,15 +1552,15 @@ rviz
 
 ![4dc525d781d94b19bfe14f73cd68738f.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:14_4dc525d781d94b19bfe14f73cd68738f.png)
 
-将 Fixed Frame设置为base_footprint：
+将`Fixed Frame`设置为`base_footprint`：
 
 ![c37069f5d4ba47cf94e637d64a15f416.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:14_c37069f5d4ba47cf94e637d64a15f416.png)
 
-Add一个RobotModel：
+`Add`一个`RobotModel`：
 
 ![4111cf3ff31e4bda9b90de04c5d76e8a.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:14_4111cf3ff31e4bda9b90de04c5d76e8a.png)
 
-Add一个TF：
+`Add`一个`TF`：
 
 ![9b1fddd56a704702b30240024f4e7b65.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:14_9b1fddd56a704702b30240024f4e7b65.png)
 
@@ -1907,9 +1933,9 @@ EOF
 source ~/.bashrc
 ```
 
-这样就可以更清晰的显示git分支~
+这样就可以更清晰的显示`git`分支~
 
-### 设置$HOME下的文件夹为英文
+### 设置$\{HOME\}下的文件夹为英文
 
 ```bash
 export LANG=en_US
@@ -1919,7 +1945,7 @@ export LANG=en_US
 xdg-user-dirs-gtk-update
 ```
 
-编辑选择右边的Update Names
+编辑选择右边的`Update Names`：
 
 ![11860bd995624609b10076f25fc108fb.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:25:55_11860bd995624609b10076f25fc108fb.png)
 
@@ -1953,7 +1979,7 @@ timedatectl set-local-rtc 1 --adjust-system-clock
 
 ### Software
 
-推荐一些linux办公常用的软件（linux版，不包括wine环境下，全部下载deb格式的安装包，系统架构可通过命令uname -a查看）：
+推荐一些`Linux`办公常用的软件（包括`wine`环境下，全部下载`deb`格式的安装包，系统架构可通过命令`uname -a`查看）：
 
 [百度网盘](https://pan.baidu.com/download#linux)
 
@@ -1969,7 +1995,7 @@ timedatectl set-local-rtc 1 --adjust-system-clock
 
 [搜狗输入法](https://shurufa.sogou.com/)（下载安装包后，官方会跳转至安装教程，严格按照步骤执行）
 
-[Visual Studio Code](https://code.visualstudio.com/docs/?dv=linux64_deb)（推荐打开Settings Sync，换电脑时设置可以同步）
+[Visual Studio Code](https://code.visualstudio.com/docs/?dv=linux64_deb)（推荐打开`Settings Sync`，换电脑时设置可以同步）
 
 ![195197efec704c98ba8f61ecc4c8370a.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:29:43_195197efec704c98ba8f61ecc4c8370a.png)
 
@@ -1977,7 +2003,7 @@ timedatectl set-local-rtc 1 --adjust-system-clock
 
 [星火应用商店](https://www.spark-app.store/download)
 
-仅支持Ubuntu20.04，需安装依赖包：
+仅支持`Ubuntu20.04`，需安装依赖包：
 
 ![image-20240718162329579](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/16:23:29_image-20240718162329579.png)
 
@@ -1985,9 +2011,9 @@ timedatectl set-local-rtc 1 --adjust-system-clock
 
 ![image-20240718202231084](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/20:22:31_image-20240718202231084.png)
 
-Ubuntu20.04以下版本或者不想安装星火应用商店的用户可安装Flatpak打包的微信（需安装Flatpak，下文有Flatpak安装教程）：
+`Ubuntu20.04`以下版本或者不想安装星火应用商店的用户可安装`Flatpak`打包的微信（需安装`Flatpak`，下文有`Flatpak`安装教程）：
 
-解决基于Fcitx5的搜狗输入法无法在Flatpak版微信中进行中文输入的问题：[https://github.com/web1n/wechat-universal-flatpak/issues/33#issuecomment-2222259823](https://github.com/web1n/wechat-universal-flatpak/issues/33#issuecomment-2222259823)
+解决基于`Fcitx5`的搜狗输入法无法在`Flatpak`版微信中进行中文输入的问题：[https://github.com/web1n/wechat-universal-flatpak/issues/33#issuecomment-2222259823](https://github.com/web1n/wechat-universal-flatpak/issues/33#issuecomment-2222259823)
 
 ```bash
 wget -q --show-progress https://github.com/web1n/wechat-universal-flatpak/releases/latest/download/com.tencent.WeChat-x86_64.flatpak -O com.tencent.WeChat-x86_64.flatpak && sudo flatpak install ./com.tencent.WeChat-x86_64.flatpak
@@ -2001,13 +2027,13 @@ sudo apt install -y terminator
 
 ![74c734b7ca9e4cc5a68246b4f8a73ee3.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:19_74c734b7ca9e4cc5a68246b4f8a73ee3.png)
 
-trash命令：
+`trash`命令：
 
 ```bash
 sudo apt install -y trash-cli
 ```
 
-tree命令：
+`tree`命令：
 
 ```bash
 sudo apt install -y tree
@@ -2029,13 +2055,13 @@ wget -q --show-progress https://github.com/fastfetch-cli/fastfetch/releases/late
 
 ![image-20240720105657155](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:20/10:56:57_image-20240720105657155.png)
 
-rar文件解压工具：
+`rar`文件解压工具：
 
 ```bash
 sudo apt install -y unrar
 ```
 
-解决不能观看MP4文件：
+解决不能观看`MP4`文件：
 
 ```bash
 sudo apt update -y
@@ -2098,7 +2124,7 @@ sudo apt update -y && sudo apt install -y diodon
 
 ![image-20240720105759025](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:20/10:57:59_image-20240720105759025.png)
 
-Flatpak：
+`Flatpak`：
 
 Ubuntu 18.10 (Cosmic Cuttlefish) or later：
 
@@ -2114,11 +2140,11 @@ sudo apt update -y
 sudo apt install -y flatpak
 ```
 
-FlatHub上交镜像源：
+`FlatHub`上交镜像源：
 
 [https://mirrors.sjtug.sjtu.edu.cn/docs/flathub](https://mirrors.sjtug.sjtu.edu.cn/docs/flathub)
 
-切换之后更新Flatpak应用将加速：
+切换之后更新`Flatpak`应用将加速：
 
 ```bash
 sudo flatpak update
@@ -2138,7 +2164,7 @@ about:config
 full-screen-api.warning.timeout
 ```
 
-设置为0~
+设置为`0`~
 
 ```ini
 full-screen-api.transition-duration.enter
@@ -2150,7 +2176,7 @@ full-screen-api.transition-duration.enter
 full-screen-api.transition-duration.leave
 ```
 
-都设置为0 0~
+都设置为`0 0`~
 
 ```ini
 browser.search.openintab
@@ -2164,7 +2190,7 @@ browser.urlbar.openintab
 browser.tabs.loadBookmarksInTabs
 ```
 
-都设置为true~
+都设置为`true`~
 
 ## OPTIONAL
 
@@ -2174,7 +2200,7 @@ browser.tabs.loadBookmarksInTabs
 sudo gedit /etc/default/grub
 ```
 
-改一下GRUB_DEFAULT=后边的数字，默认是0，windows是第n个就设置为n-1
+改一下`GRUB_DEFAULT=`后边的数字，默认是`0`，`Windows`是第`n`个就设置为`n-1`
 
 保存后关闭，打开终端，输入：
 
@@ -2192,11 +2218,11 @@ reboot
 
 [https://packages.ubuntu.com/source/bionic/gnome-terminal](https://packages.ubuntu.com/source/bionic/gnome-terminal)
 
-下载下图表格中的下边两个文件
+下载下图表格中的下边两个文件：
 
 ![ae94b3493cf44d08a7a962e070256653.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:03_ae94b3493cf44d08a7a962e070256653.png)
 
-下载好gnome-terminal_3.28.1.orig.tar.xz文件之后解压出一个文件夹gnome-terminal-3.28.1，将gnome-terminal_3.28.1-1ubuntu1.debian.tar.xz 里面debian目录下的文件解压到之前解压出的gnome-terminal-3.28.1目录下
+下载好`gnome-terminal_3.28.1.orig.tar.xz`文件之后解压出一个文件夹`gnome-terminal-3.28.1/`，将`gnome-terminal_3.28.1-1ubuntu1.debian.tar.xz `里面`debian/`目录下的所有文件解压到之前解压出的`gnome-terminal-3.28.1/`目录下
 
 ![5097eb7f2b8b474a8411cf11a3694b55.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:27:55_5097eb7f2b8b474a8411cf11a3694b55.png)
 
@@ -2212,7 +2238,7 @@ git apply patches/*.patch
 sudo apt install -y intltool libvte-2.91-dev gsettings-desktop-schemas-dev uuid-dev libdconf-dev libpcre2-dev libgconf2-dev libxml2-utils gnome-shell libnautilus-extension-dev itstool yelp-tools pcre2-utils
 ```
 
-打开src/下的terminal-nautilus.c
+打开`src/`下的`terminal-nautilus.c`
 
 找到
 
@@ -2244,7 +2270,7 @@ desktop_opens_home_dir (TerminalNautilus *nautilus)
 }
 ```
 
-src下打开终端
+`src/`下打开终端
 
 ```bash
 cd ..
@@ -2301,7 +2327,7 @@ wget -q --show-progress https://raw.gitcode.com/M0rtzz/protobuf-2.6.1/assets/199
 解压压缩包后进入文件夹，打开终端，输入：
 
 ```bash
-./autogen.sh
+./autogen.sh # 可有可无（Reference: https://github.com/protocolbuffers/protobuf/blob/v2.6.1/README.md?plain=1#L11-L21）
 ```
 
 ```bash
@@ -2325,42 +2351,26 @@ sudo make install
 ```
 
 ```bash
-sudo gedit /etc/profile
-```
-
-在最后加入：
-
-```bash
+sudo tee -a /etc/profile > /dev/null << 'EOF'
 # protobuf
-export PATH=${PATH}:/usr/local/protobuf/bin/export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:/usr/local/protobuf/lib/pkgconfig/
+export PATH=${PATH}:/usr/local/protobuf/bin/
+export LIBRARY_PATH=${LIBRARY_PATH}:/usr/local/protobuf/lib/
+export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:/usr/local/protobuf/lib/pkgconfig/
+EOF
 ```
-
-保存后关闭，打开终端，输入：
 
 ```bash
 source /etc/profile
 ```
 
 ```bash
-sudo gedit /etc/ld.so.conf
-```
-
-在最后一行输入：
-
-```ini
+sudo tee /etc/ld.so.conf.d/protobuf.conf > /dev/null << EOF
 /usr/local/protobuf/lib
+EOF
 ```
-
-保存后关闭，打开终端，输入：
 
 ```bash
 sudo ldconfig
-```
-
-最后验证版本：
-
-```bash
-protoc --version
 ```
 
 ### OpenBLAS
@@ -2377,7 +2387,11 @@ sudo apt update -y && sudo apt install -y libopenblas-dev
 sudo apt install -y gfortran gcc-arm-linux-gnueabihf libnewlib-arm-none-eabi libc6-dev-i386
 ```
 
-OpenBLAS源码（非最新）最上方百度网盘里有，或者使用公益加速源：
+```bash
+git clone https://github.com/OpenMathLib/OpenBLAS.git OpenBLAS
+```
+
+或公益加速源：
 
 ```bash
 git clone https://gitclone.com/github.com/OpenMathLib/OpenBLAS.git OpenBLAS
@@ -2395,7 +2409,7 @@ sudo make -j$(nproc)
 sudo make PREFIX=/usr/local install
 ```
 
-查看版本
+查看版本：
 
 ```bash
 grep OPENBLAS_VERSION /usr/local/include/openblas_config.h
@@ -3338,10 +3352,9 @@ cd .. && sudo make clean
 sudo make all -j$(nproc)
 ```
 
-由于caffe最后支持的版本是cuDNN7.6.5，为了能在cuDNN8的环境下编译通过，需要修改两个cpp文件，路径为/caffe/src/caffe/layers下的cudnn_conv_layer.cpp和cudnn_deconv_layer.cpp两个文件，分别将他们内容替换为：
+由于`caffe`不支持`cuDNN8.X`，为了能在`cuDNN8.X`的环境下编译通过，需要修改两个`cpp`文件，路径为`src/caffe/layers/`下的`cudnn_conv_layer.cpp`和`cudnn_deconv_layer.cpp`两个文件，分别将他们内容替换为：
 
 <Details summary="cudnn_conv_layer.cpp（点击展开）">
-
 `cudnn_conv_layer.cpp`
 
 ```cpp
@@ -4156,7 +4169,7 @@ namespace caffe
 
 </Details>
 
-由于cuDNN对代码进行了改版，在cudnn.h文件中不再指出cudnn的版本号，而是放在了cudnn_version.h文件中，所以，将cudnn_version.h中对于版本段的代码复制到cudnn.h文件中，代码如下：
+由于`cuDNN`修改了`API`，在`cudnn.h`文件中不再指出`cuDNN`的版本号，而是放在了`cudnn_version.h`文件中，所以，将`cudnn_version.h`中对于版本段的代码复制到`cudnn.h`文件中，代码如下：
 
 ```bash
 locate cudnn_version.h
@@ -4178,7 +4191,7 @@ sudo gedit /usr/local/cuda/targets/x86_64-linux/include/cudnn.h
 
 ![828bd6d08d3c4c8990d2227e667cfc98](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:15_828bd6d08d3c4c8990d2227e667cfc98.png)
 
-然后打开caffe包下的cudnn.hpp文件并指定cudnn.h路径：
+然后打开`caffe`包下的`cudnn.hpp`文件并指定`cudnn.h`路径：
 
 ![8a8df47d267a4f35a0e641ea1e4057c4](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:15_8a8df47d267a4f35a0e641ea1e4057c4.png)
 
@@ -4208,43 +4221,11 @@ sudo make pycaffe -j$(nproc)
 
 可能会有报错，但问题不大，我们只是需要那些库文件~
 
-### libfreenect2 (EOL)
-
-```bash
-git clone https://github.com/OpenKinect/libfreenect2.git libfreenect2
-```
-
-或公益加速源：
-
-```bash
-git clone https://mirror.ghproxy.com/https://github.com/OpenKinect/libfreenect2.git libfreenect2
-```
-
-```bash
-cd libfreenect2 && mkdir build && cd build/
-```
-
-```bash
-cmake -j$(nproc) .. -DENABLE_CXX11=ON
-```
-
-```bash
-sudo make -j$(nproc)
-```
-
-```bash
-sudo make install
-```
-
-```bash
-sudo cp ../platform/linux/udev/90-kinect2.rules /etc/udev/rules.d/
-```
-
 ### VTK-8.2.0及PCL-1.9.1 (EOL)
 
 [https://vtk.org/download/](https://vtk.org/download/)
 
-下载VTK-8.2.0.zip
+下载`VTK-8.2.0.zip`
 
 ![6895bcbb15424c2db7b82265cd3873d5](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:16_6895bcbb15424c2db7b82265cd3873d5.png)
 
@@ -4256,7 +4237,7 @@ sudo apt install -y cmake-gui && mkdir build && cd  build && cmake-gui
 
 ![19c7fca7f8e745cd8f97283961027dbb](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:16_19c7fca7f8e745cd8f97283961027dbb.png)
 
-单击Configure后勾选以下两项后单击Configure和Generate
+单击`Configure`后勾选以下两项后单击`Configure`和`Generate`：
 
 ![5889f9e275ba4d33a6506a89ee9e00e9](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:16_5889f9e275ba4d33a6506a89ee9e00e9.png)
 
@@ -4270,7 +4251,7 @@ sudo make -j$(nproc)
 sudo make install
 ```
 
-接下来安装pcl：
+接下来安装`pcl`：
 
 ```bash
 git clone -b pcl-1.9.1 https://github.com/PointCloudLibrary/pcl.git pcl-1.9.1
@@ -4346,7 +4327,7 @@ sudo apt install -y python-rosdep python-rosinstall python-rosinstall-generator 
 sudo apt install -y python3-pip
 ```
 
-使用阿里镜像源加速pip下载：
+使用阿里镜像源加速`pip`下载：
 
 ```bash
 sudo pip3 install rosdepc -i https://mirrors.aliyun.com/pypi/simple/
@@ -4367,7 +4348,7 @@ roscore
 
 ![52b0561164a34d3ea62b74322abe50bc.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:26:21_52b0561164a34d3ea62b74322abe50bc.png)
 
-再新建两个终端，分别输入
+再新建两个终端，分别输入：
 
 ```bash
 rosrun turtlesim turtlesim_node
@@ -4377,7 +4358,7 @@ rosrun turtlesim turtlesim_node
 rosrun turtlesim turtle_teleop_key
 ```
 
-在`rosrun turtlesim turtle_teleop_key`所在终端点击一下任意位置，然后使用←↕→小键盘控制，看小海龟会不会动，如果会动则安装成功。
+在`rosrun turtlesim turtle_teleop_key`所在终端点击一下任意位置，然后使用`←↕→`小键盘控制，看小海龟会不会动，如果会动则安装成功。
 
 ![c40128bd8c5245a48d386c21ba465449.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:26:29_c40128bd8c5245a48d386c21ba465449.png)
 
@@ -4419,7 +4400,7 @@ sudo apt install -y libjasper1 libjasper-dev
 sudo apt install -y cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev liblapacke-dev checkinstall
 ```
 
-进入opencv-3.4.16文件夹，打开终端，输入：
+进入`opencv-3.4.16/`文件夹，打开终端，输入：
 
 ```bash
 mkdir build
@@ -4429,7 +4410,7 @@ mkdir build
 cd build
 ```
 
-**接下来编译安装，注意此命令的OPENCV_EXTRA_MODULES_PATH=后边的路径是你电脑下的绝对路径，请自行修改**
+**接下来编译安装，注意此命令的`OPENCV_EXTRA_MODULES_PATH=`后边的路径是你电脑下的绝对路径，请自行修改**
 
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
@@ -4448,7 +4429,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -j$(nproc) ..
 ```
 
-过程中会出现IPPICV: Download: ippicv_2020_lnx_intel64_20191018_general.tgz
+过程中会出现`IPPICV: Download: ippicv_2020_lnx_intel64_20191018_general.tgz`
 
 解决方法：
 
@@ -4462,7 +4443,7 @@ cd downloads && pwd
 
 复制绝对路径后：
 
-打开这个ippicv.cmake
+打开这个`ippicv.cmake`
 
 ![6e9cc239b5a048ef932999f88634f470](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:26:38_6e9cc239b5a048ef932999f88634f470.png)
 
@@ -4470,7 +4451,7 @@ cd downloads && pwd
 
 ![image-20240824150153324](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:24/15:02:06_image-20240824150153324.png)
 
-然后把下面网址下载的文件cp进去就行了（或者开头百度云分享链接中自取~）
+然后把下面网址下载的文件`cp`进去就行了（或者开头百度云分享链接中自取~）
 
 [https://github.com/opencv/opencv_3rdparty](https://github.com/opencv/opencv_3rdparty)
 
@@ -4495,7 +4476,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 
 ![875eccbb886649e9af1df6fa04c0a168](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:26:49_875eccbb886649e9af1df6fa04c0a168.png)
 
-这些.i文件需要在国外服务器上下载，网上说下载好文件直接把他们放进相对应的目录下就行，实测不行（建议科学的上网，想试试网上说法的：
+这些`.i`文件需要在国外服务器上下载，网上说下载好文件直接把他们放进相对应的目录下就行，实测不行（建议科学的上网，想试试网上说法的：
 
 [https://blog.csdn.net/curious_undergather/article/details/111639199](https://blog.csdn.net/curious_undergather/article/details/111639199)
 
@@ -4539,38 +4520,26 @@ sudo make install
 ```
 
 ```bash
-sudo gedit /etc/ld.so.conf.d/opencv.conf
-```
-
-加入
-
-```ini
+sudo tee /etc/ld.so.conf.d/opencv.conf > /dev/null << EOF
 /usr/local/lib
+EOF
 ```
-
-保存后关闭，打开终端，输入：
 
 ```bash
 sudo ldconfig
 ```
 
 ```bash
-sudo gedit /etc/profile
-```
-
-加入
-
-```bash
+sudo tee -a /etc/profile > /dev/null << 'EOF'
 export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:/usr/local/lib/pkgconfig
+EOF
 ```
-
-保存后关闭，打开终端，输入：
 
 ```bash
 source /etc/profile
 ```
 
-测试
+测试：
 
 ```bash
 cd ../samples/cpp/example_cmake
@@ -4583,7 +4552,7 @@ sudo make -j$(nproc)
 
 安装成功！
 
-***设置cv_bridge的版本（ROS-melodic，经实践发现毫无效果）：***
+***设置`cv_bridge`的版本（`ROS-melodic`，经实践发现毫无效果）：***
 
 ```bash
 sudo gedit /opt/ros/melodic/share/cv_bridge/cmake/cv_bridgeConfig.cmake
@@ -4605,7 +4574,7 @@ set(libraries "cv_bridge;/usr/lib/x86_64-linux-gnu/libopencv_core.so.3.2.0;/usr/
 set(libraries "cv_bridge;/usr/local/lib/libopencv_core.so.3.4.16;/usr/local/lib/libopencv_imgproc.so.3.4.16;/usr/local/lib/libopencv_imgcodecs.so.3.4.16") // [!code ++]
 ```
 
-opencv-3.4.4cmake命令：
+`opencv-3.4.4`的`cmake`命令：
 
 ```bash
 cmake -D CMAKE_BUILD_TYPE=BUILD \
@@ -4676,21 +4645,21 @@ sudo apt install -y ninja-build doxygen clang gcc-multilib g++-multilib python3 
 wget -q --show-progress https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/libk4a1.4/libk4a1.4_1.4.2_amd64.deb -O ./libk4a1.4_1.4.2_amd64.deb
 ```
 
-解压 .deb 文件，再解压内部的`data.tar.gz`文件,并进入`data/usr/lib/x86_64-linux-gnu/`文件夹，打开终端输入：
+解压`.deb`文件，再解压内部的`data.tar.gz`文件,并进入`data/usr/lib/x86_64-linux-gnu/`文件夹，打开终端输入：
 
 ```bash
 sudo cp libdepthengine.so.2.0 /usr/lib/x86_64-linux-gnu/
 sudo cp /usr/lib/x86_64-linux-gnu/libdepthengine.so.2.0 /usr/lib/
 ```
 
-随后进入下载好的Azure-Kinect-Sensor-SDK-v1.4.0文件夹下打开终端输入
+随后进入下载好的`Azure-Kinect-Sensor-SDK-v1.4.0/`文件夹下打开终端输入
 
 ```bash
 mkdir build && cd build
 cmake -j$(nproc) .. -GNinja
 ```
 
-注意此步过程中extern/libyuv/src克隆较慢原因是使用了google的网站，我们把对应文件的克隆url改为github的就能正常克隆了，在Azure-Kinect-Sensor-SDK-v1.4.0文件夹下键盘Ctrl+H显示隐藏文件，打开.gitmodules文件，修改libyuv的部分为：
+注意此步过程中`extern/libyuv/src`克隆较慢原因是使用了`google`的网站，我们把对应文件的克隆`url`改为`GitHub`的就能正常克隆了，在`Azure-Kinect-Sensor-SDK-v1.4.0/`文件夹下键盘`Ctrl+H`显示隐藏文件，打开`.gitmodules`文件，修改`libyuv`的部分为：
 
 ```ini
 [submodule "extern/libyuv/src"]
@@ -4700,7 +4669,7 @@ cmake -j$(nproc) .. -GNinja
 
 保存后关闭
 
-之后打开.git文件夹下的config文件，修改libyuv的部分为：
+之后打开`.git/`文件夹下的`config`文件，修改`libyuv`的部分为：
 
 ```ini
 [submodule "extern/libyuv/src"]
@@ -4746,9 +4715,41 @@ cd .. && sudo cp scripts/99-k4a.rules /etc/udev/rules.d
 
 ## NOT REQUIRED
 
+### libfreenect2 (EOL)
+
+```bash
+git clone https://github.com/OpenKinect/libfreenect2.git libfreenect2
+```
+
+或公益加速源：
+
+```bash
+git clone https://mirror.ghproxy.com/https://github.com/OpenKinect/libfreenect2.git libfreenect2
+```
+
+```bash
+cd libfreenect2 && mkdir build && cd build/
+```
+
+```bash
+cmake -j$(nproc) .. -DENABLE_CXX11=ON
+```
+
+```bash
+sudo make -j$(nproc)
+```
+
+```bash
+sudo make install
+```
+
+```bash
+sudo cp ../platform/linux/udev/90-kinect2.rules /etc/udev/rules.d/
+```
+
 > [!WARNING]
 >
-> 此小节为科研项目所需，比赛无需安装。
+> 以下为科研项目所需，比赛无需安装。
 
 ### CarlaUE4
 
@@ -4772,7 +4773,7 @@ sudo chown -R m0rtzz: *
 
 ![2ea1050777ac49fbb8a0986e34d3140e](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:30:50_2ea1050777ac49fbb8a0986e34d3140e.png)
 
-因Epic更新了gitdeps，但Github上却没有更新，所以需要进入Github官方仓库release界面寻找对应版本的Commit.gitdeps.xml替换原来的文件即可：
+因`Epic`更新了`gitdeps`，但`Github`上却没有更新，所以需要进入`GitHub`官方仓库`Release`界面寻找对应版本的`Commit.gitdeps.xml`替换原来的文件即可：
 
 [https://github.com/EpicGames/UnrealEngine/releases/tag](https://github.com/EpicGames/UnrealEngine/releases/tag)
 
@@ -4780,7 +4781,7 @@ sudo chown -R m0rtzz: *
 
 ![a430a7833c97404cae877a549b6b2322](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:18_a430a7833c97404cae877a549b6b2322.png)
 
-鄙人认为是因执行Setup.sh脚本未赋予root权限导致依赖未安装完整，所以再次执行：
+鄙人认为是因执行`Setup.sh`脚本未赋予`root`权限导致依赖未安装完整，所以再次执行：
 
 ```bash
 sudo ./Setup.sh
@@ -4810,7 +4811,7 @@ tar -zxvf native-linux-v17_clang-10.0.1-centos7.tar.gz
 
 ### CARLA-0.9.14（添加fisheye sensor模块）
 
-修改Update.sh下载网址为南方科技大学镜像站的网址：
+修改`Update.sh`下载网址为南方科技大学镜像站的网址：
 
 ```bash
 # CONTENT_LINK=http://carla-assets.s3.amazonaws.com/${CONTENT_ID}.tar.gz
