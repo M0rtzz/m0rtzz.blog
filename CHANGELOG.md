@@ -42,34 +42,58 @@
 
 ## <small>3.1.5 (2024-08-24)</small>
 
+<<<<<<< HEAD
 * 📝 doc: update content ([2ed8d02](https://github.com/M0rtzz/m0rtzz.blog/commit/2ed8d02))
 * 📝 doc: update doc ([dae9245](https://github.com/M0rtzz/m0rtzz.blog/commit/dae9245))
 * 📝 docs(CHANGELOG.md): automatic update ([c97800d](https://github.com/M0rtzz/m0rtzz.blog/commit/c97800d))
+=======
+* 📝 doc: update doc ([dae9245](https://github.com/M0rtzz/m0rtzz.blog/commit/dae9245))
+* 📝 docs(CHANGELOG.md): automatic update ([c97800d](https://github.com/M0rtzz/m0rtzz.blog/commit/c97800d))
+* 🔖 tag(package.json): v3.1.5 ([7af0c73](https://github.com/M0rtzz/m0rtzz.blog/commit/7af0c73))
+
+
+
+## <small>3.1.4 (2024-08-19)</small>
+
+* 📝 doc: update content ([2ed8d02](https://github.com/M0rtzz/m0rtzz.blog/commit/2ed8d02))
+>>>>>>> 📝 docs(CHANGELOG.md): automatic update
 * 📝 docs(CHANGELOG.md): automatic update ([fb5d8e8](https://github.com/M0rtzz/m0rtzz.blog/commit/fb5d8e8))
 * 📝 docs(CHANGELOG.md): automatic update ([21fda45](https://github.com/M0rtzz/m0rtzz.blog/commit/21fda45))
 * 🔖 tag(package.json): v3.1.0 ([d23d716](https://github.com/M0rtzz/m0rtzz.blog/commit/d23d716))
 * 🔖 tag(package.json): v3.1.4 ([08c86ca](https://github.com/M0rtzz/m0rtzz.blog/commit/08c86ca))
+<<<<<<< HEAD
 * 🔖 tag(package.json): v3.1.5 ([7af0c73](https://github.com/M0rtzz/m0rtzz.blog/commit/7af0c73))
+=======
+>>>>>>> 📝 docs(CHANGELOG.md): automatic update
 * 🧱 chore(package.json): add author ([e8ab2e1](https://github.com/M0rtzz/m0rtzz.blog/commit/e8ab2e1))
 
 
 
 ## <small>3.1.3 (2024-08-15)</small>
 
+<<<<<<< HEAD
 * 🐛 fix(globals.css): fix the indentation issue of multi-level lists in warning box ([9143e75](https://github.com/M0rtzz/m0rtzz.blog/commit/9143e75))
 * 👔 logic(transfer.sh): change the order of steps ([0e598c1](https://github.com/M0rtzz/m0rtzz.blog/commit/0e598c1))
 * 💄 ui(globals.css): hide marker of ul ([082a2ad](https://github.com/M0rtzz/m0rtzz.blog/commit/082a2ad))
 * 💄 ui(globals.css): unset padding-inline-start ([9452d95](https://github.com/M0rtzz/m0rtzz.blog/commit/9452d95))
 * 💩 poop(CHANGELOG.md): shit issue ([519ed24](https://github.com/M0rtzz/m0rtzz.blog/commit/519ed24))
+=======
+* 👔 logic(transfer.sh): change the order of steps ([0e598c1](https://github.com/M0rtzz/m0rtzz.blog/commit/0e598c1))
+* 💄 ui(globals.css): hide marker of ul ([082a2ad](https://github.com/M0rtzz/m0rtzz.blog/commit/082a2ad))
+* 💄 ui(globals.css): unset padding-inline-start ([9452d95](https://github.com/M0rtzz/m0rtzz.blog/commit/9452d95))
+>>>>>>> 📝 docs(CHANGELOG.md): automatic update
 * 💬 text(text.tsx): from `nvim` to `vim` ([05fbe37](https://github.com/M0rtzz/m0rtzz.blog/commit/05fbe37))
 * 📝 docs(CHANGELOG.md): automatic update ([c587d61](https://github.com/M0rtzz/m0rtzz.blog/commit/c587d61))
 * 📝 docs(CHANGELOG.md): automatic update ([9ce3d46](https://github.com/M0rtzz/m0rtzz.blog/commit/9ce3d46))
 * 📝 docs(CHANGELOG.md): automatic update ([332ecef](https://github.com/M0rtzz/m0rtzz.blog/commit/332ecef))
 * 📝 docs(CHANGELOG.md): automatic update ([f5bed0c](https://github.com/M0rtzz/m0rtzz.blog/commit/f5bed0c))
 * 📝 docs(CHANGELOG.md): automatic update ([3b04835](https://github.com/M0rtzz/m0rtzz.blog/commit/3b04835))
+<<<<<<< HEAD
 * 📝 docs(CHANGELOG.md): automatic update ([6dcfd4b](https://github.com/M0rtzz/m0rtzz.blog/commit/6dcfd4b))
 * 📝 docs(CHANGELOG.md): automatic update ([4ced151](https://github.com/M0rtzz/m0rtzz.blog/commit/4ced151))
 * 🔖 tag(package.json): v3.0.9 ([6ab2ccd](https://github.com/M0rtzz/m0rtzz.blog/commit/6ab2ccd))
+=======
+>>>>>>> 📝 docs(CHANGELOG.md): automatic update
 * 🔖 tag(package.json): v3.1.0 ([d336eda](https://github.com/M0rtzz/m0rtzz.blog/commit/d336eda))
 * 🔖 tag(package.json): v3.1.1 ([6268e6a](https://github.com/M0rtzz/m0rtzz.blog/commit/6268e6a))
 * 🔖 tag(package.json): v3.1.2 ([26a8f62](https://github.com/M0rtzz/m0rtzz.blog/commit/26a8f62))
@@ -77,6 +101,19 @@
 
 
 
+<<<<<<< HEAD
+=======
+## <small>3.0.9 (2024-08-15)</small>
+
+* 🐛 fix(globals.css): fix the indentation issue of multi-level lists in warning box ([9143e75](https://github.com/M0rtzz/m0rtzz.blog/commit/9143e75))
+* 💩 poop(CHANGELOG.md): shit issue ([519ed24](https://github.com/M0rtzz/m0rtzz.blog/commit/519ed24))
+* 📝 docs(CHANGELOG.md): automatic update ([6dcfd4b](https://github.com/M0rtzz/m0rtzz.blog/commit/6dcfd4b))
+* 📝 docs(CHANGELOG.md): automatic update ([4ced151](https://github.com/M0rtzz/m0rtzz.blog/commit/4ced151))
+* 🔖 tag(package.json): v3.0.9 ([6ab2ccd](https://github.com/M0rtzz/m0rtzz.blog/commit/6ab2ccd))
+
+
+
+>>>>>>> 📝 docs(CHANGELOG.md): automatic update
 ## <small>3.0.8 (2024-08-14)</small>
 
 * 📝 docs(CHANGELOG.md): automatic update ([a585c5b](https://github.com/M0rtzz/m0rtzz.blog/commit/a585c5b))
@@ -104,6 +141,7 @@
 ## <small>3.0.5 (2024-08-14)</small>
 
 * ♻️ refactor(environment_configuration.md): refactor content ([de4fd17](https://github.com/M0rtzz/m0rtzz.blog/commit/de4fd17))
+<<<<<<< HEAD
 * 📝 docs(CHANGELOG.md): automatic update ([884e234](https://github.com/M0rtzz/m0rtzz.blog/commit/884e234))
 * 🔖 tag(package.json): v3.0.5 ([8ddb9a1](https://github.com/M0rtzz/m0rtzz.blog/commit/8ddb9a1))
 
@@ -112,30 +150,56 @@
 ## <small>3.0.4 (2024-08-14)</small>
 
 * 📝 doc(git commit规范及自动生成CHANGELOG.md): update script ([4a05751](https://github.com/M0rtzz/m0rtzz.blog/commit/4a05751))
+=======
+* 📝 doc(git commit规范及自动生成CHANGELOG.md): update script ([4a05751](https://github.com/M0rtzz/m0rtzz.blog/commit/4a05751))
+* 📝 docs(CHANGELOG.md): automatic update ([884e234](https://github.com/M0rtzz/m0rtzz.blog/commit/884e234))
+>>>>>>> 📝 docs(CHANGELOG.md): automatic update
 * 📝 docs(CHANGELOG.md): automatic update ([b0b3acb](https://github.com/M0rtzz/m0rtzz.blog/commit/b0b3acb))
 * 📝 docs(CHANGELOG.md): automatic update ([8a58c39](https://github.com/M0rtzz/m0rtzz.blog/commit/8a58c39))
 * 🔖 tag(package.json): v3.0.2 ([629d527](https://github.com/M0rtzz/m0rtzz.blog/commit/629d527))
 * 🔖 tag(package.json): v3.0.4 ([5c9b032](https://github.com/M0rtzz/m0rtzz.blog/commit/5c9b032))
+<<<<<<< HEAD
+=======
+* 🔖 tag(package.json): v3.0.5 ([8ddb9a1](https://github.com/M0rtzz/m0rtzz.blog/commit/8ddb9a1))
+>>>>>>> 📝 docs(CHANGELOG.md): automatic update
 * 🚸 usability(transfer.sh): update the search path for grep ([a90fa1e](https://github.com/M0rtzz/m0rtzz.blog/commit/a90fa1e))
 
 
 
 ## <small>3.0.3 (2024-08-14)</small>
 
+<<<<<<< HEAD
+=======
+* 📝 docs(CHANGELOG.md): automatic update ([7b19742](https://github.com/M0rtzz/m0rtzz.blog/commit/7b19742))
+* 🔖 tag(package.json): v3.0.3 ([3c71fa4](https://github.com/M0rtzz/m0rtzz.blog/commit/3c71fa4))
+* 🦺 val(transfer.sh): add the -r option of xargs to avoid executing sed cmd without pipe input ([96b5ac5](https://github.com/M0rtzz/m0rtzz.blog/commit/96b5ac5))
+* 🙈 ignore(.gitignore): update .gitignore ([ce9828b](https://github.com/M0rtzz/m0rtzz.blog/commit/ce9828b))
+
+
+
+## <small>3.0.2 (2024-08-14)</small>
+
+>>>>>>> 📝 docs(CHANGELOG.md): automatic update
 * ⚗️ exp(transfer.sh): googlefonts and gstatic mirror site experiment ([58bbcc4](https://github.com/M0rtzz/m0rtzz.blog/commit/58bbcc4))
 * ⬆️ up_dep: upgrade dependency ([b7c4445](https://github.com/M0rtzz/m0rtzz.blog/commit/b7c4445))
 * 👽️ api(shiki): upgrade shikijs ([efac911](https://github.com/M0rtzz/m0rtzz.blog/commit/efac911))
 * 👽️ api(tw-styled): upgrade tw-styled ([15edaf2](https://github.com/M0rtzz/m0rtzz.blog/commit/15edaf2))
 * 💬 text(environment_configuration.md): update text ([9f790b8](https://github.com/M0rtzz/m0rtzz.blog/commit/9f790b8))
 * 📝 doc(git commit规范及自动生成CHANGELOG.md): update config ([e661022](https://github.com/M0rtzz/m0rtzz.blog/commit/e661022))
+<<<<<<< HEAD
 * 📝 docs(CHANGELOG.md): automatic update ([7b19742](https://github.com/M0rtzz/m0rtzz.blog/commit/7b19742))
+=======
+>>>>>>> 📝 docs(CHANGELOG.md): automatic update
 * 📝 docs(CHANGELOG.md): automatic update ([11aa8cb](https://github.com/M0rtzz/m0rtzz.blog/commit/11aa8cb))
 * 📝 docs(CHANGELOG.md): automatic update ([b607c01](https://github.com/M0rtzz/m0rtzz.blog/commit/b607c01))
 * 🔖 tag(package.json): v2.9.8 ([a9d787f](https://github.com/M0rtzz/m0rtzz.blog/commit/a9d787f))
 * 🔖 tag(package.json): v3.0.2 ([0ac6954](https://github.com/M0rtzz/m0rtzz.blog/commit/0ac6954))
+<<<<<<< HEAD
 * 🔖 tag(package.json): v3.0.3 ([3c71fa4](https://github.com/M0rtzz/m0rtzz.blog/commit/3c71fa4))
 * 🦺 val(transfer.sh): add the -r option of xargs to avoid executing sed cmd without pipe input ([96b5ac5](https://github.com/M0rtzz/m0rtzz.blog/commit/96b5ac5))
 * 🙈 ignore(.gitignore): update .gitignore ([ce9828b](https://github.com/M0rtzz/m0rtzz.blog/commit/ce9828b))
+=======
+>>>>>>> 📝 docs(CHANGELOG.md): automatic update
 
 
 
@@ -145,9 +209,7 @@
 * 🔖 tag(package.json): v3.0.1 ([c08570d](https://github.com/M0rtzz/m0rtzz.blog/commit/c08570d))
 * 🔥 remove: rm unused code ([68e4550](https://github.com/M0rtzz/m0rtzz.blog/commit/68e4550))
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-## [3.1.10](https://github.com/M0rtzz/m0rtzz.blog/compare/v3.1.9...v3.1.10) (2024-08-25)
 
 ## 3.0.0 (2024-08-13)
 
@@ -1858,3 +1920,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
