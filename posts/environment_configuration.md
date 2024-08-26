@@ -756,7 +756,7 @@ python3 ./modules/python/src2/gen2.py \
 >
 > [https://github.com/opencv/opencv/issues/10771#issuecomment-376861139](https://github.com/opencv/opencv/issues/10771#issuecomment-376861139)
 
-### 处理配置文件
+#### 处理配置文件
 
 如果不执行以下几步，编译`darknet_ros`会报错: `error: 'IplImage'`之类的：
 
