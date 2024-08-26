@@ -90,6 +90,7 @@
   .diff,
   .highlighted {
     /* width: calc(100% + theme('spacing.10')); */
+    /* min-width: calc(100% + theme('spacing.10')); */
     @apply relative inline-block;
     margin-left: 0;
   }
@@ -147,7 +148,7 @@
   width: 0.75rem !important;
 } */
 
-span .line.diff::before {
+.line.diff::before {
   content: counter(step) var(--tw-content, 'default') !important;
   /* margin-left: 0.31rem !important; */
   left: 0.95rem !important;
