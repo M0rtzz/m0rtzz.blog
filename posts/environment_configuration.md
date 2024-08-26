@@ -723,6 +723,7 @@ if(CUDA_FOUND)
     ocv_list_filterout(CUDA_npp_LIBRARY "nppicom") // [!code ++]
     ocv_list_filterout(CUDA_nppi_LIBRARY "nppicom") // [!code ++]
   endif() // [!code ++]
+  if(WITH_CUFFT)
 ```
 
 ![image-20240826153656145](https://static.m0rtzz.com/images/Year%3A2024/Month%3A08/Day%3A26/15%3A36%3A56_image-20240826153656145.png)
@@ -870,7 +871,7 @@ cd .. && ./darknet detect cfg/yolov3.cfg weights/yolov3.weights data/dog.jpg
 
 输出以下就证明配置没有问题：
 
-![9967309fc02949e98046bf0b4566371b.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:28:00_9967309fc02949e98046bf0b4566371b.png)
+![f0b4566371b](https://static.m0rtzz.com/images/Year%3A2024/Month%3A08/Day%3A26/17%3A19%3A26_f0b4566371b.png)
 
 输出的最后一行报错：
 
