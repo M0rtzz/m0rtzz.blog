@@ -6,6 +6,8 @@
 >
 > **ZZU-SR**的童鞋配置环境前可以给鄙人发邮件：[E-mail](mailto:m0rtzz@stu.zzu.edu.cn)，另外：
 >
+> ***如果装了`Anaconda3/Miniconda3`，最好设置`auto_activate_base: false`，没有特殊需求不要激活虚拟环境，否则会影响编译。***
+>
 > 本文根据重要程度对各个步骤进行分类：
 >
 > - ESSENTIAL (必需)
@@ -206,7 +208,7 @@ sudo ubuntu-drivers devices
 
 ![image-20240219202632909](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:19/20:26:33_image-20240219202632909.png)
 
-寻找带有recommended的版本，输入：
+寻找带有`recommended`的版本，输入：
 
 ```bash
 sudo apt install -y nvidia-driver-your_version nvidia-settings nvidia-prime
@@ -364,32 +366,52 @@ rosrun turtlesim turtle_teleop_key
 
 ***经尝试多版本Ubuntu和OpenCV，装Ubuntu20.04，ROS noetic和OpenCV4.2.0及其扩展模块才能解决将彩色图像转换为网络所需的输入Blob后前馈时抛出的【raised OpenCV exception，error: (-215:Assertion failed)等等】。***
 
+#### cmake命令
+
 以下为几次成功安装的命令（注意替换命令中的绝对路径），安装过程可以参考**NOT RECOMMENDED**中的`OpenCV3`安装步骤：
 
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
--D OPENCV_GENERATE_PKGCONFIG=ON \
--D INSTALL_PYTHON_EXAMPLES=ON \
--D INSTALL_C_EXAMPLES=ON \
--D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-4.2.0/opencv_contrib-4.2.0/modules \
--D WITH_V4L=ON \
 -D WITH_QT=ON \
 -D WITH_GTK=ON \
 -D WITH_VTK=ON \
--D WITH_OPENGL=ON \
--D WITH_OPENMP=ON \
--D BUILD_EXAMPLES=ON \
+-D WITH_ADE=OFF \
 -D WITH_CUDA=ON \
 -D WITH_CUDNN=ON \
+-D WITH_OPENMP=ON \
+-D WITH_LAPACK=OFF \
 -D OPENCV_DNN_CUDA=ON \
--D BUILD_TIFF=ON \
--D ENABLE_PRECOMPILED_HEADERS=OFF \
--D OPENCV_ENABLE_NONFREE=ON \
 -D CUDA_GENERATION=Auto \
--D CUDA_CUDA_LIBRARY=/usr/local/cuda/lib64/stubs/libcuda.so \
+-D CUDA_CUDA_LIBRARY=ON \
+-D OPENCV_ENABLE_NONFREE=ON \
+-D OPENCV_GENERATE_PKGCONFIG=ON \
+-D ENABLE_PRECOMPILED_HEADERS=OFF \
+-D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-4.2.0/opencv_contrib-4.2.0/modules \
+-j$(nproc) ..
+```
+
+或：
+
+```bash
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+-D WITH_QT=ON \
+-D WITH_GTK=ON \
+-D WITH_VTK=ON \
+-D WITH_ADE=OFF \
+-D WITH_CUDA=ON \
+-D WITH_CUDNN=ON \
+-D WITH_OPENMP=ON \
+-D WITH_LAPACK=OFF \
+-D OPENCV_DNN_CUDA=ON \
+-D CUDA_GENERATION=Auto \
+-D CUDA_CUDA_LIBRARY=ON \
+-D OPENCV_ENABLE_NONFREE=ON \
+-D OPENCV_GENERATE_PKGCONFIG=ON \
+-D ENABLE_PRECOMPILED_HEADERS=OFF \
 -D CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda \
 -D CUDNN_LIBRARY=/usr/local/cuda/lib64/libcudnn.so \
--D WITH_ADE=OFF \
+-D CUDA_CUDA_LIBRARY=/usr/local/cuda/lib64/stubs/libcuda.so \
+-D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-4.2.0/opencv_contrib-4.2.0/modules \
 -j$(nproc) ..
 ```
 
@@ -397,58 +419,24 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
--D OPENCV_GENERATE_PKGCONFIG=ON \
--D INSTALL_PYTHON_EXAMPLES=ON \
--D INSTALL_C_EXAMPLES=ON \
--D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-4.2.0/opencv_contrib-4.2.0/modules \
--D WITH_V4L=ON \
 -D WITH_QT=ON \
 -D WITH_GTK=ON \
 -D WITH_VTK=ON \
--D WITH_OPENGL=ON \
--D WITH_OPENMP=ON \
--D BUILD_EXAMPLES=ON \
+-D WITH_ADE=OFF \
 -D WITH_CUDA=ON \
 -D WITH_CUDNN=ON \
+-D WITH_OPENMP=ON \
+-D WITH_LAPACK=OFF \
+-D CUDA_ARCH_BIN=8.6 \
 -D OPENCV_DNN_CUDA=ON \
--D BUILD_TIFF=ON \
--D ENABLE_PRECOMPILED_HEADERS=OFF \
--D OPENCV_ENABLE_NONFREE=ON \
 -D CUDA_GENERATION=Auto \
--D WITH_ADE=OFF \
--D CUDA_CUDA_LIBRARY=true \
--D CUDA_nppicom_LIBRARY=true \
--j$(nproc) ..
-```
-
-或：
-
-```bash
-cmake -D CMAKE_BUILD_TYPE=RELEASE \
+-D CUDA_CUDA_LIBRARY=ON \
+-D OPENCV_ENABLE_NONFREE=ON \
 -D OPENCV_GENERATE_PKGCONFIG=ON \
--D INSTALL_PYTHON_EXAMPLES=ON \
--D INSTALL_C_EXAMPLES=ON \
--D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-4.2.0/opencv_contrib-4.2.0/modules \
--D WITH_V4L=ON \
--D WITH_QT=ON \
--D WITH_GTK=ON \
--D WITH_VTK=OFF \
--D WITH_OPENGL=ON \
--D WITH_OPENMP=ON \
--D BUILD_EXAMPLES=ON \
--D WITH_CUDA=ON \
--D WITH_CUDNN=ON \
--D OPENCV_DNN_CUDA=ON \
--D BUILD_TIFF=ON \
 -D ENABLE_PRECOMPILED_HEADERS=OFF \
--D OPENCV_ENABLE_NONFREE=ON \
--D CUDA_GENERATION=Auto \
--D WITH_ADE=OFF \
--D CUDA_CUDA_LIBRARY=true \
--D CUDNN_LIBRARY=/usr/local/cuda/lib64/libcudnn.so \
--D CUDA_ARCH_BIN=8.6\
--D CUDA_nppicom_LIBRARY=stdc++ \
 -D CUDA_HOST_COMPILER:FILEPATH=/usr/bin/gcc \
+-D CUDNN_LIBRARY=/usr/local/cuda/lib64/libcudnn.so \
+-D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-4.2.0/opencv_contrib-4.2.0/modules \
 -j$(nproc) ..
 ```
 
@@ -462,9 +450,242 @@ mlocate deviceQuery | grep cuda | head -n 1 | xargs -r bash -c | grep 'CUDA Capa
 
 ![image-20240824153854954](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:24/15:38:55_image-20240824153854954.png)
 
-***（解决CUDNN8编译报错，需手动加入PR代码）***
+#### 部分报错解决办法
 
-[https://github.com/opencv/opencv/pull/17685/files](https://github.com/opencv/opencv/pull/17685/files)
+##### cuDNN8.X相关
+
+###### 无法识别cuDNN版本
+
+![image-20240826153451298](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/15:34:51_image-20240826153451298.png)
+
+解决办法：
+
+修改`../cmake/FindCUDNN.cmake`：
+
+```cmake
+# extract version from the include
+if(CUDNN_INCLUDE_DIR)
+  file(READ "${CUDNN_INCLUDE_DIR}/cudnn.h" CUDNN_H_CONTENTS) // [!code --]
+  if(EXISTS "${CUDNN_INCLUDE_DIR}/cudnn_version.h") // [!code ++]
+    file(READ "${CUDNN_INCLUDE_DIR}/cudnn_version.h" CUDNN_H_CONTENTS) // [!code ++]
+  else() // [!code ++]
+    file(READ "${CUDNN_INCLUDE_DIR}/cudnn.h" CUDNN_H_CONTENTS) // [!code ++]
+  endif() // [!code ++]
+
+  string(REGEX MATCH "define CUDNN_MAJOR ([0-9]+)" _ "${CUDNN_H_CONTENTS}")
+  set(CUDNN_MAJOR_VERSION ${CMAKE_MATCH_1} CACHE INTERNAL "")
+  message("CUDNN_MAJOR_VERSION:" ${CUDNN_MAJOR_VERSION}) // [!code ++]
+  string(REGEX MATCH "define CUDNN_MINOR ([0-9]+)" _ "${CUDNN_H_CONTENTS}")
+  set(CUDNN_MINOR_VERSION ${CMAKE_MATCH_1} CACHE INTERNAL "")
+  message("CUDNN_MINOR_VERSION:" ${CUDNN_MINOR_VERSION}) // [!code ++]
+  string(REGEX MATCH "define CUDNN_PATCHLEVEL ([0-9]+)" _ "${CUDNN_H_CONTENTS}")
+  set(CUDNN_PATCH_VERSION ${CMAKE_MATCH_1} CACHE INTERNAL "")
+  message("CUDNN_PATCH_VERSION:" ${CUDNN_PATCH_VERSION}) // [!code ++]
+
+  set(CUDNN_VERSION
+    "${CUDNN_MAJOR_VERSION}.${CUDNN_MINOR_VERSION}.${CUDNN_PATCH_VERSION}"
+    CACHE
+    STRING // [!code --]
+    INTERNAL // [!code ++]
+    "cuDNN version"
+  )
+
+  unset(CUDNN_H_CONTENTS)
+endif()
+```
+
+> **Reference:**
+>
+> [https://github.com/opencv/opencv/issues/18697](https://github.com/opencv/opencv/issues/18697)
+
+###### 添加cuDNN8.X支持
+
+![image-20240826155810307](https://static.m0rtzz.com/images/Year%3A2024/Month%3A08/Day%3A26/15%3A58%3A10_image-20240826155810307.png)
+
+需手动加入PR代码：
+
+```cpp
+// @brief: 行号是按照从上到下添加的顺序依次排列的
+// @file: ../modules/dnn/src/cuda4dnn/csl/cudnn/convolution.hpp
+
+// @line: 226左右
+                CUDA4DNN_CHECK_CUDNN(cudnnSetConvolutionGroupCount(descriptor, group_count));
+// [!code ++]
+#if CUDNN_MAJOR >= 8 // [!code ++]
+                /* cuDNN 7 and below use FMA math by default. cuDNN 8 includes TF32 Tensor Ops // [!code ++]
+                 * in the default setting. TF32 convolutions have lower precision than FP32. // [!code ++]
+                 * Hence, we set the math type to CUDNN_FMA_MATH to reproduce old behavior. // [!code ++]
+                 */ // [!code ++]
+                CUDA4DNN_CHECK_CUDNN(cudnnSetConvolutionMathType(descriptor, CUDNN_FMA_MATH)); // [!code ++]
+#endif // [!code ++]
+// [!code ++]
+                if (std::is_same<T, half>::value) // [!code ++]
+
+/********************************分割线********************************/               
+
+// @line: 263左右
+        ConvolutionAlgorithm(
+            const Handle& handle, // [!code --]
+            const ConvolutionDescriptor<T>& conv, // [!code --]
+            const FilterDescriptor<T>& filter, // [!code --]
+            const TensorDescriptor<T>& input, // [!code --]
+            const TensorDescriptor<T>& output) // [!code --]
+            const ConvolutionDescriptor<T>& convDesc, // [!code ++]
+            const FilterDescriptor<T>& filterDesc, // [!code ++]
+            const TensorDescriptor<T>& inputDesc, // [!code ++]
+            const TensorDescriptor<T>& outputDesc) // [!code ++]
+
+/********************************分割线********************************/               
+
+// @line: 269左右
+        {
+#if CUDNN_MAJOR >= 8 // [!code ++]
+            int requestedAlgoCount = 0, returnedAlgoCount = 0; // [!code ++]
+            CUDA4DNN_CHECK_CUDNN(cudnnGetConvolutionForwardAlgorithmMaxCount(handle.get(), &requestedAlgoCount)); // [!code ++]
+            std::vector<cudnnConvolutionFwdAlgoPerf_t> results(requestedAlgoCount); // [!code ++]
+            CUDA4DNN_CHECK_CUDNN( // [!code ++]
+                cudnnGetConvolutionForwardAlgorithm_v7( // [!code ++]
+                    handle.get(), // [!code ++]
+                    inputDesc.get(), filterDesc.get(), convDesc.get(), outputDesc.get(), // [!code ++]
+                    requestedAlgoCount, // [!code ++]
+                    &returnedAlgoCount, // [!code ++]
+                    &results[0] // [!code ++]
+                ) // [!code ++]
+            ); // [!code ++]
+// [!code ++]
+            size_t free_memory, total_memory; // [!code ++]
+            CUDA4DNN_CHECK_CUDA(cudaMemGetInfo(&free_memory, &total_memory)); // [!code ++]
+// [!code ++]
+            bool found_conv_algorithm = false; // [!code ++]
+            for (int i = 0; i < returnedAlgoCount; i++) // [!code ++]
+            { // [!code ++]
+                if (results[i].status == CUDNN_STATUS_SUCCESS && // [!code ++]
+                    results[i].algo != CUDNN_CONVOLUTION_FWD_ALGO_WINOGRAD_NONFUSED && // [!code ++]
+                    results[i].memory < free_memory) // [!code ++]
+                { // [!code ++]
+                    found_conv_algorithm = true; // [!code ++]
+                    algo = results[i].algo; // [!code ++]
+                    workspace_size = results[i].memory; // [!code ++]
+                    break; // [!code ++]
+                } // [!code ++]
+            } // [!code ++]
+// [!code ++]
+            if (!found_conv_algorithm) // [!code ++]
+                CV_Error (cv::Error::GpuApiCallError, "cuDNN did not return a suitable algorithm for convolution."); // [!code ++]
+#else // [!code ++]
+            CUDA4DNN_CHECK_CUDNN(
+
+/********************************分割线********************************/               
+
+// @line: 304左右
+                cudnnGetConvolutionForwardAlgorithm(
+                    handle.get(),
+                    input.get(), filter.get(), conv.get(), output.get(), // [!code --]
+                    inputDesc.get(), filterDesc.get(), convDesc.get(), outputDesc.get(), // [!code ++]
+                    CUDNN_CONVOLUTION_FWD_PREFER_FASTEST,
+    
+/********************************分割线********************************/               
+
+// @line: 314左右
+                cudnnGetConvolutionForwardWorkspaceSize(
+                    handle.get(),
+                    input.get(), filter.get(), conv.get(), output.get(), // [!code --]
+                    inputDesc.get(), filterDesc.get(), convDesc.get(), outputDesc.get(), // [!code ++]
+                    algo, &workspace_size
+       
+/********************************分割线********************************/               
+
+// @line: 320左右
+            );
+#endif // [!code ++]
+        }
+
+        ConvolutionAlgorithm& operator=(const ConvolutionAlgorithm&) = default;
+```
+
+```cpp
+// @brief: 行号是按照从上到下添加的顺序依次排列的
+// @file: ../modules/dnn/src/cuda4dnn/csl/cudnn/transpose_convolution.hpp
+
+// @line: 31左右
+        TransposeConvolutionAlgorithm(
+            const Handle& handle, // [!code --]
+            const ConvolutionDescriptor<T>& conv, // [!code --]
+            const FilterDescriptor<T>& filter, // [!code --]
+            const TensorDescriptor<T>& input, // [!code --]
+            const TensorDescriptor<T>& output) // [!code --]
+            const ConvolutionDescriptor<T>& convDesc, // [!code ++]
+            const FilterDescriptor<T>& filterDesc, // [!code ++]
+            const TensorDescriptor<T>& inputDesc, // [!code ++]
+            const TensorDescriptor<T>& outputDesc) // [!code ++]
+
+/********************************分割线********************************/               
+
+// @line: 31左右
+        {
+#if CUDNN_MAJOR >= 8 // [!code ++]
+            int requestedAlgoCount = 0, returnedAlgoCount = 0; // [!code ++]
+            CUDA4DNN_CHECK_CUDNN(cudnnGetConvolutionBackwardDataAlgorithmMaxCount(handle.get(), &requestedAlgoCount)); // [!code ++]
+            std::vector<cudnnConvolutionBwdDataAlgoPerf_t> results(requestedAlgoCount); // [!code ++]
+            CUDA4DNN_CHECK_CUDNN( // [!code ++]
+                cudnnGetConvolutionBackwardDataAlgorithm_v7( // [!code ++]
+                    handle.get(), // [!code ++]
+                    filterDesc.get(), inputDesc.get(), convDesc.get(), outputDesc.get(), // [!code ++]
+                    requestedAlgoCount, // [!code ++]
+                    &returnedAlgoCount, // [!code ++]
+                    &results[0] // [!code ++]
+                ) // [!code ++]
+            ); // [!code ++]
+// [!code ++]
+            size_t free_memory, total_memory; // [!code ++]
+            CUDA4DNN_CHECK_CUDA(cudaMemGetInfo(&free_memory, &total_memory)); // [!code ++]
+// [!code ++]
+            bool found_conv_algorithm = false; // [!code ++]
+            for (int i = 0; i < returnedAlgoCount; i++) // [!code ++]
+            { // [!code ++]
+                if (results[i].status == CUDNN_STATUS_SUCCESS && // [!code ++]
+                    results[i].algo != CUDNN_CONVOLUTION_BWD_DATA_ALGO_WINOGRAD_NONFUSED && // [!code ++]
+                    results[i].memory < free_memory) // [!code ++]
+                { // [!code ++]
+                    found_conv_algorithm = true; // [!code ++]
+                    dalgo = results[i].algo; // [!code ++]
+                    workspace_size = results[i].memory; // [!code ++]
+                    break; // [!code ++]
+                } // [!code ++]
+            } // [!code ++]
+// [!code ++]
+            if (!found_conv_algorithm) // [!code ++]
+                CV_Error (cv::Error::GpuApiCallError, "cuDNN did not return a suitable algorithm for transpose convolution."); // [!code ++]
+#else // [!code ++]
+            CUDA4DNN_CHECK_CUDNN(
+
+/********************************分割线********************************/               
+
+// @line: 73左右
+                cudnnGetConvolutionBackwardDataAlgorithm(
+                    handle.get(),
+                    filter.get(), input.get(), conv.get(), output.get(), // [!code --]
+                    filterDesc.get(), inputDesc.get(), convDesc.get(), outputDesc.get(), // [!code ++]
+                    CUDNN_CONVOLUTION_BWD_DATA_PREFER_FASTEST,
+         
+/********************************分割线********************************/               
+
+// @line: 83左右
+                cudnnGetConvolutionBackwardDataWorkspaceSize(
+                    handle.get(),
+                    filter.get(), input.get(), conv.get(), output.get(), // [!code --]
+                    filterDesc.get(), inputDesc.get(), convDesc.get(), outputDesc.get(), // [!code ++]
+                    dalgo, &workspace_size
+
+/********************************分割线********************************/               
+
+// @line: 88左右
+            );
+#endif // [!code ++]
+        }
+
+        TransposeConvolutionAlgorithm& operator=(const TransposeConvolutionAlgorithm&) = default;
+```
 
 `.diff`文件：
 
@@ -478,7 +699,66 @@ wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/ra
 wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/raw/master/opencv_pr_17685.patch -O opencv_PR_17685.patch
 ```
 
-***（如果不执行以下几步，编译`darknet_ros`会报错: `error: 'IplImage'`之类的）***
+> **Reference:**
+>
+> [https://github.com/opencv/opencv/pull/17685/files](https://github.com/opencv/opencv/pull/17685/files)
+
+---
+
+##### CUDA11.X相关
+
+因为`CUDA11.X`不再支持`CUDA_nppicom_LIBRARY`而报错。
+
+![image-20240826130754825](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/13:07:55_image-20240826130754825.png)
+
+解决办法：
+
+修改`../cmake/OpenCVDetectCUDA.cmake`：
+
+```cmake
+# @line: 29左右
+if(CUDA_FOUND)
+  set(HAVE_CUDA 1)
+  if(CUDA_VERSION VERSION_GREATER_EQUAL "11.0") // [!code ++]
+    # CUDA 11.X removes nppicom // [!code ++]
+    ocv_list_filterout(CUDA_npp_LIBRARY "nppicom") // [!code ++]
+    ocv_list_filterout(CUDA_nppi_LIBRARY "nppicom") // [!code ++]
+  endif() // [!code ++]
+```
+
+![image-20240826153656145](https://static.m0rtzz.com/images/Year%3A2024/Month%3A08/Day%3A26/15%3A36%3A56_image-20240826153656145.png)
+
+> **Reference:**
+>
+> [https://github.com/opencv/opencv/pull/17499/files](https://github.com/opencv/opencv/pull/17499/files)
+
+---
+
+##### gen_opencv_python_source
+
+可能是`cmake`找不到合适的`Python`解释器来执行脚本。
+
+![image-20240826133725674](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/13:37:26_image-20240826133725674.png)
+
+解决办法：
+
+```bash
+# 手动执行脚本
+cd ../ && \
+python3 ./modules/python/src2/gen2.py \
+./build/modules/python_bindings_generator \
+./build/modules/python_bindings_generator/headers.txt
+```
+
+![image-20240826151044127](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/15:10:44_image-20240826151044127.png)
+
+> **Reference:**
+>
+> [https://github.com/opencv/opencv/issues/10771#issuecomment-376861139](https://github.com/opencv/opencv/issues/10771#issuecomment-376861139)
+
+### 处理配置文件
+
+如果不执行以下几步，编译`darknet_ros`会报错: `error: 'IplImage'`之类的：
 
 ```bash
 sudo cp /usr/local/lib/pkgconfig/opencv4.pc /usr/lib/pkgconfig/opencv4.pc
@@ -708,17 +988,13 @@ catkin_make -j$(nproc) darknet_ros --cmake-args -DCMAKE_CXX_FLAGS=-DCV__ENABLE_C
 
 如果报错`nvcc fatal : Unsupported gpu architecture 'compute_30'`之类的，是因为`CUDA11.X`已经不支持`compute_30`了，我们将`darknet_ros/darknet_ros/CMakeLists.txt`中含有 `compute_30`的行进行注释后重新`catkin_make`：
 
-![image-20240825123152168](https://static.m0rtzz.com/images/Year%3A2024/Month%3A08/Day%3A25/12%3A32%3A01_image-20240825123152168.png)
+![image-20240825123152168](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:25/12:32:01_image-20240825123152168.png)
 
 ### Azure Kinect SDK-v1.4.2（软件包）
 
 > [!NOTE]
 >
 > 鄙人在`Ubuntu18.04`下是通过源码编译安装的，在`Ubuntu20.04`下是通过`deb`包直接安装的。
-
-> ***Reference：***
->
-> [https://blog.csdn.net/qq_42108414/article/details/129015474](https://blog.csdn.net/qq_42108414/article/details/129015474)
 
 下载软件包：
 
@@ -777,7 +1053,7 @@ sudo gedit /usr/include/pcl-1.8/pcl/visualization/cloud_viewer.h
 修改一下：
 
 ```cpp
-//line 199左右
+// @line: 199左右
 private:
         /** \brief Private implementation. */
         struct CloudViewer_impl;
@@ -942,7 +1218,7 @@ sudo sed -i '/^deb http:\/\/mirrors.hust.edu.cn\/ubuntu\/ xenial universe/s/^/# 
 realsense-viewer
 ```
 
-![66d6e2234539406982aa1aaad9e82698.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:09_66d6e2234539406982aa1aaad9e82698.png)
+![image-20240826102855968](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/10:29:01_image-20240826102855968.png)
 
 克隆`librealsense`源码并指定版本为`v2.50.0`:
 
@@ -983,7 +1259,7 @@ cd librealsense-2.50.0/
 
 完成结果如下：
 
-![389a2809970d49d8a24d299ece865576.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:28:31_389a2809970d49d8a24d299ece865576.png)
+![d299ece865576](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/09:46:14_d299ece865576.png)
 
 之后输入：
 
@@ -1008,7 +1284,7 @@ sudo make -j$(nproc)
 ```
 
 ```bash
-sudo make install
+sudo make -j$(nproc) install
 ```
 
 测试：
@@ -1021,7 +1297,7 @@ cd examples/capture
 ./rs-capture
 ```
 
-![32507b26116048919945b01bb173b72c](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:28:40_32507b26116048919945b01bb173b72c.png)
+![5b01bb173b72c](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/09:47:39_5b01bb173b72c.png)
 
 接下来我们配置`realsense-ros`工作空间：
 
@@ -1061,7 +1337,7 @@ catkin_make install
 roslaunch realsense2_camera rs_camera.launch
 ```
 
-![d6c0eef6da874de9aff7596e3cc16a86.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:28:45_d6c0eef6da874de9aff7596e3cc16a86.png)
+![image-20240826103646388](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/10:36:46_image-20240826103646388.png)
 
 还没安摄像头~
 
@@ -1168,19 +1444,19 @@ sudo apt install -y ros-${ROS_DISTRO}-navigation
 
 因`tf`和`tf2`迁移问题，需将工作空间内的所有`global_costmap_params.yaml`和`local_costmap_params.yaml`文件里的头几行去掉`/`,返回工作空间根目录下重新编译。
 
-> ***Reference：***
+> ***Reference:***
 >
 > [http://wiki.ros.org/tf2/Migration#Removal_of_support_for_tf_prefix](http://wiki.ros.org/tf2/Migration#Removal_of_support_for_tf_prefix)
 
-![image-20240825131636586](https://static.m0rtzz.com/images/Year%3A2024/Month%3A08/Day%3A25/13%3A16%3A36_image-20240825131636586.png)
+![image-20240825131636586](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:25/13:16:36_image-20240825131636586.png)
 
-![image-20240825131656932](https://static.m0rtzz.com/images/Year%3A2024/Month%3A08/Day%3A25/13%3A16%3A57_image-20240825131656932.png)
+![image-20240825131656932](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:25/13:16:57_image-20240825131656932.png)
 
 #### Arduino IDE (NOT REQUIRED) (EOL)
 
 [https://www.arduino.cc/en/software](https://www.arduino.cc/en/software)
 
-![a5bb61f57e684a538b737a22d537a3c7](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:11_a5bb61f57e684a538b737a22d537a3c7.png)
+![image-20240826095129015](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/09:51:29_image-20240826095129015.png)
 
 下载安装包：
 
@@ -1250,7 +1526,7 @@ cd robot_start_test/ && mkdir launch && cd launch && touch start_test.launch
 接下来创建机器人模型相关的功能包：
 
 ```bash
-cd src/
+cd ../../src/
 ```
 
 ```bash
@@ -1515,7 +1791,7 @@ cd .. && mkdir launch
 ```
 
 ```bash
-touch robot_test.launch && code robot_test.launch
+cd launch/ && touch robot_test.launch && code robot_test.launch
 ```
 
 将下列代码粘贴进去：
@@ -1542,7 +1818,7 @@ cd ../../../ && echo 'source /home/m0rtzz/Workspaces/navigation_entity_test_ws/d
 roslaunch robot_description_test robot_test.launch
 ```
 
-![756d60eb62c14cfe82eafa7e3bdf4862.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:13_756d60eb62c14cfe82eafa7e3bdf4862.png)
+![image-20240826104130156](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/10:41:30_image-20240826104130156.png)
 
 之后`Ctrl+Alt+T`打开一个新的终端，输入：
 
@@ -1550,7 +1826,7 @@ roslaunch robot_description_test robot_test.launch
 rviz
 ```
 
-![4dc525d781d94b19bfe14f73cd68738f.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:14_4dc525d781d94b19bfe14f73cd68738f.png)
+![image-20240826104244706](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/10:42:45_image-20240826104244706.png)
 
 将`Fixed Frame`设置为`base_footprint`：
 
@@ -1558,11 +1834,11 @@ rviz
 
 `Add`一个`RobotModel`：
 
-![4111cf3ff31e4bda9b90de04c5d76e8a.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:14_4111cf3ff31e4bda9b90de04c5d76e8a.png)
+![image-20240826105755744](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/10:57:56_image-20240826105755744.png)
 
 `Add`一个`TF`：
 
-![9b1fddd56a704702b30240024f4e7b65.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:14_9b1fddd56a704702b30240024f4e7b65.png)
+![image-20240826105819998](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/10:58:20_image-20240826105819998.png)
 
 ```bash
 cd src/entity_test/ && mkdir launch && cd launch/
@@ -1947,7 +2223,7 @@ xdg-user-dirs-gtk-update
 
 编辑选择右边的`Update Names`：
 
-![11860bd995624609b10076f25fc108fb.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:25:55_11860bd995624609b10076f25fc108fb.png)
+![76f25fc108fb](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/09:54:32_76f25fc108fb.png)
 
 之后执行以下语句：
 
@@ -1959,9 +2235,9 @@ export LANG=zh_CN
 reboot
 ```
 
-勾选不要再次询问我，并选择保留旧的名称
+勾选不要再次询问我，并选择保留旧的名称：
 
-![560bffa1f8fd4255a9bec1f2be43efcd.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:58:57_560bffa1f8fd4255a9bec1f2be43efcd.png)
+![ec1f2be43efcd](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/09:55:37_ec1f2be43efcd.png)
 
 ### 同步双系统时间
 
@@ -1997,10 +2273,6 @@ timedatectl set-local-rtc 1 --adjust-system-clock
 
 [Visual Studio Code](https://code.visualstudio.com/docs/?dv=linux64_deb)（推荐打开`Settings Sync`，换电脑时设置可以同步）
 
-![195197efec704c98ba8f61ecc4c8370a.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:29:43_195197efec704c98ba8f61ecc4c8370a.png)
-
-![bd3b7b33a2744c5cb67011223648eabf.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:29:50_bd3b7b33a2744c5cb67011223648eabf.png)
-
 [星火应用商店](https://www.spark-app.store/download)
 
 仅支持`Ubuntu20.04`，需安装依赖包：
@@ -2025,7 +2297,7 @@ wget -q --show-progress https://github.com/web1n/wechat-universal-flatpak/releas
 sudo apt install -y terminator
 ```
 
-![74c734b7ca9e4cc5a68246b4f8a73ee3.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:19_74c734b7ca9e4cc5a68246b4f8a73ee3.png)
+![image-20240826105849251](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/10:58:49_image-20240826105849251.png)
 
 `trash`命令：
 
@@ -2158,8 +2430,6 @@ sudo flatpak update
 about:config
 ```
 
-![4700bc61b15141609ce55f97e9334034](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:20_4700bc61b15141609ce55f97e9334034.png)
-
 ```ini
 full-screen-api.warning.timeout
 ```
@@ -2216,31 +2486,38 @@ reboot
 
 ### 使在桌面上右键打开终端时进入Desktop目录（Ubuntu18.04）
 
-[https://packages.ubuntu.com/source/bionic/gnome-terminal](https://packages.ubuntu.com/source/bionic/gnome-terminal)
+[https://launchpad.net/ubuntu/+source/gnome-terminal/3.28.1-1ubuntu1](https://launchpad.net/ubuntu/+source/gnome-terminal/3.28.1-1ubuntu1)
 
-下载下图表格中的下边两个文件：
-
-![ae94b3493cf44d08a7a962e070256653.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:03_ae94b3493cf44d08a7a962e070256653.png)
-
-下载好`gnome-terminal_3.28.1.orig.tar.xz`文件之后解压出一个文件夹`gnome-terminal-3.28.1/`，将`gnome-terminal_3.28.1-1ubuntu1.debian.tar.xz `里面`debian/`目录下的所有文件解压到之前解压出的`gnome-terminal-3.28.1/`目录下
-
-![5097eb7f2b8b474a8411cf11a3694b55.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:27:55_5097eb7f2b8b474a8411cf11a3694b55.png)
-
-在此目录下打开终端
+下载源码包：
 
 ```bash
-git apply patches/*.patch
+wget -q --show-progress https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/gnome-terminal/3.28.1-1ubuntu1/gnome-terminal_3.28.1.orig.tar.xz -O gnome-terminal_3.28.1.orig.tar.xz && \
+wget -q --show-progress https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/gnome-terminal/3.28.1-1ubuntu1/gnome-terminal_3.28.1-1ubuntu1.debian.tar.xz -O gnome-terminal_3.28.1-1ubuntu1.debian.tar.xz
 ```
 
-安装依赖
+解压：
+
+```
+tar -xf gnome-terminal_3.28.1.orig.tar.xz && \
+tar -xf gnome-terminal_3.28.1-1ubuntu1.debian.tar.xz
+```
+
+```
+ls debian/ gnome-terminal-3.28.1/
+cp -r debian/* gnome-terminal-3.28.1/
+```
+
+```bash
+cd gnome-terminal-3.28.1/ && git apply patches/*.patch
+```
+
+安装依赖：
 
 ```bash
 sudo apt install -y intltool libvte-2.91-dev gsettings-desktop-schemas-dev uuid-dev libdconf-dev libpcre2-dev libgconf2-dev libxml2-utils gnome-shell libnautilus-extension-dev itstool yelp-tools pcre2-utils
 ```
 
-打开`src/`下的`terminal-nautilus.c`
-
-找到
+打开`src/`下的`terminal-nautilus.c`，找到：
 
 ```c
 static inline gboolean
@@ -2297,7 +2574,7 @@ sudo make check -j$(nproc)
 ```
 
 ```bash
-sudo make install
+sudo make -j$(nproc) install
 ```
 
 ```bash
@@ -2344,10 +2621,10 @@ sudo make -j$(nproc)
 sudo make check -j$(nproc)
 ```
 
-![f9827d81f7f946d8ba91d26494c7251d.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:01_f9827d81f7f946d8ba91d26494c7251d.png)
+![6494c7251d](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/10:07:27_6494c7251d.png)
 
 ```bash
-sudo make install
+sudo make -j$(nproc) install
 ```
 
 ```bash
@@ -2422,7 +2699,7 @@ echo 'source /home/m0rtzz/Workspaces/catkin_ws/devel/setup.bash' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-![0bccdd5c978048189fcd47437ad89dfc.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:03_0bccdd5c978048189fcd47437ad89dfc.png)
+![47437ad89dfc](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/10:08:17_47437ad89dfc.png)
 
 解决办法：
 
@@ -2433,7 +2710,7 @@ echo 'export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/home/m0rtzz/Workspaces/catkin_w
 source ~/.bashrc
 ```
 
-![4000fa5374ee48dfbc2fdee5c5ddf2d0.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:27:47_4000fa5374ee48dfbc2fdee5c5ddf2d0.png)
+![ee5c5ddf2d0](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/10:09:21_ee5c5ddf2d0.png)
 
 解决！
 
@@ -2451,7 +2728,7 @@ sudo apt install -y 'libcanberra-gtk*'
 
 ### caffe (EOL)
 
-> ***Reference：***
+> ***Reference:***
 >
 > [https://blog.csdn.net/weixin_39161727/article/details/120136500](https://blog.csdn.net/weixin_39161727/article/details/120136500)
 
@@ -3341,15 +3618,11 @@ cd python/
 使用阿里云镜像安装依赖库：
 
 ```bash
-for req in $(cat requirements.txt); do pip3 install $req -i https://mirrors.aliyun.com/pypi/simple/; done
+pip3 install -r requirements.txt -i https://mirrors.hust.edu.cn/pypi/web/simple
 ```
 
 ```bash
 cd .. && sudo make clean
-```
-
-```bash
-sudo make all -j$(nproc)
 ```
 
 由于`caffe`不支持`cuDNN8.X`，为了能在`cuDNN8.X`的环境下编译通过，需要修改两个`cpp`文件，路径为`src/caffe/layers/`下的`cudnn_conv_layer.cpp`和`cudnn_deconv_layer.cpp`两个文件，分别将他们内容替换为：
@@ -4176,34 +4449,38 @@ locate cudnn_version.h
 ```
 
 ```bash
-sudo gedit /usr/local/cuda/targets/x86_64-linux/include/cudnn_version.h
+sudo vi /usr/local/cuda/targets/x86_64-linux/include/cudnn_version.h
 ```
 
 复制其中的非注释部分：
 
-![841eda431c924b86bd9b14cc93472420](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:14_841eda431c924b86bd9b14cc93472420.png)
+![image-20240826110741277](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/11:07:41_image-20240826110741277.png)
 
 ```bash
-sudo gedit /usr/local/cuda/targets/x86_64-linux/include/cudnn.h
+sudo vi /usr/local/cuda/targets/x86_64-linux/include/cudnn.h
 ```
 
 粘贴到最开头：
 
-![828bd6d08d3c4c8990d2227e667cfc98](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:15_828bd6d08d3c4c8990d2227e667cfc98.png)
+![image-20240826110911870](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/11:09:12_image-20240826110911870.png)
 
-然后打开`caffe`包下的`cudnn.hpp`文件并指定`cudnn.h`路径：
+然后打开`caffe/include/caffe/util/cudnn.hpp`文件并指定`cudnn.h`路径：
 
-![8a8df47d267a4f35a0e641ea1e4057c4](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:15_8a8df47d267a4f35a0e641ea1e4057c4.png)
+```
+vi include/caffe/util/cudnn.hpp
+```
+
+![image-20240826111522635](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/11:15:23_image-20240826111522635.png)
 
 之后重新执行编译：
 
 ```bash
-sudo make clean && make all -j$(nproc)
+sudo make all -j$(nproc)
 ```
 
 生成以下静态库和共享库文件：
 
-![a97e353858cb415487b0c511e20a3d8e](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:29:12_a97e353858cb415487b0c511e20a3d8e.png)
+![b0c511e20a3d8e](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/10:10:35_b0c511e20a3d8e.png)
 
 测试，时间较慢，耐心等待~
 
@@ -4227,28 +4504,34 @@ sudo make pycaffe -j$(nproc)
 
 下载`VTK-8.2.0.zip`
 
-![6895bcbb15424c2db7b82265cd3873d5](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:16_6895bcbb15424c2db7b82265cd3873d5.png)
+![image-20240826101145189](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/10:11:45_image-20240826101145189.png)
 
 解压之后，进入文件夹打开终端：
 
 ```bash
-sudo apt install -y cmake-gui && mkdir build && cd  build && cmake-gui
+sudo apt install -y cmake-gui && mkdir build && cd build && cmake-gui ..
 ```
 
-![19c7fca7f8e745cd8f97283961027dbb](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:16_19c7fca7f8e745cd8f97283961027dbb.png)
+单击`Configure`：
 
-单击`Configure`后勾选以下两项后单击`Configure`和`Generate`：
+![image-20240826112011057](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/11:20:11_image-20240826112011057.png)
 
-![5889f9e275ba4d33a6506a89ee9e00e9](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:16_5889f9e275ba4d33a6506a89ee9e00e9.png)
+勾选以下两项后单击`Configure`和`Generate`：
 
-![20fd96ee42a5447f9715388b48670d2b](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:17_20fd96ee42a5447f9715388b48670d2b.png)
+`Module/Module_vtkGUISupportQt`：
+
+![image-20240826112039914](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/11:20:40_image-20240826112039914.png)
+
+`VTK/VTK_Group_Qt`：
+
+![image-20240826112123662](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/11:21:24_image-20240826112123662.png)
 
 ```bash
 sudo make -j$(nproc)
 ```
 
 ```bash
-sudo make install
+sudo make -j$(nproc) install
 ```
 
 接下来安装`pcl`：
@@ -4283,7 +4566,7 @@ sudo make -j$(nproc)
 ```
 
 ```bash
-sudo make install
+sudo make -j$(nproc) install
 ```
 
 ## NOT RECOMMENDED (EOL)
@@ -4346,7 +4629,7 @@ sudo chmod 777 -R ~/.ros/
 roscore
 ```
 
-![52b0561164a34d3ea62b74322abe50bc.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:26:21_52b0561164a34d3ea62b74322abe50bc.png)
+![b74322abe50bc](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/10:12:43_b74322abe50bc.png)
 
 再新建两个终端，分别输入：
 
@@ -4360,7 +4643,7 @@ rosrun turtlesim turtle_teleop_key
 
 在`rosrun turtlesim turtle_teleop_key`所在终端点击一下任意位置，然后使用`←↕→`小键盘控制，看小海龟会不会动，如果会动则安装成功。
 
-![c40128bd8c5245a48d386c21ba465449.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:26:29_c40128bd8c5245a48d386c21ba465449.png)
+![d386c21ba465449](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/10:13:37_d386c21ba465449.png)
 
 ### OpenCV-3.4.16及其扩展模块（Ubuntu18.04）
 
@@ -4414,18 +4697,21 @@ cd build
 
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
--D WITH_GTK_2_X=ON \
--D OPENCV_ENABLE_NONFREE=ON \
--D OPENCV_GENERATE_PKGCONFIG=YES \
--D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.16/opencv_contrib-3.4.16/modules \
+-D WITH_QT=ON \
+-D WITH_GTK=ON \
+-D WITH_VTK=ON \
+-D WITH_ADE=OFF \
 -D WITH_CUDA=ON \
 -D WITH_CUDNN=ON \
--D WITH_FFMPEG=ON \
--D WITH_OPENGL=ON \
--D WITH_NVCUVID=ON \
--D ENABLE_PRECOMPILED_HEADERS=OFF \
--D CMAKE_EXE_LINKER_FLAGS=-lcblas \
+-D WITH_OPENMP=ON \
 -D WITH_LAPACK=OFF \
+-D OPENCV_DNN_CUDA=ON \
+-D CUDA_GENERATION=Auto \
+-D CUDA_CUDA_LIBRARY=ON \
+-D OPENCV_ENABLE_NONFREE=ON \
+-D OPENCV_GENERATE_PKGCONFIG=ON \
+-D ENABLE_PRECOMPILED_HEADERS=OFF \
+-D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.16/opencv_contrib-3.4.16/modules \
 -j$(nproc) ..
 ```
 
@@ -4445,7 +4731,7 @@ cd downloads && pwd
 
 打开这个`ippicv.cmake`
 
-![6e9cc239b5a048ef932999f88634f470](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:26:38_6e9cc239b5a048ef932999f88634f470.png)
+![99f88634f470](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/10:14:20_99f88634f470.png)
 
 把绝对路径复制进去：
 
@@ -4455,26 +4741,29 @@ cd downloads && pwd
 
 [https://github.com/opencv/opencv_3rdparty](https://github.com/opencv/opencv_3rdparty)
 
-然后重新打开终端，输入（**别忘了改路径**）：
+然后重新打开终端，再次输入（**别忘了改路径**）：
 
 ```bash
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
--D WITH_GTK_2_X=ON \
--D OPENCV_ENABLE_NONFREE=ON \
--D OPENCV_GENERATE_PKGCONFIG=YES \
--D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.16/opencv_contrib-3.4.16/modules \
+-D WITH_QT=ON \
+-D WITH_GTK=ON \
+-D WITH_VTK=ON \
+-D WITH_ADE=OFF \
 -D WITH_CUDA=ON \
 -D WITH_CUDNN=ON \
--D WITH_FFMPEG=ON \
--D WITH_OPENGL=ON \
--D WITH_NVCUVID=ON \
--D ENABLE_PRECOMPILED_HEADERS=OFF \
--D CMAKE_EXE_LINKER_FLAGS=-lcblas \
+-D WITH_OPENMP=ON \
 -D WITH_LAPACK=OFF \
+-D OPENCV_DNN_CUDA=ON \
+-D CUDA_GENERATION=Auto \
+-D CUDA_CUDA_LIBRARY=ON \
+-D OPENCV_ENABLE_NONFREE=ON \
+-D OPENCV_GENERATE_PKGCONFIG=ON \
+-D ENABLE_PRECOMPILED_HEADERS=OFF \
+-D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.16/opencv_contrib-3.4.16/modules \
 -j$(nproc) ..
 ```
 
-![875eccbb886649e9af1df6fa04c0a168](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:26:49_875eccbb886649e9af1df6fa04c0a168.png)
+![1df6fa04c0a168](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/10:15:15_1df6fa04c0a168.png)
 
 这些`.i`文件需要在国外服务器上下载，网上说下载好文件直接把他们放进相对应的目录下就行，实测不行（建议科学的上网，想试试网上说法的：
 
@@ -4483,27 +4772,10 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 文件的话，开头百度云分享链接里都有)
 
 ```bash
-cmake -D CMAKE_BUILD_TYPE=RELEASE \
--D WITH_GTK_2_X=ON \
--D OPENCV_ENABLE_NONFREE=ON \
--D OPENCV_GENERATE_PKGCONFIG=YES \
--D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.16/opencv_contrib-3.4.16/modules \
--D WITH_CUDA=ON \
--D WITH_CUDNN=ON \
--D WITH_FFMPEG=ON \
--D WITH_OPENGL=ON \
--D WITH_NVCUVID=ON \
--D ENABLE_PRECOMPILED_HEADERS=OFF \
--D CMAKE_EXE_LINKER_FLAGS=-lcblas \
--D WITH_LAPACK=OFF \
--j$(nproc) ..
-```
-
-```bash
 sudo make -j$(nproc)
 ```
 
-![image-20240206162428124](https://static.m0rtzz.com/images/Year:2024/Month:03/Day:10/17:34:12_16_24_28_image-20240206162428124.png)
+![06162428124](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/10:16:08_06162428124.png)
 
 打开那个头文件，把报错所在行改为：
 
@@ -4516,7 +4788,7 @@ sudo make -j$(nproc)
 ```
 
 ```bash
-sudo make install
+sudo make -j$(nproc) install
 ```
 
 ```bash
@@ -4548,7 +4820,7 @@ sudo make -j$(nproc)
 ./opencv_example
 ```
 
-![1cb714361c874eacb01f3bce3f37e1fb.png](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:00_1cb714361c874eacb01f3bce3f37e1fb.png)
+![image-20240826153120724](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/15:31:20_image-20240826153120724.png)
 
 安装成功！
 
@@ -4615,7 +4887,7 @@ git clone --recursive https://mirror.ghproxy.com/https://github.com/leggedroboti
 
 ### Azure Kinect SDK-v1.4.0（源码编译）
 
-> ***Reference：***
+> ***Reference:***
 >
 > [https://blog.csdn.net/BlacKingZ/article/details/119115883](https://blog.csdn.net/BlacKingZ/article/details/119115883)
 
@@ -4705,7 +4977,7 @@ sudo ninja install
 sudo ./bin/k4aviewer
 ```
 
-![cd9e9d8ea9884b6eb7c73e864efb7912](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:28:14_cd9e9d8ea9884b6eb7c73e864efb7912.png)
+![3e864efb7912](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/10:17:05_3e864efb7912.png)
 
 授予权限：
 
@@ -4740,7 +5012,7 @@ sudo make -j$(nproc)
 ```
 
 ```bash
-sudo make install
+sudo make -j$(nproc) install
 ```
 
 ```bash
@@ -4771,7 +5043,7 @@ sudo chown -R m0rtzz: *
 
 若报错：
 
-![2ea1050777ac49fbb8a0986e34d3140e](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/17:30:50_2ea1050777ac49fbb8a0986e34d3140e.png)
+![6e34d3140e](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/10:17:35_6e34d3140e.png)
 
 因`Epic`更新了`gitdeps`，但`Github`上却没有更新，所以需要进入`GitHub`官方仓库`Release`界面寻找对应版本的`Commit.gitdeps.xml`替换原来的文件即可：
 
@@ -4779,7 +5051,7 @@ sudo chown -R m0rtzz: *
 
 若报错：
 
-![a430a7833c97404cae877a549b6b2322](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:06/14:59:18_a430a7833c97404cae877a549b6b2322.png)
+![549b6b2322](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/10:18:18_549b6b2322.png)
 
 鄙人认为是因执行`Setup.sh`脚本未赋予`root`权限导致依赖未安装完整，所以再次执行：
 
