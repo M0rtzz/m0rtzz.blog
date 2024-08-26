@@ -1,17 +1,8 @@
-## <small>3.2.2 (2024-08-26)</small>
+# Changelog
 
-* ⚗️ exp(environment_configuration.md): test diff code block ([355a43b](https://github.com/M0rtzz/m0rtzz.blog/commit/355a43b))
-* 🐛 fix(shiki.css): fix the bug of css class ([63b2a9b](https://github.com/M0rtzz/m0rtzz.blog/commit/63b2a9b))
-* 📝 doc(environment_configuration.md): update diff code block ([a32a9a3](https://github.com/M0rtzz/m0rtzz.blog/commit/a32a9a3))
-* 📝 doc(environment_configuration.md): update doc ([a23feab](https://github.com/M0rtzz/m0rtzz.blog/commit/a23feab))
-* 📝 doc(environment_configuration.md): update doc ([0000f1a](https://github.com/M0rtzz/m0rtzz.blog/commit/0000f1a))
-* 📝 docs(CHANGELOG.md): automatic update ([4d4debc](https://github.com/M0rtzz/m0rtzz.blog/commit/4d4debc))
-* 📝 docs(CHANGELOG.md): automatic update ([611bebe](https://github.com/M0rtzz/m0rtzz.blog/commit/611bebe))
-* 🔖 tag(package.json): v3.2.0 ([79ce7c4](https://github.com/M0rtzz/m0rtzz.blog/commit/79ce7c4))
-* 🔖 tag(package.json): v3.2.1 ([63f28b2](https://github.com/M0rtzz/m0rtzz.blog/commit/63f28b2))
-* 🔖 tag(package.json): v3.2.2 ([f345a52](https://github.com/M0rtzz/m0rtzz.blog/commit/f345a52))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
+## [3.2.3](https://github.com/M0rtzz/m0rtzz.blog/compare/v3.2.2...v3.2.3) (2024-08-26)
 
 ## 3.2.0 (2024-08-25)
 
@@ -1872,5 +1863,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
