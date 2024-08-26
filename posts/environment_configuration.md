@@ -6,7 +6,7 @@
 >
 > **ZZU-SR**的童鞋配置环境前可以给鄙人发邮件：[E-mail](mailto:m0rtzz@stu.zzu.edu.cn)，另外：
 >
-> ***如果装了`Anaconda3/Miniconda3`，最好设置`auto_activate_base: false`，没有特殊需求不要激活虚拟环境，否则会影响编译。***
+> ***如果装了***`Anaconda3/Miniconda3`***，最好设置***`auto_activate_base: false`***，没有特殊需求不要激活虚拟环境，否则会影响编译。***
 >
 > 本文根据重要程度对各个步骤进行分类：
 >
@@ -149,10 +149,7 @@ auto_activate_base: false
 `pip`设置镜像源：
 
 ```bash
-cd ${HOME}/.config/pip/ || (mkdir -p ${HOME}/.config/pip/ && gedit ${HOME}/.config/pip/pip.conf)
-```
-
-```ini
+mkdir -p ${HOME}/.config/pip/ && cd ${HOME}/.config/pip/ && tee ${HOME}/.config/pip/pip.conf > /dev/null << EOF
 [global]
 index-url = https://mirrors.hust.edu.cn/pypi/web/simple
 
@@ -170,6 +167,7 @@ trusted-host =
     pypi.ngc.nvidia.com
 
 no-cache-dir = true
+EOF
 ```
 
 ### 禁用Nouveau驱动
@@ -330,7 +328,7 @@ sudo apt install -y python3-pip
 使用阿里镜像源加速`pip`下载：
 
 ```bash
-sudo pip3 install rosdepc -i https://mirrors.aliyun.com/pypi/simple/
+sudo pip3 install rosdepc -i https://mirrors.hust.edu.cn/pypi/web/simple
 ```
 
 ```bash
@@ -460,9 +458,10 @@ mlocate deviceQuery | grep cuda | head -n 1 | xargs -r bash -c | grep 'CUDA Capa
 
 解决办法：
 
-修改`../cmake/FindCUDNN.cmake`：
-
 ```cmake
+# @file: ../cmake/FindCUDNN.cmake
+
+# @line: 66左右
 # extract version from the include
 if(CUDNN_INCLUDE_DIR)
   file(READ "${CUDNN_INCLUDE_DIR}/cudnn.h" CUDNN_H_CONTENTS) // [!code --]
@@ -510,7 +509,7 @@ endif()
 
 // @line: 226左右
                 CUDA4DNN_CHECK_CUDNN(cudnnSetConvolutionGroupCount(descriptor, group_count));
-// [!code ++]
+//// [!code ++]
 #if CUDNN_MAJOR >= 8 // [!code ++]
                 /* cuDNN 7 and below use FMA math by default. cuDNN 8 includes TF32 Tensor Ops // [!code ++]
                  * in the default setting. TF32 convolutions have lower precision than FP32. // [!code ++]
@@ -518,8 +517,8 @@ endif()
                  */ // [!code ++]
                 CUDA4DNN_CHECK_CUDNN(cudnnSetConvolutionMathType(descriptor, CUDNN_FMA_MATH)); // [!code ++]
 #endif // [!code ++]
-// [!code ++]
-                if (std::is_same<T, half>::value) // [!code ++]
+//// [!code ++]
+                if (std::is_same<T, half>::value)
 
 /********************************分割线********************************/               
 
@@ -552,10 +551,10 @@ endif()
                     &results[0] // [!code ++]
                 ) // [!code ++]
             ); // [!code ++]
-// [!code ++]
+//// [!code ++]
             size_t free_memory, total_memory; // [!code ++]
             CUDA4DNN_CHECK_CUDA(cudaMemGetInfo(&free_memory, &total_memory)); // [!code ++]
-// [!code ++]
+//// [!code ++]
             bool found_conv_algorithm = false; // [!code ++]
             for (int i = 0; i < returnedAlgoCount; i++) // [!code ++]
             { // [!code ++]
@@ -569,7 +568,7 @@ endif()
                     break; // [!code ++]
                 } // [!code ++]
             } // [!code ++]
-// [!code ++]
+//// [!code ++]
             if (!found_conv_algorithm) // [!code ++]
                 CV_Error (cv::Error::GpuApiCallError, "cuDNN did not return a suitable algorithm for convolution."); // [!code ++]
 #else // [!code ++]
@@ -636,10 +635,10 @@ endif()
                     &results[0] // [!code ++]
                 ) // [!code ++]
             ); // [!code ++]
-// [!code ++]
+//// [!code ++]
             size_t free_memory, total_memory; // [!code ++]
             CUDA4DNN_CHECK_CUDA(cudaMemGetInfo(&free_memory, &total_memory)); // [!code ++]
-// [!code ++]
+//// [!code ++]
             bool found_conv_algorithm = false; // [!code ++]
             for (int i = 0; i < returnedAlgoCount; i++) // [!code ++]
             { // [!code ++]
@@ -653,7 +652,7 @@ endif()
                     break; // [!code ++]
                 } // [!code ++]
             } // [!code ++]
-// [!code ++]
+//// [!code ++]
             if (!found_conv_algorithm) // [!code ++]
                 CV_Error (cv::Error::GpuApiCallError, "cuDNN did not return a suitable algorithm for transpose convolution."); // [!code ++]
 #else // [!code ++]
@@ -3618,7 +3617,7 @@ cd python/
 使用阿里云镜像安装依赖库：
 
 ```bash
-pip3 install -r requirements.txt -i https://mirrors.hust.edu.cn/pypi/web/simple
+python3 -m pip install -r requirements.txt -i https://mirrors.hust.edu.cn/pypi/web/simple
 ```
 
 ```bash
@@ -4613,7 +4612,7 @@ sudo apt install -y python3-pip
 使用阿里镜像源加速`pip`下载：
 
 ```bash
-sudo pip3 install rosdepc -i https://mirrors.aliyun.com/pypi/simple/
+sudo pip3 install rosdepc -i https://mirrors.hust.edu.cn/pypi/web/simple
 ```
 
 ```bash
