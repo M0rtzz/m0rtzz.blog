@@ -898,7 +898,7 @@ cd src/ && catkin_init_workspace
 ```
 
 ```bash
-cd .. && catkin_make -j$(nproc)
+cd .. && catkin_make
 ```
 
 ```bash
@@ -967,23 +967,13 @@ void rgbgr_image(image im)
 之后：
 
 ```bash
-rm -rf darknet
-```
-
-```bash
-git clone https://github.com/AlexeyAB/darknet.git darknet
-```
-
-或公益加速源：
-
-```bash
-git clone https://mirror.ghproxy.com/https://github.com/AlexeyAB/darknet.git darknet
+catkin_make
 ```
 
 `catkin_make`如果编译不过的话（`error:  'IplImage' `之类的，之前装`OpenCV`提到过避免报错的方法），注意以下命令是只编译`darknet_ros`一个包，若工作空间下有多个包需要一起编译那么把命令中的`darknet_ros`删除重新执行即可：
 
 ```bash
-catkin_make -j$(nproc) darknet_ros --cmake-args -DCMAKE_CXX_FLAGS=-DCV__ENABLE_C_API_CTORS
+catkin_make darknet_ros --cmake-args -DCMAKE_CXX_FLAGS=-DCV__ENABLE_C_API_CTORS
 ```
 
 如果报错`nvcc fatal : Unsupported gpu architecture 'compute_30'`之类的，是因为`CUDA11.X`已经不支持`compute_30`了，我们将`darknet_ros/darknet_ros/CMakeLists.txt`中含有 `compute_30`的行进行注释后重新`catkin_make`：
@@ -1328,7 +1318,7 @@ cd ..
 ```
 
 ```bash
-catkin_make -j$(nproc) -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
+catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
 ```
 
 ```bash
@@ -1397,7 +1387,7 @@ sudo apt install -y ros-${ROS_DISTRO}-moveit-visual-tools ros-${ROS_DISTRO}-move
 ```
 
 ```bash
-catkin_make -j$(nproc)
+catkin_make
 ```
 
 ```bash
