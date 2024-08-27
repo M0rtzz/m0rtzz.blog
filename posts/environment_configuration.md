@@ -521,7 +521,7 @@ wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/ra
 
 // @line: 226左右
                 CUDA4DNN_CHECK_CUDNN(cudnnSetConvolutionGroupCount(descriptor, group_count));
-//// [!code ++]
+/**/// [!code ++]
 #if CUDNN_MAJOR >= 8 // [!code ++]
                 /* cuDNN 7 and below use FMA math by default. cuDNN 8 includes TF32 Tensor Ops // [!code ++]
                  * in the default setting. TF32 convolutions have lower precision than FP32. // [!code ++]
@@ -529,7 +529,7 @@ wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/ra
                  */ // [!code ++]
                 CUDA4DNN_CHECK_CUDNN(cudnnSetConvolutionMathType(descriptor, CUDNN_FMA_MATH)); // [!code ++]
 #endif // [!code ++]
-//// [!code ++]
+/**/// [!code ++]
                 if (std::is_same<T, half>::value)
 
 /********************************分割线********************************/               
@@ -563,10 +563,10 @@ wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/ra
                     &results[0] // [!code ++]
                 ) // [!code ++]
             ); // [!code ++]
-//// [!code ++]
+/**/// [!code ++]
             size_t free_memory, total_memory; // [!code ++]
             CUDA4DNN_CHECK_CUDA(cudaMemGetInfo(&free_memory, &total_memory)); // [!code ++]
-//// [!code ++]
+/**/// [!code ++]
             bool found_conv_algorithm = false; // [!code ++]
             for (int i = 0; i < returnedAlgoCount; i++) // [!code ++]
             { // [!code ++]
@@ -580,7 +580,7 @@ wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/ra
                     break; // [!code ++]
                 } // [!code ++]
             } // [!code ++]
-//// [!code ++]
+/**/// [!code ++]
             if (!found_conv_algorithm) // [!code ++]
                 CV_Error (cv::Error::GpuApiCallError, "cuDNN did not return a suitable algorithm for convolution."); // [!code ++]
 #else // [!code ++]
@@ -647,10 +647,10 @@ wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/ra
                     &results[0] // [!code ++]
                 ) // [!code ++]
             ); // [!code ++]
-//// [!code ++]
+/**/// [!code ++]
             size_t free_memory, total_memory; // [!code ++]
             CUDA4DNN_CHECK_CUDA(cudaMemGetInfo(&free_memory, &total_memory)); // [!code ++]
-//// [!code ++]
+/**/// [!code ++]
             bool found_conv_algorithm = false; // [!code ++]
             for (int i = 0; i < returnedAlgoCount; i++) // [!code ++]
             { // [!code ++]
@@ -664,7 +664,7 @@ wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/ra
                     break; // [!code ++]
                 } // [!code ++]
             } // [!code ++]
-//// [!code ++]
+/**/// [!code ++]
             if (!found_conv_algorithm) // [!code ++]
                 CV_Error (cv::Error::GpuApiCallError, "cuDNN did not return a suitable algorithm for transpose convolution."); // [!code ++]
 #else // [!code ++]
