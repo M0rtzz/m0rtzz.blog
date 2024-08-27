@@ -364,7 +364,8 @@ rosrun turtlesim turtle_teleop_key
 以下为几次成功安装的命令（注意替换命令中的绝对路径），安装过程可以参考**NOT RECOMMENDED**中的`OpenCV3`安装步骤：
 
 ```bash
-cmake -D CMAKE_BUILD_TYPE=RELEASE \
+cmake \
+-D CMAKE_BUILD_TYPE=RELEASE \
 -D WITH_QT=ON \
 -D WITH_GTK=ON \
 -D WITH_VTK=ON \
@@ -386,7 +387,8 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 或：
 
 ```bash
-cmake -D CMAKE_BUILD_TYPE=RELEASE \
+cmake \
+-D CMAKE_BUILD_TYPE=RELEASE \
 -D WITH_QT=ON \
 -D WITH_GTK=ON \
 -D WITH_VTK=ON \
@@ -411,7 +413,8 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 或：
 
 ```bash
-cmake -D CMAKE_BUILD_TYPE=RELEASE \
+cmake \
+-D CMAKE_BUILD_TYPE=RELEASE \
 -D WITH_QT=ON \
 -D WITH_GTK=ON \
 -D WITH_VTK=ON \
@@ -890,7 +893,7 @@ sudo apt install -y 'libcanberra-gtk*'
 `darknet_ros`工作空间（`OpenCV-4.2.0`）：
 
 ```bash
-mkdir darknet_ros_test_ws && cd darknet_ros_test_ws/ && mkdir src
+mkdir catkin_ws && cd catkin_ws/ && mkdir src
 ```
 
 ```bash
@@ -906,7 +909,7 @@ cd src/
 ```
 
 ```bash
-git clone -b opencv4 --recursive https://github.com/kunaltyagi/darknet_ros.git darknet_ros
+git clone -b opencv4 --recursive https://github.com/M0/darknet_ros.git darknet_ros
 cd darknet_ros
 git submodule update --recursive
 ```
@@ -973,7 +976,9 @@ catkin_make
 `catkin_make`如果编译不过的话（`error:  'IplImage' `之类的，之前装`OpenCV`提到过避免报错的方法），注意以下命令是只编译`darknet_ros`一个包，若工作空间下有多个包需要一起编译那么把命令中的`darknet_ros`删除重新执行即可：
 
 ```bash
-catkin_make darknet_ros --cmake-args -DCMAKE_CXX_FLAGS=-DCV__ENABLE_C_API_CTORS
+catkin_make darknet_ros \
+--cmake-args \
+-D CMAKE_CXX_FLAGS='-D CV__ENABLE_C_API_CTORS'
 ```
 
 如果报错`nvcc fatal : Unsupported gpu architecture 'compute_30'`之类的，是因为`CUDA11.X`已经不支持`compute_30`了，我们将`darknet_ros/darknet_ros/CMakeLists.txt`中含有 `compute_30`的行进行注释后重新`catkin_make`：
@@ -1268,7 +1273,10 @@ include(CMake/lrs_options.cmake)
 ```
 
 ```bash
-cmake -j$(nproc) ../ -DCMAKE_BUILD_TYPE=Release -DBUILD_EXAMPLES=true
+cmake \
+-D CMAKE_BUILD_TYPE=Release \
+-D BUILD_EXAMPLES=true \
+-j$(nproc) ..
 ```
 
 以下编译过慢，使用`CPU`最大线程进行`make`，速度会快很多：
@@ -1295,10 +1303,8 @@ cd examples/capture
 
 接下来我们配置`realsense-ros`工作空间：
 
-创建一个`realsense_test_ws`文件夹，进入文件夹下，打开终端：
-
 ```bash
-mkdir src && cd src/
+cd catkin_ws/src/
 ```
 
 下载功能包:
@@ -1318,7 +1324,9 @@ cd ..
 ```
 
 ```bash
-catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
+catkin_make \
+-D CATKIN_ENABLE_TESTING=False \
+-D CMAKE_BUILD_TYPE=Release
 ```
 
 ```bash
@@ -4548,7 +4556,8 @@ mkdir release && cd release
 ```
 
 ```bash
-cmake -D CMAKE_BUILD_TYPE=None \
+cmake \
+-D CMAKE_BUILD_TYPE=None \
 -D CMAKE_INSTALL_PREFIX=/usr \
 -D BUILD_GPU=ON-DBUILD_apps=ON \
 -D BUILD_examples=ON \
@@ -4687,7 +4696,8 @@ cd build
 **接下来编译安装，注意此命令的`OPENCV_EXTRA_MODULES_PATH=`后边的路径是你电脑下的绝对路径，请自行修改**
 
 ```bash
-cmake -D CMAKE_BUILD_TYPE=RELEASE \
+cmake \
+-D CMAKE_BUILD_TYPE=RELEASE \
 -D WITH_QT=ON \
 -D WITH_GTK=ON \
 -D WITH_VTK=ON \
@@ -4735,7 +4745,8 @@ cd downloads && pwd
 然后重新打开终端，再次输入（**别忘了改路径**）：
 
 ```bash
-cmake -D CMAKE_BUILD_TYPE=RELEASE \
+cmake \
+-D CMAKE_BUILD_TYPE=RELEASE \
 -D WITH_QT=ON \
 -D WITH_GTK=ON \
 -D WITH_VTK=ON \
@@ -4840,27 +4851,28 @@ set(libraries "cv_bridge;/usr/local/lib/libopencv_core.so.3.4.16;/usr/local/lib/
 `opencv-3.4.4`的`cmake`命令：
 
 ```bash
-cmake -D CMAKE_BUILD_TYPE=BUILD \
--D CMAKE_INSTALL_PREFIX=/usr/local \
+cmake \
+-D CMAKE_BUILD_TYPE=RELEASE \
 -D WITH_GTK_2_X=ON \
--D OPENCV_ENABLE_NONFREE=ON \
--D OPENCV_GENERATE_PKGCONFIG=YES \
--D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.4/opencv_contrib-3.4.4/modules \
 -D WITH_CUDA=ON \
 -D WITH_CUDNN=ON \
--D OPENCV_DNN_CUDA=ON \
+-D WITH_OPENMP=ON \
 -D WITH_FFMPEG=ON \
 -D WITH_OPENGL=ON \
+-D WITH_LAPACK=OFF \
+-D BUILD_TESTS=OFF \
 -D WITH_NVCUVID=ON \
+-D CUDA_ARCH_BIN=8.6 \
+-D OPENCV_DNN_CUDA=ON \
+-D CUDA_GENERATION=Auto \
+-D OPENCV_ENABLE_NONFREE=ON \
+-D BUILD_opencv_xfeatures2d=ON \
+-D OPENCV_GENERATE_PKGCONFIG=YES \
 -D ENABLE_PRECOMPILED_HEADERS=OFF \
 -D CMAKE_EXE_LINKER_FLAGS=-lcblas \
--D WITH_LAPACK=OFF \
--D WITH_OPENMP=ON \
--D BUILD_TESTS=OFF \
--D BUILD_opencv_xfeatures2d=ON \
--D CUDA_ARCH_BIN=8.6 \
--D CUDA_GENERATION=Auto \
+-D CMAKE_INSTALL_PREFIX=/usr/local \
 -D CUDA_HOST_COMPILER:FILEPATH=/usr/bin/gcc-7 \
+-D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.4/opencv_contrib-3.4.4/modules \
 -j$(nproc) ..
 ```
 
@@ -4995,7 +5007,9 @@ cd libfreenect2 && mkdir build && cd build/
 ```
 
 ```bash
-cmake -j$(nproc) .. -DENABLE_CXX11=ON
+cmake \
+-D ENABLE_CXX11=ON \
+-j$(nproc) ..
 ```
 
 ```bash
