@@ -124,19 +124,19 @@ channels:
   - defaults
 show_channel_urls: true
 default_channels:
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
 custom_channels:
-  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   deepmodeling: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   nvidia: https://mirrors.sustech.edu.cn/anaconda-extra/cloud
 
@@ -909,7 +909,7 @@ cd src/
 ```
 
 ```bash
-git clone -b opencv4 --recursive https://github.com/M0/darknet_ros.git darknet_ros
+git clone -b opencv4 --recursive https://github.com/M0rtzz/darknet_ros.git darknet_ros
 cd darknet_ros
 git submodule update --recursive
 ```
@@ -1346,11 +1346,7 @@ roslaunch realsense2_camera rs_camera.launch
 ### kinova-ros机械臂工作空间
 
 ```bash
-mkdir -p kinova_test_ws/src
-```
-
-```bash
-cd kinova_test_ws/src
+cd catkin_ws/src
 ```
 
 ```bash
@@ -1363,11 +1359,6 @@ cd ..
 
 ```bash
 catkin_make
-```
-
-```bash
-echo 'source /home/m0rtzz/Workspaces/kinova_test_ws/devel/setup.bash' >> ~/.bashrc
-source ~/.bashrc
 ```
 
 ```bash
