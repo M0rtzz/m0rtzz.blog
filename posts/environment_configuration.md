@@ -462,28 +462,28 @@ mlocate deviceQuery | grep cuda | head -n 1 | xargs -r bash -c | grep 'CUDA Capa
 # @line: 66左右
 # extract version from the include
 if(CUDNN_INCLUDE_DIR)
-  file(READ "${CUDNN_INCLUDE_DIR}/cudnn.h" CUDNN_H_CONTENTS) // [!code --]
-  if(EXISTS "${CUDNN_INCLUDE_DIR}/cudnn_version.h") // [!code ++]
-    file(READ "${CUDNN_INCLUDE_DIR}/cudnn_version.h" CUDNN_H_CONTENTS) // [!code ++]
-  else() // [!code ++]
-    file(READ "${CUDNN_INCLUDE_DIR}/cudnn.h" CUDNN_H_CONTENTS) // [!code ++]
-  endif() // [!code ++]
+  file(READ "${CUDNN_INCLUDE_DIR}/cudnn.h" CUDNN_H_CONTENTS) # [!code --]
+  if(EXISTS "${CUDNN_INCLUDE_DIR}/cudnn_version.h") # [!code ++]
+    file(READ "${CUDNN_INCLUDE_DIR}/cudnn_version.h" CUDNN_H_CONTENTS) # [!code ++]
+  else() # [!code ++]
+    file(READ "${CUDNN_INCLUDE_DIR}/cudnn.h" CUDNN_H_CONTENTS) # [!code ++]
+  endif() # [!code ++]
 
   string(REGEX MATCH "define CUDNN_MAJOR ([0-9]+)" _ "${CUDNN_H_CONTENTS}")
   set(CUDNN_MAJOR_VERSION ${CMAKE_MATCH_1} CACHE INTERNAL "")
-  message("CUDNN_MAJOR_VERSION:" ${CUDNN_MAJOR_VERSION}) // [!code ++]
+  message("CUDNN_MAJOR_VERSION:" ${CUDNN_MAJOR_VERSION}) # [!code ++]
   string(REGEX MATCH "define CUDNN_MINOR ([0-9]+)" _ "${CUDNN_H_CONTENTS}")
   set(CUDNN_MINOR_VERSION ${CMAKE_MATCH_1} CACHE INTERNAL "")
-  message("CUDNN_MINOR_VERSION:" ${CUDNN_MINOR_VERSION}) // [!code ++]
+  message("CUDNN_MINOR_VERSION:" ${CUDNN_MINOR_VERSION}) # [!code ++]
   string(REGEX MATCH "define CUDNN_PATCHLEVEL ([0-9]+)" _ "${CUDNN_H_CONTENTS}")
   set(CUDNN_PATCH_VERSION ${CMAKE_MATCH_1} CACHE INTERNAL "")
-  message("CUDNN_PATCH_VERSION:" ${CUDNN_PATCH_VERSION}) // [!code ++]
+  message("CUDNN_PATCH_VERSION:" ${CUDNN_PATCH_VERSION}) # [!code ++]
 
   set(CUDNN_VERSION
     "${CUDNN_MAJOR_VERSION}.${CUDNN_MINOR_VERSION}.${CUDNN_PATCH_VERSION}"
     CACHE
-    STRING // [!code --]
-    INTERNAL // [!code ++]
+    STRING # [!code --]
+    INTERNAL # [!code ++]
     "cuDNN version"
   )
 
@@ -721,11 +721,11 @@ wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/ra
 # @line: 29左右
 if(CUDA_FOUND)
   set(HAVE_CUDA 1)
-  if(CUDA_VERSION VERSION_GREATER_EQUAL "11.0") // [!code ++]
-    # CUDA 11.X removes nppicom // [!code ++]
-    ocv_list_filterout(CUDA_npp_LIBRARY "nppicom") // [!code ++]
-    ocv_list_filterout(CUDA_nppi_LIBRARY "nppicom") // [!code ++]
-  endif() // [!code ++]
+  if(CUDA_VERSION VERSION_GREATER_EQUAL "11.0") # [!code ++]
+    # CUDA 11.X removes nppicom # [!code ++]
+    ocv_list_filterout(CUDA_npp_LIBRARY "nppicom") # [!code ++]
+    ocv_list_filterout(CUDA_nppi_LIBRARY "nppicom") # [!code ++]
+  endif() # [!code ++]
   if(WITH_CUFFT)
 ```
 
@@ -1267,8 +1267,8 @@ mkdir build && cd build
 # @file: ../CMakeLists.txt
 # @line: 3左右
 project(librealsense2 LANGUAGES CXX C)
-# NOTE: Modified by M0rtzz // [!code ++]
-LINK_LIBRARIES(-lcurl -lcrypto) // [!code ++]
+# NOTE: Modified by M0rtzz # [!code ++]
+LINK_LIBRARIES(-lcurl -lcrypto) # [!code ++]
 include(CMake/lrs_options.cmake)
 ```
 
@@ -4827,16 +4827,18 @@ sudo gedit /opt/ros/melodic/share/cv_bridge/cmake/cv_bridgeConfig.cmake
 
 ```cmake
 # 94行左右
-if(NOT "include;/usr/include;/usr/include/opencv " STREQUAL " ") // [!code --]
-  set(cv_bridge_INCLUDE_DIRS "") // [!code --]
-  set(_include_dirs "include;/usr/include;/usr/include/opencv") // [!code --]
-if(NOT "include;/usr/local/include/opencv;/usr/local/include/opencv2 " STREQUAL " ") // [!code ++]
-  set(cv_bridge_INCLUDE_DIRS "") // [!code ++]
-  set(_include_dirs "include;/usr/local/include/opencv;/usr/local/include/opencv;/usr/local/include/;/usr/include") // [!code ++]
+if(NOT "include;/usr/include;/usr/include/opencv " STREQUAL " ") # [!code --]
+  set(cv_bridge_INCLUDE_DIRS "") # [!code --]
+  set(_include_dirs "include;/usr/include;/usr/include/opencv") # [!code --]
+if(NOT "include;/usr/local/include/opencv;/usr/local/include/opencv2 " STREQUAL " ") # [!code ++]
+  set(cv_bridge_INCLUDE_DIRS "") # [!code ++]
+  set(_include_dirs "include;/usr/local/include/opencv;/usr/local/include/opencv;/usr/local/include/;/usr/include") # [!code ++]
+
+#################################分割线#################################
 
 # 119行左右
-set(libraries "cv_bridge;/usr/lib/x86_64-linux-gnu/libopencv_core.so.3.2.0;/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.3.2.0;/usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.3.2.0") // [!code --]
-set(libraries "cv_bridge;/usr/local/lib/libopencv_core.so.3.4.16;/usr/local/lib/libopencv_imgproc.so.3.4.16;/usr/local/lib/libopencv_imgcodecs.so.3.4.16") // [!code ++]
+set(libraries "cv_bridge;/usr/lib/x86_64-linux-gnu/libopencv_core.so.3.2.0;/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.3.2.0;/usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.3.2.0") # [!code --]
+set(libraries "cv_bridge;/usr/local/lib/libopencv_core.so.3.4.16;/usr/local/lib/libopencv_imgproc.so.3.4.16;/usr/local/lib/libopencv_imgcodecs.so.3.4.16") # [!code ++]
 ```
 
 `opencv-3.4.4`的`cmake`命令：
