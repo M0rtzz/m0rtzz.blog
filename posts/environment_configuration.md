@@ -6,7 +6,7 @@
 >
 > **ZZU-SR**的童鞋配置环境前可以给鄙人发邮件：[E-mail](mailto:m0rtzz@stu.zzu.edu.cn)，另外：
 >
-> ***如果装了***`Anaconda3/Miniconda3`***，最好设置***`auto_activate_base: false`***，没有特殊需求不要激活虚拟环境，否则会影响编译。***
+> ***如果装了***`Anaconda3/Miniconda3`***，最好设置***`auto_activate_base: false`***，或者需要编译时***`conda deactivate`***，否则会影响编译。***
 >
 > 本文根据重要程度对各个步骤进行分类：
 >
@@ -192,7 +192,7 @@ reboot
 
 > [!CAUTION]
 >
-> 有可能会损坏系统，如果损坏可以重装并看看网上的其他教程，除了这种安装方法还有其他安装方法，但是曾经试过很多种方法，鄙人认为这种方法最快捷且最不容易损坏系统。
+> 有可能会损坏系统，如果损坏可以重装并看看网上的其他教程，除了这种安装方法，曾经还试过很多种方法，鄙人认为这种方法最快捷且最不容易损坏系统。
 
 打开终端，输入：
 
@@ -204,15 +204,14 @@ sudo apt install -y gcc g++ make zlib1g
 sudo ubuntu-drivers devices
 ```
 
-![image-20240219202632909](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:19/20:26:33_image-20240219202632909.png)
+![image-20240827102555812](https://static.m0rtzz.com/images/Year%3A2024/Month%3A08/Day%3A27/10%3A25%3A56_image-20240827102555812.png)
 
 寻找带有`recommended`的版本，输入：
 
 ```bash
+# `your_version`是你的版本号
 sudo apt install -y nvidia-driver-your_version nvidia-settings nvidia-prime
 ```
-
-（`your_version`是你的版本号）
 
 ```bash
 sudo apt update -y
@@ -292,8 +291,6 @@ cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
 
 ### ROS-noetic（有些图忘记截了）
 
-**导入Key**
-
 ```bash
 sudo gpg --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 ```
@@ -301,8 +298,6 @@ sudo gpg --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE88
 ```bash
 sudo gpg --export C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654 | sudo tee /usr/share/keyrings/ros.gpg > /dev/null
 ```
-
-**设置中科大源**
 
 ```bash
 sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/ros.gpg] https://mirrors.ustc.edu.cn/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -344,7 +339,7 @@ sudo chmod 777 -R ~/.ros/
 roscore
 ```
 
-![image-20240219203852347](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:19/20:38:52_image-20240219203852347.png)
+![image-20240827102731991](https://static.m0rtzz.com/images/Year%3A2024/Month%3A08/Day%3A27/10%3A27%3A32_image-20240827102731991.png)
 
 再新建两个终端，分别输入：
 
@@ -358,7 +353,7 @@ rosrun turtlesim turtle_teleop_key
 
 在 `rosrun turtlesim turtle_teleop_key`所在终端点击一下任意位置，然后使用`←↕→`小键盘控制，看小海龟会不会动，如果会动则安装成功。
 
-![image-20240819153523553](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:19/15:35:28_image-20240819153523553.png)
+![image-20240827102929723](https://static.m0rtzz.com/images/Year%3A2024/Month%3A08/Day%3A27/10%3A29%3A30_image-20240827102929723.png)
 
 ### OpenCV-4.2.0及其扩展模块
 
@@ -501,7 +496,24 @@ endif()
 
 ![image-20240826155810307](https://static.m0rtzz.com/images/Year%3A2024/Month%3A08/Day%3A26/15%3A58%3A10_image-20240826155810307.png)
 
-需手动加入PR代码：
+打补丁：
+
+`.patch`文件（有可能打不了补丁，还是需要自己手动加入）：
+
+```bash
+cd ../ && \
+wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/raw/master/opencv_pr_17685.patch -O opencv_pr_17685.patch && \
+git apply opencv_pr_17685.patch
+```
+
+或者手动加入PR代码：
+
+`.diff`文件：
+
+```bash
+cd ../ && \
+wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/raw/master/opencv_pr_17685.diff -O opencv_pr_17685.diff
+```
 
 ```cpp
 // @brief: 行号是按照从上到下添加的顺序依次排列的
@@ -684,18 +696,6 @@ endif()
         }
 
         TransposeConvolutionAlgorithm& operator=(const TransposeConvolutionAlgorithm&) = default;
-```
-
-`.diff`文件：
-
-```bash
-wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/raw/master/opencv_pr_17685.diff -O opencv_pr_17685.diff
-```
-
-`.patch`文件（有可能打不了补丁，还是需要自己手动加入）：
-
-```bash
-wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/raw/master/opencv_pr_17685.patch -O opencv_PR_17685.patch
 ```
 
 > **Reference:**
@@ -914,7 +914,7 @@ git submodule update --recursive
 如果视频流只有第一帧是`RGB8`编码格式，阅读源码后发现在`show_image`之前调用`image.cpp`中的`rgbgr_image`函数循环转换图像编码格式即可解决此问题：
 
 ```cpp
-// @file : image.cpp
+// @file: image.cpp
 void rgbgr_image(image im)
 {
     int i;
@@ -927,7 +927,7 @@ void rgbgr_image(image im)
 ```
 
 ```cpp
-// @file : YoloObjectDetector.cpp
+// @file: YoloObjectDetector.cpp
   void *YoloObjectDetector::displayInThread(void *ptr)
   {
     // NOTE: Modified by M0rtzz, solved the problem of displaying video stream as bgr8
@@ -1047,6 +1047,7 @@ sudo apt install -y sox libsox-fmt-all pavucontrol
 ```
 
 ```bash
+# 如果编译时有相关warning再修改
 sudo gedit /usr/include/pcl-1.8/pcl/visualization/cloud_viewer.h
 ```
 
@@ -1127,7 +1128,7 @@ include_directories(~/Workspaces/tts_test_ws/include ${catkin_INCLUDE_DIRS}
 link_directories(~/Workspaces/tts_test_ws/lib/)
 
 add_executable(tts_voice_test src/tts_voice_test.cc)
-add_dependencies(tongyong_try ${${PROJECT_NAME}_EXPORTED_TARGETS}
+add_dependencies(tts_voice_test ${${PROJECT_NAME}_EXPORTED_TARGETS}
                  ${catkin_EXPORTED_TARGETS})
 target_link_libraries(
   tts_voice_test
@@ -1268,9 +1269,12 @@ mkdir build && cd build
 ```
 
 ```bash
-# @file : CMakeLists.txt
-# NOTE: Modified by M0rtzz
-LINK_LIBRARIES(-lcurl -lcrypto)
+# @file: ../CMakeLists.txt
+# @line: 3左右
+project(librealsense2 LANGUAGES CXX C)
+# NOTE: Modified by M0rtzz // [!code ++]
+LINK_LIBRARIES(-lcurl -lcrypto) // [!code ++]
+include(CMake/lrs_options.cmake)
 ```
 
 ```bash
@@ -2388,7 +2392,7 @@ sudo apt update -y && sudo apt install -y diodon
 
 ![image-20240718160648762](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/16:06:48_image-20240718160648762.png)
 
-另外可使用中科大反向代理`Canonical`的`ppa仓库`：
+另外可使用中科大源反向代理`Canonical`的`ppa仓库`：
 
 > [!TIP]
 >
@@ -2604,7 +2608,8 @@ wget -q --show-progress https://raw.gitcode.com/M0rtzz/protobuf-2.6.1/assets/199
 解压压缩包后进入文件夹，打开终端，输入：
 
 ```bash
-./autogen.sh # 可有可无（Reference: https://github.com/protocolbuffers/protobuf/blob/v2.6.1/README.md?plain=1#L11-L21）
+# 可有可无（Reference: https://github.com/protocolbuffers/protobuf/blob/v2.6.1/README.md?plain=1#L11-L21）
+./autogen.sh
 ```
 
 ```bash
@@ -4573,8 +4578,6 @@ sudo make -j$(nproc) install
 
 ### ROS-melodic（有些图忘记截了）
 
-**导入Key**
-
 ```bash
 sudo gpg --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 ```
@@ -4582,8 +4585,6 @@ sudo gpg --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE88
 ```bash
 sudo gpg --export C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654 | sudo tee /usr/share/keyrings/ros.gpg > /dev/null
 ```
-
-**设置中科大源**
 
 ```bash
 sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/ros.gpg] https://mirrors.ustc.edu.cn/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -5060,7 +5061,7 @@ sudo ./Setup.sh
 ```
 
 ```cpp
-// @file : CubemapUnwrapUtils.cpp
+// @file: CubemapUnwrapUtils.cpp
 
 // Use
 RHICmdList.GetBoundVertexShader() instead of GetVertexShader()
@@ -5091,7 +5092,7 @@ CONTENT_LINK=https://mirrors.sustech.edu.cn/carla/carla_content/${CONTENT_ID}.ta
 ```
 
 ```cpp
-// @file : test_streaming.cpp
+// @file: test_streaming.cpp
 
 // Line 58
 carla::streaming::low_level::Server<tcp::Server> srv(io.service, TESTING_PORT);
@@ -5107,7 +5108,7 @@ carla::streaming::low_level::Client<tcp::Client> c;
 ```
 
 ```bash
-# @file : Package.sh(https://github.com/annaornatskaya/carla/tree/fisheye-sensor)
+# @file: Package.sh(https://github.com/annaornatskaya/carla/tree/fisheye-sensor)
 
   # copy_if_changed "./Plugins/" "${DESTINATION}/Plugins/"
 
