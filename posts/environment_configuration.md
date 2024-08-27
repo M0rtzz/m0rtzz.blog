@@ -4826,7 +4826,7 @@ sudo gedit /opt/ros/melodic/share/cv_bridge/cmake/cv_bridgeConfig.cmake
 修改其中的以下内容：
 
 ```cmake
-# 94行左右
+# @line: 94行左右
 if(NOT "include;/usr/include;/usr/include/opencv " STREQUAL " ") # [!code --]
   set(cv_bridge_INCLUDE_DIRS "") # [!code --]
   set(_include_dirs "include;/usr/include;/usr/include/opencv") # [!code --]
@@ -4836,7 +4836,7 @@ if(NOT "include;/usr/local/include/opencv;/usr/local/include/opencv2 " STREQUAL 
 
 #################################分割线#################################
 
-# 119行左右
+# @line: 119行左右
 set(libraries "cv_bridge;/usr/lib/x86_64-linux-gnu/libopencv_core.so.3.2.0;/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.3.2.0;/usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.3.2.0") # [!code --]
 set(libraries "cv_bridge;/usr/local/lib/libopencv_core.so.3.4.16;/usr/local/lib/libopencv_imgproc.so.3.4.16;/usr/local/lib/libopencv_imgcodecs.so.3.4.16") # [!code ++]
 ```
