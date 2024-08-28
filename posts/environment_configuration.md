@@ -149,7 +149,8 @@ auto_activate_base: false
 `pip`设置镜像源：
 
 ```bash
-mkdir -p ${HOME}/.config/pip/ && cd ${HOME}/.config/pip/ && tee ${HOME}/.config/pip/pip.conf > /dev/null << EOF
+mkdir -p ${HOME}/.config/pip/ && cd ${HOME}/.config/pip/ && \
+tee ${HOME}/.config/pip/pip.conf > /dev/null << EOF
 [global]
 index-url = https://mirrors.hust.edu.cn/pypi/web/simple
 
@@ -457,8 +458,7 @@ mlocate deviceQuery | grep cuda | head -n 1 | xargs -r bash -c | grep 'CUDA Capa
 解决办法：
 
 ```cmake
-# @brief: REPO_ROOT_DIR=$(git rev-parse --show-toplevel)
-# @file: ${REPO_ROOT_DIR}/cmake/FindCUDNN.cmake
+# @file: $(git rev-parse --show-toplevel)/cmake/FindCUDNN.cmake
 
 # @line: 66左右
 # extract version from the include
@@ -505,8 +505,7 @@ endif()
 `.patch`文件（有可能打不了补丁，还是需要自己手动加入）：
 
 ```bash
-REPO_ROOT_DIR=$(git rev-parse --show-toplevel) && \
-cd ${REPO_ROOT_DIR}/ && \
+cd $(git rev-parse --show-toplevel)/ && \
 wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/raw/master/opencv_pr_17685.patch -O opencv_pr_17685.patch && \
 git apply opencv_pr_17685.patch
 ```
@@ -516,14 +515,13 @@ git apply opencv_pr_17685.patch
 `.diff`文件：
 
 ```bash
-REPO_ROOT_DIR=$(git rev-parse --show-toplevel) && \
-cd ${REPO_ROOT_DIR}/ && \
+cd $(git rev-parse --show-toplevel)/ && \
 wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/raw/master/opencv_pr_17685.diff -O opencv_pr_17685.diff
 ```
 
 ```cpp
 // @brief: 行号是按照从上到下添加的顺序依次排列的
-// @file: ${REPO_ROOT_DIR}/modules/dnn/src/cuda4dnn/csl/cudnn/convolution.hpp
+// @file: $(git rev-parse --show-toplevel)/modules/dnn/src/cuda4dnn/csl/cudnn/convolution.hpp
 
 // @line: 226左右
                 CUDA4DNN_CHECK_CUDNN(cudnnSetConvolutionGroupCount(descriptor, group_count));
@@ -622,7 +620,7 @@ wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/ra
 
 ```cpp
 // @brief: 行号是按照从上到下添加的顺序依次排列的
-// @file: ${REPO_ROOT_DIR}/modules/dnn/src/cuda4dnn/csl/cudnn/transpose_convolution.hpp
+// @file: $(git rev-parse --show-toplevel)/modules/dnn/src/cuda4dnn/csl/cudnn/transpose_convolution.hpp
 
 // @line: 31左右
         TransposeConvolutionAlgorithm(
@@ -718,9 +716,9 @@ wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/ra
 
 解决办法：
 
-修改`${REPO_ROOT_DIR}/cmake/OpenCVDetectCUDA.cmake`：
-
 ```cmake
+# @file: $(git rev-parse --show-toplevel)/cmake/OpenCVDetectCUDA.cmake
+
 # @line: 29左右
 if(CUDA_FOUND)
   set(HAVE_CUDA 1)
@@ -750,7 +748,7 @@ if(CUDA_FOUND)
 
 ```bash
 # 手动执行脚本
-cd ${REPO_ROOT_DIR}/ && \
+cd $(git rev-parse --show-toplevel)/ && \
 python3 ./modules/python/src2/gen2.py \
 ./build/modules/python_bindings_generator \
 ./build/modules/python_bindings_generator/headers.txt
@@ -808,7 +806,7 @@ git clone https://mirror.ghproxy.com/https://github.com/AlexeyAB/darknet.git dar
 ```
 
 ```bash
-cd darknet
+cd darknet/
 ```
 
 ```bash
@@ -864,7 +862,7 @@ usage: ./darknet <function>
 之后我们下载`yolov3`权重文件：
 
 ```bash
-REPO_ROOT_DIR=$(git rev-parse --show-toplevel) && cd ${REPO_ROOT_DIR}/ && \
+cd $(git rev-parse --show-toplevel)/ && \
 mkdir weights && cd weights/ && \
 wget -q --show-progress https://pjreddie.com/media/files/yolov3.weight
 ```
@@ -874,7 +872,8 @@ wget -q --show-progress https://pjreddie.com/media/files/yolov3.weight
 下面我们测试一下：
 
 ```bash
-cd ${REPO_ROOT_DIR}/ && ./darknet detect cfg/yolov3.cfg weights/yolov3.weights data/dog.jpg
+cd $(git rev-parse --show-toplevel)/ && \
+./darknet detect cfg/yolov3.cfg weights/yolov3.weights data/dog.jpg
 ```
 
 输出以下就证明配置没有问题：
@@ -898,11 +897,7 @@ sudo apt install -y 'libcanberra-gtk*'
 `darknet_ros`工作空间（`OpenCV-4.2.0`）：
 
 ```bash
-mkdir catkin_ws && cd catkin_ws/ && mkdir src
-```
-
-```bash
-cd src/ && catkin_init_workspace
+mkdir -p catkin_ws/src && cd catkin_ws/src/ && catkin_init_workspace
 ```
 
 ```bash
@@ -915,7 +910,7 @@ cd src/
 
 ```bash
 git clone -b opencv4 --recursive https://github.com/M0rtzz/darknet_ros.git darknet_ros
-cd darknet_ros
+cd darknet_ros/
 git submodule update --recursive
 ```
 
@@ -1007,7 +1002,9 @@ wget -q --show-progress https://packages.microsoft.com/ubuntu/18.04/prod/pool/ma
 安装：
 
 ```bash
-sudo apt install -y ./libk4a1.4_1.4.2_amd64.deb && sudo cp /usr/lib/x86_64-linux-gnu/libk4a1.4/libdepthengine.so.2.0 /usr/lib/ && sudo cp /usr/lib/libdepthengine.so.2.0 /usr/lib/x86_64-linux-gnu/
+sudo apt install -y ./libk4a1.4_1.4.2_amd64.deb && \
+sudo cp /usr/lib/x86_64-linux-gnu/libk4a1.4/libdepthengine.so.2.0 /usr/lib/ && \
+sudo cp /usr/lib/libdepthengine.so.2.0 /usr/lib/x86_64-linux-gnu/
 ```
 
 ![image-20240819154538551](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:19/15:45:38_image-20240819154538551.png)
@@ -1265,12 +1262,11 @@ cd librealsense-2.50.0/
 之后输入：
 
 ```bash
-mkdir build && cd build
+mkdir build && cd build/
 ```
 
 ```bash
-# @brief: REPO_ROOT_DIR=$(git rev-parse --show-toplevel)
-# @file: ${REPO_ROOT_DIR}/CMakeLists.txt
+# @file: $(git rev-parse --show-toplevel)/CMakeLists.txt
 # @line: 3左右
 project(librealsense2 LANGUAGES CXX C)
 # NOTE: Modified by M0rtzz # [!code ++]
@@ -1298,7 +1294,7 @@ sudo make -j$(nproc) install
 测试：
 
 ```bash
-cd examples/capture
+cd examples/capture/
 ```
 
 ```bash
@@ -1352,7 +1348,7 @@ roslaunch realsense2_camera rs_camera.launch
 ### kinova-ros机械臂工作空间
 
 ```bash
-cd catkin_ws/src
+cd catkin_ws/src/
 ```
 
 ```bash
@@ -1484,11 +1480,7 @@ sudo ./install.sh
 首先创建实体导航工作空间：
 
 ```bash
-mkdir -p navigation_entity_test_ws/src
-```
-
-```bash
-cd navigation_entity_test_ws/src
+mkdir -p navigation_entity_test_ws/src && cd navigation_entity_test_ws/src/
 ```
 
 ```bash
@@ -1504,7 +1496,7 @@ cd src/ && catkin_create_pkg robot_start_test roscpp rospy std_msgs ros_arduino_
 ```
 
 ```bash
-cd robot_start_test/ && mkdir launch && cd launch && touch start_test.launch
+cd robot_start_test/ && mkdir launch && cd launch/ && touch start_test.launch
 ```
 
 ```xml
@@ -1894,7 +1886,7 @@ cd .. && mkdir map
 ```
 
 ```bash
-cd launch && touch map_save.launch && code map_save.launch
+cd launch/ && touch map_save.launch && code map_save.launch
 ```
 
 将下列代码粘贴进去：
@@ -2073,7 +2065,7 @@ local_costmap:
 ```
 
 ```bash
-cd ../launch && touch move_base.launch && code move_base.launch
+cd ../launch/ && touch move_base.launch && code move_base.launch
 ```
 
 将下列代码粘贴进去：
@@ -2675,7 +2667,7 @@ git clone https://gitclone.com/github.com/OpenMathLib/OpenBLAS.git OpenBLAS
 ```
 
 ```bash
-cd OpenBLAS
+cd OpenBLAS/
 ```
 
 ```bash
@@ -4509,7 +4501,7 @@ sudo make pycaffe -j$(nproc)
 解压之后，进入文件夹打开终端：
 
 ```bash
-sudo apt install -y cmake-gui && mkdir build && cd build && cmake-gui ..
+sudo apt install -y cmake-gui && mkdir build && cd build/ && cmake-gui ..
 ```
 
 单击`Configure`：
@@ -4549,7 +4541,7 @@ git clone -b pcl-1.9.1 https://mirror.ghproxy.com/https://github.com/PointCloudL
 之后进入文件夹打开终端输入：
 
 ```bash
-mkdir release && cd release
+mkdir build && cd build/
 ```
 
 ```bash
@@ -4655,7 +4647,7 @@ git clone -b 3.4.16 https://mirror.ghproxy.com/https://github.com/opencv/opencv.
 ```
 
 ```bash
-cd opencv-3.4.16
+cd opencv-3.4.16/
 ```
 
 ```bash
@@ -4683,11 +4675,7 @@ sudo apt install -y cmake git libgtk2.0-dev pkg-config libavcodec-dev libavforma
 进入`opencv-3.4.16/`文件夹，打开终端，输入：
 
 ```bash
-mkdir build
-```
-
-```bash
-cd build
+mkdir build && cd build/
 ```
 
 **接下来编译安装，注意此命令的`OPENCV_EXTRA_MODULES_PATH=`后边的路径是你电脑下的绝对路径，请自行修改**
@@ -4718,12 +4706,7 @@ cmake \
 解决方法：
 
 ```bash
-REPO_ROOT_DIR=$(git rev-parse --show-toplevel) && \
-cd ${REPO_ROOT_DIR}/ && mkdir downloads
-```
-
-```bash
-cd downloads && pwd
+cd $(git rev-parse --show-toplevel)/ && mkdir downloads && realpath downloads/
 ```
 
 复制绝对路径后：
@@ -4814,7 +4797,7 @@ source /etc/profile
 测试：
 
 ```bash
-cd ../samples/cpp/example_cmake
+cd ../samples/cpp/example_cmake/
 cmake -j$(nproc) .
 sudo make -j$(nproc)
 ./opencv_example
@@ -4930,8 +4913,7 @@ sudo cp /usr/lib/x86_64-linux-gnu/libdepthengine.so.2.0 /usr/lib/
 随后进入下载好的`Azure-Kinect-Sensor-SDK-v1.4.0/`文件夹下打开终端输入
 
 ```bash
-mkdir build && cd build
-cmake -j$(nproc) .. -GNinja
+cmake -GNinja -j$(nproc) ..
 ```
 
 注意此步过程中`extern/libyuv/src`克隆较慢原因是使用了`google`的网站，我们把对应文件的克隆`url`改为`GitHub`的就能正常克隆了，在`Azure-Kinect-Sensor-SDK-v1.4.0/`文件夹下键盘`Ctrl+H`显示隐藏文件，打开`.gitmodules`文件，修改`libyuv`的部分为：
@@ -5003,7 +4985,7 @@ git clone https://mirror.ghproxy.com/https://github.com/OpenKinect/libfreenect2.
 ```
 
 ```bash
-cd libfreenect2 && mkdir build && cd build/
+cd libfreenect2/ && mkdir build && cd build/
 ```
 
 ```bash
