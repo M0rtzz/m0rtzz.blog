@@ -204,7 +204,7 @@ sudo apt install -y gcc g++ make zlib1g
 sudo ubuntu-drivers devices
 ```
 
-![image-20240827102555812](https://static.m0rtzz.com/images/Year%3A2024/Month%3A08/Day%3A27/10%3A25%3A56_image-20240827102555812.png)
+![image-20240827102555812](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:27/10:25:56_image-20240827102555812.png)
 
 寻找带有`recommended`的版本，输入：
 
@@ -339,7 +339,7 @@ sudo chmod 777 -R ~/.ros/
 roscore
 ```
 
-![image-20240827102731991](https://static.m0rtzz.com/images/Year%3A2024/Month%3A08/Day%3A27/10%3A27%3A32_image-20240827102731991.png)
+![image-20240827102731991](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:27/10:27:32_image-20240827102731991.png)
 
 再新建两个终端，分别输入：
 
@@ -353,7 +353,7 @@ rosrun turtlesim turtle_teleop_key
 
 在 `rosrun turtlesim turtle_teleop_key`所在终端点击一下任意位置，然后使用`←↕→`小键盘控制，看小海龟会不会动，如果会动则安装成功。
 
-![image-20240827102929723](https://static.m0rtzz.com/images/Year%3A2024/Month%3A08/Day%3A27/10%3A29%3A30_image-20240827102929723.png)
+![image-20240827102929723](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:27/10:29:30_image-20240827102929723.png)
 
 ### OpenCV-4.2.0及其扩展模块
 
@@ -457,7 +457,8 @@ mlocate deviceQuery | grep cuda | head -n 1 | xargs -r bash -c | grep 'CUDA Capa
 解决办法：
 
 ```cmake
-# @file: ../cmake/FindCUDNN.cmake
+# @brief: REPO_ROOT_DIR=$(git rev-parse --show-toplevel)
+# @file: ${REPO_ROOT_DIR}/cmake/FindCUDNN.cmake
 
 # @line: 66左右
 # extract version from the include
@@ -497,14 +498,15 @@ endif()
 
 ###### 添加cuDNN8.X支持
 
-![image-20240826155810307](https://static.m0rtzz.com/images/Year%3A2024/Month%3A08/Day%3A26/15%3A58%3A10_image-20240826155810307.png)
+![image-20240826155810307](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/15:58:10_image-20240826155810307.png)
 
 打补丁：
 
 `.patch`文件（有可能打不了补丁，还是需要自己手动加入）：
 
 ```bash
-cd ../ && \
+REPO_ROOT_DIR=$(git rev-parse --show-toplevel) && \
+cd ${REPO_ROOT_DIR}/ && \
 wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/raw/master/opencv_pr_17685.patch -O opencv_pr_17685.patch && \
 git apply opencv_pr_17685.patch
 ```
@@ -514,13 +516,14 @@ git apply opencv_pr_17685.patch
 `.diff`文件：
 
 ```bash
-cd ../ && \
+REPO_ROOT_DIR=$(git rev-parse --show-toplevel) && \
+cd ${REPO_ROOT_DIR}/ && \
 wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/raw/master/opencv_pr_17685.diff -O opencv_pr_17685.diff
 ```
 
 ```cpp
 // @brief: 行号是按照从上到下添加的顺序依次排列的
-// @file: ../modules/dnn/src/cuda4dnn/csl/cudnn/convolution.hpp
+// @file: ${REPO_ROOT_DIR}/modules/dnn/src/cuda4dnn/csl/cudnn/convolution.hpp
 
 // @line: 226左右
                 CUDA4DNN_CHECK_CUDNN(cudnnSetConvolutionGroupCount(descriptor, group_count));
@@ -619,7 +622,7 @@ wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/ra
 
 ```cpp
 // @brief: 行号是按照从上到下添加的顺序依次排列的
-// @file: ../modules/dnn/src/cuda4dnn/csl/cudnn/transpose_convolution.hpp
+// @file: ${REPO_ROOT_DIR}/modules/dnn/src/cuda4dnn/csl/cudnn/transpose_convolution.hpp
 
 // @line: 31左右
         TransposeConvolutionAlgorithm(
@@ -715,7 +718,7 @@ wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/ra
 
 解决办法：
 
-修改`../cmake/OpenCVDetectCUDA.cmake`：
+修改`${REPO_ROOT_DIR}/cmake/OpenCVDetectCUDA.cmake`：
 
 ```cmake
 # @line: 29左右
@@ -729,7 +732,7 @@ if(CUDA_FOUND)
   if(WITH_CUFFT)
 ```
 
-![image-20240826153656145](https://static.m0rtzz.com/images/Year%3A2024/Month%3A08/Day%3A26/15%3A36%3A56_image-20240826153656145.png)
+![image-20240826153656145](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/15:36:56_image-20240826153656145.png)
 
 > **Reference:**
 >
@@ -747,13 +750,13 @@ if(CUDA_FOUND)
 
 ```bash
 # 手动执行脚本
-cd ../ && \
+cd ${REPO_ROOT_DIR}/ && \
 python3 ./modules/python/src2/gen2.py \
 ./build/modules/python_bindings_generator \
 ./build/modules/python_bindings_generator/headers.txt
 ```
 
-![image-20240826151044127](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/15:10:44_image-20240826151044127.png)
+![image-20240828125621558](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:28/12:56:21_image-20240828125621558.png)
 
 > **Reference:**
 >
@@ -861,7 +864,9 @@ usage: ./darknet <function>
 之后我们下载`yolov3`权重文件：
 
 ```bash
-mkdir weights && cd ./weights && wget -q --show-progress https://pjreddie.com/media/files/yolov3.weight
+REPO_ROOT_DIR=$(git rev-parse --show-toplevel) && cd ${REPO_ROOT_DIR}/ && \
+mkdir weights && cd weights/ && \
+wget -q --show-progress https://pjreddie.com/media/files/yolov3.weight
 ```
 
 到此为止`darknet`就配置好了。
@@ -869,12 +874,12 @@ mkdir weights && cd ./weights && wget -q --show-progress https://pjreddie.com/me
 下面我们测试一下：
 
 ```bash
-cd .. && ./darknet detect cfg/yolov3.cfg weights/yolov3.weights data/dog.jpg
+cd ${REPO_ROOT_DIR}/ && ./darknet detect cfg/yolov3.cfg weights/yolov3.weights data/dog.jpg
 ```
 
 输出以下就证明配置没有问题：
 
-![f0b4566371b](https://static.m0rtzz.com/images/Year%3A2024/Month%3A08/Day%3A26/17%3A19%3A26_f0b4566371b.png)
+![f0b4566371b](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/17:19:26_f0b4566371b.png)
 
 输出的最后一行报错：
 
@@ -1118,9 +1123,9 @@ if(OPENMP_FOUND)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
 endif()
 
-include_directories(~/Workspaces/tts_test_ws/include ${catkin_INCLUDE_DIRS}
+include_directories(/home/m0rtzz/Workspaces/tts_test_ws/include ${catkin_INCLUDE_DIRS}
                     ${OpenCV_INCLUDE_DIRS} ${PCL_INCLUDE_DIRS})
-link_directories(~/Workspaces/tts_test_ws/lib/)
+link_directories(/home/m0rtzz/Workspaces/tts_test_ws/lib/)
 
 add_executable(tts_voice_test src/tts_voice_test.cc)
 add_dependencies(tts_voice_test ${${PROJECT_NAME}_EXPORTED_TARGETS}
@@ -1264,7 +1269,8 @@ mkdir build && cd build
 ```
 
 ```bash
-# @file: ../CMakeLists.txt
+# @brief: REPO_ROOT_DIR=$(git rev-parse --show-toplevel)
+# @file: ${REPO_ROOT_DIR}/CMakeLists.txt
 # @line: 3左右
 project(librealsense2 LANGUAGES CXX C)
 # NOTE: Modified by M0rtzz # [!code ++]
@@ -4712,7 +4718,8 @@ cmake \
 解决方法：
 
 ```bash
-cd ../ && mkdir downloads
+REPO_ROOT_DIR=$(git rev-parse --show-toplevel) && \
+cd ${REPO_ROOT_DIR}/ && mkdir downloads
 ```
 
 ```bash
