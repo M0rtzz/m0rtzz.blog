@@ -738,7 +738,7 @@ if(CUDA_FOUND)
 
 ---
 
-##### gen_opencv_python_source
+##### Python相关
 
 可能是`cmake`找不到合适的`Python`解释器来执行脚本。
 
@@ -754,7 +754,7 @@ python3 ./modules/python/src2/gen2.py \
 ./build/modules/python_bindings_generator/headers.txt
 ```
 
-![image-20240828125621558](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:28/12:56:21_image-20240828125621558.png)
+![image-20240828155616856](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:28/15:56:22_image-20240828155616856.png)
 
 > **Reference:**
 >
