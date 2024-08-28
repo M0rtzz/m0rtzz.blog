@@ -4636,6 +4636,18 @@ rosrun turtlesim turtle_teleop_key
 
 ### OpenCV-3.4.16及其扩展模块（Ubuntu18.04）
 
+安装所需依赖库，打开终端，输入：
+
+```bash
+sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
+sudo apt update -y
+sudo apt install -y libjasper1 libjasper-dev
+```
+
+```bash
+sudo apt install -y cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev liblapacke-dev checkinstall
+```
+
 ```bash
 git clone -b 3.4.16 https://github.com/opencv/opencv.git opencv-3.4.16
 ```
@@ -4659,20 +4671,6 @@ git clone -b 3.4.16 https://github.com/opencv/opencv_contrib.git opencv-3.4.16
 ```bash
 git clone -b 3.4.16 https://mirror.ghproxy.com/https://github.com/opencv/opencv_contrib.git opencv_contrib-3.4.16
 ```
-
-安装所需依赖库，打开终端，输入：
-
-```bash
-sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
-sudo apt update -y
-sudo apt install -y libjasper1 libjasper-dev
-```
-
-```bash
-sudo apt install -y cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev liblapacke-dev checkinstall
-```
-
-进入`opencv-3.4.16/`文件夹，打开终端，输入：
 
 ```bash
 mkdir build && cd build/
