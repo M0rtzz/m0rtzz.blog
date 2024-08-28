@@ -1,8 +1,26 @@
-# Changelog
+## <small>3.3.3 (2024-08-28)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 🔖 tag(package.json): v3.3.3 ([ebebdb6](https://github.com/M0rtzz/m0rtzz.blog/commit/ebebdb6))
+* 🚧 wip(environment_configuration.md): need update an image ([541ecc9](https://github.com/M0rtzz/m0rtzz.blog/commit/541ecc9))
 
-## [3.3.3](https://github.com/M0rtzz/m0rtzz.blog/compare/v3.3.2...v3.3.3) (2024-08-28)
+
+
+## <small>3.3.2 (2024-08-28)</small>
+
+* 📝 doc(environment_configuration.md): update doc ([9935e9a](https://github.com/M0rtzz/m0rtzz.blog/commit/9935e9a))
+* 📝 doc(environment_configuration.md): update doc ([59ce39a](https://github.com/M0rtzz/m0rtzz.blog/commit/59ce39a))
+* 📝 docs(CHANGELOG.md): automatic update ([d19d41f](https://github.com/M0rtzz/m0rtzz.blog/commit/d19d41f))
+* 🔖 tag(package.json): v3.3.2 ([ede3ca5](https://github.com/M0rtzz/m0rtzz.blog/commit/ede3ca5))
+
+
+
+## <small>3.3.1 (2024-08-28)</small>
+
+* 📝 doc(environment_configuration.md): update doc ([2514516](https://github.com/M0rtzz/m0rtzz.blog/commit/2514516))
+* 📝 docs(CHANGELOG.md): automatic update ([895ad1b](https://github.com/M0rtzz/m0rtzz.blog/commit/895ad1b))
+* 🔖 tag(package.json): v3.3.1 ([98abb80](https://github.com/M0rtzz/m0rtzz.blog/commit/98abb80))
+
+
 
 ## 3.3.0 (2024-08-28)
 
@@ -1983,3 +2001,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
