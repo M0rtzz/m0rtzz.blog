@@ -1,9 +1,8 @@
-## <small>3.3.1 (2024-08-28)</small>
+# Changelog
 
-* 📝 doc(environment_configuration.md): update doc ([2514516](https://github.com/M0rtzz/m0rtzz.blog/commit/2514516))
-* 🔖 tag(package.json): v3.3.1 ([98abb80](https://github.com/M0rtzz/m0rtzz.blog/commit/98abb80))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
+## [3.3.2](https://github.com/M0rtzz/m0rtzz.blog/compare/v3.3.1...v3.3.2) (2024-08-28)
 
 ## 3.3.0 (2024-08-28)
 
@@ -1951,5 +1950,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
