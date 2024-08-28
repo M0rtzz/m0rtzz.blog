@@ -1,7 +1,7 @@
 {
   "name": "m0rtzz.blog",
   "author": "M0rtzz",
-  "version": "v3.3.2",
+  "version": "v3.3.3",
   "private": true,
   "scripts": {
     "dev": "next dev",
