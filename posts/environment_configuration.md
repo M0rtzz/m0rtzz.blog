@@ -978,7 +978,7 @@ void rgbgr_image(image im)
 catkin_make
 ```
 
-`catkin_make`如果编译不过的话（`error:  'IplImage' `之类的，之前装`OpenCV`提到过避免报错的方法），注意以下命令是只编译`darknet_ros`一个包，若工作空间下有多个包需要一起编译那么把命令中的`darknet_ros`删除重新执行即可：
+`catkin_make`如果编译不过的话（`error: 'IplImage' `之类的，之前装`OpenCV`提到过避免报错的方法），注意以下命令是只编译`darknet_ros`一个包，若工作空间下有多个包需要一起编译那么把命令中的`darknet_ros`删除重新执行即可：
 
 ```bash
 catkin_make darknet_ros \
@@ -2496,12 +2496,12 @@ wget -q --show-progress https://launchpad.net/ubuntu/+archive/primary/+sourcefil
 
 解压：
 
-```
+```bash
 tar -xf gnome-terminal_3.28.1.orig.tar.xz && \
 tar -xf gnome-terminal_3.28.1-1ubuntu1.debian.tar.xz
 ```
 
-```
+```bash
 ls debian/ gnome-terminal-3.28.1/
 cp -r debian/* gnome-terminal-3.28.1/
 ```
@@ -4466,7 +4466,7 @@ sudo vi /usr/local/cuda/targets/x86_64-linux/include/cudnn.h
 
 然后打开`caffe/include/caffe/util/cudnn.hpp`文件并指定`cudnn.h`路径：
 
-```
+```bash
 vi include/caffe/util/cudnn.hpp
 ```
 
