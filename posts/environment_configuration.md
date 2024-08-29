@@ -2584,7 +2584,7 @@ reboot
 sudo apt install -y libtool
 ```
 
-[https://github.com/google/protobuf/releases/download/v2.6.1/protobuf-2.6.1.tar.gz](https://github.com/google/protobuf/releases/download/v2.6.1/protobuf-2.6.1.tar.gz)
+[https://github.com/protocolbuffers/protobuf/releases/download/v2.6.1/protobuf-2.6.1.tar.gz](https://github.com/protocolbuffers/protobuf/releases/download/v2.6.1/protobuf-2.6.1.tar.gz)
 
 或镜像：
 
@@ -2592,7 +2592,9 @@ sudo apt install -y libtool
 wget -q --show-progress https://raw.gitcode.com/M0rtzz/protobuf-2.6.1/assets/199 -O protobuf-2.6.1.tar.gz
 ```
 
-解压压缩包后进入文件夹，打开终端，输入：
+```bash
+tar -zxvf protobuf-2.6.1.tar.gz && cd protobuf-2.6.1
+```
 
 ```bash
 # 可有可无（Reference: https://github.com/protocolbuffers/protobuf/blob/v2.6.1/README.md?plain=1#L11-L21）
