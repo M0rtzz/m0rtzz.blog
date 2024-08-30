@@ -1,7 +1,11 @@
 {
   "name": "m0rtzz.blog",
   "author": "M0rtzz",
+<<<<<<< HEAD
   "version": "v3.3.9",
+=======
+  "version": "v3.3.5",
+>>>>>>> 🔖 tag(package.json): v3.3.5
   "private": true,
   "scripts": {
     "dev": "next dev",
