@@ -502,7 +502,7 @@ endif()
 
 打补丁：
 
-`.patch`文件（有可能打不了补丁，还是需要自己手动加入）：
+`.patch`文件：
 
 ```bash
 cd $(git rev-parse --show-toplevel)/ && \
