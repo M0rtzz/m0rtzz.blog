@@ -321,7 +321,7 @@ sudo apt install -y python3-rosdep python3-rosinstall python3-rosinstall-generat
 sudo apt install -y python3-pip
 ```
 
-使用阿里镜像源加速`pip`下载：
+使用镜像源加速`pip`下载：
 
 ```bash
 sudo pip3 install rosdepc -i https://mirrors.hust.edu.cn/pypi/web/simple
@@ -1327,8 +1327,8 @@ cd ..
 
 ```bash
 catkin_make \
--D CATKIN_ENABLE_TESTING=False \
--D CMAKE_BUILD_TYPE=Release
+-D CMAKE_BUILD_TYPE=Release \
+-D CATKIN_ENABLE_TESTING=False
 ```
 
 ```bash
@@ -1456,15 +1456,7 @@ sudo apt install -y ros-${ROS_DISTRO}-navigation
 下载安装包：
 
 ```bash
-tar -xvf arduino-1.8.19-linux64.tar.xz
-```
-
-```bash
-sudo mv arduino-1.8.19 /opt
-```
-
-```bash
-cd /opt/arduino-1.8.19
+tar -xvf arduino-1.8.19-linux64.tar.xz && cd arduino-1.8.19/
 ```
 
 ```bash
@@ -1500,11 +1492,11 @@ cd robot_start_test/ && mkdir launch && cd launch/ && touch start_test.launch
 ```
 
 ```xml
-<!--@File Name : start_test.launch
-    @Brief : 机器人启动文件：
-        1.启动底盘
-        2.启动激光雷达
-        3.启动摄像头
+<!-- @file: start_test.launch
+     @brief: 机器人启动文件：
+         1.启动底盘
+         2.启动激光雷达
+         3.启动摄像头
  -->
 
 <launch>
@@ -1537,7 +1529,7 @@ cd urdf/ && touch {robot.urdf.xacro,robot_base.urdf.xacro,robot_camera.urdf.xacr
 将下列代码粘贴进去：
 
 ```xml
-<!-- File Name : robot.urdf.xacro -->
+<!-- @file: robot.urdf.xacro -->
 
 <robot name="robot_test" xmlns:xacro="http://wiki.ros.org/xacro">
 
@@ -1561,7 +1553,7 @@ code robot_base.urdf.xacro
 `robot_base.urdf.xacro`
 
 ```xml
-<!-- File Name : robot_base.urdf.xacro -->
+<!-- @file: robot_base.urdf.xacro -->
 
 <robot name="robot_test" xmlns:xacro="http://wiki.ros.org/xacro">
 
@@ -1679,7 +1671,7 @@ code robot_camera.urdf.xacro
 将下列代码粘贴进去：
 
 ```xml
-<!-- File Name : robot_camera.urdf.xacro -->
+<!-- @file: robot_camera.urdf.xacro -->
 
 <robot name="robot_test" xmlns:xacro="http://wiki.ros.org/xacro">
 
@@ -1720,7 +1712,7 @@ code robot_laser.urdf.xacro
 将下列代码粘贴进去：
 
 ```xml
-<!-- File Name : robot_laser.urdf.xacro -->
+<!-- @file: robot_laser.urdf.xacro -->
 
 <robot name="robot_test" xmlns:xacro="http://wiki.ros.org/xacro">
 
@@ -1788,7 +1780,7 @@ cd launch/ && touch robot_test.launch && code robot_test.launch
 将下列代码粘贴进去：
 
 ```xml
-<!-- File Name : robot_test.launch -->
+<!-- @file: robot_test.launch -->
 
 <launch>
     <param name="robot_description" command="$(find xacro)/xacro $(find robot_description_test)/urdf/robot.urdf.xacro" />
@@ -1842,7 +1834,7 @@ touch gmapping.launch && code gmapping.launch
 将下列代码粘贴进去：
 
 ```xml
-<!-- File Name : gmapping.launch -->
+<!-- @file: gmapping.launch -->
 
 <launch>
     <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
@@ -1892,7 +1884,7 @@ cd launch/ && touch map_save.launch && code map_save.launch
 将下列代码粘贴进去：
 
 ```xml
-<!-- File Name : map_save.launch -->
+<!-- @file: map_save.launch -->
 
 <launch>
     <arg name="filename" value="$(find entity_test)/map/nav" />
@@ -1907,7 +1899,7 @@ touch map_server.launch && code map_server.launch
 将下列代码粘贴进去：
 
 ```xml
-<!-- File Name : map_server.launch -->
+<!-- @file: map_server.launch -->
 
 <launch>
     <!-- 设置地图的配置文件 -->
@@ -1924,7 +1916,7 @@ touch amcl.launch && code amcl.launch
 将下列代码粘贴进去：
 
 ```xml
-<!-- File Name : amcl.launch -->
+<!-- @file: amcl.launch -->
 
 <launch>
   <node pkg="amcl" type="amcl" name="amcl" output="screen">
@@ -1971,7 +1963,7 @@ cd .. && mkdir param && cd param/ && touch {costmap_common_params.yaml,local_cos
 将下列几个代码分别粘贴进去：
 
 ```yaml
-# File Name : base_local_planner_params.yaml
+# @file: base_local_planner_params.yaml
 
 TrajectoryPlannerROS:
   # Robot Configuration Parameters
@@ -2002,7 +1994,7 @@ TrajectoryPlannerROS:
 ```
 
 ```yaml
-# File Name : cost_common_params.yaml
+# @file: cost_common_params.yaml
 
 #机器人几何参，如果机器人是圆形，设置 robot_radius,如果是其他形状设置 footprint
 robot_radius: 0.12 #圆形
@@ -2032,7 +2024,7 @@ scan:
 ```
 
 ```yaml
-# File Name : global_costmap_params.yaml
+# @file: global_costmap_params.yaml
 
 global_costmap:
   global_frame: map #地图坐标系
@@ -2047,7 +2039,7 @@ global_costmap:
 ```
 
 ```yaml
-# File Name : local_costmap_params.yaml
+# @file: local_costmap_params.yaml
 
 local_costmap:
   global_frame: odom #里程计坐标系
@@ -2071,7 +2063,7 @@ cd ../launch/ && touch move_base.launch && code move_base.launch
 将下列代码粘贴进去：
 
 ```xml
-<!-- File Name : move_base.launch -->
+<!-- @file: move_base.launch -->
 
 <launch>
 
@@ -2093,7 +2085,7 @@ touch auto_slam.launch && code auto_slam.launch
 将下列代码粘贴进去：
 
 ```xml
-<!-- File Name : auto_slam.launch -->
+<!-- @file: auto_slam.launch -->
 
 <launch>
     <!-- 启动SLAM节点 -->
@@ -3609,7 +3601,7 @@ $(DISTRIBUTE_DIR): all py | $(DISTRIBUTE_SUBDIRS)
 cd python/
 ```
 
-使用阿里云镜像安装依赖库：
+使用云镜像安装依赖库：
 
 ```bash
 python3 -m pip install -r requirements.txt -i https://mirrors.hust.edu.cn/pypi/web/simple
@@ -3626,7 +3618,7 @@ cd .. && sudo make clean
 
 ```cpp
 /**
- * @File Name : cudnn_conv_layer.cpp
+ * @@file: cudnn_conv_layer.cpp
  */
 
 #ifdef USE_CUDNN
@@ -4002,7 +3994,7 @@ namespace caffe
 
 ```cpp
 /**
- * @File Name : cudnn_deconv_layer.cpp
+ * @@file: cudnn_deconv_layer.cpp
  */
 
 #ifdef USE_CUDNN
@@ -4601,7 +4593,7 @@ sudo apt install -y python-rosdep python-rosinstall python-rosinstall-generator 
 sudo apt install -y python3-pip
 ```
 
-使用阿里镜像源加速`pip`下载：
+使用镜像源加速`pip`下载：
 
 ```bash
 sudo pip3 install rosdepc -i https://mirrors.hust.edu.cn/pypi/web/simple
