@@ -1,3 +1,17 @@
+## <small>3.3.7 (2024-09-01)</small>
+
+* ⚗️ exp(shiki.css): test last space in code block ([86e8704](https://github.com/M0rtzz/m0rtzz.blog/commit/86e8704))
+* 👔 logic(shiki.css): if the last line of the code block has no content, hide it ([4346952](https://github.com/M0rtzz/m0rtzz.blog/commit/4346952))
+* 📝 doc(CHANGELOG.md): automatic update ([45e3eba](https://github.com/M0rtzz/m0rtzz.blog/commit/45e3eba))
+* 📝 docs(CHANGELOG.md): automatic update ([7cad552](https://github.com/M0rtzz/m0rtzz.blog/commit/7cad552))
+* 📝 docs(CHANGELOG.md): automatic update ([669490b](https://github.com/M0rtzz/m0rtzz.blog/commit/669490b))
+* 🔖 tag(package.json): v2.8.2 ([9db5970](https://github.com/M0rtzz/m0rtzz.blog/commit/9db5970))
+* 🔖 tag(package.json): v3.3.6 ([2e17796](https://github.com/M0rtzz/m0rtzz.blog/commit/2e17796))
+* 🔖 tag(package.json): v3.3.7 ([9d49999](https://github.com/M0rtzz/m0rtzz.blog/commit/9d49999))
+* 🚑️ hotfix(shiki.css): fix the code block bug ([af7621f](https://github.com/M0rtzz/m0rtzz.blog/commit/af7621f))
+
+
+
 ## <small>3.3.6 (2024-09-01)</small>
 
 * ⚗️ exp(shiki.css): test last space in code block ([86e8704](https://github.com/M0rtzz/m0rtzz.blog/commit/86e8704))
@@ -472,7 +486,12 @@
 * 🔖 tag(package.json): v2.4.0 ([cf27f4e](https://github.com/M0rtzz/m0rtzz.blog/commit/cf27f4e))
 * 🔖 tag(package.json): v2.7.9 ([8074510](https://github.com/M0rtzz/m0rtzz.blog/commit/8074510))
 * 🔖 tag(package.json): v2.8.2 ([bbf8986](https://github.com/M0rtzz/m0rtzz.blog/commit/bbf8986))
-* 🔖 tag(package.json): v2.8.3 ([339389d](https://github.com/M0rtzz/m0rtzz.blog/commit/339389d))
+=======
+## <small>2.8.2 (2024-07-31)</small>
+
+* 📝 docs(environment_configuration.md): update conda mirror site url ([a0f884d](https://github.com/M0rtzz/m0rtzz.blog/commit/a0f884d))
+* 🔖 tag(package.json): v2.8.2 ([de5a13c](https://github.com/M0rtzz/m0rtzz.blog/commit/de5a13c))
+>>>>>>> 762455e (📝 docs(CHANGELOG.md): automatic update)
 
 
 
@@ -912,6 +931,12 @@ All notable changes to this project will be documented in this file. See [commit
 * 📝 docs(CHANGELOG.md): automatic update ([4021ef4](https://github.com/M0rtzz/m0rtzz.blog/commit/4021ef4))
 * 🔖 tag(package.json): v2.8.1 ([36bc317](https://github.com/M0rtzz/m0rtzz.blog/commit/36bc317))
 * 🚚 move: rename file ([9d177d2](https://github.com/M0rtzz/m0rtzz.blog/commit/9d177d2))
+<<<<<<< HEAD
+=======
+# Changelog
+>>>>>>> de5a13c (🔖 tag(package.json): v2.8.2)
+=======
+>>>>>>> 762455e (📝 docs(CHANGELOG.md): automatic update)
 
 
 
@@ -2460,3 +2485,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
