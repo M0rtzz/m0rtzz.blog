@@ -206,7 +206,7 @@ code .line::after {
   display: none !important;
 } */
 
-code.line:last-child(:empty) {
+code .line:last-child:empty {
   display: none !important;
 }
 
