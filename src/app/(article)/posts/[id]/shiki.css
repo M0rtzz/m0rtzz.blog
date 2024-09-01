@@ -201,6 +201,9 @@ code .line::after {
   bottom: 0;
   border-left: 1px solid rgba(100, 120, 130, 0.6);
 }
+code .line:last-child{
+  display: none !important;
+}
 
 /* 定义代码块之间的间距 */
 .code-block-spacing {
