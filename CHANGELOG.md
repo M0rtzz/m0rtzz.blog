@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 ## <small>3.3.5 (2024-08-31)</small>
 
 * 📝 doc(environment_configuration.md): update doc ([cd3e429](https://github.com/M0rtzz/m0rtzz.blog/commit/cd3e429))
