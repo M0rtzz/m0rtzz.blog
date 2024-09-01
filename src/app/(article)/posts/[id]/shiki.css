@@ -117,7 +117,7 @@
     &.remove,
     &.add {
       @apply before:absolute before:left-2.5 before:-translate-x-1/2;
-      padding-left: 2.5rem;
+      /* padding-left: 2.5rem; */
     }
 
     &.remove {
@@ -155,16 +155,20 @@
   letter-spacing: 0.1rem;
 }
 
-.small-line-numbers code .line:not(:last-child) {
+.line.diff.remove::before {
+  color: rgb(248 113 113 / var(--tw-text-opacity)) !important;
+}
+
+.line.diff.add::before {
+  color: rgb(74 222 128 / var(--tw-text-opacity)) !important;
+}
+
+.small-line-numbers code .line {
   position: relative;
 }
 
 code .line {
   display: inline-block;
-}
-
-code .line:last-child {
-  display: none;
 }
 
 /* 代码块增加行号和竖线 */
@@ -173,23 +177,23 @@ code {
   counter-increment: step 0;
 }
 
-code .line:not(:last-child)::before {
-  content: counter(step) ' ';
-  counter-increment: step;
-  width: 2rem;
-  margin-right: 0.5rem;
-  display: inline-block;
-  text-align: right;
-  color: rgba(100, 120, 130, 0.6);
-  position: relative;
-  left: -4px;
+code .line::before {
+  content: counter(step) ' ' !important;
+  counter-increment: step !important;
+  width: 2rem !important;
+  margin-right: 0.5rem !important;
+  display: inline-block !important;
+  text-align: right !important;
+  color: rgba(100, 120, 130, 0.6) !important;
+  position: relative !important;
+  left: -4px !important;
 }
 
-code .line:not(:last-child) {
+code .line {
   position: relative;
 }
 
-code .line:not(:last-child)::after {
+code .line::after {
   content: '';
   position: absolute;
   left: 2rem;
@@ -203,7 +207,7 @@ code .line:not(:last-child)::after {
   margin-bottom: 1em;
 }
 
-.small-line-numbers code .line:not(:last-child)::before {
+.small-line-numbers code .line::before {
   font-size: smaller;
   content: counter(step) ' ';
   counter-increment: step;
@@ -216,7 +220,7 @@ code .line:not(:last-child)::after {
   left: -1px;
 }
 
-.small-line-numbers code .line:not(:last-child)::after {
+.small-line-numbers code .line::after {
   content: '';
   position: -webkit-sticky;
   left: 2rem;
