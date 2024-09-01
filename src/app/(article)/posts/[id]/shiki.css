@@ -201,7 +201,12 @@ code .line::after {
   bottom: 0;
   border-left: 1px solid rgba(100, 120, 130, 0.6);
 }
-code .line:last-child{
+
+/* code .line:last-child{
+  display: none !important;
+} */
+
+code.line:last-child(:empty) {
   display: none !important;
 }
 
