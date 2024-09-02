@@ -367,7 +367,6 @@ rosrun turtlesim turtle_teleop_key
 ```bash
 cmake \
 -D CMAKE_BUILD_TYPE=RELEASE \
--D WITH_QT=ON \
 -D WITH_GTK=ON \
 -D WITH_VTK=ON \
 -D WITH_ADE=OFF \
@@ -382,7 +381,7 @@ cmake \
 -D OPENCV_GENERATE_PKGCONFIG=ON \
 -D ENABLE_PRECOMPILED_HEADERS=OFF \
 -D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-4.2.0/opencv_contrib-4.2.0/modules \
--j$(nproc) ..
+..
 ```
 
 或：
@@ -390,7 +389,6 @@ cmake \
 ```bash
 cmake \
 -D CMAKE_BUILD_TYPE=RELEASE \
--D WITH_QT=ON \
 -D WITH_GTK=ON \
 -D WITH_VTK=ON \
 -D WITH_ADE=OFF \
@@ -408,7 +406,7 @@ cmake \
 -D CUDNN_LIBRARY=/usr/local/cuda/lib64/libcudnn.so \
 -D CUDA_CUDA_LIBRARY=/usr/local/cuda/lib64/stubs/libcuda.so \
 -D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-4.2.0/opencv_contrib-4.2.0/modules \
--j$(nproc) ..
+..
 ```
 
 或：
@@ -416,7 +414,6 @@ cmake \
 ```bash
 cmake \
 -D CMAKE_BUILD_TYPE=RELEASE \
--D WITH_QT=ON \
 -D WITH_GTK=ON \
 -D WITH_VTK=ON \
 -D WITH_ADE=OFF \
@@ -434,7 +431,7 @@ cmake \
 -D CUDA_HOST_COMPILER:FILEPATH=/usr/bin/gcc \
 -D CUDNN_LIBRARY=/usr/local/cuda/lib64/libcudnn.so \
 -D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-4.2.0/opencv_contrib-4.2.0/modules \
--j$(nproc) ..
+..
 ```
 
 `CUDA_ARCH_BIN`查看命令：
@@ -1278,7 +1275,7 @@ include(CMake/lrs_options.cmake)
 cmake \
 -D CMAKE_BUILD_TYPE=Release \
 -D BUILD_EXAMPLES=true \
--j$(nproc) ..
+..
 ```
 
 以下编译过慢，使用`CPU`最大线程进行`make`，速度会快很多：
@@ -4545,7 +4542,7 @@ cmake \
 -D BUILD_GPU=ON-DBUILD_apps=ON \
 -D BUILD_examples=ON \
 -D CMAKE_INSTALL_PREFIX=/usr \
--j$(nproc) ..
+..
 ```
 
 ```bash
@@ -4675,7 +4672,6 @@ mkdir build && cd build/
 ```bash
 cmake \
 -D CMAKE_BUILD_TYPE=RELEASE \
--D WITH_QT=ON \
 -D WITH_GTK=ON \
 -D WITH_VTK=ON \
 -D WITH_ADE=OFF \
@@ -4690,7 +4686,7 @@ cmake \
 -D OPENCV_GENERATE_PKGCONFIG=ON \
 -D ENABLE_PRECOMPILED_HEADERS=OFF \
 -D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.16/opencv_contrib-3.4.16/modules \
--j$(nproc) ..
+..
 ```
 
 过程中会出现`IPPICV: Download: ippicv_2020_lnx_intel64_20191018_general.tgz`
@@ -4709,7 +4705,7 @@ cd $(git rev-parse --show-toplevel)/ && mkdir downloads && realpath downloads/
 
 把绝对路径复制进去：
 
-![image-20240824150153324](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:24/15:02:06_image-20240824150153324.png)
+![image-20240902115158065](https://static.m0rtzz.com/images/Year:2024/Month:09/Day:02/11:52:03_image-20240902115158065.png)
 
 然后把下面网址下载的文件`cp`进去就行了（或者开头百度云分享链接中自取~）
 
@@ -4720,7 +4716,6 @@ cd $(git rev-parse --show-toplevel)/ && mkdir downloads && realpath downloads/
 ```bash
 cmake \
 -D CMAKE_BUILD_TYPE=RELEASE \
--D WITH_QT=ON \
 -D WITH_GTK=ON \
 -D WITH_VTK=ON \
 -D WITH_ADE=OFF \
@@ -4735,7 +4730,7 @@ cmake \
 -D OPENCV_GENERATE_PKGCONFIG=ON \
 -D ENABLE_PRECOMPILED_HEADERS=OFF \
 -D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.16/opencv_contrib-3.4.16/modules \
--j$(nproc) ..
+..
 ```
 
 ![1df6fa04c0a168](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/10:15:15_1df6fa04c0a168.png)
@@ -4848,7 +4843,7 @@ cmake \
 -D CMAKE_INSTALL_PREFIX=/usr/local \
 -D CUDA_HOST_COMPILER:FILEPATH=/usr/bin/gcc-7 \
 -D OPENCV_EXTRA_MODULES_PATH=/home/m0rtzz/Programs/opencv-3.4.4/opencv_contrib-3.4.4/modules \
--j$(nproc) ..
+..
 ```
 
 ### OpenCV3配置darknet_ros工作空间（OpenCV3）
@@ -4905,7 +4900,7 @@ sudo cp /usr/lib/x86_64-linux-gnu/libdepthengine.so.2.0 /usr/lib/
 随后进入下载好的`Azure-Kinect-Sensor-SDK-v1.4.0/`文件夹下打开终端输入
 
 ```bash
-cmake -GNinja -j$(nproc) ..
+cmake -GNinja ..
 ```
 
 注意此步过程中`extern/libyuv/src`克隆较慢原因是使用了`google`的网站，我们把对应文件的克隆`url`改为`GitHub`的就能正常克隆了，在`Azure-Kinect-Sensor-SDK-v1.4.0/`文件夹下键盘`Ctrl+H`显示隐藏文件，打开`.gitmodules`文件，修改`libyuv`的部分为：
@@ -4931,7 +4926,7 @@ cmake -GNinja -j$(nproc) ..
 保存后关闭，打开终端，输入：
 
 ```bash
-cmake -j$(nproc) .. -GNinja
+cmake -GNinja ..
 ```
 
 克隆完成后为如图所示：
@@ -4983,7 +4978,7 @@ cd libfreenect2/ && mkdir build && cd build/
 ```bash
 cmake \
 -D ENABLE_CXX11=ON \
--j$(nproc) ..
+..
 ```
 
 ```bash
