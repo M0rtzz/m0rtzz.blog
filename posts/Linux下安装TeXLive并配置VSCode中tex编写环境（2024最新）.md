@@ -24,6 +24,10 @@ sudo apt install curl && curl -L https://mirrors.hust.edu.cn/CTAN/systems/texliv
 
 [https://blog.csdn.net/M0rtzz/article/details/136023863](https://blog.csdn.net/M0rtzz/article/details/136023863)
 
+或：
+
+[https://www.m0rtzz.com/posts/6](https://www.m0rtzz.com/posts/6)
+
 ## 2.安装TeXLive
 
 首先安装一个GUI工具包：
