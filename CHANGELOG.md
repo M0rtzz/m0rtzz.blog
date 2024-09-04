@@ -558,7 +558,9 @@
 * 📝 docs(CHANGELOG.md): automatic update ([a5cc7b4](https://github.com/M0rtzz/m0rtzz.blog/commit/a5cc7b4))
 * 🔖 tag(package.json): v3.3.1 ([c806edf](https://github.com/M0rtzz/m0rtzz.blog/commit/c806edf))
 
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.3.10](https://github.com/M0rtzz/m0rtzz.blog/compare/v3.3.9...v3.3.10) (2024-09-04)
 
 ## 3.3.0 (2024-08-28)
 
@@ -2518,5 +2520,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
