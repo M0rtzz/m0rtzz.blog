@@ -545,22 +545,33 @@
 
 ## <small>3.3.2 (2024-08-28)</small>
 
+<<<<<<< HEAD
 * 📝 doc(environment_configuration.md): update doc ([8724e14](https://github.com/M0rtzz/m0rtzz.blog/commit/8724e14))
 * 📝 doc(environment_configuration.md): update doc ([d250c08](https://github.com/M0rtzz/m0rtzz.blog/commit/d250c08))
 * 📝 docs(CHANGELOG.md): automatic update ([a5c3dbf](https://github.com/M0rtzz/m0rtzz.blog/commit/a5c3dbf))
 * 🔖 tag(package.json): v3.3.2 ([321c4f1](https://github.com/M0rtzz/m0rtzz.blog/commit/321c4f1))
+=======
+* 📝 doc(environment_configuration.md): update doc ([9935e9a](https://github.com/M0rtzz/m0rtzz.blog/commit/9935e9a))
+* 📝 doc(environment_configuration.md): update doc ([59ce39a](https://github.com/M0rtzz/m0rtzz.blog/commit/59ce39a))
+* 📝 docs(CHANGELOG.md): automatic update ([d19d41f](https://github.com/M0rtzz/m0rtzz.blog/commit/d19d41f))
+* 🔖 tag(package.json): v3.3.2 ([ede3ca5](https://github.com/M0rtzz/m0rtzz.blog/commit/ede3ca5))
+>>>>>>> 📝 docs(CHANGELOG.md): automatic update
 
 
 
 ## <small>3.3.1 (2024-08-28)</small>
 
+<<<<<<< HEAD
 * 📝 doc(environment_configuration.md): update doc ([98c611d](https://github.com/M0rtzz/m0rtzz.blog/commit/98c611d))
 * 📝 docs(CHANGELOG.md): automatic update ([a5cc7b4](https://github.com/M0rtzz/m0rtzz.blog/commit/a5cc7b4))
 * 🔖 tag(package.json): v3.3.1 ([c806edf](https://github.com/M0rtzz/m0rtzz.blog/commit/c806edf))
+=======
+* 📝 doc(environment_configuration.md): update doc ([2514516](https://github.com/M0rtzz/m0rtzz.blog/commit/2514516))
+* 📝 docs(CHANGELOG.md): automatic update ([895ad1b](https://github.com/M0rtzz/m0rtzz.blog/commit/895ad1b))
+* 🔖 tag(package.json): v3.3.1 ([98abb80](https://github.com/M0rtzz/m0rtzz.blog/commit/98abb80))
+>>>>>>> 📝 docs(CHANGELOG.md): automatic update
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-## [3.3.10](https://github.com/M0rtzz/m0rtzz.blog/compare/v3.3.9...v3.3.10) (2024-09-04)
 
 ## 3.3.0 (2024-08-28)
 
@@ -2520,3 +2531,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
