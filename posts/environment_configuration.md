@@ -33,7 +33,7 @@ zwz4
 
 ## ESSENTIAL
 
-刚进入系统一段时间，系统会通知是否更新到新版本的系统（比如Ubuntu20.04→Ubuntu22.04/Ubuntu24.04），选择否，之后会询问是否更新系统组件，选择否。
+刚进入系统一段时间，系统会通知是否更新到新版本的系统（比如Ubuntu20.04→Ubuntu22.04 or Later），选择否，之后会询问是否更新系统组件，选择否。
 
 阻止软件更新弹窗：
 
@@ -489,7 +489,7 @@ if(CUDNN_INCLUDE_DIR)
 endif()
 ```
 
-> **Reference:**
+> ***Reference:***
 >
 > [https://github.com/opencv/opencv/issues/18697](https://github.com/opencv/opencv/issues/18697)
 
@@ -699,7 +699,7 @@ wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/ra
         TransposeConvolutionAlgorithm& operator=(const TransposeConvolutionAlgorithm&) = default;
 ```
 
-> **Reference:**
+> ***Reference:***
 >
 > [https://github.com/opencv/opencv/pull/17685/files](https://github.com/opencv/opencv/pull/17685/files)
 
@@ -729,7 +729,7 @@ if(CUDA_FOUND)
 
 ![image-20240826153656145](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/15:36:56_image-20240826153656145.png)
 
-> **Reference:**
+> ***Reference:***
 >
 > [https://github.com/opencv/opencv/pull/17499/files](https://github.com/opencv/opencv/pull/17499/files)
 
@@ -753,7 +753,7 @@ python3 ./modules/python/src2/gen2.py \
 
 ![image-20240828155616856](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:28/15:56:22_image-20240828155616856.png)
 
-> **Reference:**
+> ***Reference:***
 >
 > [https://github.com/opencv/opencv/issues/10771#issuecomment-376861139](https://github.com/opencv/opencv/issues/10771#issuecomment-376861139)
 
@@ -1052,7 +1052,7 @@ sudo gedit /usr/include/pcl-1.8/pcl/visualization/cloud_viewer.h
 private:
         /** \brief Private implementation. */
         struct CloudViewer_impl;
-        //std::auto_ptr<CloudViewer_impl> impl_;
+        // std::auto_ptr<CloudViewer_impl> impl_;
         std::shared_ptr<CloudViewer_impl> impl_;
 
         boost::signals2::connection
@@ -1406,7 +1406,7 @@ sudo apt install -y $(apt-cache search ros-${ROS_DISTRO}-pr2- | grep -v "ros-${R
 >
 > **ZZU-SR**的童鞋请注意，此小节只需安装软件包，其他内容是之前[听课](https://www.bilibili.com/video/BV1Ub4y1a7PH?p=73)做的笔记，导航相关代码直接`Copy`比赛电脑的`catkin_ws`中的`mrobot`即可。
 
-#### Runtime Dependency (ESSENTIAL)
+#### Dependency (ESSENTIAL)
 
 ```bash
 sudo apt install -y "ros-${ROS_DISTRO}-move-base*" "ros-${ROS_DISTRO}-turtlebot3-*"
