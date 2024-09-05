@@ -50,6 +50,8 @@
     white-space: break-spaces;
     font-weight: normal;
     vertical-align: text-bottom;
+    position: relative;
+    top: 0.1rem;
   }
 }
 
@@ -110,6 +112,8 @@
     white-space: break-spaces;
     font-weight: normal;
     vertical-align: text-bottom;
+    position: relative;
+    top: 0.1rem;
   }
 }
 
