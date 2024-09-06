@@ -1,8 +1,17 @@
-# Changelog
+## <small>3.4.2 (2024-09-06)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 📝 doc: update doc ([202857a](https://github.com/M0rtzz/m0rtzz.blog/commit/202857a))
+* 🔖 tag(package.json): v3.4.2 ([117afa0](https://github.com/M0rtzz/m0rtzz.blog/commit/117afa0))
 
-## [3.4.2](https://github.com/M0rtzz/m0rtzz.blog/compare/v3.4.1...v3.4.2) (2024-09-06)
+
+
+## <small>3.4.1 (2024-09-05)</small>
+
+* ⚗️ exp(globals.css): test css value ([2090b9b](https://github.com/M0rtzz/m0rtzz.blog/commit/2090b9b))
+* 📝 docs(CHANGELOG.md): automatic update ([0d9f730](https://github.com/M0rtzz/m0rtzz.blog/commit/0d9f730))
+* 🔖 tag(package.json): v3.4.1 ([0bab3df](https://github.com/M0rtzz/m0rtzz.blog/commit/0bab3df))
+
+
 
 ## 3.4.0 (2024-09-05)
 
@@ -2063,3 +2072,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
