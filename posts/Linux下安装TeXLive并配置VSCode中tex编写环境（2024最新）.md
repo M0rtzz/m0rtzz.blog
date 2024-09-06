@@ -121,7 +121,7 @@ sudo cpanm Log::Dispatch
 "editor.formatOnPaste": true, // 粘贴后自动格式化
 "editor.formatOnType": true, // 键入后自动格式化
 "editor.formatOnSave": true, // 保存时自动格式化
-//LaTeX
+// LaTeX
 "latex-workshop.latex.recipes": [
   {
     "name": "xelatex",
