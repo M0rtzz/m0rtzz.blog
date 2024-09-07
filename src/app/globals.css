@@ -51,7 +51,8 @@
     font-weight: normal;
     vertical-align: text-bottom;
     position: relative;
-    top: 0.08rem;
+    line-height: 21px;
+    /* top: 0.1rem; */
   }
 }
 
@@ -113,7 +114,8 @@
     font-weight: normal;
     vertical-align: text-bottom;
     position: relative;
-    top: 0.08rem;
+    line-height: 21px;
+    /* top: 0.1rem; */
   }
 }
 
