@@ -42,7 +42,7 @@
     > code:nth-child(n),
   .prose > p:nth-child(n) > code:nth-child(n),
   details.mdx-components:nth-child(n) > p:nth-child(n) > code:nth-child(n) {
-    padding: 0.2em 0.4em;
+    padding: 0.1em 0.4em;
     border-radius: 6px;
     color: #1f2328;
     background-color: #eff1f5;
@@ -51,7 +51,7 @@
     font-weight: normal;
     vertical-align: text-bottom;
     position: relative;
-    top: 0.1rem;
+    top: 0.15rem;
   }
 }
 
@@ -104,7 +104,7 @@
     > code:nth-child(n),
   .prose > p:nth-child(n) > code:nth-child(n),
   details.mdx-components:nth-child(n) > p:nth-child(n) > code:nth-child(n) {
-    padding: 0.2em 0.4em;
+    padding: 0.1em 0.4em;
     border-radius: 6px;
     color: #e6edf3;
     background-color: #6e768166; /* #5a616566 */
@@ -113,7 +113,7 @@
     font-weight: normal;
     vertical-align: text-bottom;
     position: relative;
-    top: 0.1rem;
+    top: 0.15rem;
   }
 }
 
