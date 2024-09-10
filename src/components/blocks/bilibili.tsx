@@ -8,7 +8,7 @@ export const BiliBili = () => (
   >
     <svg
       width='14.4em'
-      height='14.4em'
+      height='14.45em'
       viewBox='0 0 8000 8000'
       preserveAspectRatio='xMidYMid meet'
     >
