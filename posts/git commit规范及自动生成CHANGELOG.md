@@ -322,7 +322,7 @@ module.exports = {
         subject: '请简要描述提交(必填):',
         body: '请输入详细描述(可选):',
         breaking: '列出任何\x1b[1;31mBREAKING CHANGES\x1b[0m(可选):',
-        footer: '请输入要关闭的issue(可选):',
+        footer: '请输入要关闭的\x1b[1;38;5;129missue\x1b[0m(可选):',
         confirmCommit: '确定提交此说明吗？:'
     },
     allowCustomScopes: true,
