@@ -1,13 +1,8 @@
-## <small>3.5.1 (2024-09-16)</small>
+# Changelog
 
-* 💄 ui(bilibili.tsx): increase height ([d083f3f](https://github.com/M0rtzz/m0rtzz.blog/commit/d083f3f))
-* 📝 doc(environment_configuration.md): update doc ([aae5e2a](https://github.com/M0rtzz/m0rtzz.blog/commit/aae5e2a))
-* 📝 docs(CHANGELOG.md): automatic update ([1e4c1da](https://github.com/M0rtzz/m0rtzz.blog/commit/1e4c1da))
-* 🔖 tag(package.json): v3.3.4 ([7f0d230](https://github.com/M0rtzz/m0rtzz.blog/commit/7f0d230))
-* 🔖 tag(package.json): v3.5.1 ([67f6171](https://github.com/M0rtzz/m0rtzz.blog/commit/67f6171))
-* 🚸 usability: update CLI ([164fc02](https://github.com/M0rtzz/m0rtzz.blog/commit/164fc02))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
+## [3.5.2](https://github.com/M0rtzz/m0rtzz.blog/compare/v3.5.1...v3.5.2) (2024-09-16)
 
 ## 3.5.0 (2024-09-07)
 
@@ -2153,5 +2148,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
