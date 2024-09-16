@@ -2394,7 +2394,7 @@ sudo apt install -y flatpak
 
 `FlatHub`上交镜像源：
 
-[https://mirrors.sjtug.sjtu.edu.cn/docs/flathub](https://mirrors.sjtug.sjtu.edu.cn/docs/flathub)
+[https://mirror.sjtu.edu.cn/docs/flathub](https://mirror.sjtu.edu.cn/docs/flathub)
 
 切换之后更新`Flatpak`应用将加速：
 
