@@ -6,6 +6,7 @@ import arduinoSvg from '@/images/logo/arduino.svg'
 import bashSvg from '@/images/logo/bash.svg'
 import cSvg from '@/images/logo/c.svg'
 import centosSvg from '@/images/logo/centos.svg'
+import cloudflareSvg from '@/images/logo/cloudflare.svg'
 import cmakeSvg from '@/images/logo/cmake.svg'
 import cppSvg from '@/images/logo/cpp.svg'
 import debianSvg from '@/images/logo/debian.svg'
@@ -16,12 +17,14 @@ import gitSvg from '@/images/logo/git.svg'
 import githubSvg from '@/images/logo/github.svg'
 import gnomeSvg from '@/images/logo/gnome.svg'
 import gnuSvg from '@/images/logo/gnu.svg'
-import googleDriveSvg from '@/images/logo/googleDrive.svg'
+// import googleDriveSvg from '@/images/logo/googleDrive.svg'
+import huggingfaceSvg from '@/images/logo/huggingface.svg'
 import hppSvg from '@/images/logo/hpp.svg'
 import huskySvg from '@/images/logo/husky.svg'
-import ideaSvg from '@/images/logo/idea.svg'
+// import ideaSvg from '@/images/logo/idea.svg'
 import javaSvg from '@/images/logo/java.svg'
 import jsonSvg from '@/images/logo/json.svg'
+import kubernetesSvg from '@/images/logo/kubernetes.svg'
 import latexSvg from '@/images/logo/latex.svg'
 import linuxSvg from '@/images/logo/linux.svg'
 import llvmSvg from '@/images/logo/llvm.svg'
@@ -32,28 +35,30 @@ import nginxSvg from '@/images/logo/nginx.svg'
 import nodejsSvg from '@/images/logo/nodejs.svg'
 import npmSvg from '@/images/logo/npm.svg'
 import nvmSvg from '@/images/logo/nvm.svg'
-import onedriveSvg from '@/images/logo/onedrive.svg'
+import ollamaSvg from '@/images/logo/ollama.svg'
+// import onedriveSvg from '@/images/logo/onedrive.svg'
 // import outlookSvg from '@/images/logo/outlook.svg'
 import pdfSvg from '@/images/logo/pdf.svg'
 import powershellSvg from '@/images/logo/powershell.svg'
 import pptSvg from '@/images/logo/ppt.svg'
 import prSvg from '@/images/logo/pr.svg'
 import psSvg from '@/images/logo/ps.svg'
-import pycharmSvg from '@/images/logo/pycharm.svg'
+// import pycharmSvg from '@/images/logo/pycharm.svg'
 import pythonSvg from '@/images/logo/python.svg'
 import pytorchSvg from '@/images/logo/pytorch.svg'
 import rosSvg from '@/images/logo/ros.svg'
-import shellSvg from '@/images/logo/shell.svg'
+// import shellSvg from '@/images/logo/shell.svg'
 import ubuntuSvg from '@/images/logo/ubuntu.svg'
 import vimSvg from '@/images/logo/vim.svg'
 import visioSvg from '@/images/logo/visio.svg'
 import vmwareSvg from '@/images/logo/vmware.svg'
-import vsSvg from '@/images/logo/vs.svg'
-import vscodeSvg from '@/images/logo/vscode.svg'
+// import vsSvg from '@/images/logo/vs.svg'
+// import vscodeSvg from '@/images/logo/vscode.svg'
 import windowsSvg from '@/images/logo/windows.svg'
 import wordSvg from '@/images/logo/word.svg'
 import xmlSvg from '@/images/logo/xml.svg'
 import yamlSvg from '@/images/logo/yaml.svg'
+import yarnSvg from '@/images/logo/yarn.svg'
 import zshSvg from '@/images/logo/zsh.svg'
 
 import { Block } from '@/components/blocks/block'
@@ -63,14 +68,16 @@ const Galton = dynamic(() => import('./galton').then(module => module.Galton), {
 })
 
 const images: StaticImageData[] = [
+  yamlSvg,
   anacondaSvg,
   arduinoSvg,
   bashSvg,
+  cSvg,
   centosSvg,
+  cloudflareSvg,
   cmakeSvg,
   cppSvg,
   debianSvg,
-  cSvg,
   dockerSvg,
   excelSvg,
   gccSvg,
@@ -78,44 +85,48 @@ const images: StaticImageData[] = [
   githubSvg,
   gnomeSvg,
   gnuSvg,
-  googleDriveSvg,
+  // googleDriveSvg,
+  huggingfaceSvg,
   hppSvg,
   huskySvg,
-  ideaSvg,
+  // ideaSvg,
   javaSvg,
   jsonSvg,
+  kubernetesSvg,
   latexSvg,
   linuxSvg,
   llvmSvg,
   // makefileSvg,
   markdownSvg,
+  neovimSvg,
   nginxSvg,
   nodejsSvg,
   npmSvg,
-  neovimSvg,
   nvmSvg,
-  onedriveSvg,
+  ollamaSvg,
+  // onedriveSvg,
   // outlookSvg,
   pdfSvg,
   powershellSvg,
   pptSvg,
   prSvg,
   psSvg,
-  pycharmSvg,
+  // pycharmSvg,
   pythonSvg,
   pytorchSvg,
   rosSvg,
-  shellSvg,
+  // shellSvg,
   ubuntuSvg,
   vimSvg,
   visioSvg,
   vmwareSvg,
-  vsSvg,
-  vscodeSvg,
+  // vsSvg,
+  // vscodeSvg,
   windowsSvg,
   wordSvg,
   xmlSvg,
-  yamlSvg,
+  // yamlSvg,
+  yarnSvg,
   zshSvg,
 ]
 export const Skills = () => {
