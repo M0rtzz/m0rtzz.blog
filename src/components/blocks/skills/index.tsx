@@ -18,8 +18,8 @@ import githubSvg from '@/images/logo/github.svg'
 import gnomeSvg from '@/images/logo/gnome.svg'
 import gnuSvg from '@/images/logo/gnu.svg'
 // import googleDriveSvg from '@/images/logo/googleDrive.svg'
-import huggingfaceSvg from '@/images/logo/huggingface.svg'
 import hppSvg from '@/images/logo/hpp.svg'
+import huggingfaceSvg from '@/images/logo/huggingface.svg'
 import huskySvg from '@/images/logo/husky.svg'
 // import ideaSvg from '@/images/logo/idea.svg'
 import javaSvg from '@/images/logo/java.svg'
@@ -86,8 +86,8 @@ const images: StaticImageData[] = [
   gnomeSvg,
   gnuSvg,
   // googleDriveSvg,
-  huggingfaceSvg,
   hppSvg,
+  huggingfaceSvg,
   huskySvg,
   // ideaSvg,
   javaSvg,
