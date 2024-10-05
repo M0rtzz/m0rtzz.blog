@@ -68,7 +68,6 @@ const Galton = dynamic(() => import('./galton').then(module => module.Galton), {
 })
 
 const images: StaticImageData[] = [
-  yamlSvg,
   anacondaSvg,
   arduinoSvg,
   bashSvg,
@@ -125,7 +124,7 @@ const images: StaticImageData[] = [
   windowsSvg,
   wordSvg,
   xmlSvg,
-  // yamlSvg,
+  yamlSvg,
   yarnSvg,
   zshSvg,
 ]
