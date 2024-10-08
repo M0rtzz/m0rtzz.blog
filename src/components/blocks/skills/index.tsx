@@ -37,8 +37,10 @@ import npmSvg from '@/images/logo/npm.svg'
 import nvmSvg from '@/images/logo/nvm.svg'
 import ollamaSvg from '@/images/logo/ollama.svg'
 // import onedriveSvg from '@/images/logo/onedrive.svg'
+import opencvSvg from '@/images/logo/opencv.svg'
 // import outlookSvg from '@/images/logo/outlook.svg'
 import pdfSvg from '@/images/logo/pdf.svg'
+import pnpmSvg from '@/images/logo/pnpm.svg'
 import powershellSvg from '@/images/logo/powershell.svg'
 import pptSvg from '@/images/logo/ppt.svg'
 import prSvg from '@/images/logo/pr.svg'
@@ -48,6 +50,7 @@ import pythonSvg from '@/images/logo/python.svg'
 import pytorchSvg from '@/images/logo/pytorch.svg'
 import rosSvg from '@/images/logo/ros.svg'
 // import shellSvg from '@/images/logo/shell.svg'
+import tomlSvg from '@/images/logo/toml.svg'
 import ubuntuSvg from '@/images/logo/ubuntu.svg'
 import vimSvg from '@/images/logo/vim.svg'
 import visioSvg from '@/images/logo/visio.svg'
@@ -104,8 +107,10 @@ const images: StaticImageData[] = [
   nvmSvg,
   ollamaSvg,
   // onedriveSvg,
+  opencvSvg,
   // outlookSvg,
   pdfSvg,
+  pnpmSvg,
   powershellSvg,
   pptSvg,
   prSvg,
@@ -115,6 +120,7 @@ const images: StaticImageData[] = [
   pytorchSvg,
   rosSvg,
   // shellSvg,
+  tomlSvg,
   ubuntuSvg,
   vimSvg,
   visioSvg,
