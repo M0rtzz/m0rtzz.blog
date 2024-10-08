@@ -31,7 +31,7 @@ export const Resume = () => (
       aria-label='Go to resume page'
       href='/resume'
     >
-      <IconTerminal className='mr-2 size-4 text-green-400 md:size-6' />
+      <IconTerminal className='mr-1.5 size-4 text-green-400 md:size-6' />
       <ResumeText />
     </Link>
   </Block>
