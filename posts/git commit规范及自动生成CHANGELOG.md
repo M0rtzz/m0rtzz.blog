@@ -32,7 +32,7 @@ npm --version
 首先安装淘宝的cnpm代替npm：
 
 ```shell
-sudo npm install -g cnpm -registry=https://registry.npm.taobao.org
+sudo npm install -g cnpm -registry=https://registry.npmmirror.com
 ```
 
 查看版本：
@@ -44,7 +44,7 @@ cnpm --version
 ![image-20240409105105463](https://static.m0rtzz.com/images/Year:2024/Month:04/Day:09/10:51:05_image-20240409105105463.png)
 
 ```shell
-sudo cnpm install -g cz-customizable conventional-changelog-cli husky commit-and-tag-version
+sudo cnpm install -g husky cz-customizable commit-and-tag-version conventional-changelog-cli 
 ```
 
 ```shell
@@ -57,6 +57,18 @@ echo '{ "path": "cz-customizable" }' > ~/.czrc
 
 ```shell
 git config --global core.quotepath false
+```
+
+忽略文件权限变化：
+
+```shell
+git config --global core.filemode false
+```
+
+设置默认编辑器为`vim`：
+
+```shell
+git config --global core.editor vim
 ```
 
 ```shell
