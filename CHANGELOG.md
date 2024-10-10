@@ -1,8 +1,84 @@
-# Changelog
+## 3.6.0 (2024-10-10)
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 📝 doc(git commit规范及自动生成CHANGELOG.md): update path ([90e336f](https://github.com/M0rtzz/m0rtzz.blog/commit/90e336f))
+* 🔖 tag(package.json): v3.6.0 ([8c4808c](https://github.com/M0rtzz/m0rtzz.blog/commit/8c4808c))
 
-## [3.5.10](https://github.com/M0rtzz/m0rtzz.blog/compare/v3.5.9...v3.5.10) (2024-10-10)
+
+
+## <small>3.5.9 (2024-10-08)</small>
+
+* 🍱 asset: add and change some svg files ([cd422f3](https://github.com/M0rtzz/m0rtzz.blog/commit/cd422f3))
+* 📝 docs(CHANGELOG.md): automatic update ([d310f50](https://github.com/M0rtzz/m0rtzz.blog/commit/d310f50))
+* 🔖 tag(package.json): v3.5.9 ([f644695](https://github.com/M0rtzz/m0rtzz.blog/commit/f644695))
+
+
+
+## <small>3.5.8 (2024-10-08)</small>
+
+* ⚗️ exp(index.tsx): test value ([47fb9eb](https://github.com/M0rtzz/m0rtzz.blog/commit/47fb9eb))
+* 📝 doc(git commit规范及自动生成CHANGELOG.md): add git cmd ([4761302](https://github.com/M0rtzz/m0rtzz.blog/commit/4761302))
+* 📝 docs(CHANGELOG.md): automatic update ([9b82ae8](https://github.com/M0rtzz/m0rtzz.blog/commit/9b82ae8))
+* 🔖 tag(package.json): v3.5.8 ([ce385c4](https://github.com/M0rtzz/m0rtzz.blog/commit/ce385c4))
+
+
+
+## <small>3.5.7 (2024-10-05)</small>
+
+* ♻️ refactor(index.tsx): change the order of icons ([e44c1a1](https://github.com/M0rtzz/m0rtzz.blog/commit/e44c1a1))
+* 📝 docs(CHANGELOG.md): automatic update ([e92d34e](https://github.com/M0rtzz/m0rtzz.blog/commit/e92d34e))
+* 🔖 tag(package.json): v3.5.7 ([e81d5fe](https://github.com/M0rtzz/m0rtzz.blog/commit/e81d5fe))
+
+
+
+## <small>3.5.6 (2024-10-05)</small>
+
+* 🎨 style(index.tsx): format code ([203fb50](https://github.com/M0rtzz/m0rtzz.blog/commit/203fb50))
+* 📝 docs(CHANGELOG.md): automatic update ([0bbe307](https://github.com/M0rtzz/m0rtzz.blog/commit/0bbe307))
+* 🔖 tag(package.json): v3.5.6 ([567f923](https://github.com/M0rtzz/m0rtzz.blog/commit/567f923))
+
+
+
+## <small>3.5.5 (2024-10-05)</small>
+
+* 🍱 asset: add and change some svg files ([f92a04b](https://github.com/M0rtzz/m0rtzz.blog/commit/f92a04b))
+* 📝 docs(CHANGELOG.md): automatic update ([b58a664](https://github.com/M0rtzz/m0rtzz.blog/commit/b58a664))
+* 🔖 tag(package.json): v3.5.5 ([6800655](https://github.com/M0rtzz/m0rtzz.blog/commit/6800655))
+
+
+
+## <small>3.5.4 (2024-09-27)</small>
+
+* ⚗️ exp(globals.css): test value ([68ad825](https://github.com/M0rtzz/m0rtzz.blog/commit/68ad825))
+* 📝 doc(README.md): add reference ([a412086](https://github.com/M0rtzz/m0rtzz.blog/commit/a412086))
+* 📝 docs(CHANGELOG.md): automatic update ([4f0e3ba](https://github.com/M0rtzz/m0rtzz.blog/commit/4f0e3ba))
+* 📝 docs(CHANGELOG.md): automatic update ([5357c92](https://github.com/M0rtzz/m0rtzz.blog/commit/5357c92))
+* 🔖 tag(package.json): v3.5.1 ([3c851de](https://github.com/M0rtzz/m0rtzz.blog/commit/3c851de))
+* 🔖 tag(package.json): v3.5.4 ([ae2227d](https://github.com/M0rtzz/m0rtzz.blog/commit/ae2227d))
+
+
+
+## <small>3.5.3 (2024-09-16)</small>
+
+* 📝 doc(environment_configuration.md): update mirror site url ([4ba7e88](https://github.com/M0rtzz/m0rtzz.blog/commit/4ba7e88))
+* 📝 docs(CHANGELOG.md): automatic update ([ce147d1](https://github.com/M0rtzz/m0rtzz.blog/commit/ce147d1))
+* 🔖 tag(package.json): v3.5.3 ([319640c](https://github.com/M0rtzz/m0rtzz.blog/commit/319640c))
+
+
+
+## <small>3.5.2 (2024-09-16)</small>
+
+* ⚗️ exp(transfer.sh): test mirror site ([638d1a9](https://github.com/M0rtzz/m0rtzz.blog/commit/638d1a9))
+* 💄 ui(bilibili.tsx): increase height ([d083f3f](https://github.com/M0rtzz/m0rtzz.blog/commit/d083f3f))
+* 📝 doc(environment_configuration.md): update doc ([aae5e2a](https://github.com/M0rtzz/m0rtzz.blog/commit/aae5e2a))
+* 📝 docs(CHANGELOG.md): automatic update ([b793ea7](https://github.com/M0rtzz/m0rtzz.blog/commit/b793ea7))
+* 📝 docs(CHANGELOG.md): automatic update ([29d59e9](https://github.com/M0rtzz/m0rtzz.blog/commit/29d59e9))
+* 📝 docs(CHANGELOG.md): automatic update ([1e4c1da](https://github.com/M0rtzz/m0rtzz.blog/commit/1e4c1da))
+* 🔖 tag(package.json): v3.3.4 ([7f0d230](https://github.com/M0rtzz/m0rtzz.blog/commit/7f0d230))
+* 🔖 tag(package.json): v3.5.1 ([67f6171](https://github.com/M0rtzz/m0rtzz.blog/commit/67f6171))
+* 🔖 tag(package.json): v3.5.2 ([4c4e2e1](https://github.com/M0rtzz/m0rtzz.blog/commit/4c4e2e1))
+* 🚸 usability: update CLI ([164fc02](https://github.com/M0rtzz/m0rtzz.blog/commit/164fc02))
+
+
 
 ## 3.5.0 (2024-09-07)
 
@@ -2143,3 +2219,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
