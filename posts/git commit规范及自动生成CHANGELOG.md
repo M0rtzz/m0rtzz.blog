@@ -381,7 +381,7 @@ husky
 
 ## 6.修改配置文件
 
-修改`.husky/pre_push`：
+修改`.husky/_/pre_push`：
 
 原先：
 
