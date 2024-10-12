@@ -1,8 +1,25 @@
-# Changelog
+## <small>3.6.3 (2024-10-12)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 🔖 tag(package.json): v3.6.3 ([463ddb6](https://github.com/M0rtzz/m0rtzz.blog/commit/463ddb6))
 
-## [3.6.3](https://github.com/M0rtzz/m0rtzz.blog/compare/v3.6.2...v3.6.3) (2024-10-12)
+
+
+## <small>3.6.2 (2024-10-12)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([64d62b5](https://github.com/M0rtzz/m0rtzz.blog/commit/64d62b5))
+* 🔖 tag(package.json): v3.6.2 ([97635c4](https://github.com/M0rtzz/m0rtzz.blog/commit/97635c4))
+* 🔨 script(pre-push): change commit message ([1b33b6c](https://github.com/M0rtzz/m0rtzz.blog/commit/1b33b6c))
+
+
+
+## <small>3.6.1 (2024-10-12)</small>
+
+* 📄 license: change reference ([b48d76e](https://github.com/M0rtzz/m0rtzz.blog/commit/b48d76e))
+* 📝 docs(CHANGELOG.md): automatic update ([9ffac5e](https://github.com/M0rtzz/m0rtzz.blog/commit/9ffac5e))
+* 🔖 tag(package.json): v3.6.1 ([3305e1a](https://github.com/M0rtzz/m0rtzz.blog/commit/3305e1a))
+* 🔧 config(blog-config.ts): change site url ([69d9836](https://github.com/M0rtzz/m0rtzz.blog/commit/69d9836))
+
+
 
 ## 3.6.0 (2024-10-10)
 
@@ -2226,3 +2243,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
