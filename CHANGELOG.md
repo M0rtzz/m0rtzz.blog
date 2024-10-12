@@ -1,19 +1,22 @@
-# Changelog
+## <small>3.7.1 (2024-10-12)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 📝 doc(CHANGELOG.md): automatic update ([8a95ecd](https://github.com/M0rtzz/m0rtzz.blog/commit/8a95ecd))
+* 📝 doc(CHANGELOG.md): automatic update ([c6cbb24](https://github.com/M0rtzz/m0rtzz.blog/commit/c6cbb24))
+* 🔖 tag(package.json): v3.6.9 ([a56fcd9](https://github.com/M0rtzz/m0rtzz.blog/commit/a56fcd9))
+* 🔖 tag(package.json): v3.7.0 ([c588b7b](https://github.com/M0rtzz/m0rtzz.blog/commit/c588b7b))
+* 🔖 tag(package.json): v3.7.1 ([7f2a8e4](https://github.com/M0rtzz/m0rtzz.blog/commit/7f2a8e4))
+* 🔨 script: add transfer script ([820dec1](https://github.com/M0rtzz/m0rtzz.blog/commit/820dec1))
 
-## [3.7.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v3.6.9...v3.7.1) (2024-10-12)
 
-## 3.7.0 (2024-10-12)
 
-* 📝 doc(CHANGELOG.md): automatic update ([36e6d92](https://github.com/M0rtzz/m0rtzz.blog/commit/36e6d92))
-* 📝 doc(CHANGELOG.md): automatic update ([8c49182](https://github.com/M0rtzz/m0rtzz.blog/commit/8c49182))
-* 📝 doc(CHANGELOG.md): automatic update ([8663d84](https://github.com/M0rtzz/m0rtzz.blog/commit/8663d84))
-* 🔖 tag(package.json): v3.6.7 ([5e74005](https://github.com/M0rtzz/m0rtzz.blog/commit/5e74005))
-* 🔖 tag(package.json): v3.6.8 ([964ab0a](https://github.com/M0rtzz/m0rtzz.blog/commit/964ab0a))
-* 🔖 tag(package.json): v3.6.9 ([b87fb63](https://github.com/M0rtzz/m0rtzz.blog/commit/b87fb63))
-* 🔖 tag(package.json): v3.7.0 ([5d32f3e](https://github.com/M0rtzz/m0rtzz.blog/commit/5d32f3e))
-* 🔨 script(transfer.sh): add transfer script ([1f57ccf](https://github.com/M0rtzz/m0rtzz.blog/commit/1f57ccf))
+## <small>3.6.9 (2024-10-12)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([61f41e4](https://github.com/M0rtzz/m0rtzz.blog/commit/61f41e4))
+* 📝 doc(CHANGELOG.md): automatic update ([bad33cb](https://github.com/M0rtzz/m0rtzz.blog/commit/bad33cb))
+* 📝 doc(CHANGELOG.md): automatic update ([12761ad](https://github.com/M0rtzz/m0rtzz.blog/commit/12761ad))
+* 🔖 tag(package.json): v3.6.7 ([bc2d80b](https://github.com/M0rtzz/m0rtzz.blog/commit/bc2d80b))
+* 🔖 tag(package.json): v3.6.8 ([625b644](https://github.com/M0rtzz/m0rtzz.blog/commit/625b644))
+* 🔖 tag(package.json): v3.6.9 ([6b78d48](https://github.com/M0rtzz/m0rtzz.blog/commit/6b78d48))
 
 
 
@@ -2268,3 +2271,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
