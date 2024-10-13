@@ -86,8 +86,8 @@ deb https://mirrors.hust.edu.cn/ubuntu/ bionic-updates main restricted universe 
 deb https://mirrors.hust.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
 # deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
 
-deb https://mirrors.hust.edu.cn/ubuntu bionic-security main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu bionic-security main restricted universe multiverse
+deb https://mirrors.hust.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
 
 # 预发布软件源，不建议启用
 # deb https://mirrors.hust.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
@@ -105,8 +105,8 @@ deb https://mirrors.hust.edu.cn/ubuntu/ focal-updates main restricted universe m
 deb https://mirrors.hust.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
 # deb-src https://mirrors.hust.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
 
-deb https://mirrors.hust.edu.cn/ubuntu focal-security main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu focal-security main restricted universe multiverse
+deb https://mirrors.hust.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal-security main restricted universe multiverse
 
 # 预发布软件源，不建议启用
 # deb https://mirrors.hust.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
@@ -707,7 +707,7 @@ wget -q --show-progress https://raw.gitcode.com/M0rtzz/opencv4-cudnn8-support/ra
 
 ##### CUDA11.X相关
 
-因为`CUDA11.X`不再支持`CUDA_nppicom_LIBRARY`而报错。
+因为`CUDA11.X`不再支持`CUDA_nppicom_LIBRARY`而报错：
 
 ![image-20240826130754825](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/13:07:55_image-20240826130754825.png)
 
@@ -737,7 +737,7 @@ if(CUDA_FOUND)
 
 ##### Python相关
 
-可能是`cmake`找不到合适的`Python`解释器来执行脚本。
+可能是`cmake`找不到合适的`Python`解释器来执行脚本：
 
 ![image-20240826133725674](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/13:37:26_image-20240826133725674.png)
 
@@ -772,22 +772,22 @@ sudo cp /usr/lib/pkgconfig/opencv4.pc /usr/lib/pkgconfig/opencv.pc
 sudo apt install -y curl libjsoncpp-dev
 ```
 
-`jsoncpp`库的头文件改为
+`jsoncpp`库的头文件改为：
 
 ```cpp
 #include <jsoncpp/json/json.h>
 ```
 
-`g++`编译
+`g++`编译：
 
 ```bash
-g++ test.cpp -o test -lcurl -ljsoncpp
+g++ test.cpp -o test.out -lcurl -ljsoncpp
 ```
 
-运行
+运行：
 
 ```bash
-./test
+./test.out
 ```
 
 ### darknet、yolov3及darknet_ros工作空间
@@ -1105,8 +1105,8 @@ generate_messages(DEPENDENCIES std_msgs)
 
 catkin_package(
   INCLUDE_DIRS
-  include
   CATKIN_DEPENDS
+  include
   roscpp
   rospy
   std_msgs
@@ -1188,7 +1188,7 @@ sudo apt install -y librealsense2-dkms librealsense2-utils
 ```bash
 sudo tee -a /etc/apt/sources.list > /dev/null << EOF
 # gcc-4.9, g++4.9
-deb http://mirrors.hust.edu.cn/ubuntu/ xenial universe
+deb https://mirrors.hust.edu.cn/ubuntu/ xenial universe
 EOF
 ```
 
@@ -1196,15 +1196,12 @@ EOF
 
 ```bash
 sudo apt update -y
-```
-
-```bash
 sudo apt install -y gcc-4.9 g++-4.9
 ```
 
 ```bash
 # 注释掉xenial软件源
-sudo sed -i '/^deb http:\/\/mirrors.hust.edu.cn\/ubuntu\/ xenial universe/s/^/# /' /etc/apt/sources.list && sudo apt update -y
+sudo sed -i '/^deb https:\/\/mirrors.hust.edu.cn\/ubuntu\/ xenial universe/s/^/# /' /etc/apt/sources.list && sudo apt update -y
 ```
 
 测试：
@@ -2406,37 +2403,37 @@ sudo flatpak update
 
 地址栏输入：
 
-```ini
+```txt
 about:config
 ```
 
-```ini
+```txt
 full-screen-api.warning.timeout
 ```
 
 设置为`0`~
 
-```ini
+```txt
 full-screen-api.transition-duration.enter
 ```
 
 和
 
-```ini
+```txt
 full-screen-api.transition-duration.leave
 ```
 
 都设置为`0 0`~
 
-```ini
+```txt
 browser.search.openintab
 ```
 
-```ini
+```txt
 browser.urlbar.openintab
 ```
 
-```ini
+```txt
 browser.tabs.loadBookmarksInTabs
 ```
 
@@ -2523,7 +2520,7 @@ desktop_opens_home_dir (TerminalNautilus *nautilus)
                                 "/apps/nautilus-open-terminal/desktop_opens_home_dir",
                                 NULL);
 #endif
-  return FALSE;
+  return FALSE; // here
 }
 ```
 
@@ -2598,7 +2595,7 @@ tar -zxvf protobuf-2.6.1.tar.gz && cd protobuf-2.6.1
 sudo make -j$(nproc)
 ```
 
-养成 `make check`的好习惯
+养成有`make check/test`就执行的好习惯：
 
 ```bash
 sudo make check -j$(nproc)
@@ -3598,7 +3595,7 @@ $(DISTRIBUTE_DIR): all py | $(DISTRIBUTE_SUBDIRS)
 cd python/
 ```
 
-使用云镜像安装依赖库：
+使用镜像源安装依赖库：
 
 ```bash
 python3 -m pip install -r requirements.txt -i https://mirrors.hust.edu.cn/pypi/web/simple
@@ -4485,7 +4482,7 @@ sudo make pycaffe -j$(nproc)
 
 [https://vtk.org/download/](https://vtk.org/download/)
 
-下载`VTK-8.2.0.zip`
+下载`VTK-8.2.0.zip`：
 
 ![image-20240826101145189](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/10:11:45_image-20240826101145189.png)
 
@@ -4630,9 +4627,17 @@ rosrun turtlesim turtle_teleop_key
 安装所需依赖库，打开终端，输入：
 
 ```bash
-sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
+sudo tee -a /etc/apt/sources.list > /dev/null << EOF
+# libjasper1, libjasper-dev
+deb https://mirrors.hust.edu.cn/ubuntu/ xenial-security main
+EOF
 sudo apt update -y
 sudo apt install -y libjasper1 libjasper-dev
+```
+
+```bash
+# 注释掉xenial软件源
+sudo sed -i '/^deb https:\/\/mirrors.hust.edu.cn\/ubuntu\/ xenial-security main/s/^/# /' /etc/apt/sources.list && sudo apt update -y
 ```
 
 ```bash
@@ -4667,7 +4672,7 @@ git clone -b 3.4.16 https://mirror.ghproxy.com/https://github.com/opencv/opencv_
 mkdir build && cd build/
 ```
 
-**接下来编译安装，注意此命令的`OPENCV_EXTRA_MODULES_PATH=`后边的路径是你电脑下的绝对路径，请自行修改**
+**接下来编译安装，注意此命令的`OPENCV_EXTRA_MODULES_PATH=`后边的路径是你电脑下的绝对路径，请自行修改：**
 
 ```bash
 cmake \
@@ -4689,7 +4694,7 @@ cmake \
 ..
 ```
 
-过程中会出现`IPPICV: Download: ippicv_2020_lnx_intel64_20191018_general.tgz`
+过程中会出现`IPPICV: Download: ippicv_2020_lnx_intel64_20191018_general.tgz`。
 
 解决方法：
 
@@ -4699,7 +4704,7 @@ cd $(git rev-parse --show-toplevel)/ && mkdir downloads && realpath downloads/
 
 复制绝对路径后：
 
-打开这个`ippicv.cmake`
+打开这个`ippicv.cmake`：
 
 ![99f88634f470](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/10:14:20_99f88634f470.png)
 
@@ -4707,7 +4712,7 @@ cd $(git rev-parse --show-toplevel)/ && mkdir downloads && realpath downloads/
 
 ![image-20240902115158065](https://static.m0rtzz.com/images/Year:2024/Month:09/Day:02/11:52:03_image-20240902115158065.png)
 
-然后把下面网址下载的文件`cp`进去就行了（或者开头百度云分享链接中自取~）
+然后把下面网址下载的文件`cp`进去就行了（或者开头百度云分享链接中自取~）。
 
 [https://github.com/opencv/opencv_3rdparty](https://github.com/opencv/opencv_3rdparty)
 
@@ -4897,7 +4902,7 @@ sudo cp libdepthengine.so.2.0 /usr/lib/x86_64-linux-gnu/
 sudo cp /usr/lib/x86_64-linux-gnu/libdepthengine.so.2.0 /usr/lib/
 ```
 
-随后进入下载好的`Azure-Kinect-Sensor-SDK-v1.4.0/`文件夹下打开终端输入
+随后进入下载好的`Azure-Kinect-Sensor-SDK-v1.4.0/`文件夹下打开终端输入：
 
 ```bash
 cmake -GNinja ..
