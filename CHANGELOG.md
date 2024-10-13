@@ -94,7 +94,9 @@
 * 🔖 tag(package.json): v3.6.1 ([3ba7422](https://github.com/M0rtzz/m0rtzz.blog/commit/3ba7422))
 * 🔧 config(blog-config.ts): change site url ([6cf0f7e](https://github.com/M0rtzz/m0rtzz.blog/commit/6cf0f7e))
 
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.7.5](https://github.com/M0rtzz/m0rtzz.blog/compare/v3.7.4...v3.7.5) (2024-10-13)
 
 ## 3.6.0 (2024-10-10)
 
@@ -2300,5 +2302,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
