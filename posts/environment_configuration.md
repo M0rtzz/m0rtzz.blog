@@ -4672,7 +4672,7 @@ git clone -b 3.4.16 https://mirror.ghproxy.com/https://github.com/opencv/opencv_
 mkdir build && cd build/
 ```
 
-**接下来编译安装，注意此命令的`OPENCV_EXTRA_MODULES_PATH=`后边的路径是你电脑下的绝对路径，请自行修改：**
+**接下来编译安装，注意此命令的**`OPENCV_EXTRA_MODULES_PATH=`后边的路径是你电脑下的绝对路径，请自行修改：**
 
 ```bash
 cmake \
