@@ -1,86 +1,8 @@
-## <small>3.7.3 (2024-10-12)</small>
+# Changelog
 
-* 📄 license(LICENSE): update WTFPL ([52daf8f](https://github.com/M0rtzz/m0rtzz.blog/commit/52daf8f))
-* 🔖 tag(package.json): v3.7.3 ([b11e271](https://github.com/M0rtzz/m0rtzz.blog/commit/b11e271))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>3.7.2 (2024-10-12)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([e23bdc4](https://github.com/M0rtzz/m0rtzz.blog/commit/e23bdc4))
-* 🔖 tag(package.json): v3.7.2 ([f8af6ea](https://github.com/M0rtzz/m0rtzz.blog/commit/f8af6ea))
-* 🔨 script(transfer.sh): add transfer script ([140ca6b](https://github.com/M0rtzz/m0rtzz.blog/commit/140ca6b))
-
-
-
-## <small>3.7.1 (2024-10-12)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([61bad54](https://github.com/M0rtzz/m0rtzz.blog/commit/61bad54))
-* 📝 doc(CHANGELOG.md): automatic update ([8a95ecd](https://github.com/M0rtzz/m0rtzz.blog/commit/8a95ecd))
-* 📝 doc(CHANGELOG.md): automatic update ([c6cbb24](https://github.com/M0rtzz/m0rtzz.blog/commit/c6cbb24))
-* 🔖 tag(package.json): v3.6.9 ([a56fcd9](https://github.com/M0rtzz/m0rtzz.blog/commit/a56fcd9))
-* 🔖 tag(package.json): v3.7.0 ([c588b7b](https://github.com/M0rtzz/m0rtzz.blog/commit/c588b7b))
-* 🔖 tag(package.json): v3.7.1 ([45957d6](https://github.com/M0rtzz/m0rtzz.blog/commit/45957d6))
-
-
-
-## <small>3.6.9 (2024-10-12)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([61f41e4](https://github.com/M0rtzz/m0rtzz.blog/commit/61f41e4))
-* 📝 doc(CHANGELOG.md): automatic update ([bad33cb](https://github.com/M0rtzz/m0rtzz.blog/commit/bad33cb))
-* 📝 doc(CHANGELOG.md): automatic update ([12761ad](https://github.com/M0rtzz/m0rtzz.blog/commit/12761ad))
-* 🔖 tag(package.json): v3.6.7 ([bc2d80b](https://github.com/M0rtzz/m0rtzz.blog/commit/bc2d80b))
-* 🔖 tag(package.json): v3.6.8 ([625b644](https://github.com/M0rtzz/m0rtzz.blog/commit/625b644))
-* 🔖 tag(package.json): v3.6.9 ([6b78d48](https://github.com/M0rtzz/m0rtzz.blog/commit/6b78d48))
-
-
-
-## <small>3.6.7 (2024-10-12)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([02d9e79](https://github.com/M0rtzz/m0rtzz.blog/commit/02d9e79))
-* 🔖 tag(package.json): v3.6.7 ([f3e78b5](https://github.com/M0rtzz/m0rtzz.blog/commit/f3e78b5))
-
-
-
-## <small>3.6.6 (2024-10-12)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([78107a8](https://github.com/M0rtzz/m0rtzz.blog/commit/78107a8))
-* 🔖 tag(package.json): v3.6.6 ([d547432](https://github.com/M0rtzz/m0rtzz.blog/commit/d547432))
-
-
-
-## <small>3.6.5 (2024-10-12)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([ea18302](https://github.com/M0rtzz/m0rtzz.blog/commit/ea18302))
-* 📝 doc(CHANGELOG.md): automatic update ([ce14a48](https://github.com/M0rtzz/m0rtzz.blog/commit/ce14a48))
-* 🔖 tag(package.json): v3.6.4 ([700ff5c](https://github.com/M0rtzz/m0rtzz.blog/commit/700ff5c))
-* 🔖 tag(package.json): v3.6.5 ([8ab6d68](https://github.com/M0rtzz/m0rtzz.blog/commit/8ab6d68))
-
-
-
-## <small>3.6.3 (2024-10-12)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([71f7113](https://github.com/M0rtzz/m0rtzz.blog/commit/71f7113))
-* 🔖 tag(package.json): v3.6.3 ([b4a2a5e](https://github.com/M0rtzz/m0rtzz.blog/commit/b4a2a5e))
-
-
-
-## <small>3.6.2 (2024-10-12)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([0c61fe7](https://github.com/M0rtzz/m0rtzz.blog/commit/0c61fe7))
-* 🔖 tag(package.json): v3.6.2 ([c542cba](https://github.com/M0rtzz/m0rtzz.blog/commit/c542cba))
-* 🔨 script(pre-push): change commit message ([ba373ec](https://github.com/M0rtzz/m0rtzz.blog/commit/ba373ec))
-
-
-
-## <small>3.6.1 (2024-10-12)</small>
-
-* 📄 license: change reference ([3449907](https://github.com/M0rtzz/m0rtzz.blog/commit/3449907))
-* 📝 docs(CHANGELOG.md): automatic update ([c6c2a1c](https://github.com/M0rtzz/m0rtzz.blog/commit/c6c2a1c))
-* 🔖 tag(package.json): v3.6.1 ([3ba7422](https://github.com/M0rtzz/m0rtzz.blog/commit/3ba7422))
-* 🔧 config(blog-config.ts): change site url ([6cf0f7e](https://github.com/M0rtzz/m0rtzz.blog/commit/6cf0f7e))
-
-
+## [3.7.4](https://github.com/M0rtzz/m0rtzz.blog/compare/v3.7.2...v3.7.4) (2024-10-13)
 
 ## 3.6.0 (2024-10-10)
 
@@ -2286,5 +2208,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
