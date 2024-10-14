@@ -38,7 +38,7 @@ export const MusicToggle = () => {
 
   return (
     <div>
-      <audio ref={audioRef} src='/music/music.mp3' onEnded={handleMusicEnd} />
+      <audio ref={audioRef} src='/audio/music.mp3' onEnded={handleMusicEnd} />
       <button
         className={`rounded p-1.5 outline-none transition-colors hover:bg-surface-1 pressed:bg-surface-1 ${isRotating ? 'rotate-animation' : ''}`}
         aria-label={isPlaying ? 'Pause Music' : 'Play Music'}
