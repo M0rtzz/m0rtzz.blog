@@ -1,8 +1,32 @@
-# Changelog
+## <small>3.8.5 (2024-10-14)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 👷 ci(husky): format code ([ba445c9](https://github.com/M0rtzz/m0rtzz.blog/commit/ba445c9))
+* 📝 doc(CHANGELOG.md): automatic update ([895d112](https://github.com/M0rtzz/m0rtzz.blog/commit/895d112))
+* 📝 doc(CHANGELOG.md): automatic update ([5879c1b](https://github.com/M0rtzz/m0rtzz.blog/commit/5879c1b))
+* 📝 doc(CHANGELOG.md): automatic update ([0775966](https://github.com/M0rtzz/m0rtzz.blog/commit/0775966))
+* 🔖 tag(package.json): v3.8.3 ([701c535](https://github.com/M0rtzz/m0rtzz.blog/commit/701c535))
+* 🔖 tag(package.json): v3.8.3 ([2b4bef3](https://github.com/M0rtzz/m0rtzz.blog/commit/2b4bef3))
+* 🔖 tag(package.json): v3.8.4 ([1be6e58](https://github.com/M0rtzz/m0rtzz.blog/commit/1be6e58))
+* 🔖 tag(package.json): v3.8.5 ([19b2f71](https://github.com/M0rtzz/m0rtzz.blog/commit/19b2f71))
 
-## [3.8.5](https://github.com/M0rtzz/m0rtzz.blog/compare/v3.8.2...v3.8.5) (2024-10-14)
+
+
+## <small>3.8.2 (2024-10-14)</small>
+
+* 📄 license(LICENSE): update ([2ba3c68](https://github.com/M0rtzz/m0rtzz.blog/commit/2ba3c68))
+* 📄 license(LICENSE): update ([58bfd7c](https://github.com/M0rtzz/m0rtzz.blog/commit/58bfd7c))
+* 📝 doc(CHANGELOG.md): automatic update ([496e1cb](https://github.com/M0rtzz/m0rtzz.blog/commit/496e1cb))
+* 🔖 tag(package.json): v3.8.2 ([21e9f38](https://github.com/M0rtzz/m0rtzz.blog/commit/21e9f38))
+
+
+
+## <small>3.8.1 (2024-10-14)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([a399804](https://github.com/M0rtzz/m0rtzz.blog/commit/a399804))
+* 🔖 tag(package.json): v3.8.1 ([2582169](https://github.com/M0rtzz/m0rtzz.blog/commit/2582169))
+* 🔨 script: update echo cmd ([0c2d81e](https://github.com/M0rtzz/m0rtzz.blog/commit/0c2d81e))
+
+
 
 ## 3.8.0 (2024-10-13)
 
@@ -2332,3 +2356,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
