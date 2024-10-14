@@ -1,8 +1,28 @@
-# Changelog
+## <small>3.8.4 (2024-10-14)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 👷 ci(.husky): format code ([5792213](https://github.com/M0rtzz/m0rtzz.blog/commit/5792213))
+* 📝 doc(CHANGELOG.md): automatic update ([deefdcf](https://github.com/M0rtzz/m0rtzz.blog/commit/deefdcf))
+* 🔖 tag(package.json): v3.8.3 ([096f4d9](https://github.com/M0rtzz/m0rtzz.blog/commit/096f4d9))
+* 🔖 tag(package.json): v3.8.4 ([793432c](https://github.com/M0rtzz/m0rtzz.blog/commit/793432c))
 
-## [3.8.4](https://github.com/M0rtzz/m0rtzz.blog/compare/v3.8.2...v3.8.4) (2024-10-14)
+
+
+## <small>3.8.2 (2024-10-14)</small>
+
+* 📄 license(LICENSE): update ([2ba3c68](https://github.com/M0rtzz/m0rtzz.blog/commit/2ba3c68))
+* 📄 license(LICENSE): update ([58bfd7c](https://github.com/M0rtzz/m0rtzz.blog/commit/58bfd7c))
+* 📝 doc(CHANGELOG.md): automatic update ([496e1cb](https://github.com/M0rtzz/m0rtzz.blog/commit/496e1cb))
+* 🔖 tag(package.json): v3.8.2 ([21e9f38](https://github.com/M0rtzz/m0rtzz.blog/commit/21e9f38))
+
+
+
+## <small>3.8.1 (2024-10-14)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([a399804](https://github.com/M0rtzz/m0rtzz.blog/commit/a399804))
+* 🔖 tag(package.json): v3.8.1 ([2582169](https://github.com/M0rtzz/m0rtzz.blog/commit/2582169))
+* 🔨 script: update echo cmd ([0c2d81e](https://github.com/M0rtzz/m0rtzz.blog/commit/0c2d81e))
+
+
 
 ## 3.8.0 (2024-10-13)
 
@@ -2332,3 +2352,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
