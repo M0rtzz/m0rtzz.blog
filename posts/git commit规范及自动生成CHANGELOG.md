@@ -423,7 +423,7 @@ updateVersionTag() {
     # 如果是第一次提交，即没有标签
     if [ -z "${latest_tag}" ]; then
         new_tag="v1.0.0"
-        echo ${new_tag}
+        echo "${new_tag}"
         return
     fi
 
@@ -449,7 +449,7 @@ updateVersionTag() {
     new_tag="v${major_version}.${minor_version}.${patch_version}"
 
     # 将新标签返回
-    echo ${new_tag}
+    echo "${new_tag}"
 }
 
 updateVersionInPackageJson() {
