@@ -17,7 +17,7 @@ const Footer = () => {
       <div className='container mx-auto flex items-center justify-center py-8 text-center text-xs'>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <Image
-            src='/iconspolice.png'
+            src='/icons/police.png'
             alt='Police Logo'
             width={15}
             height={15}
@@ -34,7 +34,7 @@ const Footer = () => {
         <div style={{ margin: '0 10px' }}></div>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <Image
-            src='/iconsicp.png'
+            src='/icons/icp.png'
             alt='ICP Logo'
             width={18}
             height={18}
@@ -54,7 +54,7 @@ const Footer = () => {
             <span style={{ color: '#1E90FF' }}>本站由</span>
             <a href='https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral'>
               <Image
-                src='/iconsupyun.png'
+                src='/icons/upyun.png'
                 alt='UpYun Logo'
                 width={40}
                 height={40}
