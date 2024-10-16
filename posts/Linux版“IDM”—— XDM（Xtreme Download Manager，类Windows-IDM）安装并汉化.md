@@ -48,7 +48,7 @@ sudo vi /opt/xdman/Lang/English.txt
 
 修改其中内容为以下（官方提供的/opt/xdman/Lang/Chinese simplified.txt里面翻译不全，故使用以下内容）：
 
-```txt
+```ini
 DESC_NEW=新建
 DESC_DEL=删除
 MENU_PAUSE=暂停
