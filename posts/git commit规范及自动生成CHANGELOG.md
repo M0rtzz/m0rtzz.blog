@@ -439,7 +439,7 @@ updateVersionTag() {
         return
     fi
 
-    # 更新版本号逻辑
+    # 更新版本号
     if [ "${patch_version}" -eq 9 ]; then
         # 如果修订号为 9
         patch_version=0 # 将修订号重置为 0
@@ -460,7 +460,7 @@ updateVersionTag() {
 
     new_tag="v${major_version}.${minor_version}.${patch_version}"
 
-    # 将新标签返回
+    # 返回
     echo "${new_tag}"
 }
 
@@ -469,7 +469,6 @@ updateVersionInPackageJson() {
     sed -i "s/\"version\": \".*\"/\"version\": \"${new_version}\"/" "${repo_root_dir}/package.json"
 }
 
-# 调用函数，并将结果赋给变量
 new_tag=$(updateVersionTag)
 
 updateVersionInPackageJson "${new_tag}"
@@ -479,21 +478,21 @@ git commit --amend -m "🔖 tag(package.json): ${new_tag}"
 rm "${repo_root_dir}/CHANGELOG.md"
 conventional-changelog -i "${repo_root_dir}/CHANGELOG.md" -s -r 0
 
-# 获取当前本地仓库的远程URL
+# 获取当前仓库的远程URL
 remote_url=$(git remote -v | grep origin | grep '(fetch)' | awk '{print $2}')
 
-# 根据不同远程仓库处理
+# 处理commit URL
 case "${remote_url}" in
 *github.com*)
     echo "\e[1;32mRemote URL is from GitHub.\e[0m"
     ;;
-*gitcode.com*)
-    echo "\e[1;32mRemote URL is from GitCode.\e[0m"
-    sed -i 's/commits\//commits\/detail\//g' "${repo_root_dir}/CHANGELOG.md"
-    ;;
 *gitee.com*)
     echo "\e[1;32mRemote URL is from Gitee.\e[0m"
     sed -i 's/commits\//commit\//g' "${repo_root_dir}/CHANGELOG.md"
+    ;;
+*gitcode.com*)
+    echo "\e[1;32mRemote URL is from GitCode.\e[0m"
+    sed -i 's/commits\//commits\/detail\//g' "${repo_root_dir}/CHANGELOG.md"
     ;;
 *)
     echo "\e[1;31mRemote URL is from an unknown source.\e[0m"
