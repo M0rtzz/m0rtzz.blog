@@ -205,7 +205,7 @@ module.exports = {
         },
         {
             value: '☸️ k8s',
-            name: '☸️ k8s:\tKubernetes | Kubernetes相关'
+            name: '☸️  k8s:\tKubernetes | Kubernetes相关'
         },
         {
             value: '💫 anim',
