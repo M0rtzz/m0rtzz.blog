@@ -45,3 +45,4 @@ dist
 out.zip
 *.out
 **/*.~*.*
+CHANGELOG.md
