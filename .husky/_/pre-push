@@ -69,8 +69,8 @@ updateVersionInPackageJson "${new_tag}"
 git add "${repo_root_dir}/package.json"
 git commit --amend -m "🔖 tag(package.json): ${new_tag}"
 
-rm "${repo_root_dir}/CHANGELOG.md"
-conventional-changelog -i "${repo_root_dir}/CHANGELOG.md" -s -r 0
+# rm "${repo_root_dir}/CHANGELOG.md"
+# conventional-changelog -i "${repo_root_dir}/CHANGELOG.md" -s -r 0
 
 # 获取当前本地仓库的远程URL
 remote_url=$(git remote -v | grep origin | grep '(fetch)' | awk '{print $2}')
@@ -93,8 +93,8 @@ case "${remote_url}" in
     ;;
 esac
 
-git add "${repo_root_dir}/CHANGELOG.md"
-git commit -m "📝 doc(CHANGELOG.md): automatic update"
+# git add "${repo_root_dir}/CHANGELOG.md"
+# git commit -m "📝 doc(CHANGELOG.md): automatic update"
 
 git tag -a "${new_tag}" -m "🔖 tag: ${new_tag}"
 echo "\e[1;32m更新后的标签为: ${new_tag}\e[0m"
