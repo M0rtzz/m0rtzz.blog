@@ -1,0 +1,100 @@
+#!/usr/bin/env sh
+
+git pull --rebase || {
+    echo "\e[1;31m代码拉取失败\e[0m"
+    exit 1
+}
+
+echo "\e[1;32m\e[1m代码拉取成功\e[0m"
+
+commit-and-tag-version
+
+# 获取仓库根目录
+repo_root_dir=$(git rev-parse --show-toplevel)
+
+# 获取最新的标签
+latest_tag_global=$(git describe --tags "$(git rev-list --tags --max-count=1)")
+
+git tag -d "${latest_tag_global}"
+
+updateVersionTag() {
+    latest_tag=$(git describe --tags "$(git rev-list --tags --max-count=1)" 2>/dev/null)
+
+    # 使用正则表达式从标签中提取主版本号、次版本号和修订号
+    major_version=$(echo "${latest_tag}" | cut -d '.' -f 1 | sed 's/v//')
+    minor_version=$(echo "${latest_tag}" | cut -d '.' -f 2)
+    patch_version=$(echo "${latest_tag}" | cut -d '.' -f 3)
+
+    # 如果是第一次提交，即没有标签
+    if [ -z "${latest_tag}" ]; then
+        new_tag="v1.0.0"
+        echo "${new_tag}"
+        return
+    fi
+
+    # 更新版本号逻辑
+    if [ "${patch_version}" -eq 9 ]; then
+        # 如果修订号为 9
+        patch_version=0 # 将修订号重置为 0
+
+        # 接下来检查次版本号
+        if [ "${minor_version}" -eq 9 ]; then
+            # 如果次版本号也为 9
+            minor_version=0                      # 将次版本号重置为 0
+            major_version=$((major_version + 1)) # 将主版本号加 1
+        else
+            # 如果次版本号不是 9
+            minor_version=$((minor_version + 1)) # 将次版本号加 1
+        fi
+    else
+        # 如果修订号不是 9
+        patch_version=$((patch_version + 1)) # 将修订号加 1
+    fi
+
+    new_tag="v${major_version}.${minor_version}.${patch_version}"
+
+    # 将新标签返回
+    echo "${new_tag}"
+}
+
+updateVersionInPackageJson() {
+    new_version="$1"
+    sed -i "s/\"version\": \".*\"/\"version\": \"${new_version}\"/" "${repo_root_dir}/package.json"
+}
+
+# 调用函数，并将结果赋给变量
+new_tag=$(updateVersionTag)
+
+updateVersionInPackageJson "${new_tag}"
+git add "${repo_root_dir}/package.json"
+git commit --amend -m "🔖 tag(package.json): ${new_tag}"
+
+rm "${repo_root_dir}/CHANGELOG.md"
+conventional-changelog -i "${repo_root_dir}/CHANGELOG.md" -s -r 0
+
+# 获取当前本地仓库的远程URL
+remote_url=$(git remote -v | grep origin | grep '(fetch)' | awk '{print $2}')
+
+# 根据不同远程仓库处理
+case "${remote_url}" in
+*github.com*)
+    echo "\e[1;32mRemote URL is from GitHub.\e[0m"
+    ;;
+*gitcode.com*)
+    echo "\e[1;32mRemote URL is from GitCode.\e[0m"
+    sed -i 's/commits\//commits\/detail\//g' "${repo_root_dir}/CHANGELOG.md"
+    ;;
+*gitee.com*)
+    echo "\e[1;32mRemote URL is from Gitee.\e[0m"
+    sed -i 's/commits\//commit\//g' "${repo_root_dir}/CHANGELOG.md"
+    ;;
+*)
+    echo "\e[1;31mRemote URL is from an unknown source.\e[0m"
+    ;;
+esac
+
+git add "${repo_root_dir}/CHANGELOG.md"
+git commit -m "📝 doc(CHANGELOG.md): automatic update"
+
+git tag -a "${new_tag}" -m "🔖 tag: ${new_tag}"
+echo "\e[1;32m更新后的标签为: ${new_tag}\e[0m"
