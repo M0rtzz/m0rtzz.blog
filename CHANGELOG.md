@@ -1,17 +1,8 @@
-## <small>3.9.2 (2024-10-16)</small>
+# Changelog
 
-* 📝 doc(git commit规范及自动生成CHANGELOG.md): update config ([7b57ab3](https://github.com/M0rtzz/m0rtzz.blog/commit/7b57ab3))
-* 🔖 tag(package.json): v3.9.2 ([26c350e](https://github.com/M0rtzz/m0rtzz.blog/commit/26c350e))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>3.9.1 (2024-10-15)</small>
-
-* ⏪ revert(linux.svg): revert linux image ([fa3fd41](https://github.com/M0rtzz/m0rtzz.blog/commit/fa3fd41))
-* 📝 doc(CHANGELOG.md): automatic update ([9f8bdd3](https://github.com/M0rtzz/m0rtzz.blog/commit/9f8bdd3))
-* 🔖 tag(package.json): v3.9.1 ([83b4b5c](https://github.com/M0rtzz/m0rtzz.blog/commit/83b4b5c))
-
-
+## [3.9.3](https://github.com/M0rtzz/m0rtzz.blog/compare/v1.3.6...v3.9.3) (2024-10-16)
 
 ## 3.9.0 (2024-10-15)
 
@@ -2409,5 +2400,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
