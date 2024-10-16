@@ -1,9 +1,8 @@
-## <small>4.0.1 (2024-10-16)</small>
+# Changelog
 
-* 🔖 tag(package.json): v4.0.1 ([285ae33](https://github.com/M0rtzz/m0rtzz.blog/commit/285ae33))
-* 🔨 script(transfer.sh): rm a blank line ([c114389](https://github.com/M0rtzz/m0rtzz.blog/commit/c114389))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
+## [4.0.2](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.0.1...v4.0.2) (2024-10-16)
 
 ## 4.0.0 (2024-10-16)
 
@@ -2483,5 +2482,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
