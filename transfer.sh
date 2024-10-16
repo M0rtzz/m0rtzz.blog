@@ -14,7 +14,6 @@ repo_root_dir=$(git rev-parse --show-toplevel)
 # grep -rl --binary-files=without-match "fonts.googleapis.com" "${repo_root_dir}/node_modules" | xargs -r sed -i 's/fonts.googleapis.com/gfonts.aby.pub/g'
 # grep -rl --binary-files=without-match "fonts.gstatic.com" "${repo_root_dir}/node_modules" | xargs -r sed -i 's/fonts.gstatic.com/gfonts.aby.pub/g'
 
-
 grep -rl --binary-files=without-match "fonts.googleapis.com" "${repo_root_dir}/node_modules" | xargs -r sed -i 's/fonts.googleapis.com/gfonts.qaq.qa/g'
 grep -rl --binary-files=without-match "fonts.gstatic.com" "${repo_root_dir}/node_modules" | xargs -r sed -i 's/fonts.gstatic.com/gfonts.qaq.qa/g'
 
