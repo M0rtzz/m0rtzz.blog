@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.9.10](https://github.com/M0rtzz/m0rtzz.blog/compare/v3.9.11...v3.9.10) (2024-10-16)
+
 ## [3.9.9](https://github.com/M0rtzz/m0rtzz.blog/compare/v3.9.11...v3.9.9) (2024-10-16)
 
 ## 3.9.0 (2024-10-15)
