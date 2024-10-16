@@ -196,6 +196,18 @@ module.exports = {
             name: '🦺 val:\tAdd or update code related to validation | 验证相关'
         },
         {
+            value: '⚓ hook',
+            name: '⚓ hook:\tGit hook | 钩子'
+        },
+        {
+            value: '🐳 docker',
+            name: '🐳 docker:\tDocker container | Docker容器相关'
+        },
+        {
+            value: '☸️ k8s',
+            name: '☸️ k8s:\tKubernetes | Kubernetes相关'
+        },
+        {
             value: '💫 anim',
             name: '💫 anim:\tAdd or update animations and transitions | 动画和过渡'
         },
