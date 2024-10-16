@@ -2,14 +2,14 @@
   <defs>
     <linearGradient id="json_svg__a">
       <stop offset="0" />
-      <stop offset="1" stop-color="#fff" />
+      <stop offset="1" stop-color="#ffffff" />
     </linearGradient>
     <linearGradient xlink:href="#json_svg__a" id="json_svg__c" x1="-553.27" x2="-666.12" y1="525.91" y2="413.05"
       gradientTransform="matrix(.99884 0 0 .9987 689.01 -388.84)" gradientUnits="userSpaceOnUse" />
     <linearGradient xlink:href="#json_svg__a" id="json_svg__b" x1="-666.12" x2="-553.27" y1="413.04" y2="525.91"
       gradientTransform="matrix(.99884 0 0 .9987 689.01 -388.84)" gradientUnits="userSpaceOnUse" />
   </defs>
-  <g fill-rule="evenodd" color="#000">
+  <g fill-rule="evenodd" color="#000000">
     <path fill="url(#json_svg__b)"
       d="M79.865 119.1c35.398 48.255 70.04-13.469 69.989-50.587C149.794 24.627 105.313.099 79.836.099 38.944.099 0 33.895 0 80.135 0 131.531 44.64 160 79.836 160c-7.965-1.147-34.506-6.834-34.863-67.967-.24-41.347 13.488-57.866 34.805-50.599.477.177 23.514 9.265 23.514 38.951 0 29.56-23.427 38.715-23.427 38.715z"
       transform="scale(.3)" />

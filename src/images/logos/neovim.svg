@@ -23,17 +23,17 @@
   <defs id="defs4604">
     <linearGradient x1="167.95833" y1="-0.46142399" x2="167.95833" y2="335.45523" id="linearGradient-1"
       gradientTransform="scale(0.46142398,2.1672042)" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#16B0ED" stop-opacity="0.800235524" offset="0%" id="stop4589" />
-      <stop stop-color="#0F59B2" stop-opacity="0.83700023" offset="100%" id="stop4591" />
+      <stop stop-color="#16b0ed" stop-opacity="0.800235524" offset="0%" id="stop4589" />
+      <stop stop-color="#0f59b2" stop-opacity="0.83700023" offset="100%" id="stop4591" />
     </linearGradient>
     <linearGradient x1="1118.3427" y1="-0.46586797" x2="1118.3427" y2="338.68604" id="linearGradient-2"
       gradientTransform="scale(0.46586797,2.1465309)" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#7DB643" offset="0%" id="stop4594" />
+      <stop stop-color="#7db643" offset="0%" id="stop4594" />
       <stop stop-color="#367533" offset="100%" id="stop4596" />
     </linearGradient>
     <linearGradient x1="356.33795" y1="0" x2="356.33795" y2="612.90131" id="linearGradient-3"
       gradientTransform="scale(0.84189739,1.1877932)" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#88C649" stop-opacity="0.8" offset="0%" id="stop4599" />
+      <stop stop-color="#88c649" stop-opacity="0.8" offset="0%" id="stop4599" />
       <stop stop-color="#439240" stop-opacity="0.84" offset="100%" id="stop4601" />
     </linearGradient>
   </defs>
