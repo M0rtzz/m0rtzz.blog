@@ -29,7 +29,8 @@ import latexSvg from '@/images/logos/latex.svg'
 import linuxSvg from '@/images/logos/linux.svg'
 import llvmSvg from '@/images/logos/llvm.svg'
 // import makefileSvg from '@/images/logos/makefile.svg'
-import markdownSvg from '@/images/logos/markdown.svg'
+// import mdSvg from '@/images/logos/md.svg'
+import mdxSvg from '@/images/logos/mdx.svg'
 import neovimSvg from '@/images/logos/neovim.svg'
 import nginxSvg from '@/images/logos/nginx.svg'
 import nodejsSvg from '@/images/logos/nodejs.svg'
@@ -71,6 +72,7 @@ const Galton = dynamic(() => import('./galton').then(module => module.Galton), {
 })
 
 const images: StaticImageData[] = [
+  mdxSvg,
   anacondaSvg,
   arduinoSvg,
   bashSvg,
@@ -99,7 +101,8 @@ const images: StaticImageData[] = [
   linuxSvg,
   llvmSvg,
   // makefileSvg,
-  markdownSvg,
+  // mdSvg,
+  mdxSvg,
   neovimSvg,
   nginxSvg,
   nodejsSvg,
