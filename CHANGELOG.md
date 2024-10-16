@@ -1,18 +1,8 @@
-## <small>4.0.2 (2024-10-16)</small>
+# Changelog
 
-* 📝 doc: update doc ([0222054](https://github.com/M0rtzz/m0rtzz.blog/commit/0222054))
-* 🔖 tag(package.json): v4.0.2 ([df0b2b3](https://github.com/M0rtzz/m0rtzz.blog/commit/df0b2b3))
-* 🔥 remove: rm cache file ([3fc6c1e](https://github.com/M0rtzz/m0rtzz.blog/commit/3fc6c1e))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>4.0.1 (2024-10-16)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([685d663](https://github.com/M0rtzz/m0rtzz.blog/commit/685d663))
-* 🔖 tag(package.json): v4.0.1 ([285ae33](https://github.com/M0rtzz/m0rtzz.blog/commit/285ae33))
-* 🔨 script(transfer.sh): rm a blank line ([c114389](https://github.com/M0rtzz/m0rtzz.blog/commit/c114389))
-
-
+## [4.0.3](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.0.2...v4.0.3) (2024-10-16)
 
 ## 4.0.0 (2024-10-16)
 
@@ -2492,5 +2482,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
