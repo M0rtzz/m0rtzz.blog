@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+exec 2>/dev/null
+
 git pull --rebase || {
     echo "\e[1;31m代码拉取失败\e[0m"
     exit 1
