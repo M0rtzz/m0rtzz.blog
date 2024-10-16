@@ -1,8 +1,6 @@
 #!/usr/bin/env sh
 
-exec 2>/dev/null
-
-git pull --no-edit || {
+git pull --rebase || {
     echo "\e[1;31m代码拉取失败\e[0m"
     exit 1
 }
@@ -100,5 +98,3 @@ git commit -m "📝 doc(CHANGELOG.md): automatic update"
 
 git tag -a "${new_tag}" -m "🔖 tag: ${new_tag}"
 echo "\e[1;32m更新后的标签为: ${new_tag}\e[0m"
-
-git pull --no-edit
