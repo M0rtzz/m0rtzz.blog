@@ -63,3 +63,4 @@ ssh "${remote_user}"@"${remote_host}" "nginx && nginx -s reload && echo $'\e[1;3
 rm -f out.zip
 
 echo $'\e[1;32m部署完成\e[0m'
+
