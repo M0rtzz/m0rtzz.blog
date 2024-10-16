@@ -17,7 +17,7 @@ repo_root_dir=$(git rev-parse --show-toplevel)
 # 获取最新的标签
 latest_tag_global=$(git describe --tags "$(git rev-list --tags --max-count=1)")
 
-git tag -d "${latest_tag_global}"
+# git tag -d "${latest_tag_global}"
 
 updateVersionTag() {
     latest_tag=$(git describe --tags "$(git rev-list --tags --max-count=1)" 2>/dev/null)
