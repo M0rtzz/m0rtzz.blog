@@ -1,8 +1,76 @@
-# Changelog
+## <small>3.9.9 (2024-10-16)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* ⏪ revert(transfer.sh): revert ([b59b4d1](https://github.com/M0rtzz/m0rtzz.blog/commit/b59b4d1))
+* ⚓ hook(husky): 复活吧，我的爱人 ([db9f132](https://github.com/M0rtzz/m0rtzz.blog/commit/db9f132))
+* ⚓ hook(pre-push): add cmd ([a88854b](https://github.com/M0rtzz/m0rtzz.blog/commit/a88854b))
+* ⚓ hook(pre-push): 复活吧，我的爱人 ([84c0c50](https://github.com/M0rtzz/m0rtzz.blog/commit/84c0c50))
+* ⚰️ bury(husky): bye ([5d2e8db](https://github.com/M0rtzz/m0rtzz.blog/commit/5d2e8db))
+* 📝 doc(AI期末复习笔记.md): update doc ([4cf5fb5](https://github.com/M0rtzz/m0rtzz.blog/commit/4cf5fb5))
+* 📝 doc(CHANGELOG.md): automatic update ([1e00055](https://github.com/M0rtzz/m0rtzz.blog/commit/1e00055))
+* 📝 doc(CHANGELOG.md): automatic update ([225288d](https://github.com/M0rtzz/m0rtzz.blog/commit/225288d))
+* 📝 doc(CHANGELOG.md): automatic update ([66101f7](https://github.com/M0rtzz/m0rtzz.blog/commit/66101f7))
+* 📝 doc(CHANGELOG.md): automatic update ([c341cbe](https://github.com/M0rtzz/m0rtzz.blog/commit/c341cbe))
+* 📝 doc(CHANGELOG.md): 复活吧，我的爱人 ([338037e](https://github.com/M0rtzz/m0rtzz.blog/commit/338037e))
+* 🔖 tag(package.json): v3.9.11 ([4cbcb94](https://github.com/M0rtzz/m0rtzz.blog/commit/4cbcb94))
+* 🔖 tag(package.json): v3.9.11 ([599e25f](https://github.com/M0rtzz/m0rtzz.blog/commit/599e25f))
+* 🔖 tag(package.json): v3.9.12 ([b6cd14b](https://github.com/M0rtzz/m0rtzz.blog/commit/b6cd14b))
+* 🔖 tag(package.json): v3.9.13 ([0e036d7](https://github.com/M0rtzz/m0rtzz.blog/commit/0e036d7))
+* 🔖 tag(package.json): v3.9.7 ([965c5aa](https://github.com/M0rtzz/m0rtzz.blog/commit/965c5aa))
+* 🔖 tag(package.json): v3.9.7 ([550e219](https://github.com/M0rtzz/m0rtzz.blog/commit/550e219))
+* 🔖 tag(package.json): v3.9.8 ([8c47a6c](https://github.com/M0rtzz/m0rtzz.blog/commit/8c47a6c))
+* 🔖 tag(package.json): v3.9.9 ([1743457](https://github.com/M0rtzz/m0rtzz.blog/commit/1743457))
+* 🔖 tag(package.json): v3.9.9 ([562ef00](https://github.com/M0rtzz/m0rtzz.blog/commit/562ef00))
+* 🙈 ignore(.gitignore): update .gitignore ([567089f](https://github.com/M0rtzz/m0rtzz.blog/commit/567089f))
+* 🙈 ignore(.gitignore): update .gitignore ([f25eb57](https://github.com/M0rtzz/m0rtzz.blog/commit/f25eb57))
+* 🚧 wip: wip ([e544f53](https://github.com/M0rtzz/m0rtzz.blog/commit/e544f53))
+* chore(release): 3.9.9 ([fcd8a46](https://github.com/M0rtzz/m0rtzz.blog/commit/fcd8a46))
 
-## [3.9.8](https://github.com/M0rtzz/m0rtzz.blog/compare/v3.9.7...v3.9.8) (2024-10-16)
+
+
+## <small>3.9.5 (2024-10-16)</small>
+
+* 🔖 tag(package.json): v3.9.5 ([86d7c1c](https://github.com/M0rtzz/m0rtzz.blog/commit/86d7c1c))
+
+
+
+## <small>3.9.4 (2024-10-16)</small>
+
+* ⚓ hook(husky): add hook scripts ([c0c9538](https://github.com/M0rtzz/m0rtzz.blog/commit/c0c9538))
+* ⚓ hook(pre-push): update cmd ([8f9f14e](https://github.com/M0rtzz/m0rtzz.blog/commit/8f9f14e))
+* ⚰️ bury(CHANGELOG.md): bury CHANGELOG.md ([06874e2](https://github.com/M0rtzz/m0rtzz.blog/commit/06874e2))
+* 📝 doc(AI期末复习笔记.md): update doc ([ec18768](https://github.com/M0rtzz/m0rtzz.blog/commit/ec18768))
+* 📝 doc(CHANGELOG.md): automatic update ([6de2472](https://github.com/M0rtzz/m0rtzz.blog/commit/6de2472))
+* 📝 doc(CHANGELOG.md): automatic update ([e1b1950](https://github.com/M0rtzz/m0rtzz.blog/commit/e1b1950))
+* 📝 doc(CHANGELOG.md): automatic update ([5943b57](https://github.com/M0rtzz/m0rtzz.blog/commit/5943b57))
+* 📝 doc(第三章-并发进程的同步、互斥、通信与死锁.md): update doc ([bd462ac](https://github.com/M0rtzz/m0rtzz.blog/commit/bd462ac))
+* 📝 doc(第六章-文件管理.md): update doc ([503701a](https://github.com/M0rtzz/m0rtzz.blog/commit/503701a))
+* 📝 doc(第四章-存储管理.md): update doc ([94e8918](https://github.com/M0rtzz/m0rtzz.blog/commit/94e8918))
+* 🔖 tag(package.json): v3.9.2 ([e7b4f49](https://github.com/M0rtzz/m0rtzz.blog/commit/e7b4f49))
+* 🔖 tag(package.json): v3.9.3 ([026a1cb](https://github.com/M0rtzz/m0rtzz.blog/commit/026a1cb))
+* 🔖 tag(package.json): v3.9.3 ([ec8cfea](https://github.com/M0rtzz/m0rtzz.blog/commit/ec8cfea))
+* 🔖 tag(package.json): v3.9.3 ([0f79e2f](https://github.com/M0rtzz/m0rtzz.blog/commit/0f79e2f))
+* 🔖 tag(package.json): v3.9.3 ([64fb7f1](https://github.com/M0rtzz/m0rtzz.blog/commit/64fb7f1))
+* 🔖 tag(package.json): v3.9.3 ([b840d7d](https://github.com/M0rtzz/m0rtzz.blog/commit/b840d7d))
+* 🔖 tag(package.json): v3.9.4 ([b616fd9](https://github.com/M0rtzz/m0rtzz.blog/commit/b616fd9))
+* 🙈 ignore(.gitignore): ignore CHANGELOG.md ([4abd45f](https://github.com/M0rtzz/m0rtzz.blog/commit/4abd45f))
+
+
+
+## <small>3.9.2 (2024-10-16)</small>
+
+* 📝 doc(git commit规范及自动生成CHANGELOG.md): update config ([c1c6f37](https://github.com/M0rtzz/m0rtzz.blog/commit/c1c6f37))
+* 📝 doc(git commit规范及自动生成CHANGELOG.md): update config ([d949419](https://github.com/M0rtzz/m0rtzz.blog/commit/d949419))
+* 🔖 tag(package.json): v3.9.2 ([c07a043](https://github.com/M0rtzz/m0rtzz.blog/commit/c07a043))
+
+
+
+## <small>3.9.1 (2024-10-15)</small>
+
+* ⏪ revert(linux.svg): revert linux image ([be5e91f](https://github.com/M0rtzz/m0rtzz.blog/commit/be5e91f))
+* 📝 doc(CHANGELOG.md): automatic update ([0554881](https://github.com/M0rtzz/m0rtzz.blog/commit/0554881))
+* 🔖 tag(package.json): v3.9.1 ([4185a2f](https://github.com/M0rtzz/m0rtzz.blog/commit/4185a2f))
+
+
 
 ## 3.9.0 (2024-10-15)
 
@@ -2395,3 +2463,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
