@@ -34,7 +34,7 @@ export const Font = () => {
       <AnimateSpan>a</AnimateSpan>
       <AnimateSpan>A</AnimateSpan>
       <AnimateSpan>a</AnimateSpan>
-      <AnimateSpan>Aa</AnimateSpan>
+      <AnimateSpan>A</AnimateSpan>
       <AnimateSpan>a</AnimateSpan>
       <AnimateSpan>A</AnimateSpan>
     </Block>
