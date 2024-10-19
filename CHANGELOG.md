@@ -1,69 +1,8 @@
-## <small>4.0.8 (2024-10-19)</small>
+# Changelog
 
-* ⏪ revert: revert the content of font-toggle block ([8df7d8d](https://github.com/M0rtzz/m0rtzz.blog/commit/8df7d8d))
-* ⚡️ perf(transfer.sh): change mirror site to within the GFW ([9fb9da3](https://github.com/M0rtzz/m0rtzz.blog/commit/9fb9da3))
-* 💄 ui: update the style of font-toggle block ([c363f7b](https://github.com/M0rtzz/m0rtzz.blog/commit/c363f7b))
-* 🔖 tag(package.json): v4.0.8 ([18a6d9e](https://github.com/M0rtzz/m0rtzz.blog/commit/18a6d9e))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>4.0.7 (2024-10-18)</small>
-
-* ⚗️ exp(globals.css): inline code style exp ([9b69ccc](https://github.com/M0rtzz/m0rtzz.blog/commit/9b69ccc))
-* 💄 ui(shiki.css): update before element ([b5aef89](https://github.com/M0rtzz/m0rtzz.blog/commit/b5aef89))
-* 📌 pin_dep(wip): still has bug ([615dca6](https://github.com/M0rtzz/m0rtzz.blog/commit/615dca6))
-* 📝 doc(CHANGELOG.md): automatic update ([a02cb7a](https://github.com/M0rtzz/m0rtzz.blog/commit/a02cb7a))
-* 📝 doc(CHANGELOG.md): automatic update ([a38e734](https://github.com/M0rtzz/m0rtzz.blog/commit/a38e734))
-* 📝 docs(CHANGELOG.md): automatic update ([2150d0f](https://github.com/M0rtzz/m0rtzz.blog/commit/2150d0f))
-* 🔖 tag(package.json): v3.4.0 ([21f6c94](https://github.com/M0rtzz/m0rtzz.blog/commit/21f6c94))
-* 🔖 tag(package.json): v4.0.6 ([738070a](https://github.com/M0rtzz/m0rtzz.blog/commit/738070a))
-* 🔖 tag(package.json): v4.0.7 ([10f7ccf](https://github.com/M0rtzz/m0rtzz.blog/commit/10f7ccf))
-* 🙈 ignore(.gitignore): track pnpm-lock.yaml ([57ac03b](https://github.com/M0rtzz/m0rtzz.blog/commit/57ac03b))
-
-
-
-## <small>4.0.5 (2024-10-17)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([8d81f01](https://github.com/M0rtzz/m0rtzz.blog/commit/8d81f01))
-* 🔖 tag(package.json): v4.0.5 ([55d15f2](https://github.com/M0rtzz/m0rtzz.blog/commit/55d15f2))
-* 🔥 remove(index.tsx): rm duplicate `mdx` logo ([8ab8abf](https://github.com/M0rtzz/m0rtzz.blog/commit/8ab8abf))
-
-
-
-## <small>4.0.4 (2024-10-16)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([5926080](https://github.com/M0rtzz/m0rtzz.blog/commit/5926080))
-* 📸 image(index.tsx): from `md` to `mdx` ([e3832f1](https://github.com/M0rtzz/m0rtzz.blog/commit/e3832f1))
-* 📸 image(logos): update and add logos ([33570eb](https://github.com/M0rtzz/m0rtzz.blog/commit/33570eb))
-* 🔖 tag(package.json): v4.0.4 ([ce56eb3](https://github.com/M0rtzz/m0rtzz.blog/commit/ce56eb3))
-
-
-
-## <small>4.0.3 (2024-10-16)</small>
-
-* ⚓ hook(pre-push): update comments and logic ([a3faf60](https://github.com/M0rtzz/m0rtzz.blog/commit/a3faf60))
-* 📝 doc(CHANGELOG.md): automatic update ([4be226a](https://github.com/M0rtzz/m0rtzz.blog/commit/4be226a))
-* 📝 doc(git commit规范及自动生成CHANGELOG.md): update hook script ([763bf13](https://github.com/M0rtzz/m0rtzz.blog/commit/763bf13))
-* 🔖 tag(package.json): v4.0.3 ([5a94f07](https://github.com/M0rtzz/m0rtzz.blog/commit/5a94f07))
-
-
-
-## <small>4.0.2 (2024-10-16)</small>
-
-* 📝 doc: update doc ([0222054](https://github.com/M0rtzz/m0rtzz.blog/commit/0222054))
-* 📝 doc(CHANGELOG.md): automatic update ([23a0a56](https://github.com/M0rtzz/m0rtzz.blog/commit/23a0a56))
-* 🔖 tag(package.json): v4.0.2 ([df0b2b3](https://github.com/M0rtzz/m0rtzz.blog/commit/df0b2b3))
-* 🔥 remove: rm cache file ([3fc6c1e](https://github.com/M0rtzz/m0rtzz.blog/commit/3fc6c1e))
-
-
-
-## <small>4.0.1 (2024-10-16)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([685d663](https://github.com/M0rtzz/m0rtzz.blog/commit/685d663))
-* 🔖 tag(package.json): v4.0.1 ([285ae33](https://github.com/M0rtzz/m0rtzz.blog/commit/285ae33))
-* 🔨 script(transfer.sh): rm a blank line ([c114389](https://github.com/M0rtzz/m0rtzz.blog/commit/c114389))
-
-
+## [4.0.9](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.0.8...v4.0.9) (2024-10-19)
 
 ## 4.0.0 (2024-10-16)
 
@@ -2543,5 +2482,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
