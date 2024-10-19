@@ -117,28 +117,44 @@ deb https://mirrors.hust.edu.cn/ubuntu/ focal-security main restricted universe 
 sudo apt update -y && sudo apt upgrade -y
 ```
 
-`anaconda`镜像源（`~/.condarc`）【**注意替换**`envs_dirs`**中的绝对路径**】:
+`anaconda`镜像源（`~/.condarc`）:
+
+> [!TIP]
+>
+> **注意替换**`envs_dirs`**中的绝对路径！**
+>
+> `custom_channels`中鄙人只填了自己可能用到的，其它第三方源列表可参考[清华源的文档](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda)自行添加。
 
 ```yaml
 channels:
   - defaults
 show_channel_urls: true
 default_channels:
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2/
 custom_channels:
-  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  deepmodeling: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  nvidia: https://mirrors.sustech.edu.cn/anaconda-extra/cloud
+  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
+  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
+  numba: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
+  pyviz: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
+  omnia: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
+  ohmeta: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
+  plotly: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
+  fastai: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
+  caffe2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
+  Paddle: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
+  dglteam: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
+  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
+  rapidsai: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
+  MindSpore: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
+  pytorch3d: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
+  pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
+  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
+  pytorch-test: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
+  nvidia: https://mirrors.sustech.edu.cn/anaconda-extra/cloud/
 
 envs_dirs:
   - /home/m0rtzz/Programs/anaconda3/envs
