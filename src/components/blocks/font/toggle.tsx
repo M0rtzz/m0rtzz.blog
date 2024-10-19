@@ -14,9 +14,9 @@ export const Toggle = () => {
       tabIndex={0}
       aria-label='Font Toggle Label'
       onClick={() => onToggle()}
-      className='col-span-3 row-span-2 flex items-center gap-2 p-4 text-3xl'
+      className='col-span-3 row-span-2 flex items-center gap-2 p-4 text-1xl'
     >
-      <span className='font-sans'>T</span>
+      <span className='font-sans'>Sans</span>
       <Switch
         aria-label='Font Toggle Switch'
         onChange={() => onToggle()}
@@ -27,7 +27,7 @@ export const Toggle = () => {
         )}
         isSelected={font === 'serif'}
       />
-      <span className='font-serif'>T</span>
+      <span className='font-serif'>Serif</span>
     </div>
   )
 }
