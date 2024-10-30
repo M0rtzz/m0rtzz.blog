@@ -1,11 +1,14 @@
-# Changelog
+## <small>4.1.1 (2024-10-30)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* ✨ feat: add language css class ([ee69b7f](https://github.com/M0rtzz/m0rtzz.blog/commit/ee69b7f))
+* 🎨 style(renderMdx.ts): format code ([9baf922](https://github.com/M0rtzz/m0rtzz.blog/commit/9baf922))
+* 🔖 tag(package.json): v4.1.1 ([cd9485b](https://github.com/M0rtzz/m0rtzz.blog/commit/cd9485b))
 
-## [4.1.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.1.0...v4.1.1) (2024-10-30)
+
 
 ## 4.1.0 (2024-10-19)
 
+* 📝 doc(CHANGELOG.md): automatic update ([d8ebf74](https://github.com/M0rtzz/m0rtzz.blog/commit/d8ebf74))
 * 📝 doc(environment_configuration.md): update `.condarc` ([3a9b6e1](https://github.com/M0rtzz/m0rtzz.blog/commit/3a9b6e1))
 * 🔖 tag(package.json): v4.1.0 ([277807a](https://github.com/M0rtzz/m0rtzz.blog/commit/277807a))
 
@@ -2566,3 +2569,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
