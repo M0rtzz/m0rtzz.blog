@@ -55,7 +55,7 @@ export async function Markdown(props: MarkdownProps) {
         [
           rehypeDefaultCodeLang,
           {
-            defaultLang: 'text',
+            defaultLang: 'txt',
           },
         ],
         [
@@ -72,6 +72,7 @@ export async function Markdown(props: MarkdownProps) {
                 content: codeText?.value,
               }
             },
+            addLanguageClass: true,
             themes: {
               light: 'catppuccin-latte',
               dark: 'material-theme-ocean',
