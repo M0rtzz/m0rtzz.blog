@@ -1,20 +1,8 @@
-## <small>4.1.2 (2024-10-30)</small>
+# Changelog
 
-* 🎨 style(pre.tsx): eslint ([422d02e](https://github.com/M0rtzz/m0rtzz.blog/commit/422d02e))
-* 📌 pin_dep(package.json): pin typescript version ([8d4d0cb](https://github.com/M0rtzz/m0rtzz.blog/commit/8d4d0cb))
-* 📌 pin_dep(pnpm-lock.yaml): pin typescript version ([7fbbf60](https://github.com/M0rtzz/m0rtzz.blog/commit/7fbbf60))
-* 🔖 tag(package.json): v4.1.2 ([4e2d746](https://github.com/M0rtzz/m0rtzz.blog/commit/4e2d746))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>4.1.1 (2024-10-30)</small>
-
-* ✨ feat: add language css class ([ee69b7f](https://github.com/M0rtzz/m0rtzz.blog/commit/ee69b7f))
-* 🎨 style(renderMdx.ts): format code ([9baf922](https://github.com/M0rtzz/m0rtzz.blog/commit/9baf922))
-* 📝 doc(CHANGELOG.md): automatic update ([295c82e](https://github.com/M0rtzz/m0rtzz.blog/commit/295c82e))
-* 🔖 tag(package.json): v4.1.1 ([cd9485b](https://github.com/M0rtzz/m0rtzz.blog/commit/cd9485b))
-
-
+## [4.1.3](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.1.2...v4.1.3) (2024-11-04)
 
 ## 4.1.0 (2024-10-19)
 
@@ -2579,5 +2567,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
