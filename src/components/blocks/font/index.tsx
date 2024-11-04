@@ -15,28 +15,28 @@ export const Font = () => {
       <AnimateSpan className='block'>Aa</AnimateSpan>
       <AnimateSpan className='block'>a</AnimateSpan>
       <AnimateSpan className='block'>A</AnimateSpan>
-      <AnimateSpan>Aa</AnimateSpan>
-      <AnimateSpan>a</AnimateSpan>
-      <AnimateSpan>a</AnimateSpan>
-      <AnimateSpan>Aa</AnimateSpan>
-      <AnimateSpan>a</AnimateSpan>
-      <AnimateSpan>A</AnimateSpan>
-      <AnimateSpan>a</AnimateSpan>
-      <AnimateSpan>a</AnimateSpan>
+      <AnimateSpan className='block'>Aa</AnimateSpan>
+      <AnimateSpan className='block'>a</AnimateSpan>
+      <AnimateSpan className='block'>a</AnimateSpan>
+      <AnimateSpan className='block'>Aa</AnimateSpan>
+      <AnimateSpan className='block'>a</AnimateSpan>
+      <AnimateSpan className='block'>A</AnimateSpan>
+      <AnimateSpan className='block'>a</AnimateSpan>
+      <AnimateSpan className='block'>a</AnimateSpan>
       <Toggle />
       <AnimateSpan className='block'>Aa</AnimateSpan>
       <AnimateSpan className='block'>A</AnimateSpan>
       <AnimateSpan className='block'>a</AnimateSpan>
-      <AnimateSpan>Aa</AnimateSpan>
-      <AnimateSpan>a</AnimateSpan>
-      <AnimateSpan>A</AnimateSpan>
-      <AnimateSpan>Aa</AnimateSpan>
-      <AnimateSpan>a</AnimateSpan>
-      <AnimateSpan>A</AnimateSpan>
-      <AnimateSpan>a</AnimateSpan>
-      <AnimateSpan>A</AnimateSpan>
-      <AnimateSpan>a</AnimateSpan>
-      <AnimateSpan>A</AnimateSpan>
+      <AnimateSpan className='block'>Aa</AnimateSpan>
+      <AnimateSpan className='block'>a</AnimateSpan>
+      <AnimateSpan className='block'>A</AnimateSpan>
+      <AnimateSpan className='block'>Aa</AnimateSpan>
+      <AnimateSpan className='block'>a</AnimateSpan>
+      <AnimateSpan className='block'>A</AnimateSpan>
+      <AnimateSpan className='block'>a</AnimateSpan>
+      <AnimateSpan className='block'>A</AnimateSpan>
+      <AnimateSpan className='block'>a</AnimateSpan>
+      <AnimateSpan className='block'>A</AnimateSpan>
     </Block>
   )
 }
