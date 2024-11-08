@@ -1,8 +1,44 @@
-# Changelog
+## <small>4.1.5 (2024-11-08)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 🎨 style(hello.tsx): update emoji ([9bec80b](https://github.com/M0rtzz/m0rtzz.blog/commit/9bec80b))
+* 🔖 tag(package.json): v4.1.5 ([a8ade28](https://github.com/M0rtzz/m0rtzz.blog/commit/a8ade28))
 
-## [4.1.5](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.1.4...v4.1.5) (2024-11-08)
+
+
+## <small>4.1.4 (2024-11-08)</small>
+
+* 💄 ui(index.tsx): update style of toggle-font block ([3655961](https://github.com/M0rtzz/m0rtzz.blog/commit/3655961))
+* 📝 doc(CHANGELOG.md): automatic update ([e262518](https://github.com/M0rtzz/m0rtzz.blog/commit/e262518))
+* 🔖 tag(package.json): v4.1.4 ([5b8e969](https://github.com/M0rtzz/m0rtzz.blog/commit/5b8e969))
+
+
+
+## <small>4.1.3 (2024-11-04)</small>
+
+* 💄 ui: update the style of toggle-font block ([2eb3353](https://github.com/M0rtzz/m0rtzz.blog/commit/2eb3353))
+* 📝 doc(CHANGELOG.md): automatic update ([8664c82](https://github.com/M0rtzz/m0rtzz.blog/commit/8664c82))
+* 🔖 tag(package.json): v4.1.3 ([e2ecad5](https://github.com/M0rtzz/m0rtzz.blog/commit/e2ecad5))
+
+
+
+## <small>4.1.2 (2024-10-30)</small>
+
+* 🎨 style(pre.tsx): eslint ([422d02e](https://github.com/M0rtzz/m0rtzz.blog/commit/422d02e))
+* 📌 pin_dep(package.json): pin typescript version ([8d4d0cb](https://github.com/M0rtzz/m0rtzz.blog/commit/8d4d0cb))
+* 📌 pin_dep(pnpm-lock.yaml): pin typescript version ([7fbbf60](https://github.com/M0rtzz/m0rtzz.blog/commit/7fbbf60))
+* 📝 doc(CHANGELOG.md): automatic update ([bc54ea4](https://github.com/M0rtzz/m0rtzz.blog/commit/bc54ea4))
+* 🔖 tag(package.json): v4.1.2 ([4e2d746](https://github.com/M0rtzz/m0rtzz.blog/commit/4e2d746))
+
+
+
+## <small>4.1.1 (2024-10-30)</small>
+
+* ✨ feat: add language css class ([ee69b7f](https://github.com/M0rtzz/m0rtzz.blog/commit/ee69b7f))
+* 🎨 style(renderMdx.ts): format code ([9baf922](https://github.com/M0rtzz/m0rtzz.blog/commit/9baf922))
+* 📝 doc(CHANGELOG.md): automatic update ([295c82e](https://github.com/M0rtzz/m0rtzz.blog/commit/295c82e))
+* 🔖 tag(package.json): v4.1.1 ([cd9485b](https://github.com/M0rtzz/m0rtzz.blog/commit/cd9485b))
+
+
 
 ## 4.1.0 (2024-10-19)
 
@@ -2567,3 +2603,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
