@@ -10,7 +10,7 @@ const Hello = ({ children }) => {
   return (
     <>
       <span className='animation-hello -mt-12 inline-block text-5xl sm:ml-12 md:text-6xl xl:text-8xl'>
-        👋
+        👋🏻
       </span>
       <Message className='animation-fade-out gap-2 px-4 !animation-delay-[3s] before:-left-0.5 before:bottom-0 before:size-4 before:rounded-full before:bg-inherit after:-bottom-1.5 after:-left-2.5 after:size-2 after:rounded-full after:bg-inherit'>
         <MessageLoadingDot />
