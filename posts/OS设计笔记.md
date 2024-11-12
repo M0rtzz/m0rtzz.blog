@@ -717,11 +717,11 @@ cd linux/handlers/src/
 >    
 >   ```c
 >   // @brief: add
->// @line: 474-476
+>   // @line: 474-476
 >   else if (last_stop_reason == GDBSTUB_STOP_NO_REASON) 
->{
->    write_signal(&buf[1], SIGSEGV);
->}
+>   {
+>       write_signal(&buf[1], SIGSEGV);
+>   }
 >   ```
 >   
 >   ![image-20240507190453389](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:07/19:04:58_image-20240507190453389.png)
@@ -731,11 +731,11 @@ cd linux/handlers/src/
 >   ```c
 >   // @brief: comment
 >   // @line: 142-146
->// #if BX_GDBSTUB
+>   // #if BX_GDBSTUB
 >   //     if (bx_dbg.gdbstub_enabled) {
->//       return;
+>   //       return;
 >   //     }
->// #endif
+>   // #endif
 >   ```
 >   
 >   ![image-20240507190658110](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:07/19:06:58_image-20240507190658110.png)
