@@ -15,6 +15,7 @@ import excelSvg from '@/images/logos/excel.svg'
 import gccSvg from '@/images/logos/gcc.svg'
 import gitSvg from '@/images/logos/git.svg'
 import githubSvg from '@/images/logos/github.svg'
+import gitlabSvg from '@/images/logos/gitlab.svg'
 import gnomeSvg from '@/images/logos/gnome.svg'
 import gnuSvg from '@/images/logos/gnu.svg'
 // import googleDriveSvg from '@/images/logos/googleDrive.svg'
@@ -86,6 +87,7 @@ const images: StaticImageData[] = [
   gccSvg,
   gitSvg,
   githubSvg,
+  gitlabSvg,
   gnomeSvg,
   gnuSvg,
   // googleDriveSvg,
