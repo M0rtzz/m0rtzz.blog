@@ -1,12 +1,14 @@
-# Changelog
+## <small>4.2.1 (2024-11-18)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 📸 image(gitlab.svg): update gitlab logo ([3734869](https://github.com/M0rtzz/m0rtzz.blog/commit/3734869))
+* 🔖 tag(package.json): v4.2.1 ([e833326](https://github.com/M0rtzz/m0rtzz.blog/commit/e833326))
 
-## [4.2.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.2.0...v4.2.1) (2024-11-18)
+
 
 ## 4.2.0 (2024-11-17)
 
 * ✨ feat(gitlab): add gitlab skill ([d4912b1](https://github.com/M0rtzz/m0rtzz.blog/commit/d4912b1))
+* 📝 doc(CHANGELOG.md): automatic update ([60bf2fc](https://github.com/M0rtzz/m0rtzz.blog/commit/60bf2fc))
 * 📸 image(github.svg): update github logo ([2f56539](https://github.com/M0rtzz/m0rtzz.blog/commit/2f56539))
 * 🔖 tag(package.json): v4.2.0 ([1182e46](https://github.com/M0rtzz/m0rtzz.blog/commit/1182e46))
 
@@ -2650,3 +2652,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
