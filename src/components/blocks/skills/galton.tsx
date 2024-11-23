@@ -201,6 +201,20 @@ export const Galton = memo<GaltonProps>(props => {
       lastTimeMilliSeconds = timeMilliSeconds
     }
 
+    // 当页面不可见时暂停动画
+    function handleVisibilityChange() {
+      if (document.hidden) {
+        cancelAnimationFrame(id)
+      } else {
+        // 恢复动画时，重新设置lastTimeMilliSeconds以避免时间跳跃
+        lastTimeMilliSeconds = performance.now()
+        id = requestAnimationFrame(update)
+      }
+    }
+
+    // 添加visibilitychange事件监听器
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+
     id = requestAnimationFrame(update)
 
     return () => {
@@ -208,6 +222,8 @@ export const Galton = memo<GaltonProps>(props => {
       clearEle()
       world.clear()
       cancelAnimationFrame(id)
+      // 移除visibilitychange事件监听器
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
     }
   }
 
