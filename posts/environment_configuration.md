@@ -317,7 +317,9 @@ sudo gpg --export C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654 | sudo tee /usr/share
 ```
 
 ```bash
-sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/ros.gpg] https://mirrors.ustc.edu.cn/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+sudo tee /etc/apt/sources.list.d/ros-latest.list > /dev/null << EOF
+deb [signed-by=/usr/share/keyrings/ros.gpg] https://mirrors.hust.edu.cn/ros/ubuntu $(lsb_release -sc) main
+EOF
 ```
 
 ```bash
@@ -378,7 +380,7 @@ rosrun turtlesim turtle_teleop_key
 
 #### cmake命令
 
-以下为几次成功安装的命令（注意替换命令中的绝对路径），安装过程可以参考**NOT RECOMMENDED**中的`OpenCV3`安装步骤：
+以下为几次成功安装的命令（**注意替换命令中的绝对路径**），安装过程可以参考**NOT RECOMMENDED**中的`OpenCV3`安装步骤：
 
 ```bash
 cmake \
@@ -815,7 +817,7 @@ git clone https://github.com/AlexeyAB/darknet.git darknet
 或公益加速源：
 
 ```bash
-git clone https://mirror.ghproxy.com/https://github.com/AlexeyAB/darknet.git darknet
+git clone https://ghp.ci/https://github.com/AlexeyAB/darknet.git darknet
 ```
 
 ```bash
@@ -1237,7 +1239,7 @@ git clone -b v2.50.0 https://github.com/IntelRealSense/librealsense.git libreals
 或公益加速源：
 
 ```bash
-git clone -b v2.50.0 https://mirror.ghproxy.com/https://github.com/IntelRealSense/librealsense.git librealsense-2.50.0
+git clone -b v2.50.0 https://ghp.ci/https://github.com/IntelRealSense/librealsense.git librealsense-2.50.0
 ```
 
 安装依赖：
@@ -1328,7 +1330,7 @@ git clone -b ros1-legacy https://github.com/IntelRealSense/realsense-ros.git rea
 或公益加速源：
 
 ```bash
-git clone -b ros1-legacy https://mirror.ghproxy.com/https://github.com/IntelRealSense/realsense-ros.git realsense-ros
+git clone -b ros1-legacy https://ghp.ci/https://github.com/IntelRealSense/realsense-ros.git realsense-ros
 ```
 
 ```bash
@@ -1384,7 +1386,7 @@ git clone https://github.com/Kinovarobotics/kinova-ros.git kinova-ros
 或公益加速源：
 
 ```bash
-git clone https://mirror.ghproxy.com/https://github.com/Kinovarobotics/kinova-ros.git kinova-ros
+git clone https://ghp.ci/https://github.com/Kinovarobotics/kinova-ros.git kinova-ros
 ```
 
 ```bash
@@ -2741,7 +2743,7 @@ git clone https://github.com/BVLC/caffe.git caffe
 或公益加速源：
 
 ```bash
-git clone https://mirror.ghproxy.com/https://github.com/BVLC/caffe.git caffe
+git clone https://ghp.ci/https://github.com/BVLC/caffe.git caffe
 ```
 
 ```bash
@@ -4539,7 +4541,7 @@ git clone -b pcl-1.9.1 https://github.com/PointCloudLibrary/pcl.git pcl-1.9.1
 或公益加速源：
 
 ```bash
-git clone -b pcl-1.9.1 https://mirror.ghproxy.com/https://github.com/PointCloudLibrary/pcl.git pcl-1.9.1
+git clone -b pcl-1.9.1 https://ghp.ci/https://github.com/PointCloudLibrary/pcl.git pcl-1.9.1
 ```
 
 之后进入文件夹打开终端输入：
@@ -4579,7 +4581,9 @@ sudo gpg --export C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654 | sudo tee /usr/share
 ```
 
 ```bash
-sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/ros.gpg] https://mirrors.ustc.edu.cn/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+sudo tee /etc/apt/sources.list.d/ros-latest.list > /dev/null << EOF
+deb [signed-by=/usr/share/keyrings/ros.gpg] https://mirrors.hust.edu.cn/ros/ubuntu $(lsb_release -sc) main
+EOF
 ```
 
 ```bash
@@ -4667,7 +4671,7 @@ git clone -b 3.4.16 https://github.com/opencv/opencv.git opencv-3.4.16
 或公益加速源：
 
 ```bash
-git clone -b 3.4.16 https://mirror.ghproxy.com/https://github.com/opencv/opencv.git opencv-3.4.16
+git clone -b 3.4.16 https://ghp.ci/https://github.com/opencv/opencv.git opencv-3.4.16
 ```
 
 ```bash
@@ -4681,14 +4685,14 @@ git clone -b 3.4.16 https://github.com/opencv/opencv_contrib.git opencv-3.4.16
 或公益加速源：
 
 ```bash
-git clone -b 3.4.16 https://mirror.ghproxy.com/https://github.com/opencv/opencv_contrib.git opencv_contrib-3.4.16
+git clone -b 3.4.16 https://ghp.ci/https://github.com/opencv/opencv_contrib.git opencv_contrib-3.4.16
 ```
 
 ```bash
 mkdir build && cd build/
 ```
 
-**接下来编译安装，注意此命令的**`OPENCV_EXTRA_MODULES_PATH=`后边的路径是你电脑下的绝对路径，请自行修改：**
+**接下来编译安装，注意此命令的**`OPENCV_EXTRA_MODULES_PATH=`**后边的路径是你电脑下的绝对路径，请自行修改：**
 
 ```bash
 cmake \
@@ -4876,7 +4880,7 @@ git clone --recursive https://github.com/leggedrobotics/darknet_ros.git darknet_
 或公益加速源：
 
 ```bash
-git clone --recursive https://mirror.ghproxy.com/https://github.com/leggedrobotics/darknet_ros.git darknet_ros
+git clone --recursive https://ghp.ci/https://github.com/leggedrobotics/darknet_ros.git darknet_ros
 ```
 
 ### Azure Kinect SDK-v1.4.0（源码编译）
@@ -4892,7 +4896,7 @@ git clone -b v1.4.0 https://github.com/microsoft/Azure-Kinect-Sensor-SDK.git Azu
 或公益加速源：
 
 ```bash
-git clone -b v1.4.0 https://mirror.ghproxy.com/https://github.com/microsoft/Azure-Kinect-Sensor-SDK.git Azure-Kinect-Sensor-SDK-v1.4.0
+git clone -b v1.4.0 https://ghp.ci/https://github.com/microsoft/Azure-Kinect-Sensor-SDK.git Azure-Kinect-Sensor-SDK-v1.4.0
 ```
 
 ```bash
@@ -4989,7 +4993,7 @@ git clone https://github.com/OpenKinect/libfreenect2.git libfreenect2
 或公益加速源：
 
 ```bash
-git clone https://mirror.ghproxy.com/https://github.com/OpenKinect/libfreenect2.git libfreenect2
+git clone https://ghp.ci/https://github.com/OpenKinect/libfreenect2.git libfreenect2
 ```
 
 ```bash
