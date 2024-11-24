@@ -376,7 +376,7 @@ rosrun turtlesim turtle_teleop_key
 
 ### OpenCV-4.2.0及其扩展模块
 
-***经尝试多版本Ubuntu和OpenCV，装Ubuntu20.04，ROS noetic和OpenCV4.2.0及其扩展模块才能解决将彩色图像转换为网络所需的输入Blob后前馈时抛出的【raised OpenCV exception，error: (-215:Assertion failed)等等】。***
+***经尝试多版本Ubuntu和OpenCV，装Ubuntu20.04，ROS noetic和OpenCV4.2.0及其扩展模块才能解决将彩色图像转换为网络所需的输入Blob后前馈时抛出的***`raised OpenCV exception`和`error: (-215:Assertion failed)`***等错误。***
 
 #### cmake命令
 
@@ -2383,7 +2383,7 @@ sudo apt update -y && sudo apt install -y diodon
 
 ![image-20240718160648762](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/16:06:48_image-20240718160648762.png)
 
-另外可使用中科大源反向代理`Canonical`的`ppa仓库`：
+另外可使用中科大源反向代理的`Canonical PPA仓库`：
 
 > [!TIP]
 >
