@@ -90,10 +90,10 @@ source ~/.bashrc
 
 ## 3.配置VSCode
 
-首先安装Perl模块（后边格式化代码时需要用到，我这里已经提前安装过了）：
+首先安装Perl模块（后边如果使用`latexindent`格式化代码时需要用到，我这里已经提前安装过了）：
 
 ```bash
-sudo apt update && sudo apt install cpanminus
+sudo apt update -y && sudo apt install -y cpanminus
 ```
 
 ```bash
@@ -105,6 +105,20 @@ sudo cpanm Log::Dispatch
 ```
 
 ![image-20240204134747369](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:04/13:47:47_image-20240204134747369.png)
+
+```bash
+sudo apt install -y cargo && \
+mkdir -p ${HOME}/.cargo && \
+sudo tee ${HOME}/.cargo/config.toml > /dev/null << EOF
+[source.crates-io]
+replace-with = 'hustmirror'
+
+[source.hustmirror]
+registry = "sparse+https://mirrors.hust.edu.cn/crates.io-index/"
+EOF
+sudo cargo install tex-fmt && \
+sudo echo 'export PATH=${PATH}:${HOME}/.cargo/bin'  >> ~/.bashrc
+```
 
 打开VSCode，点击侧边栏插件按钮，搜索`LaTeX`，安装下图两个插件：
 
@@ -225,7 +239,7 @@ sudo cpanm Log::Dispatch
   "*.toc",
   "*.vrb"
 ],
-// 清理上述后缀名的文件
+// 使用"glob"方法清理上述后缀名的文件
 "latex-workshop.latex.clean.method": "glob",
 // 语法检查
 "latex.linter.enabled": true,
@@ -246,7 +260,14 @@ sudo cpanm Log::Dispatch
 // 设置vscode编译tex文档时的默认编译链
 "latex-workshop.latex.recipe.default": "lastUsed",
 // 用于反向同步的内部查看器的键绑定。ctrl/cmd + 点击（默认）或双击
-"latex-workshop.view.pdf.internal.synctex.keybinding": "double-click"
+"latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+// "latexindent" "tex-fmt"
+"latex-workshop.formatting.latex": "tex-fmt",
+// "tex-fmt"参数
+"latex-workshop.formatting.tex-fmt.args": [
+  "--keep",
+  "--tab=4"
+]
 ```
 
 配置完之后侧边栏会出现`TEX`按钮，里面的内容对应了我们刚才的配置：
