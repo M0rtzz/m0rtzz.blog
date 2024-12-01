@@ -1,8 +1,83 @@
-# Changelog
+## 4.3.0 (2024-12-01)
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update ([f1595bb](https://github.com/M0rtzz/m0rtzz.blog/commit/f1595bb))
+* 🔖 tag(package.json): v4.3.0 ([e600fca](https://github.com/M0rtzz/m0rtzz.blog/commit/e600fca))
 
-## [4.2.10](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.2.9...v4.2.10) (2024-12-01)
+
+
+## <small>4.2.9 (2024-12-01)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([dad3ae8](https://github.com/M0rtzz/m0rtzz.blog/commit/dad3ae8))
+* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update ([c1f41c9](https://github.com/M0rtzz/m0rtzz.blog/commit/c1f41c9))
+* 🔖 tag(package.json): v4.2.9 ([9d704ff](https://github.com/M0rtzz/m0rtzz.blog/commit/9d704ff))
+
+
+
+## <small>4.2.8 (2024-12-01)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([7c1bfbd](https://github.com/M0rtzz/m0rtzz.blog/commit/7c1bfbd))
+* 📝 doc(CHANGELOG.md): automatic update ([d82c207](https://github.com/M0rtzz/m0rtzz.blog/commit/d82c207))
+* 📝 doc(environment_configuration.md): update ([b7d659c](https://github.com/M0rtzz/m0rtzz.blog/commit/b7d659c))
+* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update config ([5c1fad4](https://github.com/M0rtzz/m0rtzz.blog/commit/5c1fad4))
+* 🔖 tag(package.json): v3.9.3 ([417bc1a](https://github.com/M0rtzz/m0rtzz.blog/commit/417bc1a))
+* 🔖 tag(package.json): v4.2.8 ([0d6ec75](https://github.com/M0rtzz/m0rtzz.blog/commit/0d6ec75))
+
+
+
+## <small>4.2.7 (2024-12-01)</small>
+
+* 📝 doc: update docs ([e0aa76b](https://github.com/M0rtzz/m0rtzz.blog/commit/e0aa76b))
+* 📝 doc(CHANGELOG.md): automatic update ([0a85c72](https://github.com/M0rtzz/m0rtzz.blog/commit/0a85c72))
+* 🔖 tag(package.json): v4.2.7 ([b473e54](https://github.com/M0rtzz/m0rtzz.blog/commit/b473e54))
+
+
+
+## <small>4.2.6 (2024-11-27)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([9610de3](https://github.com/M0rtzz/m0rtzz.blog/commit/9610de3))
+* 🔖 tag(package.json): v4.2.6 ([4a7d017](https://github.com/M0rtzz/m0rtzz.blog/commit/4a7d017))
+
+
+
+## <small>4.2.5 (2024-11-27)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([9727689](https://github.com/M0rtzz/m0rtzz.blog/commit/9727689))
+* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update config ([7738ca0](https://github.com/M0rtzz/m0rtzz.blog/commit/7738ca0))
+* 🔖 tag(package.json): v4.2.5 ([2ee9237](https://github.com/M0rtzz/m0rtzz.blog/commit/2ee9237))
+
+
+
+## <small>4.2.4 (2024-11-24)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([026dac2](https://github.com/M0rtzz/m0rtzz.blog/commit/026dac2))
+* 📝 doc(environment_configuration.md): update content ([5327eb4](https://github.com/M0rtzz/m0rtzz.blog/commit/5327eb4))
+* 🔖 tag(package.json): v4.2.4 ([13a79c6](https://github.com/M0rtzz/m0rtzz.blog/commit/13a79c6))
+
+
+
+## <small>4.2.3 (2024-11-23)</small>
+
+* 💫 anim(galton.tsx): preliminary correction ([aeab3f7](https://github.com/M0rtzz/m0rtzz.blog/commit/aeab3f7))
+* 📝 doc(CHANGELOG.md): automatic update ([fdc0251](https://github.com/M0rtzz/m0rtzz.blog/commit/fdc0251))
+* 🔖 tag(package.json): v4.2.3 ([e8ec242](https://github.com/M0rtzz/m0rtzz.blog/commit/e8ec242))
+
+
+
+## <small>4.2.2 (2024-11-23)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([4ecb065](https://github.com/M0rtzz/m0rtzz.blog/commit/4ecb065))
+* 📝 doc(environment_configuration.md): update content ([52342ee](https://github.com/M0rtzz/m0rtzz.blog/commit/52342ee))
+* 🔖 tag(package.json): v4.2.2 ([bf395ea](https://github.com/M0rtzz/m0rtzz.blog/commit/bf395ea))
+
+
+
+## <small>4.2.1 (2024-11-18)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([df67dc7](https://github.com/M0rtzz/m0rtzz.blog/commit/df67dc7))
+* 📸 image(gitlab.svg): update gitlab logo ([3734869](https://github.com/M0rtzz/m0rtzz.blog/commit/3734869))
+* 🔖 tag(package.json): v4.2.1 ([e833326](https://github.com/M0rtzz/m0rtzz.blog/commit/e833326))
+
+
 
 ## 4.2.0 (2024-11-17)
 
@@ -1326,3 +1401,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
