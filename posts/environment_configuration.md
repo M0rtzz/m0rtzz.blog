@@ -4580,7 +4580,7 @@ sudo gpg --export C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654 | sudo tee /usr/share
 
 ```bash
 sudo tee /etc/apt/sources.list.d/ros-latest.list > /dev/null << EOF
-deb [signed-by=/usr/share/keyrings/ros.gpg] https://mirrors.hust.edu.cn/ros/ubuntu $(lsb_release -sc) main
+deb [signed-by=/usr/share/keyrings/ros.gpg] https://mirrors.hust.edu.cn/ros/ubuntu/ $(lsb_release -sc) main
 EOF
 ```
 
