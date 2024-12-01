@@ -214,26 +214,35 @@ sudo cpanm Log::Dispatch
   "*.lot",
   "*.nav",
   "*.out",
+  "*.pdfsync",
+  "*.pre",
+  "*.rubbercache",
   "*.snm",
+  "*.synctex",
+  "*.synctex(busy)",
+  "*.synctex.gz",
+  "*.synctex.gz(busy)",
   "*.toc",
   "*.vrb"
 ],
-// 禁用语法检查
-"latex.linter.enabled": false,
+// 清理上述后缀名的文件
+"latex-workshop.latex.clean.method": "glob",
+// 语法检查
+"latex.linter.enabled": true,
 // tex文件浏览器，可选项为"none" "browser" "tab" "external"
 "latex-workshop.view.pdf.viewer": "tab",
 // 自动编译tex文件
-"latex-workshop.latex.autoBuild.run": "never",
+"latex-workshop.latex.autoBuild.run": "onSave",
 // 显示内容菜单：（1）编译文件；（2）定位游标
 "latex-workshop.showContextMenu": true,
 // 显示错误
 "latex-workshop.message.error.show": true,
 // 显示警告
-"latex-workshop.message.warning.show": false,
+"latex-workshop.message.warning.show": true,
 // 从使用的包中自动补全命令和环境
 "latex-workshop.intellisense.package.enabled": true,
-// 设置为never，为不清除辅助文件
-"latex-workshop.latex.autoClean.run": "never",
+// 编译成功后清除辅助文件
+"latex-workshop.latex.autoClean.run": "onSucceeded",
 // 设置vscode编译tex文档时的默认编译链
 "latex-workshop.latex.recipe.default": "lastUsed",
 // 用于反向同步的内部查看器的键绑定。ctrl/cmd + 点击（默认）或双击

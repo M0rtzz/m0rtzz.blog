@@ -318,7 +318,7 @@ sudo gpg --export C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654 | sudo tee /usr/share
 
 ```bash
 sudo tee /etc/apt/sources.list.d/ros-latest.list > /dev/null << EOF
-deb [signed-by=/usr/share/keyrings/ros.gpg] https://mirrors.hust.edu.cn/ros/ubuntu $(lsb_release -sc) main
+deb [signed-by=/usr/share/keyrings/ros.gpg] https://mirrors.hust.edu.cn/ros/ubuntu/ $(lsb_release -sc) main
 EOF
 ```
 
@@ -1209,8 +1209,6 @@ sudo tee -a /etc/apt/sources.list > /dev/null << EOF
 deb https://mirrors.hust.edu.cn/ubuntu/ xenial universe
 EOF
 ```
-
-保存后关闭，打开终端，输入：
 
 ```bash
 sudo apt update -y
@@ -4882,6 +4880,8 @@ git clone --recursive https://github.com/leggedrobotics/darknet_ros.git darknet_
 ```bash
 git clone --recursive https://ghp.ci/https://github.com/leggedrobotics/darknet_ros.git darknet_ros
 ```
+
+后边内容和**ESSENTIAL**部分中的步骤类似。
 
 ### Azure Kinect SDK-v1.4.0（源码编译）
 
