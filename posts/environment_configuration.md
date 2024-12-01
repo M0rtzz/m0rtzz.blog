@@ -2292,6 +2292,13 @@ sudo apt install -y terminator
 
 ![image-20240826105849251](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:26/10:58:49_image-20240826105849251.png)
 
+`Neovim`：
+
+```bash
+sudo apt install -y neovim && \
+echo '/usr/bin/nvim' | sudo update-alternatives --config editor
+```
+
 `trash`命令：
 
 ```bash
