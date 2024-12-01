@@ -106,6 +106,8 @@ sudo cpanm Log::Dispatch
 
 ![image-20240204134747369](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:04/13:47:47_image-20240204134747369.png)
 
+安装`tex-fmt`：
+
 ```bash
 sudo apt install -y cargo && \
 mkdir -p ${HOME}/.cargo && \
