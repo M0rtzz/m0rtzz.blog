@@ -119,7 +119,7 @@ replace-with = 'hustmirror'
 registry = "sparse+https://mirrors.hust.edu.cn/crates.io-index/"
 EOF
 sudo cargo install tex-fmt && \
-sudo echo 'export PATH=${PATH}:${HOME}/.cargo/bin'  >> ~/.bashrc
+echo 'export PATH=${PATH}:${HOME}/.cargo/bin' >> ~/.bashrc
 ```
 
 打开VSCode，点击侧边栏插件按钮，搜索`LaTeX`，安装下图两个插件：
