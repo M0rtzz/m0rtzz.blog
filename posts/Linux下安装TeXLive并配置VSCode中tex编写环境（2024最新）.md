@@ -244,7 +244,7 @@ echo 'export PATH=${PATH}:${HOME}/.cargo/bin' >> ~/.bashrc
 // 使用"glob"方法清理上述后缀名的文件
 "latex-workshop.latex.clean.method": "glob",
 // 语法检查
-"latex.linter.enabled": true,
+"latex.linter.enabled": false,
 // tex文件浏览器，可选项为"none" "browser" "tab" "external"
 "latex-workshop.view.pdf.viewer": "tab",
 // 自动编译tex文件
