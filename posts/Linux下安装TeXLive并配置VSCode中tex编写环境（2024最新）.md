@@ -257,8 +257,8 @@ echo 'export PATH=${PATH}:${HOME}/.cargo/bin' >> ~/.bashrc
 "latex-workshop.message.warning.show": true,
 // 从使用的包中自动补全命令和环境
 "latex-workshop.intellisense.package.enabled": true,
-// 编译成功后清除辅助文件
-"latex-workshop.latex.autoClean.run": "onSucceeded",
+// 清除辅助文件
+"latex-workshop.latex.autoClean.run": "never",
 // 设置vscode编译tex文档时的默认编译链
 "latex-workshop.latex.recipe.default": "lastUsed",
 // 用于反向同步的内部查看器的键绑定。ctrl/cmd + 点击（默认）或双击
