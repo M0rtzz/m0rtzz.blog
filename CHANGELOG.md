@@ -1,10 +1,8 @@
-## <small>4.3.1 (2024-12-02)</small>
+# Changelog
 
-* 📝 doc(environment_configuration.md): update cmd ([ac81ea2](https://github.com/M0rtzz/m0rtzz.blog/commit/ac81ea2))
-* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update config ([ab43a0b](https://github.com/M0rtzz/m0rtzz.blog/commit/ab43a0b))
-* 🔖 tag(package.json): v4.3.1 ([6c6537f](https://github.com/M0rtzz/m0rtzz.blog/commit/6c6537f))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
+## [4.3.2](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.3.1...v4.3.2) (2024-12-02)
 
 ## 4.3.0 (2024-12-01)
 
@@ -2730,5 +2728,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
