@@ -58,7 +58,7 @@ const Footer = () => {
             style={{ marginTop: '-1.6px', marginRight: '5px' }}
           />
           <a
-            href='https://icp.gov.moe/?keyword=20241945'
+            href='https://icp.gov.moe/?keyword=20241893'
             target='_blank'
             style={{ color: '#1E90FF', textDecoration: 'none' }}
           >
