@@ -62,7 +62,7 @@ const Footer = () => {
             target='_blank'
             style={{ color: '#1E90FF', textDecoration: 'none' }}
           >
-            萌ICP备20241945号
+            萌ICP备20241893号
           </a>
         </div>
         <div style={{ margin: '0 10px' }}></div>
