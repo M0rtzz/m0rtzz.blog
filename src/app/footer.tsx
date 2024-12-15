@@ -50,6 +50,23 @@ const Footer = () => {
         </div>
         <div style={{ margin: '0 10px' }}></div>
         <div style={{ display: 'flex', alignItems: 'center' }}>
+          <Image
+            src='/icons/moe.png'
+            alt='Moe ICP Logo'
+            width={18}
+            height={18}
+            style={{ marginTop: '-1.6px', marginRight: '5px' }}
+          />
+          <a
+            href='https://icp.gov.moe/?keyword=20241945'
+            target='_blank'
+            style={{ color: '#1E90FF', textDecoration: 'none' }}
+          >
+            萌ICP备20241945号
+          </a>
+        </div>
+        <div style={{ margin: '0 10px' }}></div>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <span style={{ color: '#1E90FF' }}>本站由</span>
             <a href='https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral'>
