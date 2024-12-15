@@ -1,26 +1,8 @@
-## <small>4.3.3 (2024-12-15)</small>
+# Changelog
 
-* 📸 image(moe.png): add moe icon ([76c2970](https://github.com/M0rtzz/m0rtzz.blog/commit/76c2970))
-* 🔖 tag(package.json): v4.3.3 ([7a01717](https://github.com/M0rtzz/m0rtzz.blog/commit/7a01717))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>4.3.2 (2024-12-02)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([b12de5e](https://github.com/M0rtzz/m0rtzz.blog/commit/b12de5e))
-* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update config ([0663557](https://github.com/M0rtzz/m0rtzz.blog/commit/0663557))
-* 🔖 tag(package.json): v4.3.2 ([f3c8d65](https://github.com/M0rtzz/m0rtzz.blog/commit/f3c8d65))
-
-
-
-## <small>4.3.1 (2024-12-02)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([2c131cc](https://github.com/M0rtzz/m0rtzz.blog/commit/2c131cc))
-* 📝 doc(environment_configuration.md): update cmd ([ac81ea2](https://github.com/M0rtzz/m0rtzz.blog/commit/ac81ea2))
-* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update config ([ab43a0b](https://github.com/M0rtzz/m0rtzz.blog/commit/ab43a0b))
-* 🔖 tag(package.json): v4.3.1 ([6c6537f](https://github.com/M0rtzz/m0rtzz.blog/commit/6c6537f))
-
-
+## [4.3.4](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.3.3...v4.3.4) (2024-12-15)
 
 ## 4.3.0 (2024-12-01)
 
@@ -2746,5 +2728,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
