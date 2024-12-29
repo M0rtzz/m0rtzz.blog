@@ -1,11 +1,13 @@
-# Changelog
+## <small>4.4.1 (2024-12-29)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* ✅ test(daily-transfer.yml): test script ([ec51052](https://github.com/M0rtzz/m0rtzz.blog/commit/ec51052))
+* 🔖 tag(package.json): v4.4.1 ([1e7cdf4](https://github.com/M0rtzz/m0rtzz.blog/commit/1e7cdf4))
 
-## [4.4.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.4.0...v4.4.1) (2024-12-29)
+
 
 ## 4.4.0 (2024-12-29)
 
+* 📝 doc(CHANGELOG.md): automatic update ([2097f66](https://github.com/M0rtzz/m0rtzz.blog/commit/2097f66))
 * 🔖 tag(package.json): v4.4.0 ([95a5823](https://github.com/M0rtzz/m0rtzz.blog/commit/95a5823))
 * 🔨 script(transfer.sh): comment unused code ([edfecff](https://github.com/M0rtzz/m0rtzz.blog/commit/edfecff))
 
@@ -2809,3 +2811,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
