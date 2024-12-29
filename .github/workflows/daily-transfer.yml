@@ -25,12 +25,14 @@ jobs:
             - recursive: true
               args: [--frozen-lockfile, --strict-peer-dependencies]
 
-      - name: Set up SSH
-        uses: webfactory/ssh-agent@v0.9.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Setup SSH
+        run: |
+          mkdir ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.CLOUD }} >> ~/.ssh/known_hosts
 
       - name: Run transfer script
         run: |
           chmod +x ./transfer.sh
-          ssh-keygen -R ${{ secrets.CLOUD }} && CLOUD=${{ secrets.CLOUD }} bash ./transfer.sh
+          CLOUD=${{ secrets.CLOUD }} bash ./transfer.sh
