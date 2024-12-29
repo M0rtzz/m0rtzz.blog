@@ -22,8 +22,8 @@ grep -rl --binary-files=without-match "fonts.gstatic.com" "${repo_root_dir}/node
 echo $'\e[1;32m镜像站URL替换完成\e[0m'
 
 rm -rf out/ .next/
-source ~/.nvm/nvm.sh
-nvm use v18.20.3
+# source ~/.nvm/nvm.sh
+# nvm use v18.20.3
 pnpm build || {
     echo $'\e[1;31m静态资源构建失败\e[0m'
     exit 1
