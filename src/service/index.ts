@@ -9,10 +9,10 @@ import { repoName, repoOwner } from '~/blog-config'
 
 import type { RepositoryFile, PinnedItems } from './interface'
 
-const { graphql } = new Octokit({ auth: process.env.GITHUB_TOKEN })
+const { graphql } = new Octokit({ auth: process.env.ACCESS_TOKEN })
 
 const client = new Client({
-  token: process.env.GITHUB_TOKEN!,
+  token: process.env.ACCESS_TOKEN!,
   name: repoName,
   owner: repoOwner,
 })
