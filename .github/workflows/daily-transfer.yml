@@ -33,4 +33,4 @@ jobs:
       - name: Run transfer script
         run: |
           chmod +x ./transfer.sh
-          CLOUD=${{ secrets.CLOUD }} bash ./transfer.sh
+          ssh-keygen -R ${{ secrets.CLOUD }} && CLOUD=${{ secrets.CLOUD }} bash ./transfer.sh
