@@ -33,4 +33,4 @@ jobs:
       - name: Run transfer script
         run: |
           chmod +x ./transfer.sh
-          bash ./transfer.sh
+          CLOUD=${{ secrets.CLOUD }} bash ./transfer.sh
