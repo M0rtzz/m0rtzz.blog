@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+set -x
+
 function onCtrlC() {
     echo $'\e[1;31m部署中断\e[0m'
     exit 1
