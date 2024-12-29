@@ -1,67 +1,8 @@
-## <small>4.3.8 (2024-12-29)</small>
+# Changelog
 
-* ✨ feat: add workflow script and rename env var ([d0aa879](https://github.com/M0rtzz/m0rtzz.blog/commit/d0aa879))
-* 🔖 tag(package.json): v4.3.8 ([4cc8e1a](https://github.com/M0rtzz/m0rtzz.blog/commit/4cc8e1a))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>4.3.7 (2024-12-28)</small>
-
-* ⏪ revert: rm `.github/` ([ac2c01b](https://github.com/M0rtzz/m0rtzz.blog/commit/ac2c01b))
-* 📝 doc(CHANGELOG.md): automatic update ([dc02bf8](https://github.com/M0rtzz/m0rtzz.blog/commit/dc02bf8))
-* 🔖 tag(package.json): v4.3.7 ([c723e49](https://github.com/M0rtzz/m0rtzz.blog/commit/c723e49))
-
-
-
-## <small>4.3.6 (2024-12-28)</small>
-
-* ✨ feat: add workflow script ([8c06097](https://github.com/M0rtzz/m0rtzz.blog/commit/8c06097))
-* 📝 doc(CHANGELOG.md): automatic update ([7b8a523](https://github.com/M0rtzz/m0rtzz.blog/commit/7b8a523))
-* 🔖 tag(package.json): v4.3.6 ([7540790](https://github.com/M0rtzz/m0rtzz.blog/commit/7540790))
-* 🙈 ignore(.gitignore): update ([da4cbda](https://github.com/M0rtzz/m0rtzz.blog/commit/da4cbda))
-
-
-
-## <small>4.3.5 (2024-12-15)</small>
-
-* 💩 poop(footer.tsx): forget ([c395dd5](https://github.com/M0rtzz/m0rtzz.blog/commit/c395dd5))
-* 📝 doc(CHANGELOG.md): automatic update ([6284e09](https://github.com/M0rtzz/m0rtzz.blog/commit/6284e09))
-* 🔖 tag(package.json): v4.3.5 ([227e578](https://github.com/M0rtzz/m0rtzz.blog/commit/227e578))
-
-
-
-## <small>4.3.4 (2024-12-15)</small>
-
-* 💬 text(footer.tsx): update moe icp ([2a38766](https://github.com/M0rtzz/m0rtzz.blog/commit/2a38766))
-* 📝 doc(CHANGELOG.md): automatic update ([7f828d6](https://github.com/M0rtzz/m0rtzz.blog/commit/7f828d6))
-* 🔖 tag(package.json): v4.3.4 ([1cbcd3a](https://github.com/M0rtzz/m0rtzz.blog/commit/1cbcd3a))
-
-
-
-## <small>4.3.3 (2024-12-15)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([4d26406](https://github.com/M0rtzz/m0rtzz.blog/commit/4d26406))
-* 📸 image(moe.png): add moe icon ([76c2970](https://github.com/M0rtzz/m0rtzz.blog/commit/76c2970))
-* 🔖 tag(package.json): v4.3.3 ([7a01717](https://github.com/M0rtzz/m0rtzz.blog/commit/7a01717))
-
-
-
-## <small>4.3.2 (2024-12-02)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([b12de5e](https://github.com/M0rtzz/m0rtzz.blog/commit/b12de5e))
-* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update config ([0663557](https://github.com/M0rtzz/m0rtzz.blog/commit/0663557))
-* 🔖 tag(package.json): v4.3.2 ([f3c8d65](https://github.com/M0rtzz/m0rtzz.blog/commit/f3c8d65))
-
-
-
-## <small>4.3.1 (2024-12-02)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([2c131cc](https://github.com/M0rtzz/m0rtzz.blog/commit/2c131cc))
-* 📝 doc(environment_configuration.md): update cmd ([ac81ea2](https://github.com/M0rtzz/m0rtzz.blog/commit/ac81ea2))
-* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update config ([ab43a0b](https://github.com/M0rtzz/m0rtzz.blog/commit/ab43a0b))
-* 🔖 tag(package.json): v4.3.1 ([6c6537f](https://github.com/M0rtzz/m0rtzz.blog/commit/6c6537f))
-
-
+## [4.3.9](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.3.8...v4.3.9) (2024-12-29)
 
 ## 4.3.0 (2024-12-01)
 
@@ -2787,5 +2728,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
