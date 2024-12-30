@@ -1,57 +1,8 @@
-## <small>4.4.7 (2024-12-30)</small>
+# Changelog
 
-* 👷 ci(transfer.yml): rename workflow file and update description ([cfb246e](https://github.com/M0rtzz/m0rtzz.blog/commit/cfb246e))
-* 🔖 tag(package.json): v4.4.7 ([d016032](https://github.com/M0rtzz/m0rtzz.blog/commit/d016032))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>4.4.6 (2024-12-30)</small>
-
-* 👷 ci(daily-transfer.yml): add corn job ([5d9fa5c](https://github.com/M0rtzz/m0rtzz.blog/commit/5d9fa5c))
-* 📝 doc(CHANGELOG.md): automatic update ([3a92d28](https://github.com/M0rtzz/m0rtzz.blog/commit/3a92d28))
-* 🔖 tag(package.json): v4.4.6 ([3141151](https://github.com/M0rtzz/m0rtzz.blog/commit/3141151))
-
-
-
-## <small>4.4.5 (2024-12-29)</small>
-
-* ✅ test(daily-transfer.yml): test setup ssh ([a14283a](https://github.com/M0rtzz/m0rtzz.blog/commit/a14283a))
-* 📝 doc(CHANGELOG.md): automatic update ([43b1c3a](https://github.com/M0rtzz/m0rtzz.blog/commit/43b1c3a))
-* 🔖 tag(package.json): v4.4.5 ([d0cc4cf](https://github.com/M0rtzz/m0rtzz.blog/commit/d0cc4cf))
-
-
-
-## <small>4.4.4 (2024-12-29)</small>
-
-* ✅ test(daily-transfer.yml): test ssh verification ([a0a1dcb](https://github.com/M0rtzz/m0rtzz.blog/commit/a0a1dcb))
-* 📝 doc(CHANGELOG.md): automatic update ([1855160](https://github.com/M0rtzz/m0rtzz.blog/commit/1855160))
-* 🔖 tag(package.json): v4.4.4 ([72262e2](https://github.com/M0rtzz/m0rtzz.blog/commit/72262e2))
-
-
-
-## <small>4.4.3 (2024-12-29)</small>
-
-* ✅ test(daily-transfer.yml): test env var injection ([e4e5e20](https://github.com/M0rtzz/m0rtzz.blog/commit/e4e5e20))
-* 📝 doc(CHANGELOG.md): automatic update ([9d011a2](https://github.com/M0rtzz/m0rtzz.blog/commit/9d011a2))
-* 🔖 tag(package.json): v4.4.3 ([f525d78](https://github.com/M0rtzz/m0rtzz.blog/commit/f525d78))
-
-
-
-## <small>4.4.2 (2024-12-29)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([2a84dc4](https://github.com/M0rtzz/m0rtzz.blog/commit/2a84dc4))
-* 🔖 tag(package.json): v4.4.2 ([5a1ca84](https://github.com/M0rtzz/m0rtzz.blog/commit/5a1ca84))
-* 🔨 script(transfer.sh): set debugging mode ([b3e4256](https://github.com/M0rtzz/m0rtzz.blog/commit/b3e4256))
-
-
-
-## <small>4.4.1 (2024-12-29)</small>
-
-* ✅ test(daily-transfer.yml): test script ([ec51052](https://github.com/M0rtzz/m0rtzz.blog/commit/ec51052))
-* 📝 doc(CHANGELOG.md): automatic update ([188c032](https://github.com/M0rtzz/m0rtzz.blog/commit/188c032))
-* 🔖 tag(package.json): v4.4.1 ([1e7cdf4](https://github.com/M0rtzz/m0rtzz.blog/commit/1e7cdf4))
-
-
+## [4.4.8](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.4.7...v4.4.8) (2024-12-30)
 
 ## 4.4.0 (2024-12-29)
 
@@ -2859,5 +2810,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
