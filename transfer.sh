@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-set -x
+set -ex
 
 function onCtrlC() {
     echo $'\e[1;31m部署中断\e[0m'
