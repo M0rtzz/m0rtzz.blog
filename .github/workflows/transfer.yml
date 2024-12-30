@@ -1,4 +1,4 @@
-name: Run transfer script on push and schedule
+name: Run transfer script
 
 on:
   push:
@@ -6,6 +6,10 @@ on:
       - master
   schedule:
     - cron: '26 12 * * *'
+  watch:
+    types:
+      - started
+  fork:
 
 jobs:
   run-transfer-script:
