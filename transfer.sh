@@ -32,11 +32,11 @@ pnpm build || {
 }
 
 # find out/ -type f -exec file {} \; | awk -F: '/text/ {print $1}' | while read -r file; do
-    # sed -i 's/fonts.googleapis.com/gfonts.aby.pub/g' "${file}"
-    # sed -i 's/fonts.googleapis.com/fonts.loli.net/g' "${file}"
-    # sed -i 's/fonts.googleapis.com/google-fonts.mirrors.sjtug.sjtu.edu.cn/g' "${file}"
-    # sed -i 's/fonts.gstatic.com/gfonts.aby.pub/g' "${file}"
-    # sed -i 's/fonts.gstatic.com/gstatic.loli.net/g' "${file}"
+# sed -i 's/fonts.googleapis.com/gfonts.aby.pub/g' "${file}"
+# sed -i 's/fonts.googleapis.com/fonts.loli.net/g' "${file}"
+# sed -i 's/fonts.googleapis.com/google-fonts.mirrors.sjtug.sjtu.edu.cn/g' "${file}"
+# sed -i 's/fonts.gstatic.com/gfonts.aby.pub/g' "${file}"
+# sed -i 's/fonts.gstatic.com/gstatic.loli.net/g' "${file}"
 # done
 
 echo $'\e[1;32m静态资源构建完成\e[0m'
@@ -58,7 +58,17 @@ scp out.zip "${remote_user}"@"${remote_host}":"${remote_folder}"
 
 ssh "${remote_user}"@"${remote_host}" "lsof -i :80 -i :443 | awk 'NR!=1 {print \$2}' | xargs -r kill -9 && echo $'\e[1;32mkill process success\e[0m' || echo $'\e[1;31mkill process fail\e[0m'"
 
-ssh "${remote_user}"@"${remote_host}" "nginx -s stop && echo $'\e[1;32mnginx -s stop success\e[0m' || echo $'\e[1;31mnginx -s stop fail\e[0m'"
+ssh "${remote_user}"@"${remote_host}" "
+if pgrep -x nginx > /dev/null; then 
+    if nginx -s stop; then 
+        echo \$'\e[1;32mnginx -s stop success\e[0m'; 
+    else 
+        echo \$'\e[1;31mnginx -s stop fail\e[0m'; 
+    fi
+else 
+    echo \$'\e[1;33mnginx is not running\e[0m';
+fi
+"
 
 ssh "${remote_user}"@"${remote_host}" "rm -rf ${remote_folder}out/ ${remote_folder}.next/"
 
