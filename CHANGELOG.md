@@ -1,12 +1,14 @@
-# Changelog
+## <small>4.5.1 (2024-12-30)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 👷 ci(transfer.yml): update relative path ([b89c958](https://github.com/M0rtzz/m0rtzz.blog/commit/b89c958))
+* 🔖 tag(package.json): v4.5.1 ([c63f782](https://github.com/M0rtzz/m0rtzz.blog/commit/c63f782))
 
-## [4.5.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.5.0...v4.5.1) (2024-12-30)
+
 
 ## 4.5.0 (2024-12-30)
 
 * 👔 logic(transfer.sh): update the logic for stopping nginx ([3e1afd9](https://github.com/M0rtzz/m0rtzz.blog/commit/3e1afd9))
+* 📝 doc(CHANGELOG.md): automatic update ([7299475](https://github.com/M0rtzz/m0rtzz.blog/commit/7299475))
 * 🔖 tag(package.json): v4.5.0 ([c2bab7a](https://github.com/M0rtzz/m0rtzz.blog/commit/c2bab7a))
 
 
@@ -2889,3 +2891,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
