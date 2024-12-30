@@ -16,9 +16,9 @@ jobs:
 
       - name: Create .env file
         run: |
+          echo "ACCESS_TOKEN=${{ secrets.ACCESS_TOKEN }}" >> .env
           echo "REPO_OWNER=${{ secrets.REPO_OWNER }}" >> .env
           echo "REPO_NAME=${{ secrets.REPO_NAME }}" >> .env
-          echo "ACCESS_TOKEN=${{ secrets.ACCESS_TOKEN }}" >> .env
 
       - uses: pnpm/action-setup@v4
         with:
@@ -36,5 +36,5 @@ jobs:
 
       - name: Run transfer script
         run: |
-          chmod +x ./transfer.sh
-          CLOUD=${{ secrets.CLOUD }} bash ./transfer.sh
+          chmod +x transfer.sh
+          CLOUD=${{ secrets.CLOUD }} bash transfer.sh
