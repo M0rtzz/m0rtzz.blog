@@ -56,6 +56,8 @@ echo $'\e[1;32m开始传输静态资源...\e[0m'
 
 scp out.zip "${remote_user}"@"${remote_host}":"${remote_folder}"
 
+ssh "${remote_user}"@"${remote_host}" "lsof -i :80 -i :443 | awk 'NR!=1 {print \$2}' | xargs -r kill -9 && echo $'\e[1;32mkill process success\e[0m' || echo $'\e[1;31mkill process fail\e[0m'"
+
 ssh "${remote_user}"@"${remote_host}" "nginx -s stop && echo $'\e[1;32mnginx -s stop success\e[0m' || echo $'\e[1;31mnginx -s stop fail\e[0m'"
 
 ssh "${remote_user}"@"${remote_host}" "rm -rf ${remote_folder}out/ ${remote_folder}.next/"
