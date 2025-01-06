@@ -157,7 +157,7 @@ custom_channels:
   nvidia: https://mirrors.sustech.edu.cn/anaconda-extra/cloud/
 
 envs_dirs:
-  - /home/m0rtzz/Programs/anaconda3/envs
+  - /home/m0rtzz/Programs/anaconda3/envs/
   
 auto_activate_base: false
 ```
@@ -171,7 +171,7 @@ tee ${HOME}/.config/pip/pip.conf > /dev/null << EOF
 index-url = https://mirrors.hust.edu.cn/pypi/web/simple
 
 extra-index-url =
-    https://pypi.tuna.tsinghua.edu.cn/simple
+    https://pypi.tuna.tsinghua.edu.cn/simple/
     https://mirrors.bfsu.edu.cn/pypi/web/simple
     # https://pypi.nvidia.com
     # https://pypi.ngc.nvidia.com
