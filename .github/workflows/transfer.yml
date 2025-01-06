@@ -1,4 +1,4 @@
-name: Run transfer script
+name: Transfer
 
 on:
   push:
