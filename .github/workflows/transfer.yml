@@ -10,6 +10,7 @@ on:
     types:
       - started
   fork:
+  workflow_dispatch:
 
 jobs:
   run-transfer-script:
