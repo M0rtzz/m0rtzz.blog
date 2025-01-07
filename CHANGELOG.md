@@ -1,33 +1,8 @@
-## <small>4.5.4 (2025-01-06)</small>
+# Changelog
 
-* 👷 ci(transfer.yml): update description ([05b3d44](https://github.com/M0rtzz/m0rtzz.blog/commit/05b3d44))
-* 🔖 tag(package.json): v4.5.4 ([8bc0583](https://github.com/M0rtzz/m0rtzz.blog/commit/8bc0583))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>4.5.3 (2025-01-06)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([98901b4](https://github.com/M0rtzz/m0rtzz.blog/commit/98901b4))
-* 📝 doc(environment_configuration.md): update config ([c46ab1f](https://github.com/M0rtzz/m0rtzz.blog/commit/c46ab1f))
-* 🔖 tag(package.json): v4.5.3 ([ea9bea9](https://github.com/M0rtzz/m0rtzz.blog/commit/ea9bea9))
-
-
-
-## <small>4.5.2 (2024-12-30)</small>
-
-* 👷 ci(transfer.yml): run workflow script when someone star or fork this repo ([59fbd0e](https://github.com/M0rtzz/m0rtzz.blog/commit/59fbd0e))
-* 📝 doc(CHANGELOG.md): automatic update ([58c45c9](https://github.com/M0rtzz/m0rtzz.blog/commit/58c45c9))
-* 🔖 tag(package.json): v4.5.2 ([e5a8056](https://github.com/M0rtzz/m0rtzz.blog/commit/e5a8056))
-
-
-
-## <small>4.5.1 (2024-12-30)</small>
-
-* 👷 ci(transfer.yml): update relative path ([b89c958](https://github.com/M0rtzz/m0rtzz.blog/commit/b89c958))
-* 📝 doc(CHANGELOG.md): automatic update ([9e2e9f4](https://github.com/M0rtzz/m0rtzz.blog/commit/9e2e9f4))
-* 🔖 tag(package.json): v4.5.1 ([c63f782](https://github.com/M0rtzz/m0rtzz.blog/commit/c63f782))
-
-
+## [4.5.5](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.5.4...v4.5.5) (2025-01-07)
 
 ## 4.5.0 (2024-12-30)
 
@@ -2915,5 +2890,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
