@@ -926,7 +926,7 @@ cd src/
 ```bash
 git clone -b opencv4 --recursive https://github.com/M0rtzz/darknet_ros.git darknet_ros
 cd darknet_ros/
-git submodule update --recursive
+git submodule update --init --recursive
 ```
 
 如果视频流只有第一帧是`RGB8`编码格式，阅读源码后发现在`show_image`之前调用`image.cpp`中的`rgbgr_image`函数循环转换图像编码格式即可解决此问题：
