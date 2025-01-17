@@ -77,40 +77,40 @@ sudo gedit /etc/apt/sources.list
 
 ```bash
 # 华科源（Ubuntu 18.04）【默认注释了源码仓库，如有需要可自行取消注释】
-deb https://mirrors.hust.edu.cn/ubuntu/ bionic main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic main restricted universe multiverse
+deb https://mirrors.hust.edu.cn/ubuntu bionic main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu bionic main restricted universe multiverse
 
-deb https://mirrors.hust.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+deb https://mirrors.hust.edu.cn/ubuntu bionic-updates main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu bionic-updates main restricted universe multiverse
 
-deb https://mirrors.hust.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+deb https://mirrors.hust.edu.cn/ubuntu bionic-backports main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu bionic-backports main restricted universe multiverse
 
-deb https://mirrors.hust.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
+deb https://mirrors.hust.edu.cn/ubuntu bionic-security main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu bionic-security main restricted universe multiverse
 
 # 预发布软件源，不建议启用
-# deb https://mirrors.hust.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+# deb https://mirrors.hust.edu.cn/ubuntu bionic-proposed main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu bionic-proposed main restricted universe multiverse
 ```
 
 ```bash
 # 华科源（Ubuntu 20.04）【默认注释了源码仓库，如有需要可自行取消注释】
-deb https://mirrors.hust.edu.cn/ubuntu/ focal main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal main restricted universe multiverse
+deb https://mirrors.hust.edu.cn/ubuntu focal main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu focal main restricted universe multiverse
 
-deb https://mirrors.hust.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+deb https://mirrors.hust.edu.cn/ubuntu focal-updates main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu focal-updates main restricted universe multiverse
 
-deb https://mirrors.hust.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+deb https://mirrors.hust.edu.cn/ubuntu focal-backports main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu focal-backports main restricted universe multiverse
 
-deb https://mirrors.hust.edu.cn/ubuntu/ focal-security main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+deb https://mirrors.hust.edu.cn/ubuntu focal-security main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu focal-security main restricted universe multiverse
 
 # 预发布软件源，不建议启用
-# deb https://mirrors.hust.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
-# deb-src https://mirrors.hust.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
+# deb https://mirrors.hust.edu.cn/ubuntu focal-proposed main restricted universe multiverse
+# deb-src https://mirrors.hust.edu.cn/ubuntu focal-proposed main restricted universe multiverse
 ```
 
 ```bash
@@ -130,34 +130,34 @@ channels:
   - defaults
 show_channel_urls: true
 default_channels:
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r/
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro/
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
 custom_channels:
-  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
-  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
-  numba: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
-  pyviz: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
-  omnia: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
-  ohmeta: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
-  plotly: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
-  fastai: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
-  caffe2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
-  Paddle: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
-  dglteam: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
-  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
-  rapidsai: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
-  MindSpore: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
-  pytorch3d: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
-  pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
-  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
-  pytorch-test: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
-  nvidia: https://mirrors.sustech.edu.cn/anaconda-extra/cloud/
+  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  numba: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  pyviz: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  omnia: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  ohmeta: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  plotly: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  fastai: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  caffe2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  Paddle: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  dglteam: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  rapidsai: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  MindSpore: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  pytorch3d: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  pytorch-test: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  nvidia: https://mirrors.sustech.edu.cn/anaconda-extra/cloud
 
 envs_dirs:
-  - /home/m0rtzz/Programs/anaconda3/envs/
+  - /home/m0rtzz/Programs/anaconda3/envs
   
 auto_activate_base: false
 ```
@@ -171,7 +171,7 @@ tee ${HOME}/.config/pip/pip.conf > /dev/null << EOF
 index-url = https://mirrors.hust.edu.cn/pypi/web/simple
 
 extra-index-url =
-    https://pypi.tuna.tsinghua.edu.cn/simple/
+    https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
     https://mirrors.bfsu.edu.cn/pypi/web/simple
     # https://pypi.nvidia.com
     # https://pypi.ngc.nvidia.com
