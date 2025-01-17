@@ -178,7 +178,7 @@ extra-index-url =
 
 trusted-host =
     mirrors.hust.edu.cn
-    pypi.tuna.tsinghua.edu.cn
+    mirrors.tuna.tsinghua.edu.cn
     mirrors.bfsu.edu.cn
     pypi.nvidia.com
     pypi.ngc.nvidia.com
