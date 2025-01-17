@@ -1,70 +1,52 @@
-# Changelog
+## <small>4.5.8 (2025-01-17)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
-
-## [4.5.8](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.4.2...v4.5.8) (2025-01-17)
-
-## 4.5.0 (2024-12-30)
-
-* 👔 logic(transfer.sh): update the logic for stopping nginx ([3e1afd9](https://github.com/M0rtzz/m0rtzz.blog/commit/3e1afd9))
-* 📝 doc(CHANGELOG.md): automatic update ([7299475](https://github.com/M0rtzz/m0rtzz.blog/commit/7299475))
-* 🔖 tag(package.json): v4.5.0 ([c2bab7a](https://github.com/M0rtzz/m0rtzz.blog/commit/c2bab7a))
-
-
-
-## <small>4.4.9 (2024-12-30)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([39e5848](https://github.com/M0rtzz/m0rtzz.blog/commit/39e5848))
-* 🔖 tag(package.json): v4.4.9 ([ef2fd58](https://github.com/M0rtzz/m0rtzz.blog/commit/ef2fd58))
-* 🔨 script(transfer.sh): add cmd to kill process ([300337a](https://github.com/M0rtzz/m0rtzz.blog/commit/300337a))
-
-
-
-## <small>4.4.8 (2024-12-30)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([0e053cd](https://github.com/M0rtzz/m0rtzz.blog/commit/0e053cd))
-* 🔖 tag(package.json): v4.4.8 ([8dcbec4](https://github.com/M0rtzz/m0rtzz.blog/commit/8dcbec4))
-* 🔨 script(transfer.sh): exit on error ([b9ac928](https://github.com/M0rtzz/m0rtzz.blog/commit/b9ac928))
-
-
-
-## <small>4.4.7 (2024-12-30)</small>
-
-* 👷 ci(transfer.yml): rename workflow file and update description ([cfb246e](https://github.com/M0rtzz/m0rtzz.blog/commit/cfb246e))
-* 📝 doc(CHANGELOG.md): automatic update ([47d80f8](https://github.com/M0rtzz/m0rtzz.blog/commit/47d80f8))
-* 🔖 tag(package.json): v4.4.7 ([d016032](https://github.com/M0rtzz/m0rtzz.blog/commit/d016032))
-
-
-
-## <small>4.4.6 (2024-12-30)</small>
-
-* 👷 ci(daily-transfer.yml): add corn job ([5d9fa5c](https://github.com/M0rtzz/m0rtzz.blog/commit/5d9fa5c))
-* 📝 doc(CHANGELOG.md): automatic update ([3a92d28](https://github.com/M0rtzz/m0rtzz.blog/commit/3a92d28))
-* 🔖 tag(package.json): v4.4.6 ([3141151](https://github.com/M0rtzz/m0rtzz.blog/commit/3141151))
-
-
-
-## <small>4.4.5 (2024-12-29)</small>
-
-* ✅ test(daily-transfer.yml): test setup ssh ([a14283a](https://github.com/M0rtzz/m0rtzz.blog/commit/a14283a))
-* 📝 doc(CHANGELOG.md): automatic update ([43b1c3a](https://github.com/M0rtzz/m0rtzz.blog/commit/43b1c3a))
-* 🔖 tag(package.json): v4.4.5 ([d0cc4cf](https://github.com/M0rtzz/m0rtzz.blog/commit/d0cc4cf))
-
-
-
-## <small>4.4.4 (2024-12-29)</small>
-
-* ✅ test(daily-transfer.yml): test ssh verification ([a0a1dcb](https://github.com/M0rtzz/m0rtzz.blog/commit/a0a1dcb))
-* 📝 doc(CHANGELOG.md): automatic update ([1855160](https://github.com/M0rtzz/m0rtzz.blog/commit/1855160))
-* 🔖 tag(package.json): v4.4.4 ([72262e2](https://github.com/M0rtzz/m0rtzz.blog/commit/72262e2))
-
-
-
-## <small>4.4.3 (2024-12-29)</small>
-
-* ✅ test(daily-transfer.yml): test env var injection ([e4e5e20](https://github.com/M0rtzz/m0rtzz.blog/commit/e4e5e20))
-* 📝 doc(CHANGELOG.md): automatic update ([9d011a2](https://github.com/M0rtzz/m0rtzz.blog/commit/9d011a2))
-* 🔖 tag(package.json): v4.4.3 ([f525d78](https://github.com/M0rtzz/m0rtzz.blog/commit/f525d78))
+* ✅ test(daily-transfer.yml): test non-intrusive injection of env var ([54af77a](https://github.com/M0rtzz/m0rtzz.blog/commit/54af77a))
+* ✅ test(daily-transfer.yml): test setup ssh ([4d6e133](https://github.com/M0rtzz/m0rtzz.blog/commit/4d6e133))
+* ✅ test(daily-transfer.yml): test ssh verification ([74e4dae](https://github.com/M0rtzz/m0rtzz.blog/commit/74e4dae))
+* 👔 logic(transfer.sh): update the logic for stopping nginx ([575e42c](https://github.com/M0rtzz/m0rtzz.blog/commit/575e42c))
+* 👷 ci(daily-transfer.yml): add corn job ([b1d6f50](https://github.com/M0rtzz/m0rtzz.blog/commit/b1d6f50))
+* 👷 ci(transfer.yml): add `workflow_dispatch` ([514fdb2](https://github.com/M0rtzz/m0rtzz.blog/commit/514fdb2))
+* 👷 ci(transfer.yml): rename workflow file and update description ([cfb2dec](https://github.com/M0rtzz/m0rtzz.blog/commit/cfb2dec))
+* 👷 ci(transfer.yml): run workflow script when someone star or fork this repo ([3735533](https://github.com/M0rtzz/m0rtzz.blog/commit/3735533))
+* 👷 ci(transfer.yml): update description ([1352080](https://github.com/M0rtzz/m0rtzz.blog/commit/1352080))
+* 👷 ci(transfer.yml): update job name ([51351c3](https://github.com/M0rtzz/m0rtzz.blog/commit/51351c3))
+* 👷 ci(transfer.yml): update relative path ([521b702](https://github.com/M0rtzz/m0rtzz.blog/commit/521b702))
+* 📝 doc(CHANGELOG.md): automatic update ([0beb9b4](https://github.com/M0rtzz/m0rtzz.blog/commit/0beb9b4))
+* 📝 doc(CHANGELOG.md): automatic update ([521dc34](https://github.com/M0rtzz/m0rtzz.blog/commit/521dc34))
+* 📝 doc(CHANGELOG.md): automatic update ([f7c08c8](https://github.com/M0rtzz/m0rtzz.blog/commit/f7c08c8))
+* 📝 doc(CHANGELOG.md): automatic update ([79aba4b](https://github.com/M0rtzz/m0rtzz.blog/commit/79aba4b))
+* 📝 doc(CHANGELOG.md): automatic update ([5e1aa89](https://github.com/M0rtzz/m0rtzz.blog/commit/5e1aa89))
+* 📝 doc(CHANGELOG.md): automatic update ([f73c352](https://github.com/M0rtzz/m0rtzz.blog/commit/f73c352))
+* 📝 doc(CHANGELOG.md): automatic update ([b808bbe](https://github.com/M0rtzz/m0rtzz.blog/commit/b808bbe))
+* 📝 doc(CHANGELOG.md): automatic update ([dea2430](https://github.com/M0rtzz/m0rtzz.blog/commit/dea2430))
+* 📝 doc(CHANGELOG.md): automatic update ([d98f8b2](https://github.com/M0rtzz/m0rtzz.blog/commit/d98f8b2))
+* 📝 doc(CHANGELOG.md): automatic update ([354b556](https://github.com/M0rtzz/m0rtzz.blog/commit/354b556))
+* 📝 doc(CHANGELOG.md): automatic update ([fd06fd1](https://github.com/M0rtzz/m0rtzz.blog/commit/fd06fd1))
+* 📝 doc(CHANGELOG.md): automatic update ([5572794](https://github.com/M0rtzz/m0rtzz.blog/commit/5572794))
+* 📝 doc(CHANGELOG.md): automatic update ([fa7d155](https://github.com/M0rtzz/m0rtzz.blog/commit/fa7d155))
+* 📝 doc(CHANGELOG.md): automatic update ([4ef5e37](https://github.com/M0rtzz/m0rtzz.blog/commit/4ef5e37))
+* 📝 doc(CHANGELOG.md): automatic update ([31518c4](https://github.com/M0rtzz/m0rtzz.blog/commit/31518c4))
+* 📝 doc(environment_configuration.md): update cmd ([1edccbb](https://github.com/M0rtzz/m0rtzz.blog/commit/1edccbb))
+* 📝 doc(environment_configuration.md): update config ([664660c](https://github.com/M0rtzz/m0rtzz.blog/commit/664660c))
+* 📝 doc(environment_configuration.md): update urls ([0d404ae](https://github.com/M0rtzz/m0rtzz.blog/commit/0d404ae))
+* 🔖 tag(package.json): v4.4.3 ([d817566](https://github.com/M0rtzz/m0rtzz.blog/commit/d817566))
+* 🔖 tag(package.json): v4.4.4 ([a8e2a22](https://github.com/M0rtzz/m0rtzz.blog/commit/a8e2a22))
+* 🔖 tag(package.json): v4.4.5 ([509b478](https://github.com/M0rtzz/m0rtzz.blog/commit/509b478))
+* 🔖 tag(package.json): v4.4.6 ([13bcfdb](https://github.com/M0rtzz/m0rtzz.blog/commit/13bcfdb))
+* 🔖 tag(package.json): v4.4.7 ([b6ca478](https://github.com/M0rtzz/m0rtzz.blog/commit/b6ca478))
+* 🔖 tag(package.json): v4.4.8 ([b0f541c](https://github.com/M0rtzz/m0rtzz.blog/commit/b0f541c))
+* 🔖 tag(package.json): v4.4.9 ([c300f06](https://github.com/M0rtzz/m0rtzz.blog/commit/c300f06))
+* 🔖 tag(package.json): v4.5.0 ([25b84a4](https://github.com/M0rtzz/m0rtzz.blog/commit/25b84a4))
+* 🔖 tag(package.json): v4.5.1 ([421c205](https://github.com/M0rtzz/m0rtzz.blog/commit/421c205))
+* 🔖 tag(package.json): v4.5.2 ([3903d9d](https://github.com/M0rtzz/m0rtzz.blog/commit/3903d9d))
+* 🔖 tag(package.json): v4.5.3 ([47019f0](https://github.com/M0rtzz/m0rtzz.blog/commit/47019f0))
+* 🔖 tag(package.json): v4.5.4 ([7aaa5ee](https://github.com/M0rtzz/m0rtzz.blog/commit/7aaa5ee))
+* 🔖 tag(package.json): v4.5.5 ([373cf33](https://github.com/M0rtzz/m0rtzz.blog/commit/373cf33))
+* 🔖 tag(package.json): v4.5.6 ([3f5d165](https://github.com/M0rtzz/m0rtzz.blog/commit/3f5d165))
+* 🔖 tag(package.json): v4.5.7 ([59cb0d9](https://github.com/M0rtzz/m0rtzz.blog/commit/59cb0d9))
+* 🔖 tag(package.json): v4.5.8 ([60b520f](https://github.com/M0rtzz/m0rtzz.blog/commit/60b520f))
+* 🔨 script(transfer.sh): add cmd to kill process ([98fe2a4](https://github.com/M0rtzz/m0rtzz.blog/commit/98fe2a4))
+* 🔨 script(transfer.sh): exit on error ([f64b025](https://github.com/M0rtzz/m0rtzz.blog/commit/f64b025))
 
 
 
@@ -2890,3 +2872,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
