@@ -252,6 +252,14 @@ module.exports = {
             name: '🚸 usability:\tImprove user experience or usability | 增强用户体验/可用性'
         },
         {
+            value: '🌐 i18n',
+            name: '🌐 i18n:\tInternationalization | 国际化'
+        },
+        {
+            value: '🌐 l10n',
+            name: '🌐 l10n:\tLocalization | 本地化'
+        },
+        {
             value: '🔀 merge',
             name: '🔀 merge:\tMerge branch | 合并'
         },
