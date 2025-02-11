@@ -1,8 +1,8 @@
-## <small>4.6.1 (2025-02-11)</small>
+# Changelog
 
-* 🔖 tag(package.json): v4.6.1 ([ea4dfde](https://github.com/M0rtzz/m0rtzz.blog/commit/ea4dfde))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
+## [4.6.2](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.6.1...v4.6.2) (2025-02-11)
 
 ## 4.6.0 (2025-02-11)
 
@@ -2900,5 +2900,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
