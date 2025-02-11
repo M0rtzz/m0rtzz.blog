@@ -2,6 +2,8 @@
 
 set -ex
 
+TZ=Asia/Shanghai date +"%Y-%m-%d %H:%M:%S"
+
 function onCtrlC() {
     echo $'\e[1;31m部署中断\e[0m'
     exit 1
@@ -24,8 +26,12 @@ grep -rl --binary-files=without-match "fonts.gstatic.com" "${repo_root_dir}/node
 echo $'\e[1;32m镜像站URL替换完成\e[0m'
 
 rm -rf out/ .next/
-# source ~/.nvm/nvm.sh
-# nvm use v18.20.3
+
+# GitHub Action 不执行
+if echo "$(locale)" | grep -q "zh"; then
+    source ~/.nvm/nvm.sh
+    nvm use v18.20.3
+fi
 pnpm build || {
     echo $'\e[1;31m静态资源构建失败\e[0m'
     exit 1
