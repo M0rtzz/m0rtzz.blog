@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.5.10](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.5.8...v4.5.10) (2025-02-11)
+
 ## [4.6.2](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.6.1...v4.6.2) (2025-02-11)
 
 ## 4.4.0 (2024-12-29)
