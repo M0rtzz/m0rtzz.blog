@@ -1,16 +1,8 @@
-## <small>4.6.2 (2025-02-11)</small>
+# Changelog
 
-* 🎨 style(transfer.sh): update string style ([fddc057](https://github.com/M0rtzz/m0rtzz.blog/commit/fddc057))
-* 🔖 tag(package.json): v4.6.2 ([0ab81d1](https://github.com/M0rtzz/m0rtzz.blog/commit/0ab81d1))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>4.6.1 (2025-02-11)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([59c7729](https://github.com/M0rtzz/m0rtzz.blog/commit/59c7729))
-* 🔖 tag(package.json): v4.6.1 ([ea4dfde](https://github.com/M0rtzz/m0rtzz.blog/commit/ea4dfde))
-
-
+## [4.6.3](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.6.2...v4.6.3) (2025-02-11)
 
 ## 4.6.0 (2025-02-11)
 
@@ -2908,5 +2900,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
