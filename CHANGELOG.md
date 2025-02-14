@@ -1,8 +1,50 @@
-# Changelog
+## <small>4.6.7 (2025-02-14)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 📝 doc(git commit规范及自动生成CHANGELOG.md): update config file ([66339c3](https://github.com/M0rtzz/m0rtzz.blog/commit/66339c3))
+* 🔖 tag(package.json): v4.6.7 ([2cd4d07](https://github.com/M0rtzz/m0rtzz.blog/commit/2cd4d07))
 
-## [4.6.7](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.6.6...v4.6.7) (2025-02-14)
+
+
+## <small>4.6.6 (2025-02-14)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([5b17da9](https://github.com/M0rtzz/m0rtzz.blog/commit/5b17da9))
+* 📝 doc(CHANGELOG.md): automatic update ([9855149](https://github.com/M0rtzz/m0rtzz.blog/commit/9855149))
+* 📝 doc(git commit规范及自动生成CHANGELOG.md): update cmd ([b872827](https://github.com/M0rtzz/m0rtzz.blog/commit/b872827))
+* 🔖 tag(package.json): v4.6.5 ([7dc9eea](https://github.com/M0rtzz/m0rtzz.blog/commit/7dc9eea))
+* 🔖 tag(package.json): v4.6.6 ([fea26a0](https://github.com/M0rtzz/m0rtzz.blog/commit/fea26a0))
+
+
+
+## <small>4.6.4 (2025-02-11)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([47dedd1](https://github.com/M0rtzz/m0rtzz.blog/commit/47dedd1))
+* 🔖 tag(package.json): v4.6.4 ([c067771](https://github.com/M0rtzz/m0rtzz.blog/commit/c067771))
+* 🔥 remove: do not perform gitHub actions temporarily ([6eeea17](https://github.com/M0rtzz/m0rtzz.blog/commit/6eeea17))
+
+
+
+## <small>4.6.3 (2025-02-11)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([3a8ff43](https://github.com/M0rtzz/m0rtzz.blog/commit/3a8ff43))
+* 🔖 tag(package.json): v4.6.3 ([bf508bc](https://github.com/M0rtzz/m0rtzz.blog/commit/bf508bc))
+* 🔨 script(transfer.sh): add `export` cmd ([d58dd72](https://github.com/M0rtzz/m0rtzz.blog/commit/d58dd72))
+
+
+
+## <small>4.6.2 (2025-02-11)</small>
+
+* 🎨 style(transfer.sh): update string style ([fddc057](https://github.com/M0rtzz/m0rtzz.blog/commit/fddc057))
+* 📝 doc(CHANGELOG.md): automatic update ([4258a70](https://github.com/M0rtzz/m0rtzz.blog/commit/4258a70))
+* 🔖 tag(package.json): v4.6.2 ([0ab81d1](https://github.com/M0rtzz/m0rtzz.blog/commit/0ab81d1))
+
+
+
+## <small>4.6.1 (2025-02-11)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([59c7729](https://github.com/M0rtzz/m0rtzz.blog/commit/59c7729))
+* 🔖 tag(package.json): v4.6.1 ([ea4dfde](https://github.com/M0rtzz/m0rtzz.blog/commit/ea4dfde))
+
+
 
 ## 4.6.0 (2025-02-11)
 
@@ -2900,3 +2942,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
