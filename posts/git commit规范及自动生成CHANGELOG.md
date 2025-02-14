@@ -571,5 +571,5 @@ git push origin --set-upstream --follow-tags -u master
 之后推送代码可使用以下命令：
 
 ```shell
-git push --follow-tags && sed -i 's/^/# /' $(git rev-parse --show-toplevel)/.husky/_/pre-push && git push && sed -i 's/^# //' $(git rev-parse --show-toplevel)/.husky/_/pre-push
+git push --follow-tags && sed -i 's/^/# /' $(git rev-parse --show-toplevel)/.husky/_/pre-push && git push --follow-tags && sed -i 's/^# //' $(git rev-parse --show-toplevel)/.husky/_/pre-push
 ```
