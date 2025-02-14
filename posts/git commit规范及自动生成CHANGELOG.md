@@ -573,4 +573,3 @@ git push origin --set-upstream --follow-tags -u master
 ```shell
 git push --follow-tags && sed -i 's/^/# /' $(git rev-parse --show-toplevel)/.husky/_/pre-push && git push && sed -i 's/^# //' $(git rev-parse --show-toplevel)/.husky/_/pre-push
 ```
-
