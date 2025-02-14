@@ -164,8 +164,8 @@ module.exports = {
             name: '🔧 config:\tAdd or update configuration files | 配置文件'
         },
         {
-            value: '🚚 move',
-            name: '🚚 move:\tMove or rename resources (e.g.: files, paths, routes) | 移动'
+            value: '🚚 path',
+            name: '🚚 path:\tMove or rename resources (e.g.: files, paths, routes) | 移动'
         },
         {
             value: '🧱 chore',
@@ -565,3 +565,12 @@ git push origin --set-upstream --follow-tags -u master
 此时远程仓库已经更新：
 
 ![image-20240409161015571](https://static.m0rtzz.com/images/Year:2024/Month:04/Day:09/16:10:20_image-20240409161015571.png)
+
+## 8.Tips
+
+之后推送代码可使用以下命令：
+
+```shell
+git push --follow-tags && sed -i 's/^/# /' $(git rev-parse --show-toplevel)/.husky/_/pre-push && git push && sed -i 's/^# //' $(git rev-parse --show-toplevel)/.husky/_/pre-push
+```
+
