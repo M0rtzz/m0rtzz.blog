@@ -358,7 +358,7 @@ module.exports = {
         confirmCommit: '确定提交此说明吗？:'
     },
     allowCustomScopes: true,
-    allowBreakingChanges: ['✨ feat', '🐛 fix', '🚧 wip', '🔥 remove', '🚚 move', '💩 poop', '⏪ revert', '➖ rm_dep', '➕ add_dep', '⬆️ up_dep', '⬇️ down_dep', '📌 pin_dep'],
+    allowBreakingChanges: ['✨ feat', '🐛 fix', '🚧 wip', '🔥 remove', '🚚 path', '💩 poop', '⏪ revert', '➖ rm_dep', '➕ add_dep', '⬆️ up_dep', '⬇️ down_dep', '📌 pin_dep'],
     subjectLimit: 100
 };
 ```
