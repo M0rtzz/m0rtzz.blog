@@ -40,7 +40,7 @@ dist
 .cz-config.js
 .vscode/
 # .husky/
-.github/
+# .github/
 out.zip
 *.out
 **/*.~*.*
