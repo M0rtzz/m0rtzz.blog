@@ -2462,6 +2462,12 @@ browser.tabs.loadBookmarksInTabs
 
 都设置为`true`~
 
+```txt
+browser.urlbar.trimURLs
+```
+
+设置为`false`~
+
 ## OPTIONAL
 
 ### 启动菜单的默认项
