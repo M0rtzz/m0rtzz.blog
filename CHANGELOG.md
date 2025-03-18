@@ -1,3 +1,9 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [4.7.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.7.0...v4.7.1) (2025-03-18)
+
 ## 4.7.0 (2025-02-25)
 
 * 📝 doc(environment_configuration.md): add firefox config ([4b03795](https://github.com/M0rtzz/m0rtzz.blog/commit/4b03795))
@@ -2967,5 +2973,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
