@@ -80,7 +80,7 @@ ssh "${remote_user}"@"${remote_host}" "rm -rf ${remote_folder}out/ ${remote_fold
 
 ssh "${remote_user}"@"${remote_host}" "unzip -o -q ${remote_folder}out.zip -d ${remote_folder} && rm -f ${remote_folder}out.zip && echo $'\e[1;32munzip success\e[0m' || echo $'\e[1;31munzip fail\e[0m'"
 
-ssh "${remote_user}"@"${remote_host}" "nginx && nginx -s reload && echo $'\e[1;32mnginx -s reload success\e[0m' || echo $'\e[1;31mnginx -s reload fail\e[0m'"
+ssh "${remote_user}"@"${remote_host}" "gitlab-ctl stop && nginx && nginx -s reload && gitlab-ctl start && echo $'\e[1;32mnginx -s reload success\e[0m' || echo $'\e[1;31mnginx -s reload fail\e[0m'"
 
 rm -f out.zip
 
