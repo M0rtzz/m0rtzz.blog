@@ -1,11 +1,13 @@
-# Changelog
+## <small>4.7.1 (2025-03-18)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 🔖 tag(package.json): v4.7.1 ([aa2f12d](https://github.com/M0rtzz/m0rtzz.blog/commit/aa2f12d))
+* 🔨 script(transfer.sh): add operations on `gitlab-ce` ([b5e815e](https://github.com/M0rtzz/m0rtzz.blog/commit/b5e815e))
 
-## [4.7.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.7.0...v4.7.1) (2025-03-18)
+
 
 ## 4.7.0 (2025-02-25)
 
+* 📝 doc(CHANGELOG.md): automatic update ([89c0410](https://github.com/M0rtzz/m0rtzz.blog/commit/89c0410))
 * 📝 doc(environment_configuration.md): add firefox config ([4b03795](https://github.com/M0rtzz/m0rtzz.blog/commit/4b03795))
 * 🔖 tag(package.json): v4.7.0 ([181b0fb](https://github.com/M0rtzz/m0rtzz.blog/commit/181b0fb))
 
@@ -2973,3 +2975,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
