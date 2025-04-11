@@ -1,8 +1,17 @@
-# Changelog
+## <small>4.7.2 (2025-04-11)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 🐛 fix: fix rendering bug ([313bd95](https://github.com/M0rtzz/m0rtzz.blog/commit/313bd95))
+* 🔖 tag(package.json): v4.7.2 ([89badb5](https://github.com/M0rtzz/m0rtzz.blog/commit/89badb5))
 
-## [4.7.2](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.7.1...v4.7.2) (2025-04-11)
+
+
+## <small>4.7.1 (2025-03-18)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([480b881](https://github.com/M0rtzz/m0rtzz.blog/commit/480b881))
+* 🔖 tag(package.json): v4.7.1 ([aa2f12d](https://github.com/M0rtzz/m0rtzz.blog/commit/aa2f12d))
+* 🔨 script(transfer.sh): add operations on `gitlab-ce` ([b5e815e](https://github.com/M0rtzz/m0rtzz.blog/commit/b5e815e))
+
+
 
 ## 4.7.0 (2025-02-25)
 
@@ -2974,3 +2983,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
