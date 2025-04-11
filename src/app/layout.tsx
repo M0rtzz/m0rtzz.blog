@@ -71,8 +71,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }) {
   return (
     <html
-      suppressHydrationWarning
       lang='en'
+      suppressHydrationWarning
       className={clsx(sans.variable, serif.variable, handwriting.variable)}
     >
       <head>
@@ -108,7 +108,10 @@ export default function RootLayout({ children }) {
         />
         <DarkToggleScript />
       </head>
-      <body className='bg-surface font-primary text-color-1'>
+      <body
+        suppressHydrationWarning={true}
+        className='bg-surface font-primary text-color-1'
+      >
         <div className='fixed inset-0 bottom-1/4 -z-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-[length:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] dark:hidden' />
         <Provider>
           <DarkToggleProvider>{children}</DarkToggleProvider>

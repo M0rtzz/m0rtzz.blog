@@ -15,7 +15,9 @@ export async function Bio() {
       data-type='about'
       className='prose z-10 col-span-2 row-span-3 max-w-full bg-gradient-to-br from-white to-amber-50 dark:prose-invert prose-h1:mb-0 dark:from-surface-1 dark:to-white/5 sm:max-lg:prose-p:my-1.5 md:col-span-4 md:row-span-1 md:max-xl:prose-p:my-2 lg:col-span-2 lg:row-span-1'
     >
-      <Markdown source={text} useMDXComponents={() => ({ Hello })} />
+      <div suppressHydrationWarning={true}>
+        <Markdown source={text} useMDXComponents={() => ({ Hello })} />
+      </div>
     </Block>
-  )
+  );
 }
