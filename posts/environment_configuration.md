@@ -2252,9 +2252,11 @@ timedatectl set-local-rtc 1 --adjust-system-clock
 
 [百度网盘](https://pan.baidu.com/download#linux)
 
+[ToDesk](https://www.todesk.com/linux.html)
+
 [向日葵](https://sunlogin.oray.com/download/linux?type=personal)
 
-[ToDesk](https://www.todesk.com/linux.html)
+[微信](https://linux.weixin.qq.com)
 
 [QQ](https://im.qq.com/linuxqq/index.shtml)
 
@@ -2272,11 +2274,7 @@ timedatectl set-local-rtc 1 --adjust-system-clock
 
 ![image-20240718162329579](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/16:23:29_image-20240718162329579.png)
 
-[Linux原生微信\_需要安装星火应用商店（最近的版本好像使用Fcitx输入法时中文输入有问题）](spk://store/chat/store.spark-app.wechat-linux-spark)
-
-![image-20240718202231084](https://static.m0rtzz.com/images/Year:2024/Month:07/Day:18/20:22:31_image-20240718202231084.png)
-
-`Ubuntu20.04`以下版本或者不想安装星火应用商店的用户可安装`Flatpak`打包的微信（需安装`Flatpak`，下文有`Flatpak`安装教程）：
+腾讯官方原生微信安装或使用起来有BUG的用户可尝试安装`Flatpak`打包的微信（需安装`Flatpak`，下文有`Flatpak`安装教程）：
 
 解决基于`Fcitx5`的搜狗输入法无法在`Flatpak`版微信中进行中文输入的问题：[https://github.com/web1n/wechat-universal-flatpak/issues/33#issuecomment-2222259823](https://github.com/web1n/wechat-universal-flatpak/issues/33#issuecomment-2222259823)
 
