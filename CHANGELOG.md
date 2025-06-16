@@ -1,8 +1,73 @@
-# Changelog
+## <small>4.7.9 (2025-06-16)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 📝 doc(自搭Overleaf.md): update config ([4696373](https://github.com/M0rtzz/m0rtzz.blog/commit/4696373))
+* 🔖 tag(package.json): v4.7.9 ([0a4f45c](https://github.com/M0rtzz/m0rtzz.blog/commit/0a4f45c))
 
-## [4.7.9](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.7.8...v4.7.9) (2025-06-16)
+
+
+## <small>4.7.8 (2025-06-16)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([a876744](https://github.com/M0rtzz/m0rtzz.blog/commit/a876744))
+* 📝 doc(自搭Overleaf.md): update config ([fbc4cd7](https://github.com/M0rtzz/m0rtzz.blog/commit/fbc4cd7))
+* 🔖 tag(package.json): v4.7.8 ([515a286](https://github.com/M0rtzz/m0rtzz.blog/commit/515a286))
+
+
+
+## <small>4.7.7 (2025-06-16)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([67c3f6a](https://github.com/M0rtzz/m0rtzz.blog/commit/67c3f6a))
+* 📝 doc(自搭Overleaf.md): update cmd ([44a1574](https://github.com/M0rtzz/m0rtzz.blog/commit/44a1574))
+* 🔖 tag(package.json): v4.7.7 ([cb435ab](https://github.com/M0rtzz/m0rtzz.blog/commit/cb435ab))
+
+
+
+## <small>4.7.6 (2025-06-16)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([3e276ba](https://github.com/M0rtzz/m0rtzz.blog/commit/3e276ba))
+* 📝 doc(自搭Overleaf.md): update cmd ([09b09d5](https://github.com/M0rtzz/m0rtzz.blog/commit/09b09d5))
+* 🔖 tag(package.json): v4.7.6 ([49f7508](https://github.com/M0rtzz/m0rtzz.blog/commit/49f7508))
+
+
+
+## <small>4.7.5 (2025-06-16)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([2af0ca5](https://github.com/M0rtzz/m0rtzz.blog/commit/2af0ca5))
+* 📝 doc(自搭Overleaf.md): add doc ([77d8dac](https://github.com/M0rtzz/m0rtzz.blog/commit/77d8dac))
+* 🔖 tag(package.json): v4.7.5 ([1927070](https://github.com/M0rtzz/m0rtzz.blog/commit/1927070))
+
+
+
+## <small>4.7.4 (2025-05-09)</small>
+
+* 👷 ci(transfer.yml): update cmd ([a7da737](https://github.com/M0rtzz/m0rtzz.blog/commit/a7da737))
+* 📝 doc(CHANGELOG.md): automatic update ([eee9beb](https://github.com/M0rtzz/m0rtzz.blog/commit/eee9beb))
+* 🔖 tag(package.json): v4.7.4 ([76de13e](https://github.com/M0rtzz/m0rtzz.blog/commit/76de13e))
+
+
+
+## <small>4.7.3 (2025-05-07)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([dff1f50](https://github.com/M0rtzz/m0rtzz.blog/commit/dff1f50))
+* 📝 doc(environment_configuration.md): update content ([fa21557](https://github.com/M0rtzz/m0rtzz.blog/commit/fa21557))
+* 🔖 tag(package.json): v4.7.3 ([2128699](https://github.com/M0rtzz/m0rtzz.blog/commit/2128699))
+
+
+
+## <small>4.7.2 (2025-04-11)</small>
+
+* 🐛 fix: fix rendering bug ([313bd95](https://github.com/M0rtzz/m0rtzz.blog/commit/313bd95))
+* 📝 doc(CHANGELOG.md): automatic update ([5b47ef9](https://github.com/M0rtzz/m0rtzz.blog/commit/5b47ef9))
+* 🔖 tag(package.json): v4.7.2 ([89badb5](https://github.com/M0rtzz/m0rtzz.blog/commit/89badb5))
+
+
+
+## <small>4.7.1 (2025-03-18)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([480b881](https://github.com/M0rtzz/m0rtzz.blog/commit/480b881))
+* 🔖 tag(package.json): v4.7.1 ([aa2f12d](https://github.com/M0rtzz/m0rtzz.blog/commit/aa2f12d))
+* 🔨 script(transfer.sh): add operations on `gitlab-ce` ([b5e815e](https://github.com/M0rtzz/m0rtzz.blog/commit/b5e815e))
+
+
 
 ## 4.7.0 (2025-02-25)
 
@@ -2974,3 +3039,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
