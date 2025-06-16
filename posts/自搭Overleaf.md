@@ -160,7 +160,7 @@ tlmgr update --self --all
 
 tlmgr install scheme-full
 
-apt update -y && apt upgrade -y && apt install python3-pygments fonts-noto-color-emoji ttf-mscorefonts-installer && fc-cache
+apt update -y && apt upgrade -y && apt install -y python3-pygments fonts-noto-color-emoji ttf-mscorefonts-installer && fc-cache
 ```
 
 ## 重启容器
