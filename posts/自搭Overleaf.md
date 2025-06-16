@@ -74,7 +74,6 @@ TEMPLATE_THESIS_DESCRIPTION=Templates for writing theses and dissertations, foll
 TEMPLATE_ALL_NAME=All templates
 TEMPLATE_ALL_DESCRIPTION=Browse a collection of all available LaTeX templates, categorized by document type, style, and purpose.
 
-
 COMPILE_TIMEOUT=1800
 COMPILE_BODY_SIZE_LIMIT_MB=250
 
