@@ -118,7 +118,7 @@ server {
     server_tokens off;
     add_header X-Frame-Options SAMEORIGIN;
     add_header X-Content-Type-Options nosniff;
-    client_max_body_size 50M;
+    client_max_body_size 200M;
 
     location / {
         proxy_pass http://overleaf;
