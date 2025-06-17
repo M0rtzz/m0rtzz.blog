@@ -187,6 +187,8 @@ sed -i '$a shell_escape = t' /usr/local/texlive/2025/texmf.cnf
 ```
 
 ```shell
+apt update -y && apt upgrade -y && apt install -y libxml-libxslt-perl cpanminus libbtparse2 python3-pygments
+
 cd ~
 
 wget https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet/update-tlmgr-latest.sh
@@ -199,7 +201,11 @@ tlmgr update --self --all
 
 tlmgr install scheme-full
 
-apt update -y && apt upgrade -y && apt install -y inkscape python3-pygments fonts-noto-color-emoji ttf-mscorefonts-installer && fc-cache
+apt install -y inkscape fonts-noto-cjk-extra fonts-noto-color-emoji xfonts-wqy fonts-font-awesome ttf-mscorefonts-installer && fc-cache -fv
+
+apt install -y python3-pip
+pip config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
+pip3 install Pygments --break-system-packages
 ```
 
 ## 重启容器
