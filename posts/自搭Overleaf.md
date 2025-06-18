@@ -28,6 +28,8 @@ OVERLEAF_PORT=8383
 
 ```ini
 OVERLEAF_APP_NAME=M0rtzz Online LaTeX Editor
+OVERLEAF_SITE_URL=https://latex.m0rtzz.com
+OVERLEAF_NAV_TITLE=M0rtzz Online LaTeX Editor
 
 ENABLE_CONVERSIONS=true
 
@@ -77,8 +79,6 @@ TEMPLATE_ALL_DESCRIPTION=Browse a collection of all available LaTeX templates, c
 COMPILE_TIMEOUT=1800
 COMPILE_BODY_SIZE_LIMIT_MB=250
 
-OVERLEAF_SITE_URL=https://latex.m0rtzz.com
-OVERLEAF_NAV_TITLE=M0rtzz Online LaTeX Editor
 OVERLEAF_ADMIN_EMAIL=support@example.com
 OVERLEAF_EMAIL_FROM_ADDRESS=noreply@example.com
 OVERLEAF_EMAIL_SMTP_HOST=smtp.example.com
@@ -204,7 +204,7 @@ tlmgr install scheme-full
 apt install -y inkscape fonts-noto-cjk-extra fonts-noto-color-emoji xfonts-wqy fonts-font-awesome ttf-mscorefonts-installer && fc-cache -fv
 
 apt install -y python3-pip
-pip config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
+pip3 config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
 pip3 install Pygments --break-system-packages
 ```
 
