@@ -201,7 +201,7 @@ tlmgr update --self --all
 
 tlmgr install scheme-full
 
-apt install -y inkscape fonts-noto-cjk-extra fonts-noto-color-emoji xfonts-wqy fonts-font-awesome ttf-mscorefonts-installer && fc-cache -fv
+yes | apt install inkscape fonts-noto-cjk-extra fonts-noto-color-emoji xfonts-wqy fonts-font-awesome ttf-mscorefonts-installer && fc-cache -fv
 
 apt install -y python3-pip
 pip3 config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
