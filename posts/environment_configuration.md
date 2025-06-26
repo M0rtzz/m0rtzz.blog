@@ -2466,6 +2466,12 @@ browser.urlbar.trimURLs
 
 设置为`false`~
 
+```txt
+browser.safebrowsing.downloads.remote.url
+```
+
+清空现有的配置~
+
 ## OPTIONAL
 
 ### 启动菜单的默认项
