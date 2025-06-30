@@ -4,9 +4,9 @@ import { memo, useEffect, useRef, useState } from 'react'
 import { type StaticImageData } from 'next/image'
 
 import { IconRefresh } from '@tabler/icons-react'
+import { setANICursor } from "ani-cursor.js"
 import * as p2 from 'p2-es'
 import { tw } from 'tw-styled/merge'
-import { setANICursor } from "ani-cursor.js"
 
 interface GaltonProps {
   images: StaticImageData[]
