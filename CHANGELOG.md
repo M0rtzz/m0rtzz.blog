@@ -1,42 +1,8 @@
-## <small>4.9.5 (2025-06-30)</small>
+# Changelog
 
-* ✨ feat: update import method ([d3ff279](https://github.com/M0rtzz/m0rtzz.blog/commit/d3ff279))
-* 🔖 tag(package.json): v4.9.5 ([d20d84a](https://github.com/M0rtzz/m0rtzz.blog/commit/d20d84a))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>4.9.4 (2025-06-30)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([c790192](https://github.com/M0rtzz/m0rtzz.blog/commit/c790192))
-* 🔖 tag(package.json): v4.9.4 ([d664277](https://github.com/M0rtzz/m0rtzz.blog/commit/d664277))
-* 🚑️ hotfix: fix the display bug of the skills block ([8954cce](https://github.com/M0rtzz/m0rtzz.blog/commit/8954cce))
-
-
-
-## <small>4.9.3 (2025-06-30)</small>
-
-* 👔 logic(CustomizeCursor.tsx): update the logic for judging devices ([75e2c6d](https://github.com/M0rtzz/m0rtzz.blog/commit/75e2c6d))
-* 📝 doc(CHANGELOG.md): automatic update ([22412d7](https://github.com/M0rtzz/m0rtzz.blog/commit/22412d7))
-* 🔖 tag(package.json): v4.9.3 ([e1afb40](https://github.com/M0rtzz/m0rtzz.blog/commit/e1afb40))
-
-
-
-## <small>4.9.2 (2025-06-30)</small>
-
-* ⬆️ up_dep(package.json): upgrade deps ([2bfb963](https://github.com/M0rtzz/m0rtzz.blog/commit/2bfb963))
-* 📌 pin_dep(pnpm-lock.yaml): pin deps version ([1460e22](https://github.com/M0rtzz/m0rtzz.blog/commit/1460e22))
-* 📝 doc(CHANGELOG.md): automatic update ([20e51a0](https://github.com/M0rtzz/m0rtzz.blog/commit/20e51a0))
-* 🔖 tag(package.json): v4.9.2 ([9300d01](https://github.com/M0rtzz/m0rtzz.blog/commit/9300d01))
-
-
-
-## <small>4.9.1 (2025-06-30)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([197a044](https://github.com/M0rtzz/m0rtzz.blog/commit/197a044))
-* 🔖 tag(package.json): v4.9.1 ([2a62d02](https://github.com/M0rtzz/m0rtzz.blog/commit/2a62d02))
-* 🔨 script(transfer.sh): update cmd ([4df1b17](https://github.com/M0rtzz/m0rtzz.blog/commit/4df1b17))
-
-
+## [4.9.6](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.9.5...v4.9.6) (2025-06-30)
 
 ## 4.9.0 (2025-06-30)
 
@@ -1847,5 +1813,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
