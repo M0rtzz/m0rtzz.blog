@@ -32,6 +32,7 @@ if echo "$(locale)" | grep -q "zh"; then
     source ~/.nvm/nvm.sh
     nvm use v18.20.3
 fi
+
 pnpm build || {
     echo $'\e[1;31m静态资源构建失败\e[0m'
     exit 1
@@ -59,7 +60,7 @@ echo $'\e[1;32m代码拉取完成\e[0m'
 
 echo $'\e[1;32m开始传输静态资源...\e[0m'
 
-scp out.zip "${remote_user}"@"${remote_host}":"${remote_folder}"
+rsync -av --progress out.zip "${remote_user}"@"${remote_host}":"${remote_folder}"
 
 ssh "${remote_user}"@"${remote_host}" "lsof -i :80 -i :443 | awk 'NR!=1 {print \$2}' | xargs -r kill -9 && echo $'\e[1;32mkill process success\e[0m' || echo $'\e[1;31mkill process fail\e[0m'"
 
