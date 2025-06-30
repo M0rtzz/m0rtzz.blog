@@ -2,8 +2,7 @@
 
 import { useEffect } from 'react'
 
-// import { setANICursor } from "ani-cursor.js"
-import { setANICursorWithGroupElement } from "ani-cursor.js"
+import { setANICursor, setANICursorWithGroupElement } from "ani-cursor.js"
 
 export default function CursorInitializer() {
   useEffect(() => {
@@ -30,14 +29,14 @@ export default function CursorInitializer() {
           );
 
           // 可拖动元素
-          setANICursorWithGroupElement(
-            ["[draggable='true']"],
+          setANICursor(
+            "[draggable='true']",
             "/cursor/ani/move.ani"
           );
 
           // 禁用状态
-          setANICursorWithGroupElement(
-            ["[disabled]"],
+          setANICursor(
+            "[disabled]",
             "/cursor/ani/no.ani"
           );
 
