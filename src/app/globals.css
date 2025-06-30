@@ -3,45 +3,49 @@
 @tailwind utilities;
 
 :root {
-  --brand: 249 115 22; /* theme('colors.orange.600') */
-  --text-1: 30 41 59; /* theme('colors.slate.800') */
-  --text-2: 51 65 86; /* theme('colors.slate.700') */
-  --text-3: 71 85 105; /* theme('colors.slate.600') */
-  --text-4: 100 116 139; /* theme('colors.slate.500') */
-  --surface: 255 255 255; /* theme('colors.white') */
-  --surface-1: 248 250 252; /* theme('colors.slate.50') */
-  --surface-2: 241 245 249; /* theme('colors.slate.100') */
-  --surface-3: 226 232 240; /* theme('colors.slate.200') */
-  --surface-4: 203 213 225; /* theme('colors.slate.300') */
+  --brand: 249 115 22;
+  /* theme('colors.orange.600') */
+  --text-1: 30 41 59;
+  /* theme('colors.slate.800') */
+  --text-2: 51 65 86;
+  /* theme('colors.slate.700') */
+  --text-3: 71 85 105;
+  /* theme('colors.slate.600') */
+  --text-4: 100 116 139;
+  /* theme('colors.slate.500') */
+  --surface: 255 255 255;
+  /* theme('colors.white') */
+  --surface-1: 248 250 252;
+  /* theme('colors.slate.50') */
+  --surface-2: 241 245 249;
+  /* theme('colors.slate.100') */
+  --surface-3: 226 232 240;
+  /* theme('colors.slate.200') */
+  --surface-4: 203 213 225;
+  /* theme('colors.slate.300') */
   --border: #e5e7eb;
 
   --font-remote: var(--font-remote-sans);
 
   .shiki,
   .shiki span {
-    font-style: normal !important; /* 代码块渲染禁止斜体 */
+    font-style: normal !important;
+    /* 代码块渲染禁止斜体 */
   }
 
-  /* 警告框内局部代码块样式 */ /* 引用框内局部代码块 */ /* 表格第一行内局部代码块 */ /* 表格剩余行内局部代码块 */ /* 使用后代选择器统一匹配有序列表所有层级的元素 */ /* 使用后代选择器统一匹配无序列表所有层级的元素 */ /* 正常段落中的局部代码块 */
-  div.not-prose:nth-child(n)
-    > div:nth-child(n)
-    > p:nth-child(n)
-    > code:nth-child(n),
-  .prose > blockquote:nth-child(n) > p:nth-child(n) > code:nth-child(n),
-  .prose
-    > table:nth-child(n)
-    > thead:nth-child(n)
-    > tr:nth-child(n)
-    > th:nth-child(n)
-    > code:nth-child(n),
-  .prose
-    > table:nth-child(n)
-    > tbody:nth-child(n)
-    > tr:nth-child(n)
-    > td:nth-child(n)
-    > code:nth-child(n),
-  .prose > p:nth-child(n) > code:nth-child(n),
-  details.mdx-components:nth-child(n) > p:nth-child(n) > code:nth-child(n) {
+  /* 警告框内局部代码块样式 */
+  /* 引用框内局部代码块 */
+  /* 表格第一行内局部代码块 */
+  /* 表格剩余行内局部代码块 */
+  /* 使用后代选择器统一匹配有序列表所有层级的元素 */
+  /* 使用后代选择器统一匹配无序列表所有层级的元素 */
+  /* 正常段落中的局部代码块 */
+  div.not-prose:nth-child(n)>div:nth-child(n)>p:nth-child(n)>code:nth-child(n),
+  .prose>blockquote:nth-child(n)>p:nth-child(n)>code:nth-child(n),
+  .prose>table:nth-child(n)>thead:nth-child(n)>tr:nth-child(n)>th:nth-child(n)>code:nth-child(n),
+  .prose>table:nth-child(n)>tbody:nth-child(n)>tr:nth-child(n)>td:nth-child(n)>code:nth-child(n),
+  .prose>p:nth-child(n)>code:nth-child(n),
+  details.mdx-components:nth-child(n)>p:nth-child(n)>code:nth-child(n) {
     padding: 0.1em 0.4em;
     border-radius: 6px;
     color: #1f2328;
@@ -57,58 +61,57 @@
 }
 
 :root.dark {
-  --brand: 226 232 240; /* theme('colors.slate.200') */
-  --text-1: 248 250 252; /* theme('colors.slate.50') */
-  --text-2: 241 245 249; /* theme('colors.slate.100') */
-  --text-3: 226 232 240; /* theme('colors.slate.200') */
-  --text-4: 203 213 225; /* theme('colors.slate.300') */
-  --surface: 0 2 18; /* #000212 */
-  --surface-1: 30 41 59; /* theme('colors.slate.800') */
-  --surface-2: 51 65 85; /* theme('colors.slate.700') */
-  --surface-3: 71 85 105; /* theme('colors.slate.600') */
-  --surface-4: 100 116 139; /* theme('colors.slate.500') */
+  --brand: 226 232 240;
+  /* theme('colors.slate.200') */
+  --text-1: 248 250 252;
+  /* theme('colors.slate.50') */
+  --text-2: 241 245 249;
+  /* theme('colors.slate.100') */
+  --text-3: 226 232 240;
+  /* theme('colors.slate.200') */
+  --text-4: 203 213 225;
+  /* theme('colors.slate.300') */
+  --surface: 0 2 18;
+  /* #000212 */
+  --surface-1: 30 41 59;
+  /* theme('colors.slate.800') */
+  --surface-2: 51 65 85;
+  /* theme('colors.slate.700') */
+  --surface-3: 71 85 105;
+  /* theme('colors.slate.600') */
+  --surface-4: 100 116 139;
+  /* theme('colors.slate.500') */
 
-  --border: 51 65 85; /* theme('colors.slate.700') */
+  --border: 51 65 85;
+  /* theme('colors.slate.700') */
 
   /* 深色主题局部代码块样式 */
-  .prose
-    :where(code):not(
-      :where([class~='not-prose'], [class~='not-prose'] *)
-    )::before {
+  .prose :where(code):not( :where([class~='not-prose'], [class~='not-prose'] *))::before {
     content: none;
   }
 
-  .prose
-    :where(code):not(
-      :where([class~='not-prose'], [class~='not-prose'] *)
-    )::after {
+  .prose :where(code):not( :where([class~='not-prose'], [class~='not-prose'] *))::after {
     content: none;
   }
 
-  /* 警告框内局部代码块样式 */ /* 引用框内局部代码块 */ /* 表格第一行内局部代码块 */ /* 表格剩余行内局部代码块 */ /* 使用后代选择器统一匹配有序列表所有层级的元素 */ /* 使用后代选择器统一匹配无序列表所有层级的元素 */ /* 正常段落中的局部代码块 */
-  div.not-prose:nth-child(n)
-    > div:nth-child(n)
-    > p:nth-child(n)
-    > code:nth-child(n),
-  .prose > blockquote:nth-child(n) > p:nth-child(n) > code:nth-child(n),
-  .prose
-    > table:nth-child(n)
-    > thead:nth-child(n)
-    > tr:nth-child(n)
-    > th:nth-child(n)
-    > code:nth-child(n),
-  .prose
-    > table:nth-child(n)
-    > tbody:nth-child(n)
-    > tr:nth-child(n)
-    > td:nth-child(n)
-    > code:nth-child(n),
-  .prose > p:nth-child(n) > code:nth-child(n),
-  details.mdx-components:nth-child(n) > p:nth-child(n) > code:nth-child(n) {
+  /* 警告框内局部代码块样式 */
+  /* 引用框内局部代码块 */
+  /* 表格第一行内局部代码块 */
+  /* 表格剩余行内局部代码块 */
+  /* 使用后代选择器统一匹配有序列表所有层级的元素 */
+  /* 使用后代选择器统一匹配无序列表所有层级的元素 */
+  /* 正常段落中的局部代码块 */
+  div.not-prose:nth-child(n)>div:nth-child(n)>p:nth-child(n)>code:nth-child(n),
+  .prose>blockquote:nth-child(n)>p:nth-child(n)>code:nth-child(n),
+  .prose>table:nth-child(n)>thead:nth-child(n)>tr:nth-child(n)>th:nth-child(n)>code:nth-child(n),
+  .prose>table:nth-child(n)>tbody:nth-child(n)>tr:nth-child(n)>td:nth-child(n)>code:nth-child(n),
+  .prose>p:nth-child(n)>code:nth-child(n),
+  details.mdx-components:nth-child(n)>p:nth-child(n)>code:nth-child(n) {
     padding: 0em 0.3em;
     border-radius: 6px;
     color: #e6edf3;
-    background-color: #6e768166; /* #5a616566 */
+    background-color: #6e768166;
+    /* #5a616566 */
     margin: 0;
     white-space: break-spaces;
     font-weight: normal;
@@ -126,8 +129,9 @@ code::marker {
 
 /* Markdown */
 .prose {
-  > div > pre,
-  > p:has(img) {
+
+  >div>pre,
+  >p:has(img) {
     @apply -mx-4 md:-mx-8;
   }
 }
@@ -176,17 +180,11 @@ code::marker {
 }
 
 /* 隐藏引用块的引号 */
-.prose
-  :where(blockquote p:first-of-type):not(
-    :where([class~='not-prose'], [class~='not-prose'] *)
-  )::before {
+.prose :where(blockquote p:first-of-type):not( :where([class~='not-prose'], [class~='not-prose'] *))::before {
   content: no-open-quote;
 }
 
-.prose
-  :where(blockquote p:last-of-type):not(
-    :where([class~='not-prose'], [class~='not-prose'] *)
-  )::after {
+.prose :where(blockquote p:last-of-type):not( :where([class~='not-prose'], [class~='not-prose'] *))::after {
   content: no-close-quote;
 }
 
@@ -195,7 +193,8 @@ code::marker {
   max-height: 90.5vh;
   overflow-y: auto;
   scroll-behavior: smooth;
-  scrollbar-width: thin; /* 火狐滚动条无法自定义宽度，只能通过此属性使滚动条宽度变细 */
+  scrollbar-width: thin;
+  /* 火狐滚动条无法自定义宽度，只能通过此属性使滚动条宽度变细 */
 }
 
 /* webkit内核浏览器样式 */
@@ -203,10 +202,12 @@ code::marker {
   width: 4px;
   -webkit-overflow-scrolling: touch;
 }
+
 .sticky-table::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background: gray;
 }
+
 .sticky-table::-webkit-scrollbar-track {
   border-radius: 0;
   background: transparent;
@@ -224,36 +225,37 @@ code::marker {
 }
 
 /* 警告框行间距离 */
-.small-line-numbers > p:nth-child(n) {
+.small-line-numbers>p:nth-child(n) {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-.small-line-numbers > p:nth-child(1) {
+.small-line-numbers>p:nth-child(1) {
   display: none;
 }
 
-.small-line-numbers > p:nth-child(2) {
+.small-line-numbers>p:nth-child(2) {
   margin-top: 0;
 }
 
 /* 表格行 */
 table tr {
-  text-align: center; /* 水平居中 */
-  vertical-align: middle; /* 垂直居中 */
+  text-align: center;
+  /* 水平居中 */
+  vertical-align: middle;
+  /* 垂直居中 */
 }
 
 /* 表格单元格 */
 table td {
-  text-align: center; /* 水平居中 */
-  vertical-align: middle; /* 垂直居中 */
+  text-align: center;
+  /* 水平居中 */
+  vertical-align: middle;
+  /* 垂直居中 */
 }
 
 /* 表格第一行加粗字体颜色恢复默认 */
-.prose
-  :where(thead th strong):not(
-    :where([class~='not-prose'], [class~='not-prose'] *)
-  ) {
+.prose :where(thead th strong):not( :where([class~='not-prose'], [class~='not-prose'] *)) {
   color: unset !important;
 }
 
@@ -274,9 +276,12 @@ strong.text-2xl {
 }
 
 img {
-  /* display: block; */ /* 使图片成为块级元素 */
-  margin-left: auto; /* 左外边距设为自动 */
-  margin-right: auto; /* 右外边距设为自动 */
+  /* display: block; */
+  /* 使图片成为块级元素 */
+  margin-left: auto;
+  /* 左外边距设为自动 */
+  margin-right: auto;
+  /* 右外边距设为自动 */
 }
 
 /* 加粗字体的颜色 */
@@ -284,47 +289,35 @@ strong {
   color: rgb(59, 141, 254) !important;
 }
 
-/* 加粗斜体字体的颜色 */ /* 斜体字体的颜色 */ /* 引用块中加粗斜体字体的颜色 */ /* 引用块中斜体字体的颜色 */ /* 警告块中加粗斜体字体的颜色 */ /* 警告块中斜体字体的颜色 */ /* 使用后代选择器统一匹配所有层级的元素 */ /* 表格中加粗斜体字体的颜色 */ /* 表格中斜体字体的颜色 */ /* 任务列表第一层中加粗斜体字体的颜色 */ /* 任务列表第一层中斜体字体的颜色 */ /* 任务列表剩余层中斜体字体的颜色 */ /* 任务列表剩余层中加粗斜体字体的颜色 */
-.prose > p:nth-child(n) > em:nth-child(n) strong,
-.prose > p:nth-child(n) > em:nth-child(n),
-.prose
-  > blockquote:nth-child(n)
-  > p:nth-child(n)
-  > em:nth-child(n)
-  > strong:nth-child(n),
-.prose > blockquote:nth-child(n) > p:nth-child(n) > em:nth-child(n),
-.small-line-numbers > p:nth-child(n) > em:nth-child(n) > strong:nth-child(n),
-.small-line-numbers > p:nth-child(n) > em:nth-child(n),
+/* 加粗斜体字体的颜色 */
+/* 斜体字体的颜色 */
+/* 引用块中加粗斜体字体的颜色 */
+/* 引用块中斜体字体的颜色 */
+/* 警告块中加粗斜体字体的颜色 */
+/* 警告块中斜体字体的颜色 */
+/* 使用后代选择器统一匹配所有层级的元素 */
+/* 表格中加粗斜体字体的颜色 */
+/* 表格中斜体字体的颜色 */
+/* 任务列表第一层中加粗斜体字体的颜色 */
+/* 任务列表第一层中斜体字体的颜色 */
+/* 任务列表剩余层中斜体字体的颜色 */
+/* 任务列表剩余层中加粗斜体字体的颜色 */
+.prose>p:nth-child(n)>em:nth-child(n) strong,
+.prose>p:nth-child(n)>em:nth-child(n),
+.prose>blockquote:nth-child(n)>p:nth-child(n)>em:nth-child(n)>strong:nth-child(n),
+.prose>blockquote:nth-child(n)>p:nth-child(n)>em:nth-child(n),
+.small-line-numbers>p:nth-child(n)>em:nth-child(n)>strong:nth-child(n),
+.small-line-numbers>p:nth-child(n)>em:nth-child(n),
 ol li em,
 ol li em strong,
 ul li em,
 ul li em strong,
-.prose
-  > table:nth-child(n)
-  > tbody:nth-child(n)
-  > tr:nth-child(n)
-  > td:nth-child(n)
-  > em:nth-child(n)
-  > strong:nth-child(n),
-.prose
-  > table:nth-child(n)
-  > tbody:nth-child(n)
-  > tr:nth-child(n)
-  > td:nth-child(n)
-  > em:nth-child(n),
-li.task-list-item:nth-child(n)
-  > p:nth-child(n)
-  > em:nth-child(n)
-  > strong:nth-child(n),
-ul.contains-task-list:nth-child(n)
-  > li:nth-child(n)
-  > p:nth-child(n)
-  > em:nth-child(n),
-ul.contains-task-list:nth-child(n)
-  > li:nth-child(n)
-  > em:nth-child(n)
-  > strong:nth-child(n),
-ul.contains-task-list:nth-child(n) > li:nth-child(n) > em:nth-child(n) {
+.prose>table:nth-child(n)>tbody:nth-child(n)>tr:nth-child(n)>td:nth-child(n)>em:nth-child(n)>strong:nth-child(n),
+.prose>table:nth-child(n)>tbody:nth-child(n)>tr:nth-child(n)>td:nth-child(n)>em:nth-child(n),
+li.task-list-item:nth-child(n)>p:nth-child(n)>em:nth-child(n)>strong:nth-child(n),
+ul.contains-task-list:nth-child(n)>li:nth-child(n)>p:nth-child(n)>em:nth-child(n),
+ul.contains-task-list:nth-child(n)>li:nth-child(n)>em:nth-child(n)>strong:nth-child(n),
+ul.contains-task-list:nth-child(n)>li:nth-child(n)>em:nth-child(n) {
   color: rgb(201, 77, 255) !important;
   font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
 }
@@ -335,12 +328,12 @@ strong a {
 }
 
 /* 引用块中禁止全局斜体 */
-.prose > blockquote:nth-child(n) {
+.prose>blockquote:nth-child(n) {
   font-style: normal;
 }
 
 /* resume中加粗字体颜色默认 */
-div.prose-sm:nth-child(n) > p:nth-child(n) > strong:nth-child(n) {
+div.prose-sm:nth-child(n)>p:nth-child(n)>strong:nth-child(n) {
   color: unset !important;
 }
 
@@ -402,34 +395,34 @@ ul {
   list-style-type: disc !important;
 }
 
-ul > li > ul > li {
+ul>li>ul>li {
   list-style-type: circle !important;
 }
 
-ul > li > ul > li > ul > li {
+ul>li>ul>li>ul>li {
   list-style-type: square !important;
 }
 
 /* 为剩余所有无序列表子列表设置样式 */
-ul li > ul {
+ul li>ul {
   list-style-type: square !important;
 }
 
 /* 有序列表序号颜色 */
-ol > li::marker {
+ol>li::marker {
   color: unset !important;
 }
 
 /* 无序列表序号颜色 */
-ul > li::marker {
+ul>li::marker {
   color: unset !important;
 }
 
-div.not-prose:nth-child(n) > div:nth-child(n) > ul:nth-child(n) {
+div.not-prose:nth-child(n)>div:nth-child(n)>ul:nth-child(n) {
   padding-left: 18px;
 }
 
-div.not-prose:nth-child(n) > div:nth-child(n) > ol:nth-child(n) {
+div.not-prose:nth-child(n)>div:nth-child(n)>ol:nth-child(n) {
   padding-left: 18px;
 }
 
@@ -448,17 +441,11 @@ h6 {
 }
 
 /* 局部代码块样式 */
-.prose
-  :where(code):not(
-    :where([class~='not-prose'], [class~='not-prose'] *)
-  )::before {
+.prose :where(code):not( :where([class~='not-prose'], [class~='not-prose'] *))::before {
   content: none;
 }
 
-.prose
-  :where(code):not(
-    :where([class~='not-prose'], [class~='not-prose'] *)
-  )::after {
+.prose :where(code):not( :where([class~='not-prose'], [class~='not-prose'] *))::after {
   content: none;
 }
 
@@ -470,6 +457,7 @@ h6 {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -480,23 +468,10 @@ h6 {
 }
 
 /* 警告框中超链接的样式 */
-div.not-prose:nth-child(n) > div:nth-child(n) > p:nth-child(n) > a:nth-child(n),
-div.not-prose:nth-child(n)
-  > div:nth-child(n)
-  > p:nth-child(n)
-  > em:nth-child(n)
-  > a:nth-child(n),
-div.not-prose:nth-child(n)
-  > div:nth-child(n)
-  > p:nth-child(n)
-  > strong:nth-child(n)
-  > a:nth-child(n),
-div.not-prose:nth-child(n)
-  > div:nth-child(n)
-  > p:nth-child(n)
-  > em:nth-child(n)
-  > strong:nth-child(n)
-  > a:nth-child(n) {
+div.not-prose:nth-child(n)>div:nth-child(n)>p:nth-child(n)>a:nth-child(n),
+div.not-prose:nth-child(n)>div:nth-child(n)>p:nth-child(n)>em:nth-child(n)>a:nth-child(n),
+div.not-prose:nth-child(n)>div:nth-child(n)>p:nth-child(n)>strong:nth-child(n)>a:nth-child(n),
+div.not-prose:nth-child(n)>div:nth-child(n)>p:nth-child(n)>em:nth-child(n)>strong:nth-child(n)>a:nth-child(n) {
   color: var(--tw-prose-links);
   text-decoration: underline;
   font-weight: 500;
@@ -506,3 +481,5 @@ div.not-prose:nth-child(n)
 /* .col-span-3 {
   grid-row: unset !important;
 } */
+
+/* @import url('cursor.css'); */

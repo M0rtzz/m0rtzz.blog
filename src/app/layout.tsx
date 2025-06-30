@@ -8,6 +8,8 @@ import Footer from './footer'
 
 import type { Metadata, Viewport } from 'next'
 
+import CursorInitializer from "@/components/ui/cursor/CustomizeCursor"
+
 import './globals.css'
 
 const sans = Nunito({
@@ -112,6 +114,7 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning={true}
         className='bg-surface font-primary text-color-1'
       >
+        <CursorInitializer />
         <div className='fixed inset-0 bottom-1/4 -z-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-[length:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] dark:hidden' />
         <Provider>
           <DarkToggleProvider>{children}</DarkToggleProvider>

@@ -1,0 +1,375 @@
+/* Default cursor (applied to root element) */
+body,
+html,
+img {
+  animation: cursorArrow 1.2s infinite;
+  cursor: url(/cursor/frame/arrow_000.png) 23 23, auto;
+}
+
+@keyframes cursorArrow {
+  0.00% {
+    cursor: url(/cursor/frame/arrow_000.png) 23 23, auto;
+  }
+
+  8.00% {
+    cursor: url(/cursor/frame/arrow_001.png) 23 23, auto;
+  }
+
+  16.00% {
+    cursor: url(/cursor/frame/arrow_002.png) 23 23, auto;
+  }
+
+  24.00% {
+    cursor: url(/cursor/frame/arrow_003.png) 23 23, auto;
+  }
+
+  33.00% {
+    cursor: url(/cursor/frame/arrow_004.png) 23 23, auto;
+  }
+
+  41.00% {
+    cursor: url(/cursor/frame/arrow_005.png) 23 23, auto;
+  }
+
+  49.00% {
+    cursor: url(/cursor/frame/arrow_006.png) 23 23, auto;
+  }
+
+  58.00% {
+    cursor: url(/cursor/frame/arrow_007.png) 23 23, auto;
+  }
+
+  66.00% {
+    cursor: url(/cursor/frame/arrow_008.png) 23 23, auto;
+  }
+
+  74.00% {
+    cursor: url(/cursor/frame/arrow_009.png) 23 23, auto;
+  }
+
+  83.00% {
+    cursor: url(/cursor/frame/arrow_010.png) 23 23, auto;
+  }
+
+  91.00% {
+    cursor: url(/cursor/frame/arrow_011.png) 23 23, auto;
+  }
+
+  99.00% {
+    cursor: url(/cursor/frame/arrow_012.png) 23 23, auto;
+  }
+}
+
+/* Text input state */
+input,
+textarea,
+[contenteditable] {
+  animation: cursorCross 1.2s infinite;
+  cursor: url(/cursor/frame/cross_000.png) 23 23, text;
+}
+
+@keyframes cursorCross {
+  0.00% {
+    cursor: url(/cursor/frame/cross_000.png) 23 23, text;
+  }
+
+  6.00% {
+    cursor: url(/cursor/frame/cross_001.png) 23 23, text;
+  }
+
+  12.00% {
+    cursor: url(/cursor/frame/cross_002.png) 23 23, text;
+  }
+
+  18.00% {
+    cursor: url(/cursor/frame/cross_003.png) 23 23, text;
+  }
+
+  25.00% {
+    cursor: url(/cursor/frame/cross_004.png) 23 23, text;
+  }
+
+  31.00% {
+    cursor: url(/cursor/frame/cross_005.png) 23 23, text;
+  }
+
+  37.00% {
+    cursor: url(/cursor/frame/cross_006.png) 23 23, text;
+  }
+
+  43.00% {
+    cursor: url(/cursor/frame/cross_007.png) 23 23, text;
+  }
+
+  50.00% {
+    cursor: url(/cursor/frame/cross_008.png) 23 23, text;
+  }
+
+  56.00% {
+    cursor: url(/cursor/frame/cross_009.png) 23 23, text;
+  }
+
+  62.00% {
+    cursor: url(/cursor/frame/cross_010.png) 23 23, text;
+  }
+
+  68.00% {
+    cursor: url(/cursor/frame/cross_011.png) 23 23, text;
+  }
+
+  75.00% {
+    cursor: url(/cursor/frame/cross_012.png) 23 23, text;
+  }
+
+  81.00% {
+    cursor: url(/cursor/frame/cross_013.png) 23 23, text;
+  }
+
+  87.00% {
+    cursor: url(/cursor/frame/cross_014.png) 23 23, text;
+  }
+
+  93.00% {
+    cursor: url(/cursor/frame/cross_015.png) 23 23, text;
+  }
+
+  100.00% {
+    cursor: url(/cursor/frame/cross_016.png) 23 23, text;
+  }
+}
+
+/* Links and clickable elements */
+a,
+button,
+[onclick] {
+  animation: cursorLink 1.2s infinite;
+  cursor: url(/cursor/frame/link_000.png) 23 23, pointer;
+}
+
+@keyframes cursorLink {
+  0.00% {
+    cursor: url(/cursor/frame/link_000.png) 23 23, pointer;
+  }
+
+  8.00% {
+    cursor: url(/cursor/frame/link_001.png) 23 23, pointer;
+  }
+
+  16.00% {
+    cursor: url(/cursor/frame/link_002.png) 23 23, pointer;
+  }
+
+  24.00% {
+    cursor: url(/cursor/frame/link_003.png) 23 23, pointer;
+  }
+
+  33.00% {
+    cursor: url(/cursor/frame/link_004.png) 23 23, pointer;
+  }
+
+  41.00% {
+    cursor: url(/cursor/frame/link_005.png) 23 23, pointer;
+  }
+
+  49.00% {
+    cursor: url(/cursor/frame/link_006.png) 23 23, pointer;
+  }
+
+  58.00% {
+    cursor: url(/cursor/frame/link_007.png) 23 23, pointer;
+  }
+
+  66.00% {
+    cursor: url(/cursor/frame/link_008.png) 23 23, pointer;
+  }
+
+  74.00% {
+    cursor: url(/cursor/frame/link_009.png) 23 23, pointer;
+  }
+
+  83.00% {
+    cursor: url(/cursor/frame/link_010.png) 23 23, pointer;
+  }
+
+  91.00% {
+    cursor: url(/cursor/frame/link_011.png) 23 23, pointer;
+  }
+
+  99.00% {
+    cursor: url(/cursor/frame/link_012.png) 23 23, pointer;
+  }
+}
+
+/* Draggable elements */
+[draggable="true"] {
+  animation: cursorMove 1.2s infinite;
+  cursor: url(/cursor/frame/move_000.png) 23 23, move;
+}
+
+@keyframes cursorMove {
+  0.00% {
+    cursor: url(/cursor/frame/move_000.png) 23 23, move;
+  }
+}
+
+/* Disabled state */
+[disabled] {
+  animation: cursorNo 1.2s infinite;
+  cursor: url(/cursor/frame/no_000.png) 23 23, not-allowed;
+}
+
+@keyframes cursorNo {
+  0.00% {
+    cursor: url(/cursor/frame/no_000.png) 23 23, not-allowed;
+  }
+
+  6.00% {
+    cursor: url(/cursor/frame/no_001.png) 23 23, not-allowed;
+  }
+
+  12.00% {
+    cursor: url(/cursor/frame/no_002.png) 23 23, not-allowed;
+  }
+
+  18.00% {
+    cursor: url(/cursor/frame/no_003.png) 23 23, not-allowed;
+  }
+
+  25.00% {
+    cursor: url(/cursor/frame/no_004.png) 23 23, not-allowed;
+  }
+
+  31.00% {
+    cursor: url(/cursor/frame/no_005.png) 23 23, not-allowed;
+  }
+
+  37.00% {
+    cursor: url(/cursor/frame/no_006.png) 23 23, not-allowed;
+  }
+
+  43.00% {
+    cursor: url(/cursor/frame/no_007.png) 23 23, not-allowed;
+  }
+
+  50.00% {
+    cursor: url(/cursor/frame/no_008.png) 23 23, not-allowed;
+  }
+
+  56.00% {
+    cursor: url(/cursor/frame/no_009.png) 23 23, not-allowed;
+  }
+
+  62.00% {
+    cursor: url(/cursor/frame/no_010.png) 23 23, not-allowed;
+  }
+
+  68.00% {
+    cursor: url(/cursor/frame/no_011.png) 23 23, not-allowed;
+  }
+
+  75.00% {
+    cursor: url(/cursor/frame/no_012.png) 23 23, not-allowed;
+  }
+
+  81.00% {
+    cursor: url(/cursor/frame/no_013.png) 23 23, not-allowed;
+  }
+
+  87.00% {
+    cursor: url(/cursor/frame/no_014.png) 23 23, not-allowed;
+  }
+
+  93.00% {
+    cursor: url(/cursor/frame/no_015.png) 23 23, not-allowed;
+  }
+
+  100.00% {
+    cursor: url(/cursor/frame/no_016.png) 23 23, not-allowed;
+  }
+}
+
+/* Text elements */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+li,
+td,
+th {
+  animation: cursorBeam 1.2s infinite;
+  cursor: url(/cursor/frame/beam_000.png) 23 23, text;
+}
+
+@keyframes cursorBeam {
+  0.00% {
+    cursor: url(/cursor/frame/beam_000.png) 23 23, text;
+  }
+
+  6.00% {
+    cursor: url(/cursor/frame/beam_001.png) 23 23, text;
+  }
+
+  12.00% {
+    cursor: url(/cursor/frame/beam_002.png) 23 23, text;
+  }
+
+  18.00% {
+    cursor: url(/cursor/frame/beam_003.png) 23 23, text;
+  }
+
+  25.00% {
+    cursor: url(/cursor/frame/beam_004.png) 23 23, text;
+  }
+
+  31.00% {
+    cursor: url(/cursor/frame/beam_005.png) 23 23, text;
+  }
+
+  37.00% {
+    cursor: url(/cursor/frame/beam_006.png) 23 23, text;
+  }
+
+  43.00% {
+    cursor: url(/cursor/frame/beam_007.png) 23 23, text;
+  }
+
+  50.00% {
+    cursor: url(/cursor/frame/beam_008.png) 23 23, text;
+  }
+
+  56.00% {
+    cursor: url(/cursor/frame/beam_009.png) 23 23, text;
+  }
+
+  62.00% {
+    cursor: url(/cursor/frame/beam_010.png) 23 23, text;
+  }
+
+  68.00% {
+    cursor: url(/cursor/frame/beam_011.png) 23 23, text;
+  }
+
+  75.00% {
+    cursor: url(/cursor/frame/beam_012.png) 23 23, text;
+  }
+
+  81.00% {
+    cursor: url(/cursor/frame/beam_013.png) 23 23, text;
+  }
+
+  87.00% {
+    cursor: url(/cursor/frame/beam_014.png) 23 23, text;
+  }
+
+  93.00% {
+    cursor: url(/cursor/frame/beam_015.png) 23 23, text;
+  }
+
+  100.00% {
+    cursor: url(/cursor/frame/beam_016.png) 23 23, text;
+  }
+}
