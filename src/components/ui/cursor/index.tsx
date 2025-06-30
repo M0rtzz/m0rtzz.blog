@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+
 import { setANICursor, setANICursorWithGroupElement } from "ani-cursor.js"
 
 export default function CursorInitializer() {
