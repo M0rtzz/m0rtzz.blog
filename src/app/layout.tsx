@@ -2,13 +2,12 @@ import { clsx } from 'clsx'
 import { DarkToggleProvider, DarkToggleScript } from 'dark-toggle/react'
 import { Nunito, Handlee, Sorts_Mill_Goudy } from 'next/font/google'
 
+import CursorInitializer from "@/components/ui/cursor/CustomizeCursor"
 import { Provider } from '@/provider'
 
 import Footer from './footer'
 
 import type { Metadata, Viewport } from 'next'
-
-import CursorInitializer from "@/components/ui/cursor/CustomizeCursor"
 
 import './globals.css'
 
