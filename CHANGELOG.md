@@ -1,8 +1,50 @@
-# Changelog
+## <small>4.8.6 (2025-06-30)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 🍱 asset(cursor): add files ([668d11e](https://github.com/M0rtzz/m0rtzz.blog/commit/668d11e))
+* 💄 ui: customize cursor ([6b5b9bd](https://github.com/M0rtzz/m0rtzz.blog/commit/6b5b9bd))
+* 🔖 tag(package.json): v4.8.6 ([5d7f95c](https://github.com/M0rtzz/m0rtzz.blog/commit/5d7f95c))
 
-## [4.8.6](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.8.5...v4.8.6) (2025-06-30)
+
+
+## <small>4.8.5 (2025-06-26)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([c56ee73](https://github.com/M0rtzz/m0rtzz.blog/commit/c56ee73))
+* 📝 doc(environment_configuration.md): update config ([a85ac76](https://github.com/M0rtzz/m0rtzz.blog/commit/a85ac76))
+* 🔖 tag(package.json): v4.8.5 ([14a956b](https://github.com/M0rtzz/m0rtzz.blog/commit/14a956b))
+
+
+
+## <small>4.8.4 (2025-06-25)</small>
+
+* 📝 doc(自搭Overleaf.md): update config ([ace448e](https://github.com/M0rtzz/m0rtzz.blog/commit/ace448e))
+* 📝 doc(CHANGELOG.md): automatic update ([175c5cb](https://github.com/M0rtzz/m0rtzz.blog/commit/175c5cb))
+* 🔖 tag(package.json): v4.8.4 ([63c6e7f](https://github.com/M0rtzz/m0rtzz.blog/commit/63c6e7f))
+
+
+
+## <small>4.8.3 (2025-06-18)</small>
+
+* 📝 doc(自搭Overleaf.md): update cmd ([4787613](https://github.com/M0rtzz/m0rtzz.blog/commit/4787613))
+* 📝 doc(CHANGELOG.md): automatic update ([6251ec8](https://github.com/M0rtzz/m0rtzz.blog/commit/6251ec8))
+* 🔖 tag(package.json): v4.8.3 ([9202878](https://github.com/M0rtzz/m0rtzz.blog/commit/9202878))
+
+
+
+## <small>4.8.2 (2025-06-18)</small>
+
+* 📝 doc(自搭Overleaf.md): update cmd ([7f8d25d](https://github.com/M0rtzz/m0rtzz.blog/commit/7f8d25d))
+* 📝 doc(CHANGELOG.md): automatic update ([8ca1677](https://github.com/M0rtzz/m0rtzz.blog/commit/8ca1677))
+* 🔖 tag(package.json): v4.8.2 ([c694021](https://github.com/M0rtzz/m0rtzz.blog/commit/c694021))
+
+
+
+## <small>4.8.1 (2025-06-17)</small>
+
+* 📝 doc(自搭Overleaf.md): update cmd ([df39787](https://github.com/M0rtzz/m0rtzz.blog/commit/df39787))
+* 📝 doc(CHANGELOG.md): automatic update ([0a240ed](https://github.com/M0rtzz/m0rtzz.blog/commit/0a240ed))
+* 🔖 tag(package.json): v4.8.1 ([457e36c](https://github.com/M0rtzz/m0rtzz.blog/commit/457e36c))
+
+
 
 ## 4.8.0 (2025-06-16)
 
@@ -1739,3 +1781,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
