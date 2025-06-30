@@ -44,13 +44,13 @@ export default function CursorInitializer() {
 
       // 文本元素
       setANICursorWithGroupElement(
-        [`p${exclude_skills_block}`, `h1${exclude_skills_block}`, `h2${exclude_skills_block}`, `h3${exclude_skills_block}`, `h4${exclude_skills_block}`, `h5${exclude_skills_block}`, `h6${exclude_skills_block}`, `li${exclude_skills_block}`, `td${exclude_skills_block}`, `th${exclude_skills_block}`],
+        [`p${exclude_skills_block}`, `h1${exclude_skills_block}`, `h2${exclude_skills_block}`, `h3${exclude_skills_block}`, `h4${exclude_skills_block}`, `h5${exclude_skills_block}`, `h6${exclude_skills_block}`, `li${exclude_skills_block}`, `td${exclude_skills_block}`, `th${exclude_skills_block}`, `code${exclude_skills_block}`],
         "/cursor/ani/beam.ani"
       );
 
       // 链接和可点击元素
       setANICursorWithGroupElement(
-        [`a${exclude_skills_block}`, `button${exclude_skills_block}`, `[onclick]${exclude_skills_block}`, `summary${exclude_skills_block}`, `details > summary${exclude_skills_block}`, `.col-span-3${exclude_skills_block}`, `label.relative${exclude_skills_block}`, `a.group\\/note:nth-child(n) > p:nth-child(n)${exclude_skills_block}`, `div.relative:nth-child(n) > a:nth-child(n) > span:nth-child(n)${exclude_skills_block}`, `div.relative:nth-child(n) > div:nth-child(n) > p:nth-child(n) > a:nth-child(n)${exclude_skills_block}`],
+        [`a${exclude_skills_block}`, `button${exclude_skills_block}`, `button.animation-fade-in`, `[onclick]${exclude_skills_block}`, `summary${exclude_skills_block}`, `details > summary${exclude_skills_block}`, `.col-span-3${exclude_skills_block}`, `label.relative${exclude_skills_block}`, `a.group\\/note:nth-child(n) > p:nth-child(n)${exclude_skills_block}`, `div.relative:nth-child(n) > a:nth-child(n) > span:nth-child(n)${exclude_skills_block}`, `div.relative:nth-child(n) > div:nth-child(n) > p:nth-child(n) > a:nth-child(n)${exclude_skills_block}`],
         "/cursor/ani/link.ani"
       );
 

@@ -6,6 +6,7 @@ import { type StaticImageData } from 'next/image'
 import { IconRefresh } from '@tabler/icons-react'
 import * as p2 from 'p2-es'
 import { tw } from 'tw-styled/merge'
+import { setANICursor } from "ani-cursor.js"
 
 interface GaltonProps {
   images: StaticImageData[]
@@ -21,14 +22,23 @@ export const Galton = memo<GaltonProps>(props => {
   const { images } = props
 
   const ref = useRef<HTMLDivElement | null>(null)
-  const [showRestart, setShowRestart] = useState(false)
+  // const [showRestart, setShowRestart] = useState(false)
+  const [isRunning, setIsRunning] = useState(false) // 新增状态，用于控制是否正在运行
 
   const resetAndStart = () => {
+    if (isRunning) return // 如果已经在运行，直接返回
+
+    setIsRunning(true) // 标记为正在运行
     const clearEle = () =>
       ref.current?.querySelectorAll('.skill').forEach(ele => ele.remove())
 
     clearEle()
-    setShowRestart(false)
+    // setShowRestart(false)
+
+    setANICursor(
+      `button.animation-fade-in`,
+      "/cursor/ani/no.ani"
+    );
 
     const scale = 100
     const pinRadius = 8 / scale
@@ -195,7 +205,14 @@ export const Galton = memo<GaltonProps>(props => {
         const allSleep = status.every(Boolean)
         if (allSleep) {
           cancelAnimationFrame(id)
-          setShowRestart(true)
+          // setShowRestart(true)
+          setIsRunning(false) // 运行结束后重置状态
+
+          // 所有物体静止后，恢复正常指针样式
+          setANICursor(
+            "button.animation-fade-in",
+            "/cursor/ani/arrow.ani"
+          );
         }
       }
       lastTimeMilliSeconds = timeMilliSeconds
@@ -222,6 +239,7 @@ export const Galton = memo<GaltonProps>(props => {
       clearEle()
       world.clear()
       cancelAnimationFrame(id)
+      setIsRunning(false) // 清理时重置状态
       // 移除visibilitychange事件监听器
       document.removeEventListener('visibilitychange', handleVisibilityChange)
     }
@@ -230,19 +248,23 @@ export const Galton = memo<GaltonProps>(props => {
   useEffect(() => {
     if (!ref.current) return
 
+    setANICursor(
+      `button.animation-fade-in`,
+      "/cursor/ani/no.ani"
+    );
+
     return resetAndStart()
   }, [])
 
   return (
     <>
-      {showRestart && (
-        <button
-          className='animation-fade-in absolute left-4 top-4 z-10 rounded-xl border bg-surface p-1 text-color-4 opacity-0 shadow'
-          onClick={resetAndStart}
-        >
-          <IconRefresh />
-        </button>
-      )}
+      <button
+        className='animation-fade-in absolute left-4 top-4 z-10 rounded-xl border bg-surface p-1 text-color-4 shadow'
+        onClick={resetAndStart}
+        disabled={isRunning}
+      >
+        <IconRefresh />
+      </button>
       <div
         ref={ref}
         className='animation-fade-in relative origin-bottom-left opacity-0 max-sm:scale-x-[1.057] max-sm:scale-y-[1.027] sm:max-lg:scale-50 md:max-lg:scale-x-[0.643] md:max-lg:scale-y-[0.635] lg:max-xl:scale-x-[0.786] lg:max-xl:scale-y-[0.784]'
