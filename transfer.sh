@@ -47,7 +47,6 @@ pnpm build || {
 
 echo $'\e[1;32m静态资源构建完成\e[0m'
 
-# 压缩 out 目录为 out.zip
 zip -r -q out.zip out/
 
 remote_user="root"
