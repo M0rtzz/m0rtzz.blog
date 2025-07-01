@@ -1,13 +1,27 @@
 'use client'
 
-import React, { useState, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 import { IconMusic, IconMusicOff } from '@tabler/icons-react'
+import { setANICursorWithGroupElement } from "ani-cursor.js"
 
 export const MusicToggle = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null)
+  const buttonRef = useRef<HTMLButtonElement | null>(null)
   const [isPlaying, setIsPlaying] = useState(false)
   const [isRotating, setIsRotating] = useState(false)
+
+  useEffect(() => {
+    setANICursorWithGroupElement(
+      [
+        `div.music-container`,
+        `button.music-button`,
+        `div.music-container *`,
+        `button.music-button *`,
+      ],
+      "/cursor/ani/link.ani"
+    )
+  }, [])
 
   const togglePlay = () => {
     if (audioRef.current) {
@@ -28,21 +42,27 @@ export const MusicToggle = () => {
     setIsRotating(false)
     setTimeout(() => {
       if (audioRef.current) {
-        audioRef.current.currentTime = 0 // 重置播放时间到开头
-        audioRef.current.play() // 重新播放音乐
+        audioRef.current.currentTime = 0
+        audioRef.current.play()
         setIsPlaying(true)
         setIsRotating(true)
       }
-    }, 1000) // 停顿1秒
+    }, 1000)
   }
 
   return (
-    <div>
+    <div className="music-container">
       <audio ref={audioRef} src='/audio/music.mp3' onEnded={handleMusicEnd} />
       <button
-        className={`rounded p-1.5 outline-none transition-colors hover:bg-surface-1 pressed:bg-surface-1 ${isRotating ? 'rotate-animation' : ''}`}
+        className={`music-button rounded p-1.5 outline-none transition-colors hover:bg-surface-1 pressed:bg-surface-1`}
+        style={{
+          ...(isRotating ? {
+            animation: 'rotate 9.99s linear infinite'
+          } : {})
+        }}
         aria-label={isPlaying ? 'Pause Music' : 'Play Music'}
         onClick={togglePlay}
+        ref={buttonRef}
       >
         {isPlaying ? (
           <IconMusic className='size-5' />

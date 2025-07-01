@@ -449,10 +449,6 @@ h6 {
   content: none;
 }
 
-.rotate-animation {
-  animation: rotate 9.99s linear infinite;
-}
-
 @keyframes rotate {
   from {
     transform: rotate(0deg);
