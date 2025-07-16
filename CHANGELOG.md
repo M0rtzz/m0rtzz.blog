@@ -1,8 +1,82 @@
-# Changelog
+## 5.0.0 (2025-07-16)
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 🔖 tag(package.json): v5.0.0 ([ca32bbc](https://github.com/M0rtzz/m0rtzz.blog/commit/ca32bbc))
+* 🔨 script(transfer.sh): update date cmd ([f9aaf79](https://github.com/M0rtzz/m0rtzz.blog/commit/f9aaf79))
 
-## [4.9.10](https://github.com/M0rtzz/m0rtzz.blog/compare/v4.9.9...v4.9.10) (2025-07-16)
+
+
+## <small>4.9.9 (2025-07-01)</small>
+
+* 💄 ui: update cursor and update the logic of button rotation ([c53bf06](https://github.com/M0rtzz/m0rtzz.blog/commit/c53bf06))
+* 📝 doc(CHANGELOG.md): automatic update ([6d7cde2](https://github.com/M0rtzz/m0rtzz.blog/commit/6d7cde2))
+* 🔖 tag(package.json): v4.9.9 ([c4b12db](https://github.com/M0rtzz/m0rtzz.blog/commit/c4b12db))
+
+
+
+## <small>4.9.8 (2025-06-30)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([6ddc0eb](https://github.com/M0rtzz/m0rtzz.blog/commit/6ddc0eb))
+* 🔖 tag(package.json): v4.9.8 ([c425d4f](https://github.com/M0rtzz/m0rtzz.blog/commit/c425d4f))
+* 🚨 lint: fix lint error ([665fb5c](https://github.com/M0rtzz/m0rtzz.blog/commit/665fb5c))
+
+
+
+## <small>4.9.7 (2025-06-30)</small>
+
+* 💄 ui: update cursor style ([d79947b](https://github.com/M0rtzz/m0rtzz.blog/commit/d79947b))
+* 📝 doc(CHANGELOG.md): automatic update ([4cb06a5](https://github.com/M0rtzz/m0rtzz.blog/commit/4cb06a5))
+* 🔖 tag(package.json): v4.9.7 ([fd49a07](https://github.com/M0rtzz/m0rtzz.blog/commit/fd49a07))
+
+
+
+## <small>4.9.6 (2025-06-30)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([4f2dab3](https://github.com/M0rtzz/m0rtzz.blog/commit/4f2dab3))
+* 🔖 tag(package.json): v4.9.6 ([f443370](https://github.com/M0rtzz/m0rtzz.blog/commit/f443370))
+* 🚨 lint: fix lint error ([a21b508](https://github.com/M0rtzz/m0rtzz.blog/commit/a21b508))
+
+
+
+## <small>4.9.5 (2025-06-30)</small>
+
+* ✨ feat: update import method ([d3ff279](https://github.com/M0rtzz/m0rtzz.blog/commit/d3ff279))
+* 📝 doc(CHANGELOG.md): automatic update ([7540cdb](https://github.com/M0rtzz/m0rtzz.blog/commit/7540cdb))
+* 🔖 tag(package.json): v4.9.5 ([d20d84a](https://github.com/M0rtzz/m0rtzz.blog/commit/d20d84a))
+
+
+
+## <small>4.9.4 (2025-06-30)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([c790192](https://github.com/M0rtzz/m0rtzz.blog/commit/c790192))
+* 🔖 tag(package.json): v4.9.4 ([d664277](https://github.com/M0rtzz/m0rtzz.blog/commit/d664277))
+* 🚑️ hotfix: fix the display bug of the skills block ([8954cce](https://github.com/M0rtzz/m0rtzz.blog/commit/8954cce))
+
+
+
+## <small>4.9.3 (2025-06-30)</small>
+
+* 👔 logic(CustomizeCursor.tsx): update the logic for judging devices ([75e2c6d](https://github.com/M0rtzz/m0rtzz.blog/commit/75e2c6d))
+* 📝 doc(CHANGELOG.md): automatic update ([22412d7](https://github.com/M0rtzz/m0rtzz.blog/commit/22412d7))
+* 🔖 tag(package.json): v4.9.3 ([e1afb40](https://github.com/M0rtzz/m0rtzz.blog/commit/e1afb40))
+
+
+
+## <small>4.9.2 (2025-06-30)</small>
+
+* ⬆️ up_dep(package.json): upgrade deps ([2bfb963](https://github.com/M0rtzz/m0rtzz.blog/commit/2bfb963))
+* 📌 pin_dep(pnpm-lock.yaml): pin deps version ([1460e22](https://github.com/M0rtzz/m0rtzz.blog/commit/1460e22))
+* 📝 doc(CHANGELOG.md): automatic update ([20e51a0](https://github.com/M0rtzz/m0rtzz.blog/commit/20e51a0))
+* 🔖 tag(package.json): v4.9.2 ([9300d01](https://github.com/M0rtzz/m0rtzz.blog/commit/9300d01))
+
+
+
+## <small>4.9.1 (2025-06-30)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([197a044](https://github.com/M0rtzz/m0rtzz.blog/commit/197a044))
+* 🔖 tag(package.json): v4.9.1 ([2a62d02](https://github.com/M0rtzz/m0rtzz.blog/commit/2a62d02))
+* 🔨 script(transfer.sh): update cmd ([4df1b17](https://github.com/M0rtzz/m0rtzz.blog/commit/4df1b17))
+
+
 
 ## 4.9.0 (2025-06-30)
 
@@ -1813,3 +1887,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
