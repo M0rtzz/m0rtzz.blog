@@ -2,7 +2,7 @@
 
 set -ex
 
-export TZ='Asia/Shanghai' && date "+%Y-%m-%d %H:%M:%S"
+TZ='Asia/Shanghai' date
 
 function onCtrlC() {
     echo $'\e[1;31m部署中断\e[0m'
