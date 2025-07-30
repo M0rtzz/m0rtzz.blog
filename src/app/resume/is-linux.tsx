@@ -28,19 +28,14 @@ const LinuxAwareComponent = () => {
         <TypedText>whoami</TypedText>
         <TypedContent>
           <p>
-            Hi, I&rsquo;m <strong>M0rtzz</strong>, in Chinese my name is{' '}
-            <strong>徐梓航</strong>.
+            Hi, I&rsquo;m <strong>M0rtzz</strong>, in Chinese my name is <strong>徐梓航</strong>.
           </p>
           <p>
-            I am a student majoring in computer science at Zhengzhou University,
-            and I have been studying computer knowledge since{' '}
-            <strong>2021</strong>, focusing on writing software to contribute to
-            the open source world and
-            <code>share knowledge and innovation</code>.
+            I am a Computer Science PhD student at Huazhong University of Science and Technology,
+            starting in <strong>2025</strong>. With a background in computer science from Zhengzhou University since <strong>2021</strong>, I have been dedicated to developing software that contributes to the open source world and <code>share knowledge and innovation</code>.
           </p>
           <p>
-            I have amassed substantial practical experience in the{' '}
-            <code>ROS</code> technology stack.
+            I have amassed substantial practical experience in the <code>ROS</code> technology stack.
           </p>
         </TypedContent>
         <TypedText>ls</TypedText>
@@ -141,7 +136,7 @@ const LinuxAwareComponent = () => {
           <ul>
             <li>
               <strong>
-                <a href='https://gitcode.com/M0rtzz/zzu-cs-os-design'>
+                <a href='https://github.com/M0rtzz/zzu-cs-os-design'>
                   os-design
                 </a>
               </strong>
@@ -201,9 +196,7 @@ const LinuxAwareComponent = () => {
           <p>
             <strong>
               <i>
-                FisheyeSegNet: Restricted Deformable Convolution based Semantic
-                Segmentation Using Surround-View Fisheye Camera for Autonomous
-                Driving
+                FishSegMSLA: Real-Time Semantic Segmentation Using Multi-Scale Linear Attention and Content-Guided Attention for Surround-View Fisheye Images
               </i>
             </strong>
           </p>
@@ -239,12 +232,10 @@ const LinuxAwareComponent = () => {
         <TypedText>skills</TypedText>
         <TypedContent>
           <p>
-            I excel in <code>Linux</code>, proficiently utilizing{' '}
-            <code>Shell</code> to perform human-computer interaction.
+            I excel in <code>Linux</code>, proficiently utilizing <code>Shell</code> to perform human-computer interaction.
           </p>
           <p>
-            I am familiar with{' '}
-            <code>C/C++, Python, Pytorch, Docker, Git, etc</code>.
+            I am familiar with <code>C/C++, Python, Pytorch, Docker, Git, etc</code>.
           </p>
           <p>
             In addition to my daily backend development tasks, I can also handle
@@ -279,7 +270,7 @@ const LinuxAwareComponent = () => {
           </div>
           <div className='flex items-center'>
             <p className='basis-1/4 text-center font-semibold'>E-mail</p>
-            <a href='mailto:m0rtzz@stu.zzu.edu.cn'>m0rtzz@stu.zzu.edu.cn</a>
+            <a href='mailto:m0rtzz@outlook.com'>m0rtzz@outlook.com</a>
           </div>
         </TypedContent>
       </Typed>
