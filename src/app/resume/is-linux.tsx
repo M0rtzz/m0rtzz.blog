@@ -263,8 +263,8 @@ const LinuxAwareComponent = () => {
             <p className='basis-1/4 text-center font-semibold'>Social</p>
             <div className='grid flex-1 grid-cols-2 justify-items-start gap-2'>
               <a href='https://github.com/M0rtzz'>GitHub</a>
-              <a href='https://gitcode.com/M0rtzz'>GitCode</a>
-              <a href='https://blog.csdn.net/M0rtzz'>CSDN</a>
+              <a href='https://gitlab.com/M0rtzz'>GitLab</a>
+              <a href='https://steamcommunity.com/id/M0rtzz'>Steam</a>
               <a href='https://www.youtube.com/@M0rtzzGod'>YouTube</a>
             </div>
           </div>
