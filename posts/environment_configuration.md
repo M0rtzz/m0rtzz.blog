@@ -2262,9 +2262,9 @@ timedatectl set-local-rtc 1 --adjust-system-clock
 
 [腾讯会议](https://meeting.tencent.com/download?mfrom=OfficialIndex_TopBanner1_Download)
 
-[WPS Office](https://linux.wps.cn/)
+[WPS Office](https://linux.wps.cn)
 
-[搜狗输入法](https://shurufa.sogou.com/)（下载安装包后，官方会跳转至安装教程，严格按照步骤执行）
+[搜狗输入法](https://shurufa.sogou.com/linux)（下载安装包后，官方会跳转至安装教程，严格按照步骤执行）
 
 [Visual Studio Code](https://code.visualstudio.com/docs/?dv=linux64_deb)（推荐打开`Settings Sync`，换电脑时设置可以同步）
 

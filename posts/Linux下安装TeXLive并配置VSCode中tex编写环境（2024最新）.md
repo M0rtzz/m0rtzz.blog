@@ -109,17 +109,19 @@ sudo cpanm Log::Dispatch
 安装`tex-fmt`：
 
 ```bash
-sudo apt install -y cargo && \
+sudo apt install -y cargo rustup && \
+rustup update stable && \
+rustup default stable && \
 mkdir -p ${HOME}/.cargo && \
-sudo tee ${HOME}/.cargo/config.toml > /dev/null << EOF
+tee ${HOME}/.cargo/config.toml > /dev/null << EOF
 [source.crates-io]
 replace-with = 'hustmirror'
 
 [source.hustmirror]
 registry = "sparse+https://mirrors.hust.edu.cn/crates.io-index/"
 EOF
-sudo cargo install tex-fmt && \
-echo 'export PATH=${PATH}:${HOME}/.cargo/bin' >> ~/.bashrc
+cargo install tex-fmt && \
+echo 'export PATH=${PATH}:${HOME}/.cargo/bin'  >> ~/.bashrc
 ```
 
 打开VSCode，点击侧边栏插件按钮，搜索`LaTeX`，安装下图两个插件：
