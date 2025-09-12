@@ -1,25 +1,8 @@
-## <small>5.0.3 (2025-08-19)</small>
+# Changelog
 
-* 📝 doc: update content ([81a9d7a](https://github.com/M0rtzz/m0rtzz.blog/commit/81a9d7a))
-* 🔖 tag(package.json): v5.0.3 ([f8f9799](https://github.com/M0rtzz/m0rtzz.blog/commit/f8f9799))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>5.0.2 (2025-08-13)</small>
-
-* 💬 text(is-linux.tsx): update url ([62c4956](https://github.com/M0rtzz/m0rtzz.blog/commit/62c4956))
-* 📝 doc(CHANGELOG.md): automatic update ([4669774](https://github.com/M0rtzz/m0rtzz.blog/commit/4669774))
-* 🔖 tag(package.json): v5.0.2 ([d7ad297](https://github.com/M0rtzz/m0rtzz.blog/commit/d7ad297))
-
-
-
-## <small>5.0.1 (2025-07-30)</small>
-
-* 💬 text(resume): update content ([c817c92](https://github.com/M0rtzz/m0rtzz.blog/commit/c817c92))
-* 📝 doc(CHANGELOG.md): automatic update ([171f102](https://github.com/M0rtzz/m0rtzz.blog/commit/171f102))
-* 🔖 tag(package.json): v5.0.1 ([2f21988](https://github.com/M0rtzz/m0rtzz.blog/commit/2f21988))
-
-
+## [5.0.4](https://github.com/M0rtzz/m0rtzz.blog/compare/v5.0.3...v5.0.4) (2025-09-12)
 
 ## 5.0.0 (2025-07-16)
 
@@ -1911,5 +1894,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
