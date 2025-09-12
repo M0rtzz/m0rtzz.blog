@@ -121,7 +121,8 @@ replace-with = 'hustmirror'
 registry = "sparse+https://mirrors.hust.edu.cn/crates.io-index/"
 EOF
 cargo install tex-fmt && \
-echo 'export PATH=${PATH}:${HOME}/.cargo/bin'  >> ~/.bashrc
+sudo cp /home/m0rtzz/.cargo/bin/tex-fmt /usr/local/bin && \
+sudo chmod +x /usr/local/bin/tex-fmt
 ```
 
 打开VSCode，点击侧边栏插件按钮，搜索`LaTeX`，安装下图两个插件：
@@ -269,8 +270,8 @@ echo 'export PATH=${PATH}:${HOME}/.cargo/bin'  >> ~/.bashrc
 "latex-workshop.formatting.latex": "tex-fmt",
 // "tex-fmt"参数
 "latex-workshop.formatting.tex-fmt.args": [
-  "--keep",
-  "--tab=4"
+  "--nowrap",
+  "--tabsize=4"
 ]
 ```
 
