@@ -161,7 +161,7 @@ sudo chmod +x /usr/local/bin/tex-fmt
     ]
   },
   {
-    "name": "xelatex -> bibtex -> xelatex*2",
+    "name": "xelatex -> bibtex -> xelatex * 2",
     "tools": [
       "xelatex",
       "bibtex",
