@@ -128,6 +128,10 @@ module.exports = {
             name: '🎨 style:\tMarkup, white-space, formatting, missing semi-colons... | 风格'
         },
         {
+            value: '💡 comment',
+            name: '💡 comment:\tComment | 注释'
+        },
+        {
             value: '🚚 path',
             name: '🚚 path:\tMove or rename resources (e.g.: files, paths, routes) | 移动'
         },
@@ -150,10 +154,6 @@ module.exports = {
         {
             value: '📸 image',
             name: '📸 image:\tAdd or update images | 图像'
-        },
-        {
-            value: '💡 comment',
-            name: '💡 comment:\tComment | 注释'
         },
         {
             value: '🔨 script',
