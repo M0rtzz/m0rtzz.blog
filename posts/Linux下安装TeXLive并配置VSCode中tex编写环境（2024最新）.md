@@ -143,21 +143,36 @@ sudo chmod +x /usr/local/bin/tex-fmt
 // LaTeX
 "latex-workshop.latex.recipes": [
   {
-    "name": "xelatex",
-    "tools": [
-      "xelatex"
-    ]
-  },
-  {
     "name": "pdflatex",
     "tools": [
       "pdflatex"
     ]
   },
   {
+    "name": "xelatex",
+    "tools": [
+      "xelatex"
+    ]
+  },
+  {
+    "name": "lualatex",
+    "tools": [
+      "lualatex"
+    ]
+  },
+  {
     "name": "latexmk",
     "tools": [
       "latexmk"
+    ]
+  },
+  {
+     "name": "pdflatex -> bibtex -> pdflatex * 2",
+    "tools": [
+      "pdflatex",
+      "bibtex",
+      "pdflatex",
+      "pdflatex"
     ]
   },
   {
@@ -168,18 +183,18 @@ sudo chmod +x /usr/local/bin/tex-fmt
       "xelatex",
       "xelatex"
     ]
-  }
+  },
 ],
 "latex-workshop.latex.tools": [
   {
-    "name": "latexmk",
-    "command": "latexmk",
+    "name": "pdflatex",
+    "command": "pdflatex",
     "args": [
       "--shell-escape",
       "-synctex=1",
       "-interaction=nonstopmode",
       "-file-line-error",
-      "-pdf",
+      "-halt-on-error",
       "%DOC%"
     ]
   },
@@ -191,17 +206,32 @@ sudo chmod +x /usr/local/bin/tex-fmt
       "-synctex=1",
       "-interaction=nonstopmode",
       "-file-line-error",
+      "-halt-on-error",
       "%DOC%"
     ]
   },
   {
-    "name": "pdflatex",
-    "command": "pdflatex",
+    "name": "lualatex",
+    "command": "lualatex",
     "args": [
       "--shell-escape",
       "-synctex=1",
       "-interaction=nonstopmode",
       "-file-line-error",
+      "-halt-on-error",
+      "%DOC%"
+    ]
+  },
+  {
+    "name": "latexmk",
+    "command": "latexmk",
+    "args": [
+      "--shell-escape",
+      "-synctex=1",
+      "-interaction=nonstopmode",
+      "-file-line-error",
+      "-halt-on-error",
+      "-pdf",
       "%DOC%"
     ]
   },
@@ -219,6 +249,7 @@ sudo chmod +x /usr/local/bin/tex-fmt
   "*.alg",
   "*.aux",
   "*.bbl",
+  "*.bcf",
   "*.blg",
   "*.fdb_latexmk",
   "*.fls",
@@ -236,11 +267,13 @@ sudo chmod +x /usr/local/bin/tex-fmt
   "*.pdfsync",
   "*.pre",
   "*.rubbercache",
+  "*.run.xml",
   "*.snm",
   "*.synctex",
   "*.synctex(busy)",
   "*.synctex.gz",
   "*.synctex.gz(busy)",
+  "*.thm",
   "*.toc",
   "*.vrb"
 ],
