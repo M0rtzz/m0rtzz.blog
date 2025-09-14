@@ -124,6 +124,14 @@ module.exports = {
             name: '🐛 fix:\tA bug fix | Bug 修复'
         },
         {
+            value: '🎨 style',
+            name: '🎨 style:\tMarkup, white-space, formatting, missing semi-colons... | 风格'
+        },
+        {
+            value: '🚚 path',
+            name: '🚚 path:\tMove or rename resources (e.g.: files, paths, routes) | 移动'
+        },
+        {
             value: '🔥 remove',
             name: '🔥 remove:\tRemove code or files | 移除代码或文件'
         },
@@ -132,24 +140,8 @@ module.exports = {
             name: '⚰️  bury:\tBury dead code | 埋葬无用代码'
         },
         {
-            value: '💩 poop',
-            name: '💩 poop:\tPoop | 写了一些屎一样待优化的代码'
-        },
-        {
-            value: '💄 ui',
-            name: '💄 ui:\tUpdated UI and style files | 更新UI'
-        },
-        {
-            value: '🎨 style',
-            name: '🎨 style:\tMarkup, white-space, formatting, missing semi-colons... | 风格'
-        },
-        {
-            value: '🔨 script',
-            name: '🔨 script:\tAdd or update the build system | 脚本'
-        },
-        {
-            value: '💡 comment',
-            name: '💡 comment:\tComment | 注释'
+            value: '🔧 config',
+            name: '🔧 config:\tAdd or update configuration files | 配置文件'
         },
         {
             value: '🍱 asset',
@@ -160,12 +152,20 @@ module.exports = {
             name: '📸 image:\tAdd or update images | 图像'
         },
         {
-            value: '🔧 config',
-            name: '🔧 config:\tAdd or update configuration files | 配置文件'
+            value: '💡 comment',
+            name: '💡 comment:\tComment | 注释'
         },
         {
-            value: '🚚 path',
-            name: '🚚 path:\tMove or rename resources (e.g.: files, paths, routes) | 移动'
+            value: '🔨 script',
+            name: '🔨 script:\tAdd or update the build system | 脚本'
+        },
+        {
+            value: '💩 poop',
+            name: '💩 poop:\tPoop | 写了一些屎一样待优化的代码'
+        },
+        {
+            value: '💄 ui',
+            name: '💄 ui:\tUpdated UI and style files | 更新UI'
         },
         {
             value: '🧱 chore',
@@ -280,6 +280,22 @@ module.exports = {
             name: '🥅 catch:\tCatch errors | 捕捉错误'
         },
         {
+            value: '💚 fix_ci',
+            name: '💚 fix_ci:\tFix CI Build | CI 修复'
+        },
+        {
+            value: '👷 ci',
+            name: '👷 ci:\tCI related changes | CI 配置'
+        },
+        {
+            value: '📈 monitor',
+            name: '📈 monitor:\tAdd or update analytics or track code | 分析或跟踪'
+        },
+        {
+            value: '♻️ refactor',
+            name: '♻️  refactor:\tA code change that neither fixes a bug or adds a feature | 代码重构'
+        },
+        {
             value: '🔊 add_log',
             name: '🔊 add_log:\tAdd or update logs | 添加日志'
         },
@@ -306,22 +322,6 @@ module.exports = {
         {
             value: '📌 pin_dep',
             name: '📌 pin_dep:\tPin dependencies to specific versions | 固定依赖版本'
-        },
-        {
-            value: '💚 fix_ci',
-            name: '💚 fix_ci:\tFix CI Build | CI 修复'
-        },
-        {
-            value: '👷 ci',
-            name: '👷 ci:\tCI related changes | CI 配置'
-        },
-        {
-            value: '📈 monitor',
-            name: '📈 monitor:\tAdd or update analytics or track code | 分析或跟踪'
-        },
-        {
-            value: '♻️ refactor',
-            name: '♻️  refactor:\tA code change that neither fixes a bug or adds a feature | 代码重构'
         },
         {
             value: '✅ test',
