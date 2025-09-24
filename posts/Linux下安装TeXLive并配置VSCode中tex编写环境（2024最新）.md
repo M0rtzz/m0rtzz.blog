@@ -143,15 +143,15 @@ sudo chmod +x /usr/local/bin/tex-fmt
 // LaTeX
 "latex-workshop.latex.recipes": [
   {
-    "name": "pdflatex",
-    "tools": [
-      "pdflatex"
-    ]
-  },
-  {
     "name": "xelatex",
     "tools": [
       "xelatex"
+    ]
+  },
+  {
+    "name": "pdflatex",
+    "tools": [
+      "pdflatex"
     ]
   },
   {
