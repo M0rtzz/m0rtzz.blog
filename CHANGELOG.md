@@ -1,8 +1,65 @@
-# Changelog
+## <small>5.0.9 (2025-11-28)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 💬 text: update email ([29b322b](https://github.com/M0rtzz/m0rtzz.blog/commit/29b322b))
+* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update settings ([058421e](https://github.com/M0rtzz/m0rtzz.blog/commit/058421e))
+* 🔖 tag(package.json): v5.0.9 ([bd301b0](https://github.com/M0rtzz/m0rtzz.blog/commit/bd301b0))
 
-## [5.0.9](https://github.com/M0rtzz/m0rtzz.blog/compare/v5.0.8...v5.0.9) (2025-11-28)
+
+
+## <small>5.0.8 (2025-09-14)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([1860e4d](https://github.com/M0rtzz/m0rtzz.blog/commit/1860e4d))
+* 📝 doc(CHANGELOG.md): automatic update ([dea9fbd](https://github.com/M0rtzz/m0rtzz.blog/commit/dea9fbd))
+* 📝 doc(CHANGELOG.md): automatic update ([f5ac6f2](https://github.com/M0rtzz/m0rtzz.blog/commit/f5ac6f2))
+* 📝 doc(git commit规范及自动生成CHANGELOG.md): update config ([d4ddd21](https://github.com/M0rtzz/m0rtzz.blog/commit/d4ddd21))
+* 📝 doc(git commit规范及自动生成CHANGELOG.md): update config ([d43dcf8](https://github.com/M0rtzz/m0rtzz.blog/commit/d43dcf8))
+* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update setting ([eb1bb99](https://github.com/M0rtzz/m0rtzz.blog/commit/eb1bb99))
+* 🔖 tag(package.json): v5.0.6 ([cb98f78](https://github.com/M0rtzz/m0rtzz.blog/commit/cb98f78))
+* 🔖 tag(package.json): v5.0.7 ([0f865ee](https://github.com/M0rtzz/m0rtzz.blog/commit/0f865ee))
+* 🔖 tag(package.json): v5.0.8 ([e03b541](https://github.com/M0rtzz/m0rtzz.blog/commit/e03b541))
+
+
+
+## <small>5.0.5 (2025-09-12)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([77cb262](https://github.com/M0rtzz/m0rtzz.blog/commit/77cb262))
+* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update setting ([5ab3aae](https://github.com/M0rtzz/m0rtzz.blog/commit/5ab3aae))
+* 🔖 tag(package.json): v5.0.5 ([4dce377](https://github.com/M0rtzz/m0rtzz.blog/commit/4dce377))
+
+
+
+## <small>5.0.4 (2025-09-12)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([2244c73](https://github.com/M0rtzz/m0rtzz.blog/commit/2244c73))
+* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update setting ([5d2b5ef](https://github.com/M0rtzz/m0rtzz.blog/commit/5d2b5ef))
+* 🔖 tag(package.json): v5.0.4 ([c3d58a7](https://github.com/M0rtzz/m0rtzz.blog/commit/c3d58a7))
+* 🛂 passport(自搭Overleaf.md): chmod ([fc0e57b](https://github.com/M0rtzz/m0rtzz.blog/commit/fc0e57b))
+
+
+
+## <small>5.0.3 (2025-08-19)</small>
+
+* 📝 doc: update content ([81a9d7a](https://github.com/M0rtzz/m0rtzz.blog/commit/81a9d7a))
+* 📝 doc(CHANGELOG.md): automatic update ([3a9467a](https://github.com/M0rtzz/m0rtzz.blog/commit/3a9467a))
+* 🔖 tag(package.json): v5.0.3 ([f8f9799](https://github.com/M0rtzz/m0rtzz.blog/commit/f8f9799))
+
+
+
+## <small>5.0.2 (2025-08-13)</small>
+
+* 💬 text(is-linux.tsx): update url ([62c4956](https://github.com/M0rtzz/m0rtzz.blog/commit/62c4956))
+* 📝 doc(CHANGELOG.md): automatic update ([4669774](https://github.com/M0rtzz/m0rtzz.blog/commit/4669774))
+* 🔖 tag(package.json): v5.0.2 ([d7ad297](https://github.com/M0rtzz/m0rtzz.blog/commit/d7ad297))
+
+
+
+## <small>5.0.1 (2025-07-30)</small>
+
+* 💬 text(resume): update content ([c817c92](https://github.com/M0rtzz/m0rtzz.blog/commit/c817c92))
+* 📝 doc(CHANGELOG.md): automatic update ([171f102](https://github.com/M0rtzz/m0rtzz.blog/commit/171f102))
+* 🔖 tag(package.json): v5.0.1 ([2f21988](https://github.com/M0rtzz/m0rtzz.blog/commit/2f21988))
+
+
 
 ## 5.0.0 (2025-07-16)
 
@@ -129,80 +186,80 @@ All notable changes to this project will be documented in this file. See [commit
 
 ## <small>4.8.4 (2025-06-25)</small>
 
-* 📝 doc(CHANGELOG.md): automatic update ([175c5cb](https://github.com/M0rtzz/m0rtzz.blog/commit/175c5cb))
 * 📝 doc(自搭Overleaf.md): update config ([ace448e](https://github.com/M0rtzz/m0rtzz.blog/commit/ace448e))
+* 📝 doc(CHANGELOG.md): automatic update ([175c5cb](https://github.com/M0rtzz/m0rtzz.blog/commit/175c5cb))
 * 🔖 tag(package.json): v4.8.4 ([63c6e7f](https://github.com/M0rtzz/m0rtzz.blog/commit/63c6e7f))
 
 
 
 ## <small>4.8.3 (2025-06-18)</small>
 
-* 📝 doc(CHANGELOG.md): automatic update ([6251ec8](https://github.com/M0rtzz/m0rtzz.blog/commit/6251ec8))
 * 📝 doc(自搭Overleaf.md): update cmd ([4787613](https://github.com/M0rtzz/m0rtzz.blog/commit/4787613))
+* 📝 doc(CHANGELOG.md): automatic update ([6251ec8](https://github.com/M0rtzz/m0rtzz.blog/commit/6251ec8))
 * 🔖 tag(package.json): v4.8.3 ([9202878](https://github.com/M0rtzz/m0rtzz.blog/commit/9202878))
 
 
 
 ## <small>4.8.2 (2025-06-18)</small>
 
-* 📝 doc(CHANGELOG.md): automatic update ([8ca1677](https://github.com/M0rtzz/m0rtzz.blog/commit/8ca1677))
 * 📝 doc(自搭Overleaf.md): update cmd ([7f8d25d](https://github.com/M0rtzz/m0rtzz.blog/commit/7f8d25d))
+* 📝 doc(CHANGELOG.md): automatic update ([8ca1677](https://github.com/M0rtzz/m0rtzz.blog/commit/8ca1677))
 * 🔖 tag(package.json): v4.8.2 ([c694021](https://github.com/M0rtzz/m0rtzz.blog/commit/c694021))
 
 
 
 ## <small>4.8.1 (2025-06-17)</small>
 
-* 📝 doc(CHANGELOG.md): automatic update ([0a240ed](https://github.com/M0rtzz/m0rtzz.blog/commit/0a240ed))
 * 📝 doc(自搭Overleaf.md): update cmd ([df39787](https://github.com/M0rtzz/m0rtzz.blog/commit/df39787))
+* 📝 doc(CHANGELOG.md): automatic update ([0a240ed](https://github.com/M0rtzz/m0rtzz.blog/commit/0a240ed))
 * 🔖 tag(package.json): v4.8.1 ([457e36c](https://github.com/M0rtzz/m0rtzz.blog/commit/457e36c))
 
 
 
 ## 4.8.0 (2025-06-16)
 
-* 📝 doc(CHANGELOG.md): automatic update ([106f765](https://github.com/M0rtzz/m0rtzz.blog/commit/106f765))
 * 📝 doc(自搭Overleaf.md): update config ([f02352a](https://github.com/M0rtzz/m0rtzz.blog/commit/f02352a))
+* 📝 doc(CHANGELOG.md): automatic update ([106f765](https://github.com/M0rtzz/m0rtzz.blog/commit/106f765))
 * 🔖 tag(package.json): v4.8.0 ([b308132](https://github.com/M0rtzz/m0rtzz.blog/commit/b308132))
 
 
 
 ## <small>4.7.9 (2025-06-16)</small>
 
-* 📝 doc(CHANGELOG.md): automatic update ([f2805b5](https://github.com/M0rtzz/m0rtzz.blog/commit/f2805b5))
 * 📝 doc(自搭Overleaf.md): update config ([4696373](https://github.com/M0rtzz/m0rtzz.blog/commit/4696373))
+* 📝 doc(CHANGELOG.md): automatic update ([f2805b5](https://github.com/M0rtzz/m0rtzz.blog/commit/f2805b5))
 * 🔖 tag(package.json): v4.7.9 ([0a4f45c](https://github.com/M0rtzz/m0rtzz.blog/commit/0a4f45c))
 
 
 
 ## <small>4.7.8 (2025-06-16)</small>
 
-* 📝 doc(CHANGELOG.md): automatic update ([a876744](https://github.com/M0rtzz/m0rtzz.blog/commit/a876744))
 * 📝 doc(自搭Overleaf.md): update config ([fbc4cd7](https://github.com/M0rtzz/m0rtzz.blog/commit/fbc4cd7))
+* 📝 doc(CHANGELOG.md): automatic update ([a876744](https://github.com/M0rtzz/m0rtzz.blog/commit/a876744))
 * 🔖 tag(package.json): v4.7.8 ([515a286](https://github.com/M0rtzz/m0rtzz.blog/commit/515a286))
 
 
 
 ## <small>4.7.7 (2025-06-16)</small>
 
-* 📝 doc(CHANGELOG.md): automatic update ([67c3f6a](https://github.com/M0rtzz/m0rtzz.blog/commit/67c3f6a))
 * 📝 doc(自搭Overleaf.md): update cmd ([44a1574](https://github.com/M0rtzz/m0rtzz.blog/commit/44a1574))
+* 📝 doc(CHANGELOG.md): automatic update ([67c3f6a](https://github.com/M0rtzz/m0rtzz.blog/commit/67c3f6a))
 * 🔖 tag(package.json): v4.7.7 ([cb435ab](https://github.com/M0rtzz/m0rtzz.blog/commit/cb435ab))
 
 
 
 ## <small>4.7.6 (2025-06-16)</small>
 
-* 📝 doc(CHANGELOG.md): automatic update ([3e276ba](https://github.com/M0rtzz/m0rtzz.blog/commit/3e276ba))
 * 📝 doc(自搭Overleaf.md): update cmd ([09b09d5](https://github.com/M0rtzz/m0rtzz.blog/commit/09b09d5))
+* 📝 doc(CHANGELOG.md): automatic update ([3e276ba](https://github.com/M0rtzz/m0rtzz.blog/commit/3e276ba))
 * 🔖 tag(package.json): v4.7.6 ([49f7508](https://github.com/M0rtzz/m0rtzz.blog/commit/49f7508))
 
 
 
 ## <small>4.7.5 (2025-06-16)</small>
 
-* 📝 doc(CHANGELOG.md): automatic update ([2af0ca5](https://github.com/M0rtzz/m0rtzz.blog/commit/2af0ca5))
 * 📝 doc(自搭Overleaf.md): add doc ([77d8dac](https://github.com/M0rtzz/m0rtzz.blog/commit/77d8dac))
+* 📝 doc(CHANGELOG.md): automatic update ([2af0ca5](https://github.com/M0rtzz/m0rtzz.blog/commit/2af0ca5))
 * 🔖 tag(package.json): v4.7.5 ([1927070](https://github.com/M0rtzz/m0rtzz.blog/commit/1927070))
 
 
@@ -752,16 +809,16 @@ All notable changes to this project will be documented in this file. See [commit
 
 * ⏪ revert(transfer.sh): revert ([b59b4d1](https://github.com/M0rtzz/m0rtzz.blog/commit/b59b4d1))
 * ⚓ hook(husky): 复活吧，我的爱人 ([db9f132](https://github.com/M0rtzz/m0rtzz.blog/commit/db9f132))
-* ⚓ hook(pre-push): add cmd ([a88854b](https://github.com/M0rtzz/m0rtzz.blog/commit/a88854b))
 * ⚓ hook(pre-push): 复活吧，我的爱人 ([84c0c50](https://github.com/M0rtzz/m0rtzz.blog/commit/84c0c50))
+* ⚓ hook(pre-push): add cmd ([a88854b](https://github.com/M0rtzz/m0rtzz.blog/commit/a88854b))
 * ⚰️ bury(husky): bye ([5d2e8db](https://github.com/M0rtzz/m0rtzz.blog/commit/5d2e8db))
 * 📝 doc(AI期末复习笔记.md): update doc ([4cf5fb5](https://github.com/M0rtzz/m0rtzz.blog/commit/4cf5fb5))
+* 📝 doc(CHANGELOG.md): 复活吧，我的爱人 ([338037e](https://github.com/M0rtzz/m0rtzz.blog/commit/338037e))
 * 📝 doc(CHANGELOG.md): automatic update ([de6cad5](https://github.com/M0rtzz/m0rtzz.blog/commit/de6cad5))
 * 📝 doc(CHANGELOG.md): automatic update ([1e00055](https://github.com/M0rtzz/m0rtzz.blog/commit/1e00055))
 * 📝 doc(CHANGELOG.md): automatic update ([225288d](https://github.com/M0rtzz/m0rtzz.blog/commit/225288d))
 * 📝 doc(CHANGELOG.md): automatic update ([66101f7](https://github.com/M0rtzz/m0rtzz.blog/commit/66101f7))
 * 📝 doc(CHANGELOG.md): automatic update ([c341cbe](https://github.com/M0rtzz/m0rtzz.blog/commit/c341cbe))
-* 📝 doc(CHANGELOG.md): 复活吧，我的爱人 ([338037e](https://github.com/M0rtzz/m0rtzz.blog/commit/338037e))
 * 🔖 tag(package.json): v3.9.11 ([4cbcb94](https://github.com/M0rtzz/m0rtzz.blog/commit/4cbcb94))
 * 🔖 tag(package.json): v3.9.11 ([599e25f](https://github.com/M0rtzz/m0rtzz.blog/commit/599e25f))
 * 🔖 tag(package.json): v3.9.12 ([b6cd14b](https://github.com/M0rtzz/m0rtzz.blog/commit/b6cd14b))
@@ -788,9 +845,9 @@ All notable changes to this project will be documented in this file. See [commit
 
 * ⚓ hook(pre-push): update cmd ([8f9f14e](https://github.com/M0rtzz/m0rtzz.blog/commit/8f9f14e))
 * ⚰️ bury(CHANGELOG.md): bury CHANGELOG.md ([06874e2](https://github.com/M0rtzz/m0rtzz.blog/commit/06874e2))
-* 📝 doc(AI期末复习笔记.md): update doc ([ec18768](https://github.com/M0rtzz/m0rtzz.blog/commit/ec18768))
-* 📝 doc(第三章-并发进程的同步、互斥、通信与死锁.md): update doc ([bd462ac](https://github.com/M0rtzz/m0rtzz.blog/commit/bd462ac))
 * 📝 doc(第六章-文件管理.md): update doc ([503701a](https://github.com/M0rtzz/m0rtzz.blog/commit/503701a))
+* 📝 doc(第三章-并发进程的同步、互斥、通信与死锁.md): update doc ([bd462ac](https://github.com/M0rtzz/m0rtzz.blog/commit/bd462ac))
+* 📝 doc(AI期末复习笔记.md): update doc ([ec18768](https://github.com/M0rtzz/m0rtzz.blog/commit/ec18768))
 * 🔖 tag(package.json): v3.9.3 ([026a1cb](https://github.com/M0rtzz/m0rtzz.blog/commit/026a1cb))
 * 🔖 tag(package.json): v3.9.3 ([ec8cfea](https://github.com/M0rtzz/m0rtzz.blog/commit/ec8cfea))
 * 🔖 tag(package.json): v3.9.3 ([0f79e2f](https://github.com/M0rtzz/m0rtzz.blog/commit/0f79e2f))
@@ -803,9 +860,9 @@ All notable changes to this project will be documented in this file. See [commit
 ## <small>3.9.3 (2024-10-16)</small>
 
 * ⚓ hook(husky): add hook scripts ([c0c9538](https://github.com/M0rtzz/m0rtzz.blog/commit/c0c9538))
+* 📝 doc(第四章-存储管理.md): update doc ([94e8918](https://github.com/M0rtzz/m0rtzz.blog/commit/94e8918))
 * 📝 doc(CHANGELOG.md): automatic update ([6de2472](https://github.com/M0rtzz/m0rtzz.blog/commit/6de2472))
 * 📝 doc(CHANGELOG.md): automatic update ([e1b1950](https://github.com/M0rtzz/m0rtzz.blog/commit/e1b1950))
-* 📝 doc(第四章-存储管理.md): update doc ([94e8918](https://github.com/M0rtzz/m0rtzz.blog/commit/94e8918))
 * 🔖 tag(package.json): v3.9.2 ([e7b4f49](https://github.com/M0rtzz/m0rtzz.blog/commit/e7b4f49))
 * 🔖 tag(package.json): v3.9.3 ([b840d7d](https://github.com/M0rtzz/m0rtzz.blog/commit/b840d7d))
 
@@ -1047,8 +1104,8 @@ All notable changes to this project will be documented in this file. See [commit
 * 💡 comment(pip.conf): comment nvidia python package site ([37eb807](https://github.com/M0rtzz/m0rtzz.blog/commit/37eb807))
 * 💩 poop(CHANGELOG.md): shit issue ([bf040b6](https://github.com/M0rtzz/m0rtzz.blog/commit/bf040b6))
 * 💩 poop(music.tsx): do not know how to o prevent audio stuttering ([84ed40e](https://github.com/M0rtzz/m0rtzz.blog/commit/84ed40e))
-* 💬 text(environment_configuration.md): from `不推荐` to `不宜` ([a6c6a74](https://github.com/M0rtzz/m0rtzz.blog/commit/a6c6a74))
 * 💬 text(environment_configuration.md): from `必须` to `必需` ([fe7e49e](https://github.com/M0rtzz/m0rtzz.blog/commit/fe7e49e))
+* 💬 text(environment_configuration.md): from `不推荐` to `不宜` ([a6c6a74](https://github.com/M0rtzz/m0rtzz.blog/commit/a6c6a74))
 * 💬 text(environment_configuration.md): update text ([b54b68f](https://github.com/M0rtzz/m0rtzz.blog/commit/b54b68f))
 * 💬 text(text.tsx): from `nvim` to `vim` ([ecbea61](https://github.com/M0rtzz/m0rtzz.blog/commit/ecbea61))
 * 📄 license: change reference ([d7fd067](https://github.com/M0rtzz/m0rtzz.blog/commit/d7fd067))
@@ -1894,3 +1951,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
