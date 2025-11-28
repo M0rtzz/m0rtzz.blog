@@ -270,7 +270,7 @@ const LinuxAwareComponent = () => {
           </div>
           <div className='flex items-center'>
             <p className='basis-1/4 text-center font-semibold'>E-mail</p>
-            <a href='mailto:m0rtzz@outlook.com'>m0rtzz@outlook.com</a>
+            <a href='mailto:zihang.xu@outlook.it'>zihang.xu@outlook.it</a>
           </div>
         </TypedContent>
       </Typed>
