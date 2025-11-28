@@ -1,16 +1,19 @@
-# Changelog
+## <small>5.1.1 (2025-11-28)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 📝 doc(CHANGELOG.md): automatic update ([15f938e](https://github.com/M0rtzz/m0rtzz.blog/commit/15f938e))
+* 📝 doc(CHANGELOG.md): automatic update ([e141a4d](https://github.com/M0rtzz/m0rtzz.blog/commit/e141a4d))
+* 🔖 tag(package.json): v5.0.9 ([1ab9cf2](https://github.com/M0rtzz/m0rtzz.blog/commit/1ab9cf2))
+* 🔖 tag(package.json): v5.1.0 ([ed13cf0](https://github.com/M0rtzz/m0rtzz.blog/commit/ed13cf0))
+* 🔖 tag(package.json): v5.1.1 ([6d4ba7b](https://github.com/M0rtzz/m0rtzz.blog/commit/6d4ba7b))
 
-## [5.1.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v5.0.9...v5.1.1) (2025-11-28)
 
-## 5.1.0 (2025-11-28)
 
-* 💬 text: update email ([510309d](https://github.com/M0rtzz/m0rtzz.blog/commit/510309d))
-* 📝 doc(CHANGELOG.md): automatic update ([66a935d](https://github.com/M0rtzz/m0rtzz.blog/commit/66a935d))
+## <small>5.0.9 (2025-11-28)</small>
+
+* 💬 text: update email ([29b322b](https://github.com/M0rtzz/m0rtzz.blog/commit/29b322b))
+* 📝 doc(CHANGELOG.md): automatic update ([c80dfa4](https://github.com/M0rtzz/m0rtzz.blog/commit/c80dfa4))
 * 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update settings ([058421e](https://github.com/M0rtzz/m0rtzz.blog/commit/058421e))
-* 🔖 tag(package.json): v5.0.9 ([05c12c9](https://github.com/M0rtzz/m0rtzz.blog/commit/05c12c9))
-* 🔖 tag(package.json): v5.1.0 ([291a765](https://github.com/M0rtzz/m0rtzz.blog/commit/291a765))
+* 🔖 tag(package.json): v5.0.9 ([bd301b0](https://github.com/M0rtzz/m0rtzz.blog/commit/bd301b0))
 
 
 
@@ -1959,3 +1962,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
