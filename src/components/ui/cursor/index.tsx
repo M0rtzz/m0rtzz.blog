@@ -76,6 +76,7 @@ export default function CursorInitializer() {
         [
           `a${exclude_element}`,
           `button${exclude_element}`,
+          `.toc-left${exclude_element}`,
           `summary${exclude_element}`,
           `[onclick]${exclude_element}`,
           `.col-span-3${exclude_element}`,
