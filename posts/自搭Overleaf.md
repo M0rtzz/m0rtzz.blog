@@ -205,7 +205,7 @@ yes | apt install inkscape fonts-noto-cjk-extra fonts-noto-color-emoji fonts-tex
 
 apt install -y python3-pip
 pip3 config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
-pip3 install Pygments --break-system-packages
+pip3 install latexminted Pygments --break-system-packages
 ```
 
 ## 重启容器
