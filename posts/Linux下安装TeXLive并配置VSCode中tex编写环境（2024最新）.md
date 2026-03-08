@@ -305,7 +305,9 @@ sudo chmod +x /usr/local/bin/tex-fmt
 "latex-workshop.formatting.tex-fmt.args": [
   "--nowrap",
   "--tabsize=4"
-]
+],
+// 禁用Magic Comments
+"latex-workshop.latex.build.enableMagicComments": false
 ```
 
 配置完之后侧边栏会出现`TEX`按钮，里面的内容对应了我们刚才的配置：
