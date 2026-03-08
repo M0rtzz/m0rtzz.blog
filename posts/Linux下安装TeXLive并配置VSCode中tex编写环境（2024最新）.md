@@ -142,6 +142,12 @@ sudo chmod +x /usr/local/bin/tex-fmt
 // LaTeX
 "latex-workshop.latex.recipes": [
   {
+    "name": "lualatex",
+    "tools": [
+      "lualatex"
+    ]
+  },
+  {
     "name": "xelatex",
     "tools": [
       "xelatex"
@@ -151,12 +157,6 @@ sudo chmod +x /usr/local/bin/tex-fmt
     "name": "pdflatex",
     "tools": [
       "pdflatex"
-    ]
-  },
-  {
-    "name": "lualatex",
-    "tools": [
-      "lualatex"
     ]
   },
   {
@@ -181,6 +181,15 @@ sudo chmod +x /usr/local/bin/tex-fmt
       "bibtex",
       "xelatex",
       "xelatex"
+    ]
+  },
+  {
+    "name": "lualatex -> bibtex -> lualatex * 2",
+    "tools": [
+      "lualatex",
+      "bibtex",
+      "lualatex",
+      "lualatex"
     ]
   },
 ],
