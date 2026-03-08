@@ -41,8 +41,7 @@ sudo apt install libdigest-perl-md5-perl perl-tk
 在下载iso的目录打开终端：
 
 ```bash
-sudo chmod 777 texlive.iso
-sudo mount -o loop texlive.iso /mnt
+sudo mount -o ro,loop texlive.iso /mnt
 cd /mnt
 ls
 sudo ./install-tl -gui
