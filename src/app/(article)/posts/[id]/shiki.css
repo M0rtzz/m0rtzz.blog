@@ -3,7 +3,7 @@
     background-color: var(--shiki-dark-bg) !important;
     font-style: normal !important; /* 代码块渲染禁止斜体 */
     /* font-style: var(--shiki-dark-font-style) !important; */
-    font-weight: var(--shiki-dark-font-weight) !important;
+    font-weight: normal !important;
     text-decoration: var(--shiki-dark-text-decoration) !important;
 
     span {
@@ -86,6 +86,17 @@
 }
 
 /* Shiki transformers */
+.shiki,
+.shiki code,
+.shiki span,
+.shiki code span {
+  font-family: var(--font-code) !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-synthesis-style: none;
+  font-synthesis-weight: none;
+}
+
 .shiki {
   .diff,
   .highlighted {

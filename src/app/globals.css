@@ -26,6 +26,15 @@
   --border: #e5e7eb;
 
   --font-remote: var(--font-remote-sans);
+  --font-code:
+    var(--font-remote-mono),
+    ui-monospace,
+    'SFMono-Regular',
+    'SF Mono',
+    Consolas,
+    'Liberation Mono',
+    Menlo,
+    monospace;
 
   .shiki,
   .shiki span {
@@ -125,6 +134,14 @@
 
 code::marker {
   color: transparent !important;
+}
+
+:not(pre) > code {
+  font-family: var(--font-code) !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-synthesis-style: none;
+  font-synthesis-weight: none;
 }
 
 /* Markdown */

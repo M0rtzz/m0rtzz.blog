@@ -1,6 +1,7 @@
 import { clsx } from 'clsx'
 import { DarkToggleProvider, DarkToggleScript } from 'dark-toggle/react'
 import { Nunito, Handlee, Sorts_Mill_Goudy } from 'next/font/google'
+import localFont from 'next/font/local'
 
 import CursorInitializer from "@/components/ui/cursor"
 import { Provider } from '@/provider'
@@ -29,6 +30,43 @@ const handwriting = Handlee({
   weight: ['400'],
   subsets: ['latin'],
   variable: '--font-remote-handwriting',
+  display: 'swap',
+})
+
+const mono = localFont({
+  src: [
+    {
+      path: './fonts/FiraCodeNerdFontMono-Light.woff2',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: './fonts/FiraCodeNerdFontMono-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/FiraCodeNerdFontMono-Retina.woff2',
+      weight: '450',
+      style: 'normal',
+    },
+    {
+      path: './fonts/FiraCodeNerdFontMono-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: './fonts/FiraCodeNerdFontMono-SemiBold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: './fonts/FiraCodeNerdFontMono-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-remote-mono',
   display: 'swap',
 })
 
@@ -74,7 +112,12 @@ export default function RootLayout({ children }) {
     <html
       lang='en'
       suppressHydrationWarning
-      className={clsx(sans.variable, serif.variable, handwriting.variable)}
+      className={clsx(
+        sans.variable,
+        serif.variable,
+        handwriting.variable,
+        mono.variable,
+      )}
     >
       <head>
         <link
