@@ -2,7 +2,11 @@ import Link from 'next/link'
 
 import { IconHash } from '@tabler/icons-react'
 
-import { createSummary, getSummary, writeSummery } from '@/service/summary'
+import {
+  canCreateSummary,
+  ensureSummary,
+  getSummary,
+} from '@/service/summary'
 
 import { Block } from '../blocks/block'
 
@@ -18,21 +22,15 @@ export const Post = async (props: PostProps) => {
   const firstLabel = labels.nodes[0]
 
   const summaryJson = await getSummary()
-
-  const currentSummary = summaryJson[number]
+  let currentSummary = summaryJson[number]
 
   if (
     !currentSummary &&
     bodyText &&
     process.env.NODE_ENV === 'development' &&
-    process.env.OPENAI_API_KEY
+    canCreateSummary()
   ) {
-    const result = await createSummary(bodyText)
-    if (result) {
-      const newSummaryJson = await getSummary()
-      newSummaryJson[number] = result
-      await writeSummery(newSummaryJson)
-    }
+    currentSummary = await ensureSummary(number, bodyText)
   }
 
   return (
