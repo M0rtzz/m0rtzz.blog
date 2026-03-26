@@ -1,0 +1,17 @@
+{
+  "3": "A practical ZZU-RoboCup setup guide covering drivers, CUDA, ROS, OpenCV, Conda, and essential Linux dependencies.",
+  "4": "A step-by-step Ubuntu guide to installing TeX Live and building a smooth LaTeX workflow in VSCode.",
+  "5": "Set up commit conventions and automated CHANGELOG generation with Commitizen and conventional-changelog on Ubuntu.",
+  "6": "Install XDM on Linux, then localize the interface for a smoother IDM-like download manager experience.",
+  "7": "A workable route to unpack a Wallpaper Engine `.pkg`, extract the video, and reuse it on Linux.",
+  "8": "Export a CSDN favorites list to local files by running a small script in the browser console.",
+  "9": "Experiment notes for the OS lab, covering scoring scripts, threading, sockets, and Linux 0.12 system-call changes.",
+  "10": "Exam-focused notes on operating system goals, structure, interfaces, and core management functions.",
+  "11": "Exam-focused notes on processor modes, interrupts, threads, scheduling, and context switching.",
+  "12": "Exam-focused notes on synchronization, mutual exclusion, communication, and deadlock strategies.",
+  "13": "Exam-focused notes on memory allocation, relocation, paging, segmentation, and virtual memory.",
+  "14": "Exam-focused notes on I/O devices, controllers, scheduling, buffering, and device management layers.",
+  "15": "Exam-focused notes on file concepts, directory structures, access methods, and disk space management.",
+  "16": "Exam-focused AI notes on definitions, goals, knowledge, reasoning, and natural language processing.",
+  "17": "A practical walkthrough for deploying Overleaf with Docker, toolkit configuration, and template management."
+}
