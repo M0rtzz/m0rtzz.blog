@@ -314,6 +314,12 @@ sudo chmod +x /usr/local/bin/tex-fmt
   "--nowrap",
   "--tabsize=4"
 ],
+// BibTeX 字段缩进使用 4 个空格
+"latex-workshop.bibtex-format.tab": "4 spaces",
+// 将每个字段的等号纵向对齐
+"latex-workshop.bibtex-format.align-equal.enabled": true,
+// 最后一个字段后不保留逗号
+"latex-workshop.bibtex-format.trailingComma": false,
 // 禁用Magic Comments
 "latex-workshop.latex.build.enableMagicComments": false
 ```
