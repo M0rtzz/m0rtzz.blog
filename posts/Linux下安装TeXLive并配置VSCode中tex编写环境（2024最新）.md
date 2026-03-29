@@ -308,8 +308,8 @@ sudo chmod +x /usr/local/bin/tex-fmt
 // 用于反向同步的内部查看器的键绑定。ctrl/cmd + 点击（默认）或双击
 "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
 // 禁用Magic Comments
-"latex-workshop.latex.build.enableMagicComments": false
-// "latexindent" "tex-fmt"
+"latex-workshop.latex.build.enableMagicComments": false,
+// "latexindent"或"tex-fmt"
 "latex-workshop.formatting.latex": "tex-fmt",
 // "tex-fmt"参数
 "latex-workshop.formatting.tex-fmt.args": [
@@ -327,18 +327,48 @@ sudo chmod +x /usr/local/bin/tex-fmt
 "latex-workshop.bibtex-format.case.field": "lowercase",
 // 统一条目类型名（如@article，@inproceedings）为小写
 "latex-workshop.bibtex-format.case.type": "lowercase",
-// 是否开启条目内部“字段”的排序功能
+// 处理重复条目：在编辑器中高亮标记重复的文献（防止重复引用）
+"latex-workshop.bibtex-format.handleDuplicates": "Highlight Duplicates",
+// 设置字段值的包裹符号：使用大括号
+"latex-workshop.bibtex-format.surround": "Curly braces",
+// 保存或手动格式化时不自动对所有文献条目进行排序
+"latex-workshop.bibtex-format.sort.enabled": false,
+// 开启条目内部字段的排序功能
 "latex-workshop.bibtex-fields.sort.enabled": true,
 // 定义字段的排列顺序，未列出的字段将按字母顺序排在这些字段后面
 "latex-workshop.bibtex-fields.order": [
+  // 1. 文献标识：标题与作者
   "title",
   "author",
+  // 2. 时间维度：紧跟载体
   "year",
+  "month",
+  // 3. 发表载体：会议、期刊、学校或机构
   "booktitle",
   "journal",
+  "school", // 学位授予单位
+  "institution", // 报告发布机构
+  "organization", // 会议/出版相关组织
+  // 4. 出版细节：卷、期、页码
+  "volume",
+  "number",
+  "series", // 论文系列
   "pages",
+  "numpages", // 总页数
+  // 5. 出版与地理信息
+  "publisher",
+  "address", // 出版地
+  "location", // 会议举办地
+  // 6. 数字身份与链接
   "doi",
-  "abstract"
+  "url",
+  "isbn",
+  "issn",
+  "eprint", // 预印本标识（如arXiv）
+  // 7. 补充信息与长文本
+  "note",
+  "abstract",
+  "keywords"
 ]
 ```
 
