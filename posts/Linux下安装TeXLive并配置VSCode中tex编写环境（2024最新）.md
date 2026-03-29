@@ -307,6 +307,8 @@ sudo chmod +x /usr/local/bin/tex-fmt
 "latex-workshop.latex.recipe.default": "lastUsed",
 // 用于反向同步的内部查看器的键绑定。ctrl/cmd + 点击（默认）或双击
 "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+// 禁用Magic Comments
+"latex-workshop.latex.build.enableMagicComments": false
 // "latexindent" "tex-fmt"
 "latex-workshop.formatting.latex": "tex-fmt",
 // "tex-fmt"参数
@@ -321,8 +323,23 @@ sudo chmod +x /usr/local/bin/tex-fmt
 "latex-workshop.bibtex-format.align-equal.enabled": true,
 // 最后一个字段后不保留逗号
 "latex-workshop.bibtex-format.trailingComma": false,
-// 禁用Magic Comments
-"latex-workshop.latex.build.enableMagicComments": false
+// 统一字段名（如title，author）为小写
+"latex-workshop.bibtex-format.case.field": "lowercase",
+// 统一条目类型名（如@article，@inproceedings）为小写
+"latex-workshop.bibtex-format.case.type": "lowercase",
+// 是否开启条目内部“字段”的排序功能
+"latex-workshop.bibtex-fields.sort.enabled": true,
+// 定义字段的排列顺序，未列出的字段将按字母顺序排在这些字段后面
+"latex-workshop.bibtex-fields.order": [
+  "title",
+  "author",
+  "year",
+  "booktitle",
+  "journal",
+  "pages",
+  "doi",
+  "abstract"
+]
 ```
 
 配置完之后侧边栏会出现`TEX`按钮，里面的内容对应了我们刚才的配置：
