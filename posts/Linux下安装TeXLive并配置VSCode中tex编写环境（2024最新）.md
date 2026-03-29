@@ -312,7 +312,8 @@ sudo chmod +x /usr/local/bin/tex-fmt
 // "tex-fmt"参数
 "latex-workshop.formatting.tex-fmt.args": [
   "--nowrap",
-  "--tabsize=4"
+  "--tabsize",
+  "4"
 ],
 // BibTeX字段缩进使用4个空格
 "latex-workshop.bibtex-format.tab": "4 spaces",
