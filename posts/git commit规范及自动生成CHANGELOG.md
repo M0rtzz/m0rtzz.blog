@@ -236,8 +236,8 @@ module.exports = {
             name: '👽️ api:\tUpdate code due to external API changes | API相关'
         },
         {
-            value: '🔐 secert',
-            name: '🔐 secert:\tSecert | 秘钥'
+            value: '🔐 secret',
+            name: '🔐 secret:\tSecret | 秘钥'
         },
         {
             value: '💸 fund',
