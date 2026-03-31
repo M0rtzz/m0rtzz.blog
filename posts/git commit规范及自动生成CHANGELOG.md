@@ -112,253 +112,266 @@ code .
 module.exports = {
     types: [
         {
-            value: '✨ feat',
-            name: '✨ feat:\tA new feature | 新功能'
+            value: "✨ feat",
+            name: "✨ feat:\tA new feature | 新功能"
         },
         {
-            value: '🚧 wip',
-            name: '🚧 wip:\tWork in progress | 正在开发中'
+            value: "🚧 wip",
+            name: "🚧 wip:\tWork in progress | 正在开发中"
         },
         {
-            value: '🐛 fix',
-            name: '🐛 fix:\tA bug fix | Bug 修复'
+            value: "🐛 fix",
+            name: "🐛 fix:\tA bug fix | Bug 修复"
         },
         {
-            value: '🎨 style',
-            name: '🎨 style:\tMarkup, white-space, formatting, missing semi-colons... | 风格'
+            value: "🎨 style",
+            name: "🎨 style:\tMarkup, whitespace, formatting, or missing semicolons | 风格"
         },
         {
-            value: '💡 comment',
-            name: '💡 comment:\tComment | 注释'
+            value: "💡 comment",
+            name: "💡 comment: Comment changes | 注释"
         },
         {
-            value: '🚚 path',
-            name: '🚚 path:\tMove or rename resources (e.g.: files, paths, routes) | 移动'
+            value: "🚚 path",
+            name: "🚚 path:\tMove or rename resources, files, paths, or routes | 移动"
         },
         {
-            value: '🔥 remove',
-            name: '🔥 remove:\tRemove code or files | 移除代码或文件'
+            value: "🔥 remove",
+            name: "🔥 remove: Remove files | 移除代码文件"
         },
         {
-            value: '⚰️ bury',
-            name: '⚰️  bury:\tBury dead code | 埋葬无用代码'
+            value: "⚰️ bury",
+            name: "⚰️  bury:\tBury dead code | 埋葬无用代码"
         },
         {
-            value: '🔧 config',
-            name: '🔧 config:\tAdd or update configuration files | 配置文件'
+            value: "🔧 config",
+            name: "🔧 config: Add or update configuration files | 配置文件"
         },
         {
-            value: '🍱 asset',
-            name: '🍱 asset:\tAdd or update assets | 资源'
+            value: "🍱 asset",
+            name: "🍱 asset: Add or update assets | 资源"
         },
         {
-            value: '📸 image',
-            name: '📸 image:\tAdd or update images | 图像'
+            value: "📸 image",
+            name: "📸 image: Add or update images | 图像"
         },
         {
-            value: '🔨 script',
-            name: '🔨 script:\tAdd or update the build system | 脚本'
+            value: "🔨 script",
+            name: "🔨 script: Add or update scripts or the build system | 脚本"
         },
         {
-            value: '💩 poop',
-            name: '💩 poop:\tPoop | 写了一些屎一样待优化的代码'
+            value: "💩 poop",
+            name: "💩 poop:\tLow-quality code that needs improvement | 写了一些屎一样待优化的代码"
         },
         {
-            value: '💄 ui',
-            name: '💄 ui:\tUpdated UI and style files | 更新UI'
+            value: "💄 ui",
+            name: "💄 ui:\tUpdate UI and style files | 更新 UI"
         },
         {
-            value: '🧱 chore',
-            name: '🧱 chore:\tBuild process or auxiliary tool changes | 构建/工程依赖/工具'
+            value: "🧱 chore",
+            name: "🧱 chore:\tBuild process, tooling, or auxiliary maintenance changes | 构建 / 工程依赖 / 工具"
         },
         {
-            value: '🚨 lint',
-            name: '🚨 lint:\tFix compiler or linter warnings | 编译/代码检查工具警告'
+            value: "🚨 lint",
+            name: "🚨 lint:\tFix compiler or linter warnings | 编译 / 代码检查工具警告"
         },
         {
-            value: '🚑️ hotfix',
-            name: '🚑️ hotfix:\tCritical hotfix | 紧急修复'
+            value: "🚑️ hotfix",
+            name: "🚑️ hotfix: Critical hotfix | 紧急修复"
         },
         {
-            value: '✏️ typo',
-            name: '✏️  typo:\tFix typos | 错别字'
+            value: "✏️ typo",
+            name: "✏️  typo:\tFix typos | 错别字"
         },
         {
-            value: '🏷️ type',
-            name: '🏷️  type:\tAdd or update types | 增加或更新类型'
+            value: "🏷️ type",
+            name: "🏷️  type:\tAdd or update types | 增加或更新类型"
         },
         {
-            value: '🛂 passport',
-            name: '🛂 passport:\tWork on code related to authorization, roles and permissions | 授权、身份和权限相关'
+            value: "🛂 passport",
+            name: "🛂 passport: Authorization, roles, and permissions work | 授权、身份和权限相关"
         },
         {
-            value: '🦺 val',
-            name: '🦺 val:\tAdd or update code related to validation | 验证相关'
+            value: "🦺 val",
+            name: "🦺 val:\tAdd or update validation logic | 验证相关"
         },
         {
-            value: '⚓ hook',
-            name: '⚓ hook:\tGit hook | 钩子'
+            value: "⚓ hook",
+            name: "⚓ hook:\tGit hook changes | 钩子"
         },
         {
-            value: '🐳 docker',
-            name: '🐳 docker:\tDocker container | Docker容器相关'
+            value: "🐳 docker",
+            name: "🐳 docker: Docker-related changes | Docker 容器相关"
         },
         {
-            value: '☸️ k8s',
-            name: '☸️  k8s:\tKubernetes | Kubernetes相关'
+            value: "☸️ k8s",
+            name: "☸️  k8s:\tKubernetes-related changes | Kubernetes 相关"
         },
         {
-            value: '💫 anim',
-            name: '💫 anim:\tAdd or update animations and transitions | 动画和过渡'
+            value: "💫 anim",
+            name: "💫 anim: Add or update animations and transitions | 动画和过渡"
         },
         {
-            value: '👔 logic',
-            name: '👔 logic:\tAdd or update business logic | 业务逻辑'
+            value: "👔 logic",
+            name: "👔 logic: Add or update business logic | 业务逻辑"
         },
         {
-            value: '💬 text',
-            name: '💬 text:\tAdd or update text and literals | 文本和文字'
+            value: "💬 text",
+            name: "💬 text:\tAdd or update copy, literals, or text content | 文本和文字"
         },
         {
-            value: '⚡️ perf',
-            name: '⚡️ perf:\tA code change that improves performance | 性能优化'
+            value: "⚡️ perf",
+            name: "⚡️ perf:\tA change that improves performance | 性能优化"
         },
         {
-            value: '🗃️ db',
-            name: '🗃️  db:\tPerform database related changes | 数据库相关'
+            value: "🗃️ db",
+            name: "🗃️  db:\tDatabase-related changes | 数据库相关"
         },
         {
-            value: '🧵 thread',
-            name: '🧵 thread:\tAdd or update code related to multithreading or concurrency | 线程'
+            value: "🧵 thread",
+            name: "🧵 thread: Multithreading or concurrency changes | 线程"
         },
         {
-            value: '👽️ api',
-            name: '👽️ api:\tUpdate code due to external API changes | API相关'
+            value: "👽️ api",
+            name: "👽️ api:\tChanges required by external API updates | API 相关"
         },
         {
-            value: '🔐 secret',
-            name: '🔐 secret:\tSecret | 秘钥'
+            value: "🔐 secret",
+            name: "🔐 secret: Secrets-related changes | 秘钥"
         },
         {
-            value: '💸 fund',
-            name: '💸 fund:\tAdd sponsorships or money related infrastructure | 资金相关'
+            value: "💸 fund",
+            name: "💸 fund:\tSponsorship or money-related infrastructure | 资金相关"
         },
         {
-            value: '🚀 deploy',
-            name: '🚀 deploy:\tDeploy stuff | 部署'
+            value: "🚀 deploy",
+            name: "🚀 deploy: Deployment changes | 部署"
         },
         {
-            value: '🚸 usability',
-            name: '🚸 usability:\tImprove user experience or usability | 增强用户体验/可用性'
+            value: "🚸 usability",
+            name: "🚸 usability: Improve user experience or usability | 增强用户体验 / 可用性"
         },
         {
-            value: '🌐 i18n',
-            name: '🌐 i18n:\tInternationalization | 国际化'
+            value: "🌐 i18n",
+            name: "🌐 i18n:\tInternationalization changes | 国际化"
         },
         {
-            value: '🌐 l10n',
-            name: '🌐 l10n:\tLocalization | 本地化'
+            value: "🌐 l10n",
+            name: "🌐 l10n:\tLocalization changes | 本地化"
         },
         {
-            value: '🔀 merge',
-            name: '🔀 merge:\tMerge branch | 合并'
+            value: "🔀 merge",
+            name: "🔀 merge: Merge branch changes | 合并"
         },
         {
-            value: '⏪ revert',
-            name: '⏪ revert:\tRevert | 回退'
+            value: "⏪ revert",
+            name: "⏪ revert: Revert changes | 回退"
         },
         {
-            value: '🔖 release',
-            name: '🔖 release:\tCreate a release commit | 发行版'
+            value: "🔖 release",
+            name: "🔖 release: Create a release commit | 发行版"
         },
         {
-            value: '📦 build',
-            name: '📦 build:\tBuild System | 打包构建'
+            value: "📦 build",
+            name: "📦 build:\tBuild system changes | 打包构建"
         },
         {
-            value: '🥅 catch',
-            name: '🥅 catch:\tCatch errors | 捕捉错误'
+            value: "🥅 catch",
+            name: "🥅 catch:\tAdd or improve error handling | 捕捉错误"
         },
         {
-            value: '💚 fix_ci',
-            name: '💚 fix_ci:\tFix CI Build | CI 修复'
+            value: "💚 fix_ci",
+            name: "💚 fix_ci: Fix CI build issues | CI 修复"
         },
         {
-            value: '👷 ci',
-            name: '👷 ci:\tCI related changes | CI 配置'
+            value: "👷 ci",
+            name: "👷 ci:\tCI-related changes | CI 配置"
         },
         {
-            value: '📈 monitor',
-            name: '📈 monitor:\tAdd or update analytics or track code | 分析或跟踪'
+            value: "📈 monitor",
+            name: "📈 monitor: Add or update analytics, metrics, or tracking | 分析或跟踪"
         },
         {
-            value: '♻️ refactor',
-            name: '♻️  refactor:\tA code change that neither fixes a bug or adds a feature | 代码重构'
+            value: "♻️ refactor",
+            name: "♻️  refactor: Refactor code without adding a feature or fixing a bug | 代码重构"
         },
         {
-            value: '🔊 add_log',
-            name: '🔊 add_log:\tAdd or update logs | 添加日志'
+            value: "🔊 add_log",
+            name: "🔊 add_log: Add or update logs | 添加日志"
         },
         {
-            value: '🔇 rm_log',
-            name: '🔇 rm_log:\tRemove logs | 移除日志'
+            value: "🔇 rm_log",
+            name: "🔇 rm_log: Remove logs | 移除日志"
         },
         {
-            value: '➕ add_dep',
-            name: '➕ add_dep:\tAdd dep | 添加依赖'
+            value: "➕ add_dep",
+            name: "➕ add_dep: Add a dependency | 添加依赖"
         },
         {
-            value: '➖ rm_dep',
-            name: '➖ rm_dep:\tRemove dep | 移除依赖'
+            value: "➖ rm_dep",
+            name: "➖ rm_dep: Remove a dependency | 移除依赖"
         },
         {
-            value: '⬆️ up_dep',
-            name: '⬆️  up_dep:\tUpgrade dep | 升级依赖'
+            value: "⬆️ up_dep",
+            name: "⬆️  up_dep: Upgrade a dependency | 升级依赖"
         },
         {
-            value: '⬇️ down_dep',
-            name: '⬇️  down_dep:\tDowngrade dep | 降级依赖'
+            value: "⬇️ down_dep",
+            name: "⬇️  down_dep: Downgrade a dependency | 降级依赖"
         },
         {
-            value: '📌 pin_dep',
-            name: '📌 pin_dep:\tPin dependencies to specific versions | 固定依赖版本'
+            value: "📌 pin_dep",
+            name: "📌 pin_dep: Pin dependencies to specific versions | 固定依赖版本"
         },
         {
-            value: '✅ test',
-            name: '✅ test:\tAdding tests | 测试'
+            value: "✅ test",
+            name: "✅ test:\tAdd or update tests | 测试"
         },
         {
-            value: '⚗️ exp',
-            name: '⚗️  exp:\tPerform experiments | 实验'
+            value: "⚗️ exp",
+            name: "⚗️  exp:\tExperimental changes | 实验"
         },
         {
-            value: '🎉 init',
-            name: '🎉 init:\tBegin a project | 初始化'
+            value: "🎉 init",
+            name: "🎉 init:\tBegin a project | 初始化"
         },
         {
-            value: '🙈 ignore',
-            name: '🙈 ignore:\tAdd or update a .gitignore file | 忽略'
+            value: "🙈 ignore",
+            name: "🙈 ignore: Add or update a .gitignore file | 忽略"
         },
         {
-            value: '📄 license',
-            name: '📄 license:\tAdd or update license | 证书'
+            value: "📄 license",
+            name: "📄 license: Add or update a license | 证书"
         },
         {
-            value: '📝 doc',
-            name: '📝 doc:\tDocumentation only changes | 文档'
-        },
+            value: "📝 doc",
+            name: "📝 doc:\tDocumentation-only changes | 文档"
+        }
     ],
     messages: {
-        type: '请选择提交类型(必填):',
-        customScope: '请输入文件修改范围(可选):',
-        subject: '请简要描述提交(必填):',
-        body: '请输入详细描述(可选):',
-        breaking: '列出任何\x1b[1;31mBREAKING CHANGES\x1b[0m(可选):',
-        footer: '请输入要关闭的\x1b[1;38;5;129missue\x1b[0m(可选):',
-        confirmCommit: '确定提交此说明吗？:'
+        type: "请选择提交类型 (必填):",
+        customScope: "请输入文件修改范围 (可选):",
+        subject: "请简要描述提交 (必填):",
+        body: "请输入详细描述 (可选):",
+        breaking: "列出任何 \x1b[1;31mBREAKING CHANGES\x1b[0m (可选):",
+        footer: "请输入要关闭的 \x1b[1;38;5;129missue\x1b[0m (可选):",
+        confirmCommit: "确定提交此说明吗？:"
     },
     allowCustomScopes: true,
-    allowBreakingChanges: ['✨ feat', '🐛 fix', '🚧 wip', '🔥 remove', '🚚 path', '💩 poop', '⏪ revert', '➖ rm_dep', '➕ add_dep', '⬆️ up_dep', '⬇️ down_dep', '📌 pin_dep'],
+    allowBreakingChanges: [
+        "✨ feat",
+        "🐛 fix",
+        "🚧 wip",
+        "🔥 remove",
+        "🚚 path",
+        "💩 poop",
+        "⏪ revert",
+        "➖ rm_dep",
+        "➕ add_dep",
+        "⬆️ up_dep",
+        "⬇️ down_dep",
+        "📌 pin_dep"
+    ],
     subjectLimit: 100
 };
 ```
