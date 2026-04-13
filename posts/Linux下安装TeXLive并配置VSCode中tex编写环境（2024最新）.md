@@ -362,6 +362,7 @@ sudo chmod +x /usr/local/bin/tex-fmt
   // 6. 数字身份与链接
   "doi",
   "url",
+  "urldate",
   "isbn",
   "issn",
   "eprint", // 预印本标识（如arXiv）
