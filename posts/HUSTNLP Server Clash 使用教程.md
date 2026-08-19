@@ -10,13 +10,13 @@
 
 登录服务器后执行：
 
-```bash
+```shell
 clashctl init # 首次必须使用；加载 hook 后可用 clashinit
 ```
 
 `init` 会创建当前用户的私有配置目录，并为当前 shell 注册兼容命令。根据 shell 类型加载一次：
 
-```bash
+```shell
 # Bash
 source "${HOME}/.bashrc"
 
@@ -26,7 +26,7 @@ source "${HOME}/.zshrc"
 
 之后可检查命令是否已加载：
 
-```bash
+```shell
 type clashctl
 type clashui
 clashctl doctor # 或：clashdoctor
@@ -62,7 +62,7 @@ clashctl doctor # 或：clashdoctor
 
 建议为订阅显式指定一个好记且唯一的名称：
 
-```bash
+```shell
 clashctl sub add -n 'My Airport' -u 'https://example.com/subscription-token' # 或：clashsub add -n 'My Airport' -u 'https://example.com/subscription-token'
 ```
 
@@ -72,13 +72,13 @@ clashctl sub add -n 'My Airport' -u 'https://example.com/subscription-token' # �
 
 查看当前订阅列表：
 
-```bash
+```shell
 clashctl sub ls # 或：clashsub ls
 ```
 
 列表中的 `*` 表示正在使用的订阅。当前订阅管理以“名称”为唯一标识，不使用数字 ID。
 
-```bash
+```shell
 # 切换订阅
 clashctl sub use 'My Airport' # 或：clashsub use 'My Airport'
 
@@ -103,20 +103,20 @@ clashctl sub del 'My Airport Backup' # 或：clashsub del 'My Airport Backup'
 
 加载 shell hook 后，使用：
 
-```bash
+```shell
 clashctl on # 或：clashon
 ```
 
 它会启动当前用户自己的 `mihomo`，并为**当前终端**设置 `http_proxy`、`https_proxy`、`all_proxy` 等环境变量。验证：
 
-```bash
+```shell
 clashctl status # 或：clashstatus
 curl -s http://ip-api.com
 ```
 
 关闭当前用户的服务并清除当前终端代理变量：
 
-```bash
+```shell
 clashctl off # 或：clashoff
 ```
 
@@ -126,7 +126,7 @@ clashctl off # 或：clashoff
 
 先启动自己的服务，再由当前 shell 执行导出的环境变量：
 
-```bash
+```shell
 clashctl on # 或：clashon
 eval "$(clashctl env)" # 或：eval "$(clashenv)"
 ```
@@ -137,19 +137,19 @@ eval "$(clashctl env)" # 或：eval "$(clashenv)"
 
 先确保服务已经运行：
 
-```bash
+```shell
 clashctl on # 或：clashon
 ```
 
 交互选择策略组和节点：
 
-```bash
+```shell
 clashctl node # 或：clashnode
 ```
 
 查看策略组、节点或帮助：
 
-```bash
+```shell
 clashctl node ls # 或：clashnode ls
 clashctl node -h # 或：clashnode -h
 ```
@@ -160,7 +160,7 @@ clashctl node -h # 或：clashnode -h
 
 执行：
 
-```bash
+```shell
 clashctl ui # 或：clashui
 ```
 
@@ -168,7 +168,7 @@ clashctl ui # 或：clashui
 
 查看当前控制台 secret：
 
-```bash
+```shell
 clashctl secret # 或：clashsecret
 ```
 
@@ -176,7 +176,7 @@ clashctl secret # 或：clashsecret
 
 ## 6. 常用排查命令
 
-```bash
+```shell
 # 当前用户的目录、PID、端口、controller、活动订阅
 clashctl doctor # 或：clashdoctor
 
@@ -210,13 +210,13 @@ clashctl node -h # 或：clashnode -h
 
 当前 shell 尚未加载 hook。Bash 执行：
 
-```bash
+```shell
 source "${HOME}/.bashrc"
 ```
 
 Z-shell 执行：
 
-```bash
+```shell
 source "${HOME}/.zshrc"
 ```
 
@@ -226,14 +226,14 @@ source "${HOME}/.zshrc"
 
 服务已经可以启动，但子进程无法直接修改你的终端环境变量。执行：
 
-```bash
+```shell
 source "${HOME}/.bashrc"
 clashctl on # 或：clashon
 ```
 
 或者执行：
 
-```bash
+```shell
 eval "$(clashctl env)" # 或：eval "$(clashenv)"
 ```
 
@@ -241,13 +241,13 @@ eval "$(clashctl env)" # 或：eval "$(clashenv)"
 
 先查看订阅日志：
 
-```bash
+```shell
 clashctl sub log # 或：clashsub log
 ```
 
 确认订阅链接仍然有效，再重试：
 
-```bash
+```shell
 clashctl sub update # 或：clashsub update
 ```
 
@@ -255,19 +255,33 @@ clashctl sub update # 或：clashsub update
 
 以下命令会停止并删除**当前用户**的配置、订阅和日志，不会删除共享程序，也不会影响其他用户：
 
-```bash
+```shell
 clashctl uninit # 或：clashuninit
 ```
 
 非交互脚本中才使用：
 
-```bash
+```shell
 clashctl uninit --yes # 或：clashuninit --yes
 ```
 
 ## 9. 简易图文教程
 
 ### A100 教程
+
+首先连接服务器后执行初始化：
+
+```shell
+clashctl init
+
+# Bash
+source ~/.bashrc
+
+# Z-shell
+source ~/.zshrc
+```
+
+查看自己的端口和密码：
 
 ![image-20260819165618508](https://static.m0rtzz.com/images/Year:2026/Month:08/Day:19/16:56:18_image-20260819165618508.png)
 
@@ -287,7 +301,19 @@ clashctl uninit --yes # 或：clashuninit --yes
 
 #### 这里以 A6000 为例
 
-首先正常连接服务器查看自己的端口和密码：
+首先连接服务器后执行初始化：
+
+```shell
+clashctl init
+
+# Bash
+source ~/.bashrc
+
+# Z-shell
+source ~/.zshrc
+```
+
+查看自己的端口和密码：
 
 ![image-20260819171531285](https://static.m0rtzz.com/images/Year:2026/Month:08/Day:19/17:15:31_image-20260819171531285.png)
 
