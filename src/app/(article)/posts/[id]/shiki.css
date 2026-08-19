@@ -281,6 +281,61 @@ code .line:last-child:empty {
   overflow-y: hidden;
 }
 
+/* Keep the Anya cursor visible over native code-block scrollbars. */
+.shiki,
+.shiki::-webkit-scrollbar,
+.shiki::-webkit-scrollbar-button,
+.shiki::-webkit-scrollbar-track,
+.shiki::-webkit-scrollbar-track-piece,
+.shiki::-webkit-scrollbar-thumb,
+.shiki::-webkit-scrollbar-thumb:hover,
+.shiki::-webkit-scrollbar-thumb:active,
+.shiki::-webkit-scrollbar-corner,
+.shiki::-webkit-resizer {
+  cursor: url('/cursor/frame/arrow_000.png') 0 0, auto;
+}
+
+.code-scrollbar {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .shiki {
+    scrollbar-width: none;
+  }
+
+  .shiki::-webkit-scrollbar {
+    display: none;
+  }
+
+  .code-scrollbar {
+    display: block;
+    position: relative;
+    z-index: 1;
+    height: 0.75rem;
+    margin-top: -0.75rem;
+    padding: 0.25rem;
+    cursor: url('/cursor/frame/arrow_000.png') 0 0, auto;
+    touch-action: none;
+  }
+
+  .code-scrollbar-thumb {
+    position: absolute;
+    top: 0.25rem;
+    bottom: 0.25rem;
+    min-width: 1.5rem;
+    border-radius: 9999px;
+    background: rgb(148 163 184 / 0.75);
+    cursor: url('/cursor/frame/move_000.png') 16 16, move;
+    touch-action: none;
+  }
+
+  .code-scrollbar-thumb:hover,
+  .code-scrollbar-thumb:focus-visible {
+    background: rgb(203 213 225 / 0.9);
+  }
+}
+
 .code-group-disable-spacing div.relative:nth-child(n) > pre:nth-child(n) {
   margin-top: 0 !important;
   margin-bottom: 0 !important;

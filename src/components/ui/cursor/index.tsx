@@ -31,6 +31,23 @@ export default function CursorInitializer() {
         "/cursor/ani/arrow.ani"
       );
 
+      // WebKit scrollbar pseudo-elements do not inherit the cursor animation
+      // from their scroll container, so register them explicitly.
+      setANICursor(
+        [
+          '.shiki::-webkit-scrollbar',
+          '.shiki::-webkit-scrollbar-button',
+          '.shiki::-webkit-scrollbar-track',
+          '.shiki::-webkit-scrollbar-track-piece',
+          '.shiki::-webkit-scrollbar-thumb',
+          '.shiki::-webkit-scrollbar-corner',
+          '.shiki::-webkit-resizer',
+        ].join(','),
+        "/cursor/ani/arrow.ani"
+      );
+
+      setANICursor('.code-scrollbar', "/cursor/ani/arrow.ani");
+
       // 文本输入状态
       setANICursorWithGroupElement(
         [
