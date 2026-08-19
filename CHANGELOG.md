@@ -1,8 +1,82 @@
-# Changelog
+## 5.3.0 (2026-08-19)
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 📝 doc(posts/HUSTNLP Server Clash 使用教程.md): update doc ([7608275](https://github.com/M0rtzz/m0rtzz.blog/commit/7608275))
+* 🔖 tag(package.json): v5.3.0 ([13ea772](https://github.com/M0rtzz/m0rtzz.blog/commit/13ea772))
 
-## [5.2.10](https://github.com/M0rtzz/m0rtzz.blog/compare/v5.2.9...v5.2.10) (2026-08-19)
+
+
+## <small>5.2.9 (2026-08-19)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([e5c4c19](https://github.com/M0rtzz/m0rtzz.blog/commit/e5c4c19))
+* 📝 doc(posts/HUSTNLP Server Clash 使用教程.md): update doc ([f6a5b52](https://github.com/M0rtzz/m0rtzz.blog/commit/f6a5b52))
+* 🔖 tag(package.json): v5.2.9 ([45149b3](https://github.com/M0rtzz/m0rtzz.blog/commit/45149b3))
+
+
+
+## <small>5.2.8 (2026-08-19)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([0200b7a](https://github.com/M0rtzz/m0rtzz.blog/commit/0200b7a))
+* 📝 doc(posts/HUSTNLP Server Clash 使用教程.md): update doc ([53412f9](https://github.com/M0rtzz/m0rtzz.blog/commit/53412f9))
+* 🔖 tag(package.json): v5.2.8 ([be230e4](https://github.com/M0rtzz/m0rtzz.blog/commit/be230e4))
+
+
+
+## <small>5.2.7 (2026-08-19)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([4d5768e](https://github.com/M0rtzz/m0rtzz.blog/commit/4d5768e))
+* 📝 doc(posts/HUST NLP Server Clash 使用教程.md): add doc ([b4b4f46](https://github.com/M0rtzz/m0rtzz.blog/commit/b4b4f46))
+* 🔖 tag(package.json): v5.2.7 ([6065821](https://github.com/M0rtzz/m0rtzz.blog/commit/6065821))
+
+
+
+## <small>5.2.6 (2026-04-13)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([7cffbcb](https://github.com/M0rtzz/m0rtzz.blog/commit/7cffbcb))
+* 📝 doc(git commit规范及自动生成CHANGELOG.md): update doc ([48bd3dc](https://github.com/M0rtzz/m0rtzz.blog/commit/48bd3dc))
+* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update doc ([8632209](https://github.com/M0rtzz/m0rtzz.blog/commit/8632209))
+* 🔖 tag(package.json): v5.2.6 ([2daf810](https://github.com/M0rtzz/m0rtzz.blog/commit/2daf810))
+
+
+
+## <small>5.2.5 (2026-03-31)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([5a21730](https://github.com/M0rtzz/m0rtzz.blog/commit/5a21730))
+* 📝 doc(git commit规范及自动生成CHANGELOG.md): update doc ([ee1ee85](https://github.com/M0rtzz/m0rtzz.blog/commit/ee1ee85))
+* 🔖 tag(package.json): v5.2.5 ([022a95b](https://github.com/M0rtzz/m0rtzz.blog/commit/022a95b))
+
+
+
+## <small>5.2.4 (2026-03-29)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([7f98507](https://github.com/M0rtzz/m0rtzz.blog/commit/7f98507))
+* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update settsing.json ([b78d76c](https://github.com/M0rtzz/m0rtzz.blog/commit/b78d76c))
+* 🔖 tag(package.json): v5.2.4 ([ee668ea](https://github.com/M0rtzz/m0rtzz.blog/commit/ee668ea))
+
+
+
+## <small>5.2.3 (2026-03-29)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([0a4e57f](https://github.com/M0rtzz/m0rtzz.blog/commit/0a4e57f))
+* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update settings.json ([98ff34f](https://github.com/M0rtzz/m0rtzz.blog/commit/98ff34f))
+* 🔖 tag(package.json): v5.2.3 ([61b82f9](https://github.com/M0rtzz/m0rtzz.blog/commit/61b82f9))
+
+
+
+## <small>5.2.2 (2026-03-29)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([9486dee](https://github.com/M0rtzz/m0rtzz.blog/commit/9486dee))
+* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update settings.json ([529f395](https://github.com/M0rtzz/m0rtzz.blog/commit/529f395))
+* 🔖 tag(package.json): v5.2.2 ([ba40010](https://github.com/M0rtzz/m0rtzz.blog/commit/ba40010))
+
+
+
+## <small>5.2.1 (2026-03-28)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([7600cd4](https://github.com/M0rtzz/m0rtzz.blog/commit/7600cd4))
+* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update comment ([b1d6ca9](https://github.com/M0rtzz/m0rtzz.blog/commit/b1d6ca9))
+* 🔖 tag(package.json): v5.2.1 ([16da064](https://github.com/M0rtzz/m0rtzz.blog/commit/16da064))
+
+
 
 ## 5.2.0 (2026-03-28)
 
@@ -2042,3 +2116,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
