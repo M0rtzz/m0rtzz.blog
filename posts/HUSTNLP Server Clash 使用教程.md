@@ -63,7 +63,7 @@ clashctl doctor # 或：clashdoctor
 建议为订阅显式指定一个好记且唯一的名称：
 
 ```shell
-clashctl sub add -n 'My Airport' -u 'https://example.com/subscription-token' # 或：clashsub add -n 'My Airport' -u 'https://example.com/subscription-token'
+clashctl sub add -n "${USER}" -u 'https://example.com/subscription-token' # 或：clashsub add -n "${USER}" -u 'https://example.com/subscription-token'
 ```
 
 - `-n` 指定订阅名称。
@@ -80,7 +80,7 @@ clashctl sub ls # 或：clashsub ls
 
 ```shell
 # 切换订阅
-clashctl sub use 'My Airport' # 或：clashsub use 'My Airport'
+clashctl sub use "${USER}" # 或：clashsub use "${USER}"
 
 # 不带参数时，交互选择并切换订阅
 clashctl sub # 或：clashsub
@@ -89,11 +89,11 @@ clashctl sub # 或：clashsub
 clashctl sub update # 或：clashsub update
 
 # 更新指定订阅或全部订阅
-clashctl sub update 'My Airport' # 或：clashsub update 'My Airport'
+clashctl sub update "${USER}" # 或：clashsub update "${USER}"
 clashctl sub update --all # 或：clashsub update --all
 
 # 重命名或删除订阅
-clashctl sub rename 'My Airport' 'My Airport Backup' # 或：clashsub rename 'My Airport' 'My Airport Backup'
+clashctl sub rename "${USER}" 'My Airport Backup' # 或：clashsub rename "${USER}" 'My Airport Backup'
 clashctl sub del 'My Airport Backup' # 或：clashsub del 'My Airport Backup'
 ```
 
@@ -281,11 +281,19 @@ source ~/.bashrc
 source ~/.zshrc
 ```
 
+添加和应用订阅：
+
+```shell
+clashsub add -n "${USER}" -u 'https://example.com/subscription-token'
+clashsub ls
+clashsub use "${USER}"
+```
+
 查看自己的端口和密码：
 
 ![image-20260819165618508](https://static.m0rtzz.com/images/Year:2026/Month:08/Day:19/16:56:18_image-20260819165618508.png)
 
-输入主机、端口、密码并登录：
+然后输入主机、端口、密码并登录：
 
 ![image-20260819165637079](https://static.m0rtzz.com/images/Year:2026/Month:08/Day:19/16:56:37_image-20260819165637079.png)
 
@@ -311,6 +319,14 @@ source ~/.bashrc
 
 # Z-shell
 source ~/.zshrc
+```
+
+添加和应用订阅：
+
+```shell
+clashsub add -n "${USER}" -u 'https://example.com/subscription-token'
+clashsub ls
+clashsub use "${USER}"
 ```
 
 查看自己的端口和密码：
