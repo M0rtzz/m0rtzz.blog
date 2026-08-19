@@ -1,7 +1,9 @@
 # HUSTNLP Server Clash 使用教程
 
-本文面向 HUSTNLP 的所有同学。每个人使用自己的订阅、节点、端口和 `mihomo` 进程；不需要 `sudo`，也不会影响其他用户。
+本文面向 HUSTNLP 的所有同学。每个人使用自己的订阅、节点、端口和 `mihomo` 进程；不需要 `sudo`，也不会影响其他用户
 
+> [!WARNING]
+>
 > 不要把订阅链接、Web 控制台 secret 或自己的配置目录分享给其他人。订阅链接通常包含可直接使用的 token。
 
 快速配置可直接跳转至[简易图文教程](https://www.m0rtzz.com/posts/19#9-简易图文教程)。
