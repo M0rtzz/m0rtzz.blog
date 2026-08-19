@@ -1,17 +1,8 @@
-## <small>5.3.2 (2026-08-19)</small>
+# Changelog
 
-* 💄 ui(cursor): add custom code scrollbar with centered Anya cursors ([c617647](https://github.com/M0rtzz/m0rtzz.blog/commit/c617647))
-* 🔖 tag(package.json): v5.3.2 ([a0e4791](https://github.com/M0rtzz/m0rtzz.blog/commit/a0e4791))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>5.3.1 (2026-08-19)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([dc7f27c](https://github.com/M0rtzz/m0rtzz.blog/commit/dc7f27c))
-* 📝 doc(posts/HUSTNLP Server Clash 使用教程.md): update doc ([e50685f](https://github.com/M0rtzz/m0rtzz.blog/commit/e50685f))
-* 🔖 tag(package.json): v5.3.1 ([939ae7f](https://github.com/M0rtzz/m0rtzz.blog/commit/939ae7f))
-
-
+## [5.3.3](https://github.com/M0rtzz/m0rtzz.blog/compare/v5.3.2...v5.3.3) (2026-08-19)
 
 ## 5.3.0 (2026-08-19)
 
@@ -2132,5 +2123,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
