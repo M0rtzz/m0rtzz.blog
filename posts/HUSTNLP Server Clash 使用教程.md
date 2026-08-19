@@ -301,6 +301,15 @@ clashsub use "${USER}"
 
 ![image-20260819165744659](https://static.m0rtzz.com/images/Year:2026/Month:08/Day:19/16:57:44_image-20260819165744659.png)
 
+开启终端代理并测试：
+
+```shell
+clashon
+curl -s http://ip-api.com
+```
+
+![image-20260819230306185](https://static.m0rtzz.com/images/Year%3A2026/Month%3A08/Day%3A19/23%3A03%3A06_image-20260819230306185.png)
+
 ### A6000、3090 教程
 
 > [!NOTE]
@@ -360,6 +369,15 @@ ssh -N -T \
 同理，测速并切换节点：
 
 ![image-20260819172658239](https://static.m0rtzz.com/images/Year:2026/Month:08/Day:19/17:26:58_image-20260819172658239.png)
+
+开启终端代理并测试：
+
+```shell
+clashon
+curl -s http://ip-api.com
+```
+
+![image-20260819231115617](https://static.m0rtzz.com/images/Year%3A2026/Month%3A08/Day%3A19/23%3A11%3A15_image-20260819231115617.png)
 
 > [!TIP]
 >
