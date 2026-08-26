@@ -247,12 +247,12 @@ code::marker {
   margin-bottom: 1rem;
 }
 
-.small-line-numbers>p:nth-child(1) {
-  display: none;
+.small-line-numbers>p:first-child {
+  margin-top: 0;
 }
 
-.small-line-numbers>p:nth-child(2) {
-  margin-top: 0;
+.small-line-numbers>p:last-child {
+  margin-bottom: 0;
 }
 
 /* 表格行 */
@@ -280,6 +280,21 @@ table td {
 th,
 td {
   border: 1px solid gray;
+}
+
+/* 表格首列与其他列保持相同的左侧内边距 */
+.prose :where(th:first-child, td:first-child):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+  padding-inline-start: 0.5714286em;
+}
+
+/* 表格末列与其他列保持相同的右侧内边距 */
+.prose :where(th:last-child, td:last-child):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+  padding-inline-end: 0.5714286em;
+}
+
+/* 覆盖 Typography 的 baseline，使换行单元格垂直居中 */
+.prose :where(tbody td, tfoot td):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+  vertical-align: middle;
 }
 
 /* 引用框上下距离 */

@@ -241,19 +241,20 @@ code .line:last-child:empty {
 
 .small-line-numbers code .line::after {
   content: '';
-  position: -webkit-sticky;
+  position: absolute;
   left: 2rem;
   top: 0;
   bottom: 0;
-  height: 120%; /* 解决Chromium内核浏览器竖线不连接的问题 */
   border-left: 1px solid rgba(100, 120, 130, 0.6);
 }
 
 .small-line-numbers code {
   font-size: smaller;
+  line-height: 1.5rem;
 }
 
 .small-line-numbers pre {
+  padding-block: 0.5rem;
   border-radius: 0.375rem;
 }
 
@@ -261,18 +262,11 @@ code .line:last-child:empty {
   border-radius: 0.25rem;
 }
 
-.absolute-small {
-  width: 4.2rem;
-  height: 2rem;
-}
-
 .small-line-numbers .copy-button {
   @apply right-3;
+  top: 50%;
+  translate: 0 -50%;
   font-size: smaller;
-  .absolute-small {
-    width: 4.05rem;
-    height: 2rem;
-  }
 }
 
 /* 解决代码越界bug */
