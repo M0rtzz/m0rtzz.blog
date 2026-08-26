@@ -33,7 +33,7 @@
 
 用于存放实验室成员共享且需要长期使用的模型文件。
 
-通过 Hugging Face CLI、ModelScope 等工具下载官方开放模型，并显式指定 `local_dir` 时，***应将目标位置统一设在该目录下***，例如：
+通过 Hugging Face CLI、ModelScope 等工具下载官方开放模型，并显式指定 `local_dir` 时，***应将目标位置统一设在该目录下，***例如：
 
 ```plaintext
 /nas/Models/
@@ -43,7 +43,7 @@
 └── ...
 ```
 
-如果模型已经存在于 `/nas/Models`，请优先直接使用，***避免重复下载***。
+如果模型已经存在于 `/nas/Models`，请优先直接使用，***避免重复下载。***
 
 例如，可以按模型组织和名称建立目录：
 
@@ -70,7 +70,7 @@ modelscope download --model <组织名>/<模型名> \
 
 用于存放实验室共享的数据集。
 
-通过 Hugging Face CLI、ModelScope 等工具下载公开数据集，并显式指定 `local_dir` 时，***应将目标位置统一设在***：
+通过 Hugging Face CLI、ModelScope 等工具下载公开数据集，并显式指定 `local_dir` 时，***应将目标位置统一设在：***
 
 ```plaintext
 /nas/Datasets
@@ -402,8 +402,8 @@ rm -rf /nas/DO_NOT_EDIT_OR_DELETE_SHARED_CACHE/HuggingFace/datasets/*
 公开数据集（显式 local_dir）   → /nas/Datasets
 个人代码、实验数据、自训权重   → /nas/Users/${USER}
 Conda 环境                      → 可以保留在服务器本地
-代码默认调用产生的 HF 缓存      → /nas/DO_NOT_EDIT_OR_DELETE_SHARED_CACHE/HuggingFace
-HF 个人 Token                   → ${HOME}/.cache/huggingface/token
+代码默认调用产生的 Hugging Face 缓存      → /nas/DO_NOT_EDIT_OR_DELETE_SHARED_CACHE/HuggingFace
+Hugging Face 个人 Token                   → ${HOME}/.cache/huggingface/token
 ```
 
 ## 使用建议

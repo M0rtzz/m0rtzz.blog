@@ -8,7 +8,7 @@ import {
 import clsx from 'clsx'
 
 interface AlertProps {
-  type: 'note' | 'tip' | 'important' | 'warning ' | 'caution'
+  type: 'note' | 'tip' | 'important' | 'warning' | 'caution'
   children: React.ReactNode
 }
 
