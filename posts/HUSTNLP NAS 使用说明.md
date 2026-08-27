@@ -36,7 +36,7 @@ summary: "A practical HUSTNLP NAS guide covering shared models, datasets, person
 ```
 
 > [!IMPORTANT]
-> **除 *Conda* 环境外，**请尽量将***个人代码仓库、实验数据、日志、输出结果以及自行训练或微调产生的模型权重和 Checkpoint*** 全部放在 `/nas/Users/${USER}` 中。 
+> ***除 Conda 环境外，***请尽量将***个人代码仓库、实验数据、日志、输出结果以及自行训练或微调产生的模型权重和 Checkpoint*** 全部放在 `/nas/Users/${USER}` 中。
 >
 > ***通过 Hugging Face、ModelScope 等平台获取的官方开放模型和公开数据集，***如果使用命令行工具显式指定 `--local-dir` 或 `--local_dir` 下载，则应分别保存到 `/nas/Models` 和 `/nas/Datasets`。代码中按默认方式加载的资源通常会自动进入共享缓存。
 
@@ -165,7 +165,7 @@ modelscope download --dataset <组织名>/<数据集名> \
    ```
 
 > [!WARNING]
-> 当前 NAS 使用 CIFS/SMB 挂载，NAS 内部不支持创建符号链接（symlink）。Git 工作树本身使用普通目录和 `.git` 管理文件，可以正常创建；不要在 `/nas` 内手动创建项目内部软连接。上面的 `ln -s` 命令创建的链接位于 `collab` 的 `${HOME}` 中，目标指向 `/nas/Projects/<项目名>`，因此不属于在 NAS 内部创建软连接。成员也可以在自己的本地 `${HOME}` 中创建指向项目目录的软连接，以便访问项目。
+> 上面的 `ln -s` 命令创建的链接位于 `collab` 的 `${HOME}` 中，目标指向 `/nas/Projects/<项目名>`。成员也可以在自己的本地 `${HOME}` 中创建指向项目目录的软连接，以便访问项目。
 
 > [!IMPORTANT]
 > `collab` 账号用于统一配置和维护项目环境，不代表成员日常开发必须使用该账号。日常代码修改、提交和推送应使用各自的个人账号及 Git 身份。

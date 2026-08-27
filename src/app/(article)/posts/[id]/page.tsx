@@ -27,6 +27,10 @@ import ReactTeX from "./tex"
 // shiki style
 import './shiki.css'
 
+const sourceMarkerPattern =
+  /^<!-- m0rtzz\.blog-source:[^>]* -->(?:\r?\n){1,2}/
+const legacySshConfigPattern = /```sshconfig\b/g
+
 interface PageProps {
   params: {
     id: string
@@ -66,10 +70,12 @@ export default async function Page({ params }: PageProps) {
   } = await queryAllPosts()
 
   const discussion = nodes.find(node => node.number === +id)!
-  const { body, bodyText, createdAt, labels, number, title, updatedAt } =
-    discussion
+  const { body, createdAt, labels, number, title, updatedAt } = discussion
+  const articleBody = body!
+    .replace(sourceMarkerPattern, '')
+    .replace(legacySshConfigPattern, '```ssh-config')
 
-  const toc = fromMarkdown(body!)
+  const toc = fromMarkdown(articleBody)
 
   const formatOptions = {
     day: 'numeric',
@@ -108,13 +114,13 @@ export default async function Page({ params }: PageProps) {
           </span>
           <span className='flex items-center gap-1'>
             <IconHourglassHigh className='size-3.5' />
-            {readingTime(bodyText!.length)} min to read
+            {readingTime(articleBody.length)} min to read
           </span>
         </div>
       </header>
       <article className='prose prose-slate max-w-none dark:prose-invert prose-code:break-words prose-pre:px-5 max-xl:col-start-2 max-sm:prose-pre:rounded-none sm:prose-img:rounded'>
         <Markdown
-          source={body!}
+          source={articleBody}
           useMDXComponents={() => ({
             Alert,
             CodeGroup,
