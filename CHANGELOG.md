@@ -1,3 +1,9 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [5.4.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v5.4.0...v5.4.1) (2026-08-27)
+
 ## 5.4.0 (2026-08-27)
 
 * 📝 doc(posts/HUSTNLP NAS 使用说明.md): update doc ([eeca6b3](https://github.com/M0rtzz/m0rtzz.blog/commit/eeca6b3))
@@ -2197,5 +2203,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
