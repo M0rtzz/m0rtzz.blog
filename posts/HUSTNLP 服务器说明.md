@@ -44,9 +44,9 @@ Host 3090
 
 ```shell
 ssh A100    # A100 服务器
-ssh A6000   # RTX 6000 服务器
-ssh 740     # RTX 4070 服务器
-ssh 3090    # RTX 3090 服务器
+ssh A6000   # A6000 服务器
+ssh 740     # 740 服务器
+ssh 3090    # 3090 服务器
 ```
 
 其中，`ProxyJump 100` 表示先通过 A100 建立跳转，再连接对应的内网服务器；`ForwardAgent yes` 用于允许 740 服务器使用本机转发的 SSH Agent。
