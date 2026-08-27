@@ -6,7 +6,7 @@ labels:
   - "Environment"
   - "LaTeX"
   - "Configuration"
-title: "自搭Overleaf"
+title: "自搭 Overleaf"
 summary: "A practical walkthrough for deploying Overleaf with Docker, toolkit configuration, and template management."
 ---
 

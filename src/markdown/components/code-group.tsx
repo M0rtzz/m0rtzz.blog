@@ -12,18 +12,13 @@ const CodeGroup = (props: CodeGroupProps) => {
   const { children } = props
   const [index, setIndex] = useState(0)
 
-  const childrenArray = Children.toArray(children)
-  const fileNames = childrenArray.map(child => {
-    if (isValidElement(child)) {
-      const childrenArr = Children.toArray(
-        child.props.children,
-      ) as React.ReactElement[]
+  const childrenArray = Children.toArray(children).filter(
+    (child): child is React.ReactElement<{ 'data-file'?: string }> =>
+      isValidElement<{ 'data-file'?: string }>(child),
+  )
+  const fileNames = childrenArray.map(child => child.props['data-file'])
 
-      return childrenArr[0].props['data-file']
-    }
-  })
-
-  if (fileNames.length !== childrenArray.length) {
+  if (fileNames.some(fileName => typeof fileName !== 'string')) {
     return children
   }
 

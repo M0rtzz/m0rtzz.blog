@@ -5,7 +5,7 @@ labels:
   - "Linux"
   - "OS"
   - "Lab"
-title: "OS设计实验过程笔记"
+title: "OS 设计实验过程笔记"
 summary: "Experiment notes for the OS lab, covering scoring scripts, threading, sockets, and Linux 0.12 system-call changes."
 ---
 
