@@ -1,7 +1,7 @@
 name: Transfer
 
 permissions:
-  contents: read
+  contents: write
   discussions: write
 
 concurrency:
@@ -42,12 +42,29 @@ jobs:
 
       - name: Validate post metadata
         run: pnpm posts:check
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
 
       - name: Sync posts to GitHub Discussions
         run: pnpm posts:sync
         env:
           GITHUB_TOKEN: ${{ github.token }}
           GITHUB_REPOSITORY: ${{ github.repository }}
+
+      - name: Commit generated Discussion mappings
+        if: github.ref == 'refs/heads/master'
+        run: |
+          if git diff --quiet -- posts; then
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add posts
+          git commit -m "🧱 chore(posts): bind new Discussions"
+          git pull --rebase origin master
+          git push origin HEAD:master
 
       - name: Setup SSH
         run: |

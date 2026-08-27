@@ -1,4 +1,4 @@
-import { readdir, readFile } from 'node:fs/promises'
+import { readdir, readFile, writeFile } from 'node:fs/promises'
 import { dirname, extname, relative, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -35,10 +35,38 @@ function normalizeBody(content) {
 function validateMetadata(path, data, body) {
   const errors = []
   const displayPath = relative(repositoryRoot, path)
-  const discussionNumber = Number(data.discussionNumber)
+  const hasDiscussionNumber = data.discussionNumber !== undefined
+  const discussionNumber = hasDiscussionNumber
+    ? Number(data.discussionNumber)
+    : undefined
 
-  if (!Number.isSafeInteger(discussionNumber) || discussionNumber <= 0) {
+  if (
+    hasDiscussionNumber &&
+    (!Number.isSafeInteger(discussionNumber) || discussionNumber <= 0)
+  ) {
     errors.push('`discussionNumber` must be a positive integer')
+  }
+
+  if (typeof data.category !== 'string' || data.category.trim() === '') {
+    errors.push('`category` must be a non-empty string')
+  }
+
+  if (!Array.isArray(data.labels) || data.labels.length === 0) {
+    errors.push('`labels` must be a non-empty array')
+  } else {
+    const labels = []
+
+    for (const label of data.labels) {
+      if (typeof label !== 'string' || label.trim() === '') {
+        errors.push('every `labels` item must be a non-empty string')
+      } else {
+        labels.push(label.trim())
+      }
+    }
+
+    if (new Set(labels).size !== labels.length) {
+      errors.push('`labels` must not contain duplicates')
+    }
   }
 
   if (typeof data.title !== 'string' || data.title.trim() === '') {
@@ -69,24 +97,42 @@ export async function readPosts() {
 
     errors.push(...validateMetadata(path, data, body))
 
-    const discussionNumber = Number(data.discussionNumber)
-    if (!Number.isSafeInteger(discussionNumber) || discussionNumber <= 0) {
-      continue
-    }
+    const discussionNumber =
+      data.discussionNumber === undefined
+        ? undefined
+        : Number(data.discussionNumber)
 
     const displayPath = relative(repositoryRoot, path)
-    const duplicatePath = discussionFiles.get(discussionNumber)
-    if (duplicatePath) {
-      errors.push(
-        `${displayPath}: discussion #${discussionNumber} is already mapped by ${duplicatePath}`,
-      )
-      continue
+    if (
+      Number.isSafeInteger(discussionNumber) &&
+      discussionNumber !== undefined &&
+      discussionNumber > 0
+    ) {
+      const duplicatePath = discussionFiles.get(discussionNumber)
+      if (duplicatePath) {
+        errors.push(
+          `${displayPath}: discussion #${discussionNumber} is already mapped by ${duplicatePath}`,
+        )
+        continue
+      }
+
+      discussionFiles.set(discussionNumber, displayPath)
     }
 
-    discussionFiles.set(discussionNumber, displayPath)
     posts.push({
       body,
-      discussionNumber,
+      category: typeof data.category === 'string' ? data.category.trim() : '',
+      discussionNumber:
+        Number.isSafeInteger(discussionNumber) &&
+        discussionNumber !== undefined &&
+        discussionNumber > 0
+          ? discussionNumber
+          : undefined,
+      labels: Array.isArray(data.labels)
+        ? data.labels
+            .filter(label => typeof label === 'string')
+            .map(label => label.trim())
+        : [],
       path,
       relativePath: displayPath,
       summary:
@@ -101,7 +147,42 @@ export async function readPosts() {
     throw new Error(`Invalid post metadata:\n- ${errors.join('\n- ')}`)
   }
 
-  return posts.sort(
-    (left, right) => left.discussionNumber - right.discussionNumber,
+  return posts.sort((left, right) => {
+    if (left.discussionNumber === undefined) {
+      return right.discussionNumber === undefined
+        ? left.relativePath.localeCompare(right.relativePath, 'zh-CN')
+        : 1
+    }
+
+    if (right.discussionNumber === undefined) {
+      return -1
+    }
+
+    return left.discussionNumber - right.discussionNumber
+  })
+}
+
+export async function writeDiscussionNumber(post, discussionNumber) {
+  const source = await readFile(post.path, 'utf8')
+  const frontMatter = source.match(/^---(\r?\n)([\s\S]*?)\r?\n---(\r?\n|$)/)
+
+  if (!frontMatter) {
+    throw new Error(`${post.relativePath}: post does not contain Front Matter`)
+  }
+
+  const lineEnding = frontMatter[1]
+  const lines = frontMatter[2].split(/\r?\n/)
+  const discussionNumberLine = `discussionNumber: ${discussionNumber}`
+  const discussionNumberIndex = lines.findIndex(line =>
+    /^discussionNumber\s*:/.test(line),
   )
+
+  if (discussionNumberIndex >= 0) {
+    lines[discussionNumberIndex] = discussionNumberLine
+  } else {
+    lines.unshift(discussionNumberLine)
+  }
+
+  const replacement = `---${lineEnding}${lines.join(lineEnding)}${lineEnding}---${frontMatter[3]}`
+  await writeFile(post.path, replacement + source.slice(frontMatter[0].length))
 }

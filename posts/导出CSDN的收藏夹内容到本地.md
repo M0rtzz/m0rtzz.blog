@@ -1,5 +1,8 @@
 ---
 discussionNumber: 8
+category: "Blog"
+labels:
+  - "JavaScript"
 title: "导出CSDN的收藏夹内容到本地"
 summary: "Export a CSDN favorites list to local files by running a small script in the browser console."
 ---

@@ -1,5 +1,10 @@
 ---
 discussionNumber: 19
+category: "Blog"
+labels:
+  - "Linux"
+  - "Environment"
+  - "Configuration"
 title: "HUSTNLP Server Clash 使用教程"
 summary: "A practical HUSTNLP server guide for configuring Clash subscriptions, terminal proxies, nodes, web access, troubleshooting, and SSH port forwarding."
 ---
