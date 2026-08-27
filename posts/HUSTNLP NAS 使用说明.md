@@ -30,9 +30,9 @@ summary: "A practical HUSTNLP NAS guide covering shared models, datasets, person
 ```
 
 > [!IMPORTANT]
-> 除 Conda 环境外，请尽量将个人代码仓库、实验数据、日志、输出结果以及自行训练或微调产生的模型权重和 Checkpoint 全部放在 `/nas/Users/${USER}` 中。 
+> **除 *Conda* 环境外，**请尽量将***个人代码仓库、实验数据、日志、输出结果以及自行训练或微调产生的模型权重和 Checkpoint*** 全部放在 `/nas/Users/${USER}` 中。 
 >
-> 通过 Hugging Face、ModelScope 等平台获取的官方开放模型和公开数据集，如果使用命令行工具显式指定 `--local-dir` 或 `--local_dir` 下载，则应分别保存到 `/nas/Models` 和 `/nas/Datasets`。代码中按默认方式加载的资源通常会自动进入共享缓存。
+> ***通过 Hugging Face、ModelScope 等平台获取的官方开放模型和公开数据集，***如果使用命令行工具显式指定 `--local-dir` 或 `--local_dir` 下载，则应分别保存到 `/nas/Models` 和 `/nas/Datasets`。代码中按默认方式加载的资源通常会自动进入共享缓存。
 
 ## 目录说明
 
@@ -373,13 +373,13 @@ datasets/
 > [!CAUTION]
 > `/nas/DO_NOT_EDIT_OR_DELETE_SHARED_CACHE/HuggingFace` 下的所有文件和目录均由 Hugging Face 工具自动管理。请勿人工创建、复制、上传、修改、移动、重命名、整理或删除其中的任何文件或目录，包括 `.lock` 文件、快照、符号链接和看似重复的文件。***不得将个人文件、说明文档、手动下载的模型或数据集、实验输出以及临时文件放入该目录；***只有 Hugging Face 相关工具在正常运行过程中才能自动在其中创建缓存内容。
 
-尤其不要执行：
+**尤其不要执行：**
 
 ```shell
 rm -rf /nas/DO_NOT_EDIT_OR_DELETE_SHARED_CACHE/HuggingFace/*
 ```
 
-也不要对其子目录执行类似操作，例如：
+**也不要对其子目录执行类似操作，例如：**
 
 ```shell
 rm -rf /nas/DO_NOT_EDIT_OR_DELETE_SHARED_CACHE/HuggingFace/hub/*
