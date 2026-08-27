@@ -30,6 +30,7 @@ import './shiki.css'
 const sourceMarkerPattern =
   /^<!-- m0rtzz\.blog-source:[^>]* -->(?:\r?\n){1,2}/
 const legacySshConfigPattern = /```sshconfig\b/g
+const tripleEmphasisPattern = /\*\*\*([^*\n]+?)\*\*\*/g
 
 interface PageProps {
   params: {
@@ -74,6 +75,7 @@ export default async function Page({ params }: PageProps) {
   const articleBody = body!
     .replace(sourceMarkerPattern, '')
     .replace(legacySshConfigPattern, '```ssh-config')
+    .replace(tripleEmphasisPattern, '**_$1_**')
 
   const toc = fromMarkdown(articleBody)
 
