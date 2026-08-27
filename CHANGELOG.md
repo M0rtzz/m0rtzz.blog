@@ -1,12 +1,14 @@
-# Changelog
+## <small>5.5.1 (2026-08-27)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 💄 ui(code-group): add consistent spacing around the copy button ([5ad04a4](https://github.com/M0rtzz/m0rtzz.blog/commit/5ad04a4))
+* 🔖 tag(package.json): v5.5.1 ([8428553](https://github.com/M0rtzz/m0rtzz.blog/commit/8428553))
 
-## [5.5.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v5.5.0...v5.5.1) (2026-08-27)
+
 
 ## 5.5.0 (2026-08-27)
 
 * 🐛 fix(markdown): prevent Twoslash directives from producing or deleting code lines ([b41c0a1](https://github.com/M0rtzz/m0rtzz.blog/commit/b41c0a1))
+* 📝 doc(CHANGELOG.md): automatic update ([93644d7](https://github.com/M0rtzz/m0rtzz.blog/commit/93644d7))
 * 🔖 tag(package.json): v5.5.0 ([c2cc8e6](https://github.com/M0rtzz/m0rtzz.blog/commit/c2cc8e6))
 
 
@@ -2283,3 +2285,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
