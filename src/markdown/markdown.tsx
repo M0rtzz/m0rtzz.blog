@@ -25,7 +25,6 @@ import {
 } from 'shiki/bundle/full'
 
 import { rehypeGithubAlert, findCodeText } from './plugins'
-import { createTwoslashDirectiveLineTransformers } from './twoslash/remove-directive-lines'
 import { rendererMdx } from './twoslash/renderMdx'
 
 import type { RehypeShikiOptions } from '@shikijs/rehype'
@@ -39,9 +38,6 @@ const highlighter = await createHighlighter({
   langs: Object.keys(bundledLanguages),
   themes: Object.keys(bundledThemes),
 })
-
-const [captureTwoslashDirectiveLines, removeTwoslashDirectiveLines] =
-  createTwoslashDirectiveLineTransformers()
 
 export async function Markdown(props: MarkdownProps) {
   const { source, useMDXComponents } = props
@@ -90,12 +86,10 @@ export async function Markdown(props: MarkdownProps) {
               transformerMetaHighlight(),
               transformerMetaWordHighlight(),
               // transformerRemoveLineBreak(),
-              captureTwoslashDirectiveLines,
               transformerTwoslash({
                 renderer: rendererMdx(),
                 explicitTrigger: true,
               }),
-              removeTwoslashDirectiveLines,
             ],
           } as RehypeShikiOptions,
         ],
