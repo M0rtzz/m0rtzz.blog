@@ -359,3 +359,7 @@ code .line:last-child:empty {
 .code-group-disable-spacing .code-block-spacing {
   margin-bottom: 0em;
 }
+
+.code-group-disable-spacing .copy-button {
+  @apply right-4 md:right-8;
+}
