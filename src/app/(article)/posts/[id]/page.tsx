@@ -73,6 +73,7 @@ export default async function Page({ params }: PageProps) {
   const discussion = nodes.find(node => node.number === +id)!
   const { body, createdAt, labels, number, title, updatedAt } = discussion
   const articleBody = body!
+    .replace(/\r\n?/g, '\n')
     .replace(sourceMarkerPattern, '')
     .replace(legacySshConfigPattern, '```ssh-config')
     .replace(tripleEmphasisPattern, '**_$1_**')
