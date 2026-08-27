@@ -19,7 +19,7 @@ summary: "A concise overview of the four HUSTNLP servers, ProxyJump access, and 
 
 服务器连接配置如下：
 
-```sshconfig
+```ssh-config
 Host A100
     HostName 222.XX.XX.XX
     User xzh
