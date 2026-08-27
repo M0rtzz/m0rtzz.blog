@@ -3,7 +3,7 @@ discussionNumber: 8
 category: "Blog"
 labels:
   - "JavaScript"
-title: "导出CSDN的收藏夹内容到本地"
+title: "导出 CSDN 的收藏夹内容到本地"
 summary: "Export a CSDN favorites list to local files by running a small script in the browser console."
 ---
 
@@ -185,7 +185,7 @@ console.log('Not highlighted')
 ```
 
 ```ts
-// [!code highlight:3]
+// [!code highlight:2]
 console.log('Highlighted')
 console.log('Highlighted')
 console.log('Not highlighted')
@@ -218,7 +218,7 @@ console.log('Not focused')
 ```
 
 ```ts
-// [!code focus:3]
+// [!code focus:2]
 console.log('Focused')
 console.log('Focused')
 console.log('Not focused')

@@ -54,6 +54,10 @@
   .prose>table:nth-child(n)>thead:nth-child(n)>tr:nth-child(n)>th:nth-child(n)>code:nth-child(n),
   .prose>table:nth-child(n)>tbody:nth-child(n)>tr:nth-child(n)>td:nth-child(n)>code:nth-child(n),
   .prose>p:nth-child(n)>code:nth-child(n),
+  .prose>ol li>code,
+  .prose>ol li>p>code,
+  .prose>ul li>code,
+  .prose>ul li>p>code,
   details.mdx-components:nth-child(n)>p:nth-child(n)>code:nth-child(n) {
     padding: 0.1em 0.4em;
     border-radius: 6px;
@@ -115,6 +119,10 @@
   .prose>table:nth-child(n)>thead:nth-child(n)>tr:nth-child(n)>th:nth-child(n)>code:nth-child(n),
   .prose>table:nth-child(n)>tbody:nth-child(n)>tr:nth-child(n)>td:nth-child(n)>code:nth-child(n),
   .prose>p:nth-child(n)>code:nth-child(n),
+  .prose>ol li>code,
+  .prose>ol li>p>code,
+  .prose>ul li>code,
+  .prose>ul li>p>code,
   details.mdx-components:nth-child(n)>p:nth-child(n)>code:nth-child(n) {
     padding: 0em 0.3em;
     border-radius: 6px;
@@ -340,6 +348,8 @@ strong {
 .prose>blockquote:nth-child(n)>p:nth-child(n)>em:nth-child(n),
 .small-line-numbers>p:nth-child(n)>em:nth-child(n)>strong:nth-child(n),
 .small-line-numbers>p:nth-child(n)>em:nth-child(n),
+.prose strong em,
+.small-line-numbers strong em,
 ol li em,
 ol li em strong,
 ul li em,

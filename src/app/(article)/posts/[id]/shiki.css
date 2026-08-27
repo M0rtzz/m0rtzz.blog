@@ -160,10 +160,28 @@
 } */
 
 .line.diff::before {
-  content: counter(step) var(--tw-content, 'default') !important;
-  /* margin-left: 0.31rem !important; */
-  left: 0.74rem !important;
-  /* letter-spacing: 0.1rem; */
+  content: counter(step) ' ' !important;
+  position: relative !important;
+  left: -4px !important;
+  transform: none !important;
+}
+
+.line.diff > span:first-child::before {
+  position: absolute;
+  left: 1.6rem;
+  width: 0.75rem;
+  translate: -50% 0;
+  text-align: center;
+}
+
+.line.diff.remove > span:first-child::before {
+  content: '-';
+  color: rgb(248 113 113) !important;
+}
+
+.line.diff.add > span:first-child::before {
+  content: '+';
+  color: rgb(74 222 128) !important;
 }
 
 .line.diff.remove::before {
@@ -202,6 +220,10 @@ code .line::before {
 
 code .line {
   position: relative;
+  /* Keep empty source rows at the same height as code rows so the gutter
+   * divider remains continuous through blank lines. */
+  min-height: 1.5rem;
+  line-height: 1.5rem;
 }
 
 code .line::after {
@@ -276,7 +298,6 @@ code .line:last-child:empty {
 }
 
 /* Keep the Anya cursor visible over native code-block scrollbars. */
-.shiki,
 .shiki::-webkit-scrollbar,
 .shiki::-webkit-scrollbar-button,
 .shiki::-webkit-scrollbar-track,

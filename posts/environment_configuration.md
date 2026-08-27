@@ -5,7 +5,7 @@ labels:
   - "Linux"
   - "Environment"
   - "Configuration"
-title: "ZZU-RoboCup环境配置"
+title: "ZZU-RoboCup 环境配置"
 summary: "A practical ZZU-RoboCup setup guide covering drivers, CUDA, ROS, OpenCV, Conda, and essential Linux dependencies."
 ---
 

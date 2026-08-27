@@ -4,7 +4,7 @@ category: "Blog"
 labels:
   - "Git"
   - "Configuration"
-title: "git commit规范及自动生成CHANGELOG.md"
+title: "git commit 规范及自动生成 CHANGELOG.md"
 summary: "Set up commit conventions and automated CHANGELOG generation with Commitizen and conventional-changelog on Ubuntu."
 ---
 

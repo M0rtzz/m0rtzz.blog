@@ -3,7 +3,7 @@ discussionNumber: 7
 category: "Blog"
 labels:
   - "Linux"
-title: "一种可能的scene.pkg解包为.mp4方案"
+title: "一种可能的 scene.pkg 解包为 .mp4 方案"
 summary: "A workable route to unpack a Wallpaper Engine `.pkg`, extract the video, and reuse it on Linux."
 ---
 
