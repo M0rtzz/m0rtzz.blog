@@ -1,8 +1,17 @@
-# Changelog
+## <small>5.5.2 (2026-08-27)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 📝 doc(posts/HUSTNLP 服务器说明.md): update doc ([5713670](https://github.com/M0rtzz/m0rtzz.blog/commit/5713670))
+* 🔖 tag(package.json): v5.5.2 ([8ecef2f](https://github.com/M0rtzz/m0rtzz.blog/commit/8ecef2f))
 
-## [5.5.2](https://github.com/M0rtzz/m0rtzz.blog/compare/v5.5.1...v5.5.2) (2026-08-27)
+
+
+## <small>5.5.1 (2026-08-27)</small>
+
+* 💄 ui(code-group): add consistent spacing around the copy button ([5ad04a4](https://github.com/M0rtzz/m0rtzz.blog/commit/5ad04a4))
+* 📝 doc(CHANGELOG.md): automatic update ([1c09d6f](https://github.com/M0rtzz/m0rtzz.blog/commit/1c09d6f))
+* 🔖 tag(package.json): v5.5.1 ([8428553](https://github.com/M0rtzz/m0rtzz.blog/commit/8428553))
+
+
 
 ## 5.5.0 (2026-08-27)
 
@@ -2284,3 +2293,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
