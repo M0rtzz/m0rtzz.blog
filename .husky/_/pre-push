@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 pnpm posts:check || {
-    echo "\e[1;31m文章 Front Matter 或 summary.json 校验失败\e[0m"
+    echo "\e[1;31m文章 Front Matter 或 GitHub Discussion 校验失败\e[0m"
     exit 1
 }
 

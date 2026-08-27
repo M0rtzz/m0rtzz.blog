@@ -1,5 +1,11 @@
 ---
 discussionNumber: 17
+category: "Blog"
+labels:
+  - "Linux"
+  - "Environment"
+  - "LaTeX"
+  - "Configuration"
 title: "自搭Overleaf"
 summary: "A practical walkthrough for deploying Overleaf with Docker, toolkit configuration, and template management."
 ---

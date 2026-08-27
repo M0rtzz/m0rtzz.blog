@@ -1,5 +1,9 @@
 ---
 discussionNumber: 6
+category: "Blog"
+labels:
+  - "Linux"
+  - "Configuration"
 title: "Linux版“IDM”—— XDM（Xtreme Download Manager，类Windows-IDM）安装并汉化"
 summary: "Install XDM on Linux, then localize the interface for a smoother IDM-like download manager experience."
 ---

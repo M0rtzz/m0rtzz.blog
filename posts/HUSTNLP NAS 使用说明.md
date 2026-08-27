@@ -1,5 +1,10 @@
 ---
 discussionNumber: 20
+category: "Blog"
+labels:
+  - "Linux"
+  - "Environment"
+  - "Configuration"
 title: "HUSTNLP NAS 使用说明"
 summary: "A practical HUSTNLP NAS guide covering shared models, datasets, personal storage, Hugging Face caching, tokens, permissions, and safe usage."
 ---

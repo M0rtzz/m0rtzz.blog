@@ -1,92 +1,107 @@
-import { Octokit } from '@octokit/core'
-import dotenv from 'dotenv'
-
-import { readPosts, repositoryRoot } from './posts.mjs'
-
-dotenv.config({ path: `${repositoryRoot}/.env`, quiet: true })
+import {
+  createGitHubContext,
+  queryDiscussions,
+  queryRepositoryMetadata,
+  resolvePostTargets,
+} from './github-discussions.mjs'
+import { readPosts, writeDiscussionNumber } from './posts.mjs'
 
 const dryRun = process.argv.includes('--dry-run')
-const token =
-  process.env.GITHUB_TOKEN?.trim() || process.env.ACCESS_TOKEN?.trim()
-const repository =
-  process.env.GITHUB_REPOSITORY?.trim() ||
-  [process.env.REPO_OWNER?.trim(), process.env.REPO_NAME?.trim()]
-    .filter(Boolean)
-    .join('/')
+const sourceMarkerPrefix = 'm0rtzz.blog-source:'
+const sourceMarkerPattern = /^<!-- m0rtzz\.blog-source:[^>]* -->(?:\r?\n){1,2}/
+const { name, octokit, owner } = createGitHubContext()
 
-if (!token) {
-  throw new Error('GITHUB_TOKEN or ACCESS_TOKEN is required')
+function getSourceMarker(post) {
+  return `<!-- ${sourceMarkerPrefix}${encodeURIComponent(post.relativePath)} -->`
 }
 
-const [owner, name, ...extraParts] = repository.split('/')
-if (!owner || !name || extraParts.length > 0) {
-  throw new Error(
-    'GITHUB_REPOSITORY or REPO_OWNER/REPO_NAME must identify an owner/repository',
-  )
+function getMarkedBody(post) {
+  return `${getSourceMarker(post)}\n\n${post.body}`
 }
 
-const octokit = new Octokit({ auth: token })
+function normalizeBody(body) {
+  return body.replace(/\r\n?/g, '\n').trimEnd()
+}
 
-async function queryDiscussions() {
-  const discussions = []
-  let cursor = null
+function normalizeMappedRemoteBody(body) {
+  return normalizeBody(body.replace(sourceMarkerPattern, ''))
+}
 
-  do {
-    const result = await octokit.graphql(
-      `
-        query Discussions(
-          $owner: String!
-          $name: String!
-          $cursor: String
+function haveSameLabels(currentLabels, targetLabels) {
+  if (currentLabels.length !== targetLabels.length) {
+    return false
+  }
+
+  const targetLabelIds = new Set(targetLabels.map(label => label.id))
+  return currentLabels.every(label => targetLabelIds.has(label.id))
+}
+
+async function createDiscussion(post, repositoryMetadata, target) {
+  const result = await octokit.graphql(
+    `
+      mutation CreateDiscussion(
+        $repositoryId: ID!
+        $categoryId: ID!
+        $title: String!
+        $body: String!
+      ) {
+        createDiscussion(
+          input: {
+            repositoryId: $repositoryId
+            categoryId: $categoryId
+            title: $title
+            body: $body
+          }
         ) {
-          repository(owner: $owner, name: $name) {
-            discussions(first: 100, after: $cursor) {
+          discussion {
+            id
+            number
+            title
+            body
+            category {
+              id
+              name
+              slug
+            }
+            labels(first: 100) {
               nodes {
                 id
-                number
-                title
-                body
-              }
-              pageInfo {
-                endCursor
-                hasNextPage
+                name
               }
             }
           }
         }
-      `,
-      { cursor, name, owner },
-    )
+      }
+    `,
+    {
+      body: getMarkedBody(post),
+      categoryId: target.category.id,
+      repositoryId: repositoryMetadata.id,
+      title: post.title,
+    },
+  )
 
-    const connection = result.repository?.discussions
-    if (!connection) {
-      throw new Error(`Cannot read Discussions from ${owner}/${name}`)
-    }
+  const discussion = result.createDiscussion?.discussion
+  if (!discussion) {
+    throw new Error(`${post.relativePath}: GitHub did not create a Discussion`)
+  }
 
-    discussions.push(...connection.nodes)
-    cursor = connection.pageInfo.hasNextPage
-      ? connection.pageInfo.endCursor
-      : null
-  } while (cursor)
-
-  return new Map(discussions.map(discussion => [discussion.number, discussion]))
+  return discussion
 }
 
-function normalizeRemoteBody(body) {
-  return body.replace(/\r\n?/g, '\n').trimEnd()
-}
-
-async function updateDiscussion(post, discussion) {
+async function updateDiscussion(post, discussion, target, body) {
   await octokit.graphql(
     `
       mutation UpdateDiscussion(
         $discussionId: ID!
+        $categoryId: ID!
         $title: String!
         $body: String!
       ) {
         updateDiscussion(
           input: {
             discussionId: $discussionId
+            categoryId: $categoryId
             title: $title
             body: $body
           }
@@ -99,49 +114,249 @@ async function updateDiscussion(post, discussion) {
       }
     `,
     {
-      body: post.body,
+      body,
+      categoryId: target.category.id,
       discussionId: discussion.id,
       title: post.title,
     },
   )
 }
 
-const posts = await readPosts()
-const discussions = await queryDiscussions()
-let changedCount = 0
+async function syncDiscussionLabels(discussion, targetLabels) {
+  const currentLabelIds = new Set(
+    discussion.labels.nodes.map(label => label.id),
+  )
+  const targetLabelIds = new Set(targetLabels.map(label => label.id))
+  const labelIdsToAdd = targetLabels
+    .filter(label => !currentLabelIds.has(label.id))
+    .map(label => label.id)
+  const labelIdsToRemove = discussion.labels.nodes
+    .filter(label => !targetLabelIds.has(label.id))
+    .map(label => label.id)
 
-for (const post of posts) {
-  const discussion = discussions.get(post.discussionNumber)
-
-  if (!discussion) {
-    throw new Error(
-      `${post.relativePath}: Discussion #${post.discussionNumber} does not exist in ${owner}/${name}`,
+  if (labelIdsToAdd.length > 0) {
+    await octokit.graphql(
+      `
+        mutation AddDiscussionLabels(
+          $labelableId: ID!
+          $labelIds: [ID!]!
+        ) {
+          addLabelsToLabelable(
+            input: { labelableId: $labelableId, labelIds: $labelIds }
+          ) {
+            clientMutationId
+          }
+        }
+      `,
+      {
+        labelableId: discussion.id,
+        labelIds: labelIdsToAdd,
+      },
     )
   }
 
-  const titleChanged = discussion.title !== post.title
-  const bodyChanged = normalizeRemoteBody(discussion.body) !== post.body
+  if (labelIdsToRemove.length > 0) {
+    await octokit.graphql(
+      `
+        mutation RemoveDiscussionLabels(
+          $labelableId: ID!
+          $labelIds: [ID!]!
+        ) {
+          removeLabelsFromLabelable(
+            input: { labelableId: $labelableId, labelIds: $labelIds }
+          ) {
+            clientMutationId
+          }
+        }
+      `,
+      {
+        labelableId: discussion.id,
+        labelIds: labelIdsToRemove,
+      },
+    )
+  }
+}
 
-  if (!titleChanged && !bodyChanged) {
-    console.log(`Discussion #${post.discussionNumber}: unchanged`)
+function getDiscussionChanges(post, discussion, target, preserveMarker) {
+  const desiredBody = preserveMarker ? getMarkedBody(post) : post.body
+  const bodyChanged = preserveMarker
+    ? normalizeBody(discussion.body) !== normalizeBody(desiredBody)
+    : normalizeMappedRemoteBody(discussion.body) !== post.body
+
+  return {
+    bodyChanged,
+    categoryChanged: discussion.category?.id !== target.category.id,
+    desiredBody,
+    labelsChanged: !haveSameLabels(discussion.labels.nodes, target.labels),
+    titleChanged: discussion.title !== post.title,
+  }
+}
+
+function describeChanges(changes) {
+  return [
+    changes.titleChanged && 'title',
+    changes.bodyChanged && 'body',
+    changes.categoryChanged && 'category',
+    changes.labelsChanged && 'labels',
+  ]
+    .filter(Boolean)
+    .join(', ')
+}
+
+async function syncExistingDiscussion(
+  post,
+  discussion,
+  target,
+  preserveMarker = false,
+) {
+  const changes = getDiscussionChanges(post, discussion, target, preserveMarker)
+  const description = describeChanges(changes)
+
+  if (!description) {
+    return false
+  }
+
+  if (!dryRun) {
+    if (
+      changes.titleChanged ||
+      changes.bodyChanged ||
+      changes.categoryChanged
+    ) {
+      await updateDiscussion(post, discussion, target, changes.desiredBody)
+    }
+
+    if (changes.labelsChanged) {
+      await syncDiscussionLabels(discussion, target.labels)
+    }
+  }
+
+  console.log(
+    dryRun
+      ? `Discussion #${discussion.number}: would update ${description}`
+      : `Discussion #${discussion.number}: updated ${description}`,
+  )
+  return true
+}
+
+const posts = await readPosts()
+const [repositoryMetadata, discussions] = await Promise.all([
+  queryRepositoryMetadata(octokit, owner, name),
+  queryDiscussions(octokit, owner, name),
+])
+const discussionsByNumber = new Map(
+  discussions.map(discussion => [discussion.number, discussion]),
+)
+const mappedDiscussionNumbers = new Set(
+  posts
+    .map(post => post.discussionNumber)
+    .filter(discussionNumber => discussionNumber !== undefined),
+)
+const targets = new Map()
+const recoveredDiscussions = new Map()
+const preflightErrors = []
+
+for (const post of posts) {
+  try {
+    targets.set(post, resolvePostTargets(post, repositoryMetadata))
+  } catch (error) {
+    preflightErrors.push(error instanceof Error ? error.message : error)
+  }
+
+  if (post.discussionNumber !== undefined) {
+    if (!discussionsByNumber.has(post.discussionNumber)) {
+      preflightErrors.push(
+        `${post.relativePath}: Discussion #${post.discussionNumber} does not exist in ${owner}/${name}`,
+      )
+    }
     continue
   }
 
-  changedCount += 1
-  const changes = [titleChanged && 'title', bodyChanged && 'body']
-    .filter(Boolean)
-    .join(' and ')
+  const sourceMarker = getSourceMarker(post)
+  const matches = discussions.filter(discussion =>
+    discussion.body.startsWith(sourceMarker),
+  )
 
-  if (dryRun) {
-    console.log(`Discussion #${post.discussionNumber}: would update ${changes}`)
-  } else {
-    await updateDiscussion(post, discussion)
-    console.log(`Discussion #${post.discussionNumber}: updated ${changes}`)
+  if (matches.length > 1) {
+    preflightErrors.push(
+      `${post.relativePath}: multiple Discussions contain its source marker`,
+    )
+  } else if (matches.length === 1) {
+    const [discussion] = matches
+
+    if (mappedDiscussionNumbers.has(discussion.number)) {
+      preflightErrors.push(
+        `${post.relativePath}: recovered Discussion #${discussion.number} is already mapped by another post`,
+      )
+    } else {
+      recoveredDiscussions.set(post, discussion)
+    }
   }
+}
+
+if (preflightErrors.length > 0) {
+  throw new Error(
+    `Cannot synchronize posts:\n- ${preflightErrors.join('\n- ')}`,
+  )
+}
+
+let createdCount = 0
+let updatedCount = 0
+let mappedCount = 0
+
+for (const post of posts) {
+  const target = targets.get(post)
+
+  if (post.discussionNumber !== undefined) {
+    const discussion = discussionsByNumber.get(post.discussionNumber)
+    const updated = await syncExistingDiscussion(post, discussion, target)
+
+    if (updated) {
+      updatedCount += 1
+    } else {
+      console.log(`Discussion #${post.discussionNumber}: unchanged`)
+    }
+    continue
+  }
+
+  let discussion = recoveredDiscussions.get(post)
+
+  if (!discussion) {
+    if (dryRun) {
+      console.log(
+        `${post.relativePath}: would create a Discussion in ${target.category.name} with labels ${post.labels.join(', ')}`,
+      )
+      createdCount += 1
+      continue
+    }
+
+    discussion = await createDiscussion(post, repositoryMetadata, target)
+    await syncDiscussionLabels(discussion, target.labels)
+    createdCount += 1
+    console.log(
+      `${post.relativePath}: created Discussion #${discussion.number}`,
+    )
+  } else {
+    const updated = await syncExistingDiscussion(post, discussion, target, true)
+
+    if (updated) {
+      updatedCount += 1
+    }
+
+    console.log(
+      dryRun
+        ? `${post.relativePath}: would recover Discussion #${discussion.number}`
+        : `${post.relativePath}: recovered Discussion #${discussion.number}`,
+    )
+  }
+
+  if (!dryRun) {
+    await writeDiscussionNumber(post, discussion.number)
+  }
+  mappedCount += 1
 }
 
 console.log(
   dryRun
-    ? `Dry run complete: ${changedCount} of ${posts.length} Discussions would change`
-    : `Sync complete: ${changedCount} of ${posts.length} Discussions updated`,
+    ? `Dry run complete: ${createdCount} create, ${updatedCount} update, ${mappedCount} recover`
+    : `Sync complete: ${createdCount} created, ${updatedCount} updated, ${mappedCount} mapped`,
 )
