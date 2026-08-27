@@ -64,7 +64,8 @@ rsync \
     --delete-delay \
     --delay-updates \
     --partial \
-    --info=stats2 \
+    --human-readable \
+    --info=progress2,stats2 \
     out/ \
     "${remote_user}"@"${remote_host}":"${remote_folder}out/"
 
