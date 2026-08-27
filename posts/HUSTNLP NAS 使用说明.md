@@ -23,6 +23,7 @@ summary: "A practical HUSTNLP NAS guide covering shared models, datasets, person
 /nas/
 ├── Models/
 ├── Datasets/
+├── Projects/
 ├── Misc/
 ├── Users/
 └── DO_NOT_EDIT_OR_DELETE_SHARED_CACHE/
@@ -86,8 +87,8 @@ modelscope download --model <组织名>/<模型名> \
 
 ```plaintext
 /nas/Datasets/
-├── HarmBench/
-├── AdvBench/
+├── GSM8K/
+├── HellaSwag/
 └── ...
 ```
 
@@ -115,9 +116,68 @@ modelscope download --dataset <组织名>/<数据集名> \
 
 ---
 
+### `/nas/Projects`
+
+用于存放实验室横向项目的代码、数据、模型、实验结果及其他项目相关文件，供项目参与成员共同使用。
+
+建议每个横向项目建立独立目录，并按照项目名称或项目编号命名，例如：
+
+```plaintext
+/nas/Projects/<项目名>/
+├── .git/
+├── Data/
+├── Models/
+├── Outputs/
+├── Checkpoints/
+└── Docs/
+```
+
+> [!IMPORTANT]
+> `/nas/Projects` 是横向项目的共享空间。请将项目相关文件放入对应的项目目录，不要直接堆放在 `/nas/Projects` 根目录下；个人文件、个人实验结果和不需要共享的内容仍应放在 `/nas/Users/${USER}` 中。
+
+在创建项目目录前，建议先确认项目名称、参与成员和目录权限，避免不同项目之间出现目录重名、数据混放或误操作。
+
+#### 横向项目多人协作流程
+
+对于需要多人共同开发的横向项目，建议采用统一的项目目录和 `collab` 账号维护共享开发环境：
+
+1. 在 `/nas/Projects` 下创建项目目录，并为项目参与成员配置相应的读写权限。
+2. 登录 `collab` 账号，将项目目录软连接到 `collab` 的主目录，便于统一配置和管理：
+
+   ```shell
+   su - collab
+   mkdir -p "${HOME}/<项目名>"
+   ln -s /nas/Projects/<项目名> "${HOME}/<项目名>/Workspaces"
+   ```
+
+3. 由 `collab` 账号在项目目录中完成依赖、编译工具和运行环境配置。**所有成员使用同一套项目环境，**减少因个人环境不同导致的运行问题。
+4. 配置完成后，成员继续使用自己的个人账号登录和开发。**个人账号无需登录** `collab`，即可直接编辑 `collab` 主目录软连接所指向的项目文件：
+
+   ```shell
+   cd /nas/Projects/<项目名>
+   ```
+
+5. 所有人使用 Git 工作树（`git worktree`）创建各自的开发目录。每个成员在独立工作树中开发、提交和切换分支，避免多人直接修改同一个工作目录：
+
+   ```shell
+   cd "${HOME}/<项目名>/Workspaces"
+   git worktree add "${HOME}/<项目名>/worktrees/<用户名>/<分支名>" -b "<分支名>"
+   ```
+
+> [!WARNING]
+> 当前 NAS 使用 CIFS/SMB 挂载，NAS 内部不支持创建符号链接（symlink）。Git 工作树本身使用普通目录和 `.git` 管理文件，可以正常创建；不要在 `/nas` 内手动创建项目内部软连接。上面的 `ln -s` 命令创建的链接位于 `collab` 的 `${HOME}` 中，目标指向 `/nas/Projects/<项目名>`，因此不属于在 NAS 内部创建软连接。成员也可以在自己的本地 `${HOME}` 中创建指向项目目录的软连接，以便访问项目。
+
+> [!IMPORTANT]
+> `collab` 账号用于统一配置和维护项目环境，不代表成员日常开发必须使用该账号。日常代码修改、提交和推送应使用各自的个人账号及 Git 身份。
+
+> [!WARNING]
+> 不要多人同时在同一个 Git 工作树中开发，也不要通过修改文件属主、关闭权限检查或使用 `sudo` 强行写入项目目录。环境配置完成后，如需更新依赖，应由项目负责人或指定维护者统一变更并记录。
+
+---
+
 ### `/nas/Misc`
 
-主要用于存放实验室横向项目、多人协作项目产生或共同使用的数据及相关文件。
+主要用于存放除横向项目外的其他多人协作项目产生或共同使用的数据及相关文件。横向项目请统一使用 `/nas/Projects`。
 
 不同项目应在 `/nas/Misc` 下建立各自独立的项目目录，例如当前已有：
 
@@ -140,7 +200,7 @@ modelscope download --dataset <组织名>/<数据集名> \
 ```
 
 > [!IMPORTANT]
-> `/nas/Misc` 是横向项目和多人协作项目的共享空间，***不是个人杂项文件目录。***个人项目、个人实验数据以及不需要共享的文件仍应放在 `/nas/Users/${USER}`；其他不便归类的个人文件应放在 `/nas/Users/${USER}/Misc`。
+> `/nas/Misc` 是其他多人协作项目的共享空间，***不是个人杂项文件目录。***横向项目请使用 `/nas/Projects`；个人项目、个人实验数据以及不需要共享的文件仍应放在 `/nas/Users/${USER}`；其他不便归类的个人文件应放在 `/nas/Users/${USER}/Misc`。
 
 在 `/nas/Misc` 中新建项目目录前，建议先确认项目名称、参与成员和目录权限，避免不同项目之间出现目录重名、数据混放或误操作。
 
@@ -351,13 +411,13 @@ ${HOME}/.cache/huggingface/token
 
 各目录的主要用途如下：
 
-| 目录 | 用途 |
-| --- | --- |
-| `assets/` | 存放 Hugging Face 相关库生成或下载的辅助资源 |
+| 目录        | 用途                                                         |
+| ----------- | ------------------------------------------------------------ |
+| `assets/`   | 存放 Hugging Face 相关库生成或下载的辅助资源                 |
 | `datasets/` | 存放 `datasets` 库处理后的数据集缓存、索引、锁文件及中间结果 |
-| `hub/` | 存放从 Hugging Face Hub 下载的模型、数据集和其他仓库快照 |
-| `modules/` | 存放动态加载的自定义 Python 模块或远程代码缓存 |
-| `xet/` | 存放 Hugging Face Xet 下载机制使用的数据及传输缓存 |
+| `hub/`      | 存放从 Hugging Face Hub 下载的模型、数据集和其他仓库快照     |
+| `modules/`  | 存放动态加载的自定义 Python 模块或远程代码缓存               |
+| `xet/`      | 存放 Hugging Face Xet 下载机制使用的数据及传输缓存           |
 
 其中常见内容包括：
 
@@ -409,7 +469,8 @@ rm -rf /nas/DO_NOT_EDIT_OR_DELETE_SHARED_CACHE/HuggingFace/datasets/*
 ```plaintext
 显式指定 local-dir 或 local_dir 下载的官方开放模型 → /nas/Models
 显式指定 local-dir 或 local_dir 下载的公开数据集   → /nas/Datasets
-横向项目和多人协作项目的共享数据                 → /nas/Misc/<项目名>
+横向项目的共享代码、数据和实验文件               → /nas/Projects/<项目名>
+其他多人协作项目的共享数据                         → /nas/Misc/<项目名>
 自行训练的权重、Checkpoint 和实验数据 → /nas/Users/${USER}
 代码默认调用产生的 Hugging Face 缓存   → 共享缓存（自动管理）
 ```
@@ -420,29 +481,31 @@ rm -rf /nas/DO_NOT_EDIT_OR_DELETE_SHARED_CACHE/HuggingFace/datasets/*
 
 ## 推荐存储规则
 
-| 内容 | 推荐路径 |
-| --- | --- |
-| 显式指定 `--local-dir` 或 `--local_dir` 下载的官方开放模型 | `/nas/Models` |
-| 显式指定 `--local-dir` 或 `--local_dir` 下载的公开数据集 | `/nas/Datasets` |
-| 横向项目和多人协作项目的共享数据及相关文件 | `/nas/Misc/<项目名>` |
-| 个人代码仓库 | `/nas/Users/${USER}/Workspaces` |
-| 个人安装的程序、工具及其运行文件 | `/nas/Users/${USER}/Programs` |
-| 自行训练或微调完成后整理、导出的最终模型及个人模型权重 | `/nas/Users/${USER}/Models` |
-| 自行生成、处理或仅供个人使用的数据集 | `/nas/Users/${USER}/Datasets` |
-| 实验结果及日志 | `/nas/Users/${USER}/Outputs` |
-| 训练过程中的模型 Checkpoint 及断点续训状态 | `/nas/Users/${USER}/Checkpoints` |
-| 其他不便归类的个人文件 | `/nas/Users/${USER}/Misc` |
-| 个人临时文件 | `/nas/Users/${USER}/Temp` |
-| Conda 环境 | 可保存在服务器本地 |
-| Hugging Face 自动缓存 | `/nas/DO_NOT_EDIT_OR_DELETE_SHARED_CACHE/HuggingFace` |
-| Hugging Face 个人 Token | `${HOME}/.cache/huggingface/token` |
+| 内容                                                       | 推荐路径                                              |
+| ---------------------------------------------------------- | ----------------------------------------------------- |
+| 显式指定 `--local-dir` 或 `--local_dir` 下载的官方开放模型 | `/nas/Models`                                         |
+| 显式指定 `--local-dir` 或 `--local_dir` 下载的公开数据集   | `/nas/Datasets`                                       |
+| 其他多人协作项目的共享数据及相关文件                       | `/nas/Misc/<项目名>`                                  |
+| 横向项目的代码、数据、模型和实验文件                       | `/nas/Projects/<项目名>`                              |
+| 个人代码仓库                                               | `/nas/Users/${USER}/Workspaces`                       |
+| 个人安装的程序、工具及其运行文件                           | `/nas/Users/${USER}/Programs`                         |
+| 自行训练或微调完成后整理、导出的最终模型及个人模型权重     | `/nas/Users/${USER}/Models`                           |
+| 自行生成、处理或仅供个人使用的数据集                       | `/nas/Users/${USER}/Datasets`                         |
+| 实验结果及日志                                             | `/nas/Users/${USER}/Outputs`                          |
+| 训练过程中的模型 Checkpoint 及断点续训状态                 | `/nas/Users/${USER}/Checkpoints`                      |
+| 其他不便归类的个人文件                                     | `/nas/Users/${USER}/Misc`                             |
+| 个人临时文件                                               | `/nas/Users/${USER}/Temp`                             |
+| Conda 环境                                                 | 可保存在服务器本地                                    |
+| Hugging Face 自动缓存                                      | `/nas/DO_NOT_EDIT_OR_DELETE_SHARED_CACHE/HuggingFace` |
+| Hugging Face 个人 Token                                    | `${HOME}/.cache/huggingface/token`                    |
 
 简单来说：
 
 ```plaintext
 官方开放模型（显式 local-dir 或 local_dir） → /nas/Models
 公开数据集（显式 local-dir 或 local_dir）   → /nas/Datasets
-横向项目、多人协作项目的共享文件             → /nas/Misc/<项目名>
+横向项目的共享文件                         → /nas/Projects/<项目名>
+其他多人协作项目的共享文件                 → /nas/Misc/<项目名>
 个人代码、实验数据、自训权重   → /nas/Users/${USER}
 Conda 环境                      → 可以保留在服务器本地
 代码默认调用产生的 Hugging Face 缓存      → /nas/DO_NOT_EDIT_OR_DELETE_SHARED_CACHE/HuggingFace

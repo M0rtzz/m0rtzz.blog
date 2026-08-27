@@ -61,8 +61,12 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          discussion_numbers=$(git diff -- posts | sed -n 's/^+discussionNumber:[[:space:]]*//p' | sort -n | uniq | sed 's/^/#/' | paste -sd, - | sed 's/,/, /g')
+          if [ -z "${discussion_numbers}" ]; then
+            discussion_numbers="#metadata"
+          fi
           git add posts
-          git commit -m "🧱 chore(posts): bind new Discussions"
+          git commit -m "🔗 chore(posts): bind new Discussions (${discussion_numbers})"
           git pull --rebase origin master
           git push origin HEAD:master
 
