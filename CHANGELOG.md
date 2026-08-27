@@ -1,65 +1,8 @@
-## <small>5.4.8 (2026-08-27)</small>
+# Changelog
 
-* ⬆️ up_dep(shiki): upgrade Shiki and refine code block rendering ([d4d5dfe](https://github.com/M0rtzz/m0rtzz.blog/commit/d4d5dfe))
-* 📌 pin_dep: pin pkgs version ([1c02c55](https://github.com/M0rtzz/m0rtzz.blog/commit/1c02c55))
-* 🔖 tag(package.json): v5.4.8 ([25d1a35](https://github.com/M0rtzz/m0rtzz.blog/commit/25d1a35))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>5.4.7 (2026-08-27)</small>
-
-* 🐛 fix(markdown): prevent emphasis delimiters from capturing adjacent text ([673306e](https://github.com/M0rtzz/m0rtzz.blog/commit/673306e))
-* 📝 doc(CHANGELOG.md): automatic update ([9bc76e0](https://github.com/M0rtzz/m0rtzz.blog/commit/9bc76e0))
-* 🔖 tag(package.json): v5.4.7 ([dc35f63](https://github.com/M0rtzz/m0rtzz.blog/commit/dc35f63))
-
-
-
-## <small>5.4.6 (2026-08-27)</small>
-
-* 🐛 fix(posts): prevent Discussion metadata from breaking static page builds ([aa1058a](https://github.com/M0rtzz/m0rtzz.blog/commit/aa1058a))
-* 📝 doc(CHANGELOG.md): automatic update ([dfd98a4](https://github.com/M0rtzz/m0rtzz.blog/commit/dfd98a4))
-* 🔖 tag(package.json): v5.4.6 ([bb2c046](https://github.com/M0rtzz/m0rtzz.blog/commit/bb2c046))
-
-
-
-## <small>5.4.5 (2026-08-27)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([4f562e9](https://github.com/M0rtzz/m0rtzz.blog/commit/4f562e9))
-* 🔖 tag(package.json): v5.4.5 ([798bc89](https://github.com/M0rtzz/m0rtzz.blog/commit/798bc89))
-
-
-
-## <small>5.4.4 (2026-08-27)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([5cf805b](https://github.com/M0rtzz/m0rtzz.blog/commit/5cf805b))
-* 🔖 tag(package.json): v5.4.4 ([5c255f1](https://github.com/M0rtzz/m0rtzz.blog/commit/5c255f1))
-
-
-
-## <small>5.4.3 (2026-08-27)</small>
-
-* 📝 doc: update doc ([0bc14fa](https://github.com/M0rtzz/m0rtzz.blog/commit/0bc14fa))
-* 📝 doc(CHANGELOG.md): automatic update ([d7090b1](https://github.com/M0rtzz/m0rtzz.blog/commit/d7090b1))
-* 🔖 tag(package.json): v5.4.3 ([44356a1](https://github.com/M0rtzz/m0rtzz.blog/commit/44356a1))
-* 🧱 chore(posts): bind new Discussions ([104923e](https://github.com/M0rtzz/m0rtzz.blog/commit/104923e))
-
-
-
-## <small>5.4.2 (2026-08-27)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([c936331](https://github.com/M0rtzz/m0rtzz.blog/commit/c936331))
-* 📝 doc(posts/HUSTNLP 服务器说明.md): update doc ([4b7e0e1](https://github.com/M0rtzz/m0rtzz.blog/commit/4b7e0e1))
-* 🔖 tag(package.json): v5.4.2 ([f98234d](https://github.com/M0rtzz/m0rtzz.blog/commit/f98234d))
-
-
-
-## <small>5.4.1 (2026-08-27)</small>
-
-* ✨ feat(posts): create and bind Discussions from Markdown sources ([2725d1b](https://github.com/M0rtzz/m0rtzz.blog/commit/2725d1b))
-* 📝 doc(CHANGELOG.md): automatic update ([074c6ef](https://github.com/M0rtzz/m0rtzz.blog/commit/074c6ef))
-* 🔖 tag(package.json): v5.4.1 ([ad6689b](https://github.com/M0rtzz/m0rtzz.blog/commit/ad6689b))
-
-
+## [5.4.9](https://github.com/M0rtzz/m0rtzz.blog/compare/v5.4.8...v5.4.9) (2026-08-27)
 
 ## 5.4.0 (2026-08-27)
 
@@ -2261,5 +2204,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
