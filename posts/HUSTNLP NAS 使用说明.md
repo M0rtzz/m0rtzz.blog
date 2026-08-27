@@ -18,6 +18,7 @@ summary: "A practical HUSTNLP NAS guide covering shared models, datasets, person
 /nas/
 ├── Models/
 ├── Datasets/
+├── Misc/
 ├── Users/
 └── DO_NOT_EDIT_OR_DELETE_SHARED_CACHE/
     └── HuggingFace/
@@ -39,7 +40,7 @@ summary: "A practical HUSTNLP NAS guide covering shared models, datasets, person
 
 用于存放实验室成员共享且需要长期使用的模型文件。
 
-通过 `hf` CLI、ModelScope 等工具下载官方开放模型，并显式指定 `--local-dir` 或 `--local_dir` 时，***应将目标位置统一设在该目录下，***例如：
+通过 `hf` CLI、ModelScope 等工具下载官方开放模型，并显式指定 `--local-dir` 或 `--local_dir` 时，**应将目标位置统一设在该目录下，**例如：
 
 ```plaintext
 /nas/Models/
@@ -49,7 +50,7 @@ summary: "A practical HUSTNLP NAS guide covering shared models, datasets, person
 └── ...
 ```
 
-如果模型已经存在于 `/nas/Models`，请优先直接使用，***避免重复下载。***
+如果模型已经存在于 `/nas/Models`，请优先直接使用，**避免重复下载。**
 
 例如，可以按模型组织和名称建立目录：
 
@@ -61,7 +62,7 @@ modelscope download --model <组织名>/<模型名> \
     --local_dir /nas/Models/<组织名>/<模型名>
 ```
 
-这里存放的是官方发布或实验室成员共同使用的开放权重。自行训练、微调或蒸馏产生的权重和 Checkpoint 应存放在 `/nas/Users/${USER}`，不要放入 `/nas/Models`。
+这里存放的是官方发布或实验室成员共同使用的开放权重。**自行训练、微调或蒸馏产生的权重和 Checkpoint 应存放在** `/nas/Users/${USER}`，不要放入 `/nas/Models`。
 
 > [!TIP]
 > 下载大模型前，可以先运行以下命令查看已有模型：
@@ -76,13 +77,7 @@ modelscope download --model <组织名>/<模型名> \
 
 用于存放实验室共享的数据集。
 
-通过 `hf` CLI、ModelScope 等工具下载公开数据集，并显式指定 `--local-dir` 或 `--local_dir` 时，***应将目标位置统一设在：***
-
-```plaintext
-/nas/Datasets
-```
-
-例如：
+通过 `hf` CLI、ModelScope 等工具下载公开数据集，并显式指定 `--local-dir` 或 `--local_dir` 时，**应将目标位置统一设在该目录下，**例如：
 
 ```plaintext
 /nas/Datasets/
@@ -91,13 +86,9 @@ modelscope download --model <组织名>/<模型名> \
 └── ...
 ```
 
-下载数据集前，请先检查该目录中是否已经存在对应数据：
+如果数据集已经存在于 `/nas/Datasets`，请优先直接使用，**避免重复下载。**
 
-```shell
-ls /nas/Datasets
-```
-
-例如：
+例如，可以按数据集组织和名称建立目录：
 
 ```shell
 hf download <组织名>/<数据集名> \
@@ -108,7 +99,45 @@ modelscope download --dataset <组织名>/<数据集名> \
     --local_dir /nas/Datasets/<组织名>/<数据集名>
 ```
 
-个人实验自行生成、清洗或加工的数据仍应放在 `/nas/Users/${USER}` 中。
+这里存放的是官方发布或实验室成员共同使用的公开数据集。**个人实验自行生成、清洗或加工的数据应存放在** `/nas/Users/${USER}/Datasets`，不要放入 `/nas/Datasets`。
+
+> [!TIP]
+> 下载数据集前，可以先运行以下命令查看已有数据集：
+>
+> ```shell
+> ls /nas/Datasets
+> ```
+
+---
+
+### `/nas/Misc`
+
+主要用于存放实验室横向项目、多人协作项目产生或共同使用的数据及相关文件。
+
+不同项目应在 `/nas/Misc` 下建立各自独立的项目目录，例如当前已有：
+
+```plaintext
+/nas/Misc/
+└── data-sandbox/
+    ├── backups/
+    ├── runtime/
+    └── snapshots/
+```
+
+推荐按照以下形式组织：
+
+```plaintext
+/nas/Misc/<项目名>/
+├── Data/
+├── Outputs/
+├── Backups/
+└── ...
+```
+
+> [!IMPORTANT]
+> `/nas/Misc` 是横向项目和多人协作项目的共享空间，***不是个人杂项文件目录。***个人项目、个人实验数据以及不需要共享的文件仍应放在 `/nas/Users/${USER}`；其他不便归类的个人文件应放在 `/nas/Users/${USER}/Misc`。
+
+在 `/nas/Misc` 中新建项目目录前，建议先确认项目名称、参与成员和目录权限，避免不同项目之间出现目录重名、数据混放或误操作。
 
 ---
 
@@ -160,7 +189,7 @@ cd "/nas/Users/${USER}"
 mkdir -p "/nas/Users/${USER}"/{Workspaces,Programs,Outputs,Checkpoints,Models,Datasets,Misc,Temp}
 ```
 
-***以下内容原则上都应存放在个人 NAS 目录中：***
+**以下内容原则上都应存放在个人 NAS 目录中：**
 
 - 代码仓库及项目文件
 - 实验生成的数据
@@ -172,10 +201,10 @@ mkdir -p "/nas/Users/${USER}"/{Workspaces,Programs,Outputs,Checkpoints,Models,Da
 - 其他占用空间较大的个人文件
 
 > [!NOTE]
-> Conda 环境可以继续保存在服务器本地。除 Conda 环境外，建议将其他个人文件尽可能统一放入 `/nas/Users/${USER}`。
+> Conda 环境可以继续保存在服务器本地。除 Conda 环境外，建议***将其他个人文件尽可能统一放入*** `/nas/Users/${USER}`。
 
 > [!WARNING]
-> 自行训练的模型权重、Checkpoint、实验数据和输出通常占用大量空间。请将其存放在 `/nas/Users/${USER}`，不要长期保存在服务器本地的 `${HOME}`  中，以免占满本地磁盘并影响其他用户。
+> 自行训练的模型权重、Checkpoint、实验数据和输出通常占用大量空间。请将其存放在 `/nas/Users/${USER}`，***不要长期保存在服务器本地的*** `${HOME}`  ***中，***以免占满本地磁盘并影响其他用户。
 
 #### 在主目录中创建软连接
 
@@ -375,6 +404,7 @@ rm -rf /nas/DO_NOT_EDIT_OR_DELETE_SHARED_CACHE/HuggingFace/datasets/*
 ```plaintext
 显式指定 local-dir 或 local_dir 下载的官方开放模型 → /nas/Models
 显式指定 local-dir 或 local_dir 下载的公开数据集   → /nas/Datasets
+横向项目和多人协作项目的共享数据                 → /nas/Misc/<项目名>
 自行训练的权重、Checkpoint 和实验数据 → /nas/Users/${USER}
 代码默认调用产生的 Hugging Face 缓存   → 共享缓存（自动管理）
 ```
@@ -389,6 +419,7 @@ rm -rf /nas/DO_NOT_EDIT_OR_DELETE_SHARED_CACHE/HuggingFace/datasets/*
 | --- | --- |
 | 显式指定 `--local-dir` 或 `--local_dir` 下载的官方开放模型 | `/nas/Models` |
 | 显式指定 `--local-dir` 或 `--local_dir` 下载的公开数据集 | `/nas/Datasets` |
+| 横向项目和多人协作项目的共享数据及相关文件 | `/nas/Misc/<项目名>` |
 | 个人代码仓库 | `/nas/Users/${USER}/Workspaces` |
 | 个人安装的程序、工具及其运行文件 | `/nas/Users/${USER}/Programs` |
 | 自行训练或微调完成后整理、导出的最终模型及个人模型权重 | `/nas/Users/${USER}/Models` |
@@ -406,6 +437,7 @@ rm -rf /nas/DO_NOT_EDIT_OR_DELETE_SHARED_CACHE/HuggingFace/datasets/*
 ```plaintext
 官方开放模型（显式 local-dir 或 local_dir） → /nas/Models
 公开数据集（显式 local-dir 或 local_dir）   → /nas/Datasets
+横向项目、多人协作项目的共享文件             → /nas/Misc/<项目名>
 个人代码、实验数据、自训权重   → /nas/Users/${USER}
 Conda 环境                      → 可以保留在服务器本地
 代码默认调用产生的 Hugging Face 缓存      → /nas/DO_NOT_EDIT_OR_DELETE_SHARED_CACHE/HuggingFace
