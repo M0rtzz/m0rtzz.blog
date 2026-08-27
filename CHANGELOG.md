@@ -1,17 +1,8 @@
-## <small>5.4.2 (2026-08-27)</small>
+# Changelog
 
-* 📝 doc(posts/HUSTNLP 服务器说明.md): update doc ([4b7e0e1](https://github.com/M0rtzz/m0rtzz.blog/commit/4b7e0e1))
-* 🔖 tag(package.json): v5.4.2 ([f98234d](https://github.com/M0rtzz/m0rtzz.blog/commit/f98234d))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>5.4.1 (2026-08-27)</small>
-
-* ✨ feat(posts): create and bind Discussions from Markdown sources ([2725d1b](https://github.com/M0rtzz/m0rtzz.blog/commit/2725d1b))
-* 📝 doc(CHANGELOG.md): automatic update ([074c6ef](https://github.com/M0rtzz/m0rtzz.blog/commit/074c6ef))
-* 🔖 tag(package.json): v5.4.1 ([ad6689b](https://github.com/M0rtzz/m0rtzz.blog/commit/ad6689b))
-
-
+## [5.4.3](https://github.com/M0rtzz/m0rtzz.blog/compare/v5.4.2...v5.4.3) (2026-08-27)
 
 ## 5.4.0 (2026-08-27)
 
@@ -2213,5 +2204,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
