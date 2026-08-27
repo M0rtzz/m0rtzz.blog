@@ -1,3 +1,9 @@
+---
+discussionNumber: 16
+title: "人工智能导论期末复习笔记"
+summary: "Exam-focused AI notes on definitions, goals, knowledge, reasoning, and natural language processing."
+---
+
 # 一些人工智能导论概念
 
 ## 第一章-概论

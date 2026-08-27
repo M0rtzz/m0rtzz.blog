@@ -1,15 +1,27 @@
-import { readFile, writeFile } from 'node:fs/promises'
-import { join } from 'node:path'
+import 'server-only'
 
+import { readdir, readFile, writeFile } from 'node:fs/promises'
+import { extname, resolve } from 'node:path'
+
+import matter from 'gray-matter'
 import OpenAI from 'openai'
 
 import { sleep } from '@/utils'
 
 const defaultSummaryModel = 'gpt-3.5-turbo'
+const maxSummaryAttempts = 3
+const markdownExtensions = new Set(['.md', '.mdx'])
+const postsDirectory = resolve(process.cwd(), 'posts')
 const summaryTasks = new Map<string, Promise<string | null>>()
-let summaryFileOperation: Promise<void> = Promise.resolve()
+let metadataCache: Promise<PostMetadata> | null = null
+let summaryWriteOperation: Promise<void> = Promise.resolve()
 
-type SummaryMap = Record<string, string>
+type SummaryMap = Partial<Record<string, string>>
+
+interface PostMetadata {
+  files: Map<string, string>
+  summaries: SummaryMap
+}
 
 function normalizeBaseURL(baseURL?: string) {
   if (!baseURL) {
@@ -27,7 +39,12 @@ function normalizeBaseURL(baseURL?: string) {
   return normalizedBaseURL
 }
 
+function isEnabled(value?: string) {
+  return ['1', 'true', 'yes', 'on'].includes(value?.trim().toLowerCase() ?? '')
+}
+
 function getSummaryClientConfig() {
+  const enabled = isEnabled(process.env.ENABLE_LLM_SUMMARY)
   const apiKey = process.env.LLM_API_KEY?.trim()
   const baseURL = normalizeBaseURL(process.env.LLM_BASE_URL)
   const model = process.env.LLM_MODEL?.trim() || defaultSummaryModel
@@ -35,18 +52,20 @@ function getSummaryClientConfig() {
   return {
     apiKey,
     baseURL,
+    enabled,
     model,
   }
 }
 
 export function canCreateSummary() {
-  return Boolean(getSummaryClientConfig().apiKey)
+  const { apiKey, enabled } = getSummaryClientConfig()
+  return enabled && Boolean(apiKey)
 }
 
 export async function createSummary(content: string) {
-  const { apiKey, baseURL, model } = getSummaryClientConfig()
+  const { apiKey, baseURL, enabled, model } = getSummaryClientConfig()
 
-  if (!apiKey) {
+  if (!enabled || !apiKey) {
     return null
   }
 
@@ -79,58 +98,120 @@ export async function createSummary(content: string) {
   }
 }
 
-const cwd = process.cwd()
-const summaryFilePath = join(cwd, 'summary.json')
+async function findMarkdownFiles(directory: string): Promise<string[]> {
+  const entries = await readdir(directory, { withFileTypes: true })
+  const files: string[] = []
 
-function withSummaryFileLock<T>(action: () => Promise<T>) {
-  const operation = summaryFileOperation.then(action, action)
-  summaryFileOperation = operation.then(
+  for (const entry of entries) {
+    const path = resolve(directory, entry.name)
+
+    if (entry.isDirectory()) {
+      files.push(...(await findMarkdownFiles(path)))
+    } else if (entry.isFile() && markdownExtensions.has(extname(entry.name))) {
+      files.push(path)
+    }
+  }
+
+  return files
+}
+
+async function readPostMetadata(): Promise<PostMetadata> {
+  const files = new Map<string, string>()
+  const summaries: SummaryMap = {}
+
+  for (const path of await findMarkdownFiles(postsDirectory)) {
+    const source = await readFile(path, 'utf8')
+    const { data } = matter(source)
+    const discussionNumber = Number(data.discussionNumber)
+
+    if (!Number.isSafeInteger(discussionNumber) || discussionNumber <= 0) {
+      continue
+    }
+
+    const id = String(discussionNumber)
+    files.set(id, path)
+
+    if (typeof data.summary === 'string' && data.summary.trim() !== '') {
+      summaries[id] = data.summary.trim()
+    }
+  }
+
+  return { files, summaries }
+}
+
+function getPostMetadata() {
+  metadataCache ??= readPostMetadata()
+  return metadataCache
+}
+
+export async function getSummary() {
+  return (await getPostMetadata()).summaries
+}
+
+function withSummaryWriteLock<T>(action: () => Promise<T>) {
+  const operation = summaryWriteOperation.then(action, action)
+  summaryWriteOperation = operation.then(
     () => undefined,
     () => undefined,
   )
   return operation
 }
 
-export async function getSummary() {
-  try {
-    const fileContent = await readFile(summaryFilePath, 'utf-8')
-    return JSON.parse(fileContent)
-  } catch {
-    return {}
-  }
-}
+function setFrontMatterSummary(source: string, summary: string) {
+  const frontMatter = source.match(/^---(\r?\n)([\s\S]*?)\r?\n---(\r?\n|$)/)
 
-export async function writeSummery(newSummery: SummaryMap) {
-  await writeFile(summaryFilePath, JSON.stringify(newSummery, null, 2))
+  if (!frontMatter) {
+    throw new Error('Post does not contain Front Matter')
+  }
+
+  const lineEnding = frontMatter[1]
+  const lines = frontMatter[2].split(/\r?\n/)
+  const summaryLine = `summary: ${JSON.stringify(summary)}`
+  const summaryIndex = lines.findIndex(line => /^summary\s*:/.test(line))
+
+  if (summaryIndex >= 0) {
+    lines[summaryIndex] = summaryLine
+  } else {
+    lines.push(summaryLine)
+  }
+
+  const replacement = `---${lineEnding}${lines.join(lineEnding)}${lineEnding}---${frontMatter[3]}`
+  return replacement + source.slice(frontMatter[0].length)
 }
 
 async function saveSummary(id: string, summary: string) {
-  await withSummaryFileLock(async () => {
-    const currentSummary = (await getSummary()) as SummaryMap
+  await withSummaryWriteLock(async () => {
+    const metadata = await getPostMetadata()
 
-    if (currentSummary[id]) {
+    if (metadata.summaries[id]) {
       return
     }
 
-    currentSummary[id] = summary
-    await writeSummery(currentSummary)
+    const path = metadata.files.get(id)
+    if (!path) {
+      throw new Error(`Cannot find a post mapped to Discussion #${id}`)
+    }
+
+    const source = await readFile(path, 'utf8')
+    await writeFile(path, setFrontMatterSummary(source, summary))
+    metadataCache = null
   })
 }
 
 async function retrySummaryUntilSuccess(id: string, content: string) {
   let attempt = 0
 
-  while (true) {
-    const currentSummary = (await getSummary()) as SummaryMap
+  while (canCreateSummary() && attempt < maxSummaryAttempts) {
+    const currentSummary = (await getSummary())[id]
 
-    if (currentSummary[id]) {
-      return currentSummary[id]
+    if (currentSummary) {
+      return currentSummary
     }
 
     attempt += 1
     console.log(`summary ${id}, attempt ${attempt}...`)
 
-    const result = await createSummary(content)
+    const result = (await createSummary(content))?.trim()
 
     if (result) {
       await saveSummary(id, result)
@@ -142,6 +223,8 @@ async function retrySummaryUntilSuccess(id: string, content: string) {
     console.log(`summary ${id} failed, retrying in ${retryDelay / 1000}s...`)
     await sleep(retryDelay)
   }
+
+  return null
 }
 
 export async function ensureSummary(id: string | number, content: string) {
@@ -150,10 +233,10 @@ export async function ensureSummary(id: string | number, content: string) {
   }
 
   const summaryId = String(id)
-  const currentSummary = (await getSummary()) as SummaryMap
+  const currentSummary = (await getSummary())[summaryId]
 
-  if (currentSummary[summaryId]) {
-    return currentSummary[summaryId]
+  if (currentSummary) {
+    return currentSummary
   }
 
   const existingTask = summaryTasks.get(summaryId)

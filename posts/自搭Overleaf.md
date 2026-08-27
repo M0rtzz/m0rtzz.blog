@@ -1,3 +1,9 @@
+---
+discussionNumber: 17
+title: "自搭Overleaf"
+summary: "A practical walkthrough for deploying Overleaf with Docker, toolkit configuration, and template management."
+---
+
 # 自搭Overleaf
 
 ## 克隆仓库

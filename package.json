@@ -5,10 +5,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "pnpm posts:check",
     "build": "next build",
     "analyze": "ANALYZE=true next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "posts:check": "node scripts/check-posts.mjs",
+    "posts:sync": "node scripts/sync-discussions.mjs",
+    "posts:sync:dry-run": "node scripts/sync-discussions.mjs --dry-run"
   },
   "dependencies": {
     "@discublog/api": "latest",
@@ -20,6 +24,7 @@
     "clsx": "^2.1.1",
     "dark-toggle": "2.0.0-test.0",
     "eslint-plugin-react-hooks": "^4.6.2",
+    "gray-matter": "^4.0.3",
     "katex": "latest",
     "lodash.upperfirst": "^4.3.1",
     "mdast-util-toc": "^7.1.0",
@@ -54,6 +59,7 @@
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
     "autoprefixer": "^10.4.20",
+    "dotenv": "^17.4.2",
     "eslint": "^8.57.1",
     "eslint-config-next": "14.2.3",
     "eslint-config-prettier": "^9.1.0",

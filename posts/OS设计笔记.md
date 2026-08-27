@@ -1,3 +1,9 @@
+---
+discussionNumber: 9
+title: "OS设计实验过程笔记"
+summary: "Experiment notes for the OS lab, covering scoring scripts, threading, sockets, and Linux 0.12 system-call changes."
+---
+
 # OS设计实验过程笔记
 
 克隆该仓库：

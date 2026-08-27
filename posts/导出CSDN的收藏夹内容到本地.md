@@ -1,3 +1,9 @@
+---
+discussionNumber: 8
+title: "导出CSDN的收藏夹内容到本地"
+summary: "Export a CSDN favorites list to local files by running a small script in the browser console."
+---
+
 # 导出 CSDN 的收藏夹内容到本地
 
 ## 1

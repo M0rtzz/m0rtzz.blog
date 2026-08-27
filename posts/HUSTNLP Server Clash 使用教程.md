@@ -1,3 +1,9 @@
+---
+discussionNumber: 19
+title: "HUSTNLP Server Clash 使用教程"
+summary: "A practical HUSTNLP server guide for configuring Clash subscriptions, terminal proxies, nodes, web access, troubleshooting, and SSH port forwarding."
+---
+
 # HUSTNLP Server Clash 使用教程
 
 本文面向 HUSTNLP 的所有同学。每个人使用自己的订阅、节点、端口和 `mihomo` 进程；不需要 `sudo`，也不会影响其他用户

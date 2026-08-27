@@ -1,5 +1,10 @@
 #!/usr/bin/env sh
 
+pnpm posts:check || {
+    echo "\e[1;31m文章 Front Matter 或 summary.json 校验失败\e[0m"
+    exit 1
+}
+
 git pull --rebase || {
     echo "\e[1;31m代码拉取失败\e[0m"
     exit 1
