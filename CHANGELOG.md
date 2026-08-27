@@ -1,66 +1,8 @@
-## <small>5.3.8 (2026-08-27)</small>
+# Changelog
 
-* ⚡️ perf(transfer.sh): reduce deployment transfers with incremental synchronization ([6752685](https://github.com/M0rtzz/m0rtzz.blog/commit/6752685))
-* 🔖 tag(package.json): v5.3.8 ([78b58b9](https://github.com/M0rtzz/m0rtzz.blog/commit/78b58b9))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>5.3.7 (2026-08-27)</small>
-
-* ✨ feat(posts): sync Markdown sources with GitHub Discussions ([08d9780](https://github.com/M0rtzz/m0rtzz.blog/commit/08d9780))
-* 📝 doc: update doc ([50117e7](https://github.com/M0rtzz/m0rtzz.blog/commit/50117e7))
-* 📝 doc(CHANGELOG.md): automatic update ([8f86695](https://github.com/M0rtzz/m0rtzz.blog/commit/8f86695))
-* 🔖 tag(package.json): v5.3.7 ([746eb87](https://github.com/M0rtzz/m0rtzz.blog/commit/746eb87))
-
-
-
-## <small>5.3.6 (2026-08-26)</small>
-
-* 🐛 fix(markdown): fix alert parsing and polish NAS article presentation ([0fd26f1](https://github.com/M0rtzz/m0rtzz.blog/commit/0fd26f1))
-* 📝 doc(CHANGELOG.md): automatic update ([aaf6fa2](https://github.com/M0rtzz/m0rtzz.blog/commit/aaf6fa2))
-* 🔖 tag(package.json): v5.3.6 ([677f8db](https://github.com/M0rtzz/m0rtzz.blog/commit/677f8db))
-
-
-
-## <small>5.3.5 (2026-08-26)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([ff80bbe](https://github.com/M0rtzz/m0rtzz.blog/commit/ff80bbe))
-* 📝 doc(posts/HUSTNLP NAS 使用说明.md): add doc ([0d6945a](https://github.com/M0rtzz/m0rtzz.blog/commit/0d6945a))
-* 🔖 tag(package.json): v5.3.5 ([7ca0d02](https://github.com/M0rtzz/m0rtzz.blog/commit/7ca0d02))
-
-
-
-## <small>5.3.4 (2026-08-19)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([be693b1](https://github.com/M0rtzz/m0rtzz.blog/commit/be693b1))
-* 📝 doc(posts/HUSTNLP Server Clash 使用教程.md): update doc ([4910fb5](https://github.com/M0rtzz/m0rtzz.blog/commit/4910fb5))
-* 🔖 tag(package.json): v5.3.4 ([953e5ea](https://github.com/M0rtzz/m0rtzz.blog/commit/953e5ea))
-
-
-
-## <small>5.3.3 (2026-08-19)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([a78abf4](https://github.com/M0rtzz/m0rtzz.blog/commit/a78abf4))
-* 📝 doc(posts/HUSTNLP Server Clash 使用教程.md): update doc ([e0058d5](https://github.com/M0rtzz/m0rtzz.blog/commit/e0058d5))
-* 🔖 tag(package.json): v5.3.3 ([7b5b75d](https://github.com/M0rtzz/m0rtzz.blog/commit/7b5b75d))
-
-
-
-## <small>5.3.2 (2026-08-19)</small>
-
-* 💄 ui(cursor): add custom code scrollbar with centered Anya cursors ([c617647](https://github.com/M0rtzz/m0rtzz.blog/commit/c617647))
-* 📝 doc(CHANGELOG.md): automatic update ([88943ae](https://github.com/M0rtzz/m0rtzz.blog/commit/88943ae))
-* 🔖 tag(package.json): v5.3.2 ([a0e4791](https://github.com/M0rtzz/m0rtzz.blog/commit/a0e4791))
-
-
-
-## <small>5.3.1 (2026-08-19)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([dc7f27c](https://github.com/M0rtzz/m0rtzz.blog/commit/dc7f27c))
-* 📝 doc(posts/HUSTNLP Server Clash 使用教程.md): update doc ([e50685f](https://github.com/M0rtzz/m0rtzz.blog/commit/e50685f))
-* 🔖 tag(package.json): v5.3.1 ([939ae7f](https://github.com/M0rtzz/m0rtzz.blog/commit/939ae7f))
-
-
+## [5.3.9](https://github.com/M0rtzz/m0rtzz.blog/compare/v5.3.8...v5.3.9) (2026-08-27)
 
 ## 5.3.0 (2026-08-19)
 
@@ -2181,5 +2123,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
