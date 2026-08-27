@@ -1,3 +1,9 @@
+---
+discussionNumber: 4
+title: "Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）"
+summary: "A step-by-step Ubuntu guide to installing TeX Live and building a smooth LaTeX workflow in VSCode."
+---
+
 # Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）
 
 这里我们以Ubuntu为例。

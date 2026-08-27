@@ -50,8 +50,8 @@ export const generateMetadata = async ({ params }: PageProps) => {
   const { title } = discussion
 
   // TODO og, twitter
-  const summery = await getSummary()
-  const description = summery[id]
+  const summaries = await getSummary()
+  const description = summaries[id]
   return {
     description,
     title,

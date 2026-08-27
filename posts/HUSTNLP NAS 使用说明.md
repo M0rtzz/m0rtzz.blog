@@ -1,3 +1,9 @@
+---
+discussionNumber: 20
+title: "HUSTNLP NAS 使用说明"
+summary: "A practical HUSTNLP NAS guide covering shared models, datasets, personal storage, Hugging Face caching, tokens, permissions, and safe usage."
+---
+
 # HUSTNLP NAS 使用说明
 
 实验室 NAS 已挂载至各服务器的：

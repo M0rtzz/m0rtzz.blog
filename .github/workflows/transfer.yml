@@ -1,5 +1,13 @@
 name: Transfer
 
+permissions:
+  contents: read
+  discussions: write
+
+concurrency:
+  group: transfer-${{ github.ref }}
+  cancel-in-progress: true
+
 on:
   push:
     branches:
@@ -31,6 +39,15 @@ jobs:
           run_install: |
             - recursive: true
               args: [--frozen-lockfile, --strict-peer-dependencies]
+
+      - name: Validate post metadata
+        run: pnpm posts:check
+
+      - name: Sync posts to GitHub Discussions
+        run: pnpm posts:sync
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
 
       - name: Setup SSH
         run: |

@@ -1,3 +1,9 @@
+---
+discussionNumber: 6
+title: "Linux版“IDM”—— XDM（Xtreme Download Manager，类Windows-IDM）安装并汉化"
+summary: "Install XDM on Linux, then localize the interface for a smoother IDM-like download manager experience."
+---
+
 # Linux版“IDM”—— XDM（Xtreme Download Manager，类Windows-IDM）安装并汉化
 
 在Linux下使用XDM可以像在Winodows里使用IDM一样凭借动态文件分割技术进行文件分段下载。

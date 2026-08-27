@@ -21,8 +21,8 @@ export const Post = async (props: PostProps) => {
   const { labels, number, bodyText } = node
   const firstLabel = labels.nodes[0]
 
-  const summaryJson = await getSummary()
-  let currentSummary = summaryJson[number]
+  const summaries = await getSummary()
+  let currentSummary: string | null | undefined = summaries[number]
 
   if (
     !currentSummary &&

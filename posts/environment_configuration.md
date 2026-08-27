@@ -1,3 +1,9 @@
+---
+discussionNumber: 3
+title: "ZZU-RoboCup环境配置"
+summary: "A practical ZZU-RoboCup setup guide covering drivers, CUDA, ROS, OpenCV, Conda, and essential Linux dependencies."
+---
+
 # ZZU-RoboCup环境配置
 
 **Updating（最速更新链接【支持一些扩展语法，观感良好】）：[博客](https://www.m0rtzz.com/posts/3)）...**
