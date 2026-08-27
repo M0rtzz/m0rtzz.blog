@@ -25,7 +25,7 @@
 > [!IMPORTANT]
 > 除 Conda 环境外，请尽量将个人代码仓库、实验数据、日志、输出结果以及自行训练或微调产生的模型权重和 Checkpoint 全部放在 `/nas/Users/${USER}` 中。 
 >
-> 通过 Hugging Face、ModelScope 等平台获取的官方开放模型和公开数据集，如果使用命令行工具显式指定 `local_dir` 下载，则应分别保存到 `/nas/Models` 和 `/nas/Datasets`。代码中按默认方式加载的资源通常会自动进入共享缓存。
+> 通过 Hugging Face、ModelScope 等平台获取的官方开放模型和公开数据集，如果使用命令行工具显式指定 `--local-dir` 或 `--local_dir` 下载，则应分别保存到 `/nas/Models` 和 `/nas/Datasets`。代码中按默认方式加载的资源通常会自动进入共享缓存。
 
 ## 目录说明
 
@@ -33,13 +33,13 @@
 
 用于存放实验室成员共享且需要长期使用的模型文件。
 
-通过 Hugging Face CLI、ModelScope 等工具下载官方开放模型，并显式指定 `local_dir` 时，***应将目标位置统一设在该目录下，***例如：
+通过 `hf` CLI、ModelScope 等工具下载官方开放模型，并显式指定 `--local-dir` 或 `--local_dir` 时，***应将目标位置统一设在该目录下，***例如：
 
 ```plaintext
 /nas/Models/
-├── Qwen/
-├── Llama/
-├── Mistral/
+├── Qwen2.5-7B-Instruct/
+├── Mistral-7B-Instruct-v0.3/
+├── Meta-Llama-3.1-8B-Instruct/
 └── ...
 ```
 
@@ -48,11 +48,11 @@
 例如，可以按模型组织和名称建立目录：
 
 ```shell
-huggingface-cli download <组织名>/<模型名> \
-  --local-dir /nas/Models/<组织名>/<模型名>
+hf download <组织名>/<模型名> \
+    --local-dir /nas/Models/<组织名>/<模型名>
 
 modelscope download --model <组织名>/<模型名> \
-  --local_dir /nas/Models/<组织名>/<模型名>
+    --local_dir /nas/Models/<组织名>/<模型名>
 ```
 
 这里存放的是官方发布或实验室成员共同使用的开放权重。自行训练、微调或蒸馏产生的权重和 Checkpoint 应存放在 `/nas/Users/${USER}`，不要放入 `/nas/Models`。
@@ -70,7 +70,7 @@ modelscope download --model <组织名>/<模型名> \
 
 用于存放实验室共享的数据集。
 
-通过 Hugging Face CLI、ModelScope 等工具下载公开数据集，并显式指定 `local_dir` 时，***应将目标位置统一设在：***
+通过 `hf` CLI、ModelScope 等工具下载公开数据集，并显式指定 `--local-dir` 或 `--local_dir` 时，***应将目标位置统一设在：***
 
 ```plaintext
 /nas/Datasets
@@ -94,12 +94,12 @@ ls /nas/Datasets
 例如：
 
 ```shell
-huggingface-cli download <组织名>/<数据集名> \
-  --repo-type dataset \
-  --local-dir /nas/Datasets/<组织名>/<数据集名>
+hf download <组织名>/<数据集名> \
+    --repo-type dataset \
+    --local-dir /nas/Datasets/<组织名>/<数据集名>
 
 modelscope download --dataset <组织名>/<数据集名> \
-  --local_dir /nas/Datasets/<组织名>/<数据集名>
+    --local_dir /nas/Datasets/<组织名>/<数据集名>
 ```
 
 个人实验自行生成、清洗或加工的数据仍应放在 `/nas/Users/${USER}` 中。
@@ -244,7 +244,7 @@ model = AutoModel.from_pretrained("<组织名>/<模型名>")
 dataset = load_dataset("<组织名>/<数据集名>")
 ```
 
-这与使用 Hugging Face CLI、ModelScope 等工具显式指定 `local_dir` 的情形不同：后者下载的官方开放模型和公开数据集应分别放在 `/nas/Models` 和 `/nas/Datasets`。
+这与使用 `hf` CLI、ModelScope 等工具显式指定 `--local-dir` 或 `--local_dir` 的情形不同：后者下载的官方开放模型和公开数据集应分别放在 `/nas/Models` 和 `/nas/Datasets`。
 
 #### Hugging Face Token
 
@@ -367,8 +367,8 @@ rm -rf /nas/DO_NOT_EDIT_OR_DELETE_SHARED_CACHE/HuggingFace/datasets/*
 请按资源来源和下载方式选择位置：
 
 ```plaintext
-显式指定 local_dir 下载的官方开放模型 → /nas/Models
-显式指定 local_dir 下载的公开数据集   → /nas/Datasets
+显式指定 local-dir 或 local_dir 下载的官方开放模型 → /nas/Models
+显式指定 local-dir 或 local_dir 下载的公开数据集   → /nas/Datasets
 自行训练的权重、Checkpoint 和实验数据 → /nas/Users/${USER}
 代码默认调用产生的 Hugging Face 缓存   → 共享缓存（自动管理）
 ```
@@ -381,8 +381,8 @@ rm -rf /nas/DO_NOT_EDIT_OR_DELETE_SHARED_CACHE/HuggingFace/datasets/*
 
 | 内容 | 推荐路径 |
 | --- | --- |
-| 显式指定 `local_dir` 下载的官方开放模型 | `/nas/Models` |
-| 显式指定 `local_dir` 下载的公开数据集 | `/nas/Datasets` |
+| 显式指定 `--local-dir` 或 `--local_dir` 下载的官方开放模型 | `/nas/Models` |
+| 显式指定 `--local-dir` 或 `--local_dir` 下载的公开数据集 | `/nas/Datasets` |
 | 个人代码仓库 | `/nas/Users/${USER}/Workspaces` |
 | 个人安装的程序、工具及其运行文件 | `/nas/Users/${USER}/Programs` |
 | 自行训练或微调完成后整理、导出的最终模型及个人模型权重 | `/nas/Users/${USER}/Models` |
@@ -398,8 +398,8 @@ rm -rf /nas/DO_NOT_EDIT_OR_DELETE_SHARED_CACHE/HuggingFace/datasets/*
 简单来说：
 
 ```plaintext
-官方开放模型（显式 local_dir） → /nas/Models
-公开数据集（显式 local_dir）   → /nas/Datasets
+官方开放模型（显式 local-dir 或 local_dir） → /nas/Models
+公开数据集（显式 local-dir 或 local_dir）   → /nas/Datasets
 个人代码、实验数据、自训权重   → /nas/Users/${USER}
 Conda 环境                      → 可以保留在服务器本地
 代码默认调用产生的 Hugging Face 缓存      → /nas/DO_NOT_EDIT_OR_DELETE_SHARED_CACHE/HuggingFace
@@ -417,8 +417,8 @@ ls /nas/Datasets
 
 模型和数据集应按以下规则存放：
 
-- 使用 Hugging Face CLI、ModelScope 等工具显式指定 `local_dir` 下载的官方开放模型，保存至 `/nas/Models`
-- 使用上述工具显式指定 `local_dir` 下载的公开数据集，保存至 `/nas/Datasets`
+- 使用 `hf` CLI、ModelScope 等工具显式指定 `--local-dir` 或 `--local_dir` 下载的官方开放模型，保存至 `/nas/Models`
+- 使用上述工具显式指定 `--local-dir` 或 `--local_dir` 下载的公开数据集，保存至 `/nas/Datasets`
 - 自行训练、微调或蒸馏完成后整理、导出的最终模型及个人模型权重，保存至 `/nas/Users/${USER}/Models`
 - 训练过程中产生的模型 Checkpoint 及断点续训状态（如模型、优化器和学习率调度器状态），保存至 `/nas/Users/${USER}/Checkpoints`
 - 自行生成、处理或仅供个人使用的数据集，保存至 `/nas/Users/${USER}/Datasets`

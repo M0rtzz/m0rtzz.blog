@@ -1,19 +1,22 @@
 import { isElement } from 'hast-util-is-element'
 import { visit } from 'unist-util-visit'
 
-import type { Element, ElementContent, Text } from 'hast'
+import type { Element, Parent, Root, RootContent, Text } from 'hast'
 import type { Plugin } from 'unified'
 
 const literalEmphasisPattern = /(\*{3}|\*{2}|\*)(?=\S)([^\n]*?\S)\1/g
 
 const createText = (value: string): Text => ({ type: 'text', value })
 
-const restoreLiteralEmphasis = (element: Element) => {
-  if (element.tagName === 'code' || element.tagName === 'pre') {
+const restoreLiteralEmphasis = (parent: Parent) => {
+  if (
+    isElement(parent) &&
+    (parent.tagName === 'code' || parent.tagName === 'pre')
+  ) {
     return
   }
 
-  element.children = element.children.flatMap(child => {
+  parent.children = parent.children.flatMap(child => {
     if (child.type === 'element') {
       restoreLiteralEmphasis(child)
       return [child]
@@ -23,7 +26,7 @@ const restoreLiteralEmphasis = (element: Element) => {
       return [child]
     }
 
-    const replacements: ElementContent[] = []
+    const replacements: RootContent[] = []
     let lastIndex = 0
 
     for (const match of child.value.matchAll(literalEmphasisPattern)) {
@@ -97,13 +100,13 @@ export const findCodeText = (node: unknown): Text | null => {
   return null
 }
 
-export const rehypeGithubAlert: Plugin = () => tree =>
+export const rehypeGithubAlert: Plugin<[], Root> = () => tree => {
+  restoreLiteralEmphasis(tree)
+
   visit(tree, node => {
     if (!isElement(node) || node.tagName !== 'blockquote') {
       return
     }
-
-    restoreLiteralEmphasis(node)
 
     const firstParagraph = node.children.find(
       child => isElement(child) && child.tagName === 'p',
@@ -139,3 +142,4 @@ export const rehypeGithubAlert: Plugin = () => tree =>
       type: matches[1].toLowerCase(),
     }
   })
+}
