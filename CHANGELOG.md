@@ -1,8 +1,41 @@
-# Changelog
+## <small>5.5.5 (2026-08-28)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 📝 doc(posts/HUSTNLP Server Clash 使用教程.md): update doc ([ffddbeb](https://github.com/M0rtzz/m0rtzz.blog/commit/ffddbeb))
+* 🔖 tag(package.json): v5.5.5 ([a01f18e](https://github.com/M0rtzz/m0rtzz.blog/commit/a01f18e))
 
-## [5.5.5](https://github.com/M0rtzz/m0rtzz.blog/compare/v5.5.4...v5.5.5) (2026-08-28)
+
+
+## <small>5.5.4 (2026-08-28)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([f0ea0eb](https://github.com/M0rtzz/m0rtzz.blog/commit/f0ea0eb))
+* 📝 doc(posts/HUSTNLP Server Clash 使用教程.md): update doc ([37e1fdc](https://github.com/M0rtzz/m0rtzz.blog/commit/37e1fdc))
+* 🔖 tag(package.json): v5.5.4 ([f79601c](https://github.com/M0rtzz/m0rtzz.blog/commit/f79601c))
+
+
+
+## <small>5.5.3 (2026-08-28)</small>
+
+* 🐛 fix(markdown): restore copy buttons for all code blocks ([32e6dd8](https://github.com/M0rtzz/m0rtzz.blog/commit/32e6dd8))
+* 📝 doc(CHANGELOG.md): automatic update ([5a7b91e](https://github.com/M0rtzz/m0rtzz.blog/commit/5a7b91e))
+* 🔖 tag(package.json): v5.5.3 ([5b79fba](https://github.com/M0rtzz/m0rtzz.blog/commit/5b79fba))
+
+
+
+## <small>5.5.2 (2026-08-27)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([f8d3fb3](https://github.com/M0rtzz/m0rtzz.blog/commit/f8d3fb3))
+* 📝 doc(posts/HUSTNLP 服务器说明.md): update doc ([5713670](https://github.com/M0rtzz/m0rtzz.blog/commit/5713670))
+* 🔖 tag(package.json): v5.5.2 ([8ecef2f](https://github.com/M0rtzz/m0rtzz.blog/commit/8ecef2f))
+
+
+
+## <small>5.5.1 (2026-08-27)</small>
+
+* 💄 ui(code-group): add consistent spacing around the copy button ([5ad04a4](https://github.com/M0rtzz/m0rtzz.blog/commit/5ad04a4))
+* 📝 doc(CHANGELOG.md): automatic update ([1c09d6f](https://github.com/M0rtzz/m0rtzz.blog/commit/1c09d6f))
+* 🔖 tag(package.json): v5.5.1 ([8428553](https://github.com/M0rtzz/m0rtzz.blog/commit/8428553))
+
+
 
 ## 5.5.0 (2026-08-27)
 
@@ -2284,3 +2317,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
