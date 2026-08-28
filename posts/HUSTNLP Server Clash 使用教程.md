@@ -33,7 +33,7 @@ clashctl init # 首次必须使用；加载 hook 后可用 clashinit
 # Bash
 source "${HOME}/.bashrc"
 
-# Z-shell
+# 或者 Z-shell
 source "${HOME}/.zshrc"
 ```
 
@@ -227,7 +227,7 @@ clashctl node -h # 或：clashnode -h
 source "${HOME}/.bashrc"
 ```
 
-Z-shell 执行：
+或者 Z-shell 执行：
 
 ```shell
 source "${HOME}/.zshrc"
@@ -290,7 +290,7 @@ clashctl init
 # Bash
 source ~/.bashrc
 
-# Z-shell
+# 或者 Z-shell
 source ~/.zshrc
 ```
 
@@ -339,7 +339,7 @@ clashctl init
 # Bash
 source ~/.bashrc
 
-# Z-shell
+# 或者 Z-shell
 source ~/.zshrc
 ```
 
