@@ -321,7 +321,7 @@ clashon
 curl -s http://ip-api.com
 ```
 
-![image-20260819230306185](https://static.m0rtzz.com/images/Year%3A2026/Month%3A08/Day%3A19/23%3A03%3A06_image-20260819230306185.png)
+![image-20260819230306185](https://static.m0rtzz.com/images/Year:2026/Month:08/Day:19/23:03:06_image-20260819230306185.png)
 
 ### A6000、3090 教程
 
@@ -390,7 +390,7 @@ clashon
 curl -s http://ip-api.com
 ```
 
-![image-20260819231115617](https://static.m0rtzz.com/images/Year%3A2026/Month%3A08/Day%3A19/23%3A11%3A15_image-20260819231115617.png)
+![image-20260819231115617](https://static.m0rtzz.com/images/Year:2026/Month:08/Day:19/23:11:15_image-20260819231115617.png)
 
 > [!TIP]
 >
