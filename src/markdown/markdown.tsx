@@ -28,6 +28,7 @@ import { rehypeGithubAlert, findCodeText } from './plugins'
 import { rendererMdx } from './twoslash/renderMdx'
 
 import type { RehypeShikiOptions } from '@shikijs/rehype'
+import type { ShikiTransformer } from 'shiki'
 
 interface MarkdownProps {
   source: string
@@ -38,6 +39,13 @@ const highlighter = await createHighlighter({
   langs: Object.keys(bundledLanguages),
   themes: Object.keys(bundledThemes),
 })
+
+const transformerCodeContent: ShikiTransformer = {
+  name: 'rehype-shiki:code-content',
+  pre(node) {
+    node.properties.content = this.source
+  },
+}
 
 export async function Markdown(props: MarkdownProps) {
   const { source, useMDXComponents } = props
@@ -78,6 +86,7 @@ export async function Markdown(props: MarkdownProps) {
               dark: 'material-theme-ocean',
             },
             transformers: [
+              transformerCodeContent,
               transformerNotationDiff(),
               transformerNotationHighlight(),
               transformerNotationWordHighlight(),
