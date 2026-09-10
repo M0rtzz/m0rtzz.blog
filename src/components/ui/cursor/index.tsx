@@ -2,7 +2,44 @@
 
 import { useEffect } from 'react'
 
-import { setANICursor, setANICursorWithGroupElement } from "ani-cursor.js"
+import {
+  LoadANICursorPromise,
+  setANICursor,
+  setANICursorWithGroupElement,
+  setLoadedCursorToElement,
+} from 'ani-cursor.js'
+
+interface LoadedCursor {
+  KeyFrameContent: string
+  aniURLRegexClassName: string
+  keyframesName: string
+  totalRoundTime: number
+}
+
+function setANICursorWithHotspot(
+  elementSelectorGroup: string[],
+  aniURL: string,
+  hotspotX: number,
+  hotspotY: number,
+  cursorType = 'auto',
+  width = 32,
+  height = 32,
+) {
+  const loadedCursor = LoadANICursorPromise(
+    aniURL,
+    cursorType,
+    width,
+    height,
+  ).then((cursor: LoadedCursor) => ({
+    ...cursor,
+    KeyFrameContent: cursor.KeyFrameContent.replace(
+      /url\(([^)]+)\)/g,
+      `$& ${hotspotX} ${hotspotY}`,
+    ),
+  }))
+
+  setLoadedCursorToElement(elementSelectorGroup.join(','), loadedCursor)
+}
 
 export default function CursorInitializer() {
   useEffect(() => {
@@ -70,8 +107,8 @@ export default function CursorInitializer() {
         "/cursor/ani/no.ani"
       );
 
-      // 文本元素
-      setANICursorWithGroupElement(
+      // beam.ani 的原始热点 (24, 63) 从 128×128 缩放为 (6, 16)。
+      setANICursorWithHotspot(
         [
           `p${exclude_element}`,
           `h1${exclude_element}`,
@@ -85,7 +122,9 @@ export default function CursorInitializer() {
           `th${exclude_element}`,
           `code${exclude_element}`,
         ],
-        "/cursor/ani/beam.ani"
+        "/cursor/ani/beam.ani",
+        6,
+        16,
       );
 
       // 链接和可点击元素
