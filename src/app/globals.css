@@ -284,6 +284,12 @@ table td {
   color: unset !important;
 }
 
+/* 覆盖 Typography 的底部对齐，并让表头上下留白一致 */
+.prose :where(thead th):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+  padding-block: 0.5714286em;
+  vertical-align: middle;
+}
+
 /* 表格边框 */
 th,
 td {
