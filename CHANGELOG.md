@@ -1,391 +1,154 @@
-# Changelog
-
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
-
-## [5.6.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v5.1.2...v5.6.1) (2026-09-12)
-
-## 5.6.0 (2026-09-10)
-
-* 🐛 fix(cursor): preserve the correct hotspot for the animated text cursor ([6dd634b](https://github.com/M0rtzz/m0rtzz.blog/commit/6dd634b))
-* 🔖 tag(package.json): v5.6.0 ([4a5402c](https://github.com/M0rtzz/m0rtzz.blog/commit/4a5402c))
-
-
-
-## <small>5.5.9 (2026-09-10)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([7f5e447](https://github.com/M0rtzz/m0rtzz.blog/commit/7f5e447))
-* 🔖 tag(package.json): v5.5.9 ([7dcd76a](https://github.com/M0rtzz/m0rtzz.blog/commit/7dcd76a))
-
-
-
-## <small>5.5.8 (2026-09-10)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([54b8cda](https://github.com/M0rtzz/m0rtzz.blog/commit/54b8cda))
-* 🔖 tag(package.json): v5.5.8 ([653333f](https://github.com/M0rtzz/m0rtzz.blog/commit/653333f))
-
-
-
-## <small>5.5.7 (2026-09-10)</small>
-
-* 🐛 fix(markdown): refine table alignment and Sub2API administration guidance ([79d6b4a](https://github.com/M0rtzz/m0rtzz.blog/commit/79d6b4a))
-* 📝 doc(CHANGELOG.md): automatic update ([ee617de](https://github.com/M0rtzz/m0rtzz.blog/commit/ee617de))
-* 🔖 tag(package.json): v5.5.7 ([7adf180](https://github.com/M0rtzz/m0rtzz.blog/commit/7adf180))
-* 🔗 chore(posts): bind new Discussions (#22) ([dbe03d6](https://github.com/M0rtzz/m0rtzz.blog/commit/dbe03d6)), closes [#22](https://github.com/M0rtzz/m0rtzz.blog/issues/22)
-
-
-
-## <small>5.5.6 (2026-09-10)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([e58c9b7](https://github.com/M0rtzz/m0rtzz.blog/commit/e58c9b7))
-* 📝 doc(posts): document Sub2API deployment and administration workflows ([abb8adf](https://github.com/M0rtzz/m0rtzz.blog/commit/abb8adf))
-* 🔖 tag(package.json): v5.5.6 ([dcdcd9d](https://github.com/M0rtzz/m0rtzz.blog/commit/dcdcd9d))
-
-
-
-## <small>5.5.5 (2026-08-28)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([85ccf85](https://github.com/M0rtzz/m0rtzz.blog/commit/85ccf85))
-* 📝 doc(posts/HUSTNLP Server Clash 使用教程.md): update doc ([ffddbeb](https://github.com/M0rtzz/m0rtzz.blog/commit/ffddbeb))
-* 🔖 tag(package.json): v5.5.5 ([a01f18e](https://github.com/M0rtzz/m0rtzz.blog/commit/a01f18e))
-
-
-
-## <small>5.5.4 (2026-08-28)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([f0ea0eb](https://github.com/M0rtzz/m0rtzz.blog/commit/f0ea0eb))
-* 📝 doc(posts/HUSTNLP Server Clash 使用教程.md): update doc ([37e1fdc](https://github.com/M0rtzz/m0rtzz.blog/commit/37e1fdc))
-* 🔖 tag(package.json): v5.5.4 ([f79601c](https://github.com/M0rtzz/m0rtzz.blog/commit/f79601c))
-
-
-
-## <small>5.5.3 (2026-08-28)</small>
-
-* 🐛 fix(markdown): restore copy buttons for all code blocks ([32e6dd8](https://github.com/M0rtzz/m0rtzz.blog/commit/32e6dd8))
-* 📝 doc(CHANGELOG.md): automatic update ([5a7b91e](https://github.com/M0rtzz/m0rtzz.blog/commit/5a7b91e))
-* 🔖 tag(package.json): v5.5.3 ([5b79fba](https://github.com/M0rtzz/m0rtzz.blog/commit/5b79fba))
-
-
-
-## <small>5.5.2 (2026-08-27)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([f8d3fb3](https://github.com/M0rtzz/m0rtzz.blog/commit/f8d3fb3))
-* 📝 doc(posts/HUSTNLP 服务器说明.md): update doc ([5713670](https://github.com/M0rtzz/m0rtzz.blog/commit/5713670))
-* 🔖 tag(package.json): v5.5.2 ([8ecef2f](https://github.com/M0rtzz/m0rtzz.blog/commit/8ecef2f))
-
-
-
-## <small>5.5.1 (2026-08-27)</small>
-
-* 💄 ui(code-group): add consistent spacing around the copy button ([5ad04a4](https://github.com/M0rtzz/m0rtzz.blog/commit/5ad04a4))
-* 📝 doc(CHANGELOG.md): automatic update ([1c09d6f](https://github.com/M0rtzz/m0rtzz.blog/commit/1c09d6f))
-* 🔖 tag(package.json): v5.5.1 ([8428553](https://github.com/M0rtzz/m0rtzz.blog/commit/8428553))
-
-
-
-## 5.5.0 (2026-08-27)
-
-* 🐛 fix(markdown): prevent Twoslash directives from producing or deleting code lines ([b41c0a1](https://github.com/M0rtzz/m0rtzz.blog/commit/b41c0a1))
-* 📝 doc(CHANGELOG.md): automatic update ([93644d7](https://github.com/M0rtzz/m0rtzz.blog/commit/93644d7))
-* 🔖 tag(package.json): v5.5.0 ([c2cc8e6](https://github.com/M0rtzz/m0rtzz.blog/commit/c2cc8e6))
-
-
-
-## <small>5.4.9 (2026-08-27)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([30cc36d](https://github.com/M0rtzz/m0rtzz.blog/commit/30cc36d))
-* 🔖 tag(package.json): v5.4.9 ([2ad760b](https://github.com/M0rtzz/m0rtzz.blog/commit/2ad760b))
-* 🔨 script(transfer): improve rsync deployment progress output ([34b6924](https://github.com/M0rtzz/m0rtzz.blog/commit/34b6924))
-
-
-
-## <small>5.4.8 (2026-08-27)</small>
-
-* ⬆️ up_dep(shiki): upgrade Shiki and refine code block rendering ([d4d5dfe](https://github.com/M0rtzz/m0rtzz.blog/commit/d4d5dfe))
-* 📌 pin_dep: pin pkgs version ([1c02c55](https://github.com/M0rtzz/m0rtzz.blog/commit/1c02c55))
-* 📝 doc(CHANGELOG.md): automatic update ([8e3030f](https://github.com/M0rtzz/m0rtzz.blog/commit/8e3030f))
-* 🔖 tag(package.json): v5.4.8 ([25d1a35](https://github.com/M0rtzz/m0rtzz.blog/commit/25d1a35))
-
-
-
-## <small>5.4.7 (2026-08-27)</small>
-
-* 🐛 fix(markdown): prevent emphasis delimiters from capturing adjacent text ([673306e](https://github.com/M0rtzz/m0rtzz.blog/commit/673306e))
-* 📝 doc(CHANGELOG.md): automatic update ([9bc76e0](https://github.com/M0rtzz/m0rtzz.blog/commit/9bc76e0))
-* 🔖 tag(package.json): v5.4.7 ([dc35f63](https://github.com/M0rtzz/m0rtzz.blog/commit/dc35f63))
-
-
-
-## <small>5.4.6 (2026-08-27)</small>
-
-* 🐛 fix(posts): prevent Discussion metadata from breaking static page builds ([aa1058a](https://github.com/M0rtzz/m0rtzz.blog/commit/aa1058a))
-* 📝 doc(CHANGELOG.md): automatic update ([dfd98a4](https://github.com/M0rtzz/m0rtzz.blog/commit/dfd98a4))
-* 🔖 tag(package.json): v5.4.6 ([bb2c046](https://github.com/M0rtzz/m0rtzz.blog/commit/bb2c046))
-
-
-
-## <small>5.4.5 (2026-08-27)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([4f562e9](https://github.com/M0rtzz/m0rtzz.blog/commit/4f562e9))
-* 🔖 tag(package.json): v5.4.5 ([798bc89](https://github.com/M0rtzz/m0rtzz.blog/commit/798bc89))
-
-
-
-## <small>5.4.4 (2026-08-27)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([5cf805b](https://github.com/M0rtzz/m0rtzz.blog/commit/5cf805b))
-* 🔖 tag(package.json): v5.4.4 ([5c255f1](https://github.com/M0rtzz/m0rtzz.blog/commit/5c255f1))
-
-
-
-## <small>5.4.3 (2026-08-27)</small>
-
-* 📝 doc: update doc ([0bc14fa](https://github.com/M0rtzz/m0rtzz.blog/commit/0bc14fa))
-* 📝 doc(CHANGELOG.md): automatic update ([d7090b1](https://github.com/M0rtzz/m0rtzz.blog/commit/d7090b1))
-* 🔖 tag(package.json): v5.4.3 ([44356a1](https://github.com/M0rtzz/m0rtzz.blog/commit/44356a1))
-* 🧱 chore(posts): bind new Discussions ([104923e](https://github.com/M0rtzz/m0rtzz.blog/commit/104923e))
-
-
-
-## <small>5.4.2 (2026-08-27)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([c936331](https://github.com/M0rtzz/m0rtzz.blog/commit/c936331))
-* 📝 doc(posts/HUSTNLP 服务器说明.md): update doc ([4b7e0e1](https://github.com/M0rtzz/m0rtzz.blog/commit/4b7e0e1))
-* 🔖 tag(package.json): v5.4.2 ([f98234d](https://github.com/M0rtzz/m0rtzz.blog/commit/f98234d))
-
-
-
-## <small>5.4.1 (2026-08-27)</small>
-
-* ✨ feat(posts): create and bind Discussions from Markdown sources ([2725d1b](https://github.com/M0rtzz/m0rtzz.blog/commit/2725d1b))
-* 📝 doc(CHANGELOG.md): automatic update ([074c6ef](https://github.com/M0rtzz/m0rtzz.blog/commit/074c6ef))
-* 🔖 tag(package.json): v5.4.1 ([ad6689b](https://github.com/M0rtzz/m0rtzz.blog/commit/ad6689b))
-
-
-
-## 5.4.0 (2026-08-27)
-
-* 📝 doc(CHANGELOG.md): automatic update ([b5ef4b6](https://github.com/M0rtzz/m0rtzz.blog/commit/b5ef4b6))
-* 📝 doc(posts/HUSTNLP NAS 使用说明.md): update doc ([eeca6b3](https://github.com/M0rtzz/m0rtzz.blog/commit/eeca6b3))
-* 🔖 tag(package.json): v5.4.0 ([02c77f8](https://github.com/M0rtzz/m0rtzz.blog/commit/02c77f8))
-
-
-
-## <small>5.3.9 (2026-08-27)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([b9c9e2a](https://github.com/M0rtzz/m0rtzz.blog/commit/b9c9e2a))
-* 📝 doc(posts/HUSTNLP NAS 使用说明.md): update doc ([85d5156](https://github.com/M0rtzz/m0rtzz.blog/commit/85d5156))
-* 🔖 tag(package.json): v5.3.9 ([fe5914c](https://github.com/M0rtzz/m0rtzz.blog/commit/fe5914c))
-
-
-
-## <small>5.3.8 (2026-08-27)</small>
+## <small>5.6.1 (2026-09-12)</small>
 
 * ⚡️ perf(transfer.sh): reduce deployment transfers with incremental synchronization ([6752685](https://github.com/M0rtzz/m0rtzz.blog/commit/6752685))
-* 📝 doc(CHANGELOG.md): automatic update ([40a5259](https://github.com/M0rtzz/m0rtzz.blog/commit/40a5259))
-* 🔖 tag(package.json): v5.3.8 ([78b58b9](https://github.com/M0rtzz/m0rtzz.blog/commit/78b58b9))
-
-
-
-## <small>5.3.7 (2026-08-27)</small>
-
+* ✨ feat(posts): create and bind Discussions from Markdown sources ([2725d1b](https://github.com/M0rtzz/m0rtzz.blog/commit/2725d1b))
 * ✨ feat(posts): sync Markdown sources with GitHub Discussions ([08d9780](https://github.com/M0rtzz/m0rtzz.blog/commit/08d9780))
-* 📝 doc: update doc ([50117e7](https://github.com/M0rtzz/m0rtzz.blog/commit/50117e7))
-* 📝 doc(CHANGELOG.md): automatic update ([8f86695](https://github.com/M0rtzz/m0rtzz.blog/commit/8f86695))
-* 🔖 tag(package.json): v5.3.7 ([746eb87](https://github.com/M0rtzz/m0rtzz.blog/commit/746eb87))
-
-
-
-## <small>5.3.6 (2026-08-26)</small>
-
-* 🐛 fix(markdown): fix alert parsing and polish NAS article presentation ([0fd26f1](https://github.com/M0rtzz/m0rtzz.blog/commit/0fd26f1))
-* 📝 doc(CHANGELOG.md): automatic update ([aaf6fa2](https://github.com/M0rtzz/m0rtzz.blog/commit/aaf6fa2))
-* 🔖 tag(package.json): v5.3.6 ([677f8db](https://github.com/M0rtzz/m0rtzz.blog/commit/677f8db))
-
-
-
-## <small>5.3.5 (2026-08-26)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([ff80bbe](https://github.com/M0rtzz/m0rtzz.blog/commit/ff80bbe))
-* 📝 doc(posts/HUSTNLP NAS 使用说明.md): add doc ([0d6945a](https://github.com/M0rtzz/m0rtzz.blog/commit/0d6945a))
-* 🔖 tag(package.json): v5.3.5 ([7ca0d02](https://github.com/M0rtzz/m0rtzz.blog/commit/7ca0d02))
-
-
-
-## <small>5.3.4 (2026-08-19)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([be693b1](https://github.com/M0rtzz/m0rtzz.blog/commit/be693b1))
-* 📝 doc(posts/HUSTNLP Server Clash 使用教程.md): update doc ([4910fb5](https://github.com/M0rtzz/m0rtzz.blog/commit/4910fb5))
-* 🔖 tag(package.json): v5.3.4 ([953e5ea](https://github.com/M0rtzz/m0rtzz.blog/commit/953e5ea))
-
-
-
-## <small>5.3.3 (2026-08-19)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([a78abf4](https://github.com/M0rtzz/m0rtzz.blog/commit/a78abf4))
-* 📝 doc(posts/HUSTNLP Server Clash 使用教程.md): update doc ([e0058d5](https://github.com/M0rtzz/m0rtzz.blog/commit/e0058d5))
-* 🔖 tag(package.json): v5.3.3 ([7b5b75d](https://github.com/M0rtzz/m0rtzz.blog/commit/7b5b75d))
-
-
-
-## <small>5.3.2 (2026-08-19)</small>
-
-* 💄 ui(cursor): add custom code scrollbar with centered Anya cursors ([c617647](https://github.com/M0rtzz/m0rtzz.blog/commit/c617647))
-* 📝 doc(CHANGELOG.md): automatic update ([88943ae](https://github.com/M0rtzz/m0rtzz.blog/commit/88943ae))
-* 🔖 tag(package.json): v5.3.2 ([a0e4791](https://github.com/M0rtzz/m0rtzz.blog/commit/a0e4791))
-
-
-
-## <small>5.3.1 (2026-08-19)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([dc7f27c](https://github.com/M0rtzz/m0rtzz.blog/commit/dc7f27c))
-* 📝 doc(posts/HUSTNLP Server Clash 使用教程.md): update doc ([e50685f](https://github.com/M0rtzz/m0rtzz.blog/commit/e50685f))
-* 🔖 tag(package.json): v5.3.1 ([939ae7f](https://github.com/M0rtzz/m0rtzz.blog/commit/939ae7f))
-
-
-
-## 5.3.0 (2026-08-19)
-
-* 📝 doc(CHANGELOG.md): automatic update ([a97a49f](https://github.com/M0rtzz/m0rtzz.blog/commit/a97a49f))
-* 📝 doc(posts/HUSTNLP Server Clash 使用教程.md): update doc ([7608275](https://github.com/M0rtzz/m0rtzz.blog/commit/7608275))
-* 🔖 tag(package.json): v5.3.0 ([13ea772](https://github.com/M0rtzz/m0rtzz.blog/commit/13ea772))
-
-
-
-## <small>5.2.9 (2026-08-19)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([e5c4c19](https://github.com/M0rtzz/m0rtzz.blog/commit/e5c4c19))
-* 📝 doc(posts/HUSTNLP Server Clash 使用教程.md): update doc ([f6a5b52](https://github.com/M0rtzz/m0rtzz.blog/commit/f6a5b52))
-* 🔖 tag(package.json): v5.2.9 ([45149b3](https://github.com/M0rtzz/m0rtzz.blog/commit/45149b3))
-
-
-
-## <small>5.2.8 (2026-08-19)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([0200b7a](https://github.com/M0rtzz/m0rtzz.blog/commit/0200b7a))
-* 📝 doc(posts/HUSTNLP Server Clash 使用教程.md): update doc ([53412f9](https://github.com/M0rtzz/m0rtzz.blog/commit/53412f9))
-* 🔖 tag(package.json): v5.2.8 ([be230e4](https://github.com/M0rtzz/m0rtzz.blog/commit/be230e4))
-
-
-
-## <small>5.2.7 (2026-08-19)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([4d5768e](https://github.com/M0rtzz/m0rtzz.blog/commit/4d5768e))
-* 📝 doc(posts/HUST NLP Server Clash 使用教程.md): add doc ([b4b4f46](https://github.com/M0rtzz/m0rtzz.blog/commit/b4b4f46))
-* 🔖 tag(package.json): v5.2.7 ([6065821](https://github.com/M0rtzz/m0rtzz.blog/commit/6065821))
-
-
-
-## <small>5.2.6 (2026-04-13)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([7cffbcb](https://github.com/M0rtzz/m0rtzz.blog/commit/7cffbcb))
-* 📝 doc(git commit规范及自动生成CHANGELOG.md): update doc ([48bd3dc](https://github.com/M0rtzz/m0rtzz.blog/commit/48bd3dc))
-* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update doc ([8632209](https://github.com/M0rtzz/m0rtzz.blog/commit/8632209))
-* 🔖 tag(package.json): v5.2.6 ([2daf810](https://github.com/M0rtzz/m0rtzz.blog/commit/2daf810))
-
-
-
-## <small>5.2.5 (2026-03-31)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([5a21730](https://github.com/M0rtzz/m0rtzz.blog/commit/5a21730))
-* 📝 doc(git commit规范及自动生成CHANGELOG.md): update doc ([ee1ee85](https://github.com/M0rtzz/m0rtzz.blog/commit/ee1ee85))
-* 🔖 tag(package.json): v5.2.5 ([022a95b](https://github.com/M0rtzz/m0rtzz.blog/commit/022a95b))
-
-
-
-## <small>5.2.4 (2026-03-29)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([7f98507](https://github.com/M0rtzz/m0rtzz.blog/commit/7f98507))
-* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update settsing.json ([b78d76c](https://github.com/M0rtzz/m0rtzz.blog/commit/b78d76c))
-* 🔖 tag(package.json): v5.2.4 ([ee668ea](https://github.com/M0rtzz/m0rtzz.blog/commit/ee668ea))
-
-
-
-## <small>5.2.3 (2026-03-29)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([0a4e57f](https://github.com/M0rtzz/m0rtzz.blog/commit/0a4e57f))
-* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update settings.json ([98ff34f](https://github.com/M0rtzz/m0rtzz.blog/commit/98ff34f))
-* 🔖 tag(package.json): v5.2.3 ([61b82f9](https://github.com/M0rtzz/m0rtzz.blog/commit/61b82f9))
-
-
-
-## <small>5.2.2 (2026-03-29)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([9486dee](https://github.com/M0rtzz/m0rtzz.blog/commit/9486dee))
-* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update settings.json ([529f395](https://github.com/M0rtzz/m0rtzz.blog/commit/529f395))
-* 🔖 tag(package.json): v5.2.2 ([ba40010](https://github.com/M0rtzz/m0rtzz.blog/commit/ba40010))
-
-
-
-## <small>5.2.1 (2026-03-28)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([7600cd4](https://github.com/M0rtzz/m0rtzz.blog/commit/7600cd4))
-* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update comment ([b1d6ca9](https://github.com/M0rtzz/m0rtzz.blog/commit/b1d6ca9))
-* 🔖 tag(package.json): v5.2.1 ([16da064](https://github.com/M0rtzz/m0rtzz.blog/commit/16da064))
-
-
-
-## 5.2.0 (2026-03-28)
-
-* 📝 doc(CHANGELOG.md): automatic update ([78531e8](https://github.com/M0rtzz/m0rtzz.blog/commit/78531e8))
-* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update settings.json ([f86a747](https://github.com/M0rtzz/m0rtzz.blog/commit/f86a747))
-* 🔖 tag(package.json): v5.2.0 ([a8ae48b](https://github.com/M0rtzz/m0rtzz.blog/commit/a8ae48b))
-
-
-
-## <small>5.1.9 (2026-03-26)</small>
-
 * ✨ feat(summary): refine blog summaries and llm summary generation flow ([15ee90b](https://github.com/M0rtzz/m0rtzz.blog/commit/15ee90b))
-* 📝 doc(CHANGELOG.md): automatic update ([694959b](https://github.com/M0rtzz/m0rtzz.blog/commit/694959b))
-* 🔖 tag(package.json): v5.1.9 ([c24500a](https://github.com/M0rtzz/m0rtzz.blog/commit/c24500a))
-
-
-
-## <small>5.1.8 (2026-03-26)</small>
-
-* 💄 ui(fonts): use FiraCodeNerdFontMono for inline code and code blocks ([a270ada](https://github.com/M0rtzz/m0rtzz.blog/commit/a270ada))
-* 📝 doc(CHANGELOG.md): automatic update ([df9c450](https://github.com/M0rtzz/m0rtzz.blog/commit/df9c450))
-* 🔖 tag(package.json): v5.1.8 ([9ee83f6](https://github.com/M0rtzz/m0rtzz.blog/commit/9ee83f6))
-
-
-
-## <small>5.1.7 (2026-03-08)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([a88ec54](https://github.com/M0rtzz/m0rtzz.blog/commit/a88ec54))
-* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update doc ([3d2669b](https://github.com/M0rtzz/m0rtzz.blog/commit/3d2669b))
-* 🔖 tag(package.json): v5.1.7 ([d52c135](https://github.com/M0rtzz/m0rtzz.blog/commit/d52c135))
-
-
-
-## <small>5.1.6 (2026-03-08)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([4f500e0](https://github.com/M0rtzz/m0rtzz.blog/commit/4f500e0))
-* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update doc ([c466032](https://github.com/M0rtzz/m0rtzz.blog/commit/c466032))
-* 🔖 tag(package.json): v5.1.6 ([fae2c2b](https://github.com/M0rtzz/m0rtzz.blog/commit/fae2c2b))
-
-
-
-## <small>5.1.5 (2026-03-08)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([445ece2](https://github.com/M0rtzz/m0rtzz.blog/commit/445ece2))
-* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update doc ([904c324](https://github.com/M0rtzz/m0rtzz.blog/commit/904c324))
-* 🔖 tag(package.json): v5.1.5 ([f62961d](https://github.com/M0rtzz/m0rtzz.blog/commit/f62961d))
-
-
-
-## <small>5.1.4 (2026-03-07)</small>
-
-* 📝 doc(自搭Overleaf.md): update doc ([aaa106b](https://github.com/M0rtzz/m0rtzz.blog/commit/aaa106b))
-* 📝 doc(CHANGELOG.md): automatic update ([efd91d5](https://github.com/M0rtzz/m0rtzz.blog/commit/efd91d5))
-* 🔖 tag(package.json): v5.1.4 ([a061f88](https://github.com/M0rtzz/m0rtzz.blog/commit/a061f88))
-
-
-
-## <small>5.1.3 (2026-03-05)</small>
-
+* ⬆️ up_dep(shiki): upgrade Shiki and refine code block rendering ([d4d5dfe](https://github.com/M0rtzz/m0rtzz.blog/commit/d4d5dfe))
 * 🐛 fix: custom cursor animation on TOC links ([b053375](https://github.com/M0rtzz/m0rtzz.blog/commit/b053375))
+* 🐛 fix(cursor): preserve the correct hotspot for the animated text cursor ([6dd634b](https://github.com/M0rtzz/m0rtzz.blog/commit/6dd634b))
+* 🐛 fix(markdown): fix alert parsing and polish NAS article presentation ([0fd26f1](https://github.com/M0rtzz/m0rtzz.blog/commit/0fd26f1))
+* 🐛 fix(markdown): prevent emphasis delimiters from capturing adjacent text ([673306e](https://github.com/M0rtzz/m0rtzz.blog/commit/673306e))
+* 🐛 fix(markdown): prevent Twoslash directives from producing or deleting code lines ([b41c0a1](https://github.com/M0rtzz/m0rtzz.blog/commit/b41c0a1))
+* 🐛 fix(markdown): refine table alignment and Sub2API administration guidance ([79d6b4a](https://github.com/M0rtzz/m0rtzz.blog/commit/79d6b4a))
+* 🐛 fix(markdown): restore copy buttons for all code blocks ([32e6dd8](https://github.com/M0rtzz/m0rtzz.blog/commit/32e6dd8))
+* 🐛 fix(posts): prevent Discussion metadata from breaking static page builds ([aa1058a](https://github.com/M0rtzz/m0rtzz.blog/commit/aa1058a))
+* 💄 ui(code-group): add consistent spacing around the copy button ([5ad04a4](https://github.com/M0rtzz/m0rtzz.blog/commit/5ad04a4))
+* 💄 ui(cursor): add custom code scrollbar with centered Anya cursors ([c617647](https://github.com/M0rtzz/m0rtzz.blog/commit/c617647))
+* 💄 ui(fonts): use FiraCodeNerdFontMono for inline code and code blocks ([a270ada](https://github.com/M0rtzz/m0rtzz.blog/commit/a270ada))
+* 📌 pin_dep: pin pkgs version ([1c02c55](https://github.com/M0rtzz/m0rtzz.blog/commit/1c02c55))
+* 📝 doc: update doc ([0bc14fa](https://github.com/M0rtzz/m0rtzz.blog/commit/0bc14fa))
+* 📝 doc: update doc ([50117e7](https://github.com/M0rtzz/m0rtzz.blog/commit/50117e7))
+* 📝 doc(自搭Overleaf.md): update doc ([aaa106b](https://github.com/M0rtzz/m0rtzz.blog/commit/aaa106b))
 * 📝 doc(自搭Overleaf.md): update doc ([896a0e3](https://github.com/M0rtzz/m0rtzz.blog/commit/896a0e3))
+* 📝 doc(CHANGELOG.md): automatic update ([64b31b6](https://github.com/M0rtzz/m0rtzz.blog/commit/64b31b6))
+* 📝 doc(CHANGELOG.md): automatic update ([7f5e447](https://github.com/M0rtzz/m0rtzz.blog/commit/7f5e447))
+* 📝 doc(CHANGELOG.md): automatic update ([54b8cda](https://github.com/M0rtzz/m0rtzz.blog/commit/54b8cda))
+* 📝 doc(CHANGELOG.md): automatic update ([ee617de](https://github.com/M0rtzz/m0rtzz.blog/commit/ee617de))
+* 📝 doc(CHANGELOG.md): automatic update ([e58c9b7](https://github.com/M0rtzz/m0rtzz.blog/commit/e58c9b7))
+* 📝 doc(CHANGELOG.md): automatic update ([85ccf85](https://github.com/M0rtzz/m0rtzz.blog/commit/85ccf85))
+* 📝 doc(CHANGELOG.md): automatic update ([f0ea0eb](https://github.com/M0rtzz/m0rtzz.blog/commit/f0ea0eb))
+* 📝 doc(CHANGELOG.md): automatic update ([5a7b91e](https://github.com/M0rtzz/m0rtzz.blog/commit/5a7b91e))
+* 📝 doc(CHANGELOG.md): automatic update ([f8d3fb3](https://github.com/M0rtzz/m0rtzz.blog/commit/f8d3fb3))
+* 📝 doc(CHANGELOG.md): automatic update ([1c09d6f](https://github.com/M0rtzz/m0rtzz.blog/commit/1c09d6f))
+* 📝 doc(CHANGELOG.md): automatic update ([93644d7](https://github.com/M0rtzz/m0rtzz.blog/commit/93644d7))
+* 📝 doc(CHANGELOG.md): automatic update ([30cc36d](https://github.com/M0rtzz/m0rtzz.blog/commit/30cc36d))
+* 📝 doc(CHANGELOG.md): automatic update ([8e3030f](https://github.com/M0rtzz/m0rtzz.blog/commit/8e3030f))
+* 📝 doc(CHANGELOG.md): automatic update ([9bc76e0](https://github.com/M0rtzz/m0rtzz.blog/commit/9bc76e0))
+* 📝 doc(CHANGELOG.md): automatic update ([dfd98a4](https://github.com/M0rtzz/m0rtzz.blog/commit/dfd98a4))
+* 📝 doc(CHANGELOG.md): automatic update ([4f562e9](https://github.com/M0rtzz/m0rtzz.blog/commit/4f562e9))
+* 📝 doc(CHANGELOG.md): automatic update ([5cf805b](https://github.com/M0rtzz/m0rtzz.blog/commit/5cf805b))
+* 📝 doc(CHANGELOG.md): automatic update ([d7090b1](https://github.com/M0rtzz/m0rtzz.blog/commit/d7090b1))
+* 📝 doc(CHANGELOG.md): automatic update ([c936331](https://github.com/M0rtzz/m0rtzz.blog/commit/c936331))
+* 📝 doc(CHANGELOG.md): automatic update ([074c6ef](https://github.com/M0rtzz/m0rtzz.blog/commit/074c6ef))
+* 📝 doc(CHANGELOG.md): automatic update ([b5ef4b6](https://github.com/M0rtzz/m0rtzz.blog/commit/b5ef4b6))
+* 📝 doc(CHANGELOG.md): automatic update ([b9c9e2a](https://github.com/M0rtzz/m0rtzz.blog/commit/b9c9e2a))
+* 📝 doc(CHANGELOG.md): automatic update ([40a5259](https://github.com/M0rtzz/m0rtzz.blog/commit/40a5259))
+* 📝 doc(CHANGELOG.md): automatic update ([8f86695](https://github.com/M0rtzz/m0rtzz.blog/commit/8f86695))
+* 📝 doc(CHANGELOG.md): automatic update ([aaf6fa2](https://github.com/M0rtzz/m0rtzz.blog/commit/aaf6fa2))
+* 📝 doc(CHANGELOG.md): automatic update ([ff80bbe](https://github.com/M0rtzz/m0rtzz.blog/commit/ff80bbe))
+* 📝 doc(CHANGELOG.md): automatic update ([be693b1](https://github.com/M0rtzz/m0rtzz.blog/commit/be693b1))
+* 📝 doc(CHANGELOG.md): automatic update ([a78abf4](https://github.com/M0rtzz/m0rtzz.blog/commit/a78abf4))
+* 📝 doc(CHANGELOG.md): automatic update ([88943ae](https://github.com/M0rtzz/m0rtzz.blog/commit/88943ae))
+* 📝 doc(CHANGELOG.md): automatic update ([dc7f27c](https://github.com/M0rtzz/m0rtzz.blog/commit/dc7f27c))
+* 📝 doc(CHANGELOG.md): automatic update ([a97a49f](https://github.com/M0rtzz/m0rtzz.blog/commit/a97a49f))
+* 📝 doc(CHANGELOG.md): automatic update ([e5c4c19](https://github.com/M0rtzz/m0rtzz.blog/commit/e5c4c19))
+* 📝 doc(CHANGELOG.md): automatic update ([0200b7a](https://github.com/M0rtzz/m0rtzz.blog/commit/0200b7a))
+* 📝 doc(CHANGELOG.md): automatic update ([4d5768e](https://github.com/M0rtzz/m0rtzz.blog/commit/4d5768e))
+* 📝 doc(CHANGELOG.md): automatic update ([7cffbcb](https://github.com/M0rtzz/m0rtzz.blog/commit/7cffbcb))
+* 📝 doc(CHANGELOG.md): automatic update ([5a21730](https://github.com/M0rtzz/m0rtzz.blog/commit/5a21730))
+* 📝 doc(CHANGELOG.md): automatic update ([7f98507](https://github.com/M0rtzz/m0rtzz.blog/commit/7f98507))
+* 📝 doc(CHANGELOG.md): automatic update ([0a4e57f](https://github.com/M0rtzz/m0rtzz.blog/commit/0a4e57f))
+* 📝 doc(CHANGELOG.md): automatic update ([9486dee](https://github.com/M0rtzz/m0rtzz.blog/commit/9486dee))
+* 📝 doc(CHANGELOG.md): automatic update ([7600cd4](https://github.com/M0rtzz/m0rtzz.blog/commit/7600cd4))
+* 📝 doc(CHANGELOG.md): automatic update ([78531e8](https://github.com/M0rtzz/m0rtzz.blog/commit/78531e8))
+* 📝 doc(CHANGELOG.md): automatic update ([694959b](https://github.com/M0rtzz/m0rtzz.blog/commit/694959b))
+* 📝 doc(CHANGELOG.md): automatic update ([df9c450](https://github.com/M0rtzz/m0rtzz.blog/commit/df9c450))
+* 📝 doc(CHANGELOG.md): automatic update ([a88ec54](https://github.com/M0rtzz/m0rtzz.blog/commit/a88ec54))
+* 📝 doc(CHANGELOG.md): automatic update ([4f500e0](https://github.com/M0rtzz/m0rtzz.blog/commit/4f500e0))
+* 📝 doc(CHANGELOG.md): automatic update ([445ece2](https://github.com/M0rtzz/m0rtzz.blog/commit/445ece2))
+* 📝 doc(CHANGELOG.md): automatic update ([efd91d5](https://github.com/M0rtzz/m0rtzz.blog/commit/efd91d5))
 * 📝 doc(CHANGELOG.md): automatic update ([3517827](https://github.com/M0rtzz/m0rtzz.blog/commit/3517827))
+* 📝 doc(git commit规范及自动生成CHANGELOG.md): update doc ([48bd3dc](https://github.com/M0rtzz/m0rtzz.blog/commit/48bd3dc))
+* 📝 doc(git commit规范及自动生成CHANGELOG.md): update doc ([ee1ee85](https://github.com/M0rtzz/m0rtzz.blog/commit/ee1ee85))
+* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update comment ([b1d6ca9](https://github.com/M0rtzz/m0rtzz.blog/commit/b1d6ca9))
+* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update doc ([8632209](https://github.com/M0rtzz/m0rtzz.blog/commit/8632209))
+* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update doc ([3d2669b](https://github.com/M0rtzz/m0rtzz.blog/commit/3d2669b))
+* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update doc ([c466032](https://github.com/M0rtzz/m0rtzz.blog/commit/c466032))
+* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update doc ([904c324](https://github.com/M0rtzz/m0rtzz.blog/commit/904c324))
+* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update settings.json ([98ff34f](https://github.com/M0rtzz/m0rtzz.blog/commit/98ff34f))
+* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update settings.json ([529f395](https://github.com/M0rtzz/m0rtzz.blog/commit/529f395))
+* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update settings.json ([f86a747](https://github.com/M0rtzz/m0rtzz.blog/commit/f86a747))
+* 📝 doc(Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）.md): update settsing.json ([b78d76c](https://github.com/M0rtzz/m0rtzz.blog/commit/b78d76c))
+* 📝 doc(posts): document Sub2API deployment and administration workflows ([abb8adf](https://github.com/M0rtzz/m0rtzz.blog/commit/abb8adf))
+* 📝 doc(posts): refresh screenshots in the HUSTNLP Server Clash guide ([ca28560](https://github.com/M0rtzz/m0rtzz.blog/commit/ca28560))
+* 📝 doc(posts): restore redacted server guides after history cleanup ([329f441](https://github.com/M0rtzz/m0rtzz.blog/commit/329f441))
+* 📝 doc(posts/HUST NLP Server Clash 使用教程.md): add doc ([b4b4f46](https://github.com/M0rtzz/m0rtzz.blog/commit/b4b4f46))
+* 📝 doc(posts/HUSTNLP 服务器说明.md): update doc ([5713670](https://github.com/M0rtzz/m0rtzz.blog/commit/5713670))
+* 📝 doc(posts/HUSTNLP 服务器说明.md): update doc ([4b7e0e1](https://github.com/M0rtzz/m0rtzz.blog/commit/4b7e0e1))
+* 📝 doc(posts/HUSTNLP NAS 使用说明.md): add doc ([0d6945a](https://github.com/M0rtzz/m0rtzz.blog/commit/0d6945a))
+* 📝 doc(posts/HUSTNLP NAS 使用说明.md): update doc ([eeca6b3](https://github.com/M0rtzz/m0rtzz.blog/commit/eeca6b3))
+* 📝 doc(posts/HUSTNLP NAS 使用说明.md): update doc ([85d5156](https://github.com/M0rtzz/m0rtzz.blog/commit/85d5156))
+* 📝 doc(posts/HUSTNLP Server Clash 使用教程.md): update doc ([ffddbeb](https://github.com/M0rtzz/m0rtzz.blog/commit/ffddbeb))
+* 📝 doc(posts/HUSTNLP Server Clash 使用教程.md): update doc ([37e1fdc](https://github.com/M0rtzz/m0rtzz.blog/commit/37e1fdc))
+* 📝 doc(posts/HUSTNLP Server Clash 使用教程.md): update doc ([4910fb5](https://github.com/M0rtzz/m0rtzz.blog/commit/4910fb5))
+* 📝 doc(posts/HUSTNLP Server Clash 使用教程.md): update doc ([e0058d5](https://github.com/M0rtzz/m0rtzz.blog/commit/e0058d5))
+* 📝 doc(posts/HUSTNLP Server Clash 使用教程.md): update doc ([e50685f](https://github.com/M0rtzz/m0rtzz.blog/commit/e50685f))
+* 📝 doc(posts/HUSTNLP Server Clash 使用教程.md): update doc ([7608275](https://github.com/M0rtzz/m0rtzz.blog/commit/7608275))
+* 📝 doc(posts/HUSTNLP Server Clash 使用教程.md): update doc ([f6a5b52](https://github.com/M0rtzz/m0rtzz.blog/commit/f6a5b52))
+* 📝 doc(posts/HUSTNLP Server Clash 使用教程.md): update doc ([53412f9](https://github.com/M0rtzz/m0rtzz.blog/commit/53412f9))
 * 🔖 tag(package.json): v5.1.3 ([a45adee](https://github.com/M0rtzz/m0rtzz.blog/commit/a45adee))
+* 🔖 tag(package.json): v5.1.4 ([a061f88](https://github.com/M0rtzz/m0rtzz.blog/commit/a061f88))
+* 🔖 tag(package.json): v5.1.5 ([f62961d](https://github.com/M0rtzz/m0rtzz.blog/commit/f62961d))
+* 🔖 tag(package.json): v5.1.6 ([fae2c2b](https://github.com/M0rtzz/m0rtzz.blog/commit/fae2c2b))
+* 🔖 tag(package.json): v5.1.7 ([d52c135](https://github.com/M0rtzz/m0rtzz.blog/commit/d52c135))
+* 🔖 tag(package.json): v5.1.8 ([9ee83f6](https://github.com/M0rtzz/m0rtzz.blog/commit/9ee83f6))
+* 🔖 tag(package.json): v5.1.9 ([c24500a](https://github.com/M0rtzz/m0rtzz.blog/commit/c24500a))
+* 🔖 tag(package.json): v5.2.0 ([a8ae48b](https://github.com/M0rtzz/m0rtzz.blog/commit/a8ae48b))
+* 🔖 tag(package.json): v5.2.1 ([16da064](https://github.com/M0rtzz/m0rtzz.blog/commit/16da064))
+* 🔖 tag(package.json): v5.2.2 ([ba40010](https://github.com/M0rtzz/m0rtzz.blog/commit/ba40010))
+* 🔖 tag(package.json): v5.2.3 ([61b82f9](https://github.com/M0rtzz/m0rtzz.blog/commit/61b82f9))
+* 🔖 tag(package.json): v5.2.4 ([ee668ea](https://github.com/M0rtzz/m0rtzz.blog/commit/ee668ea))
+* 🔖 tag(package.json): v5.2.5 ([022a95b](https://github.com/M0rtzz/m0rtzz.blog/commit/022a95b))
+* 🔖 tag(package.json): v5.2.6 ([2daf810](https://github.com/M0rtzz/m0rtzz.blog/commit/2daf810))
+* 🔖 tag(package.json): v5.2.7 ([6065821](https://github.com/M0rtzz/m0rtzz.blog/commit/6065821))
+* 🔖 tag(package.json): v5.2.8 ([be230e4](https://github.com/M0rtzz/m0rtzz.blog/commit/be230e4))
+* 🔖 tag(package.json): v5.2.9 ([45149b3](https://github.com/M0rtzz/m0rtzz.blog/commit/45149b3))
+* 🔖 tag(package.json): v5.3.0 ([13ea772](https://github.com/M0rtzz/m0rtzz.blog/commit/13ea772))
+* 🔖 tag(package.json): v5.3.1 ([939ae7f](https://github.com/M0rtzz/m0rtzz.blog/commit/939ae7f))
+* 🔖 tag(package.json): v5.3.2 ([a0e4791](https://github.com/M0rtzz/m0rtzz.blog/commit/a0e4791))
+* 🔖 tag(package.json): v5.3.3 ([7b5b75d](https://github.com/M0rtzz/m0rtzz.blog/commit/7b5b75d))
+* 🔖 tag(package.json): v5.3.4 ([953e5ea](https://github.com/M0rtzz/m0rtzz.blog/commit/953e5ea))
+* 🔖 tag(package.json): v5.3.5 ([7ca0d02](https://github.com/M0rtzz/m0rtzz.blog/commit/7ca0d02))
+* 🔖 tag(package.json): v5.3.6 ([677f8db](https://github.com/M0rtzz/m0rtzz.blog/commit/677f8db))
+* 🔖 tag(package.json): v5.3.7 ([746eb87](https://github.com/M0rtzz/m0rtzz.blog/commit/746eb87))
+* 🔖 tag(package.json): v5.3.8 ([78b58b9](https://github.com/M0rtzz/m0rtzz.blog/commit/78b58b9))
+* 🔖 tag(package.json): v5.3.9 ([fe5914c](https://github.com/M0rtzz/m0rtzz.blog/commit/fe5914c))
+* 🔖 tag(package.json): v5.4.0 ([02c77f8](https://github.com/M0rtzz/m0rtzz.blog/commit/02c77f8))
+* 🔖 tag(package.json): v5.4.1 ([ad6689b](https://github.com/M0rtzz/m0rtzz.blog/commit/ad6689b))
+* 🔖 tag(package.json): v5.4.2 ([f98234d](https://github.com/M0rtzz/m0rtzz.blog/commit/f98234d))
+* 🔖 tag(package.json): v5.4.3 ([44356a1](https://github.com/M0rtzz/m0rtzz.blog/commit/44356a1))
+* 🔖 tag(package.json): v5.4.4 ([5c255f1](https://github.com/M0rtzz/m0rtzz.blog/commit/5c255f1))
+* 🔖 tag(package.json): v5.4.5 ([798bc89](https://github.com/M0rtzz/m0rtzz.blog/commit/798bc89))
+* 🔖 tag(package.json): v5.4.6 ([bb2c046](https://github.com/M0rtzz/m0rtzz.blog/commit/bb2c046))
+* 🔖 tag(package.json): v5.4.7 ([dc35f63](https://github.com/M0rtzz/m0rtzz.blog/commit/dc35f63))
+* 🔖 tag(package.json): v5.4.8 ([25d1a35](https://github.com/M0rtzz/m0rtzz.blog/commit/25d1a35))
+* 🔖 tag(package.json): v5.4.9 ([2ad760b](https://github.com/M0rtzz/m0rtzz.blog/commit/2ad760b))
+* 🔖 tag(package.json): v5.5.0 ([c2cc8e6](https://github.com/M0rtzz/m0rtzz.blog/commit/c2cc8e6))
+* 🔖 tag(package.json): v5.5.1 ([8428553](https://github.com/M0rtzz/m0rtzz.blog/commit/8428553))
+* 🔖 tag(package.json): v5.5.2 ([8ecef2f](https://github.com/M0rtzz/m0rtzz.blog/commit/8ecef2f))
+* 🔖 tag(package.json): v5.5.3 ([5b79fba](https://github.com/M0rtzz/m0rtzz.blog/commit/5b79fba))
+* 🔖 tag(package.json): v5.5.4 ([f79601c](https://github.com/M0rtzz/m0rtzz.blog/commit/f79601c))
+* 🔖 tag(package.json): v5.5.5 ([a01f18e](https://github.com/M0rtzz/m0rtzz.blog/commit/a01f18e))
+* 🔖 tag(package.json): v5.5.6 ([dcdcd9d](https://github.com/M0rtzz/m0rtzz.blog/commit/dcdcd9d))
+* 🔖 tag(package.json): v5.5.7 ([7adf180](https://github.com/M0rtzz/m0rtzz.blog/commit/7adf180))
+* 🔖 tag(package.json): v5.5.8 ([653333f](https://github.com/M0rtzz/m0rtzz.blog/commit/653333f))
+* 🔖 tag(package.json): v5.5.9 ([7dcd76a](https://github.com/M0rtzz/m0rtzz.blog/commit/7dcd76a))
+* 🔖 tag(package.json): v5.6.0 ([4a5402c](https://github.com/M0rtzz/m0rtzz.blog/commit/4a5402c))
+* 🔖 tag(package.json): v5.6.1 ([d4ceaa6](https://github.com/M0rtzz/m0rtzz.blog/commit/d4ceaa6))
+* 🔗 chore(posts): bind new Discussions (#22) ([dbe03d6](https://github.com/M0rtzz/m0rtzz.blog/commit/dbe03d6)), closes [#22](https://github.com/M0rtzz/m0rtzz.blog/issues/22)
+* 🔨 script(transfer): improve rsync deployment progress output ([34b6924](https://github.com/M0rtzz/m0rtzz.blog/commit/34b6924))
+* 🧱 chore(posts): bind new Discussions ([104923e](https://github.com/M0rtzz/m0rtzz.blog/commit/104923e))
 
 
 
@@ -2362,3 +2125,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
