@@ -71,11 +71,8 @@ const mono = localFont({
 })
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#000212' },
-  ],
-  colorScheme: 'light dark',
+  themeColor: '#000212',
+  colorScheme: 'dark light',
 }
 
 export const metadata: Metadata = {
@@ -113,6 +110,7 @@ export default function RootLayout({ children }) {
       lang='en'
       suppressHydrationWarning
       className={clsx(
+        'dark',
         sans.variable,
         serif.variable,
         handwriting.variable,
@@ -151,6 +149,22 @@ export default function RootLayout({ children }) {
           href='/icons/android-chrome-512x512.png'
         />
         <DarkToggleScript />
+        {/* Initialize before paint, preserving the theme saved by dark-toggle. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (window.darkToggle.theme === null) {
+                window.darkToggle.setTheme('dark');
+              }
+              window.darkToggle.subscribe((isDark) => {
+                document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+                document.querySelector('meta[name="theme-color"]')?.setAttribute(
+                  'content', isDark ? '#000212' : '#ffffff'
+                );
+              });
+            `,
+          }}
+        />
       </head>
       <body
         suppressHydrationWarning={true}

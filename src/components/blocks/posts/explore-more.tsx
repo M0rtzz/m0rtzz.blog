@@ -8,7 +8,7 @@ import Link from 'next/link'
 import { IconBeach } from '@tabler/icons-react'
 
 const MotionWave = dynamic(
-  () => import('motion-wave').then(module => module.MotionWave),
+  () => import('@/components/motion-wave').then(module => module.MotionWave),
   { ssr: false },
 )
 
@@ -31,24 +31,10 @@ export const ExploreMore = (props: ExploreMoreProps) => {
         initialConfig={{
           frequency: 0.4,
           amplitude: 30,
-          speed: 4,
+          speed: 3,
           offset: 50,
         }}
         motionConfig={{
-          frequency: {
-            value: 1,
-            duration: 8,
-            loop: true,
-          },
-          amplitude: {
-            value: 60,
-            loop: true,
-          },
-          speed: {
-            value: 6,
-            loopDelay: 1,
-            loop: true,
-          },
           offset: {
             value: enter ? -200 : 50,
             loop: false,

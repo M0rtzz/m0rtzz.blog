@@ -170,6 +170,9 @@ code::marker {
   }
 
   @keyframes breath {
+    from {
+      scale: 1;
+    }
     to {
       scale: 0.8;
     }
@@ -200,7 +203,8 @@ code::marker {
   }
 
   .animation-breath {
-    animation: breath ease 2s alternate infinite;
+    /* Symmetric breathing avoids the long slow tail of ease when shrinking. */
+    animation: breath 2s cubic-bezier(0.37, 0, 0.63, 1) alternate infinite;
   }
 }
 
