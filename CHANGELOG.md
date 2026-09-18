@@ -1,8 +1,29 @@
-# Changelog
+## <small>5.6.3 (2026-09-18)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* ➕ add_dep(package.json): add dep ([e0a1c28](https://github.com/M0rtzz/m0rtzz.blog/commit/e0a1c28))
+* 🐛 fix(ui): stabilize homepage animations and default to dark mode ([6467991](https://github.com/M0rtzz/m0rtzz.blog/commit/6467991))
+* 📌 pin_dep(pnpm-lock.yaml): pin deps version ([627c45e](https://github.com/M0rtzz/m0rtzz.blog/commit/627c45e))
+* 🔖 tag(package.json): v5.6.3 ([c7c3b63](https://github.com/M0rtzz/m0rtzz.blog/commit/c7c3b63))
 
-## [5.6.3](https://github.com/M0rtzz/m0rtzz.blog/compare/v5.6.2...v5.6.3) (2026-09-18)
+
+
+## <small>5.6.2 (2026-09-18)</small>
+
+* ✨ feat(posts): add safe Markdown typography linting and formatting ([1afa883](https://github.com/M0rtzz/m0rtzz.blog/commit/1afa883))
+* 📝 doc: update files ([f13cd33](https://github.com/M0rtzz/m0rtzz.blog/commit/f13cd33))
+* 📝 doc(CHANGELOG.md): automatic update ([30b1893](https://github.com/M0rtzz/m0rtzz.blog/commit/30b1893))
+* 🔖 tag(package.json): v5.6.2 ([f14e5fe](https://github.com/M0rtzz/m0rtzz.blog/commit/f14e5fe))
+
+
+
+## <small>5.6.1 (2026-09-12)</small>
+
+* 📝 doc(CHANGELOG.md): automatic update ([ac830c1](https://github.com/M0rtzz/m0rtzz.blog/commit/ac830c1))
+* 📝 doc(posts): refresh screenshots in the HUSTNLP Server Clash guide ([6113f0f](https://github.com/M0rtzz/m0rtzz.blog/commit/6113f0f))
+* 📝 doc(posts): restore redacted server guides after history cleanup ([785f98e](https://github.com/M0rtzz/m0rtzz.blog/commit/785f98e))
+* 🔖 tag(package.json): v5.6.1 ([49bfae9](https://github.com/M0rtzz/m0rtzz.blog/commit/49bfae9))
+
+
 
 ## 5.6.0 (2026-09-10)
 
@@ -2363,3 +2384,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
