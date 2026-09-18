@@ -40,7 +40,10 @@ jobs:
             - recursive: true
               args: [--frozen-lockfile, --strict-peer-dependencies]
 
-      - name: Validate post metadata
+      - name: Test post typography protection
+        run: pnpm posts:test
+
+      - name: Validate post typography and metadata
         run: pnpm posts:check
         env:
           GITHUB_TOKEN: ${{ github.token }}

@@ -10,17 +10,21 @@ title: "Linux 下安装 TeXLive 并配置 VSCode 中 tex 编写环境（2024 最
 summary: "A step-by-step Ubuntu guide to installing TeX Live and building a smooth LaTeX workflow in VSCode."
 ---
 
-# Linux下安装TeXLive并配置VSCode中tex编写环境（2024最新）
+<a id="linux下安装texlive并配置vscode中tex编写环境2024最新"></a>
 
-这里我们以Ubuntu为例。
+# Linux 下安装 TeXLive 并配置 VSCode 中 tex 编写环境（2024 最新）
 
-## 1.下载.iso镜像文件
+这里我们以 Ubuntu 为例。
+
+<a id="1下载iso镜像文件"></a>
+
+## 1.下载 .iso 镜像文件
 
 [下载页](https://mirrors.hust.edu.cn/CTAN/systems/texlive/Images/)
 
 ![image-20240819171528777](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:19/17:15:28_image-20240819171528777.png)
 
-终端使用curl获取.iso镜像文件：
+终端使用 curl 获取 .iso 镜像文件：
 
 ```bash
 sudo apt install curl && curl -L https://mirrors.hust.edu.cn/CTAN/systems/texlive/Images/texlive.iso -o texlive.iso
@@ -28,11 +32,11 @@ sudo apt install curl && curl -L https://mirrors.hust.edu.cn/CTAN/systems/texliv
 
 ![image-20240819170549234](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:19/17:05:49_image-20240819170549234.png)
 
-**或者使用XDM获取：**
+**或者使用 XDM 获取：**
 
 ![image-20240819170818452](https://static.m0rtzz.com/images/Year:2024/Month:08/Day:19/17:08:18_image-20240819170818452.png)
 
-*XDM安装教程：*
+*XDM 安装教程：*
 
 [https://blog.csdn.net/M0rtzz/article/details/136023863](https://blog.csdn.net/M0rtzz/article/details/136023863)
 
@@ -40,9 +44,11 @@ sudo apt install curl && curl -L https://mirrors.hust.edu.cn/CTAN/systems/texliv
 
 [https://www.m0rtzz.com/posts/6](https://www.m0rtzz.com/posts/6)
 
-## 2.安装TeXLive
+<a id="2安装texlive"></a>
 
-首先安装一个GUI工具包：
+## 2.安装 TeXLive
+
+首先安装一个 GUI 工具包：
 
 ```bash
 sudo apt install libdigest-perl-md5-perl perl-tk
@@ -50,7 +56,7 @@ sudo apt install libdigest-perl-md5-perl perl-tk
 
 ![image-20240329232608535](https://static.m0rtzz.com/images/Year:2024/Month:03/Day:29/23:26:08_image-20240329232608535.png)
 
-在下载iso的目录打开终端：
+在下载 iso 的目录打开终端：
 
 ```bash
 sudo mount -o ro,loop texlive.iso /mnt
@@ -63,11 +69,11 @@ sudo ./install-tl -gui
 
 ![image-20240329232410555](https://static.m0rtzz.com/images/Year:2024/Month:03/Day:29/23:24:15_image-20240329232410555.png)
 
-单击`Install`开始安装，显示`Installed`才可点击`Close`。
+单击 `Install` 开始安装，显示 `Installed` 才可点击 `Close`。
 
 ![image-20240329234051336](https://static.m0rtzz.com/images/Year:2024/Month:03/Day:29/23:40:51_image-20240329234051336.png)
 
-卸载挂载到`/mnt`的镜像：
+卸载挂载到 `/mnt` 的镜像：
 
 ```bash
 cd ~
@@ -80,7 +86,7 @@ sudo umount /mnt
 vi ~/.bashrc
 ```
 
-在末尾添加以下内容（年份填你的，本文是2024）：
+在末尾添加以下内容（年份填你的，本文是 2024）：
 
 ```bash
 # LaTeX
@@ -95,13 +101,15 @@ export PATH=${PATH}:/usr/local/texlive/2024/bin/x86_64-linux
 source ~/.bashrc
 ```
 
-输入`tex -version`显示版本号即配置成功
+输入 `tex -version` 显示版本号即配置成功
 
 ![image-20240329234435790](https://static.m0rtzz.com/images/Year:2024/Month:03/Day:29/23:44:35_image-20240329234435790.png)
 
-## 3.配置VSCode
+<a id="3配置vscode"></a>
 
-首先安装Perl模块（后边如果使用`latexindent`格式化代码时需要用到，我这里已经提前安装过了）：
+## 3.配置 VSCode
+
+首先安装 Perl 模块（后边如果使用 `latexindent` 格式化代码时需要用到，我这里已经提前安装过了）：
 
 ```bash
 sudo apt update -y && sudo apt install -y cpanminus
@@ -117,7 +125,7 @@ sudo cpanm Log::Dispatch
 
 ![image-20240204134747369](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:04/13:47:47_image-20240204134747369.png)
 
-安装`tex-fmt`：
+安装 `tex-fmt`：
 
 ```bash
 sudo apt install -y cargo rustup && \
@@ -136,11 +144,11 @@ sudo cp /home/m0rtzz/.cargo/bin/tex-fmt /usr/local/bin && \
 sudo chmod +x /usr/local/bin/tex-fmt
 ```
 
-打开VSCode，点击侧边栏插件按钮，搜索`LaTeX`，安装下图两个插件：
+打开 VSCode，点击侧边栏插件按钮，搜索 `LaTeX`，安装下图两个插件：
 
 ![image-20240204135028322](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:04/13:50:28_image-20240204135028322.png)
 
-然后键入`Ctrl+逗号`进入设置页面，单击右上角次按钮进入Json配置文件：
+然后键入 `Ctrl+逗号` 进入设置页面，单击右上角次按钮进入 Json 配置文件：
 
 ![image-20240204135608750](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:04/13:56:08_image-20240204135608750.png)
 
@@ -297,13 +305,13 @@ sudo chmod +x /usr/local/bin/tex-fmt
   "*.toc",
   "*.vrb"
 ],
-// 使用"glob"方法清理上述后缀名的文件
+// 使用 "glob" 方法清理上述后缀名的文件
 "latex-workshop.latex.clean.method": "glob",
 // 语法检查
 "latex.linter.enabled": false,
-// tex文件浏览器，可选项为"none" "browser" "tab" "external"
+// tex 文件浏览器，可选项为 "none" "browser" "tab" "external"
 "latex-workshop.view.pdf.viewer": "tab",
-// 自动编译tex文件
+// 自动编译 tex 文件
 "latex-workshop.latex.autoBuild.run": "onSave",
 // 显示内容菜单：（1）编译文件；（2）定位游标
 "latex-workshop.showContextMenu": true,
@@ -315,27 +323,27 @@ sudo chmod +x /usr/local/bin/tex-fmt
 "latex-workshop.intellisense.package.enabled": true,
 // 清除辅助文件
 "latex-workshop.latex.autoClean.run": "never",
-// 设置vscode编译tex文档时的默认编译链
+// 设置 vscode 编译 tex 文档时的默认编译链
 "latex-workshop.latex.recipe.default": "lastUsed",
 // 用于反向同步的内部查看器的键绑定。ctrl/cmd + 点击（默认）或双击
 "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
-// 禁用Magic Comments
+// 禁用 Magic Comments
 "latex-workshop.latex.build.enableMagicComments": false,
-// "latexindent"或"tex-fmt"
+// "latexindent" 或 "tex-fmt"
 "latex-workshop.formatting.latex": "tex-fmt",
-// "tex-fmt"参数
+// "tex-fmt" 参数
 "latex-workshop.formatting.tex-fmt.args": [
   "--nowrap",
   "--tabsize",
   "4"
 ],
-// BibTeX字段缩进使用4个空格
+// BibTeX 字段缩进使用 4 个空格
 "latex-workshop.bibtex-format.tab": "4 spaces",
 // 将每个字段的等号纵向对齐
 "latex-workshop.bibtex-format.align-equal.enabled": true,
 // 最后一个字段后不保留逗号
 "latex-workshop.bibtex-format.trailingComma": false,
-// 统一字段名（如title，author）为小写
+// 统一字段名（如 title，author）为小写
 "latex-workshop.bibtex-format.case.field": "lowercase",
 // 统一条目类型名（如@article，@inproceedings）为小写
 "latex-workshop.bibtex-format.case.type": "lowercase",
@@ -377,7 +385,7 @@ sudo chmod +x /usr/local/bin/tex-fmt
   "urldate",
   "isbn",
   "issn",
-  "eprint", // 预印本标识（如arXiv）
+  "eprint", // 预印本标识（如 arXiv）
   // 7. 补充信息与长文本
   "note",
   "abstract",
@@ -385,11 +393,11 @@ sudo chmod +x /usr/local/bin/tex-fmt
 ]
 ```
 
-配置完之后侧边栏会出现`TEX`按钮，里面的内容对应了我们刚才的配置：
+配置完之后侧边栏会出现 `TEX` 按钮，里面的内容对应了我们刚才的配置：
 
 ![image-20240204144520352](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:04/14:45:20_image-20240204144520352.png)
 
-新建`.tex`文件，输入：
+新建 `.tex` 文件，输入：
 
 ```tex
 \documentclass{article}
@@ -408,19 +416,19 @@ sudo chmod +x /usr/local/bin/tex-fmt
 
 ![image-20240204143158321](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:04/14:31:58_image-20240204143158321.png)
 
-若正常显示`.pdf`文件，则配置成功
+若正常显示 `.pdf` 文件，则配置成功
 
 ![image-20240204144037612](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:04/14:40:37_image-20240204144037612.png)
 
-右键空白处选择`使用...格式化文档`
+右键空白处选择 `使用...格式化文档`
 
 ![image-20240204143432155](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:04/14:34:32_image-20240204143432155.png)
 
-选择`LaTeX Workshop`为默认格式化程序：
+选择 `LaTeX Workshop` 为默认格式化程序：
 
 ![image-20240204143534684](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:04/14:35:34_image-20240204143534684.png)
 
-这时键入`Ctrl+S`手动保存时，因刚才`.json`文件中设置了`"editor.formatOnSave": true, // 保存时自动格式化`，也安装了Perl模块，这时代码应该会自动格式化。
+这时键入 `Ctrl+S` 手动保存时，因刚才 `.json` 文件中设置了 `"editor.formatOnSave": true, // 保存时自动格式化`，也安装了 Perl 模块，这时代码应该会自动格式化。
 
 原先：
 

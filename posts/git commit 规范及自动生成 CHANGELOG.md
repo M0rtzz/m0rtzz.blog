@@ -8,11 +8,15 @@ title: "git commit 规范及自动生成 CHANGELOG.md"
 summary: "Set up commit conventions and automated CHANGELOG generation with Commitizen and conventional-changelog on Ubuntu."
 ---
 
-# git commit规范及自动生成CHANGELOG.md
+<a id="git-commit规范及自动生成changelogmd"></a>
 
-本文以Ubuntu为例。
+# git commit 规范及自动生成 CHANGELOG.md
 
-## 1.卸载旧版本Node.js并安装最新版本
+本文以 Ubuntu 为例。
+
+<a id="1卸载旧版本nodejs并安装最新版本"></a>
+
+## 1.卸载旧版本 Node.js 并安装最新版本
 
 ```shell
 sudo apt remove nodejs npm
@@ -37,9 +41,11 @@ npm --version
 
 ![image-20240409104733079](https://static.m0rtzz.com/images/Year:2024/Month:04/Day:09/11:00:18_image-20240409104733079.png)
 
-## 2.安装相关Package
+<a id="2安装相关package"></a>
 
-首先安装淘宝的cnpm代替npm：
+## 2.安装相关 Package
+
+首先安装淘宝的 cnpm 代替 npm：
 
 ```shell
 sudo npm install -g cnpm -registry=https://registry.npmmirror.com
@@ -61,9 +67,11 @@ sudo cnpm install -g husky cz-customizable commit-and-tag-version conventional-c
 echo '{ "path": "cz-customizable" }' > ~/.czrc
 ```
 
-## 3.本地创建git仓库
+<a id="3本地创建git仓库"></a>
 
-解决Git显示中文文件名为乱码：
+## 3.本地创建 git 仓库
+
+解决 Git 显示中文文件名为乱码：
 
 ```shell
 git config --global core.quotepath false
@@ -75,7 +83,7 @@ git config --global core.quotepath false
 git config --global core.filemode false
 ```
 
-设置默认编辑器为`vim`：
+设置默认编辑器为 `vim`：
 
 ```shell
 git config --global core.editor vim
@@ -88,7 +96,9 @@ git init
 
 ![image-20240409105753718](https://static.m0rtzz.com/images/Year:2024/Month:04/Day:09/10:57:53_image-20240409105753718.png)
 
-## 4.远程创建git仓库
+<a id="4远程创建git仓库"></a>
+
+## 4.远程创建 git 仓库
 
 ![image-20240409105727305](https://static.m0rtzz.com/images/Year:2024/Month:04/Day:09/10:57:27_image-20240409105727305.png)
 
@@ -104,7 +114,7 @@ code .
 
 ![image-20240409111651453](https://static.m0rtzz.com/images/Year:2024/Month:04/Day:09/11:16:51_image-20240409111651453.png)
 
-新建`.gitignore`、`.cz-config.js`、`test.txt`和`README.md`，内容如下：
+新建 `.gitignore`、`.cz-config.js`、`test.txt` 和 `README.md`，内容如下：
 
 ---
 
@@ -404,17 +414,17 @@ module.exports = {
 
 ---
 
-之后进行`npm init`：
+之后进行 `npm init`：
 
 ```shell
 npm init
 ```
 
-依次填写即可（注意git远程仓库url不能填错）：
+依次填写即可（注意 git 远程仓库 url 不能填错）：
 
 ![image-20240409112455334](https://static.m0rtzz.com/images/Year:2024/Month:04/Day:09/11:24:55_image-20240409112455334.png)
 
-生成`.husky`文件夹：
+生成 `.husky` 文件夹：
 
 ```shell
 husky
@@ -424,7 +434,7 @@ husky
 
 ## 6.修改配置文件
 
-修改`.husky/_/pre_push`：
+修改 `.husky/_/pre_push`：
 
 原先：
 
@@ -509,10 +519,10 @@ git commit --amend -m "🔖 tag(package.json): ${new_tag}"
 rm "${repo_root_dir}/CHANGELOG.md"
 conventional-changelog -i "${repo_root_dir}/CHANGELOG.md" -s -r 0
 
-# 获取当前仓库的远程URL
+# 获取当前仓库的远程 URL
 remote_url=$(git remote -v | grep origin | grep '(fetch)' | awk '{print $2}')
 
-# 处理commit URL
+# 处理 commit URL
 case "${remote_url}" in
 *github.com*)
     echo "\e[1;32mRemote URL is from GitHub.\e[0m"
@@ -543,13 +553,13 @@ echo "\e[1;32m更新后的标签为: ${new_tag}\e[0m"
 git add .
 ```
 
-使用`cz-cust`代替`git commit -m`：
+使用 `cz-cust` 代替 `git commit -m`：
 
 ```shell
 cz-cust
 ```
 
-选择`init`：
+选择 `init`：
 
 ![image-20240409130252142](https://static.m0rtzz.com/images/Year:2024/Month:04/Day:09/13:02:52_image-20240409130252142.png)
 
@@ -558,7 +568,7 @@ cz-cust
 或者起一个别名：
 
 ```shell
-sudo vi /etc/profile # 为了使多用户和多Shell解释器同时生效
+sudo vi /etc/profile # 为了使多用户和多 Shell 解释器同时生效
 ```
 
 在最后加上：
@@ -581,7 +591,7 @@ git log
 git push origin --set-upstream --follow-tags -u master
 ```
 
-可以看到已经自动生成了`CHANGELOG.md`：
+可以看到已经自动生成了 `CHANGELOG.md`：
 
 ![image-20240409131748005](https://static.m0rtzz.com/images/Year:2024/Month:04/Day:09/13:17:48_image-20240409131748005.png)
 

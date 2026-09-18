@@ -26,6 +26,10 @@ summary: 'A short English summary used for page metadata.'
   into the Markdown file.
 - `category` must match an existing Discussion category by name or slug.
 - `labels` must be a non-empty array of exact repository label names.
+- Run `pnpm posts:lint` for offline typography checks, or `pnpm posts:format`
+  to fix prose and natural-language code comments. Review the resulting diff.
+  Neither command stages files or accesses Discussions. See
+  [排版规则与保护范围](docs/post-typography.md) for the complete policy.
 - Run `pnpm posts:check` to validate local metadata, remote categories, labels,
   and mapped Discussion numbers without changing files.
 - Run `pnpm posts:sync:dry-run` to preview Discussion updates.
@@ -52,6 +56,8 @@ LLM_API_KEY=your-api-key
 # LLM_MODEL=your-model
 ```
 
-The pre-push hook and GitHub Actions both run `pnpm posts:check`, so missing
-summaries are accepted while malformed metadata, unsupported categories or
+The pre-push hook and GitHub Actions both run `pnpm posts:check`, which first
+runs the local typography gate. Both `posts:sync` commands run the same gate
+before creating a GitHub client. Run `pnpm posts:test` for protection tests.
+Missing summaries are accepted while malformed metadata, unsupported categories or
 labels, missing Discussions, and duplicate Discussion numbers are rejected.

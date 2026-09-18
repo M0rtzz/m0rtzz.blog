@@ -5,10 +5,13 @@ import {
   resolvePostTargets,
 } from './github-discussions.mjs'
 import { readPosts, writeDiscussionNumber } from './posts.mjs'
+import { assertPostTypography } from './typography/index.mjs'
 
 const dryRun = process.argv.includes('--dry-run')
 const sourceMarkerPrefix = 'm0rtzz.blog-source:'
 const sourceMarkerPattern = /^<!-- m0rtzz\.blog-source:[^>]* -->(?:\r?\n){1,2}/
+// Validate locally before constructing the remote client (also for dry runs).
+await assertPostTypography()
 const { name, octokit, owner } = createGitHubContext()
 
 function getSourceMarker(post) {

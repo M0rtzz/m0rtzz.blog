@@ -8,19 +8,23 @@ title: "Linux 版“IDM”—— XDM（Xtreme Download Manager，类 Windows-IDM
 summary: "Install XDM on Linux, then localize the interface for a smoother IDM-like download manager experience."
 ---
 
-# Linux版“IDM”—— XDM（Xtreme Download Manager，类Windows-IDM）安装并汉化
+<a id="linux版idm-xdmxtreme-download-manager类windows-idm安装并汉化"></a>
 
-在Linux下使用XDM可以像在Winodows里使用IDM一样凭借动态文件分割技术进行文件分段下载。
+# Linux 版“IDM”—— XDM（Xtreme Download Manager，类 Windows-IDM）安装并汉化
 
-## 1.下载8.0.18版本软件包
+在 Linux 下使用 XDM 可以像在 Winodows 里使用 IDM 一样凭借动态文件分割技术进行文件分段下载。
 
-[GitHub_Releases页面](https://github.com/subhra74/xdm-experimental-binaries/releases/tag/8.0.18-beta)
+<a id="1下载8018版本软件包"></a>
+
+## 1.下载 8.0.18 版本软件包
+
+[GitHub_Releases 页面](https://github.com/subhra74/xdm-experimental-binaries/releases/tag/8.0.18-beta)
 
 ![image-20240204115024426](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:04/11:51:00_image-20240204115024426.png)
 
-这里以Ubuntu为例，我下载了xdman_gtk_8.0.18_amd64.deb，如是Red Hat及其衍生版本的Linux发行版，如Fedora、CentOS和RHEL等请选择rpm包。
+这里以 Ubuntu 为例，我下载了 xdman_gtk_8.0.18_amd64.deb，如是 Red Hat 及其衍生版本的 Linux 发行版，如 Fedora、CentOS 和 RHEL 等请选择 rpm 包。
 
-可以使用curl获取：
+可以使用 curl 获取：
 
 ```bash
 sudo apt install curl && curl -L https://github.com/subhra74/xdm-experimental-binaries/releases/download/8.0.18-beta/xdman_gtk_8.0.18_amd64.deb -o xdman_gtk_8.0.18_amd64.deb
@@ -34,9 +38,11 @@ sudo apt install curl && curl -L https://ghproxy.net/https://github.com/subhra74
 
 ![image-20240204122729232](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:04/12:27:29_image-20240204122729232.png)
 
-## 2.安装XDM
+<a id="2安装xdm"></a>
 
-在下载deb包的位置打开终端输入（别忘了./）：
+## 2.安装 XDM
+
+在下载 deb 包的位置打开终端输入（别忘了 ./）：
 
 ```bash
 sudo apt install ./xdman_gtk_8.0.18_amd64.deb
@@ -44,9 +50,11 @@ sudo apt install ./xdman_gtk_8.0.18_amd64.deb
 
 ![image-20240204120845679](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:04/12:08:45_image-20240204120845679.png)
 
-## 3.修改XDM语言为汉语
+<a id="3修改xdm语言为汉语"></a>
 
-XDM自带的语言修改没有效果。
+## 3.修改 XDM 语言为汉语
+
+XDM 自带的语言修改没有效果。
 
 ![image-20240204121058999](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:04/12:10:59_image-20240204121058999.png)
 
@@ -56,7 +64,7 @@ XDM自带的语言修改没有效果。
 sudo vi /opt/xdman/Lang/English.txt
 ```
 
-修改其中内容为以下（官方提供的/opt/xdman/Lang/Chinese simplified.txt里面翻译不全，故使用以下内容）：
+修改其中内容为以下（官方提供的 /opt/xdman/Lang/Chinese simplified.txt 里面翻译不全，故使用以下内容）：
 
 ```ini
 DESC_NEW=新建
@@ -325,7 +333,7 @@ MSG_EXT_INSTALL_FAIL=扩展未成功安装，请单击“帮助”按钮了解�
 MSG_COPY=复制
 ```
 
-可以看到此时已完成汉化（如果无效可`reboot`重启）
+可以看到此时已完成汉化（如果无效可 `reboot` 重启）
 
 ![image-20240204121743360](https://static.m0rtzz.com/images/Year:2024/Month:02/Day:04/12:17:43_image-20240204121743360.png)
 

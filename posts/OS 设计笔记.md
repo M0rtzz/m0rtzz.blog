@@ -9,7 +9,9 @@ title: "OS 设计实验过程笔记"
 summary: "Experiment notes for the OS lab, covering scoring scripts, threading, sockets, and Linux 0.12 system-call changes."
 ---
 
-# OS设计实验过程笔记
+<a id="os设计实验过程笔记"></a>
+
+# OS 设计实验过程笔记
 
 克隆该仓库：
 
@@ -20,7 +22,7 @@ cd zzu-cs-os-design/
 
 >   [!IMPORTANT]
 >
->   该仓库部分Shell脚本的`shebang`设置的Shell解释器是`/bin/zsh`，未安装`z-shell`的请自行改为`/bin/bash`，脚本语法也均通过`ShellCheck`检查：
+>   该仓库部分 Shell 脚本的 `shebang` 设置的 Shell 解释器是 `/bin/zsh`，未安装 `z-shell` 的请自行改为 `/bin/bash`，脚本语法也均通过 `ShellCheck` 检查：
 >
 >   ![image-20240511152526959](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:11/15:25:38_image-20240511152526959.png)
 
@@ -147,7 +149,9 @@ cat ./score/sorted_scores.txt
 
 ## 第二题
 
-### ①安装LLVM工具集（使用清华源）及依赖库
+<a id="安装llvm工具集使用清华源及依赖库"></a>
+
+### ①安装 LLVM 工具集（使用清华源）及依赖库
 
 **Reference：**[https://mirrors.tuna.tsinghua.edu.cn/help/llvm-apt](https://mirrors.tuna.tsinghua.edu.cn/help/llvm-apt)
 
@@ -414,7 +418,7 @@ sem_t mutex;
 int secret_num = 0;
 
 /**
- * @brief 服务器与客户端的收发通信函数，n为连接数组序号
+ * @brief 服务器与客户端的收发通信函数，n 为连接数组序号
  * @param n
  */
 void rcv_snd(int n)
@@ -474,7 +478,7 @@ signed main()
     // 初始化随机数生成器
     srand(time(NULL));
 
-    // 生成1到100的随机数
+    // 生成 1 到 100 的随机数
     secret_num = rand() % 100 + 1;
 
     printf("答案是：%d\n", secret_num);
@@ -489,13 +493,13 @@ signed main()
     server_sockfd = socket(AF_INET, SOCK_STREAM, 0);
     // 指定网络套接字
     server_addr.sin_family = AF_INET;
-    // 接受所有IP地址的连接
+    // 接受所有 IP 地址的连接
     server_addr.sin_addr.s_addr = htonl(INADDR_ANY);
-    // 绑定到9736端口
+    // 绑定到 9736 端口
     server_addr.sin_port = htons(9736);
-    bind(server_sockfd, (struct sockaddr *)&server_addr, sizeof(server_addr)); // 协议套接字命名为server_sockfd
+    bind(server_sockfd, (struct sockaddr *)&server_addr, sizeof(server_addr)); // 协议套接字命名为 server_sockfd
     printf("1、服务器开始listen...\n");
-    // 创建连接数最大为MAX_LINK_NUM的套接字队列，监听命名套接字，listen不会阻塞，它向内核报告套接字和最大连接数
+    // 创建连接数最大为 MAX_LINK_NUM 的套接字队列，监听命名套接字，listen 不会阻塞，它向内核报告套接字和最大连接数
     listen(server_sockfd, MAX_LINK_NUM);
     // 忽略子进程停止或退出信号
     signal(SIGCHLD, SIG_IGN);
@@ -503,7 +507,7 @@ signed main()
     for (i = 0; i < MAX_LINK_NUM; i++)
         client_sockfd[i] = -1; // 初始化连接队列
 
-    sem_init(&mutex, 0, MAX_LINK_NUM); // 信号量mutex初始化为连接数
+    sem_init(&mutex, 0, MAX_LINK_NUM); // 信号量 mutex 初始化为连接数
 
     while (true)
     {
@@ -525,9 +529,9 @@ signed main()
         client_len = sizeof(client_addr);
         printf("2、服务器开始accept...i=%d\n", i);
         client_sockfd[i] = accept(server_sockfd, (struct sockaddr *)&client_addr, &client_len);
-        // 当前连接数增1
+        // 当前连接数增 1
         cur_link++;
-        // 可用连接数信号量mutex减1
+        // 可用连接数信号量 mutex 减 1
         sem_wait(&mutex);
         printf("当前连接数为：%d(<=%d)\n", cur_link, MAX_LINK_NUM);
         // 输出客户端地址信息
@@ -580,7 +584,7 @@ signed main()
     char snd_buf[1024];
     // 接收消息缓冲区
     char rcv_buf[1024];
-    // connect函数调用的结果
+    // connect 函数调用的结果
     int result;
     // 接收消息长度
     int rcv_num;
@@ -632,7 +636,7 @@ signed main()
         write(sockfd, snd_buf, sizeof(snd_buf));
 
         if (strncmp(snd_buf, "quit", 2) == 0)
-            break; // 若发送"quit"，则结束循环，通信结束
+            break; // 若发送 "quit"，则结束循环，通信结束
 
         // 接收缓冲区清零
         memset(rcv_buf, 0, 1024);
@@ -644,7 +648,7 @@ signed main()
 
         sleep(1);
 
-    } while (strncmp(rcv_buf, "猜对了", 2) != 0); // 如果收到"!q"，则结束循环，通信结束
+    } while (strncmp(rcv_buf, "猜对了", 2) != 0); // 如果收到 "!q"，则结束循环，通信结束
     printf("-----------客户机%d,sockfd=%d 与服务器线程对话结束---------\n", cpid, sockfd);
     // 关闭客户机套接字
     close(sockfd);
@@ -660,7 +664,7 @@ signed main()
 ```shell
 make all
 ./out/socket_server.out
-./out/socket_client.out # 不多于5个
+./out/socket_client.out # 不多于 5 个
 ```
 
 ![image-20240502151515955](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:02/15:15:16_image-20240502151515955.png)
@@ -673,15 +677,17 @@ make all
 
 ## 第四题
 
-### ①源码编译安装gdb版Bochs（x86模拟器）
+<a id="源码编译安装gdb版bochsx86模拟器"></a>
 
-安装版本为Bochs-2.2.5，原因是：
+### ①源码编译安装 gdb 版 Bochs（x86 模拟器）
+
+安装版本为 Bochs-2.2.5，原因是：
 
 [https://github.com/oldlinux-web/oldlinux-files/blob/master/bochs/README_FIRST#L7-L10](https://github.com/oldlinux-web/oldlinux-files/blob/master/bochs/README_FIRST#L7-L10)
 
 ![image-20240505001129646](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:05/00:11:29_image-20240505001129646.png)
 
-因不想使用官方推荐的`aptitude`工具（此工具一般用于解决依赖问题，它会`autoremove`系统中的软件包），但此系统使用`apt`安装时没有遇见依赖问题，所以我还是使用了`apt`：
+因不想使用官方推荐的 `aptitude` 工具（此工具一般用于解决依赖问题，它会 `autoremove` 系统中的软件包），但此系统使用 `apt` 安装时没有遇见依赖问题，所以我还是使用了 `apt`：
 
 ```shell
 # @file: linux/handlers/src/setup.sh
@@ -699,7 +705,7 @@ cd linux/handlers/src/
 
 >   [!NOTE]
 >
->   以下为编译和最后运行Bochs时出现BUG后经过code spelunking后解决问题的过程【本仓库上传的源码鄙人已解决BUG:)】：
+>   以下为编译和最后运行 Bochs 时出现 BUG 后经过 code spelunking 后解决问题的过程【本仓库上传的源码鄙人已解决 BUG:)】：
 >
 >   1）`linux/handlers/src/setup.sh`：
 >
@@ -754,7 +760,7 @@ cd linux/handlers/src/
 
 ### ②改写内核源码过程（linux/linux-0.12/）
 
-本仓库中的`linux/linux-0.12`鄙人已修改过源码，未修改过的源码tarball包为`linux/linux-0.12-pure-unmodified.tar.gz`。
+本仓库中的 `linux/linux-0.12` 鄙人已修改过源码，未修改过的源码 tarball 包为 `linux/linux-0.12-pure-unmodified.tar.gz`。
 
 #### 1）include/unistd.h
 
@@ -825,7 +831,7 @@ char msg[30]; // 全局变量，用于存储用户传递的消息
 /**
  * @brief 实现 `sys_m0rtzz` 系统调用函数，将用户提供的字符串拷贝到内核空间
  * @param str 用户提供的字符串指针
- * @return 返回拷贝的字符个数，如果超过30个字符，则返回负值错误码
+ * @return 返回拷贝的字符个数，如果超过 30 个字符，则返回负值错误码
  */
 int sys_m0rtzz(const char *str)
 {
@@ -849,11 +855,11 @@ int sys_m0rtzz(const char *str)
 
     int len = i;
 
-    // 如果读取的字符个数超过30个，则返回错误码
+    // 如果读取的字符个数超过 30 个，则返回错误码
     if (len > 30)
         return -(EINVAL);
 
-    // 将读取的字符串拷贝到全局变量msg中
+    // 将读取的字符串拷贝到全局变量 msg 中
     strcpy(msg, tmp);
 
     // 返回拷贝的字符个数
@@ -870,15 +876,15 @@ int sys_ashore(char *str, unsigned int size)
 {
     int len = 0;
 
-    // 统计全局变量msg中的字符个数
+    // 统计全局变量 msg 中的字符个数
     for (; msg[len] != '\0'; len++)
         ;
 
-    // 如果全局变量msg中的字符个数超过了缓冲区的大小，则返回错误码
+    // 如果全局变量 msg 中的字符个数超过了缓冲区的大小，则返回错误码
     if (len > size)
         return -(EINVAL);
 
-    // 将全局变量msg中的消息拷贝到用户提供的缓冲区中
+    // 将全局变量 msg 中的消息拷贝到用户提供的缓冲区中
     int i;
     for (i = 0; i < size; i++)
     {
@@ -913,7 +919,9 @@ m0rtzz.s m0rtzz.o: m0rtzz.c ../include/asm/segment.h ../include/string.h ../incl
 
 ![image-20240501001113260](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:01/00:11:13_image-20240501001113260.png)
 
-### ③编译linux-0.12
+<a id="编译linux-012"></a>
+
+### ③编译 linux-0.12
 
 ```shell
 cd linux/tools/
@@ -964,7 +972,7 @@ touch mount.sh umount.sh
 
 # ------------------------------------------------------------------
 # @file: mount.sh
-# @brief: 挂载文件系统，此文件系统是linux-0.11的文件系统映像，但不影响使用，在此不过多赘述
+# @brief: 挂载文件系统，此文件系统是 linux-0.11 的文件系统映像，但不影响使用，在此不过多赘述
 # @author: M0rtzz
 # @date: 2024-05-01
 # ------------------------------------------------------------------
@@ -985,7 +993,7 @@ mount -t minix -o loop,offset=1024 "${TOOLS_PATH}"/hdc.img "${TOOLS_PATH}"/hdc
 
 # ------------------------------------------------------------------
 # @file: umount.sh
-# @brief: 杀死全部占用./hdc/的进程并卸载文件系统
+# @brief: 杀死全部占用 `./hdc/` 的进程并卸载文件系统
 # @author: M0rtzz
 # @date: 2024-05-01
 # ------------------------------------------------------------------
@@ -1016,7 +1024,7 @@ while true; do
 done
 ```
 
-现在可以在本地直接访问old-linux的文件系统而不需要在模拟器终端中访问：
+现在可以在本地直接访问 old-linux 的文件系统而不需要在模拟器终端中访问：
 
 ```shell
 sudo chmod +x mount.sh
@@ -1025,7 +1033,7 @@ sudo chmod +x mount.sh
 
 ![image-20240508163314254](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:08/16:33:19_image-20240508163314254.png)
 
-之后需要修改此文件系统下的`/usr/include/unistd.h`并在此系统编写我们的上层C语言代码来调用我们之前编写进内核的系统调用函数：
+之后需要修改此文件系统下的 `/usr/include/unistd.h` 并在此系统编写我们的上层 C 语言代码来调用我们之前编写进内核的系统调用函数：
 
 ```shell
 code hdc/
@@ -1117,31 +1125,37 @@ clean:
 	rm -f *.out
 ```
 
-### ⑤进入linux-0.12编译并运行代码
+<a id="进入linux-012编译并运行代码"></a>
 
-#### 1）以普通模式进入linux-0.12
+### ⑤进入 linux-0.12 编译并运行代码
+
+<a id="1以普通模式进入linux-012"></a>
+
+#### 1）以普通模式进入 linux-0.12
 
 ```shell
 cd linux/tools/
-./run.sh # 以普通模式进入linux-0.12
+./run.sh # 以普通模式进入 linux-0.12
 ```
 
-进入系统之后输入基础命令发现正常使用，无BUG：
+进入系统之后输入基础命令发现正常使用，无 BUG：
 
 ![image-20240508163431826](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:08/16:34:32_image-20240508163431826.png)
 
-#### 2）以gdb模式进入linux-0.12
+<a id="2以gdb模式进入linux-012"></a>
+
+#### 2）以 gdb 模式进入 linux-0.12
 
 ```shell
 cd linux/tools/
-./run.sh -g # 以gdb模式进入linux-0.12
+./run.sh -g # 以 gdb 模式进入 linux-0.12
 ```
 
-一开始本地终端进入gdb模式但模拟器终端没有进入文件系统：
+一开始本地终端进入 gdb 模式但模拟器终端没有进入文件系统：
 
 ![image-20240507202509513](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:07/20:25:09_image-20240507202509513.png)
 
-我们需要在本地终端按`c`键（continue）并回车进入文件系统后就可以正常使用命令了：
+我们需要在本地终端按 `c` 键（continue）并回车进入文件系统后就可以正常使用命令了：
 
 ![image-20240507202603623](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:07/20:26:04_image-20240507202603623.png)
 
@@ -1149,7 +1163,7 @@ cd linux/tools/
 
 ```shell
 ls
-make all # gdb模式如果卡住请在本地终端输入`c`键并回车
+make all # gdb 模式如果卡住请在本地终端输入 `c` 键并回车
 ls
 ```
 
@@ -1162,19 +1176,25 @@ ls
 
 ![image-20240501195322602](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:01/19:53:22_image-20240501195322602.png)
 
-### ⑥退出linux-0.12
+<a id="退出linux-012"></a>
 
-#### 1）普通模式退出linux-0.12
+### ⑥退出 linux-0.12
 
-直接点击模拟器终端右上角的`×`即可退出：
+<a id="1普通模式退出linux-012"></a>
+
+#### 1）普通模式退出 linux-0.12
+
+直接点击模拟器终端右上角的 `×` 即可退出：
 
 ![image-20240507202415072](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:07/20:24:15_image-20240507202415072.png)
 
 ![image-20240508163507433](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:08/16:35:07_image-20240508163507433.png)
 
-#### 2）gdb模式退出linux-0.12
+<a id="2gdb模式退出linux-012"></a>
 
-点击模拟器终端右上角的`×`后在本地终端输入`q`键并回车即可退出：
+#### 2）gdb 模式退出 linux-0.12
+
+点击模拟器终端右上角的 `×` 后在本地终端输入 `q` 键并回车即可退出：
 
 ![image-20240507202931291](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:07/20:29:31_image-20240507202931291.png)
 

@@ -10,7 +10,9 @@ title: "自搭 Overleaf"
 summary: "A practical walkthrough for deploying Overleaf with Docker, toolkit configuration, and template management."
 ---
 
-# 自搭Overleaf
+<a id="自搭overleaf"></a>
+
+# 自搭 Overleaf
 
 ## 克隆仓库
 
@@ -20,12 +22,14 @@ git clone git@github.com:M0rtzz/overleaf.git
 git clone git@github.com:overleaf/toolkit.git overleaf-toolkit
 ```
 
-## 配置Toolkit
+<a id="配置toolkit"></a>
+
+## 配置 Toolkit
 
 ```shell
 cd overleaf-toolkit/
 
-# 生成`config/`下的配置文件
+# 生成 `config/` 下的配置文件
 bin/init
 ```
 
@@ -139,7 +143,9 @@ cd overleaf-toolkit/
 bin/up -d
 ```
 
-## 配置Nginx
+<a id="配置nginx"></a>
+
+## 配置 Nginx
 
 `/etc/nginx/conf.d/overleaf.conf`
 
@@ -188,7 +194,9 @@ server {
 nginx -t
 ```
 
-## 安装完整版TexLive及相关包
+<a id="安装完整版texlive及相关包"></a>
+
+## 安装完整版 TexLive 及相关包
 
 ```shell
 docker exec -it sharelatex bash

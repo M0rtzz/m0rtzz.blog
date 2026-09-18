@@ -5,8 +5,10 @@ import {
   resolvePostTargets,
 } from './github-discussions.mjs'
 import { readPosts } from './posts.mjs'
+import { assertPostTypography } from './typography/index.mjs'
 
 try {
+  await assertPostTypography()
   const posts = await readPosts()
   const { name, octokit, owner } = createGitHubContext()
   const [repositoryMetadata, discussions] = await Promise.all([

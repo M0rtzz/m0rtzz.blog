@@ -15,11 +15,11 @@ summary: "Export a CSDN favorites list to local files by running a small script 
 
 ![image-20240119225341349](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:26/16:38:22_3f12e2da88f762655d44dd780fb4749c.png)
 
-之后点击`收藏`
+之后点击 `收藏`
 
 ![image-20240119225504799](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:26/16:38:58_5593f8a848c0ec4ac0d32ac91aa40e81.png)
 
-展开你想保存的收藏夹，比如我选择`LaTeX`收藏夹
+展开你想保存的收藏夹，比如我选择 `LaTeX` 收藏夹
 
 ![image-20240119231450134](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:26/16:39:12_89c481662979af2992726547f2f15540.png)
 
