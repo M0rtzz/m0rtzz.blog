@@ -35,6 +35,9 @@ importers:
       eslint-plugin-react-hooks:
         specifier: ^4.6.2
         version: 4.6.2(eslint@8.57.1)
+      from-to.js:
+        specifier: 0.0.1
+        version: 0.0.1
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
@@ -47,9 +50,6 @@ importers:
       mdast-util-toc:
         specifier: ^7.1.0
         version: 7.1.0
-      motion-wave:
-        specifier: ^0.0.5
-        version: 0.0.5(react@18.3.1)
       next:
         specifier: 14.2.3
         version: 14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -2935,11 +2935,6 @@ packages:
   minipass@7.1.2:
     resolution: {integrity: sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==}
     engines: {node: '>=16 || 14 >=14.17'}
-
-  motion-wave@0.0.5:
-    resolution: {integrity: sha512-Mt0palQ0S6/DuSpKr+mnkdZNl9uZRCXGHq6+bd7ZD+kI+KnkEQ0cB6wAmpPTqqMvQa64pcbG60RjKtwzAE9S/w==}
-    peerDependencies:
-      react: ^16.8.0 || ^17 || ^18
 
   mrmime@2.0.0:
     resolution: {integrity: sha512-eu38+hdgojoyq63s+yTpN4XMBdt5l8HhMhc4VKLO9KM5caLIBvUm4thi7fFaxyTmCKeNnXZ5pAlBwCUnhA09uw==}
@@ -7665,11 +7660,6 @@ snapshots:
   minimist@1.2.8: {}
 
   minipass@7.1.2: {}
-
-  motion-wave@0.0.5(react@18.3.1):
-    dependencies:
-      from-to.js: 0.0.1
-      react: 18.3.1
 
   mrmime@2.0.0: {}
 
