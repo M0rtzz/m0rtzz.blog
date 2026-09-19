@@ -11,6 +11,7 @@
     "start": "next start",
     "lint": "next lint",
     "wave:test": "node --test scripts/wave.test.mjs",
+    "skills:test": "node --test scripts/skills.test.mjs",
     "posts:lint": "node scripts/format-posts.mjs",
     "posts:format": "node scripts/format-posts.mjs --write",
     "posts:test": "node --test scripts/typography/*.test.mjs",

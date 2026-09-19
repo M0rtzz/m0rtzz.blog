@@ -360,6 +360,7 @@ code .line:last-child:empty {
   margin-bottom: 0em;
 }
 
-.code-group-disable-spacing .copy-button {
+.code-group-disable-spacing .copy-button,
+details.mdx-components .copy-button {
   @apply right-4 md:right-8;
 }

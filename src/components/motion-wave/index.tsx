@@ -7,7 +7,7 @@ import { animate } from 'from-to.js'
 
 import { createWave } from './create-wave'
 
-import type { WaveConfig } from './create-wave'
+import type { WaveConfig, WaveCoverageListener } from './create-wave'
 import type { Controls, TransitionOptions } from 'from-to.js'
 
 type MotionConfig = {
@@ -17,22 +17,34 @@ type MotionConfig = {
 interface MotionWaveProps extends ComponentPropsWithoutRef<'canvas'> {
   initialConfig: WaveConfig
   motionConfig: MotionConfig
+  onCoverageChange?: WaveCoverageListener
 }
 
 export function MotionWave({
   initialConfig,
   motionConfig,
+  onCoverageChange,
   ...props
 }: MotionWaveProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const initialConfigRef = useRef(initialConfig)
+  const coverageListenerRef = useRef(onCoverageChange)
   const waveRef = useRef<ReturnType<typeof createWave>>(null)
   const motions = useRef(
     new Map<keyof WaveConfig, { signature: string; controls: Controls }>(),
   )
 
   useEffect(() => {
-    const wave = createWave(canvasRef.current!, initialConfigRef.current)
+    coverageListenerRef.current = onCoverageChange
+  }, [onCoverageChange])
+
+  const tracksCoverage = !!onCoverageChange
+  useEffect(() => {
+    const wave = createWave(
+      canvasRef.current!,
+      initialConfigRef.current,
+      tracksCoverage ? path => coverageListenerRef.current?.(path) : undefined,
+    )
     const activeMotions = motions.current
     waveRef.current = wave
     wave?.start()
@@ -42,7 +54,7 @@ export function MotionWave({
       wave?.stop()
       waveRef.current = null
     }
-  }, [])
+  }, [tracksCoverage])
 
   useEffect(() => {
     const wave = waveRef.current
@@ -62,7 +74,7 @@ export function MotionWave({
       })
       motions.current.set(key, { signature, controls })
     }
-  }, [motionConfig])
+  }, [motionConfig, tracksCoverage])
 
   return <canvas {...props} ref={canvasRef} />
 }
