@@ -24,6 +24,8 @@ type AutoScrollContextValue = {
 
 const AutoScrollContext = createContext<AutoScrollContextValue | null>(null)
 
+const SCROLL_BOTTOM_EPSILON = 2
+
 interface AutoScrollProviderProps {
   containerRef: React.RefObject<HTMLElement | null>
   children: React.ReactNode
@@ -46,11 +48,23 @@ export const AutoScrollProvider = ({
     const container = containerRef.current
     if (!container) return
 
+    const isAtBottom = () =>
+      container.scrollHeight - container.clientHeight - container.scrollTop <=
+      SCROLL_BOTTOM_EPSILON
+
+    const resumeFollowingAtBottom = () => {
+      if (isAtBottom()) followingRef.current = true
+    }
+
     const stopFollowing = () => {
       followingRef.current = false
     }
     const onWheel = (event: WheelEvent) => {
-      if (event.deltaX !== 0 || event.deltaY !== 0) stopFollowing()
+      if (event.deltaX !== 0 || event.deltaY !== 0) {
+        stopFollowing()
+        // A wheel event at the current bottom may not emit a scroll event.
+        if (event.deltaY > 0) resumeFollowingAtBottom()
+      }
     }
     const onTouchMove = () => stopFollowing()
     const onKeyDown = (event: KeyboardEvent) => {
@@ -73,9 +87,16 @@ export const AutoScrollProvider = ({
     }
     const onPointerUp = () => {
       scrollbarPointerRef.current = false
+      resumeFollowingAtBottom()
     }
     const onScroll = () => {
-      if (scrollbarPointerRef.current) stopFollowing()
+      if (scrollbarPointerRef.current) {
+        stopFollowing()
+        return
+      }
+      // Manual scrolling pauses follow mode until the reader reaches the
+      // bottom again, at which point newly rendered output should follow.
+      resumeFollowingAtBottom()
     }
 
     container.addEventListener('wheel', onWheel, { passive: true })

@@ -161,6 +161,11 @@ code::marker {
   }
 }
 
+/* Keep article headings visible below the sticky article header when deep-linking. */
+.article-content :where(h1, h2, h3, h4, h5, h6) {
+  scroll-margin-top: 5rem;
+}
+
 /* Tailwind utilities */
 @layer utilities {
   @keyframes hello {

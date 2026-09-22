@@ -64,6 +64,7 @@ export default function CursorInitializer() {
           `div.relative:nth-child(n)${exclude_element}`,
           `div.relative:nth-child(n) > div:nth-child(n) > p:nth-child(n)${exclude_element}`,
           `div.relative:nth-child(n) > div:nth-child(n) > a:nth-child(n) > h2:nth-child(n)${exclude_element}`,
+          `h1.site-logo${exclude_element}`,
         ],
         "/cursor/ani/arrow.ani"
       );
@@ -138,6 +139,9 @@ export default function CursorInitializer() {
           `.col-span-3${exclude_element}`,
           `label.relative${exclude_element}`,
           `details > summary${exclude_element}`,
+          `a.article-logo${exclude_element}`,
+          `a.article-logo > h1${exclude_element}`,
+          `h1.site-logo > a${exclude_element}`,
           `a.group\\/note:nth-child(n) > p:nth-child(n)${exclude_element}`,
           `div.relative:nth-child(n) > a:nth-child(n) > span:nth-child(n)${exclude_element}`,
           `div.relative:nth-child(n) > div:nth-child(n) > p:nth-child(n) > a:nth-child(n)${exclude_element}`,

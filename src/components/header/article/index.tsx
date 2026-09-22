@@ -20,7 +20,7 @@ export const Header = (props: HeaderProps) => {
         sticky && 'sticky top-0 z-10 bg-white/5 backdrop-blur dark:bg-black/5',
       )}
     >
-      <Link className='justify-self-start' href='/'>
+      <Link className='article-logo justify-self-start' href='/'>
         <h1 className='text-xl font-bold tracking-tighter md:text-2xl'>
           M0rtzz<small>.com</small>
         </h1>
