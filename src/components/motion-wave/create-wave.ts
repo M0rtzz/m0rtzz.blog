@@ -14,7 +14,14 @@ export interface WaveConfig {
 
 // An SVG path in objectBoundingBox coordinates, covering the union of all
 // filled layers regardless of their decorative opacity.
-export type WaveCoverageListener = (path: string) => void
+export type WaveCoverageListener = (
+  coveragePath: string,
+  dryPath?: string,
+) => void
+
+// Separate the wet and dry clip edges by a small amount. This prevents their
+// anti-aliased text pixels from being composited into a bright fringe.
+export const WAVE_COVERAGE_EDGE_PAD = 2
 
 // The dominant crest keeps the original k*x + travel phase (and speed).
 // Small, non-locked swells change its silhouette instead of translating a
@@ -177,6 +184,8 @@ export function createWave(
     ctx.clearRect(0, 0, width, height)
     ctx.fillStyle = color ?? getComputedStyle(canvas).fill
     const coverage: string[] = []
+    const dryCoverageTop: number[] = []
+    const coverageX: number[] = []
     for (const [index, layer] of LAYERS.entries()) {
       const motion = getLayerMotion(visibleSeconds, index)
       const layerConfig = {
@@ -193,14 +202,26 @@ export function createWave(
         sampleWave(x, (distance / 100) * layer.scale, layerConfig)
       ctx.globalAlpha = layer.opacity
       ctx.beginPath()
+      const topPoints: string[] = []
+      let sampleIndex = 0
       const trace = (x: number, first = false) => {
         const y = calcY(x)
         if (first) ctx.moveTo(x, y)
         else ctx.lineTo(x, y)
         if (onCoverageChange) {
-          coverage.push(
-            `${first ? 'M' : 'L'}${(x / width).toFixed(5)},${(y / height).toFixed(5)}`,
+          // Keep the two text layers on opposite sides of the canvas edge.
+          // Overlapping anti-aliased text pixels are what caused the bright
+          // fringe on the outermost wave.
+          topPoints.push(
+            `${(x / width).toFixed(5)},${((y + WAVE_COVERAGE_EDGE_PAD) / height).toFixed(5)}`,
           )
+          if (index === 0) coverageX.push(x)
+          const dryY = y - WAVE_COVERAGE_EDGE_PAD
+          dryCoverageTop[sampleIndex] = Math.min(
+            dryCoverageTop[sampleIndex] ?? Infinity,
+            dryY,
+          )
+          sampleIndex += 1
         }
       }
       trace(0, true)
@@ -212,12 +233,32 @@ export function createWave(
       ctx.lineTo(0, height)
       ctx.closePath()
       ctx.fill()
-      // All subpaths use the same winding: overlaps remain covered instead of
-      // cancelling out. Reuse the exact canvas vertices to avoid edge drift.
-      if (onCoverageChange) coverage.push('L1,1 L0,1 Z')
+      if (onCoverageChange) {
+        const polygon = topPoints.map(point => point.split(',').map(Number))
+        const bottom = [
+          [1, 1],
+          [0, 1],
+        ]
+        const vertices = [...polygon, ...bottom]
+        coverage.push(`M${vertices.map(([x, y]) => `${x},${y}`).join(' L')} Z`)
+      }
     }
     ctx.globalAlpha = 1
-    onCoverageChange?.(coverage.join(' '))
+    const dryVertices = [
+      ...coverageX.map((x, index) => [
+        x / width,
+        dryCoverageTop[index] / height,
+      ]),
+      [1, 1],
+      [0, 1],
+    ]
+    const dryHole = [...dryVertices].reverse()
+    onCoverageChange?.(
+      coverage.join(' '),
+      `M0,0 L1,0 L1,1 L0,1 Z M${dryHole
+        .map(([x, y]) => `${x},${y}`)
+        .join(' L')} Z`,
+    )
     frame = requestAnimationFrame(draw)
   }
 

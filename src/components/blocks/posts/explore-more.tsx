@@ -2,15 +2,11 @@
 
 import { useId, useRef, useState } from 'react'
 
-import dynamic from 'next/dynamic'
 import Link from 'next/link'
 
 import { IconBeach } from '@tabler/icons-react'
 
-const MotionWave = dynamic(
-  () => import('@/components/motion-wave').then(module => module.MotionWave),
-  { ssr: false },
-)
+import { MotionWave } from '@/components/motion-wave'
 
 interface ExploreMoreProps {
   href: string
@@ -19,7 +15,9 @@ export const ExploreMore = (props: ExploreMoreProps) => {
   const { href } = props
   const [enter, setEnter] = useState(false)
   const coverageId = useId()
+  const dryCoverageId = `${coverageId}-dry`
   const coverageRef = useRef<SVGPathElement>(null)
+  const dryCoverageRef = useRef<SVGPathElement>(null)
   const label = (
     <>
       Explore More
@@ -35,7 +33,10 @@ export const ExploreMore = (props: ExploreMoreProps) => {
       <MotionWave
         width={280}
         height={280}
-        onCoverageChange={path => coverageRef.current?.setAttribute('d', path)}
+        onCoverageChange={(path, dryPath) => {
+          coverageRef.current?.setAttribute('d', path)
+          if (dryPath) dryCoverageRef.current?.setAttribute('d', dryPath)
+        }}
         className='z-0 size-full rounded-xl bg-surface-1 dark:bg-surface dark:fill-surface-1 lg:rounded-2xl xl:rounded-3xl'
         initialConfig={{
           frequency: 3,
@@ -57,20 +58,32 @@ export const ExploreMore = (props: ExploreMoreProps) => {
           <clipPath id={coverageId} clipPathUnits='objectBoundingBox'>
             <path ref={coverageRef} clipRule='nonzero' />
           </clipPath>
+          <clipPath id={dryCoverageId} clipPathUnits='objectBoundingBox'>
+            {/* Keep the label visible until the first wave frame supplies the
+                real inverse mask. An empty path would hide the whole label. */}
+            <path
+              ref={dryCoverageRef}
+              clipRule='nonzero'
+              d='M0,0 H1 V1 H0 Z'
+            />
+          </clipPath>
         </defs>
       </svg>
       <Link
-        className='absolute inset-0 z-10 text-lg font-semibold invert lg:text-2xl'
+        className='absolute inset-0 z-10 text-lg font-semibold lg:text-2xl'
         href={href}
       >
-        {/* Keep the original inverted dry/wet colors, but use geometry rather
-            than alpha blending so even a translucent rear wave changes text. */}
-        <span className='absolute inset-0 flex items-center justify-center gap-2 text-surface-1 dark:text-surface'>
+        {/* Use explicit colors instead of a parent invert filter so the wet
+            label color remains predictable in both themes. */}
+        <span
+          className='absolute inset-0 flex items-center justify-center gap-2 text-slate-950 dark:text-slate-50'
+          style={{ clipPath: `url(#${dryCoverageId})` }}
+        >
           {label}
         </span>
         <span
           aria-hidden='true'
-          className='pointer-events-none absolute inset-0 flex items-center justify-center gap-2 text-black dark:text-surface-1'
+          className='pointer-events-none absolute inset-0 flex items-center justify-center gap-2 text-white dark:text-slate-200'
           style={{ clipPath: `url(#${coverageId})` }}
         >
           {label}

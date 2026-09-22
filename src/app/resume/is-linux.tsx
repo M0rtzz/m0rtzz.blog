@@ -1,8 +1,13 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
-import { Typed, TypedContent, TypedText } from '@/components/typed'
+import {
+  AutoScrollProvider,
+  Typed,
+  TypedContent,
+  TypedText,
+} from '@/components/typed'
 
 function useIsLinux(): boolean {
   const [isLinux, setIsLinux] = useState<boolean>(false)
@@ -19,12 +24,15 @@ function useIsLinux(): boolean {
 
 const LinuxAwareComponent = () => {
   const isLinux = useIsLinux()
+  const scrollRef = useRef<HTMLDivElement>(null)
 
   return (
     <div
+      ref={scrollRef}
       className={`thin-scrollbar min-h-60 flex-1 overflow-y-auto p-2 text-sm text-gray-200 duration-300 animate-in fade-in ${isLinux ? 'linux-special-scroll-bar' : ''}`}
     >
-      <Typed>
+      <AutoScrollProvider containerRef={scrollRef}>
+        <Typed>
         <TypedText>whoami</TypedText>
         <TypedContent>
           <p>
@@ -273,7 +281,8 @@ const LinuxAwareComponent = () => {
             <a href='mailto:zihang.xu@outlook.it'>zihang.xu@outlook.it</a>
           </div>
         </TypedContent>
-      </Typed>
+        </Typed>
+      </AutoScrollProvider>
     </div>
   )
 }

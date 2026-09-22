@@ -1,13 +1,16 @@
 import { useEffect, useRef } from 'react'
 
+import { useAutoScroll } from './typed'
+
 import type { TypedChildProps } from './typed'
 
 export const TypedContent = (props: TypedChildProps) => {
   const { children, onRendered } = props
   const ref = useRef<HTMLDivElement | null>(null)
+  const autoScroll = useAutoScroll()
 
   useEffect(() => {
-    ref.current?.scrollIntoView({ behavior: 'smooth' })
+    autoScroll?.scrollToBottom()
 
     const id = window.setTimeout(() => {
       onRendered?.()
@@ -15,7 +18,7 @@ export const TypedContent = (props: TypedChildProps) => {
     return () => {
       window.clearTimeout(id)
     }
-  }, [])
+  }, [autoScroll])
 
   return (
     <div

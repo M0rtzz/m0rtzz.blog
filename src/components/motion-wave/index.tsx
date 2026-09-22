@@ -43,7 +43,10 @@ export function MotionWave({
     const wave = createWave(
       canvasRef.current!,
       initialConfigRef.current,
-      tracksCoverage ? path => coverageListenerRef.current?.(path) : undefined,
+      tracksCoverage
+        ? (coveragePath, dryPath) =>
+            coverageListenerRef.current?.(coveragePath, dryPath)
+        : undefined,
     )
     const activeMotions = motions.current
     waveRef.current = wave

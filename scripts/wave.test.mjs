@@ -82,8 +82,12 @@ function fixture({
     getComputedStyle: () => ({ fill: '#1e293b' }),
   })
   const coverage = []
+  const dryCoverage = []
   const onCoverageChange = trackCoverage
-    ? path => coverage.push(path)
+    ? (path, dryPath) => {
+        coverage.push(path)
+        dryCoverage.push(dryPath)
+      }
     : undefined
   const wave = exports.createWave(
     canvas,
@@ -98,6 +102,7 @@ function fixture({
     canvas,
     paths,
     coverage,
+    dryCoverage,
     recreate: () =>
       exports.createWave(canvas, wave.currentConfig, onCoverageChange),
     tick(timestamp) {
@@ -370,7 +375,11 @@ test('coverage follows the exact vertices of every layer, including offset chang
       assert.equal(polygons[layer].length, path.points.length)
       path.points.forEach(([x, y], i) => {
         assert.ok(Math.abs(polygons[layer][i][0] - x / 280) <= 0.00000501)
-        assert.ok(Math.abs(polygons[layer][i][1] - y / 280) <= 0.00000501)
+        const expectedY =
+          i >= path.points.length - 2
+            ? 1
+            : (y + geometry.WAVE_COVERAGE_EDGE_PAD) / 280
+        assert.ok(Math.abs(polygons[layer][i][1] - expectedY) <= 0.00000501)
       })
     })
     if (offset === -200) {
@@ -394,7 +403,10 @@ test('rear-only, middle-only and front-only coverage all reach the text mask', (
       const heights = h.paths
         .map((path, layer) => ({ y: path.points[i][1], layer }))
         .sort((a, b) => a.y - b.y)
-      const y = Math.max(heights[0].y + 2, 130)
+      const y = Math.max(
+        heights[0].y + geometry.WAVE_COVERAGE_EDGE_PAD + 1,
+        130,
+      )
       if (y > 152 || y >= heights[1].y - 2) continue
       const coveringLayers = polygons.flatMap((polygon, layer) =>
         containsPoint(polygon, x / 280, y / 280) ? [layer] : [],
@@ -544,12 +556,14 @@ test('Explore More keeps a fixed speed and wave shape before, during and after h
       },
     },
   }
+  const dryCoverageRef = { current: { setAttribute() {} } }
+  let refCount = 0
   const waveType = Symbol('MotionWave')
   const element = (type, props) => ({ type, props })
   const modules = {
     react: {
       useId: () => 'wave-coverage',
-      useRef: () => coverageRef,
+      useRef: () => (refCount++ === 0 ? coverageRef : dryCoverageRef),
       useState: () => [
         hovered,
         value => {
@@ -558,13 +572,14 @@ test('Explore More keeps a fixed speed and wave shape before, during and after h
       ],
     },
     'react/jsx-runtime': { jsx: element, jsxs: element },
-    'next/dynamic': { default: () => waveType },
+    '@/components/motion-wave': { MotionWave: waveType },
     'next/link': { default: 'a' },
     '@tabler/icons-react': { IconBeach: 'svg' },
   }
   const exports = {}
   runInNewContext(component, { exports, require: name => modules[name] })
   const render = offset => {
+    refCount = 0
     const wrapper = exports.ExploreMore({ href: '/posts/all' })
     const wave = wrapper.props.children.find(child => child.type === waveType)
     const { initialConfig, motionConfig } = wave.props
@@ -576,17 +591,23 @@ test('Explore More keeps a fixed speed and wave shape before, during and after h
     assert.equal(motionConfig.offset.duration, 0.5)
     assert.equal(motionConfig.offset.loop, false)
     const svg = wrapper.props.children.find(child => child.type === 'svg')
-    const clip = svg.props.children.props.children
+    const clips = svg.props.children.props.children
+    const clip = clips[0]
+    const dryClip = clips[1]
     assert.equal(clip.props.clipPathUnits, 'objectBoundingBox')
     assert.equal(clip.props.children.props.clipRule, 'nonzero')
     assert.equal(clip.props.children.props.ref, coverageRef)
+    assert.equal(dryClip.props.id, 'wave-coverage-dry')
+    assert.equal(dryClip.props.children.props.ref, dryCoverageRef)
     const link = wrapper.props.children.find(child => child.type === 'a')
     assert.ok(!link.props.className.includes('mix-blend'))
-    assert.ok(link.props.className.includes('invert'))
+    assert.ok(!link.props.className.includes('invert'))
     const [normal, covered] = link.props.children
     assert.equal(normal.props['aria-hidden'], undefined)
     assert.equal(covered.props['aria-hidden'], 'true')
     assert.equal(covered.props.style.clipPath, `url(#${clip.props.id})`)
+    assert.match(normal.props.className, /text-slate-950 dark:text-slate-50/)
+    assert.match(covered.props.className, /text-white dark:text-slate-200/)
     assert.equal(
       normal.props.children,
       covered.props.children,

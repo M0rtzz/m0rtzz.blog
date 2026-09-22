@@ -6,6 +6,8 @@ import { clsx } from 'clsx'
 import { useIsServer } from '@/hooks/useIsServer'
 import { sleep } from '@/utils'
 
+import { useAutoScroll } from './typed'
+
 import type { TypedChildProps } from './typed'
 
 export interface TypedTextProps extends TypedChildProps {
@@ -23,12 +25,13 @@ export const TypedText = (props: TypedTextProps) => {
   } = props
   const ref = useRef<HTMLElement | null>(null)
   const isServer = useIsServer()
+  const autoScroll = useAutoScroll()
 
   useEffect(() => {
     if (typeof children !== 'string') {
       return
     }
-    ref.current?.scrollIntoView({ behavior: 'smooth' })
+    autoScroll?.scrollToBottom()
     let cancel = false
     let id: number
     const typed = () => {
@@ -59,7 +62,7 @@ export const TypedText = (props: TypedTextProps) => {
       window.clearInterval(id)
     }
     // eslint-disable-next-line
-  }, [])
+  }, [autoScroll])
 
   if (isServer) {
     return (
