@@ -49,7 +49,7 @@ export const Nav = () => {
   const [left, width] = currentPos ?? prevPos ?? []
 
   return (
-    <nav className='relative justify-self-center rounded-full bg-surface-2 p-1.5 shadow-inner dark:bg-surface-1'>
+    <nav className='site-nav relative justify-self-center rounded-full bg-surface-2 p-1.5 shadow-inner dark:bg-surface-1'>
       <div
         className={clsx(
           'absolute inset-y-1.5 left-1.5 rounded-full bg-surface shadow-sm transition-[opacity,transform] duration-1000 ease-out dark:bg-surface-2',

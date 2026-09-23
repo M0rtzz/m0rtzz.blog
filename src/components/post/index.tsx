@@ -2,11 +2,8 @@ import Link from 'next/link'
 
 import { IconHash } from '@tabler/icons-react'
 
-import {
-  canCreateSummary,
-  ensureSummary,
-  getSummary,
-} from '@/service/summary'
+import { queryPostByNumber } from '@/service'
+import { canCreateSummary, ensureSummary, getSummary } from '@/service/summary'
 
 import { Block } from '../blocks/block'
 
@@ -18,7 +15,7 @@ interface PostProps {
 
 export const Post = async (props: PostProps) => {
   const { node } = props
-  const { labels, number, bodyText } = node
+  const { labels, number } = node
   const firstLabel = labels.nodes[0]
 
   const summaries = await getSummary()
@@ -26,11 +23,12 @@ export const Post = async (props: PostProps) => {
 
   if (
     !currentSummary &&
-    bodyText &&
     process.env.NODE_ENV === 'development' &&
     canCreateSummary()
   ) {
-    currentSummary = await ensureSummary(number, bodyText)
+    const result = await queryPostByNumber(number, false, true)
+    const postBodyText = result.repository?.discussion?.bodyText
+    if (postBodyText) currentSummary = await ensureSummary(number, postBodyText)
   }
 
   return (
@@ -39,7 +37,7 @@ export const Post = async (props: PostProps) => {
       className='group grid grid-rows-[1fr_min-content_2fr] bg-gradient-to-b from-surface-1 to-white dark:bg-[linear-gradient(rgba(255,255,255,0.05)_0%,rgba(255,255,255,0)_100%)] max-lg:p-2 max-md:row-span-2 max-sm:col-span-2 max-sm:row-span-1 xl:grid-rows-[1fr_min-content_2fr_auto]'
     >
       <div className='row-span-4 grid grid-rows-subgrid gap-1 xl:gap-2'>
-        <Link
+        <a
           className='relative flex items-center text-balance text-sm font-bold lg:text-base xl:text-xl'
           aria-label={`Post ${node.title}`}
           href={`/posts/${number}`}
@@ -53,7 +51,7 @@ export const Post = async (props: PostProps) => {
               />
             )}
           </h2>
-        </Link>
+        </a>
         <p className='mt-1 overflow-hidden text-ellipsis whitespace-nowrap text-color-2'>
           {labels.nodes.map(node => (
             <Link
@@ -69,13 +67,13 @@ export const Post = async (props: PostProps) => {
         </p>
         <p className='text-xs dark:text-color-4 xl:text-sm'>{currentSummary}</p>
         <p className='flex justify-end max-xl:hidden'>
-          <Link
+          <a
             className='translate-y-2 items-center rounded-full border bg-surface px-2.5 py-1.5 font-semibold opacity-0 outline-offset-4 ring-surface-3 transition-all duration-700 ease-out hover:scale-105 hover:border-transparent hover:ring-4 group-hover:translate-y-0 group-hover:opacity-100 focus-visible:translate-y-0 focus-visible:opacity-100'
             aria-label={`Read more about ${node.title}`}
             href={`/posts/${number}`}
           >
             Read More <span className='sr-only'>about {node.title}</span>
-          </Link>
+          </a>
         </p>
       </div>
     </Block>

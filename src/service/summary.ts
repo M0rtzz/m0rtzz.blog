@@ -21,6 +21,8 @@ type SummaryMap = Partial<Record<string, string>>
 interface PostMetadata {
   files: Map<string, string>
   summaries: SummaryMap
+  sources: Map<string, string>
+  titles: Map<string, string>
 }
 
 function normalizeBaseURL(baseURL?: string) {
@@ -118,10 +120,13 @@ async function findMarkdownFiles(directory: string): Promise<string[]> {
 async function readPostMetadata(): Promise<PostMetadata> {
   const files = new Map<string, string>()
   const summaries: SummaryMap = {}
+  const sources = new Map<string, string>()
+  const titles = new Map<string, string>()
 
   for (const path of await findMarkdownFiles(postsDirectory)) {
     const source = await readFile(path, 'utf8')
-    const { data } = matter(source)
+    const parsed = matter(source)
+    const { data } = parsed
     const discussionNumber = Number(data.discussionNumber)
 
     if (!Number.isSafeInteger(discussionNumber) || discussionNumber <= 0) {
@@ -130,13 +135,18 @@ async function readPostMetadata(): Promise<PostMetadata> {
 
     const id = String(discussionNumber)
     files.set(id, path)
+    sources.set(id, parsed.content)
+
+    if (typeof data.title === 'string' && data.title.trim() !== '') {
+      titles.set(id, data.title.trim())
+    }
 
     if (typeof data.summary === 'string' && data.summary.trim() !== '') {
       summaries[id] = data.summary.trim()
     }
   }
 
-  return { files, summaries }
+  return { files, summaries, sources, titles }
 }
 
 function getPostMetadata() {
@@ -146,6 +156,18 @@ function getPostMetadata() {
 
 export async function getSummary() {
   return (await getPostMetadata()).summaries
+}
+
+export async function getPostSeoMetadata(id: string | number) {
+  const { summaries, titles } = await getPostMetadata()
+  const title = titles.get(String(id))
+  if (!title) return null
+
+  return { description: summaries[id], title }
+}
+
+export async function getPostSource(id: string | number) {
+  return (await getPostMetadata()).sources.get(String(id)) ?? null
 }
 
 function withSummaryWriteLock<T>(action: () => Promise<T>) {

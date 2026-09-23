@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* A cached document can contain the entire article before its first paint.
+   Keep its text out of view until hydration and the article fonts are ready. */
+.post-reveal-pending .post-reveal-content {
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.post-reveal-ready .post-reveal-loading {
+  display: none;
+}
+
+.post-reveal-ready .post-reveal-content {
+  position: static;
+  height: auto;
+  overflow: visible;
+  visibility: visible;
+}
+
 :root {
   --brand: 249 115 22;
   /* theme('colors.orange.600') */

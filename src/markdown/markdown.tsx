@@ -18,11 +18,7 @@ import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
 import { MDX, type MDXProps } from 'rsc-mdx'
-import {
-  bundledLanguages,
-  bundledThemes,
-  createHighlighter,
-} from 'shiki/bundle/full'
+import { createHighlighter } from 'shiki/bundle/full'
 
 import { rehypeGithubAlert, findCodeText } from './plugins'
 import { rendererMdx } from './twoslash/renderMdx'
@@ -33,11 +29,41 @@ import type { ShikiTransformer } from 'shiki'
 interface MarkdownProps {
   source: string
   useMDXComponents?: MDXProps['useMDXComponents']
+  signalReady?: boolean
 }
 
 const highlighter = await createHighlighter({
-  langs: Object.keys(bundledLanguages),
-  themes: Object.keys(bundledThemes),
+  // Keep server startup fast while covering every language currently used by
+  // the local posts. Shiki still accepts aliases such as `txt` and `shell`.
+  langs: [
+    'asm',
+    'bash',
+    'c',
+    'cmake',
+    'cpp',
+    'css',
+    'html',
+    'ini',
+    'javascript',
+    'js',
+    'json',
+    'make',
+    'makefile',
+    'markdown',
+    'nginx',
+    'python',
+    'shell',
+    'shellscript',
+    'ssh-config',
+    'tex',
+    'toml',
+    'ts',
+    'typescript',
+    'xml',
+    'yaml',
+    'yml',
+  ],
+  themes: ['catppuccin-latte', 'material-theme-ocean'],
 })
 
 const transformerCodeContent: ShikiTransformer = {
@@ -48,13 +74,12 @@ const transformerCodeContent: ShikiTransformer = {
 }
 
 export async function Markdown(props: MarkdownProps) {
-  const { source, useMDXComponents } = props
-  return (
-    <MDX
-      source={source}
-      useMDXComponents={useMDXComponents}
-      remarkPlugins={[remarkGfm]}
-      rehypePlugins={[
+  const { source, useMDXComponents, signalReady } = props
+  const compiled = await MDX({
+    source,
+    useMDXComponents,
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [
         rehypeAutolinkHeadings,
         rehypeGithubAlert,
         rehypeKatex,
@@ -102,7 +127,9 @@ export async function Markdown(props: MarkdownProps) {
             ],
           } as RehypeShikiOptions,
         ],
-      ]}
-    />
-  )
+    ],
+  })
+
+  // Only articles need a marker for their whole-page reveal gate.
+  return signalReady ? <>{compiled}<span data-markdown-ready hidden /></> : compiled
 }

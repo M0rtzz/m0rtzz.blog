@@ -36,7 +36,7 @@ export const Pinned = async () => {
               href={item.url}
               target='_blank'
               style={{ transform: `rotate(${rotate}deg)` }}
-              className='group/note relative z-10 flex flex-col border-transparent p-4 text-xs transition-transform before:absolute before:inset-x-[3%] before:bottom-[15%] before:top-3/4 before:-z-20 before:skew-y-[5deg] before:shadow-[0_15px_10px_rgba(0,0,0,.6)] before:transition-transform before:duration-500 before:content-["_"] after:absolute after:inset-x-[3%] after:bottom-[15%] after:top-3/4 after:-skew-y-[5deg] after:shadow-[0_15px_10px_rgba(0,0,0,.6)] after:transition-transform after:duration-500 after:content-["_"] hover:before:scale-[1.03] hover:after:scale-[1.03]'
+              className='pinned-item-link group/note relative z-10 flex flex-col border-transparent p-4 text-xs transition-transform before:absolute before:inset-x-[3%] before:bottom-[15%] before:top-3/4 before:-z-20 before:skew-y-[5deg] before:shadow-[0_15px_10px_rgba(0,0,0,.6)] before:transition-transform before:duration-500 before:content-["_"] after:absolute after:inset-x-[3%] after:bottom-[15%] after:top-3/4 after:-skew-y-[5deg] after:shadow-[0_15px_10px_rgba(0,0,0,.6)] after:transition-transform after:duration-500 after:content-["_"] hover:before:scale-[1.03] hover:after:scale-[1.03]'
             >
               <div
                 className={clsx(
