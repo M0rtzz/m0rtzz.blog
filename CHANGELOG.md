@@ -1,62 +1,8 @@
-## <small>5.6.7 (2026-09-22)</small>
+# Changelog
 
-* 🐛 fix: improve article anchors, logo cursors, and resume auto-scroll ([f54d8f5](https://github.com/M0rtzz/m0rtzz.blog/commit/f54d8f5))
-* 🔖 tag(package.json): v5.6.7 ([de6900c](https://github.com/M0rtzz/m0rtzz.blog/commit/de6900c))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>5.6.6 (2026-09-22)</small>
-
-* 🐛 fix: refine wave rendering and interactive UI behavior ([586e3ff](https://github.com/M0rtzz/m0rtzz.blog/commit/586e3ff))
-* 📝 doc(CHANGELOG.md): automatic update ([9f9b7ca](https://github.com/M0rtzz/m0rtzz.blog/commit/9f9b7ca))
-* 🔖 tag(package.json): v5.6.6 ([2d2e0fb](https://github.com/M0rtzz/m0rtzz.blog/commit/2d2e0fb))
-* 🔗 chore(posts): bind new Discussions (#23) ([1e10eb8](https://github.com/M0rtzz/m0rtzz.blog/commit/1e10eb8)), closes [#23](https://github.com/M0rtzz/m0rtzz.blog/issues/23)
-
-
-
-## <small>5.6.5 (2026-09-20)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([8074633](https://github.com/M0rtzz/m0rtzz.blog/commit/8074633))
-* 📝 doc(posts): add relay service usage adjustment notice ([34fb01d](https://github.com/M0rtzz/m0rtzz.blog/commit/34fb01d))
-* 🔖 tag(package.json): v5.6.5 ([caa5449](https://github.com/M0rtzz/m0rtzz.blog/commit/caa5449))
-
-
-
-## <small>5.6.4 (2026-09-19)</small>
-
-* 🐛 fix: stabilize homepage animations and correct code block copy button spacing ([1578be2](https://github.com/M0rtzz/m0rtzz.blog/commit/1578be2))
-* 📝 doc(CHANGELOG.md): automatic update ([4fb7dbb](https://github.com/M0rtzz/m0rtzz.blog/commit/4fb7dbb))
-* 🔖 tag(package.json): v5.6.4 ([e78946a](https://github.com/M0rtzz/m0rtzz.blog/commit/e78946a))
-
-
-
-## <small>5.6.3 (2026-09-18)</small>
-
-* ➕ add_dep(package.json): add dep ([e0a1c28](https://github.com/M0rtzz/m0rtzz.blog/commit/e0a1c28))
-* 🐛 fix(ui): stabilize homepage animations and default to dark mode ([6467991](https://github.com/M0rtzz/m0rtzz.blog/commit/6467991))
-* 📌 pin_dep(pnpm-lock.yaml): pin deps version ([627c45e](https://github.com/M0rtzz/m0rtzz.blog/commit/627c45e))
-* 📝 doc(CHANGELOG.md): automatic update ([1da3287](https://github.com/M0rtzz/m0rtzz.blog/commit/1da3287))
-* 🔖 tag(package.json): v5.6.3 ([c7c3b63](https://github.com/M0rtzz/m0rtzz.blog/commit/c7c3b63))
-
-
-
-## <small>5.6.2 (2026-09-18)</small>
-
-* ✨ feat(posts): add safe Markdown typography linting and formatting ([1afa883](https://github.com/M0rtzz/m0rtzz.blog/commit/1afa883))
-* 📝 doc: update files ([f13cd33](https://github.com/M0rtzz/m0rtzz.blog/commit/f13cd33))
-* 📝 doc(CHANGELOG.md): automatic update ([30b1893](https://github.com/M0rtzz/m0rtzz.blog/commit/30b1893))
-* 🔖 tag(package.json): v5.6.2 ([f14e5fe](https://github.com/M0rtzz/m0rtzz.blog/commit/f14e5fe))
-
-
-
-## <small>5.6.1 (2026-09-12)</small>
-
-* 📝 doc(CHANGELOG.md): automatic update ([ac830c1](https://github.com/M0rtzz/m0rtzz.blog/commit/ac830c1))
-* 📝 doc(posts): refresh screenshots in the HUSTNLP Server Clash guide ([6113f0f](https://github.com/M0rtzz/m0rtzz.blog/commit/6113f0f))
-* 📝 doc(posts): restore redacted server guides after history cleanup ([785f98e](https://github.com/M0rtzz/m0rtzz.blog/commit/785f98e))
-* 🔖 tag(package.json): v5.6.1 ([49bfae9](https://github.com/M0rtzz/m0rtzz.blog/commit/49bfae9))
-
-
+## [5.6.8](https://github.com/M0rtzz/m0rtzz.blog/compare/v5.6.7...v5.6.8) (2026-09-23)
 
 ## 5.6.0 (2026-09-10)
 
@@ -2417,5 +2363,3 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
-
-
