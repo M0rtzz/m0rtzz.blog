@@ -370,7 +370,6 @@ code::marker {
   border: 1px solid var(--toc-node-color);
   border-radius: 50%;
   background-color: var(--toc-node-color);
-  box-shadow: 0 0 0 var(--toc-marker-gap) rgb(var(--surface));
   pointer-events: none;
 }
 
@@ -416,6 +415,7 @@ code::marker {
   color: rgb(var(--toc-accent));
 }
 
+/* Only active nodes mask the rails; ordinary nodes connect without a gap. */
 .article-toc .toc-left[data-active='true']::before {
   box-shadow: 0 0 0 var(--toc-marker-gap) rgb(var(--surface)), 0 0 0 var(--toc-marker-halo) var(--toc-halo-color);
 }
