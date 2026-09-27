@@ -70,14 +70,7 @@
   /* 使用后代选择器统一匹配无序列表所有层级的元素 */
   /* 正常段落中的局部代码块 */
   div.not-prose:nth-child(n)>div:nth-child(n)>p:nth-child(n)>code:nth-child(n),
-  .prose>blockquote:nth-child(n)>p:nth-child(n)>code:nth-child(n),
-  .prose>table:nth-child(n)>thead:nth-child(n)>tr:nth-child(n)>th:nth-child(n)>code:nth-child(n),
-  .prose>table:nth-child(n)>tbody:nth-child(n)>tr:nth-child(n)>td:nth-child(n)>code:nth-child(n),
-  .prose>p:nth-child(n)>code:nth-child(n),
-  .prose>ol li>code,
-  .prose>ol li>p>code,
-  .prose>ul li>code,
-  .prose>ul li>p>code,
+  .prose :where(:not(pre) > code):not(:where([class~='not-prose'], [class~='not-prose'] *)),
   details.mdx-components:nth-child(n)>p:nth-child(n)>code:nth-child(n) {
     padding: 0.1em 0.4em;
     border-radius: 6px;
@@ -135,14 +128,7 @@
   /* 使用后代选择器统一匹配无序列表所有层级的元素 */
   /* 正常段落中的局部代码块 */
   div.not-prose:nth-child(n)>div:nth-child(n)>p:nth-child(n)>code:nth-child(n),
-  .prose>blockquote:nth-child(n)>p:nth-child(n)>code:nth-child(n),
-  .prose>table:nth-child(n)>thead:nth-child(n)>tr:nth-child(n)>th:nth-child(n)>code:nth-child(n),
-  .prose>table:nth-child(n)>tbody:nth-child(n)>tr:nth-child(n)>td:nth-child(n)>code:nth-child(n),
-  .prose>p:nth-child(n)>code:nth-child(n),
-  .prose>ol li>code,
-  .prose>ol li>p>code,
-  .prose>ul li>code,
-  .prose>ul li>p>code,
+  .prose :where(:not(pre) > code):not(:where([class~='not-prose'], [class~='not-prose'] *)),
   details.mdx-components:nth-child(n)>p:nth-child(n)>code:nth-child(n) {
     padding: 0em 0.3em;
     border-radius: 6px;
@@ -172,6 +158,11 @@ code::marker {
   font-synthesis-weight: none;
 }
 
+.article-content a > code {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
 /* Markdown */
 .prose {
 
@@ -183,7 +174,7 @@ code::marker {
 
 /* Keep article headings visible below the sticky article header when deep-linking. */
 .article-content :where(h1, h2, h3, h4, h5, h6) {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: var(--article-anchor-offset, 5rem);
 }
 
 /* Tailwind utilities */
@@ -271,6 +262,171 @@ code::marker {
 .toc-left {
   text-align: left;
   display: block;
+}
+
+.article-toc {
+  --toc-accent: 37 99 235;
+  --toc-indent: 1rem;
+  --toc-node-size: 0.375rem;
+  --toc-node-halo: 5px;
+  --toc-halo-opacity: 0.12;
+  --toc-hover-opacity: 0.04;
+  --toc-hover-node-color: rgb(var(--text-1));
+  /* Reserve the entire halo plus a safety gutter inside scrolling/clipped lists. */
+  --toc-node-x: calc(var(--toc-node-size) / 2 + var(--toc-node-halo) + 3px);
+  --toc-node-y: calc(0.125rem + 0.825em);
+  --toc-line: color-mix(in srgb, rgb(var(--text-3)) 18%, rgb(var(--surface)));
+}
+
+.dark .article-toc {
+  --toc-accent: 96 165 250;
+  --toc-halo-opacity: 0.3;
+  --toc-hover-opacity: 0.02;
+  --toc-hover-node-color: rgb(var(--text-3) / 0.8);
+}
+
+/* Position the six levels' paired solid/outline nodes exactly on the rails,
+   including wrapped titles. Native list markers have no fixed x. */
+.article-toc,
+.article-toc :where(ul, li) {
+  list-style-type: none !important;
+}
+
+.article-toc,
+.article-toc li {
+  position: relative;
+  padding-inline-start: 0;
+}
+
+.article-toc ul {
+  position: relative;
+  padding-inline-start: var(--toc-indent);
+}
+
+/* Connect sibling nodes, stopping at the first/last node instead of leaving
+   a dangling line. The rail naturally spans expanded, multi-line branches. */
+.article-toc li::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: calc(var(--toc-node-x) - 0.5px);
+  inset-block: 0;
+  border-inline-start: 1px solid var(--toc-line);
+  pointer-events: none;
+}
+
+.article-toc li:first-child::before {
+  inset-block-start: var(--toc-node-y);
+}
+
+.article-toc li:last-child::before {
+  inset-block-end: auto;
+  block-size: var(--toc-node-y);
+}
+
+.article-toc li:only-child::before {
+  content: none;
+}
+
+/* A rounded elbow leads from each parent to its first child's rail. All
+   geometry stays inside the list's padding, including during collapse. */
+.article-toc ul::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: calc(var(--toc-node-x) - 0.5px);
+  inset-block-start: 0;
+  inline-size: calc(var(--toc-indent) + 0.5px);
+  block-size: calc(var(--toc-node-y) + 0.5px);
+  border-inline-start: 1px solid var(--toc-line);
+  border-block-end: 1px solid var(--toc-line);
+  border-end-start-radius: 0.5rem;
+  pointer-events: none;
+}
+
+.article-toc .toc-left {
+  --toc-node-color: rgb(var(--text-3) / 0.65);
+  --toc-marker-size: var(--toc-node-size);
+  --toc-marker-gap: 3px;
+  --toc-marker-halo: var(--toc-node-halo);
+  position: relative;
+  border-radius: 0.25rem;
+  padding-block: 0.125rem;
+  padding-inline: calc(var(--toc-node-x) + var(--toc-node-size) / 2 + var(--toc-node-halo) + 0.25rem) 0.25rem;
+  color: rgb(var(--text-3) / 0.9);
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+  transition: color 150ms ease, background-color 150ms ease;
+}
+
+.article-toc .toc-left::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  inset-inline-start: calc(var(--toc-node-x) - var(--toc-marker-size) / 2);
+  inset-block-start: calc(var(--toc-node-y) - var(--toc-marker-size) / 2);
+  inline-size: var(--toc-marker-size);
+  block-size: var(--toc-marker-size);
+  border: 1px solid var(--toc-node-color);
+  border-radius: 50%;
+  background-color: var(--toc-node-color);
+  box-shadow: 0 0 0 var(--toc-marker-gap) rgb(var(--surface));
+  pointer-events: none;
+}
+
+.article-toc .toc-left:is([data-toc-depth='3'], [data-toc-depth='4'])::before {
+  border-radius: 1px;
+}
+
+/* A 45-degree rotation expands a square by sqrt(2). Compensate both the
+   node and its shadows so diamonds keep the same footprint and safe gutter. */
+.article-toc .toc-left:is([data-toc-depth='5'], [data-toc-depth='6']) {
+  --toc-marker-size: calc(var(--toc-node-size) * 0.70710678);
+  --toc-marker-gap: calc(3px * 0.70710678);
+  --toc-marker-halo: calc(var(--toc-node-halo) * 0.70710678);
+}
+
+.article-toc .toc-left:is([data-toc-depth='5'], [data-toc-depth='6'])::before {
+  border-radius: 0;
+  transform: rotate(45deg);
+}
+
+.article-toc .toc-left:is([data-toc-depth='2'], [data-toc-depth='4'], [data-toc-depth='6'])::before {
+  background-color: rgb(var(--surface));
+}
+
+.article-toc li:last-child>.toc-left:has(+ ul[data-state='open'])::after {
+  content: '';
+  position: absolute;
+  inset-inline-start: calc(var(--toc-node-x) - 0.5px);
+  inset-block-start: var(--toc-node-y);
+  inset-block-end: 0;
+  border-inline-start: 1px solid var(--toc-line);
+  pointer-events: none;
+}
+
+.article-toc .toc-left:hover {
+  --toc-node-color: var(--toc-hover-node-color);
+  color: rgb(var(--text-1));
+  background-color: rgb(var(--text-3) / var(--toc-hover-opacity));
+}
+
+.article-toc .toc-left[data-active='true'] {
+  --toc-node-color: rgb(var(--toc-accent));
+  color: rgb(var(--toc-accent));
+}
+
+.article-toc .toc-left[data-active='true']::before {
+  box-shadow: 0 0 0 var(--toc-marker-gap) rgb(var(--surface)), 0 0 0 var(--toc-marker-halo) rgb(var(--toc-accent) / var(--toc-halo-opacity));
+}
+
+.article-toc .toc-left:focus-visible {
+  outline: 2px solid rgb(var(--toc-accent));
+  outline-offset: -2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .article-toc .toc-left {
+    transition: none;
+  }
 }
 
 /* 特殊处理Linux下的滚动条 */

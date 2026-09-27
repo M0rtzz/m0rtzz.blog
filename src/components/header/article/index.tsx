@@ -15,6 +15,7 @@ export const Header = (props: HeaderProps) => {
   const { sticky } = props
   return (
     <header
+      data-article-header={sticky ? '' : undefined}
       className={clsx(
         'grid w-full grid-cols-[1fr_minmax(auto,110ch)_1fr] items-center gap-4 border-b bg-surface px-6 py-5 md:gap-8 lg:px-16',
         sticky && 'sticky top-0 z-10 bg-white/5 backdrop-blur dark:bg-black/5',

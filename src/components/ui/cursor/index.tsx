@@ -134,6 +134,7 @@ export default function CursorInitializer() {
       setANICursorWithGroupElement(
         [
           `a${exclude_element}`,
+          `a code${exclude_element}`,
           `button${exclude_element}`,
           `summary${exclude_element}`,
           `[onclick]${exclude_element}`,

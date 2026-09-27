@@ -2,9 +2,14 @@
 
 import { useEffect, useRef, useState } from 'react'
 
+import { ArticleNavigation } from './article-navigation'
 import Loading from './loading'
 
-export default function PostReveal({ children }: { children: React.ReactNode }) {
+export default function PostReveal({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   const [ready, setReady] = useState(false)
   const contentRef = useRef<HTMLDivElement>(null)
 
@@ -45,7 +50,11 @@ export default function PostReveal({ children }: { children: React.ReactNode }) 
       <div className='post-reveal-loading'>
         <Loading />
       </div>
-      <div className='post-reveal-content' ref={contentRef}>{children}</div>
+      <div className='post-reveal-content' ref={contentRef}>
+        <ArticleNavigation ready={ready} contentRef={contentRef}>
+          {children}
+        </ArticleNavigation>
+      </div>
       <noscript>
         <style>{`
           .post-reveal-loading { display: none !important; }
