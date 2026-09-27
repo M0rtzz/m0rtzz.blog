@@ -269,13 +269,15 @@ code::marker {
   --toc-indent: 1rem;
   --toc-node-size: 0.375rem;
   --toc-node-halo: 5px;
-  --toc-halo-opacity: 0.12;
+  --toc-halo-opacity: 0.15;
   --toc-hover-opacity: 0.04;
   --toc-hover-node-color: rgb(var(--text-1));
   /* Reserve the entire halo plus a safety gutter inside scrolling/clipped lists. */
   --toc-node-x: calc(var(--toc-node-size) / 2 + var(--toc-node-halo) + 3px);
   --toc-node-y: calc(0.125rem + 0.825em);
   --toc-line: color-mix(in srgb, rgb(var(--text-3)) 18%, rgb(var(--surface)));
+  /* Preblend an opaque halo so underlying rails cannot tint its edge. */
+  --toc-halo-color: color-mix(in srgb, rgb(var(--toc-accent)) calc(var(--toc-halo-opacity) * 100%), rgb(var(--surface)));
 }
 
 .dark .article-toc {
@@ -415,7 +417,7 @@ code::marker {
 }
 
 .article-toc .toc-left[data-active='true']::before {
-  box-shadow: 0 0 0 var(--toc-marker-gap) rgb(var(--surface)), 0 0 0 var(--toc-marker-halo) rgb(var(--toc-accent) / var(--toc-halo-opacity));
+  box-shadow: 0 0 0 var(--toc-marker-gap) rgb(var(--surface)), 0 0 0 var(--toc-marker-halo) var(--toc-halo-color);
 }
 
 .article-toc .toc-left:focus-visible {
