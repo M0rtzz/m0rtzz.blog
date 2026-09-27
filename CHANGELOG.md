@@ -1,8 +1,18 @@
-# Changelog
+## <small>5.7.2 (2026-09-27)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 🐛 fix(toc): preserve halo colors over connector lines ([53c6991](https://github.com/M0rtzz/m0rtzz.blog/commit/53c6991))
+* 📝 doc(posts/中转站使用方式调整通知.md): update file ([fa49a1a](https://github.com/M0rtzz/m0rtzz.blog/commit/fa49a1a))
+* 🔖 tag(package.json): v5.7.2 ([5333952](https://github.com/M0rtzz/m0rtzz.blog/commit/5333952))
 
-## [5.7.2](https://github.com/M0rtzz/m0rtzz.blog/compare/v5.7.1...v5.7.2) (2026-09-27)
+
+
+## <small>5.7.1 (2026-09-27)</small>
+
+* 🐛 fix(article): improve TOC navigation, hierarchy, and inline code rendering ([413533d](https://github.com/M0rtzz/m0rtzz.blog/commit/413533d))
+* 📝 doc(CHANGELOG.md): automatic update ([e3b2079](https://github.com/M0rtzz/m0rtzz.blog/commit/e3b2079))
+* 🔖 tag(package.json): v5.7.1 ([324e32d](https://github.com/M0rtzz/m0rtzz.blog/commit/324e32d))
+
+
 
 ## 5.7.0 (2026-09-26)
 
@@ -2448,3 +2458,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
