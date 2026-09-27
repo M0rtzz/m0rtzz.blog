@@ -1,11 +1,13 @@
-# Changelog
+## <small>5.7.1 (2026-09-27)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 🐛 fix(article): improve TOC navigation, hierarchy, and inline code rendering ([413533d](https://github.com/M0rtzz/m0rtzz.blog/commit/413533d))
+* 🔖 tag(package.json): v5.7.1 ([324e32d](https://github.com/M0rtzz/m0rtzz.blog/commit/324e32d))
 
-## [5.7.1](https://github.com/M0rtzz/m0rtzz.blog/compare/v5.7.0...v5.7.1) (2026-09-27)
+
 
 ## 5.7.0 (2026-09-26)
 
+* 📝 doc(CHANGELOG.md): automatic update ([77f3e9d](https://github.com/M0rtzz/m0rtzz.blog/commit/77f3e9d))
 * 📝 doc(posts): explain the relay service switch to CPA ([ca1b815](https://github.com/M0rtzz/m0rtzz.blog/commit/ca1b815))
 * 🔖 tag(package.json): v5.7.0 ([79c9f2b](https://github.com/M0rtzz/m0rtzz.blog/commit/79c9f2b))
 
@@ -2447,3 +2449,5 @@ ISSUES CLOSED:     engines: {glibc: '\>=2.28', node: ^18.17.0
 
  \>=21.0.0, npm: '\>=9.6.5', pnpm:
 '\>=7.1.0', yarn: '\>=3.2.0'}
+
+
