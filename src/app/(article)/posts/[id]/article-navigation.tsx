@@ -13,6 +13,8 @@ import {
 
 const headingSelector = 'h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]'
 const anchorGap = 12
+// Highlight before a heading reaches the tighter anchor-jump position.
+const readingLead = 36
 
 export function decodeHash(hash: string) {
   const id = hash.replace(/^#/, '')
@@ -61,6 +63,7 @@ export function ArticleNavigation({
     let anchoredHeading: HTMLElement | null = null
     let pendingScroll: { id: string; top: number } | null = null
     let currentId = ''
+    let previousScrollY = window.scrollY
 
     const measure = () => {
       offset = (header?.getBoundingClientRect().height ?? 0) + anchorGap
@@ -81,6 +84,9 @@ export function ArticleNavigation({
     }
 
     const updateActive = () => {
+      const scrollingDown = window.scrollY > previousScrollY
+      const scrollingUp = window.scrollY < previousScrollY
+      previousScrollY = window.scrollY
       // Keep the destination branch open during a smooth jump.
       if (pendingScroll) {
         if (Math.abs(window.scrollY - pendingScroll.top) > 1) {
@@ -95,29 +101,23 @@ export function ArticleNavigation({
         return
       }
 
-      const reference = window.scrollY + offset + 1
-      let passedIndex = -1
-      for (let index = 0; index < headings.length; index++) {
-        if (headings[index].top > reference) break
-        passedIndex = index
-      }
-
-      // Hysteresis: scrolling down advances at the reference line; scrolling
-      // up keeps the current heading until its predecessor becomes readable
-      // or it leaves the viewport below. This also avoids flicker on reversal.
-      const nextHeading = headings[passedIndex + 1]
-      const visibleIndex =
-        nextHeading && nextHeading.top < window.scrollY + window.innerHeight
-          ? passedIndex + 1
-          : passedIndex
       const currentIndex = headings.findIndex(
         heading => heading.element.id === currentId,
       )
-      const index = Math.max(
-        0,
-        passedIndex,
-        Math.min(currentIndex, visibleIndex),
-      )
+      let index = currentIndex
+      if (currentIndex < 0 || scrollingDown) {
+        const reference = window.scrollY + offset + readingLead + 1
+        index = Math.max(0, currentIndex)
+        for (let candidate = 0; candidate < headings.length; candidate++) {
+          if (headings[candidate].top > reference) break
+          index = Math.max(index, candidate)
+        }
+      } else if (scrollingUp) {
+        // Going back must be triggered by the preceding heading itself reaching
+        // the header gap, not by the current child moving away from that gap.
+        const reference = window.scrollY + offset - 1
+        while (index > 0 && headings[index - 1].top >= reference) index--
+      }
       selectHeading(headings[index]?.element.id ?? '')
     }
 
@@ -161,6 +161,8 @@ export function ArticleNavigation({
     }
 
     const releaseAnchor = () => {
+      // An interrupted jump's destination need not have been reached yet.
+      if (pendingScroll) currentId = ''
       anchoredHeading = null
       finishScroll()
     }

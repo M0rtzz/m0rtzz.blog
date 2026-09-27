@@ -216,20 +216,83 @@ test('deep link aligns and highlights the exact heading below the measured heade
   assert.equal(page.history.length, 0)
 })
 
-test('tracks the last heading to cross the reference line, including long sections', () => {
+test('highlights headings below the header before they reach the anchor-jump position', () => {
   const page = fixture()
   assert.equal(page.activeId, 'article-title')
-  page.scrollTo(1256 - 63 - 2)
+  page.scrollTo(1256 - 99 - 2)
   assert.equal(page.activeId, '目录说明')
-  page.scrollTo(1256 - 63)
+  page.scrollTo(1256 - 99)
   assert.equal(page.activeId, 'nasmodels')
   page.scrollTo(2300)
   assert.equal(page.activeId, 'nasmodels')
-  page.scrollTo(2500 - 63)
+  page.scrollTo(2500 - 99)
   assert.equal(page.activeId, 'nasdatasets')
+  assert.equal(page.styles.get('--article-anchor-offset'), '63px')
 })
 
-test('upward scrolling on posts/14 retains the current subsection until its predecessor is readable', () => {
+test('posts/12 highlights the correct repeated Code heading while it is still fully visible', () => {
+  const page = fixture({
+    viewportHeight: 900,
+    scrollHeight: 18000,
+    // Measured headings around the single-producer example on /posts/12.
+    headingPositions: [
+      ['2代码', 5620.375],
+      ['生产者-消费者问题', 6056.375],
+      ['单生产者-消费者', 6088.375],
+      ['1问题描述-1', 6116.375],
+      ['2代码-1', 6260.375],
+      ['多生产者-消费者', 7104.375],
+      ['1问题描述-2', 7132.375],
+      ['2代码-2', 7276.375],
+    ],
+  })
+  page.scrollTo(6150)
+  assert.equal(page.activeId, '1问题描述-1')
+  page.scrollTo(6161)
+  assert.equal(page.activeId, '2代码-1')
+  assert.ok(page.headings[4].getBoundingClientRect().top > page.header.height)
+  page.scrollTo(6170)
+  assert.equal(page.activeId, '2代码-1')
+  page.scrollTo(6800)
+  assert.equal(page.activeId, '2代码-1')
+  page.scrollTo(7276 - 99)
+  assert.equal(page.activeId, '2代码-2')
+})
+
+test('posts/14 does not select an offscreen parent while scrolling up from device independence', () => {
+  const parentId = 'io-软件总体设计要考虑的问题'
+  const childId = '1设备无关性'
+  // Actual Firefox geometry: the parent is 192px before the first child.
+  const parentTop = 13743.08332824707
+  const childTop = 13935.08332824707
+  const page = fixture({
+    hash: `#${encodeURIComponent(childId)}`,
+    viewportHeight: 673,
+    scrollHeight: 19000,
+    headingPositions: [
+      ['前一节', 13200],
+      [parentId, parentTop],
+      [childId, childTop],
+      ['2出错处理', 14023.08332824707],
+    ],
+  })
+  page.scrollTo(childTop - 63 - 60)
+  assert.ok(page.headings[1].getBoundingClientRect().top < 0)
+  assert.equal(page.activeId, childId)
+  page.scrollTo(parentTop - 51)
+  assert.equal(page.activeId, childId)
+  page.scrollTo(parentTop - 63)
+  assert.equal(page.activeId, parentId)
+  page.emit('scrollend')
+  page.flush()
+  assert.equal(page.activeId, parentId)
+  page.scrollTo(parentTop - 55)
+  assert.equal(page.activeId, parentId)
+  page.scrollTo(childTop - 99)
+  assert.equal(page.activeId, childId)
+})
+
+test('upward scrolling on posts/14 switches when each preceding heading reaches the header gap', () => {
   const page = fixture({
     viewportHeight: 900,
     scrollHeight: 19000,
@@ -246,43 +309,65 @@ test('upward scrolling on posts/14 retains the current subsection until its pred
   })
   page.scrollTo(16791)
   assert.equal(page.activeId, '2提供与设备无关的块尺寸')
-  for (const top of [16621, 16591, 16511, 16200]) {
+  for (const top of [16621, 16591, 16556, 16511, 16202]) {
     page.scrollTo(top)
     assert.equal(page.activeId, '2提供与设备无关的块尺寸')
   }
-  page.scrollTo(16198)
+  page.scrollTo(16200)
   assert.equal(page.activeId, '1设备命名与保护')
-  page.scrollTo(15958)
+  page.scrollTo(15960)
   assert.equal(page.activeId, '功能-1')
-  page.scrollTo(15802)
+  page.scrollTo(15804)
   assert.equal(page.activeId, '与设备无关的操作系统-io-软件')
 })
 
-test('upward scrolling into a long previous section releases a heading once it leaves the viewport', () => {
-  const page = fixture({ hash: '#nasdatasets' })
-  page.scrollTo(2600)
-  for (const top of [2400, 1800, 1701]) {
-    page.scrollTo(top)
-    assert.equal(page.activeId, 'nasdatasets')
+test('upward scrolling waits for the preceding heading regardless of viewport height or section length', () => {
+  for (const viewportHeight of [600, 900, 1400]) {
+    const page = fixture({ hash: '#nasdatasets', viewportHeight })
+    page.scrollTo(2600)
+    for (const top of [2400, 2383, 1800, 1700, 1195]) {
+      page.scrollTo(top)
+      assert.equal(page.activeId, 'nasdatasets')
+    }
+    page.scrollTo(1193)
+    assert.equal(page.activeId, 'nasmodels')
+    page.scrollTo(1194)
+    assert.equal(page.activeId, 'nasmodels')
   }
-  page.scrollTo(1700)
+})
+
+test('the reading line follows header resizing without changing the anchor gap', () => {
+  const page = fixture()
+  page.header.height = 73
+  page.resize()
+  assert.equal(page.styles.get('--article-anchor-offset'), '85px')
+  page.scrollTo(2100)
+  assert.equal(page.activeId, 'nasmodels')
+  page.scrollTo(2500 - 121 - 2)
+  assert.equal(page.activeId, 'nasmodels')
+  page.scrollTo(2500 - 121)
+  assert.equal(page.activeId, 'nasdatasets')
+  page.scrollTo(2600)
+  page.scrollTo(2500 - 137)
+  assert.equal(page.activeId, 'nasdatasets')
+  page.scrollTo(1256 - 85)
   assert.equal(page.activeId, 'nasmodels')
 })
 
 test('small reversals and scrollend do not undo the retained highlight', () => {
   const page = fixture({ hash: '#nasmodels' })
-  for (const top of [1176, 1180, 1178, 1190]) {
+  for (const top of [1176, 1142, 1150, 1148, 1160]) {
     page.scrollTo(top)
     assert.equal(page.activeId, 'nasmodels')
     page.emit('scrollend')
     page.flush()
     assert.equal(page.activeId, 'nasmodels')
   }
-  page.scrollTo(1120)
+  page.scrollTo(1137)
   assert.equal(page.activeId, '目录说明')
   page.scrollTo(1140)
   assert.equal(page.activeId, '目录说明')
-  page.scrollTo(1193)
+  page.scrollTo(1157)
   assert.equal(page.activeId, 'nasmodels')
 })
 
@@ -321,6 +406,39 @@ test('an upward TOC click overrides a retained subsection and remains exact on a
   page.finishScroll()
   assert.equal(page.activeId, '目录说明')
   assert.equal(page.window.scrollY, 1200 - 63)
+})
+
+test('scrolling up from an anchored parent does not advance to a closely spaced child', () => {
+  const page = fixture({
+    hash: '#parent',
+    headingPositions: [
+      ['article-title', 300],
+      ['parent', 1000],
+      ['child', 1028],
+      ['next', 2000],
+    ],
+  })
+  assert.equal(page.activeId, 'parent')
+  for (const top of [936, 930, 925]) {
+    page.scrollTo(top)
+    assert.equal(page.activeId, 'parent')
+    page.emit('scrollend')
+    page.flush()
+    assert.equal(page.activeId, 'parent')
+  }
+  page.scrollTo(930)
+  assert.equal(page.activeId, 'child')
+})
+
+test('manual scrolling cancels an unfinished smooth-jump highlight', () => {
+  const page = fixture()
+  page.navigate('#nasprojects')
+  page.window.scrollY = 2400
+  page.emit('scroll')
+  page.flush()
+  assert.equal(page.activeId, 'nasprojects')
+  page.scrollTo(2380)
+  assert.equal(page.activeId, 'nasmodels')
 })
 
 test('a deep link near the document end stays selected even if scrolling is clamped', () => {
