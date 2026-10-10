@@ -30,7 +30,8 @@ export const Galton = memo<GaltonProps>(({ images }) => {
         setIsRunning(running)
         setANICursor(
           '.skills button.animation-fade-in',
-          running ? '/cursor/ani/no.ani' : '/cursor/ani/arrow.ani',
+          running ? '/cursor/ani/no.ani' : '/cursor/ani/link.ani',
+          running ? 'not-allowed' : 'pointer',
         )
       },
     )
@@ -45,7 +46,7 @@ export const Galton = memo<GaltonProps>(({ images }) => {
   return (
     <>
       <button
-        className='animation-fade-in absolute left-4 top-4 z-10 rounded-xl border bg-surface p-1 text-color-4 shadow'
+        className='animation-fade-in absolute left-4 top-4 z-10 cursor-pointer rounded-xl border bg-surface p-1 text-color-4 shadow disabled:cursor-not-allowed'
         onClick={() => controller.current?.start()}
         disabled={isRunning}
       >
