@@ -62,7 +62,6 @@ export default function CursorInitializer() {
           `html${exclude_element}`,
           `img${exclude_element}`,
           `div.relative:nth-child(n)${exclude_element}`,
-          `div.relative:nth-child(n) > div:nth-child(n) > p:nth-child(n)${exclude_element}`,
           `div.relative:nth-child(n) > div:nth-child(n) > a:nth-child(n) > h2:nth-child(n)${exclude_element}`,
           `h1.site-logo${exclude_element}`,
           `nav.site-nav${exclude_element}`,
